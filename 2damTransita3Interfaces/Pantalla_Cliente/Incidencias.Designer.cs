@@ -103,6 +103,7 @@ namespace Pantalla_Cliente
             this.imgTransita.Name = "imgTransita";
             this.imgTransita.Size = new System.Drawing.Size(223, 184);
             this.imgTransita.TabIndex = 5;
+            this.imgTransita.Click += new System.EventHandler(this.imgTransita_Click);
             // 
             // button5
             // 

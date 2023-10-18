@@ -47,5 +47,9 @@ namespace Pantalla_Cliente
             f.Show();
         }
 
+        private void imgTransita_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
