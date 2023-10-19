@@ -5,6 +5,7 @@
 /obj/
 /Debug/
 /Release/
+.cache/
 *.cache
 *.pdb
 *.exe
