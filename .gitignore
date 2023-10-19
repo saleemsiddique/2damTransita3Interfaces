@@ -6,6 +6,9 @@
 /Debug/
 /Release/
 *.cache
+*.pdb
+*.exe
+*.txt
 
 # User-specific files
 *.suo
