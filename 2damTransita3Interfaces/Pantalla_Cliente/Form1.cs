@@ -15,6 +15,18 @@ namespace Pantalla_Cliente
         public PantallaCliente()
         {
             InitializeComponent();
+            this.Text = "Mi Aplicación Personalizada";
+            this.BackColor = Color.Gray;
+            this.ForeColor = Color.Black;
+            this.Font = new Font("Arial", 12);
+
+            btn_filtrar.FlatStyle = FlatStyle.Flat;
+            btn_filtrar.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.FlatAppearance.BorderSize = 0;
+            //this.MinimizeBox = false;
+            this.MaximizeBox = false;
+            //this.ControlBox = false
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -30,18 +42,17 @@ namespace Pantalla_Cliente
 
 
         }
-
-        private void button2_Click_1(object sender, EventArgs e)
+        private void btn_cliente_Click(object sender, EventArgs e)
         {
-            Incidencias i = new Incidencias();
-
-            this.Hide();
-
-            // Mostrar el formulario de Incidencias
-            i.Show();
+            
         }
 
-       
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            Incidencias i = new Incidencias();
+            this.Hide();
+            i.Show();
+        }
     }
 
     /*Codigo para refrescar la unica pantalla usa
