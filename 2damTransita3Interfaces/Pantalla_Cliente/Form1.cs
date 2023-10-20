@@ -19,13 +19,26 @@ namespace Pantalla_Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
+           
+
+        }
+
+        private void imgTransita_Click(object sender, EventArgs e)
+        {
+                     
+
+
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
             Incidencias i = new Incidencias();
 
             this.Hide();
 
             // Mostrar el formulario de Incidencias
             i.Show();
-
         }
     }
 
