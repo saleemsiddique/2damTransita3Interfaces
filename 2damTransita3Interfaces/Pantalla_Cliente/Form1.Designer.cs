@@ -51,12 +51,13 @@ namespace Pantalla_Cliente
             this.button7 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -84,8 +85,9 @@ namespace Pantalla_Cliente
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 657);
+            this.panel1.Size = new System.Drawing.Size(289, 657);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -267,7 +269,7 @@ namespace Pantalla_Cliente
             // label3
             // 
             this.label3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(925, 12);
+            this.label3.Location = new System.Drawing.Point(1018, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(234, 657);
             this.label3.TabIndex = 8;
@@ -275,9 +277,9 @@ namespace Pantalla_Cliente
             // fondoGrisMid
             // 
             this.fondoGrisMid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fondoGrisMid.Location = new System.Drawing.Point(285, 12);
+            this.fondoGrisMid.Location = new System.Drawing.Point(294, 12);
             this.fondoGrisMid.Name = "fondoGrisMid";
-            this.fondoGrisMid.Size = new System.Drawing.Size(641, 657);
+            this.fondoGrisMid.Size = new System.Drawing.Size(724, 657);
             this.fondoGrisMid.TabIndex = 9;
             // 
             // panel2
@@ -288,11 +290,12 @@ namespace Pantalla_Cliente
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.radioButton1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(319, 264);
+            this.panel2.Location = new System.Drawing.Point(395, 243);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(536, 67);
             this.panel2.TabIndex = 10;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button8
             // 
@@ -315,6 +318,7 @@ namespace Pantalla_Cliente
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // button7
             // 
@@ -324,6 +328,7 @@ namespace Pantalla_Cliente
             this.button7.TabIndex = 3;
             this.button7.Text = "View";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // radioButton1
             // 
@@ -345,42 +350,14 @@ namespace Pantalla_Cliente
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nom_Cliente";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(316, 98);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Clientes Transita";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.BackColor = System.Drawing.Color.MidnightBlue;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(377, 28);
-            this.label4.Margin = new System.Windows.Forms.Padding(3);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(10);
-            this.label4.Size = new System.Drawing.Size(554, 30);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Monitoring Screen";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // buscarTextBox
             // 
             this.buscarTextBox.BackColor = System.Drawing.Color.DimGray;
             this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(667, 88);
+            this.buscarTextBox.Location = new System.Drawing.Point(753, 100);
             this.buscarTextBox.Multiline = true;
             this.buscarTextBox.Name = "buscarTextBox";
             this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -393,11 +370,12 @@ namespace Pantalla_Cliente
             this.btn_filtrar.AutoSize = true;
             this.btn_filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_filtrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_filtrar.Image")));
-            this.btn_filtrar.Location = new System.Drawing.Point(862, 88);
+            this.btn_filtrar.Location = new System.Drawing.Point(970, 98);
             this.btn_filtrar.Name = "btn_filtrar";
             this.btn_filtrar.Size = new System.Drawing.Size(42, 36);
             this.btn_filtrar.TabIndex = 16;
             this.btn_filtrar.UseVisualStyleBackColor = false;
+            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
             // pictureBox4
             // 
@@ -405,7 +383,7 @@ namespace Pantalla_Cliente
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(825, 90);
+            this.pictureBox4.Location = new System.Drawing.Point(911, 102);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(20, 32);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -422,17 +400,57 @@ namespace Pantalla_Cliente
             this.button1.TabIndex = 11;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(314, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 25);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Clientes Transita";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(434, 28);
+            this.label7.Margin = new System.Windows.Forms.Padding(3);
+            this.label7.Name = "label7";
+            this.label7.Padding = new System.Windows.Forms.Padding(10);
+            this.label7.Size = new System.Drawing.Size(445, 30);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Monitoring Screen";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(1018, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(234, 1);
+            this.label4.TabIndex = 19;
+            // 
             // PantallaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.buscarTextBox);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.fondoGrisMid);
@@ -474,13 +492,14 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox buscarTextBox;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btn_filtrar;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label4;
     }
 }
 

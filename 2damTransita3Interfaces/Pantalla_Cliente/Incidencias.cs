@@ -26,6 +26,8 @@ namespace Pantalla_Cliente
 
             btn_filtrar.FlatStyle = FlatStyle.Flat;
             btn_filtrar.FlatAppearance.BorderSize = 0;
+            btn_manageIncidencias.FlatAppearance.BorderSize = 0;
+            btn_manageIncidencias.FlatStyle = FlatStyle.Flat;
             //this.MinimizeBox = false;
             this.MaximizeBox = false;
             //this.ControlBox = false;
@@ -174,6 +176,15 @@ namespace Pantalla_Cliente
         {
             
         }
-       
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
