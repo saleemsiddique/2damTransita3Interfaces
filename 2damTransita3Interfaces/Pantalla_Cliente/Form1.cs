@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pantalla_Cliente
 {
-    public partial class Form1 : Form
+    public partial class PantallaCliente : Form
     {
-        public Form1()
+        public PantallaCliente()
         {
             InitializeComponent();
         }
@@ -40,6 +40,8 @@ namespace Pantalla_Cliente
             // Mostrar el formulario de Incidencias
             i.Show();
         }
+
+       
     }
 
     /*Codigo para refrescar la unica pantalla usa

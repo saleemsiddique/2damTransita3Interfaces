@@ -124,7 +124,7 @@ namespace Pantalla_Cliente
 
         private void btn_cliente_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
+            PantallaCliente f = new PantallaCliente();
 
             this.Hide();
 
