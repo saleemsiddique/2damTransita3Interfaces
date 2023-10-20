@@ -18,11 +18,17 @@ namespace Pantalla_Cliente
         public Incidencias()
         {
             InitializeComponent();
+       
+            this.Text = "Mi Aplicación Personalizada";
+            this.BackColor = Color.Gray;
+            this.ForeColor = Color.Black;
+            this.Font = new Font("Arial", 12);
+
             btn_filtrar.FlatStyle = FlatStyle.Flat;
             btn_filtrar.FlatAppearance.BorderSize = 0;
-            this.MinimizeBox = false;
+            //this.MinimizeBox = false;
             this.MaximizeBox = false;
-            this.ControlBox = false;
+            //this.ControlBox = false;
             buscarTextBox.LostFocus += new EventHandler(buscarTextBox_LostFocus);
             this.Click += new EventHandler(incidencias_Click);
             buscarTextBox.Click += new EventHandler(miTextBox_Click);
@@ -33,7 +39,7 @@ namespace Pantalla_Cliente
             // Ajusta el espaciado superior para centrar verticalmente el texto
             buscarTextBox.Padding = new Padding(20, 20, 0, 0);
 
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; // Opcional, quita el borde de la ventana
+            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; // Opcional, quita el borde de la ventana
             //this.Icon = Properties.Resources.icono_de_aplicacion; // Cambia el icono de la ventana
             //this.BackgroundImage = Properties.Resources.fondo_de_la_ventana; // Cambia el fondo de la ventana
             this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -41,7 +47,8 @@ namespace Pantalla_Cliente
             //this.BackgroundImage = Properties.Resources.fondo_de_la_ventana; // Cambia el fondo de la ventana
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
-
+            int buttonWidth = 30;
+            int buttonMargin = 10;
         }
 
         private void Incidencias_Load(object sender, EventArgs e)
@@ -157,5 +164,16 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void btnFullScreen_Click(object sender, EventArgs e)
+        {
+            
+        }
+       
     }
 }
