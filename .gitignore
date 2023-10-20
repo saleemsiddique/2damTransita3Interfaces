@@ -1,0 +1,77 @@
+# .NET Core and Visual Studio temporary files
+.vscode/
+.vs/
+/bin/
+/obj/
+/Debug/
+/Release/
+*.cache
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+.svscodeipynb_data/
+
+# Rider directory
+.idea/
+
+# User-specific Visual Studio Code settings
+.vscode/settings.json
+
+# User-specific Visual Studio settings
+.vscode-cs/settings.json
+
+# Rider settings
+.idea/caches/
+.idea/libraries/
+.idea/tabs/
+
+# Resharper (Visual Studio Plugin)
+_ReSharper*/
+*.sln.iml
+resharper_reports/
+
+# Rider Plugin
+.idea/.rider/
+
+# User-specific ReSharper settings
+*.suo
+*.user
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+.svscodeipynb_data/
