@@ -102,6 +102,7 @@ namespace Pantalla_Cliente
             this.imgTransita.Name = "imgTransita";
             this.imgTransita.Size = new System.Drawing.Size(223, 184);
             this.imgTransita.TabIndex = 5;
+            this.imgTransita.Click += new System.EventHandler(this.imgTransita_Click);
             // 
             // button5
             // 
@@ -171,7 +172,6 @@ namespace Pantalla_Cliente
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button2.Enabled = false;
             this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -187,6 +187,7 @@ namespace Pantalla_Cliente
             this.button2.Text = "Incidencias";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // btn_cliente
             // 

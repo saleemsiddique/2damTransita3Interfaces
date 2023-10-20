@@ -5,7 +5,15 @@
 /obj/
 /Debug/
 /Release/
+.cache/
 *.cache
+*.pdb
+*.exe
+*.txt
+*.resources
+*.config
+obj/
+bin/
 
 # User-specific files
 *.suo
