@@ -309,6 +309,8 @@ namespace Pantalla_Cliente
             this.buscarTextBox.Size = new System.Drawing.Size(178, 34);
             this.buscarTextBox.TabIndex = 6;
             this.buscarTextBox.Text = "Buscar";
+            this.buscarTextBox.Enter += new System.EventHandler(this.miTextBox_Click);
+            this.buscarTextBox.Leave += new System.EventHandler(this.miTextBox_Leave);
             // 
             // label3
             // 
