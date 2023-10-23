@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Drawing;
+using System;
 namespace Pantalla_Cliente
 {
-    public class Incidencia
+    internal class Incidencia
     {
-        public int Id { get; set; }
-        public string lugar { get; set; }
-        public double longitud { get; set; }
-        public double latitud { get; set; }
-        public Image Imagen { get; set; }
-
+        private int id { get; set;}
+        private long duracion { get; set; }
+        private DateTime fechaHora { get; set; }
+        private string descripcion { get; set; }
+        private EstadoIncidencia estado { get; set; }
 
     }
+   
 }
