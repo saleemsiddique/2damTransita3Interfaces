@@ -73,6 +73,26 @@ namespace Pantalla_Cliente.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap estrellaAmarilla_fotor_bg_remover_20231021185036 {
+            get {
+                object obj = ResourceManager.GetObject("estrellaAmarilla-fotor-bg-remover-20231021185036", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estrellaNegra_fotor_bg_remover_2023102118503 {
+            get {
+                object obj = ResourceManager.GetObject("estrellaNegra-fotor-bg-remover-2023102118503", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_menú_2_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-menú-2-30", resourceCulture);
@@ -86,6 +106,16 @@ namespace Pantalla_Cliente.Properties {
         internal static System.Drawing.Bitmap Jugador {
             get {
                 object obj = ResourceManager.GetObject("Jugador", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap suma {
+            get {
+                object obj = ResourceManager.GetObject("suma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
