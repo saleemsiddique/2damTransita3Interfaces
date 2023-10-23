@@ -28,14 +28,16 @@ namespace Pantalla_Cliente
 
             btn_filtrar.FlatStyle = FlatStyle.Flat;
             btn_filtrar.FlatAppearance.BorderSize = 0;
-        
-            //this.MinimizeBox = false;
+            // Quitar los bordes del formulario
+            //this.FormBorderStyle = FormBorderStyle.None;
+            this.MinimizeBox = false;
             this.MaximizeBox = false;
-            //this.ControlBox = false;
+            this.ControlBox = false;
             buscarTextBox.LostFocus += new EventHandler(buscarTextBox_LostFocus);
             this.Click += new EventHandler(incidencias_Click);
             buscarTextBox.Click += new EventHandler(miTextBox_Click);
             buscarTextBox.Leave += new EventHandler(miTextBox_Leave);
+            
             // Establece el alineamiento horizontal del texto en el centro
             buscarTextBox.Multiline = true; // Asegura que el TextBox sea de varias líneas
             buscarTextBox.TextAlign = HorizontalAlignment.Left; // Alinea el texto a la izquierda
@@ -208,6 +210,16 @@ namespace Pantalla_Cliente
         private void label_IDData_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonMinimizarr_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

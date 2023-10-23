@@ -854,6 +854,7 @@ namespace Pantalla_Cliente
             this.buttonMinimizarr.TabIndex = 35;
             this.buttonMinimizarr.Text = "--";
             this.buttonMinimizarr.UseVisualStyleBackColor = false;
+            this.buttonMinimizarr.Click += new System.EventHandler(this.buttonMinimizarr_Click);
             // 
             // buttonSalir
             // 
@@ -868,6 +869,7 @@ namespace Pantalla_Cliente
             this.buttonSalir.TabIndex = 34;
             this.buttonSalir.Text = "X";
             this.buttonSalir.UseVisualStyleBackColor = false;
+            this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
             // 
             // Incidencias
             // 
