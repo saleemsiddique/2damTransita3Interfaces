@@ -128,6 +128,7 @@ namespace Pantalla_Cliente
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(367, 808);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -349,6 +350,7 @@ namespace Pantalla_Cliente
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(715, 82);
             this.panel2.TabIndex = 10;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox5
             // 
@@ -390,6 +392,7 @@ namespace Pantalla_Cliente
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // button7
             // 
@@ -400,6 +403,7 @@ namespace Pantalla_Cliente
             this.button7.TabIndex = 3;
             this.button7.Text = "View";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label2
             // 
@@ -469,6 +473,7 @@ namespace Pantalla_Cliente
             this.btn_filtrar.Size = new System.Drawing.Size(56, 44);
             this.btn_filtrar.TabIndex = 16;
             this.btn_filtrar.UseVisualStyleBackColor = false;
+            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
             // pictureBox4
             // 
@@ -871,6 +876,45 @@ namespace Pantalla_Cliente
             this.label12.Size = new System.Drawing.Size(59, 16);
             this.label12.TabIndex = 0;
             this.label12.Text = "Nombre:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(314, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 25);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Clientes Transita";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(434, 28);
+            this.label7.Margin = new System.Windows.Forms.Padding(3);
+            this.label7.Name = "label7";
+            this.label7.Padding = new System.Windows.Forms.Padding(10);
+            this.label7.Size = new System.Drawing.Size(445, 30);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Monitoring Screen";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(1018, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(234, 1);
+            this.label4.TabIndex = 19;
             // 
             // PantallaCliente
             // 

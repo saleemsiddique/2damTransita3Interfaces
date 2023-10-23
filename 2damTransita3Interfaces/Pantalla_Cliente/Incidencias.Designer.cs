@@ -31,12 +31,9 @@ namespace Pantalla_Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Incidencias));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.imgTransita = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.lab = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -49,13 +46,24 @@ namespace Pantalla_Cliente
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btn_filtrar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.botonVerDatosIncidencia = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btn_manageIncidencias = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btn_filtrar = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgTransita = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,19 +88,6 @@ namespace Pantalla_Cliente
             this.panel1.Size = new System.Drawing.Size(276, 657);
             this.panel1.TabIndex = 1;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(213, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -110,20 +105,6 @@ namespace Pantalla_Cliente
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(276, 1);
             this.label5.TabIndex = 11;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(20, 598);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button6
             // 
@@ -143,15 +124,6 @@ namespace Pantalla_Cliente
             this.button6.Text = "User";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
-            // 
-            // imgTransita
-            // 
-            this.imgTransita.Image = ((System.Drawing.Image)(resources.GetObject("imgTransita.Image")));
-            this.imgTransita.Location = new System.Drawing.Point(30, 308);
-            this.imgTransita.Name = "imgTransita";
-            this.imgTransita.Size = new System.Drawing.Size(223, 184);
-            this.imgTransita.TabIndex = 5;
-            this.imgTransita.Click += new System.EventHandler(this.imgTransita_Click);
             // 
             // button5
             // 
@@ -301,6 +273,8 @@ namespace Pantalla_Cliente
             this.buscarTextBox.Size = new System.Drawing.Size(178, 34);
             this.buscarTextBox.TabIndex = 6;
             this.buscarTextBox.Text = "Buscar";
+            this.buscarTextBox.Enter += new System.EventHandler(this.miTextBox_Click);
+            this.buscarTextBox.Leave += new System.EventHandler(this.miTextBox_Leave);
             // 
             // label3
             // 
@@ -329,6 +303,90 @@ namespace Pantalla_Cliente
             this.label4.Size = new System.Drawing.Size(234, 1);
             this.label4.TabIndex = 10;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel2.Controls.Add(this.btn_manageIncidencias);
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.botonVerDatosIncidencia);
+            this.panel2.Controls.Add(this.radioButton1);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(339, 212);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(612, 67);
+            this.panel2.TabIndex = 16;
+            // 
+            // botonVerDatosIncidencia
+            // 
+            this.botonVerDatosIncidencia.Location = new System.Drawing.Point(480, 23);
+            this.botonVerDatosIncidencia.Name = "botonVerDatosIncidencia";
+            this.botonVerDatosIncidencia.Size = new System.Drawing.Size(75, 23);
+            this.botonVerDatosIncidencia.TabIndex = 3;
+            this.botonVerDatosIncidencia.Text = "View";
+            this.botonVerDatosIncidencia.UseVisualStyleBackColor = true;
+            this.botonVerDatosIncidencia.Click += new System.EventHandler(this.botonVerDatosIncidencia_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(461, 28);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(88, 28);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Incidencia";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // btn_manageIncidencias
+            // 
+            this.btn_manageIncidencias.Image = global::Pantalla_Cliente.Properties.Resources.icons8_menú_2_30;
+            this.btn_manageIncidencias.Location = new System.Drawing.Point(561, 14);
+            this.btn_manageIncidencias.Name = "btn_manageIncidencias";
+            this.btn_manageIncidencias.Size = new System.Drawing.Size(30, 41);
+            this.btn_manageIncidencias.TabIndex = 12;
+            this.btn_manageIncidencias.UseVisualStyleBackColor = true;
+            this.btn_manageIncidencias.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox4.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox4.Location = new System.Drawing.Point(24, 15);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
+            // btn_filtrar
+            // 
+            this.btn_filtrar.AutoSize = true;
+            this.btn_filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_filtrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_filtrar.Image")));
+            this.btn_filtrar.Location = new System.Drawing.Point(947, 88);
+            this.btn_filtrar.Name = "btn_filtrar";
+            this.btn_filtrar.Size = new System.Drawing.Size(42, 36);
+            this.btn_filtrar.TabIndex = 15;
+            this.btn_filtrar.UseVisualStyleBackColor = false;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.DimGray;
@@ -343,20 +401,41 @@ namespace Pantalla_Cliente
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // btn_filtrar
+            // pictureBox2
             // 
-            this.btn_filtrar.AutoSize = true;
-            this.btn_filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_filtrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_filtrar.Image")));
-            this.btn_filtrar.Location = new System.Drawing.Point(947, 88);
-            this.btn_filtrar.Name = "btn_filtrar";
-            this.btn_filtrar.Size = new System.Drawing.Size(42, 36);
-            this.btn_filtrar.TabIndex = 15;
-            this.btn_filtrar.UseVisualStyleBackColor = false;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(213, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
             // 
-            // backgroundWorker1
+            // pictureBox1
             // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(20, 598);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // imgTransita
+            // 
+            this.imgTransita.Image = ((System.Drawing.Image)(resources.GetObject("imgTransita.Image")));
+            this.imgTransita.Location = new System.Drawing.Point(30, 308);
+            this.imgTransita.Name = "imgTransita";
+            this.imgTransita.Size = new System.Drawing.Size(223, 184);
+            this.imgTransita.TabIndex = 5;
+            this.imgTransita.Click += new System.EventHandler(this.imgTransita_Click);
             // 
             // Incidencias
             // 
@@ -364,6 +443,7 @@ namespace Pantalla_Cliente
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label4);
@@ -380,9 +460,12 @@ namespace Pantalla_Cliente
             this.Load += new System.EventHandler(this.Incidencias_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,5 +495,11 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btn_filtrar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_manageIncidencias;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button botonVerDatosIncidencia;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label7;
     }
 }

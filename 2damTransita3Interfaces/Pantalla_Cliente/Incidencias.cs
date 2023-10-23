@@ -15,10 +15,11 @@ namespace Pantalla_Cliente
 {
     public partial class Incidencias : Form
     {
+        private List<Incidencia> listaIncidencias = new List<Incidencia>();
         public Incidencias()
         {
             InitializeComponent();
-       
+
             this.Text = "Mi Aplicación Personalizada";
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
@@ -26,6 +27,9 @@ namespace Pantalla_Cliente
 
             btn_filtrar.FlatStyle = FlatStyle.Flat;
             btn_filtrar.FlatAppearance.BorderSize = 0;
+            btn_manageIncidencias.FlatAppearance.BorderSize = 0;
+            btn_manageIncidencias.FlatStyle = FlatStyle.Flat;
+
             //this.MinimizeBox = false;
             this.MaximizeBox = false;
             //this.ControlBox = false;
@@ -53,34 +57,44 @@ namespace Pantalla_Cliente
 
         private void Incidencias_Load(object sender, EventArgs e)
         {
-
-            /*string connectionString = "tu_cadena_de_conexión"; // Reemplaza con la cadena de conexión a tu base de datos
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                // Consulta SQL para obtener datos de la base de datos
-                string query = "SELECT * FROM TuTabla"; // Reemplaza con tu consulta SQL
-
-                using (SqlCommand command = new SqlCommand(query, connection))
+            /*{
+                string connectionString = "cadena_de_conexion"; // Reemplaza con tu cadena de conexión
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    connection.Open();
+                    string query = "SELECT Id, Nombre, Descripcion, Imagen FROM TuTabla"; 
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-
-                        // Itera a través de los datos y agrégalos al ListView
-                        foreach (DataRow row in dataTable.Rows)
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            ListViewItem item = new ListViewItem(row["Columna1"].ToString());
-                            item.SubItems.Add(row["Columna2"].ToString());
-                            item.SubItems.Add(row["Columna3"].ToString());
+                            while (reader.Read())
+                            {
+                                int id = (int)reader["Id"];
+                                string nombre = reader["Nombre"].ToString();
+                                string descripcion = reader["Descripcion"].ToString();
+                                byte[] imagenBytes = (byte[])reader["Imagen"];
 
-                            //listView1.Items.Add(item);
+                                Image imagen = ByteArrayToImage(imagenBytes);
+
+                                Incidencia incidencia = new Incidencia
+                                {
+                                    Id = id,
+                                    Nombre = nombre,
+                                    Descripcion = descripcion,
+                                    Imagen = imagen
+                                };
+
+                                listaIncidencias.Add(incidencia);
+                            }
                         }
                     }
                 }
-            }*/
+
+                // Actualiza la cantidad de incidencias
+                // Puedes usar la propiedad "Count" de la lista
+                int cantidadIncidencias = listaIncidencias.Count;
+                lblCantidadIncidencias.Text = cantidadIncidencias.ToString();*/
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -137,7 +151,14 @@ namespace Pantalla_Cliente
 
 
         }
-      
+        private void botonVerDatosIncidencia_Click(object sender, EventArgs e)
+        {
+            datosIncidencia datosIncidencia = new datosIncidencia();
+
+
+            datosIncidencia.Show();
+
+        }
 
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -174,6 +195,15 @@ namespace Pantalla_Cliente
         {
             
         }
-       
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
