@@ -57,12 +57,55 @@ namespace Pantalla_Cliente
             this.label7 = new System.Windows.Forms.Label();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label_longitudData = new System.Windows.Forms.Label();
+            this.label_latitudData = new System.Windows.Forms.Label();
+            this.label_lugarData = new System.Windows.Forms.Label();
+            this.label_IDData = new System.Windows.Forms.Label();
+            this.label_razonDesc = new System.Windows.Forms.Label();
+            this.label_razon = new System.Windows.Forms.Label();
+            this.label_longitud = new System.Windows.Forms.Label();
+            this.label_latitud = new System.Windows.Forms.Label();
+            this.label_lugar = new System.Windows.Forms.Label();
+            this.label_ID = new System.Windows.Forms.Label();
+            this.labelClienteIncidencia = new System.Windows.Forms.Label();
+            this.picture_incidencia = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_incidencia)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -349,7 +392,7 @@ namespace Pantalla_Cliente
             this.panel2.Controls.Add(this.botonVerDatosIncidencia);
             this.panel2.Controls.Add(this.radioButton1);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(339, 212);
+            this.panel2.Location = new System.Drawing.Point(346, 161);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(612, 67);
@@ -425,12 +468,400 @@ namespace Pantalla_Cliente
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.InitialImage")));
+            this.pictureBox5.Location = new System.Drawing.Point(1036, 234);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(40, 38);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 33;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label_longitudData
+            // 
+            this.label_longitudData.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_longitudData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_longitudData.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_longitudData.Location = new System.Drawing.Point(1137, 426);
+            this.label_longitudData.Name = "label_longitudData";
+            this.label_longitudData.Size = new System.Drawing.Size(100, 23);
+            this.label_longitudData.TabIndex = 32;
+            this.label_longitudData.Text = "-0.231213141412";
+            // 
+            // label_latitudData
+            // 
+            this.label_latitudData.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_latitudData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_latitudData.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_latitudData.Location = new System.Drawing.Point(1124, 390);
+            this.label_latitudData.Name = "label_latitudData";
+            this.label_latitudData.Size = new System.Drawing.Size(100, 23);
+            this.label_latitudData.TabIndex = 31;
+            this.label_latitudData.Text = "30.77237113";
+            // 
+            // label_lugarData
+            // 
+            this.label_lugarData.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_lugarData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_lugarData.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_lugarData.Location = new System.Drawing.Point(1114, 354);
+            this.label_lugarData.Name = "label_lugarData";
+            this.label_lugarData.Size = new System.Drawing.Size(100, 23);
+            this.label_lugarData.TabIndex = 30;
+            this.label_lugarData.Text = "Calle X";
+            // 
+            // label_IDData
+            // 
+            this.label_IDData.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_IDData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_IDData.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_IDData.Location = new System.Drawing.Point(1073, 312);
+            this.label_IDData.Name = "label_IDData";
+            this.label_IDData.Size = new System.Drawing.Size(100, 23);
+            this.label_IDData.TabIndex = 29;
+            this.label_IDData.Text = "1";
+            this.label_IDData.Click += new System.EventHandler(this.label_IDData_Click);
+            // 
+            // label_razonDesc
+            // 
+            this.label_razonDesc.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_razonDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_razonDesc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_razonDesc.Location = new System.Drawing.Point(1031, 515);
+            this.label_razonDesc.Name = "label_razonDesc";
+            this.label_razonDesc.Size = new System.Drawing.Size(215, 147);
+            this.label_razonDesc.TabIndex = 28;
+            this.label_razonDesc.Text = "Obras en plena calle";
+            // 
+            // label_razon
+            // 
+            this.label_razon.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_razon.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_razon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_razon.Location = new System.Drawing.Point(1031, 468);
+            this.label_razon.Name = "label_razon";
+            this.label_razon.Size = new System.Drawing.Size(115, 28);
+            this.label_razon.TabIndex = 27;
+            this.label_razon.Text = "Razón:";
+            // 
+            // label_longitud
+            // 
+            this.label_longitud.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_longitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_longitud.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_longitud.Location = new System.Drawing.Point(1031, 426);
+            this.label_longitud.Name = "label_longitud";
+            this.label_longitud.Size = new System.Drawing.Size(115, 28);
+            this.label_longitud.TabIndex = 26;
+            this.label_longitud.Text = "Longitud:";
+            // 
+            // label_latitud
+            // 
+            this.label_latitud.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_latitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_latitud.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_latitud.Location = new System.Drawing.Point(1031, 390);
+            this.label_latitud.Name = "label_latitud";
+            this.label_latitud.Size = new System.Drawing.Size(100, 23);
+            this.label_latitud.TabIndex = 25;
+            this.label_latitud.Text = "Latitud:";
+            // 
+            // label_lugar
+            // 
+            this.label_lugar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_lugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_lugar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_lugar.Location = new System.Drawing.Point(1031, 351);
+            this.label_lugar.Name = "label_lugar";
+            this.label_lugar.Size = new System.Drawing.Size(100, 29);
+            this.label_lugar.TabIndex = 24;
+            this.label_lugar.Text = "Lugar:";
+            // 
+            // label_ID
+            // 
+            this.label_ID.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ID.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_ID.Location = new System.Drawing.Point(1031, 312);
+            this.label_ID.Name = "label_ID";
+            this.label_ID.Size = new System.Drawing.Size(100, 23);
+            this.label_ID.TabIndex = 23;
+            this.label_ID.Text = "ID:";
+            // 
+            // labelClienteIncidencia
+            // 
+            this.labelClienteIncidencia.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelClienteIncidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClienteIncidencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelClienteIncidencia.Location = new System.Drawing.Point(1027, 227);
+            this.labelClienteIncidencia.Name = "labelClienteIncidencia";
+            this.labelClienteIncidencia.Size = new System.Drawing.Size(219, 54);
+            this.labelClienteIncidencia.TabIndex = 19;
+            this.labelClienteIncidencia.Text = "Cliente X";
+            this.labelClienteIncidencia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // picture_incidencia
+            // 
+            this.picture_incidencia.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.picture_incidencia.Image = ((System.Drawing.Image)(resources.GetObject("picture_incidencia.Image")));
+            this.picture_incidencia.Location = new System.Drawing.Point(1054, 105);
+            this.picture_incidencia.Name = "picture_incidencia";
+            this.picture_incidencia.Size = new System.Drawing.Size(160, 100);
+            this.picture_incidencia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture_incidencia.TabIndex = 18;
+            this.picture_incidencia.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel3.Controls.Add(this.pictureBox6);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.radioButton2);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Location = new System.Drawing.Point(346, 259);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(612, 67);
+            this.panel3.TabIndex = 17;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox6.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox6.Location = new System.Drawing.Point(24, 15);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 11;
+            this.pictureBox6.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(519, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "View";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(491, 28);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(14, 13);
+            this.radioButton2.TabIndex = 2;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(88, 28);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Incidencia";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel4.Controls.Add(this.pictureBox7);
+            this.panel4.Controls.Add(this.button7);
+            this.panel4.Controls.Add(this.radioButton3);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Location = new System.Drawing.Point(346, 356);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(612, 67);
+            this.panel4.TabIndex = 17;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox7.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox7.Location = new System.Drawing.Point(24, 15);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 11;
+            this.pictureBox7.TabStop = false;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(519, 23);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "View";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(491, 28);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(14, 13);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(88, 28);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Incidencia";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel5.Controls.Add(this.pictureBox8);
+            this.panel5.Controls.Add(this.button8);
+            this.panel5.Controls.Add(this.radioButton4);
+            this.panel5.Controls.Add(this.label10);
+            this.panel5.Location = new System.Drawing.Point(346, 451);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(612, 67);
+            this.panel5.TabIndex = 17;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox8.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox8.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox8.Location = new System.Drawing.Point(24, 15);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 11;
+            this.pictureBox8.TabStop = false;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(519, 23);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "View";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(491, 28);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(14, 13);
+            this.radioButton4.TabIndex = 2;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(88, 28);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Incidencia";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel6.Controls.Add(this.pictureBox9);
+            this.panel6.Controls.Add(this.button9);
+            this.panel6.Controls.Add(this.radioButton5);
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Location = new System.Drawing.Point(346, 544);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(612, 67);
+            this.panel6.TabIndex = 18;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox9.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox9.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox9.Location = new System.Drawing.Point(24, 15);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 11;
+            this.pictureBox9.TabStop = false;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(519, 23);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 3;
+            this.button9.Text = "View";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(491, 28);
+            this.radioButton5.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(14, 13);
+            this.radioButton5.TabIndex = 2;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(88, 28);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Incidencia";
+            // 
             // Incidencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.label_longitudData);
+            this.Controls.Add(this.label_latitudData);
+            this.Controls.Add(this.label_lugarData);
+            this.Controls.Add(this.label_IDData);
+            this.Controls.Add(this.label_razonDesc);
+            this.Controls.Add(this.label_razon);
+            this.Controls.Add(this.label_longitud);
+            this.Controls.Add(this.label_latitud);
+            this.Controls.Add(this.label_lugar);
+            this.Controls.Add(this.label_ID);
+            this.Controls.Add(this.labelClienteIncidencia);
+            this.Controls.Add(this.picture_incidencia);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.pictureBox3);
@@ -454,6 +885,20 @@ namespace Pantalla_Cliente
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_incidencia)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,5 +933,38 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Button botonVerDatosIncidencia;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label_longitudData;
+        private System.Windows.Forms.Label label_latitudData;
+        private System.Windows.Forms.Label label_lugarData;
+        private System.Windows.Forms.Label label_IDData;
+        private System.Windows.Forms.Label label_razonDesc;
+        private System.Windows.Forms.Label label_razon;
+        private System.Windows.Forms.Label label_longitud;
+        private System.Windows.Forms.Label label_latitud;
+        private System.Windows.Forms.Label label_lugar;
+        private System.Windows.Forms.Label label_ID;
+        private System.Windows.Forms.Label labelClienteIncidencia;
+        private System.Windows.Forms.PictureBox picture_incidencia;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.Label label11;
     }
 }

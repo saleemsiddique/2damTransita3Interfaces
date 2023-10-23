@@ -204,5 +204,10 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        private void label_IDData_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
