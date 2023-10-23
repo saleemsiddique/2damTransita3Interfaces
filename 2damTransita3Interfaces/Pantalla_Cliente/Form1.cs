@@ -16,6 +16,10 @@ namespace Pantalla_Cliente
         public PantallaCliente()
         {
             InitializeComponent();
+            this.Text = "Mi Aplicación Personalizada";
+            this.BackColor = Color.Gray;
+            this.ForeColor = Color.Black;
+            this.Font = new Font("Arial", 12);
         }
        
 
