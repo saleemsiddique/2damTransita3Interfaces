@@ -98,5 +98,17 @@
   <ItemGroup>
     <None Include="Resources\icons8-menú-2-30.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tres-puntos-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estrellaNegra-fotor-bg-remover-2023102118503.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estrellaAmarilla-fotor-bg-remover-20231021185036.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suma.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
