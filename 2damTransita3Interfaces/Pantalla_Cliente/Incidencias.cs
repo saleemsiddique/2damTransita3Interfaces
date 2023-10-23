@@ -16,6 +16,7 @@ namespace Pantalla_Cliente
     public partial class Incidencias : Form
     {
         private List<Incidencia> listaIncidencias = new List<Incidencia>();
+        private List<Punto> listaPuntos = new List<Punto>();
         public Incidencias()
         {
             InitializeComponent();
@@ -25,12 +26,9 @@ namespace Pantalla_Cliente
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
 
-
-
             btn_filtrar.FlatStyle = FlatStyle.Flat;
             btn_filtrar.FlatAppearance.BorderSize = 0;
         
-
             //this.MinimizeBox = false;
             this.MaximizeBox = false;
             //this.ControlBox = false;
