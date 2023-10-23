@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Pantalla_Cliente
 {
@@ -107,8 +108,8 @@ namespace Pantalla_Cliente
 
         private void buttonAddCliente_Paint(object sender, PaintEventArgs e)
         {
-            
-            Button btn1 = (Button)sender;
+
+            System.Windows.Forms.Button btn1 = (System.Windows.Forms.Button)sender;
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             gp.AddEllipse(2, 2, btn1.Width-5, btn1.Height-5);
             btn1.Region = new Region(gp);
@@ -131,7 +132,33 @@ namespace Pantalla_Cliente
             buttonAddCliente.ForeColor = Color.White;
         }
 
-        
+        //PlaceHolder del botton de buscar cliente
+        private void buscarTextBox_Enter(object sender, EventArgs e)
+        {
+            if (buscarTextBox.Text == "Buscar")
+            {
+                buscarTextBox.Text = "";
+            }
+        }
+
+        private void buscarTextBox_Leave(object sender, EventArgs e)
+        {
+            if (buscarTextBox.Text == "")
+            {
+                buscarTextBox.Text = "Buscar";
+            }
+        }
+
+        //Boton para cerrar la aplicación
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        //Minimizar la pantalla
+        private void buttonMinimizarr_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 
     /*Codigo para refrescar la unica pantalla usa
