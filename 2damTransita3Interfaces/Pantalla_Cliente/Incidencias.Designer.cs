@@ -90,6 +90,8 @@ namespace Pantalla_Cliente
             this.button9 = new System.Windows.Forms.Button();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
+            this.buttonMinimizarr = new System.Windows.Forms.Button();
+            this.buttonSalir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -839,12 +841,42 @@ namespace Pantalla_Cliente
             this.label11.TabIndex = 1;
             this.label11.Text = "Incidencia";
             // 
+            // buttonMinimizarr
+            // 
+            this.buttonMinimizarr.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonMinimizarr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimizarr.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMinimizarr.ForeColor = System.Drawing.Color.White;
+            this.buttonMinimizarr.Location = new System.Drawing.Point(1172, 23);
+            this.buttonMinimizarr.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMinimizarr.Name = "buttonMinimizarr";
+            this.buttonMinimizarr.Size = new System.Drawing.Size(34, 37);
+            this.buttonMinimizarr.TabIndex = 35;
+            this.buttonMinimizarr.Text = "--";
+            this.buttonMinimizarr.UseVisualStyleBackColor = false;
+            // 
+            // buttonSalir
+            // 
+            this.buttonSalir.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalir.ForeColor = System.Drawing.Color.White;
+            this.buttonSalir.Location = new System.Drawing.Point(1212, 23);
+            this.buttonSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSalir.Name = "buttonSalir";
+            this.buttonSalir.Size = new System.Drawing.Size(34, 37);
+            this.buttonSalir.TabIndex = 34;
+            this.buttonSalir.Text = "X";
+            this.buttonSalir.UseVisualStyleBackColor = false;
+            // 
             // Incidencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.buttonMinimizarr);
+            this.Controls.Add(this.buttonSalir);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -966,5 +998,7 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button buttonMinimizarr;
+        private System.Windows.Forms.Button buttonSalir;
     }
 }
