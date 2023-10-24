@@ -178,6 +178,11 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     /*Codigo para refrescar la unica pantalla usa
