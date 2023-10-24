@@ -66,6 +66,8 @@ namespace Pantalla_Cliente
 
                 clienteBanner.getViewBtn().Click += (sender, e) =>
                 {
+                    nombre.Text = cliente.nombre + " " + cliente.apellidos;
+                    correo.Text = cliente.nombreUsuario;
                     id_mostrar.Text = cliente.id + "";
                     nombre_mostrar.Text = cliente.nombre;
                     apellidos_mostrar.Text = cliente.apellidos;
