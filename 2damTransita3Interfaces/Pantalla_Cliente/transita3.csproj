@@ -65,6 +65,7 @@
     <Compile Include="FormNuevoCliente.Designer.cs">
       <DependentUpon>FormNuevoCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="HttpCliente.cs" />
     <Compile Include="Incidencia.cs" />
     <Compile Include="Incidencias.cs">
       <SubType>Form</SubType>
@@ -130,6 +131,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\suma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\menu %281%29.png" />
+    <None Include="Resources\menu %281%291.png" />
+    <Content Include="Resources\menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -161,7 +161,23 @@ namespace Pantalla_Cliente
             this.WindowState = FormWindowState.Minimized;
         }
 
-        
+        private void PantallaCliente_Load(object sender, EventArgs e)
+        {
+            String url = "http://localhost:8083/cliente";
+            ApiClient.GetRequestAsync("GET", url);
+
+
+        }
+
+        private void fondoGrisMid_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
     /*Codigo para refrescar la unica pantalla usa

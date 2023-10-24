@@ -30,7 +30,6 @@ namespace Pantalla_Cliente
         
 
             //this.MinimizeBox = false;
-            this.MaximizeBox = false;
             //this.ControlBox = false;
             buscarTextBox.LostFocus += new EventHandler(buscarTextBox_LostFocus);
             this.Click += new EventHandler(incidencias_Click);
@@ -201,6 +200,41 @@ namespace Pantalla_Cliente
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
         {
 
         }

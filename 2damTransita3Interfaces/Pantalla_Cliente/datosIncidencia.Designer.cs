@@ -34,7 +34,6 @@
             this.label_datosInciencia = new System.Windows.Forms.Label();
             this.btn_AceptarIncidencia = new System.Windows.Forms.Button();
             this.btn_reportarIncidencia = new System.Windows.Forms.Button();
-            this.btn_cerrarDatosIncidencia = new System.Windows.Forms.Button();
             this.label_ID = new System.Windows.Forms.Label();
             this.label_lugar = new System.Windows.Forms.Label();
             this.label_latitud = new System.Windows.Forms.Label();
@@ -106,19 +105,6 @@
             this.btn_reportarIncidencia.Text = "Reportar";
             this.btn_reportarIncidencia.UseVisualStyleBackColor = true;
             this.btn_reportarIncidencia.Click += new System.EventHandler(this.btn_reportarIncidencia_Click);
-            // 
-            // btn_cerrarDatosIncidencia
-            // 
-            this.btn_cerrarDatosIncidencia.Enabled = false;
-            this.btn_cerrarDatosIncidencia.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_cerrarDatosIncidencia.Location = new System.Drawing.Point(502, 12);
-            this.btn_cerrarDatosIncidencia.Name = "btn_cerrarDatosIncidencia";
-            this.btn_cerrarDatosIncidencia.Size = new System.Drawing.Size(30, 30);
-            this.btn_cerrarDatosIncidencia.TabIndex = 6;
-            this.btn_cerrarDatosIncidencia.Text = "X";
-            this.btn_cerrarDatosIncidencia.UseVisualStyleBackColor = true;
-            this.btn_cerrarDatosIncidencia.Visible = false;
-            this.btn_cerrarDatosIncidencia.Click += new System.EventHandler(this.btn_cerrarDatosIncidencia_Click);
             // 
             // label_ID
             // 
@@ -262,7 +248,6 @@
             this.Controls.Add(this.label_latitud);
             this.Controls.Add(this.label_lugar);
             this.Controls.Add(this.label_ID);
-            this.Controls.Add(this.btn_cerrarDatosIncidencia);
             this.Controls.Add(this.btn_reportarIncidencia);
             this.Controls.Add(this.btn_AceptarIncidencia);
             this.Controls.Add(this.labelClienteIncidencia);
@@ -288,7 +273,6 @@
         private System.Windows.Forms.Label label_datosInciencia;
         private System.Windows.Forms.Button btn_AceptarIncidencia;
         private System.Windows.Forms.Button btn_reportarIncidencia;
-        private System.Windows.Forms.Button btn_cerrarDatosIncidencia;
         private System.Windows.Forms.Label label_ID;
         private System.Windows.Forms.Label label_lugar;
         private System.Windows.Forms.Label label_latitud;
