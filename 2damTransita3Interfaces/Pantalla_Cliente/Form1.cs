@@ -117,7 +117,8 @@ namespace Pantalla_Cliente
 
         private void buttonAddCliente_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Agregar nuevo cliente");
+            FormNuevoCliente formNuevoCliente = new FormNuevoCliente();
+            formNuevoCliente.Show();
         }
 
         private void buttonAddCliente_MouseEnter(object sender, EventArgs e)
@@ -159,6 +160,8 @@ namespace Pantalla_Cliente
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        
     }
 
     /*Codigo para refrescar la unica pantalla usa

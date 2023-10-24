@@ -90,6 +90,7 @@ namespace Pantalla_Cliente
             this.buttonSalir = new System.Windows.Forms.Button();
             this.buttonMinimizarr = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -882,7 +883,7 @@ namespace Pantalla_Cliente
             // label15
             // 
             this.label15.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label15.Location = new System.Drawing.Point(1360, 81);
+            this.label15.Location = new System.Drawing.Point(1700, 114);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(368, 1);
@@ -894,7 +895,7 @@ namespace Pantalla_Cliente
             this.buttonSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalir.ForeColor = System.Drawing.Color.White;
-            this.buttonSalir.Location = new System.Drawing.Point(1602, 32);
+            this.buttonSalir.Location = new System.Drawing.Point(1602, 24);
             this.buttonSalir.Name = "buttonSalir";
             this.buttonSalir.Size = new System.Drawing.Size(46, 46);
             this.buttonSalir.TabIndex = 25;
@@ -908,7 +909,7 @@ namespace Pantalla_Cliente
             this.buttonMinimizarr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMinimizarr.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMinimizarr.ForeColor = System.Drawing.Color.White;
-            this.buttonMinimizarr.Location = new System.Drawing.Point(1550, 32);
+            this.buttonMinimizarr.Location = new System.Drawing.Point(1550, 24);
             this.buttonMinimizarr.Name = "buttonMinimizarr";
             this.buttonMinimizarr.Size = new System.Drawing.Size(46, 46);
             this.buttonMinimizarr.TabIndex = 26;
@@ -928,12 +929,22 @@ namespace Pantalla_Cliente
             this.label16.TabIndex = 27;
             this.label16.Text = "Añadir Cliente";
             // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Location = new System.Drawing.Point(1351, 77);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(630, 1);
+            this.label17.TabIndex = 28;
+            // 
             // PantallaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1685, 838);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.buttonMinimizarr);
             this.Controls.Add(this.buttonSalir);
@@ -1048,6 +1059,7 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Button buttonSalir;
         private System.Windows.Forms.Button buttonMinimizarr;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }
 
