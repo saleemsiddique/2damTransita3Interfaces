@@ -16,7 +16,7 @@ namespace Pantalla_Cliente
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PantallaCliente());
+            Application.Run(new Transita());
         }
     }
 }
