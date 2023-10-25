@@ -31,6 +31,8 @@ namespace Pantalla_Cliente
             return btnViewCliente;
         }
 
+
+
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 

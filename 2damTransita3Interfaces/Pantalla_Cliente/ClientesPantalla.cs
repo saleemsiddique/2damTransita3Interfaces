@@ -216,6 +216,16 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        private void modify_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     /*Codigo para refrescar la unica pantalla usa

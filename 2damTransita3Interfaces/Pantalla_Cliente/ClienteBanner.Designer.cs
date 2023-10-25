@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteBanner));
             this.panel2 = new System.Windows.Forms.Panel();
             this.idCliente = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
+            this.moreOption = new System.Windows.Forms.Button();
             this.favCliente = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnViewCliente = new System.Windows.Forms.Button();
@@ -47,7 +47,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel2.Controls.Add(this.idCliente);
-            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.moreOption);
             this.panel2.Controls.Add(this.favCliente);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.btnViewCliente);
@@ -58,7 +58,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 67);
             this.panel2.TabIndex = 11;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // idCliente
             // 
@@ -69,20 +68,19 @@
             this.idCliente.Size = new System.Drawing.Size(18, 13);
             this.idCliente.TabIndex = 19;
             this.idCliente.Text = "ID";
-            this.idCliente.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button8
+            // moreOption
             // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(401, 4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 57);
-            this.button8.TabIndex = 18;
-            this.button8.UseVisualStyleBackColor = false;
+            this.moreOption.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.moreOption.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.moreOption.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.moreOption.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.moreOption.Image = ((System.Drawing.Image)(resources.GetObject("moreOption.Image")));
+            this.moreOption.Location = new System.Drawing.Point(401, 4);
+            this.moreOption.Name = "moreOption";
+            this.moreOption.Size = new System.Drawing.Size(30, 57);
+            this.moreOption.TabIndex = 18;
+            this.moreOption.UseVisualStyleBackColor = false;
             // 
             // favCliente
             // 
@@ -163,7 +161,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button moreOption;
         private System.Windows.Forms.PictureBox favCliente;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnViewCliente;
