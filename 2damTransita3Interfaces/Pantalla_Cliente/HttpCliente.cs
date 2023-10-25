@@ -21,7 +21,7 @@ public class ApiClient
             case "GET":
                 return await httpClient.GetStringAsync(url);
             case "POST":
-
+                //return await httpClient.PostAsync(url);
                 break;
             case "PUT":
 
