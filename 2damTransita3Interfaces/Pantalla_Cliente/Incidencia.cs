@@ -1,15 +1,25 @@
-﻿using System.Drawing;
-using System;
-namespace Pantalla_Cliente
-{
-    internal class Incidencia
-    {
-        private int id { get; set;}
-        private long duracion { get; set; }
-        private DateTime fechaHora { get; set; }
-        private string descripcion { get; set; }
-        private EstadoIncidencia estado { get; set; }
+﻿using System;
+using System.Text.Json.Serialization;
 
+internal class Incidencia
+{
+    public int id { get; set; }
+    public string descripcion { get; set; }
+
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public EstadoIncidencia estado { get; set; }
+    public long duracion { get; set; }
+    public DateTime fechaHora { get; set; }
+
+    public override string ToString()
+    {
+        return $"ID: {id}, Descripción: {descripcion}, Estado: {estado}";
     }
-   
+}
+
+internal enum EstadoIncidencia
+{
+    Abierta,
+    Revision,
+    Cerrada
 }

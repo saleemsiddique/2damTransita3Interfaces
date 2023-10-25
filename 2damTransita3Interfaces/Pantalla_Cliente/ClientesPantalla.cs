@@ -22,7 +22,7 @@ namespace Pantalla_Cliente
         public Cliente_Pantalla()
         {
             InitializeComponent();
-            prueba();
+            getClientes();
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12); 
@@ -38,11 +38,11 @@ namespace Pantalla_Cliente
             return panel_derecha;
         }
 
-        public async void prueba()
+        public async void getClientes()
         {
             Console.WriteLine("metodo ha sido activado");
             String url = "http://localhost:8083/cliente";
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEzQGdtYWlsLmNvbSIsImlhdCI6MTY5ODE3NDY5OSwiZXhwIjoxNjk4MjYxMDk5fQ.UjiCQFDR97UuD0d4kO4NAQ7JPSDty_r7_VB1oVacw5L718RNqg81Ngb0mtKaGssOXfsuJfThB30qrwCO_99fgA"; // Reemplaza con el token adecuado, crea uno nuevo
+            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbWFpbDNAZ21haWwuY29tIiwiaWF0IjoxNjk4MjE4MzU2LCJleHAiOjE2OTgzMDQ3NTZ9.L-mkdaecvLxf5I-TDNhPx9kTVN90vZW77q1snwro_xFfh4ZTftrWKvErkwrG-CgHMCK9U3X3YrfUuy5y2GqLTQ"; // Reemplaza con el token adecuado, crea uno nuevo
             string response = await ApiClient.GetRequestAsync("GET", url, token);
 
             Console.WriteLine(response);

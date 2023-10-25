@@ -58,6 +58,7 @@
             this.panel1_central.Name = "panel1_central";
             this.panel1_central.Size = new System.Drawing.Size(557, 681);
             this.panel1_central.TabIndex = 35;
+            this.panel1_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_central_Paint);
             // 
             // panel1
             // 
@@ -282,8 +283,8 @@
             this.MaximumSize = new System.Drawing.Size(1080, 720);
             this.MinimumSize = new System.Drawing.Size(960, 450);
             this.Name = "Transita";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);

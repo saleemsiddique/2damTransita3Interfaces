@@ -113,5 +113,10 @@ namespace Pantalla_Cliente
         {
             MostrarPanelDeCliente();
         }
+
+        private void panel1_central_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

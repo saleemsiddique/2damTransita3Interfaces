@@ -138,6 +138,12 @@
     <Compile Include="ClienteBanner.Designer.cs">
       <DependentUpon>ClienteBanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="IncidenciaBanner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IncidenciaBanner.Designer.cs">
+      <DependentUpon>IncidenciaBanner.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="datosIncidencia.resx">
       <DependentUpon>datosIncidencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +172,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="IncidenciaBanner.resx">
+      <DependentUpon>IncidenciaBanner.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

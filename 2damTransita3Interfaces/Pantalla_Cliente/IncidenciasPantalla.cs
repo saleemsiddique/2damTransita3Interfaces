@@ -11,6 +11,8 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Text.Json;
+
 namespace Pantalla_Cliente
 {
     public partial class Incidencias_Pantalla : Form
@@ -19,14 +21,15 @@ namespace Pantalla_Cliente
         public Incidencias_Pantalla()
         {
             InitializeComponent();
-
+            getIncidencias();
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
 
             btn_filtrar.FlatStyle = FlatStyle.Flat;
             btn_filtrar.FlatAppearance.BorderSize = 0;
-        
+
+            
 
             buscarTextBox.LostFocus += new EventHandler(buscarTextBox_LostFocus);
             this.Click += new EventHandler(incidencias_Click);
@@ -49,6 +52,56 @@ namespace Pantalla_Cliente
             int buttonWidth = 30;
             int buttonMargin = 10;
         }
+        public async void getIncidencias()
+        {
+            Console.WriteLine("metodo ha sido activado");
+            String url = "http://localhost:8083/incidencias";
+            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbWFpbDNAZ21haWwuY29tIiwiaWF0IjoxNjk4MjIyMzc5LCJleHAiOjE2OTgzMDg3Nzl9.arzZ6D8NAwWoo1rbCYf0q1E63XAJHIvBCUeS_2O6868P7LBGEF7-TUbFXR8jWs1MANYH-zESLQZ9JzJcMEoShA"; // Reemplaza con el token adecuado, crea uno nuevo
+            string response = await ApiClient.GetRequestAsync("GET", url, token);
+
+            Console.WriteLine(response);
+
+            CrearPanelesIncidencias(response);
+        }
+
+        private void CrearPanelesIncidencias(String jsonIncidencias)
+        {
+            List<Incidencia> listaIncidencias = JsonSerializer.Deserialize<List<Incidencia>>(jsonIncidencias);
+            foreach (Incidencia incidencia in listaIncidencias)
+            { Console.WriteLine(incidencia.ToString()); }
+
+            int topPosition = 330; // Posición vertical inicial
+
+            foreach (Incidencia incidencia in listaIncidencias)
+            {
+                IncidenciaBanner incidenciaBanner = new IncidenciaBanner();
+
+                incidenciaBanner.getId().Text = incidencia.id.ToString();
+                incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
+
+                incidenciaBanner.getViewBtn().Click += (sender, e) =>
+                {
+                    correo.Text = $"ID: {incidencia.id}";
+                    nombre.Text = incidencia.descripcion;
+                    id_mostrar.Text = incidencia.id.ToString();
+                    descripcion_mostrar.Text = incidencia.descripcion;
+                    fecha_mostrar.Text = incidencia.fechaHora.ToString("yyyy-MM-dd");
+                    estado_mostrar.Text = incidencia.estado.ToString();
+                };
+
+                // Configura la ubicación y otros detalles según sea necesario
+                incidenciaBanner.Location = new Point(51, topPosition); // Personaliza la ubicación
+                topPosition += incidenciaBanner.Height + 30; // Ajusta el espaciado vertical según sea necesario
+                incidenciaBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
+                incidenciaBanner.Show();
+                // Agrega el control al formulario principal
+                panel4.Controls.Add(incidenciaBanner);
+            }
+        }
+
+
+
+        
 
         public Panel ObtenerPanelCentralIncidencia()
         {

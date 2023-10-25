@@ -173,6 +173,7 @@ namespace Pantalla_Cliente
             // 
             // email_mostrar
             // 
+            this.email_mostrar.Enabled = false;
             this.email_mostrar.Location = new System.Drawing.Point(9, 180);
             this.email_mostrar.Name = "email_mostrar";
             this.email_mostrar.Size = new System.Drawing.Size(100, 20);
@@ -180,6 +181,7 @@ namespace Pantalla_Cliente
             // 
             // apellidos_mostrar
             // 
+            this.apellidos_mostrar.Enabled = false;
             this.apellidos_mostrar.Location = new System.Drawing.Point(9, 124);
             this.apellidos_mostrar.Name = "apellidos_mostrar";
             this.apellidos_mostrar.Size = new System.Drawing.Size(100, 20);
@@ -187,6 +189,7 @@ namespace Pantalla_Cliente
             // 
             // nombre_mostrar
             // 
+            this.nombre_mostrar.Enabled = false;
             this.nombre_mostrar.Location = new System.Drawing.Point(9, 68);
             this.nombre_mostrar.Name = "nombre_mostrar";
             this.nombre_mostrar.Size = new System.Drawing.Size(100, 20);
@@ -194,6 +197,7 @@ namespace Pantalla_Cliente
             // 
             // id_mostrar
             // 
+            this.id_mostrar.Enabled = false;
             this.id_mostrar.Location = new System.Drawing.Point(9, 19);
             this.id_mostrar.Name = "id_mostrar";
             this.id_mostrar.Size = new System.Drawing.Size(100, 20);

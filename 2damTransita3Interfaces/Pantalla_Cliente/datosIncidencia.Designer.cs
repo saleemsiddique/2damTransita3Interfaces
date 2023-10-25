@@ -260,6 +260,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Incidencia";
             this.TransparencyKey = System.Drawing.SystemColors.ControlDarkDark;
+            this.Load += new System.EventHandler(this.datosIncidencia_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.picture_incidencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

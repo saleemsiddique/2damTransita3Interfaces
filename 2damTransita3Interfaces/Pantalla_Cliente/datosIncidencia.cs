@@ -24,8 +24,7 @@ namespace Pantalla_Cliente
             btn_cerrarDatosIncidencia.FlatAppearance.BorderSize = 0;
             btn_cerrarDatosIncidencia.TabStop = false;
             btn_cerrarDatosIncidencia.FlatAppearance.MouseOverBackColor = Color.Transparent;*/
-            
-
+          
         }
         private void datosIncidencia_Load(object sender, EventArgs e)
         {
@@ -96,6 +95,11 @@ namespace Pantalla_Cliente
         }
 
         private void label_datosInciencia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void datosIncidencia_Load_1(object sender, EventArgs e)
         {
 
         }

@@ -35,14 +35,13 @@ namespace Pantalla_Cliente
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.estado_mostrar = new System.Windows.Forms.TextBox();
             this.descripcion_mostrar = new System.Windows.Forms.TextBox();
-            this.nombre_mostrar = new System.Windows.Forms.TextBox();
             this.id_mostrar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.correo = new System.Windows.Forms.Label();
+            this.nombre = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -53,34 +52,35 @@ namespace Pantalla_Cliente
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.imgTransita = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.botonVerDatosIncidencia = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.imgTransita = new System.Windows.Forms.Label();
+            this.fecha_mostrar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -98,13 +98,13 @@ namespace Pantalla_Cliente
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.fecha_mostrar);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.estado_mostrar);
             this.groupBox1.Controls.Add(this.descripcion_mostrar);
-            this.groupBox1.Controls.Add(this.nombre_mostrar);
             this.groupBox1.Controls.Add(this.id_mostrar);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(29, 309);
@@ -117,6 +117,7 @@ namespace Pantalla_Cliente
             // 
             // estado_mostrar
             // 
+            this.estado_mostrar.Enabled = false;
             this.estado_mostrar.Location = new System.Drawing.Point(9, 180);
             this.estado_mostrar.Name = "estado_mostrar";
             this.estado_mostrar.Size = new System.Drawing.Size(100, 20);
@@ -124,20 +125,15 @@ namespace Pantalla_Cliente
             // 
             // descripcion_mostrar
             // 
-            this.descripcion_mostrar.Location = new System.Drawing.Point(9, 124);
+            this.descripcion_mostrar.Enabled = false;
+            this.descripcion_mostrar.Location = new System.Drawing.Point(9, 68);
             this.descripcion_mostrar.Name = "descripcion_mostrar";
             this.descripcion_mostrar.Size = new System.Drawing.Size(100, 20);
             this.descripcion_mostrar.TabIndex = 5;
             // 
-            // nombre_mostrar
-            // 
-            this.nombre_mostrar.Location = new System.Drawing.Point(9, 68);
-            this.nombre_mostrar.Name = "nombre_mostrar";
-            this.nombre_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.nombre_mostrar.TabIndex = 4;
-            // 
             // id_mostrar
             // 
+            this.id_mostrar.Enabled = false;
             this.id_mostrar.Location = new System.Drawing.Point(9, 19);
             this.id_mostrar.Name = "id_mostrar";
             this.id_mostrar.Size = new System.Drawing.Size(100, 20);
@@ -157,64 +153,68 @@ namespace Pantalla_Cliente
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(6, 108);
+            this.label13.Location = new System.Drawing.Point(6, 52);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(133, 13);
             this.label13.TabIndex = 1;
             this.label13.Text = "Descripcion de Incidencia:";
             // 
-            // label12
+            // correo
             // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(6, 52);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(113, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Nombre de incidencia:";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.correo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.correo.AutoSize = true;
+            this.correo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.correo.ForeColor = System.Drawing.Color.DarkGray;
+            this.correo.Location = new System.Drawing.Point(92, 267);
+            this.correo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.correo.Name = "correo";
+            this.correo.Size = new System.Drawing.Size(50, 13);
+            this.correo.TabIndex = 25;
+            this.correo.Text = "@Cliente";
+            this.correo.Click += new System.EventHandler(this.label11_Click);
             // 
-            // label11
+            // nombre
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.ForeColor = System.Drawing.Color.DarkGray;
-            this.label11.Location = new System.Drawing.Point(92, 267);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 13);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "@Cliente";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(58, 232);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(123, 20);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Nom_Incidencia";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.nombre.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.nombre.AutoSize = true;
+            this.nombre.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.ForeColor = System.Drawing.Color.White;
+            this.nombre.Location = new System.Drawing.Point(58, 232);
+            this.nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(123, 20);
+            this.nombre.TabIndex = 23;
+            this.nombre.Text = "Nom_Incidencia";
+            this.nombre.Click += new System.EventHandler(this.label10_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel3.Controls.Add(this.pictureBox12);
             this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.nombre);
+            this.panel3.Controls.Add(this.correo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(833, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(231, 681);
             this.panel3.TabIndex = 27;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox12.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox12.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox12.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox12.Location = new System.Drawing.Point(51, 104);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(130, 112);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 24;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
             // btn_cliente
             // 
@@ -383,6 +383,42 @@ namespace Pantalla_Cliente
             this.panel5.Size = new System.Drawing.Size(274, 85);
             this.panel5.TabIndex = 14;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(27, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(213, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // imgTransita
+            // 
+            this.imgTransita.Image = ((System.Drawing.Image)(resources.GetObject("imgTransita.Image")));
+            this.imgTransita.Location = new System.Drawing.Point(30, 308);
+            this.imgTransita.Name = "imgTransita";
+            this.imgTransita.Size = new System.Drawing.Size(223, 184);
+            this.imgTransita.TabIndex = 5;
+            this.imgTransita.Click += new System.EventHandler(this.imgTransita_Click);
+            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -447,6 +483,33 @@ namespace Pantalla_Cliente
             this.panel2.TabIndex = 16;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // button8
+            // 
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.Location = new System.Drawing.Point(415, 10);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(30, 49);
+            this.button8.TabIndex = 13;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox4.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox4.Location = new System.Drawing.Point(24, 15);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
             // botonVerDatosIncidencia
             // 
             this.botonVerDatosIncidencia.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -510,48 +573,6 @@ namespace Pantalla_Cliente
             this.button1.TabIndex = 17;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button8
-            // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(415, 10);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 49);
-            this.button8.TabIndex = 13;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox4.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox4.Location = new System.Drawing.Point(24, 15);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox12.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox12.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox12.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox12.Location = new System.Drawing.Point(51, 104);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(130, 112);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 24;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
-            // 
             // btn_filtrar
             // 
             this.btn_filtrar.AutoSize = true;
@@ -577,41 +598,23 @@ namespace Pantalla_Cliente
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // pictureBox1
+            // fecha_mostrar
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.fecha_mostrar.Enabled = false;
+            this.fecha_mostrar.Location = new System.Drawing.Point(9, 126);
+            this.fecha_mostrar.Name = "fecha_mostrar";
+            this.fecha_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.fecha_mostrar.TabIndex = 8;
             // 
-            // pictureBox2
+            // label1
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(213, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
-            // imgTransita
-            // 
-            this.imgTransita.Image = ((System.Drawing.Image)(resources.GetObject("imgTransita.Image")));
-            this.imgTransita.Location = new System.Drawing.Point(30, 308);
-            this.imgTransita.Name = "imgTransita";
-            this.imgTransita.Size = new System.Drawing.Size(223, 184);
-            this.imgTransita.TabIndex = 5;
-            this.imgTransita.Click += new System.EventHandler(this.imgTransita_Click);
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(6, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Fecha de Incidencia:";
             // 
             // Incidencias_Pantalla
             // 
@@ -637,18 +640,18 @@ namespace Pantalla_Cliente
             this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -662,13 +665,11 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label correo;
+        private System.Windows.Forms.Label nombre;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.TextBox estado_mostrar;
         private System.Windows.Forms.TextBox descripcion_mostrar;
-        private System.Windows.Forms.TextBox nombre_mostrar;
         private System.Windows.Forms.TextBox id_mostrar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_cliente;
@@ -695,5 +696,7 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox fecha_mostrar;
+        private System.Windows.Forms.Label label1;
     }
 }
