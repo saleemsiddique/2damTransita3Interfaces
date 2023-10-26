@@ -61,11 +61,11 @@ namespace Pantalla_Cliente
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.botonVerDatosIncidencia = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button8 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.botonVerDatosIncidencia = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -371,7 +371,7 @@ namespace Pantalla_Cliente
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -494,40 +494,18 @@ namespace Pantalla_Cliente
             this.panel2.Visible = false;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // label7
+            // button8
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(88, 28);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Incidencia";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(306, 28);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // botonVerDatosIncidencia
-            // 
-            this.botonVerDatosIncidencia.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.botonVerDatosIncidencia.Location = new System.Drawing.Point(334, 23);
-            this.botonVerDatosIncidencia.Name = "botonVerDatosIncidencia";
-            this.botonVerDatosIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.botonVerDatosIncidencia.TabIndex = 3;
-            this.botonVerDatosIncidencia.Text = "View";
-            this.botonVerDatosIncidencia.UseVisualStyleBackColor = true;
-            this.botonVerDatosIncidencia.Click += new System.EventHandler(this.botonVerDatosIncidencia_Click);
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.Location = new System.Drawing.Point(415, 10);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(30, 49);
+            this.button8.TabIndex = 13;
+            this.button8.UseVisualStyleBackColor = false;
             // 
             // pictureBox4
             // 
@@ -543,18 +521,40 @@ namespace Pantalla_Cliente
             this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
             // 
-            // button8
+            // botonVerDatosIncidencia
             // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(415, 10);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 49);
-            this.button8.TabIndex = 13;
-            this.button8.UseVisualStyleBackColor = false;
+            this.botonVerDatosIncidencia.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.botonVerDatosIncidencia.Location = new System.Drawing.Point(334, 23);
+            this.botonVerDatosIncidencia.Name = "botonVerDatosIncidencia";
+            this.botonVerDatosIncidencia.Size = new System.Drawing.Size(75, 23);
+            this.botonVerDatosIncidencia.TabIndex = 3;
+            this.botonVerDatosIncidencia.Text = "View";
+            this.botonVerDatosIncidencia.UseVisualStyleBackColor = true;
+            this.botonVerDatosIncidencia.Click += new System.EventHandler(this.botonVerDatosIncidencia_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(306, 28);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(88, 28);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Incidencia";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // button1
             // 
