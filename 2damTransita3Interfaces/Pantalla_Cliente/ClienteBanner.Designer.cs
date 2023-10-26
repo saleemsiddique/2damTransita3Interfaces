@@ -70,6 +70,7 @@
             this.idCliente.Size = new System.Drawing.Size(18, 13);
             this.idCliente.TabIndex = 19;
             this.idCliente.Text = "ID";
+            this.idCliente.Click += new System.EventHandler(this.idCliente_Click);
             // 
             // moreOption
             // 
@@ -83,6 +84,7 @@
             this.moreOption.Size = new System.Drawing.Size(30, 57);
             this.moreOption.TabIndex = 18;
             this.moreOption.UseVisualStyleBackColor = false;
+            this.moreOption.Click += new System.EventHandler(this.moreOption_Click);
             // 
             // favCliente
             // 
