@@ -30,9 +30,7 @@ namespace Pantalla_Cliente
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente_Pantalla));
-            this.buttonAddCliente = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel_derecha = new System.Windows.Forms.Panel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -66,10 +64,9 @@ namespace Pantalla_Cliente
             this.btn_zonas = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.panel_central = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.fondoGrisMid = new System.Windows.Forms.Label();
             this.panel_derecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -84,25 +81,6 @@ namespace Pantalla_Cliente
             this.panel_central.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonAddCliente
-            // 
-            this.buttonAddCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonAddCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonAddCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonAddCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAddCliente.Location = new System.Drawing.Point(163, 131);
-            this.buttonAddCliente.Name = "buttonAddCliente";
-            this.buttonAddCliente.Size = new System.Drawing.Size(30, 30);
-            this.buttonAddCliente.TabIndex = 17;
-            this.buttonAddCliente.Text = "+";
-            this.buttonAddCliente.UseVisualStyleBackColor = false;
-            this.buttonAddCliente.Click += new System.EventHandler(this.buttonAddCliente_Click_1);
-            this.buttonAddCliente.Paint += new System.Windows.Forms.PaintEventHandler(this.buttonAddCliente_Paint);
-            this.buttonAddCliente.MouseEnter += new System.EventHandler(this.buttonAddCliente_MouseEnter);
-            this.buttonAddCliente.MouseLeave += new System.EventHandler(this.buttonAddCliente_MouseLeave);
-            // 
             // label15
             // 
             this.label15.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -111,23 +89,9 @@ namespace Pantalla_Cliente
             this.label15.Size = new System.Drawing.Size(276, 1);
             this.label15.TabIndex = 24;
             // 
-            // label16
-            // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(62, 139);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(96, 17);
-            this.label16.TabIndex = 27;
-            this.label16.Text = "Añadir Cliente";
-            // 
             // panel_derecha
             // 
-            this.panel_derecha.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel_derecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.panel_derecha.Controls.Add(this.pictureBox12);
             this.panel_derecha.Controls.Add(this.groupBox2);
             this.panel_derecha.Controls.Add(this.nombre);
@@ -140,9 +104,8 @@ namespace Pantalla_Cliente
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox12.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.pictureBox12.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.pictureBox12.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.pictureBox12.Location = new System.Drawing.Point(51, 104);
@@ -154,7 +117,7 @@ namespace Pantalla_Cliente
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.email_mostrar);
             this.groupBox2.Controls.Add(this.apellidos_mostrar);
             this.groupBox2.Controls.Add(this.nombre_mostrar);
@@ -164,7 +127,7 @@ namespace Pantalla_Cliente
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(29, 336);
+            this.groupBox2.Location = new System.Drawing.Point(21, 358);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(177, 206);
             this.groupBox2.TabIndex = 26;
@@ -235,9 +198,9 @@ namespace Pantalla_Cliente
             // 
             // nombre
             // 
-            this.nombre.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nombre.AutoSize = true;
-            this.nombre.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre.ForeColor = System.Drawing.Color.White;
             this.nombre.Location = new System.Drawing.Point(66, 234);
@@ -249,11 +212,11 @@ namespace Pantalla_Cliente
             // 
             // correo
             // 
-            this.correo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.correo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.correo.AutoSize = true;
-            this.correo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.correo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.correo.ForeColor = System.Drawing.Color.DarkGray;
-            this.correo.Location = new System.Drawing.Point(67, 267);
+            this.correo.Location = new System.Drawing.Point(80, 267);
             this.correo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.correo.Name = "correo";
             this.correo.Size = new System.Drawing.Size(50, 13);
@@ -310,6 +273,7 @@ namespace Pantalla_Cliente
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 67);
             this.panel2.TabIndex = 10;
+            this.panel2.Visible = false;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button8
@@ -356,7 +320,7 @@ namespace Pantalla_Cliente
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.panel1.Controls.Add(this.btn_incidencias);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -554,14 +518,11 @@ namespace Pantalla_Cliente
             // 
             // panel_central
             // 
-            this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel_central.Controls.Add(this.buscarTextBox);
             this.panel_central.Controls.Add(this.button1);
             this.panel_central.Controls.Add(this.panel2);
-            this.panel_central.Controls.Add(this.buscarTextBox);
-            this.panel_central.Controls.Add(this.label16);
             this.panel_central.Controls.Add(this.label1);
-            this.panel_central.Controls.Add(this.buttonAddCliente);
-            this.panel_central.Controls.Add(this.label4);
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(276, 0);
             this.panel_central.Name = "panel_central";
@@ -569,9 +530,24 @@ namespace Pantalla_Cliente
             this.panel_central.TabIndex = 32;
             this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // buscarTextBox
+            // 
+            this.buscarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.buscarTextBox.Location = new System.Drawing.Point(349, 92);
+            this.buscarTextBox.Name = "buscarTextBox";
+            this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
+            this.buscarTextBox.TabIndex = 28;
+            this.buscarTextBox.Text = "Buscar";
+            this.buscarTextBox.Enter += new System.EventHandler(this.buscarTextBox_Click);
+            this.buscarTextBox.Leave += new System.EventHandler(this.buscarTextBox_Leave_1);
+            // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
@@ -582,25 +558,10 @@ namespace Pantalla_Cliente
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buscarTextBox
-            // 
-            this.buscarTextBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buscarTextBox.BackColor = System.Drawing.Color.DimGray;
-            this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(347, 94);
-            this.buscarTextBox.Name = "buscarTextBox";
-            this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.buscarTextBox.Size = new System.Drawing.Size(178, 13);
-            this.buscarTextBox.TabIndex = 20;
-            this.buscarTextBox.Text = "Buscar";
-            this.buscarTextBox.TextChanged += new System.EventHandler(this.buscarTextBox_TextChanged);
-            // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(20, 85);
@@ -609,26 +570,6 @@ namespace Pantalla_Cliente
             this.label1.TabIndex = 19;
             this.label1.Text = "Clientes Transita";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.BackColor = System.Drawing.Color.MidnightBlue;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(130, 12);
-            this.label4.Margin = new System.Windows.Forms.Padding(3);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(10);
-            this.label4.Size = new System.Drawing.Size(312, 29);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Monitoring Screen";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click_1);
             // 
             // fondoGrisMid
             // 
@@ -678,9 +619,7 @@ namespace Pantalla_Cliente
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonAddCliente;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel_derecha;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -716,9 +655,8 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Button btn_incidencias;
         private System.Windows.Forms.Button btn_zonas;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox buscarTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox buscarTextBox;
     }
 }
 

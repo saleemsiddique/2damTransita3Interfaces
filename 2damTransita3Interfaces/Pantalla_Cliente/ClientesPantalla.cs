@@ -42,7 +42,7 @@ namespace Pantalla_Cliente
         {
             Console.WriteLine("metodo ha sido activado");
             String url = "http://localhost:8083/cliente";
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbWFpbDNAZ21haWwuY29tIiwiaWF0IjoxNjk4MjE4MzU2LCJleHAiOjE2OTgzMDQ3NTZ9.L-mkdaecvLxf5I-TDNhPx9kTVN90vZW77q1snwro_xFfh4ZTftrWKvErkwrG-CgHMCK9U3X3YrfUuy5y2GqLTQ"; // Reemplaza con el token adecuado, crea uno nuevo
+            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbWFpbDNAZ21haWwuY29tIiwiaWF0IjoxNjk4MzEyNzEwLCJleHAiOjE2OTgzOTkxMTB9.EWaIki4xyXRgwg9EjRKsYcA1IbpMKVKaIXNmDAZD4ZaKMMJTPaCCXJg5eAWsfOCCMQCst3s_Fl1c9Z7Lfd452A"; // Reemplaza con el token adecuado, crea uno nuevo
             string response = await ApiClient.GetRequestAsync("GET", url, token);
 
             Console.WriteLine(response);
@@ -57,7 +57,7 @@ namespace Pantalla_Cliente
             foreach (Cliente cliente in listaClientes)
             { Console.WriteLine(cliente.ToString()); }
 
-            int topPosition = 330; // Posición vertical inicial
+            int topPosition = 203; // Posición vertical inicial
             foreach (Cliente cliente in listaClientes)
             {
                 ClienteBanner clienteBanner = new ClienteBanner(); // Crea una instancia del UserControl
@@ -121,18 +121,6 @@ namespace Pantalla_Cliente
         {
             FormNuevoCliente formNuevoCliente = new FormNuevoCliente();
             formNuevoCliente.Show();
-        }
-
-        private void buttonAddCliente_MouseEnter(object sender, EventArgs e)
-        {
-            buttonAddCliente.BackColor = Color.LightBlue; // Cambia el color de fondo cuando el cursor entra en el botón
-            buttonAddCliente.ForeColor = Color.White;
-        }
-
-        private void buttonAddCliente_MouseLeave(object sender, EventArgs e)
-        {
-            buttonAddCliente.BackColor = Color.FromArgb(64, 64, 64); // Restaura el color de fondo predeterminado cuando el cursor sale del botón
-            buttonAddCliente.ForeColor = Color.White;
         }
 
         //PlaceHolder del botton de buscar cliente
@@ -225,6 +213,20 @@ namespace Pantalla_Cliente
         private void delete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buscarTextBox_Leave_1(object sender, EventArgs e)
+        {
+            // Cuando el TextBox pierde el foco, restaura el texto
+            if (string.IsNullOrWhiteSpace(buscarTextBox.Text))
+            {
+                buscarTextBox.Text = "Buscar"; // Puedes cambiar este texto predeterminado
+            }
+        }
+
+        private void buscarTextBox_Click(object sender, EventArgs e)
+        {
+            buscarTextBox.Text = "";
         }
     }
 

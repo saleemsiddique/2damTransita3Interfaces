@@ -56,7 +56,7 @@ namespace Pantalla_Cliente
         {
             Console.WriteLine("metodo ha sido activado");
             String url = "http://localhost:8083/incidencias";
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbWFpbDNAZ21haWwuY29tIiwiaWF0IjoxNjk4MjIyMzc5LCJleHAiOjE2OTgzMDg3Nzl9.arzZ6D8NAwWoo1rbCYf0q1E63XAJHIvBCUeS_2O6868P7LBGEF7-TUbFXR8jWs1MANYH-zESLQZ9JzJcMEoShA"; // Reemplaza con el token adecuado, crea uno nuevo
+            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbWFpbDNAZ21haWwuY29tIiwiaWF0IjoxNjk4MzEyNzEwLCJleHAiOjE2OTgzOTkxMTB9.EWaIki4xyXRgwg9EjRKsYcA1IbpMKVKaIXNmDAZD4ZaKMMJTPaCCXJg5eAWsfOCCMQCst3s_Fl1c9Z7Lfd452A"; // Reemplaza con el token adecuado, crea uno nuevo
             string response = await ApiClient.GetRequestAsync("GET", url, token);
 
             Console.WriteLine(response);
@@ -70,7 +70,7 @@ namespace Pantalla_Cliente
             foreach (Incidencia incidencia in listaIncidencias)
             { Console.WriteLine(incidencia.ToString()); }
 
-            int topPosition = 330; // Posición vertical inicial
+            int topPosition = 203; // Posición vertical inicial
 
             foreach (Incidencia incidencia in listaIncidencias)
             {

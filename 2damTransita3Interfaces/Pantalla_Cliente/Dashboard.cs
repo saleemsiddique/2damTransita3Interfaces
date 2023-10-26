@@ -19,8 +19,6 @@ namespace Pantalla_Cliente
         public Transita()
         {
             InitializeComponent();
-            this.BackColor = Color.Gray;
-            this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
 
             MostrarPanelDeCliente();
@@ -30,7 +28,7 @@ namespace Pantalla_Cliente
             buttons = new Button[] { btn_cliente, btn_incidencias, btn_zonas, btn_puntos, btn_mapa };
 
             currentButton = buttons[0];
-            currentButton.Enabled = false;
+            currentButton.Enabled = true;
             currentButton.BackColor = Color.FromArgb(64, 64, 64);
         }
 
@@ -97,10 +95,13 @@ namespace Pantalla_Cliente
             if (clickedButton != currentButton)
             {
                 currentButton.Enabled = true;
-                currentButton.BackColor = SystemColors.ControlDarkDark;
+                currentButton.BackColor = Color.FromArgb(44, 45, 49);
+                currentButton.ForeColor = Color.White;
                 currentButton = clickedButton;
-                currentButton.Enabled = false;
-                currentButton.BackColor = Color.FromArgb(64, 64, 64);
+                currentButton.Enabled = true;
+                currentButton.BackColor = Color.FromArgb(31, 32, 37);
+                currentButton.ForeColor = Color.White;
+
             }
         }
 
@@ -115,6 +116,11 @@ namespace Pantalla_Cliente
         }
 
         private void panel1_central_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void imgTransita_Click(object sender, EventArgs e)
         {
 
         }

@@ -31,21 +31,22 @@ namespace Pantalla_Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncidenciaBanner));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.idIncidencia = new System.Windows.Forms.Label();
+            this.nombreIncidencia = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnViewIncidencia = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.idIncidencia = new System.Windows.Forms.Label();
-            this.nombreIncidencia = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.panel2.Controls.Add(this.idIncidencia);
             this.panel2.Controls.Add(this.nombreIncidencia);
             this.panel2.Controls.Add(this.button8);
@@ -59,23 +60,45 @@ namespace Pantalla_Cliente
             this.panel2.TabIndex = 17;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // idIncidencia
+            // 
+            this.idIncidencia.AutoSize = true;
+            this.idIncidencia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.idIncidencia.Location = new System.Drawing.Point(79, 10);
+            this.idIncidencia.Name = "idIncidencia";
+            this.idIncidencia.Size = new System.Drawing.Size(18, 13);
+            this.idIncidencia.TabIndex = 21;
+            this.idIncidencia.Text = "ID";
+            // 
+            // nombreIncidencia
+            // 
+            this.nombreIncidencia.AutoSize = true;
+            this.nombreIncidencia.ForeColor = System.Drawing.Color.White;
+            this.nombreIncidencia.Location = new System.Drawing.Point(79, 28);
+            this.nombreIncidencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nombreIncidencia.Name = "nombreIncidencia";
+            this.nombreIncidencia.Size = new System.Drawing.Size(84, 13);
+            this.nombreIncidencia.TabIndex = 20;
+            this.nombreIncidencia.Text = "Nom_Incidencia";
+            // 
             // button8
             // 
             this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.Location = new System.Drawing.Point(415, 10);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(30, 49);
             this.button8.TabIndex = 13;
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.pictureBox4.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
@@ -100,34 +123,14 @@ namespace Pantalla_Cliente
             // 
             this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(306, 28);
+            this.radioButton1.Location = new System.Drawing.Point(315, 28);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(14, 13);
             this.radioButton1.TabIndex = 2;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // idIncidencia
-            // 
-            this.idIncidencia.AutoSize = true;
-            this.idIncidencia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.idIncidencia.Location = new System.Drawing.Point(79, 10);
-            this.idIncidencia.Name = "idIncidencia";
-            this.idIncidencia.Size = new System.Drawing.Size(18, 13);
-            this.idIncidencia.TabIndex = 21;
-            this.idIncidencia.Text = "ID";
-            // 
-            // nombreIncidencia
-            // 
-            this.nombreIncidencia.AutoSize = true;
-            this.nombreIncidencia.ForeColor = System.Drawing.Color.White;
-            this.nombreIncidencia.Location = new System.Drawing.Point(79, 28);
-            this.nombreIncidencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.nombreIncidencia.Name = "nombreIncidencia";
-            this.nombreIncidencia.Size = new System.Drawing.Size(84, 13);
-            this.nombreIncidencia.TabIndex = 20;
-            this.nombreIncidencia.Text = "Nom_Incidencia";
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // IncidenciaBanner
             // 

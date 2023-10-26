@@ -44,8 +44,10 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.panel2.Controls.Add(this.idCliente);
             this.panel2.Controls.Add(this.moreOption);
             this.panel2.Controls.Add(this.favCliente);
@@ -72,9 +74,9 @@
             // moreOption
             // 
             this.moreOption.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.moreOption.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.moreOption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.moreOption.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.moreOption.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.moreOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.moreOption.Image = ((System.Drawing.Image)(resources.GetObject("moreOption.Image")));
             this.moreOption.Location = new System.Drawing.Point(401, 4);
             this.moreOption.Name = "moreOption";
@@ -85,8 +87,7 @@
             // favCliente
             // 
             this.favCliente.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.favCliente.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.favCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.favCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.favCliente.Image = global::Pantalla_Cliente.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
             this.favCliente.InitialImage = global::Pantalla_Cliente.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
             this.favCliente.Location = new System.Drawing.Point(278, 21);
@@ -98,7 +99,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.pictureBox2.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
