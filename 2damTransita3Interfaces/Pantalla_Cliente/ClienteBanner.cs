@@ -113,30 +113,7 @@ namespace Pantalla_Cliente
             }
         }
      
-        private void RemoveClienteBannerFromForm(string clientId)
-        {
-            if (int.TryParse(clientId, out int idAsInt))
-            {
-                // Find and remove the ClienteBanner associated with the deleted client
-                foreach (Control control in panel2.Controls)
-                {
-                    if (control is ClienteBanner clienteBanner)
-                    {
-                        if (int.TryParse(clienteBanner.getId().Text, out int bannerId) && bannerId == idAsInt)
-                        {
-                            panel2.Controls.Remove(clienteBanner);
-                            clienteBanner.Dispose(); // Dispose of the control to release resources
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                // Handle the case where the string cannot be converted to an integer
-                Console.WriteLine("Invalid client ID format: " + clientId);
-            }
-        }
+        
 
 
         private async void EliminarToolStripMenuItem_ClickAsync(object sender, EventArgs e)
@@ -181,6 +158,30 @@ namespace Pantalla_Cliente
         private void idCliente_Click(object sender, EventArgs e)
         {
 
+        }
+        private void RemoveClienteBannerFromForm(string clientId)
+        {
+            if (int.TryParse(clientId, out int idAsInt))
+            {
+                // Find and remove the ClienteBanner associated with the deleted client
+                foreach (Control control in panel2.Controls)
+                {
+                    if (control is ClienteBanner clienteBanner)
+                    {
+                        if (int.TryParse(clienteBanner.getId().Text, out int bannerId) && bannerId == idAsInt)
+                        {
+                            panel2.Controls.Remove(clienteBanner);
+                            clienteBanner.Dispose(); // Dispose of the control to release resources
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // Handle the case where the string cannot be converted to an integer
+                Console.WriteLine("Invalid client ID format: " + clientId);
+            }
         }
     }
 }
