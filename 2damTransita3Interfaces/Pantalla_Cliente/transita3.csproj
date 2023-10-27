@@ -102,7 +102,6 @@
     <Compile Include="datosIncidencia.Designer.cs">
       <DependentUpon>datosIncidencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="EstadoIncidencia.cs" />
     <Compile Include="ClientesPantalla.cs">
       <SubType>Form</SubType>
     </Compile>

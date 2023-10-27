@@ -16,6 +16,7 @@ namespace Pantalla_Cliente
         private ContextMenuStrip contextMenuStrip;
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem eliminarToolStripMenuItem;
+         bool deleted = false;
 
         public ClienteBanner()
         {
@@ -38,7 +39,7 @@ namespace Pantalla_Cliente
         {
             return idCliente;
         }
-
+    
         public Label getNombre()
         {
             return nombreCliente;
@@ -74,11 +75,11 @@ namespace Pantalla_Cliente
 
             form.ShowDialog();
         }
-        public async Task<bool> DeleteCliente(int clienteId, string token)
+        public async Task<bool> DeleteCliente(int Id, string token)
         {
             try
             {
-                string url = $"http://localhost:8083/cliente/{clienteId}";
+                string url = $"http://localhost:8083/cliente/eliminar/{Id}";
                 using (HttpClient client = new HttpClient())
                 {
                     client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
@@ -87,11 +88,18 @@ namespace Pantalla_Cliente
 
                     if (response.IsSuccessStatusCode)
                     {
-                        return true; // Éxito
+                        btnViewCliente.PerformClick();
+                        // Remove the UI element representing the deleted client
+                        Cliente_Pantalla c = new Cliente_Pantalla();
+                        c.Invalidate();
+                        c.Update();
+                        Transita t = new Transita();
+                        t.MostrarPanelDeCliente();
+                        return true;
                     }
                     else
                     {
-                        // Maneja errores aquí si es necesario
+                        // Handle errors here if necessary
                         Console.WriteLine("Error al eliminar el cliente");
                         return false;
                     }
@@ -99,42 +107,71 @@ namespace Pantalla_Cliente
             }
             catch (Exception ex)
             {
-                // Maneja excepciones aquí si es necesario
+                // Handle exceptions here if necessary
                 Console.WriteLine("Excepción al eliminar el cliente: " + ex.Message);
                 return false;
             }
         }
+     
+        private void RemoveClienteBannerFromForm(string clientId)
+        {
+            if (int.TryParse(clientId, out int idAsInt))
+            {
+                // Find and remove the ClienteBanner associated with the deleted client
+                foreach (Control control in panel2.Controls)
+                {
+                    if (control is ClienteBanner clienteBanner)
+                    {
+                        if (int.TryParse(clienteBanner.getId().Text, out int bannerId) && bannerId == idAsInt)
+                        {
+                            panel2.Controls.Remove(clienteBanner);
+                            clienteBanner.Dispose(); // Dispose of the control to release resources
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // Handle the case where the string cannot be converted to an integer
+                Console.WriteLine("Invalid client ID format: " + clientId);
+            }
+        }
+
 
         private async void EliminarToolStripMenuItem_ClickAsync(object sender, EventArgs e)
         {
-         
-           string textoIdCliente = idCliente.Text;
-            int clienteId;
+            string textoIdCliente = idCliente.Text;
 
-            if (int.TryParse(textoIdCliente, out clienteId))
+            if (int.TryParse(textoIdCliente, out int clienteId))
             {
-               
+                try
+                {
+                    bool eliminado = await DeleteCliente(clienteId, "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob2xhM0BnbWFpbC5jb20iLCJpYXQiOjE2OTgzOTk0NTIsImV4cCI6MTY5ODQ4NTg1Mn0.Kwtj6tqqO1Ki5v3uRvln_CyWjPZ9kyOfURRxhWRbNQ4taiT-rNYrQzyZ4RKaxSQmOkHFERfXjnHU6g4IFz3u1w");
+
+                    if (eliminado)
+                    {
+                        Console.WriteLine("Cliente eliminado con éxito");
+                        // Realiza cualquier otra acción que desees después de eliminar el cliente
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error al eliminar el cliente");
+                        // Maneja cualquier error que ocurra durante la eliminación del cliente
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Excepción al eliminar el cliente: " + ex.Message);
+                }
             }
             else
             {
                 // La conversión falló. Puedes manejar este escenario aquí.
                 Console.WriteLine("La conversión a entero falló.");
             }
-
-            bool eliminado = await DeleteCliente(clienteId, "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZGFkYWFhQGdtYWlsLmNvbSIsImlhdCI6MTY5ODMzNTg4MywiZXhwIjoxNjk4NDIyMjgzfQ.4OO0CxrFJZU9lrz9CbbFgxkU7--fhZZOqTMZ1mRuRg5THQCwCqBhoj77GS9jzy7AEJnCwwmClHw926Kknq0ArQ");
-
-            if (eliminado)
-            {
-                Console.WriteLine("Cliente eliminado con éxito");
-                // Realiza cualquier otra acción que desees después de eliminar el cliente
-            }
-            else
-            {
-                Console.WriteLine("Error al eliminar el cliente");
-                // Maneja cualquier error que ocurra durante la eliminación del cliente
-            }
         }
-    
+
 
         private void moreOption_Click(object sender, EventArgs e)
         {

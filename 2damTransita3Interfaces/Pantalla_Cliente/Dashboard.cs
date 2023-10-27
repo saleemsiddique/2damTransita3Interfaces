@@ -19,6 +19,7 @@ namespace Pantalla_Cliente
         public Transita()
         {
             InitializeComponent();
+          
             this.Font = new Font("Arial", 12);
 
             MostrarPanelDeCliente();
@@ -49,7 +50,7 @@ namespace Pantalla_Cliente
             panel1_central.Controls.Clear();
             panel1_derecha.Controls.Clear();
         }
-
+    
         private void MostrarPanelDeIncidencia()
         {
             Incidencias_Pantalla incidenciaForm = new Incidencias_Pantalla();
@@ -69,7 +70,7 @@ namespace Pantalla_Cliente
             panelDerechaIncidencia.Dock = DockStyle.Fill;
         }
 
-        private void MostrarPanelDeCliente()
+        public void MostrarPanelDeCliente()
         {
             Cliente_Pantalla clientePantalla = new Cliente_Pantalla();
             Panel panelCentralIncidencia = clientePantalla.ObtenerPanelCentralCliente();

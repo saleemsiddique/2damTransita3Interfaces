@@ -47,12 +47,13 @@
             this.labelClienteIncidencia.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelClienteIncidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelClienteIncidencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelClienteIncidencia.Location = new System.Drawing.Point(98, 65);
+            this.labelClienteIncidencia.Location = new System.Drawing.Point(117, 68);
             this.labelClienteIncidencia.Name = "labelClienteIncidencia";
             this.labelClienteIncidencia.Size = new System.Drawing.Size(219, 54);
             this.labelClienteIncidencia.TabIndex = 2;
             this.labelClienteIncidencia.Text = "Editar Cliente X";
             this.labelClienteIncidencia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelClienteIncidencia.Click += new System.EventHandler(this.labelClienteIncidencia_Click);
             // 
             // label1
             // 
@@ -69,7 +70,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(152, 211);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(158, 20);
             this.textBox1.TabIndex = 6;
@@ -79,7 +80,7 @@
             this.label_datosInciencia.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label_datosInciencia.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label_datosInciencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_datosInciencia.Location = new System.Drawing.Point(29, 144);
+            this.label_datosInciencia.Location = new System.Drawing.Point(58, 142);
             this.label_datosInciencia.Name = "label_datosInciencia";
             this.label_datosInciencia.Size = new System.Drawing.Size(334, 370);
             this.label_datosInciencia.TabIndex = 4;
@@ -144,7 +145,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(152, 255);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(158, 20);
             this.textBox2.TabIndex = 15;
@@ -152,7 +153,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(152, 299);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(158, 20);
             this.textBox3.TabIndex = 16;
@@ -160,7 +161,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(152, 343);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(158, 20);
             this.textBox4.TabIndex = 17;
@@ -183,7 +184,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_datosInciencia);
             this.Controls.Add(this.labelClienteIncidencia);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormNuevoCliente";
             this.Text = "FormNuevoCliente";
             this.ResumeLayout(false);

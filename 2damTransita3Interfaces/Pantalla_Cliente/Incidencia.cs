@@ -8,7 +8,7 @@ internal class Incidencia
 
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public EstadoIncidencia estado { get; set; }
-    public long duracion { get; set; }
+    public string duracion { get; set; }
     public DateTime fechaHora { get; set; }
 
     public override string ToString()

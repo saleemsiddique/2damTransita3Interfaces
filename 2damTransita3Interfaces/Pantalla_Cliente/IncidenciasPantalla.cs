@@ -56,7 +56,7 @@ namespace Pantalla_Cliente
         {
             Console.WriteLine("metodo ha sido activado");
             String url = "http://localhost:8083/incidencias";
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZGFkYWFhQGdtYWlsLmNvbSIsImlhdCI6MTY5ODMzNTg4MywiZXhwIjoxNjk4NDIyMjgzfQ.4OO0CxrFJZU9lrz9CbbFgxkU7--fhZZOqTMZ1mRuRg5THQCwCqBhoj77GS9jzy7AEJnCwwmClHw926Kknq0ArQ"; // Reemplaza con el token adecuado, crea uno nuevo
+            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob2xhM0BnbWFpbC5jb20iLCJpYXQiOjE2OTgzOTk0NTIsImV4cCI6MTY5ODQ4NTg1Mn0.Kwtj6tqqO1Ki5v3uRvln_CyWjPZ9kyOfURRxhWRbNQ4taiT-rNYrQzyZ4RKaxSQmOkHFERfXjnHU6g4IFz3u1w"; // Reemplaza con el token adecuado, crea uno nuevo
             string response = await ApiClient.GetRequestAsync("GET", url, token);
 
             Console.WriteLine(response);

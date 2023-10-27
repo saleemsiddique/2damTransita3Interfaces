@@ -22,5 +22,10 @@ namespace Pantalla_Cliente
         {
             this.Close();
         }
+
+        private void labelClienteIncidencia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
