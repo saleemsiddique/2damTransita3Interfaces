@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pantalla_Cliente;
 
 namespace Pantalla_Cliente
 {
@@ -27,7 +28,7 @@ namespace Pantalla_Cliente
             editarToolStripMenuItem.Click += EditarToolStripMenuItem_Click;
 
             eliminarToolStripMenuItem.Text = "Eliminar";
-            eliminarToolStripMenuItem.Click += EliminarToolStripMenuItem_Click;
+            eliminarToolStripMenuItem.Click += EliminarToolStripMenuItem_ClickAsync;
 
             contextMenuStrip.Items.AddRange(new ToolStripItem[] { editarToolStripMenuItem, eliminarToolStripMenuItem });
 
@@ -61,84 +62,33 @@ namespace Pantalla_Cliente
                 contextMenuStrip.Show(button8, new System.Drawing.Point(0, button8.Height));
             }
         }
-        public async Task<bool> DeleteCliente(int Id, string token)
-        {
-            try
-            {
-                string url = $"http://localhost:8083/incidencia/eliminar/{Id}";
-                using (HttpClient client = new HttpClient())
-                {
-                    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
-
-                    HttpResponseMessage response = await client.DeleteAsync(url);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                  
-                        // Remove the UI element representing the deleted client
-                        Cliente_Pantalla c = new Cliente_Pantalla();
-                        c.Invalidate();
-                        c.Update();
-                        Transita t = new Transita();
-                        t.MostrarPanelDeCliente();
-                        return true;
-                    }
-                    else
-                    {
-                        // Handle errors here if necessary
-                        Console.WriteLine("Error al eliminar la incidencia");
-                        return false;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions here if necessary
-                Console.WriteLine("Excepción al eliminar la incidencia: " + ex.Message);
-                return false;
-            }
-        }
 
 
 
 
         private async void EliminarToolStripMenuItem_ClickAsync(object sender, EventArgs e)
         {
-            string textoIdIncidencia= idIncidencia.Text;
+            Console.WriteLine("metodo eliminar ha sido activado");
+            String id = this.idIncidencia.Text;
+            String url = "http://localhost:8083/incidencia/eliminar/" + id;
+            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmExQGdtYWlsLmNvbSIsImlhdCI6MTY5ODU4ODQ2OCwiZXhwIjoxNjk4Njc0ODY4fQ.c_vlQ6q-tmdqfjDVeimg46dMJOE8Ch1Lr3z4VZDChGFkk6EGeu7jTGw4iOGWFiEfQnTiUiNps_03CXtYXxDJaQ"; // Reemplaza con el token adecuado, crea uno nuevo
+            string response = await ApiClient.GetRequestAsync("DELETE", url, token);
 
-            string token = "";
-
-            if (int.TryParse(textoIdIncidencia, out int incidenciaId))
+            Console.WriteLine(response);
+            Form formularioPadre = this.FindForm();
+            Transita formularioTransita = (Transita)formularioPadre.FindForm();
+            if (formularioTransita != null)
             {
-                try
-                {
-                    bool eliminado = await DeleteCliente(incidenciaId, "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob2xhM0BnbWFpbC5jb20iLCJpYXQiOjE2OTgzOTk0NTIsImV4cCI6MTY5ODQ4NTg1Mn0.Kwtj6tqqO1Ki5v3uRvln_CyWjPZ9kyOfURRxhWRbNQ4taiT-rNYrQzyZ4RKaxSQmOkHFERfXjnHU6g4IFz3u1w");
-
-                    if (eliminado)
-                    {
-                        Console.WriteLine("Incidencia eliminada con éxito");
-                        // Realiza cualquier otra acción que desees después de eliminar el cliente
-                    }
-                    else
-                    {
-                        Console.WriteLine("Error al eliminar la incidencia");
-                        // Maneja cualquier error que ocurra durante la eliminación del cliente
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Excepción al eliminar la incidencia: " + ex.Message);
-                }
-            }
-            else
-            {
-                // La conversión falló. Puedes manejar este escenario aquí.
-                Console.WriteLine("La conversión a entero falló.");
+                Console.WriteLine("No es null");
+                formularioTransita.MostrarPanelDeIncidencia();
             }
         }
+
         private void EditarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Lógica para la acción de editar
+            NuevaIncidencia form = new NuevaIncidencia(idIncidencia.Text);
+
+            form.ShowDialog();
         }
 
         private void EliminarToolStripMenuItem_Click(object sender, EventArgs e)

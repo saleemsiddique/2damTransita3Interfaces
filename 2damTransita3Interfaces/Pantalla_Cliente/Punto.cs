@@ -1,21 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace Pantalla_Cliente
 {
-    class Punto
+    public enum AccesibilidadTipo
     {
+        ACCESIBLE,
+        NO_ACCESIBLE
+    }
 
-        public int Id { get; set; }
-        public byte[] Foto { get; set; } // Usamos byte[] para almacenar la imagen (puede variar según el tipo de almacenamiento)
-        public double Latitud { get; set; }
-        public double Longitud { get; set; }
-        public int Accesibilidad { get; set; } // 0: acceso, 1: lugar
-        public string Tipo { get; set; } // "acceso" o "lugar"
-        public string Descripcion { get; set; }
+    public enum TipoPunto
+    {
+        ACCESO,
+        LUGAR
+    }
 
+    public class Punto
+    {
+        public int id { get; set; }
+        public string descripcion { get; set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public TipoPunto tipoPunto { get; set; }
+        public string foto { get; set; }
+        public double latitud { get; set; }
+        public double longitud { get; set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public AccesibilidadTipo accesibilidadPunto { get; set; }
+
+        public override string ToString()
+        {
+            return $"Id: {id}, Descripcion: {descripcion}, TipoPunto: {tipoPunto}, Foto: {foto}, " +
+                   $"Latitud: {latitud}, Longitud: {longitud}, AccesibilidadPunto: {accesibilidadPunto}";
+        }
     }
 }

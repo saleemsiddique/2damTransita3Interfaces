@@ -114,11 +114,11 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormNuevoCliente.cs">
+    <Compile Include="NuevaIncidencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormNuevoCliente.Designer.cs">
-      <DependentUpon>FormNuevoCliente.cs</DependentUpon>
+    <Compile Include="NuevaIncidencia.Designer.cs">
+      <DependentUpon>NuevaIncidencia.cs</DependentUpon>
     </Compile>
     <Compile Include="HttpCliente.cs" />
     <Compile Include="Incidencia.cs" />
@@ -152,8 +152,8 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormNuevoCliente.resx">
-      <DependentUpon>FormNuevoCliente.cs</DependentUpon>
+    <EmbeddedResource Include="NuevaIncidencia.resx">
+      <DependentUpon>NuevaIncidencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IncidenciasPantalla.resx">
       <DependentUpon>IncidenciasPantalla.cs</DependentUpon>
