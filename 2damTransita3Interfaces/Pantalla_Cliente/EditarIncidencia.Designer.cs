@@ -1,6 +1,6 @@
 ﻿namespace Pantalla_Cliente
 {
-    partial class NuevaIncidencia
+    partial class EditarIncidencia
     {
         /// <summary>
         /// Required designer variable.
@@ -125,6 +125,7 @@
             this.btn_AceptarIncidencia.TabIndex = 13;
             this.btn_AceptarIncidencia.Text = "Aceptar";
             this.btn_AceptarIncidencia.UseVisualStyleBackColor = true;
+            this.btn_AceptarIncidencia.Click += new System.EventHandler(this.btn_AceptarIncidencia_Click);
             // 
             // btn_reportarIncidencia
             // 
@@ -213,7 +214,7 @@
             this.estado_input.Size = new System.Drawing.Size(158, 21);
             this.estado_input.TabIndex = 24;
             // 
-            // NuevaIncidencia
+            // EditarIncidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -238,9 +239,9 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(469, 611);
             this.MinimumSize = new System.Drawing.Size(469, 611);
-            this.Name = "NuevaIncidencia";
+            this.Name = "EditarIncidencia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nueva Incidencia";
+            this.Text = "Modificar Incidencia";
             this.Load += new System.EventHandler(this.FormNuevoCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

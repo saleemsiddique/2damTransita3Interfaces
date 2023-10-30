@@ -16,9 +16,8 @@ internal class Incidencia
 
     public Punto punto { get; set; }
 
-    public Incidencia(int id, string descripcion, EstadoIncidencia estado, string duracion, DateTime fechaHora, Cliente cliente, Punto punto)
+    public Incidencia(string descripcion, EstadoIncidencia estado, string duracion, DateTime fechaHora, Cliente cliente, Punto punto)
     {
-        this.id = id;
         this.descripcion = descripcion;
         this.estado = estado;
         this.duracion = duracion;

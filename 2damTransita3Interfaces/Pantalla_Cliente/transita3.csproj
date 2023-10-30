@@ -114,11 +114,17 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="NuevaIncidencia.cs">
+    <Compile Include="EditarIncidencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevaIncidencia.Designer.cs">
-      <DependentUpon>NuevaIncidencia.cs</DependentUpon>
+    <Compile Include="EditarIncidencia.Designer.cs">
+      <DependentUpon>EditarIncidencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrearIncidencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearIncidencia.Designer.cs">
+      <DependentUpon>CrearIncidencia.cs</DependentUpon>
     </Compile>
     <Compile Include="HttpCliente.cs" />
     <Compile Include="Incidencia.cs" />
@@ -152,8 +158,11 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevaIncidencia.resx">
-      <DependentUpon>NuevaIncidencia.cs</DependentUpon>
+    <EmbeddedResource Include="EditarIncidencia.resx">
+      <DependentUpon>EditarIncidencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearIncidencia.resx">
+      <DependentUpon>CrearIncidencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IncidenciasPantalla.resx">
       <DependentUpon>IncidenciasPantalla.cs</DependentUpon>
