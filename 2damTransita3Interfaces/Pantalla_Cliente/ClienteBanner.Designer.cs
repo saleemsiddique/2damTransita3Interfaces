@@ -60,6 +60,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 67);
             this.panel2.TabIndex = 11;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
             // idCliente
             // 
