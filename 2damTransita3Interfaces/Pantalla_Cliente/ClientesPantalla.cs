@@ -42,7 +42,7 @@ namespace Pantalla_Cliente
         {
             Console.WriteLine("metodo ha sido activado");
             String url = "http://localhost:8083/cliente";
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob2xhM0BnbWFpbC5jb20iLCJpYXQiOjE2OTgzOTk0NTIsImV4cCI6MTY5ODQ4NTg1Mn0.Kwtj6tqqO1Ki5v3uRvln_CyWjPZ9kyOfURRxhWRbNQ4taiT-rNYrQzyZ4RKaxSQmOkHFERfXjnHU6g4IFz3u1w"; // Reemplaza con el token adecuado, crea uno nuevo
+            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEwQGVtYWlsLmNvbSIsImlhdCI6MTY5ODY1MTg0NCwiZXhwIjoxNjk4NzM4MjQ0fQ.XqeVOLJsM00dH5-6IGIvC5OpEVCoWMhR7CjhDQjS0RS8SbSj7FKZw4d9i2bXxKZttUcS68uNEqN84NIc2_8FIA"; // Reemplaza con el token adecuado, crea uno nuevo
             string response = await ApiClient.GetRequestAsync("GET", url, token);
             
             Console.WriteLine(response);
@@ -119,8 +119,7 @@ namespace Pantalla_Cliente
 
         private void buttonAddCliente_Click_1(object sender, EventArgs e)
         {
-            FormNuevoCliente formNuevoCliente = new FormNuevoCliente();
-            formNuevoCliente.Show();
+
         }
 
         //PlaceHolder del botton de buscar cliente

@@ -51,7 +51,7 @@ namespace Pantalla_Cliente
             panel1_derecha.Controls.Clear();
         }
     
-        private void MostrarPanelDeIncidencia()
+        public void MostrarPanelDeIncidencia()
         {
             Incidencias_Pantalla incidenciaForm = new Incidencias_Pantalla();
             Panel panelCentralIncidencia = incidenciaForm.ObtenerPanelCentralIncidencia();

@@ -71,104 +71,25 @@ namespace Pantalla_Cliente
 
         private void EditarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormNuevoCliente form = new FormNuevoCliente();
 
-            form.ShowDialog();
-        }
-        public async Task<bool> DeleteCliente(int Id, string token)
-        {
-            try
-            {
-                string url = $"http://localhost:8083/cliente/eliminar/{Id}";
-                using (HttpClient client = new HttpClient())
-                {
-                    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
-
-                    HttpResponseMessage response = await client.DeleteAsync(url);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        btnViewCliente.PerformClick();
-                        // Remove the UI element representing the deleted client
-                        Cliente_Pantalla c = new Cliente_Pantalla();
-                        c.Invalidate();
-                        c.Update();
-                        Transita t = new Transita();
-                        t.MostrarPanelDeCliente();
-                        return true;
-                    }
-                    else
-                    {
-                        // Handle errors here if necessary
-                        Console.WriteLine("Error al eliminar el cliente");
-                        return false;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions here if necessary
-                Console.WriteLine("Excepción al eliminar el cliente: " + ex.Message);
-                return false;
-            }
-        }
-     
-        private void RemoveClienteBannerFromForm(string clientId)
-        {
-            if (int.TryParse(clientId, out int idAsInt))
-            {
-                // Find and remove the ClienteBanner associated with the deleted client
-                foreach (Control control in panel2.Controls)
-                {
-                    if (control is ClienteBanner clienteBanner)
-                    {
-                        if (int.TryParse(clienteBanner.getId().Text, out int bannerId) && bannerId == idAsInt)
-                        {
-                            panel2.Controls.Remove(clienteBanner);
-                            clienteBanner.Dispose(); // Dispose of the control to release resources
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                // Handle the case where the string cannot be converted to an integer
-                Console.WriteLine("Invalid client ID format: " + clientId);
-            }
         }
 
 
         private async void EliminarToolStripMenuItem_ClickAsync(object sender, EventArgs e)
         {
-            string textoIdCliente = idCliente.Text;
+            Console.WriteLine("metodo eliminar ha sido activado");
+            String id = this.idCliente.Text;
+            String url = "http://localhost:8083/cliente/eliminar/" + id;
+            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEwQGVtYWlsLmNvbSIsImlhdCI6MTY5ODY1MTg0NCwiZXhwIjoxNjk4NzM4MjQ0fQ.XqeVOLJsM00dH5-6IGIvC5OpEVCoWMhR7CjhDQjS0RS8SbSj7FKZw4d9i2bXxKZttUcS68uNEqN84NIc2_8FIA"; // Reemplaza con el token adecuado, crea uno nuevo
+            string response = await ApiClient.GetRequestAsync("DELETE", url, token);
 
-            if (int.TryParse(textoIdCliente, out int clienteId))
+            Console.WriteLine(response);
+            Form formularioPadre = this.FindForm();
+            Transita formularioTransita = (Transita)formularioPadre.FindForm();
+            if (formularioTransita != null)
             {
-                try
-                {
-                    bool eliminado = await DeleteCliente(clienteId, "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob2xhM0BnbWFpbC5jb20iLCJpYXQiOjE2OTgzOTk0NTIsImV4cCI6MTY5ODQ4NTg1Mn0.Kwtj6tqqO1Ki5v3uRvln_CyWjPZ9kyOfURRxhWRbNQ4taiT-rNYrQzyZ4RKaxSQmOkHFERfXjnHU6g4IFz3u1w");
-
-                    if (eliminado)
-                    {
-                        Console.WriteLine("Cliente eliminado con éxito");
-                        // Realiza cualquier otra acción que desees después de eliminar el cliente
-                    }
-                    else
-                    {
-                        Console.WriteLine("Error al eliminar el cliente");
-                        // Maneja cualquier error que ocurra durante la eliminación del cliente
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Excepción al eliminar el cliente: " + ex.Message);
-                }
-            }
-            else
-            {
-                // La conversión falló. Puedes manejar este escenario aquí.
-                Console.WriteLine("La conversión a entero falló.");
+                Console.WriteLine("No es null");
+                formularioTransita.MostrarPanelDeCliente();
             }
         }
 
@@ -179,6 +100,11 @@ namespace Pantalla_Cliente
         }
 
         private void idCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

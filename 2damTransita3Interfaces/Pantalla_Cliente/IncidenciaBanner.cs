@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pantalla_Cliente;
 
 namespace Pantalla_Cliente
 {
@@ -26,7 +28,7 @@ namespace Pantalla_Cliente
             editarToolStripMenuItem.Click += EditarToolStripMenuItem_Click;
 
             eliminarToolStripMenuItem.Text = "Eliminar";
-            eliminarToolStripMenuItem.Click += EliminarToolStripMenuItem_Click;
+            eliminarToolStripMenuItem.Click += EliminarToolStripMenuItem_ClickAsync;
 
             contextMenuStrip.Items.AddRange(new ToolStripItem[] { editarToolStripMenuItem, eliminarToolStripMenuItem });
 
@@ -61,9 +63,32 @@ namespace Pantalla_Cliente
             }
         }
 
+
+
+
+        private async void EliminarToolStripMenuItem_ClickAsync(object sender, EventArgs e)
+        {
+            Console.WriteLine("metodo eliminar ha sido activado");
+            String id = this.idIncidencia.Text;
+            String url = "http://localhost:8083/incidencia/eliminar/" + id;
+            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEwQGVtYWlsLmNvbSIsImlhdCI6MTY5ODY1MTg0NCwiZXhwIjoxNjk4NzM4MjQ0fQ.XqeVOLJsM00dH5-6IGIvC5OpEVCoWMhR7CjhDQjS0RS8SbSj7FKZw4d9i2bXxKZttUcS68uNEqN84NIc2_8FIA"; // Reemplaza con el token adecuado, crea uno nuevo
+            string response = await ApiClient.GetRequestAsync("DELETE", url, token);
+
+            Console.WriteLine(response);
+            Form formularioPadre = this.FindForm();
+            Transita formularioTransita = (Transita)formularioPadre.FindForm();
+            if (formularioTransita != null)
+            {
+                Console.WriteLine("No es null");
+                formularioTransita.MostrarPanelDeIncidencia();
+            }
+        }
+
         private void EditarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Lógica para la acción de editar
+            NuevaIncidencia form = new NuevaIncidencia(idIncidencia.Text);
+
+            form.ShowDialog();
         }
 
         private void EliminarToolStripMenuItem_Click(object sender, EventArgs e)
