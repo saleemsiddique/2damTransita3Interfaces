@@ -186,6 +186,9 @@
     <EmbeddedResource Include="IncidenciaBanner.resx">
       <DependentUpon>IncidenciaBanner.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ZonaBanner.resx">
+      <DependentUpon>ZonaBanner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ZonasPantalla.resx">
       <DependentUpon>ZonasPantalla.cs</DependentUpon>
     </EmbeddedResource>
