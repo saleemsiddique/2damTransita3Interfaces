@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pantalla_Cliente
+namespace Pantalla_Zona
 {
     public partial class ZonaBanner : UserControl
     {
