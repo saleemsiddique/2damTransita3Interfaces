@@ -42,6 +42,8 @@
             this.punto_input = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.estado_input = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // incidenciaEditar
@@ -63,7 +65,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(192, 190);
+            this.label1.Location = new System.Drawing.Point(192, 172);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
@@ -72,7 +74,7 @@
             // 
             // descripcion_input
             // 
-            this.descripcion_input.Location = new System.Drawing.Point(148, 214);
+            this.descripcion_input.Location = new System.Drawing.Point(148, 196);
             this.descripcion_input.Margin = new System.Windows.Forms.Padding(2);
             this.descripcion_input.Multiline = true;
             this.descripcion_input.Name = "descripcion_input";
@@ -95,7 +97,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(175, 269);
+            this.label2.Location = new System.Drawing.Point(175, 300);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 13);
@@ -107,7 +109,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(202, 337);
+            this.label4.Location = new System.Drawing.Point(202, 349);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
@@ -137,7 +139,7 @@
             // 
             // duracion_input
             // 
-            this.duracion_input.Location = new System.Drawing.Point(148, 284);
+            this.duracion_input.Location = new System.Drawing.Point(148, 315);
             this.duracion_input.Margin = new System.Windows.Forms.Padding(2);
             this.duracion_input.Name = "duracion_input";
             this.duracion_input.Size = new System.Drawing.Size(158, 20);
@@ -145,7 +147,7 @@
             // 
             // fecha_input
             // 
-            this.fecha_input.Location = new System.Drawing.Point(122, 353);
+            this.fecha_input.Location = new System.Drawing.Point(122, 365);
             this.fecha_input.Name = "fecha_input";
             this.fecha_input.Size = new System.Drawing.Size(204, 20);
             this.fecha_input.TabIndex = 18;
@@ -191,12 +193,34 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Punto asociado:";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(202, 250);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Estado:";
+            // 
+            // estado_input
+            // 
+            this.estado_input.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.estado_input.FormattingEnabled = true;
+            this.estado_input.Location = new System.Drawing.Point(148, 266);
+            this.estado_input.Name = "estado_input";
+            this.estado_input.Size = new System.Drawing.Size(158, 21);
+            this.estado_input.TabIndex = 24;
+            // 
             // NuevaIncidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(453, 572);
+            this.Controls.Add(this.estado_input);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.punto_input);
@@ -239,5 +263,7 @@
         private System.Windows.Forms.ComboBox punto_input;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox estado_input;
     }
 }
