@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pantalla_Zona
+namespace Pantalla_Cliente
 {
     public partial class ZonasPantalla : Form
     {
@@ -16,5 +16,20 @@ namespace Pantalla_Zona
         {
             InitializeComponent();
         }
+
+        private void buttonAddCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+        public Panel ObtenerPanelCentralZona()
+        {
+            return panel4;
+        }
+
+        public Panel ObtenerPanelDerechaZona()
+        {
+            return panel3;
+        }
+
     }
 }

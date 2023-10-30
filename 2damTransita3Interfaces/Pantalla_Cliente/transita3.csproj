@@ -143,6 +143,18 @@
     <Compile Include="IncidenciaBanner.Designer.cs">
       <DependentUpon>IncidenciaBanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZonaBanner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZonaBanner.Designer.cs">
+      <DependentUpon>ZonaBanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZonasPantalla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZonasPantalla.Designer.cs">
+      <DependentUpon>ZonasPantalla.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="datosIncidencia.resx">
       <DependentUpon>datosIncidencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +185,9 @@
     </Compile>
     <EmbeddedResource Include="IncidenciaBanner.resx">
       <DependentUpon>IncidenciaBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZonasPantalla.resx">
+      <DependentUpon>ZonasPantalla.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

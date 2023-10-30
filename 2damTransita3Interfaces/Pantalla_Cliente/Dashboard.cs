@@ -43,6 +43,15 @@ namespace Pantalla_Cliente
         {
             return panel1_derecha;
         }
+        public Panel ObtenerPanelCentralZona()
+        {
+            return panel1_central;
+        }
+
+        public Panel ObtenerPanelDerechaZona()
+        {
+            return panel1_derecha;
+        }
 
 
         public void VaciarPaneles()
@@ -88,7 +97,24 @@ namespace Pantalla_Cliente
             panelCentralIncidencia.Dock = DockStyle.Fill;
             panelDerechaIncidencia.Dock = DockStyle.Fill;
         }
+        public void MostrarPanelDeZona()
+        {
+            ZonasPantalla zonaPantalla = new ZonasPantalla();
+            Panel panelCentralZona = zonaPantalla.ObtenerPanelCentralZona();
+            Panel panelDerechaZona = zonaPantalla.ObtenerPanelDerechaZona();
 
+
+            VaciarPaneles();
+
+            // Agrega el panel al control contenedor en este formulario
+            panel1_central.Controls.Add(panelCentralZona);
+            panel1_derecha.Controls.Add(panelDerechaZona);
+
+
+            // Puedes personalizar el tamaño y la posición del panel según tus necesidades
+            panelCentralZona.Dock = DockStyle.Fill;
+            panelDerechaZona.Dock = DockStyle.Fill;
+        }
         private void ToggleButton_Click(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
@@ -114,6 +140,10 @@ namespace Pantalla_Cliente
         private void btn_cliente_Click(object sender, EventArgs e)
         {
             MostrarPanelDeCliente();
+        }
+        private void btn_zona_Click(object sender, EventArgs e)
+        {
+            MostrarPanelDeZona();
         }
 
         private void panel1_central_Paint(object sender, PaintEventArgs e)

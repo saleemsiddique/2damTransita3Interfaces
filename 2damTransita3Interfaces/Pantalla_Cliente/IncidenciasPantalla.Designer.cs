@@ -219,6 +219,7 @@ namespace Pantalla_Cliente
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(231, 681);
             this.panel3.TabIndex = 27;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pictureBox12
             // 
@@ -387,8 +388,9 @@ namespace Pantalla_Cliente
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 681);
+            this.panel1.Size = new System.Drawing.Size(231, 681);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel5
             // 
@@ -398,7 +400,7 @@ namespace Pantalla_Cliente
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 594);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(274, 85);
+            this.panel5.Size = new System.Drawing.Size(229, 85);
             this.panel5.TabIndex = 14;
             // 
             // pictureBox1
@@ -489,7 +491,7 @@ namespace Pantalla_Cliente
             this.panel2.Location = new System.Drawing.Point(51, 213);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(450, 67);
+            this.panel2.Size = new System.Drawing.Size(495, 67);
             this.panel2.TabIndex = 16;
             this.panel2.Visible = false;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
@@ -501,7 +503,7 @@ namespace Pantalla_Cliente
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(415, 10);
+            this.button8.Location = new System.Drawing.Point(460, 10);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(30, 49);
             this.button8.TabIndex = 13;
@@ -524,7 +526,7 @@ namespace Pantalla_Cliente
             // botonVerDatosIncidencia
             // 
             this.botonVerDatosIncidencia.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.botonVerDatosIncidencia.Location = new System.Drawing.Point(334, 23);
+            this.botonVerDatosIncidencia.Location = new System.Drawing.Point(379, 23);
             this.botonVerDatosIncidencia.Name = "botonVerDatosIncidencia";
             this.botonVerDatosIncidencia.Size = new System.Drawing.Size(75, 23);
             this.botonVerDatosIncidencia.TabIndex = 3;
@@ -536,7 +538,7 @@ namespace Pantalla_Cliente
             // 
             this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(306, 28);
+            this.radioButton1.Location = new System.Drawing.Point(351, 28);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(14, 13);
@@ -562,7 +564,7 @@ namespace Pantalla_Cliente
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(291, 74);
+            this.button1.Location = new System.Drawing.Point(336, 74);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(36, 36);
             this.button1.TabIndex = 17;
@@ -574,7 +576,7 @@ namespace Pantalla_Cliente
             this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(347, 92);
+            this.buscarTextBox.Location = new System.Drawing.Point(392, 92);
             this.buscarTextBox.Name = "buscarTextBox";
             this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
@@ -593,10 +595,11 @@ namespace Pantalla_Cliente
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(276, 0);
+            this.panel4.Location = new System.Drawing.Point(231, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(557, 681);
+            this.panel4.Size = new System.Drawing.Size(602, 681);
             this.panel4.TabIndex = 28;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label16
             // 
