@@ -68,10 +68,14 @@ namespace Pantalla_Cliente
 
         private async void EliminarToolStripMenuItem_ClickAsync(object sender, EventArgs e)
         {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas borrar esta incidencia?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
             Console.WriteLine("metodo eliminar ha sido activado");
             String id = this.idIncidencia.Text;
             String url = "http://localhost:8083/incidencia/eliminar/" + id;
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEwQGVtYWlsLmNvbSIsImlhdCI6MTY5ODY1MTg0NCwiZXhwIjoxNjk4NzM4MjQ0fQ.XqeVOLJsM00dH5-6IGIvC5OpEVCoWMhR7CjhDQjS0RS8SbSj7FKZw4d9i2bXxKZttUcS68uNEqN84NIc2_8FIA"; // Reemplaza con el token adecuado, crea uno nuevo
+            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmExQGdtYWlsLmNvbSIsImlhdCI6MTY5ODY4MzMxMSwiZXhwIjoxNjk4NzY5NzExfQ.jJ5GnGTuY0Gz_eAK12ImIM9aXbhylCeO1ICQ0gN2wuS6XpzXbSGfQ6_RK7TqzrzjiK0pQOM6-XzJHzEeIWlnyw"; // Reemplaza con el token adecuado, crea uno nuevo
             string response = await ApiClient.GetRequestAsync("DELETE", url, token);
 
             Console.WriteLine(response);
@@ -82,18 +86,14 @@ namespace Pantalla_Cliente
                 Console.WriteLine("No es null");
                 formularioTransita.MostrarPanelDeIncidencia();
             }
+            }
         }
 
         private void EditarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NuevaIncidencia form = new NuevaIncidencia(idIncidencia.Text);
-
+            EditarIncidencia form = new EditarIncidencia(idIncidencia.Text);
+            form.Owner = this.FindForm();
             form.ShowDialog();
-        }
-
-        private void EliminarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Lógica para la acción de eliminar
         }
 
         private void button8_Click(object sender, EventArgs e)

@@ -16,6 +16,16 @@ internal class Incidencia
 
     public Punto punto { get; set; }
 
+    public Incidencia(string descripcion, EstadoIncidencia estado, string duracion, DateTime fechaHora, Cliente cliente, Punto punto)
+    {
+        this.descripcion = descripcion;
+        this.estado = estado;
+        this.duracion = duracion;
+        this.fechaHora = fechaHora;
+        this.cliente = cliente;
+        this.punto = punto;
+    }
+
     public override string ToString()
     {
         return $"ID: {id}, Descripción: {descripcion}, Estado: {estado.ToString()}, Cliente: {cliente}, Punto: {punto}";
