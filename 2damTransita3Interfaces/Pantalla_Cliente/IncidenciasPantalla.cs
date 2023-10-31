@@ -55,9 +55,8 @@ namespace Pantalla_Cliente
         public async void getIncidencias()
         {
             Console.WriteLine("metodo ha sido activado");
-            String url = "http://localhost:8083/incidencias";
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmExQGdtYWlsLmNvbSIsImlhdCI6MTY5ODY4MzMxMSwiZXhwIjoxNjk4NzY5NzExfQ.jJ5GnGTuY0Gz_eAK12ImIM9aXbhylCeO1ICQ0gN2wuS6XpzXbSGfQ6_RK7TqzrzjiK0pQOM6-XzJHzEeIWlnyw"; // Reemplaza con el token adecuado, crea uno nuevo
-            string response = await ApiClient.GetRequestAsync("GET", url, token);
+            String url = Program.rutaBase + "incidencias";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
             Console.WriteLine(response);
 

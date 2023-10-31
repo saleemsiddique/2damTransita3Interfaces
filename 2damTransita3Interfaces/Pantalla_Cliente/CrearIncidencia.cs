@@ -38,9 +38,8 @@ namespace Pantalla_Cliente
         public async Task getClientes()
         {
             Console.WriteLine("metodo ha sido activado");
-            String url = "http://localhost:8083/cliente";
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmExQGdtYWlsLmNvbSIsImlhdCI6MTY5ODY4MzMxMSwiZXhwIjoxNjk4NzY5NzExfQ.jJ5GnGTuY0Gz_eAK12ImIM9aXbhylCeO1ICQ0gN2wuS6XpzXbSGfQ6_RK7TqzrzjiK0pQOM6-XzJHzEeIWlnyw"; // Reemplaza con el token adecuado, crea uno nuevo
-            string response = await ApiClient.GetRequestAsync("GET", url, token);
+            String url = Program.rutaBase + "cliente";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
             Console.WriteLine(response);
             listaClientes = JsonSerializer.Deserialize<List<Cliente>>(response);
@@ -89,10 +88,9 @@ namespace Pantalla_Cliente
             DateTime fechaDateTime = DateTime.ParseExact(fechaFormateada, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId));
             Console.WriteLine("metodo ha sido activado");
-            String url = "http://localhost:8083/incidencia";
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmExQGdtYWlsLmNvbSIsImlhdCI6MTY5ODY4MzMxMSwiZXhwIjoxNjk4NzY5NzExfQ.jJ5GnGTuY0Gz_eAK12ImIM9aXbhylCeO1ICQ0gN2wuS6XpzXbSGfQ6_RK7TqzrzjiK0pQOM6-XzJHzEeIWlnyw"; // Reemplaza con el token adecuado, crea uno nuevo
+            String url = Program.rutaBase + "incidencia";
             string content = JsonSerializer.Serialize(newIncidencia);
-            string response = await ApiClient.GetRequestAsync("POST", url, token, content);
+            string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
 
             Console.WriteLine(response);
 
@@ -125,9 +123,8 @@ namespace Pantalla_Cliente
         public async Task getPuntos()
         {
             Console.WriteLine("metodo ha sido activado");
-            String url = "http://localhost:8083/puntos";
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmExQGdtYWlsLmNvbSIsImlhdCI6MTY5ODY4MzMxMSwiZXhwIjoxNjk4NzY5NzExfQ.jJ5GnGTuY0Gz_eAK12ImIM9aXbhylCeO1ICQ0gN2wuS6XpzXbSGfQ6_RK7TqzrzjiK0pQOM6-XzJHzEeIWlnyw"; // Reemplaza con el token adecuado, crea uno nuevo
-            string response = await ApiClient.GetRequestAsync("GET", url, token);
+            String url = Program.rutaBase + "puntos";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
             Console.WriteLine(response);
             listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
