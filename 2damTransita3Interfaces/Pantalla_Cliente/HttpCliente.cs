@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 public class ApiClient
 {
-
     static private HttpClient httpClient;
 
-    public static async Task<string> GetRequestAsync(string tipoRequest, string url, string token = null)
+    public static async Task<string> GetRequestAsync(string tipoRequest, string url, string token = null, string content = null)
     {
         httpClient = new HttpClient();
 
@@ -16,19 +16,43 @@ public class ApiClient
             httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
         }
 
+        HttpContent httpContent = null;
+
+        if (!string.IsNullOrEmpty(content))
+        {
+            httpContent = new StringContent(content, Encoding.UTF8, "application/json");
+        }
+
         switch (tipoRequest)
         {
             case "GET":
                 return await httpClient.GetStringAsync(url);
+
             case "POST":
+                var postResponse = await httpClient.PostAsync(url, httpContent);
+                if (postResponse.IsSuccessStatusCode)
+                {
+                    return "Solicitud POST exitosa.";
+                }
+                else
+                {
+                    throw new Exception("Error al realizar la solicitud POST.");
+                }
 
-                break;
             case "PUT":
+                var putResponse = await httpClient.PutAsync(url, httpContent);
+                if (putResponse.IsSuccessStatusCode)
+                {
+                    return "Solicitud PUT exitosa.";
+                }
+                else
+                {
+                    throw new Exception("Error al realizar la solicitud PUT.");
+                }
 
-                break;
             case "DELETE":
-                var response = await httpClient.DeleteAsync(url);
-                if (response.IsSuccessStatusCode)
+                var deleteResponse = await httpClient.DeleteAsync(url);
+                if (deleteResponse.IsSuccessStatusCode)
                 {
                     return "Solicitud DELETE exitosa.";
                 }
@@ -36,12 +60,11 @@ public class ApiClient
                 {
                     throw new Exception("Error al realizar la solicitud DELETE.");
                 }
-                break;
+
             default:
                 break;
         }
 
         return null;
     }
-
 }

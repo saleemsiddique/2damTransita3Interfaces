@@ -41,9 +41,8 @@ namespace Pantalla_Cliente
         public async Task getClientes()
         {
             Console.WriteLine("metodo ha sido activado");
-            String url = "http://localhost:8083/cliente";
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEwQGVtYWlsLmNvbSIsImlhdCI6MTY5ODY1MTg0NCwiZXhwIjoxNjk4NzM4MjQ0fQ.XqeVOLJsM00dH5-6IGIvC5OpEVCoWMhR7CjhDQjS0RS8SbSj7FKZw4d9i2bXxKZttUcS68uNEqN84NIc2_8FIA"; // Reemplaza con el token adecuado, crea uno nuevo
-            string response = await ApiClient.GetRequestAsync("GET", url, token);
+            String url = Program.rutaBase + "cliente";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             
             Console.WriteLine(response);
 

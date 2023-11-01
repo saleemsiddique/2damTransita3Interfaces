@@ -79,9 +79,8 @@ namespace Pantalla_Cliente
         {
             Console.WriteLine("metodo eliminar ha sido activado");
             String id = this.idCliente.Text;
-            String url = "http://localhost:8083/cliente/eliminar/" + id;
-            string token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEwQGVtYWlsLmNvbSIsImlhdCI6MTY5ODY1MTg0NCwiZXhwIjoxNjk4NzM4MjQ0fQ.XqeVOLJsM00dH5-6IGIvC5OpEVCoWMhR7CjhDQjS0RS8SbSj7FKZw4d9i2bXxKZttUcS68uNEqN84NIc2_8FIA"; // Reemplaza con el token adecuado, crea uno nuevo
-            string response = await ApiClient.GetRequestAsync("DELETE", url, token);
+            String url = Program.rutaBase + "cliente/eliminar/" + id;
+            string response = await ApiClient.GetRequestAsync("DELETE", url, Program.token);
 
             Console.WriteLine(response);
             Form formularioPadre = this.FindForm();
@@ -100,11 +99,6 @@ namespace Pantalla_Cliente
         }
 
         private void idCliente_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

@@ -43,7 +43,6 @@ namespace Pantalla_Cliente
             this.correo = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -54,34 +53,35 @@ namespace Pantalla_Cliente
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.imgTransita = new System.Windows.Forms.Label();
-            this.btn_filtrar = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.botonVerDatosIncidencia = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonAddCliente = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.btn_filtrar = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.imgTransita = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -110,7 +110,7 @@ namespace Pantalla_Cliente
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(29, 309);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(177, 206);
+            this.groupBox1.Size = new System.Drawing.Size(177, 220);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ID:";
@@ -119,7 +119,7 @@ namespace Pantalla_Cliente
             // fecha_mostrar
             // 
             this.fecha_mostrar.Enabled = false;
-            this.fecha_mostrar.Location = new System.Drawing.Point(9, 126);
+            this.fecha_mostrar.Location = new System.Drawing.Point(9, 144);
             this.fecha_mostrar.Name = "fecha_mostrar";
             this.fecha_mostrar.Size = new System.Drawing.Size(100, 20);
             this.fecha_mostrar.TabIndex = 8;
@@ -128,7 +128,7 @@ namespace Pantalla_Cliente
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(6, 110);
+            this.label1.Location = new System.Drawing.Point(6, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 7;
@@ -137,7 +137,7 @@ namespace Pantalla_Cliente
             // estado_mostrar
             // 
             this.estado_mostrar.Enabled = false;
-            this.estado_mostrar.Location = new System.Drawing.Point(9, 180);
+            this.estado_mostrar.Location = new System.Drawing.Point(9, 187);
             this.estado_mostrar.Name = "estado_mostrar";
             this.estado_mostrar.Size = new System.Drawing.Size(100, 20);
             this.estado_mostrar.TabIndex = 6;
@@ -146,8 +146,9 @@ namespace Pantalla_Cliente
             // 
             this.descripcion_mostrar.Enabled = false;
             this.descripcion_mostrar.Location = new System.Drawing.Point(9, 68);
+            this.descripcion_mostrar.Multiline = true;
             this.descripcion_mostrar.Name = "descripcion_mostrar";
-            this.descripcion_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.descripcion_mostrar.Size = new System.Drawing.Size(162, 57);
             this.descripcion_mostrar.TabIndex = 5;
             // 
             // id_mostrar
@@ -162,7 +163,7 @@ namespace Pantalla_Cliente
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(6, 164);
+            this.label14.Location = new System.Drawing.Point(6, 171);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(43, 13);
             this.label14.TabIndex = 2;
@@ -219,21 +220,6 @@ namespace Pantalla_Cliente
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(231, 681);
             this.panel3.TabIndex = 27;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.pictureBox12.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox12.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox12.Location = new System.Drawing.Point(51, 104);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(130, 112);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 24;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
             // btn_cliente
             // 
@@ -388,9 +374,8 @@ namespace Pantalla_Cliente
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 681);
+            this.panel1.Size = new System.Drawing.Size(276, 681);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel5
             // 
@@ -400,8 +385,211 @@ namespace Pantalla_Cliente
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 594);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(229, 85);
+            this.panel5.Size = new System.Drawing.Size(274, 85);
             this.panel5.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(20, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(224, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Incidencias Transita";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.botonVerDatosIncidencia);
+            this.panel2.Controls.Add(this.radioButton1);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(51, 213);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(450, 67);
+            this.panel2.TabIndex = 16;
+            this.panel2.Visible = false;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // botonVerDatosIncidencia
+            // 
+            this.botonVerDatosIncidencia.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.botonVerDatosIncidencia.Location = new System.Drawing.Point(334, 23);
+            this.botonVerDatosIncidencia.Name = "botonVerDatosIncidencia";
+            this.botonVerDatosIncidencia.Size = new System.Drawing.Size(75, 23);
+            this.botonVerDatosIncidencia.TabIndex = 3;
+            this.botonVerDatosIncidencia.Text = "View";
+            this.botonVerDatosIncidencia.UseVisualStyleBackColor = true;
+            this.botonVerDatosIncidencia.Click += new System.EventHandler(this.botonVerDatosIncidencia_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(306, 28);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(88, 28);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Incidencia";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // buscarTextBox
+            // 
+            this.buscarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.buscarTextBox.Location = new System.Drawing.Point(347, 92);
+            this.buscarTextBox.Name = "buscarTextBox";
+            this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
+            this.buscarTextBox.TabIndex = 29;
+            this.buscarTextBox.Text = "Buscar";
+            // 
+            // panel4
+            // 
+            this.panel4.AutoSize = true;
+            this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel4.Controls.Add(this.label16);
+            this.panel4.Controls.Add(this.buttonAddCliente);
+            this.panel4.Controls.Add(this.buscarTextBox);
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.panel2);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(276, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(557, 681);
+            this.panel4.TabIndex = 28;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(39, 152);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(116, 17);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "Añadir Incidencia";
+            // 
+            // buttonAddCliente
+            // 
+            this.buttonAddCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.buttonAddCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAddCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAddCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAddCliente.Location = new System.Drawing.Point(160, 144);
+            this.buttonAddCliente.Name = "buttonAddCliente";
+            this.buttonAddCliente.Size = new System.Drawing.Size(30, 30);
+            this.buttonAddCliente.TabIndex = 30;
+            this.buttonAddCliente.Text = "+";
+            this.buttonAddCliente.UseVisualStyleBackColor = false;
+            this.buttonAddCliente.Click += new System.EventHandler(this.buttonAddCliente_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(291, 74);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(36, 36);
+            this.button1.TabIndex = 17;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.Location = new System.Drawing.Point(415, 10);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(30, 49);
+            this.button8.TabIndex = 13;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox4.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox4.Location = new System.Drawing.Point(24, 15);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.pictureBox12.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox12.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox12.Location = new System.Drawing.Point(51, 104);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(130, 112);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 24;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
+            // 
+            // btn_filtrar
+            // 
+            this.btn_filtrar.AutoSize = true;
+            this.btn_filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_filtrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_filtrar.Image")));
+            this.btn_filtrar.Location = new System.Drawing.Point(947, 88);
+            this.btn_filtrar.Name = "btn_filtrar";
+            this.btn_filtrar.Size = new System.Drawing.Size(42, 36);
+            this.btn_filtrar.TabIndex = 15;
+            this.btn_filtrar.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(885, 90);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(20, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox1
             // 
@@ -439,195 +627,6 @@ namespace Pantalla_Cliente
             this.imgTransita.TabIndex = 5;
             this.imgTransita.Click += new System.EventHandler(this.imgTransita_Click);
             // 
-            // btn_filtrar
-            // 
-            this.btn_filtrar.AutoSize = true;
-            this.btn_filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_filtrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_filtrar.Image")));
-            this.btn_filtrar.Location = new System.Drawing.Point(947, 88);
-            this.btn_filtrar.Name = "btn_filtrar";
-            this.btn_filtrar.Size = new System.Drawing.Size(42, 36);
-            this.btn_filtrar.TabIndex = 15;
-            this.btn_filtrar.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(885, 90);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(20, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(224, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Incidencias Transita";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.botonVerDatosIncidencia);
-            this.panel2.Controls.Add(this.radioButton1);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(51, 213);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(495, 67);
-            this.panel2.TabIndex = 16;
-            this.panel2.Visible = false;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // button8
-            // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(460, 10);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 49);
-            this.button8.TabIndex = 13;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox4.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox4.Location = new System.Drawing.Point(24, 15);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
-            // 
-            // botonVerDatosIncidencia
-            // 
-            this.botonVerDatosIncidencia.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.botonVerDatosIncidencia.Location = new System.Drawing.Point(379, 23);
-            this.botonVerDatosIncidencia.Name = "botonVerDatosIncidencia";
-            this.botonVerDatosIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.botonVerDatosIncidencia.TabIndex = 3;
-            this.botonVerDatosIncidencia.Text = "View";
-            this.botonVerDatosIncidencia.UseVisualStyleBackColor = true;
-            this.botonVerDatosIncidencia.Click += new System.EventHandler(this.botonVerDatosIncidencia_Click);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(351, 28);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(88, 28);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Incidencia";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(336, 74);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 36);
-            this.button1.TabIndex = 17;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // buscarTextBox
-            // 
-            this.buscarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(392, 92);
-            this.buscarTextBox.Name = "buscarTextBox";
-            this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
-            this.buscarTextBox.TabIndex = 29;
-            this.buscarTextBox.Text = "Buscar";
-            // 
-            // panel4
-            // 
-            this.panel4.AutoSize = true;
-            this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.panel4.Controls.Add(this.label16);
-            this.panel4.Controls.Add(this.buttonAddCliente);
-            this.panel4.Controls.Add(this.buscarTextBox);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.panel2);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(231, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(602, 681);
-            this.panel4.TabIndex = 28;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(39, 152);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(116, 17);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "Añadir Incidencia";
-            // 
-            // buttonAddCliente
-            // 
-            this.buttonAddCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.buttonAddCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonAddCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAddCliente.Location = new System.Drawing.Point(160, 144);
-            this.buttonAddCliente.Name = "buttonAddCliente";
-            this.buttonAddCliente.Size = new System.Drawing.Size(30, 30);
-            this.buttonAddCliente.TabIndex = 30;
-            this.buttonAddCliente.Text = "+";
-            this.buttonAddCliente.UseVisualStyleBackColor = false;
-            // 
             // Incidencias_Pantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -652,18 +651,18 @@ namespace Pantalla_Cliente
             this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

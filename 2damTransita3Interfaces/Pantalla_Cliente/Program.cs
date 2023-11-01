@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
+using System;
+using System.IO;
 using System.Windows.Forms;
+
+
 
 namespace Pantalla_Cliente
 {
@@ -11,12 +13,29 @@ namespace Pantalla_Cliente
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        [STAThread]
+
+        public static string rutaBase;
+        public static string token;
         static void Main()
         {
+            string appSettingsPath = Path.Combine(Directory.GetCurrentDirectory(), "../../");
+
+            IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(appSettingsPath)
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+
+            rutaBase = configuration["AppSettings:RutaBase"];
+            token = configuration["AppSettings:token"];
+
+            Console.WriteLine(rutaBase);
+            Console.WriteLine(token);
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Transita());
-        }
+        }   
     }
 }
