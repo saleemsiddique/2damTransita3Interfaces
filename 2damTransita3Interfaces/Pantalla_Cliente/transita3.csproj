@@ -105,6 +105,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
+    <Compile Include="CrearZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearZona.Designer.cs">
+      <DependentUpon>CrearZona.cs</DependentUpon>
+    </Compile>
     <Compile Include="datosIncidencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,12 @@
     <Compile Include="CrearIncidencia.Designer.cs">
       <DependentUpon>CrearIncidencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarZonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarZonas.Designer.cs">
+      <DependentUpon>EditarZonas.cs</DependentUpon>
+    </Compile>
     <Compile Include="HttpCliente.cs" />
     <Compile Include="Incidencia.cs" />
     <Compile Include="IncidenciasPantalla.cs">
@@ -158,6 +170,7 @@
     <Compile Include="IncidenciaBanner.Designer.cs">
       <DependentUpon>IncidenciaBanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zona.cs" />
     <Compile Include="ZonaBanner.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -170,6 +183,9 @@
     <Compile Include="ZonasPantalla.Designer.cs">
       <DependentUpon>ZonasPantalla.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CrearZona.resx">
+      <DependentUpon>CrearZona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="datosIncidencia.resx">
       <DependentUpon>datosIncidencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrearIncidencia.resx">
       <DependentUpon>CrearIncidencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarZonas.resx">
+      <DependentUpon>EditarZonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IncidenciasPantalla.resx">
       <DependentUpon>IncidenciasPantalla.cs</DependentUpon>

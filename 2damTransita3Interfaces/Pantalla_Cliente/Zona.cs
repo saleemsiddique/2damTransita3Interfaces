@@ -21,5 +21,5 @@ namespace Pantalla_Cliente
             return $"ID: {id}, Nombre: {nombre}";
         }
     }
-   
+
 }

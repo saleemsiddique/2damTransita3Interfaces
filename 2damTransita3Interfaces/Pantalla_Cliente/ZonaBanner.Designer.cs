@@ -123,6 +123,7 @@ namespace Pantalla_Cliente
             this.Controls.Add(this.radioButton1);
             this.Name = "ZonaBanner";
             this.Size = new System.Drawing.Size(450, 67);
+            this.Load += new System.EventHandler(this.ZonaBanner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

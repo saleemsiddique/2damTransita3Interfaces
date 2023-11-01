@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,7 @@ namespace Pantalla_Cliente
         {
             InitializeComponent();
         }
-  
+
         private void btn_cancelarZona_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -34,7 +35,7 @@ namespace Pantalla_Cliente
         }
         public async Task crearZona()
         {
-          
+
             string zonaNombre = nombre_input.Text;
 
             Zona newZona = new Zona(zonaNombre);
@@ -67,6 +68,39 @@ namespace Pantalla_Cliente
                     this.Close();
                 }
             }
+        }
+
+        private void descripcion_input_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_AceptarIncidencia_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de los datos de la Zona?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                if (verifyDatos())
+                {
+                    _ = crearZona();
+
+                    foreach (Form form in Application.OpenForms)
+                    {
+                        if (form is Transita)
+                        {
+                            Transita transita = (Transita)form;
+                            transita.MostrarPanelDeZona();
+                        }
+                    }
+                    this.Close();
+                }
+            }
+        }
+
+        private void btn_cancelarIncidencia_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
