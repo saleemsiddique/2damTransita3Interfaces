@@ -21,5 +21,19 @@ namespace Pantalla_Cliente
         {
 
         }
+        public Label getId()
+        {
+            return idZona;
+        }
+
+        public Label getNombre()
+        {
+            return nombreZona;
+        }
+
+        public Button getViewBtn()
+        {
+            return btnViewZona;
+        }
     }
 }

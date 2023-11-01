@@ -30,24 +30,24 @@ namespace Pantalla_Cliente
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ZonaBanner));
-            this.idIncidencia = new System.Windows.Forms.Label();
+            this.idZona = new System.Windows.Forms.Label();
             this.nombreZona = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btnViewIncidencia = new System.Windows.Forms.Button();
+            this.btnViewZona = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // idIncidencia
+            // idZona
             // 
-            this.idIncidencia.AutoSize = true;
-            this.idIncidencia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.idIncidencia.Location = new System.Drawing.Point(70, 9);
-            this.idIncidencia.Name = "idIncidencia";
-            this.idIncidencia.Size = new System.Drawing.Size(18, 13);
-            this.idIncidencia.TabIndex = 27;
-            this.idIncidencia.Text = "ID";
+            this.idZona.AutoSize = true;
+            this.idZona.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.idZona.Location = new System.Drawing.Point(70, 9);
+            this.idZona.Name = "idZona";
+            this.idZona.Size = new System.Drawing.Size(18, 13);
+            this.idZona.TabIndex = 27;
+            this.idZona.Text = "ID";
             // 
             // nombreZona
             // 
@@ -88,15 +88,15 @@ namespace Pantalla_Cliente
             this.pictureBox4.TabIndex = 24;
             this.pictureBox4.TabStop = false;
             // 
-            // btnViewIncidencia
+            // btnViewZona
             // 
-            this.btnViewIncidencia.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnViewIncidencia.Location = new System.Drawing.Point(325, 22);
-            this.btnViewIncidencia.Name = "btnViewIncidencia";
-            this.btnViewIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.btnViewIncidencia.TabIndex = 23;
-            this.btnViewIncidencia.Text = "View";
-            this.btnViewIncidencia.UseVisualStyleBackColor = true;
+            this.btnViewZona.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnViewZona.Location = new System.Drawing.Point(325, 22);
+            this.btnViewZona.Name = "btnViewZona";
+            this.btnViewZona.Size = new System.Drawing.Size(75, 23);
+            this.btnViewZona.TabIndex = 23;
+            this.btnViewZona.Text = "View";
+            this.btnViewZona.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
@@ -115,11 +115,11 @@ namespace Pantalla_Cliente
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.Controls.Add(this.idIncidencia);
+            this.Controls.Add(this.idZona);
             this.Controls.Add(this.nombreZona);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.btnViewIncidencia);
+            this.Controls.Add(this.btnViewZona);
             this.Controls.Add(this.radioButton1);
             this.Name = "ZonaBanner";
             this.Size = new System.Drawing.Size(450, 67);
@@ -131,11 +131,11 @@ namespace Pantalla_Cliente
 
         #endregion
 
-        private System.Windows.Forms.Label idIncidencia;
+        private System.Windows.Forms.Label idZona;
         private System.Windows.Forms.Label nombreZona;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button btnViewIncidencia;
+        private System.Windows.Forms.Button btnViewZona;
         private System.Windows.Forms.RadioButton radioButton1;
     }
 }

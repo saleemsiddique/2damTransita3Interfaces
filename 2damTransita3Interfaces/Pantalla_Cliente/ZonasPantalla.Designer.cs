@@ -42,13 +42,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.descripcion_mostrar = new System.Windows.Forms.TextBox();
-            this.id_mostrar = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.nombre = new System.Windows.Forms.Label();
-            this.correo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
@@ -62,16 +55,23 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
+            this.pictureZona = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.id_mostrar = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.nombre = new System.Windows.Forms.Label();
+            this.correo = new System.Windows.Forms.Label();
+            this.nombre_mostrar = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureZona)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -238,7 +238,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.panel3.Controls.Add(this.pictureBox12);
+            this.panel3.Controls.Add(this.pictureZona);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.nombre);
             this.panel3.Controls.Add(this.correo);
@@ -247,87 +247,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(231, 681);
             this.panel3.TabIndex = 30;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.pictureBox12.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox12.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox12.Location = new System.Drawing.Point(51, 104);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(130, 112);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 24;
-            this.pictureBox12.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.descripcion_mostrar);
-            this.groupBox1.Controls.Add(this.id_mostrar);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(29, 309);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(177, 109);
-            this.groupBox1.TabIndex = 26;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ID:";
-            // 
-            // descripcion_mostrar
-            // 
-            this.descripcion_mostrar.Enabled = false;
-            this.descripcion_mostrar.Location = new System.Drawing.Point(9, 68);
-            this.descripcion_mostrar.Name = "descripcion_mostrar";
-            this.descripcion_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.descripcion_mostrar.TabIndex = 5;
-            // 
-            // id_mostrar
-            // 
-            this.id_mostrar.Enabled = false;
-            this.id_mostrar.Location = new System.Drawing.Point(9, 19);
-            this.id_mostrar.Name = "id_mostrar";
-            this.id_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.id_mostrar.TabIndex = 3;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(6, 52);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 13);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Nombre Zona";
-            // 
-            // nombre
-            // 
-            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nombre.AutoSize = true;
-            this.nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre.ForeColor = System.Drawing.Color.White;
-            this.nombre.Location = new System.Drawing.Point(58, 232);
-            this.nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.nombre.Name = "nombre";
-            this.nombre.Size = new System.Drawing.Size(88, 20);
-            this.nombre.TabIndex = 23;
-            this.nombre.Text = "Nom_Zona";
-            // 
-            // correo
-            // 
-            this.correo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.correo.AutoSize = true;
-            this.correo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.correo.ForeColor = System.Drawing.Color.DarkGray;
-            this.correo.Location = new System.Drawing.Point(92, 267);
-            this.correo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.correo.Name = "correo";
-            this.correo.Size = new System.Drawing.Size(50, 13);
-            this.correo.TabIndex = 25;
-            this.correo.Text = "@Cliente";
             // 
             // panel1
             // 
@@ -528,6 +447,87 @@
             this.btn_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cliente.UseVisualStyleBackColor = false;
             // 
+            // pictureZona
+            // 
+            this.pictureZona.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureZona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.pictureZona.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureZona.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureZona.Location = new System.Drawing.Point(49, 128);
+            this.pictureZona.Name = "pictureZona";
+            this.pictureZona.Size = new System.Drawing.Size(130, 112);
+            this.pictureZona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureZona.TabIndex = 28;
+            this.pictureZona.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.nombre_mostrar);
+            this.groupBox1.Controls.Add(this.id_mostrar);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(27, 333);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(177, 102);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ID:";
+            // 
+            // id_mostrar
+            // 
+            this.id_mostrar.Enabled = false;
+            this.id_mostrar.Location = new System.Drawing.Point(9, 19);
+            this.id_mostrar.Name = "id_mostrar";
+            this.id_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.id_mostrar.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(6, 52);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Nombre Zona";
+            // 
+            // nombre
+            // 
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre.AutoSize = true;
+            this.nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.ForeColor = System.Drawing.Color.White;
+            this.nombre.Location = new System.Drawing.Point(78, 260);
+            this.nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(88, 20);
+            this.nombre.TabIndex = 27;
+            this.nombre.Text = "Nom_Zona";
+            // 
+            // correo
+            // 
+            this.correo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.correo.AutoSize = true;
+            this.correo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.correo.ForeColor = System.Drawing.Color.DarkGray;
+            this.correo.Location = new System.Drawing.Point(90, 291);
+            this.correo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.correo.Name = "correo";
+            this.correo.Size = new System.Drawing.Size(50, 13);
+            this.correo.TabIndex = 29;
+            this.correo.Text = "@Cliente";
+            // 
+            // nombre_mostrar
+            // 
+            this.nombre_mostrar.Enabled = false;
+            this.nombre_mostrar.Location = new System.Drawing.Point(9, 68);
+            this.nombre_mostrar.Name = "nombre_mostrar";
+            this.nombre_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.nombre_mostrar.TabIndex = 4;
+            // 
             // ZonasPantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,6 +536,8 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(1280, 720);
+            this.MinimumSize = new System.Drawing.Size(960, 450);
             this.Name = "ZonasPantalla";
             this.Text = "ZonasPantalla";
             this.panel4.ResumeLayout(false);
@@ -545,14 +547,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureZona)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,13 +575,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox descripcion_mostrar;
-        private System.Windows.Forms.TextBox id_mostrar;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label nombre;
-        private System.Windows.Forms.Label correo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button6;
@@ -593,5 +588,12 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_cliente;
+        private System.Windows.Forms.PictureBox pictureZona;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox id_mostrar;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label nombre;
+        private System.Windows.Forms.Label correo;
+        private System.Windows.Forms.TextBox nombre_mostrar;
     }
 }
