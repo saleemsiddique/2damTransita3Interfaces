@@ -145,6 +145,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Punto.cs" />
     <Compile Include="ClienteBanner.cs">
       <SubType>UserControl</SubType>
@@ -181,14 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="IncidenciaBanner.resx">
       <DependentUpon>IncidenciaBanner.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,7 +231,16 @@
     <None Include="Resources\suma.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\descarga.jpeg" />
+    <None Include="Resources\descarga1.jpeg" />
+    <None Include="Resources\IesMarcoZaragoza-fotor-bg-remover-2023110121283.png" />
+    <None Include="Resources\CasasColores.jpeg" />
+    <None Include="Resources\HeaderIESMARCOS.jpeg" />
+    <None Include="Resources\HeaderIESMARCOS1.jpeg" />
+    <None Include="Resources\HeaderIESMARCOS.jpg" />
     <Content Include="Resources\menu %281%29.png" />
+    <None Include="Resources\paisaje.jpeg" />
+    <None Include="Resources\Villajoyosa.jpeg" />
     <None Include="Resources\menu %281%291.png" />
     <Content Include="Resources\menu.png" />
   </ItemGroup>

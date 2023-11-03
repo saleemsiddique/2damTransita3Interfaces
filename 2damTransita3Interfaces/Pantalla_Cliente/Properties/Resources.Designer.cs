@@ -19,7 +19,7 @@ namespace Pantalla_Cliente.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -73,6 +73,36 @@ namespace Pantalla_Cliente.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CasasColores {
+            get {
+                object obj = ResourceManager.GetObject("CasasColores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga {
+            get {
+                object obj = ResourceManager.GetObject("descarga", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga1 {
+            get {
+                object obj = ResourceManager.GetObject("descarga1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estrellaAmarilla_fotor_bg_remover_20231021185036 {
             get {
                 object obj = ResourceManager.GetObject("estrellaAmarilla-fotor-bg-remover-20231021185036", resourceCulture);
@@ -93,9 +123,49 @@ namespace Pantalla_Cliente.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HeaderIESMARCOS {
+            get {
+                object obj = ResourceManager.GetObject("HeaderIESMARCOS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HeaderIESMARCOS1 {
+            get {
+                object obj = ResourceManager.GetObject("HeaderIESMARCOS1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HeaderIESMARCOS2 {
+            get {
+                object obj = ResourceManager.GetObject("HeaderIESMARCOS2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_menú_2_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-menú-2-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IesMarcoZaragoza_fotor_bg_remover_2023110121283 {
+            get {
+                object obj = ResourceManager.GetObject("IesMarcoZaragoza-fotor-bg-remover-2023110121283", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +193,29 @@ namespace Pantalla_Cliente.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap paisaje {
+            get {
+                object obj = ResourceManager.GetObject("paisaje", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap suma {
             get {
                 object obj = ResourceManager.GetObject("suma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Villajoyosa {
+            get {
+                object obj = ResourceManager.GetObject("Villajoyosa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
