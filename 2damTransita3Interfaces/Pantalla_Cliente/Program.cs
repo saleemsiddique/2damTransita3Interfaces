@@ -13,26 +13,10 @@ namespace Pantalla_Cliente
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
+        static Config configurations = new Config();
 
-        public static string rutaBase;
-        public static string token;
         static void Main()
         {
-            string appSettingsPath = Path.Combine(Directory.GetCurrentDirectory(), "../../");
-
-            IConfiguration configuration = new ConfigurationBuilder()
-                .SetBasePath(appSettingsPath)
-                .AddJsonFile("appsettings.json")
-                .Build();
-
-
-            rutaBase = configuration["AppSettings:RutaBase"];
-            token = configuration["AppSettings:token"];
-
-            Console.WriteLine(rutaBase);
-            Console.WriteLine(token);
-
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Transita());
