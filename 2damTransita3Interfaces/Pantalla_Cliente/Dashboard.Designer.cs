@@ -311,7 +311,7 @@
             this.btn_zonas.Text = "      Zonas";
             this.btn_zonas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_zonas.UseVisualStyleBackColor = false;
-            this.btn_zonas.Click += new System.EventHandler(this.ToggleButton_Click);
+            this.btn_zonas.Click += new System.EventHandler(this.btn_zona_Click);
             // 
             // btn_cliente
             // 
