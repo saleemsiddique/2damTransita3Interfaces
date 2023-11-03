@@ -102,5 +102,10 @@ namespace Pantalla_Cliente
         {
             this.Close();
         }
+
+        private void CrearZona_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

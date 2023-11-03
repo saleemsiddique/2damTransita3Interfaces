@@ -67,4 +67,9 @@ public class ApiClient
 
         return null;
     }
+
+    internal static Task<string> GetRequestAsync(string url)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -121,6 +121,7 @@
             this.Name = "CrearZona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearZona";
+            this.Load += new System.EventHandler(this.CrearZona_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
