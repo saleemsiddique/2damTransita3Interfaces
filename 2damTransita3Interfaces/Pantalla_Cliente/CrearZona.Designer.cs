@@ -39,7 +39,7 @@
             // btn_cancelarIncidencia
             // 
             this.btn_cancelarIncidencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancelarIncidencia.Location = new System.Drawing.Point(202, 245);
+            this.btn_cancelarIncidencia.Location = new System.Drawing.Point(71, 253);
             this.btn_cancelarIncidencia.Name = "btn_cancelarIncidencia";
             this.btn_cancelarIncidencia.Size = new System.Drawing.Size(75, 23);
             this.btn_cancelarIncidencia.TabIndex = 38;
@@ -50,7 +50,7 @@
             // btn_AceptarIncidencia
             // 
             this.btn_AceptarIncidencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AceptarIncidencia.Location = new System.Drawing.Point(88, 245);
+            this.btn_AceptarIncidencia.Location = new System.Drawing.Point(211, 253);
             this.btn_AceptarIncidencia.Name = "btn_AceptarIncidencia";
             this.btn_AceptarIncidencia.Size = new System.Drawing.Size(75, 23);
             this.btn_AceptarIncidencia.TabIndex = 37;
@@ -119,6 +119,7 @@
             this.MaximumSize = new System.Drawing.Size(377, 352);
             this.MinimumSize = new System.Drawing.Size(377, 352);
             this.Name = "CrearZona";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearZona";
             this.ResumeLayout(false);
             this.PerformLayout();

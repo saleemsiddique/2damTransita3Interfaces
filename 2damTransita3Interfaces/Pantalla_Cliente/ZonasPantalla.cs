@@ -59,8 +59,9 @@ namespace Pantalla_Cliente
 
                 zonaBanner.getViewBtn().Click += (sender, e) =>
                 {
-                    correo.Text = $"ID: {zona.id}";
                     nombre.Text = zona.nombre;
+                    correo.Text = $"ID: {zona.id}";
+                    nombre_mostrar.Text = zona.nombre;
                     id_mostrar.Text = zona.id.ToString();
                 };
 
@@ -83,5 +84,9 @@ namespace Pantalla_Cliente
             return panel3;
         }
 
+        private void botonVerDatosIncidencia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -39,7 +39,7 @@
             // btn_reportarIncidencia
             // 
             this.btn_reportarIncidencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_reportarIncidencia.Location = new System.Drawing.Point(194, 234);
+            this.btn_reportarIncidencia.Location = new System.Drawing.Point(71, 234);
             this.btn_reportarIncidencia.Name = "btn_reportarIncidencia";
             this.btn_reportarIncidencia.Size = new System.Drawing.Size(75, 23);
             this.btn_reportarIncidencia.TabIndex = 20;
@@ -50,7 +50,7 @@
             // btn_AceptarIncidencia
             // 
             this.btn_AceptarIncidencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AceptarIncidencia.Location = new System.Drawing.Point(92, 234);
+            this.btn_AceptarIncidencia.Location = new System.Drawing.Point(215, 234);
             this.btn_AceptarIncidencia.Name = "btn_AceptarIncidencia";
             this.btn_AceptarIncidencia.Size = new System.Drawing.Size(75, 23);
             this.btn_AceptarIncidencia.TabIndex = 19;
@@ -62,9 +62,8 @@
             // 
             this.zona_input.Location = new System.Drawing.Point(102, 139);
             this.zona_input.Margin = new System.Windows.Forms.Padding(2);
-            this.zona_input.Multiline = true;
             this.zona_input.Name = "zona_input";
-            this.zona_input.Size = new System.Drawing.Size(158, 40);
+            this.zona_input.Size = new System.Drawing.Size(158, 20);
             this.zona_input.TabIndex = 18;
             // 
             // label1
@@ -116,6 +115,7 @@
             this.Controls.Add(this.label_datosInciencia);
             this.Controls.Add(this.incidenciaEditar);
             this.Name = "EditarZonas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarZonas";
             this.ResumeLayout(false);
             this.PerformLayout();

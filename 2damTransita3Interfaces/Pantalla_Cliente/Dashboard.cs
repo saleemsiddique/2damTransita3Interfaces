@@ -28,6 +28,7 @@ namespace Pantalla_Cliente
             //MostrarPanelDeCliente();
             btn_incidencias.Click += btn_incidencias_Click;
             btn_cliente.Click += btn_cliente_Click;
+            btn_zonas.Click += btn_zona_Click;
            
 
             buttons = new Button[] { btn_cliente, btn_incidencias, btn_zonas, btn_puntos, btn_mapa };
