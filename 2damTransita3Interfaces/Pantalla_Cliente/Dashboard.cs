@@ -16,10 +16,9 @@ namespace Pantalla_Cliente
         private Button[] buttons;
         private Button currentButton;
 
-        public Transita(Config config)
+        public Transita()
         {
             InitializeComponent();
-
             panelHome.Show();
             pictureBox2.Hide();
 
@@ -86,7 +85,7 @@ namespace Pantalla_Cliente
             panel1_derecha.Controls.Clear();
         }
     
-        public void MostrarPanelDeIncidencia(Config config)
+        public void MostrarPanelDeIncidencia()
         {
             Incidencias_Pantalla incidenciaForm = new Incidencias_Pantalla();
             Panel panelCentralIncidencia = incidenciaForm.ObtenerPanelCentralIncidencia();
@@ -107,7 +106,7 @@ namespace Pantalla_Cliente
             pictureBox2.Show();
         }
 
-        public void MostrarPanelDeCliente(Config config)
+        public void MostrarPanelDeCliente()
         {
             Cliente_Pantalla clientePantalla = new Cliente_Pantalla();
             Panel panelCentralIncidencia = clientePantalla.ObtenerPanelCentralCliente();
@@ -128,7 +127,7 @@ namespace Pantalla_Cliente
             pictureBox2.Show();
 
         }
-        public void MostrarPanelDeZona(Config config)
+        public void MostrarPanelDeZona()
         {
             ZonasPantalla zonaPantalla = new ZonasPantalla();
             Panel panelCentralZona = zonaPantalla.ObtenerPanelCentralZona();

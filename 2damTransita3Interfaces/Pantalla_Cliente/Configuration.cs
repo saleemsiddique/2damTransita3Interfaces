@@ -6,22 +6,26 @@ using System.Windows.Forms;
 
 namespace Pantalla_Cliente
 {
-    public class Config
+    public class Configuration
     {
-        private string RutaBase { get; set; }
-        private string Token { get; set; }
+        public string rutaBase { get; set; }
+        public string token { get; set; }
 
         private string appSettingsPath;
 
         private IConfiguration configuration;
 
-        public Config()
+        public Configuration()
         {
             appSettingsPath = Path.Combine(Directory.GetCurrentDirectory(), "../../");
             configuration = new ConfigurationBuilder()
                 .SetBasePath(appSettingsPath)
                 .AddJsonFile("appsettings.json")
                 .Build();
+
+            rutaBase = configuration["AppSettings:RutaBase"];
+            token = configuration["AppSettings:token"];
+
         }
     }
 }

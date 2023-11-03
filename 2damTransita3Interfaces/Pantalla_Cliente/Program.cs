@@ -13,13 +13,15 @@ namespace Pantalla_Cliente
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        static Config configurations = new Config();
+        public static Configuration configurations = new Configuration();
 
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Transita());
+            Console.WriteLine(configurations.rutaBase);
+            Console.WriteLine(configurations.token);
         }   
     }
 }

@@ -30,9 +30,9 @@ namespace Pantalla_Cliente
 
             Zona newZona = new Zona(nombreZona);
             Console.WriteLine("Método ha sido activado");
-            String url = Program.rutaBase + "zona/modificar/" + id;
+            String url = Program.configurations.rutaBase + "zona/modificar/" + id;
             string content = JsonSerializer.Serialize(newZona);
-            string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
+            string response = await ApiClient.GetRequestAsync("PUT", url, Program.configurations.token, content);
 
             Console.WriteLine(newZona);
             Console.WriteLine(response);

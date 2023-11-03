@@ -104,6 +104,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="CrearZona.cs">
       <SubType>Form</SubType>

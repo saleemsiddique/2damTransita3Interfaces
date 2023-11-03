@@ -38,8 +38,8 @@ namespace Pantalla_Cliente
         public async Task getClientes()
         {
             Console.WriteLine("metodo ha sido activado");
-            String url = Program.rutaBase + "cliente";
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            String url = Program.configurations.rutaBase + "cliente";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.configurations.token);
 
             Console.WriteLine(response);
             listaClientes = JsonSerializer.Deserialize<List<Cliente>>(response);
@@ -88,9 +88,9 @@ namespace Pantalla_Cliente
             DateTime fechaDateTime = DateTime.ParseExact(fechaFormateada, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId));
             Console.WriteLine("metodo ha sido activado");
-            String url = Program.rutaBase + "incidencia";
+            String url = Program.configurations.rutaBase + "incidencia";
             string content = JsonSerializer.Serialize(newIncidencia);
-            string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
+            string response = await ApiClient.GetRequestAsync("POST", url, Program.configurations.token, content);
 
             Console.WriteLine(response);
 
@@ -123,8 +123,8 @@ namespace Pantalla_Cliente
         public async Task getPuntos()
         {
             Console.WriteLine("metodo ha sido activado");
-            String url = Program.rutaBase + "puntos";
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            String url = Program.configurations.rutaBase + "puntos";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.configurations.token);
 
             Console.WriteLine(response);
             listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
