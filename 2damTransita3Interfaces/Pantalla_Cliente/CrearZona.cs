@@ -40,9 +40,9 @@ namespace Pantalla_Cliente
 
             Zona newZona = new Zona(zonaNombre);
             Console.WriteLine("metodo ha sido activado");
-            String url = Program.configurations.rutaBase + "zona";
+            String url = Program.rutaBase + "zona";
             string content = JsonSerializer.Serialize(newZona);
-            string response = await ApiClient.GetRequestAsync("POST", url, Program.configurations.token, content);
+            string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
 
             Console.WriteLine(response);
 

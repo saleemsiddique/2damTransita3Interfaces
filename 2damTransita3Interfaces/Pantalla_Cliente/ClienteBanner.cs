@@ -79,8 +79,8 @@ namespace Pantalla_Cliente
         {
             Console.WriteLine("metodo eliminar ha sido activado");
             String id = this.idCliente.Text;
-            String url = Program.configurations.rutaBase + "cliente/eliminar/" + id;
-            string response = await ApiClient.GetRequestAsync("DELETE", url, Program.configurations.token);
+            String url = Program.rutaBase + "cliente/eliminar/" + id;
+            string response = await ApiClient.GetRequestAsync("DELETE", url, Program.token);
 
             Console.WriteLine(response);
             Form formularioPadre = this.FindForm();

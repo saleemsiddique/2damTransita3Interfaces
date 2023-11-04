@@ -15,17 +15,19 @@ namespace Pantalla_Cliente
         public static UserLoged userLogged;
         public static string rutaBase;
         public static string token;
+        public static IConfiguration configurations;
+
         static void Main()
         {
             string appSettingsPath = Path.Combine(Directory.GetCurrentDirectory(), "../../");
 
-            IConfiguration configuration = new ConfigurationBuilder()
+                configurations = new ConfigurationBuilder()
                 .SetBasePath(appSettingsPath)
                 .AddJsonFile("appsettings.json")
                 .Build();
 
 
-            rutaBase = configuration["AppSettings:RutaBase"];
+            rutaBase = configurations["AppSettings:RutaBase"];
 
             Console.WriteLine(rutaBase);
 

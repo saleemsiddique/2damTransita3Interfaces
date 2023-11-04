@@ -33,8 +33,8 @@ namespace Pantalla_Cliente
         public async void getZonas()
         {
             Console.WriteLine("metodo ha sido activado");
-            String url = Program.configurations.rutaBase + "zonas";
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.configurations.token);
+            String url = Program.rutaBase + "zonas";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
             Console.WriteLine(response);
 

@@ -51,8 +51,8 @@ namespace Pantalla_Cliente
         public async Task getClientes()
         {
             Console.WriteLine("metodo ha sido activado");
-            String url = Program.configurations.rutaBase + "cliente";
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.configurations.token);
+            String url = Program.rutaBase + "cliente";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
             Console.WriteLine(response);
             listaClientes = JsonSerializer.Deserialize<List<Cliente>>(response);
@@ -101,9 +101,9 @@ namespace Pantalla_Cliente
             DateTime fechaDateTime = DateTime.ParseExact(fechaFormateada, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId));
             Console.WriteLine("metodo ha sido activado");
-            String url = Program.configurations.rutaBase + "incidencia/modificar/" + id;
+            String url = Program.rutaBase + "incidencia/modificar/" + id;
             string content = JsonSerializer.Serialize(newIncidencia);
-            string response = await ApiClient.GetRequestAsync("PUT", url, Program.configurations.token, content);
+            string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
 
             Console.WriteLine(incidencia);
             Console.WriteLine(response);
@@ -112,8 +112,8 @@ namespace Pantalla_Cliente
         public async Task getIncidencia(String id)
         {
             Console.WriteLine("metodo ha sido activado");
-            String url = Program.configurations.rutaBase + "incidencia/id/" + id;
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.configurations.token);
+            String url = Program.rutaBase + "incidencia/id/" + id;
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
             incidencia = JsonSerializer.Deserialize<Incidencia>(response);
             List<EstadoIncidencia> listaEstadosIncidencias = new List<EstadoIncidencia> { EstadoIncidencia.Abierta, EstadoIncidencia.Revision, EstadoIncidencia.Cerrada };
@@ -151,8 +151,8 @@ namespace Pantalla_Cliente
         public async Task getPuntos()
         {
             Console.WriteLine("metodo ha sido activado");
-            String url = Program.configurations.rutaBase + "puntos";
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.configurations.token);
+            String url = Program.rutaBase + "puntos";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
             Console.WriteLine(response);
             listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
