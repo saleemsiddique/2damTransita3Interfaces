@@ -62,9 +62,8 @@
             // 
             this.nombre_input.Location = new System.Drawing.Point(103, 124);
             this.nombre_input.Margin = new System.Windows.Forms.Padding(2);
-            this.nombre_input.Multiline = true;
             this.nombre_input.Name = "nombre_input";
-            this.nombre_input.Size = new System.Drawing.Size(158, 28);
+            this.nombre_input.Size = new System.Drawing.Size(158, 20);
             this.nombre_input.TabIndex = 36;
             this.nombre_input.TextChanged += new System.EventHandler(this.descripcion_input_TextChanged);
             // 
@@ -121,6 +120,7 @@
             this.Name = "CrearZona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearZona";
+            this.Load += new System.EventHandler(this.CrearZona_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

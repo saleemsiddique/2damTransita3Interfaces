@@ -32,7 +32,7 @@ public class ApiClient
                 var postResponse = await httpClient.PostAsync(url, httpContent);
                 if (postResponse.IsSuccessStatusCode)
                 {
-                    return "Solicitud POST exitosa.";
+                    return await postResponse.Content.ReadAsStringAsync();
                 }
                 else
                 {
@@ -66,5 +66,10 @@ public class ApiClient
         }
 
         return null;
+    }
+
+    internal static Task<string> GetRequestAsync(string url)
+    {
+        throw new NotImplementedException();
     }
 }

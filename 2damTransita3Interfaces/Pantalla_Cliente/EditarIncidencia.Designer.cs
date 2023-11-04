@@ -119,7 +119,7 @@
             // btn_AceptarIncidencia
             // 
             this.btn_AceptarIncidencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AceptarIncidencia.Location = new System.Drawing.Point(242, 528);
+            this.btn_AceptarIncidencia.Location = new System.Drawing.Point(344, 528);
             this.btn_AceptarIncidencia.Name = "btn_AceptarIncidencia";
             this.btn_AceptarIncidencia.Size = new System.Drawing.Size(75, 23);
             this.btn_AceptarIncidencia.TabIndex = 13;
@@ -130,7 +130,7 @@
             // btn_reportarIncidencia
             // 
             this.btn_reportarIncidencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_reportarIncidencia.Location = new System.Drawing.Point(344, 528);
+            this.btn_reportarIncidencia.Location = new System.Drawing.Point(252, 528);
             this.btn_reportarIncidencia.Name = "btn_reportarIncidencia";
             this.btn_reportarIncidencia.Size = new System.Drawing.Size(75, 23);
             this.btn_reportarIncidencia.TabIndex = 14;

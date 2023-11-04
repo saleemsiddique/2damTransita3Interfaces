@@ -127,7 +127,7 @@ namespace Pantalla_Cliente
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(21, 358);
+            this.groupBox2.Location = new System.Drawing.Point(29, 342);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(177, 206);
             this.groupBox2.TabIndex = 26;

@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -13,15 +12,27 @@ namespace Pantalla_Cliente
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        public static Configuration configurations = new Configuration();
-
+        public static UserLoged userLogged;
+        public static string rutaBase;
+        public static string token;
         static void Main()
         {
+            string appSettingsPath = Path.Combine(Directory.GetCurrentDirectory(), "../../");
+
+            IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(appSettingsPath)
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+
+            rutaBase = configuration["AppSettings:RutaBase"];
+
+            Console.WriteLine(rutaBase);
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Transita());
-            Console.WriteLine(configurations.rutaBase);
-            Console.WriteLine(configurations.token);
+            Application.Run(new Login());
         }   
     }
 }

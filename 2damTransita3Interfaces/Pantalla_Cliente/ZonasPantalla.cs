@@ -88,5 +88,21 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        private void buscarTextBox_Enter(object sender, EventArgs e)
+        {
+            if (buscarTextBox.Text == "Buscar")
+            {
+                buscarTextBox.Text = "";
+            }
+        }
+
+        private void buscarTextBox_Leave(object sender, EventArgs e)
+        {
+            if (buscarTextBox.Text == "")
+            {
+                buscarTextBox.Text = "Buscar";
+            }
+        }
     }
 }

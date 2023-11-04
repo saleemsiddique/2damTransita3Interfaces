@@ -125,12 +125,14 @@
             this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(347, 92);
+            this.buscarTextBox.Location = new System.Drawing.Point(349, 92);
             this.buscarTextBox.Name = "buscarTextBox";
             this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
             this.buscarTextBox.TabIndex = 29;
             this.buscarTextBox.Text = "Buscar";
+            this.buscarTextBox.Enter += new System.EventHandler(this.buscarTextBox_Enter);
+            this.buscarTextBox.Leave += new System.EventHandler(this.buscarTextBox_Leave);
             // 
             // button1
             // 
@@ -270,7 +272,7 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(27, 333);
+            this.groupBox1.Location = new System.Drawing.Point(24, 358);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(177, 102);
             this.groupBox1.TabIndex = 30;
