@@ -15,14 +15,18 @@ namespace Pantalla_Cliente
     public partial class EditarZonas : Form
     {
         private int idZona;
-
+        Zona zona;
         public EditarZonas(string idModificar)
         {
             InitializeComponent();
             idZona = int.Parse(idModificar);
+            InicializarAsync(idModificar);
         }
 
-       
+        private async void InicializarAsync(string idModificar)
+        {
+            await Task.WhenAll(getZona(idModificar));
+        }
 
         public async Task modifyZona(int id)
         {
@@ -36,6 +40,16 @@ namespace Pantalla_Cliente
 
             Console.WriteLine(newZona);
             Console.WriteLine(response);
+        }
+
+        public async Task getZona(String id)
+        {
+            Console.WriteLine("metodo ha sido activado");
+            String url = Program.rutaBase + "zona/id/" + id;
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+
+            zona = JsonSerializer.Deserialize<Zona>(response);
+            zona_input.Text = zona.nombre;
         }
 
         private bool verifyDatos()

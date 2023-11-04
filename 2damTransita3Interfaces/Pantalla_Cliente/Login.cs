@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace Pantalla_Cliente
         public Login()
         {
             InitializeComponent();
+            Correo.KeyDown += contrasenya_KeyDown;
+            contrasenya.KeyDown += contrasenya_KeyDown;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -43,31 +46,37 @@ namespace Pantalla_Cliente
         {
             Console.WriteLine("El método ha sido activado");
             string url = Program.rutaBase + "api/auth/signin/cliente";
-           // UserLoged userLoged = new UserLoged(Correo.Text,contrasenya.Text);
             string nombreUsuario = Correo.Text;
             string contrasenyaCont = contrasenya.Text;
-
             string jsonString = $"{{\"nombreUsuario\":\"{nombreUsuario}\",\"contrasenya\":\"{contrasenyaCont}\"}}";
 
-         
-            string response = await ApiClient.GetRequestAsync("GET", url,null, jsonString);
-         
-            Console.WriteLine(response);
-
-            // Verifica si la respuesta contiene un error de autenticación
-            if (response.Contains("Unauthorized") && response.Contains("Bad credentials"))
+            try
             {
-                // Muestra un mensaje de error al usuario
-                MessageBox.Show("Credenciales incorrectas. No se puede autenticar.", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string response = await ApiClient.GetRequestAsync("POST", url, null, jsonString);
+                Console.WriteLine(response);
+                Program.userLogged = JsonConvert.DeserializeObject<UserLoged>(response);
+                Program.token = Program.userLogged.token;
+                Console.WriteLine(Program.userLogged);
+                if (response.Contains("Unauthorized") && response.Contains("Bad credentials"))
+                {
+                    MessageBox.Show("Credenciales incorrectas. No se puede autenticar.", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Transita transita = new Transita();
+                    transita.Show();
+                    this.Hide();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // La respuesta es exitosa y el usuario está autorizado, abre el formulario Transita
-                Transita transita = new Transita();
-                transita.Show();
                 this.Hide();
+                MessageBox.Show("Credenciales incorrectas. No se puede autenticar.", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Login login = new Login();
+                login.Show();
             }
         }
+
 
 
 
@@ -135,12 +144,21 @@ namespace Pantalla_Cliente
 
         private void Login_Load(object sender, EventArgs e)
         {
-            GraphicsPath roundPath = new GraphicsPath();
-            roundPath.AddEllipse(0, 0, imgUser.Width, imgUser.Height);
 
-            // Crea una región con la forma redonda y aplícala al PictureBox
-            Region region = new Region(roundPath);
-            imgUser.Region = region;
         }
+
+        private void contrasenya_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                getUser();
+            }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }

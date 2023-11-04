@@ -76,7 +76,7 @@
             this.panelHome.Controls.Add(this.panelDegradado1);
             this.panelHome.Controls.Add(this.pictureBoxImagenHome);
             this.panelHome.Location = new System.Drawing.Point(2, 4);
-            this.panelHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelHome.Margin = new System.Windows.Forms.Padding(2);
             this.panelHome.Name = "panelHome";
             this.panelHome.Size = new System.Drawing.Size(552, 674);
             this.panelHome.TabIndex = 0;
@@ -339,6 +339,7 @@
             this.Name = "Transita";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.panel1_central.ResumeLayout(false);
             this.panelHome.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenHome)).EndInit();

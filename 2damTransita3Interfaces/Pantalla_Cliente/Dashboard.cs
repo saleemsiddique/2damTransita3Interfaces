@@ -187,5 +187,10 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

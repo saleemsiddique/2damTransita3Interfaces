@@ -124,7 +124,7 @@
             // btn_cancelarIncidencia
             // 
             this.btn_cancelarIncidencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancelarIncidencia.Location = new System.Drawing.Point(332, 505);
+            this.btn_cancelarIncidencia.Location = new System.Drawing.Point(239, 505);
             this.btn_cancelarIncidencia.Name = "btn_cancelarIncidencia";
             this.btn_cancelarIncidencia.Size = new System.Drawing.Size(75, 23);
             this.btn_cancelarIncidencia.TabIndex = 32;
@@ -135,7 +135,7 @@
             // btn_AceptarIncidencia
             // 
             this.btn_AceptarIncidencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AceptarIncidencia.Location = new System.Drawing.Point(230, 505);
+            this.btn_AceptarIncidencia.Location = new System.Drawing.Point(331, 505);
             this.btn_AceptarIncidencia.Name = "btn_AceptarIncidencia";
             this.btn_AceptarIncidencia.Size = new System.Drawing.Size(75, 23);
             this.btn_AceptarIncidencia.TabIndex = 31;

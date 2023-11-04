@@ -12,7 +12,7 @@ namespace Pantalla_Cliente
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-
+        public static UserLoged userLogged;
         public static string rutaBase;
         public static string token;
         static void Main()
@@ -26,10 +26,8 @@ namespace Pantalla_Cliente
 
 
             rutaBase = configuration["AppSettings:RutaBase"];
-            token = configuration["AppSettings:token"];
 
             Console.WriteLine(rutaBase);
-            Console.WriteLine(token);
 
 
             Application.EnableVisualStyles();

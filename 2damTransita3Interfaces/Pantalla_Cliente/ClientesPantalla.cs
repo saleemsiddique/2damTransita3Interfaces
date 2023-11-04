@@ -138,17 +138,6 @@ namespace Pantalla_Cliente
             }
         }
 
-        //Boton para cerrar la aplicación
-        private void buttonSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        //Minimizar la pantalla
-        private void buttonMinimizarr_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private async void PantallaCliente_Load(object sender, EventArgs e)
         {
 
