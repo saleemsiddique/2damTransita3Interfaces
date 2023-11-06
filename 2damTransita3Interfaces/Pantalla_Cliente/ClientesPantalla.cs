@@ -41,7 +41,7 @@ namespace Pantalla_Cliente
         public async Task getClientes()
         {
             Console.WriteLine("metodo ha sido activado");
-            String url = Program.rutaBase + "cliente";
+            String url = Program.rutaBase + "cliente/RolUsuario";
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             
             Console.WriteLine(response);

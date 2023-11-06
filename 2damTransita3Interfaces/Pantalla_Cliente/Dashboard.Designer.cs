@@ -48,6 +48,7 @@
             this.btn_zonas = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.panel1_derecha = new System.Windows.Forms.Panel();
+            this.btn_usuariosMunicipio = new System.Windows.Forms.Button();
             this.panel1_central.SuspendLayout();
             this.panelHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenHome)).BeginInit();
@@ -113,6 +114,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.panel1.Controls.Add(this.btn_usuariosMunicipio);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btn_incidencias);
             this.panel1.Controls.Add(this.panel7);
@@ -326,6 +328,26 @@
             this.panel1_derecha.Size = new System.Drawing.Size(241, 673);
             this.panel1_derecha.TabIndex = 33;
             // 
+            // btn_usuariosMunicipio
+            // 
+            this.btn_usuariosMunicipio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btn_usuariosMunicipio.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_usuariosMunicipio.FlatAppearance.BorderSize = 0;
+            this.btn_usuariosMunicipio.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_usuariosMunicipio.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_usuariosMunicipio.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_usuariosMunicipio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_usuariosMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_usuariosMunicipio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_usuariosMunicipio.Location = new System.Drawing.Point(0, 336);
+            this.btn_usuariosMunicipio.Name = "btn_usuariosMunicipio";
+            this.btn_usuariosMunicipio.Size = new System.Drawing.Size(278, 57);
+            this.btn_usuariosMunicipio.TabIndex = 17;
+            this.btn_usuariosMunicipio.Text = "      Usuarios Municipio";
+            this.btn_usuariosMunicipio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_usuariosMunicipio.UseVisualStyleBackColor = false;
+            this.btn_usuariosMunicipio.Click += new System.EventHandler(this.btn_usuariosMunicipio_Click);
+            // 
             // Transita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,5 +396,6 @@
         private System.Windows.Forms.PictureBox pictureBoxImagenHome;
         private System.Windows.Forms.Panel panelDegradado2;
         private System.Windows.Forms.Panel panelDegradado1;
+        private System.Windows.Forms.Button btn_usuariosMunicipio;
     }
 }

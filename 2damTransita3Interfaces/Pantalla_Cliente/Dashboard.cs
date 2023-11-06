@@ -78,7 +78,15 @@ namespace Pantalla_Cliente
             return panel1_derecha;
         }
 
+        public Panel ObtenerPanelCentralUsuariosMunicipio()
+        {
+            return panel1_central;
+        }
 
+        public Panel ObtenerPanelDerechaUsuariosMunicipio()
+        {
+            return panel1_derecha;
+        }
         public void VaciarPaneles()
         {
             panel1_central.Controls.Clear();
@@ -192,6 +200,28 @@ namespace Pantalla_Cliente
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+        public void MostrarPanelDeUsuariosMunicipio()
+        {
+            UsuariosMunicipio usuariosMunicipio = new UsuariosMunicipio();
+            Panel panelCentralZona = usuariosMunicipio.ObtenerPanelCentralZona();
+            Panel panelDerechaZona = usuariosMunicipio.ObtenerPanelDerechaZona();
+
+
+            VaciarPaneles();
+
+            // Agrega el panel al control contenedor en este formulario
+            panel1_central.Controls.Add(panelCentralZona);
+            panel1_derecha.Controls.Add(panelDerechaZona);
+
+
+            // Puedes personalizar el tamaño y la posición del panel según tus necesidades
+            panelCentralZona.Dock = DockStyle.Fill;
+            panelDerechaZona.Dock = DockStyle.Fill;
+        }
+        private void btn_usuariosMunicipio_Click(object sender, EventArgs e)
+        {
+            MostrarPanelDeUsuariosMunicipio();
         }
     }
 }

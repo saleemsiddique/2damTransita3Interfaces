@@ -183,6 +183,12 @@
       <DependentUpon>IncidenciaBanner.cs</DependentUpon>
     </Compile>
     <Compile Include="UserLoged.cs" />
+    <Compile Include="UsuariosMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosMunicipio.Designer.cs">
+      <DependentUpon>UsuariosMunicipio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zona.cs" />
     <Compile Include="ZonaBanner.cs">
       <SubType>UserControl</SubType>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IncidenciaBanner.resx">
       <DependentUpon>IncidenciaBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosMunicipio.resx">
+      <DependentUpon>UsuariosMunicipio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZonaBanner.resx">
       <DependentUpon>ZonaBanner.cs</DependentUpon>
