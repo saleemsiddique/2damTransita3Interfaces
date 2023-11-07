@@ -77,9 +77,9 @@
             // 
             // panelZonas
             // 
-            this.panelZonas.Location = new System.Drawing.Point(94, 231);
+            this.panelZonas.Location = new System.Drawing.Point(25, 231);
             this.panelZonas.Name = "panelZonas";
-            this.panelZonas.Size = new System.Drawing.Size(200, 100);
+            this.panelZonas.Size = new System.Drawing.Size(502, 385);
             this.panelZonas.TabIndex = 0;
             // 
             // label16
