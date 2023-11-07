@@ -77,7 +77,8 @@
             // 
             // panelZonas
             // 
-            this.panelZonas.Location = new System.Drawing.Point(25, 231);
+            this.panelZonas.AutoScroll = true;
+            this.panelZonas.Location = new System.Drawing.Point(32, 207);
             this.panelZonas.Name = "panelZonas";
             this.panelZonas.Size = new System.Drawing.Size(502, 385);
             this.panelZonas.TabIndex = 0;
@@ -94,7 +95,6 @@
             this.label16.Size = new System.Drawing.Size(86, 17);
             this.label16.TabIndex = 31;
             this.label16.Text = "Añadir Zona";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // buttonAddZona
             // 
@@ -123,7 +123,6 @@
             this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
             this.buscarTextBox.TabIndex = 29;
             this.buscarTextBox.Text = "Buscar";
-            this.buscarTextBox.TextChanged += new System.EventHandler(this.buscarTextBox_TextChanged);
             this.buscarTextBox.Enter += new System.EventHandler(this.buscarTextBox_Enter);
             this.buscarTextBox.Leave += new System.EventHandler(this.buscarTextBox_Leave);
             // 
@@ -143,7 +142,6 @@
             this.panel2.Size = new System.Drawing.Size(450, 67);
             this.panel2.TabIndex = 16;
             this.panel2.Visible = false;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button8
             // 
@@ -157,7 +155,6 @@
             this.button8.Size = new System.Drawing.Size(30, 49);
             this.button8.TabIndex = 13;
             this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // pictureBox4
             // 
@@ -172,7 +169,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // btn_datosZona
             // 
@@ -183,7 +179,6 @@
             this.btn_datosZona.TabIndex = 3;
             this.btn_datosZona.Text = "View";
             this.btn_datosZona.UseVisualStyleBackColor = true;
-            this.btn_datosZona.Click += new System.EventHandler(this.btn_datosZona_Click);
             // 
             // radioButton1
             // 
@@ -196,7 +191,6 @@
             this.radioButton1.TabIndex = 2;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label7
             // 
@@ -208,7 +202,6 @@
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "Zona";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // button1
             // 
@@ -221,7 +214,6 @@
             this.button1.Size = new System.Drawing.Size(36, 36);
             this.button1.TabIndex = 17;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -233,10 +225,8 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(20, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 25);
+            this.label2.Size = new System.Drawing.Size(0, 25);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Zonas Transita";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel3
             // 
@@ -250,7 +240,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(231, 681);
             this.panel3.TabIndex = 30;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pictureZona
             // 
@@ -264,7 +253,6 @@
             this.pictureZona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureZona.TabIndex = 28;
             this.pictureZona.TabStop = false;
-            this.pictureZona.Click += new System.EventHandler(this.pictureZona_Click);
             // 
             // groupBox1
             // 
@@ -280,7 +268,6 @@
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ID:";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // nombre_mostrar
             // 
@@ -289,7 +276,6 @@
             this.nombre_mostrar.Name = "nombre_mostrar";
             this.nombre_mostrar.Size = new System.Drawing.Size(100, 20);
             this.nombre_mostrar.TabIndex = 4;
-            this.nombre_mostrar.TextChanged += new System.EventHandler(this.nombre_mostrar_TextChanged);
             // 
             // id_mostrar
             // 
@@ -298,7 +284,6 @@
             this.id_mostrar.Name = "id_mostrar";
             this.id_mostrar.Size = new System.Drawing.Size(100, 20);
             this.id_mostrar.TabIndex = 3;
-            this.id_mostrar.TextChanged += new System.EventHandler(this.id_mostrar_TextChanged);
             // 
             // label13
             // 
@@ -309,7 +294,6 @@
             this.label13.Size = new System.Drawing.Size(72, 13);
             this.label13.TabIndex = 1;
             this.label13.Text = "Nombre Zona";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // nombre
             // 
@@ -324,7 +308,6 @@
             this.nombre.Size = new System.Drawing.Size(88, 20);
             this.nombre.TabIndex = 27;
             this.nombre.Text = "Nom_Zona";
-            this.nombre.Click += new System.EventHandler(this.nombre_Click);
             // 
             // correo
             // 
@@ -338,7 +321,6 @@
             this.correo.Size = new System.Drawing.Size(50, 13);
             this.correo.TabIndex = 29;
             this.correo.Text = "@Cliente";
-            this.correo.Click += new System.EventHandler(this.correo_Click);
             // 
             // panel1
             // 
@@ -371,7 +353,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(274, 85);
             this.panel5.TabIndex = 14;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // button6
             // 
@@ -391,7 +372,6 @@
             this.button6.Text = "User";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox1
             // 
@@ -405,7 +385,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -429,7 +408,6 @@
             this.label6.Size = new System.Drawing.Size(98, 25);
             this.label6.TabIndex = 12;
             this.label6.Text = "Transita";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -438,7 +416,6 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(276, 1);
             this.label5.TabIndex = 11;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // imgTransita
             // 
@@ -447,7 +424,6 @@
             this.imgTransita.Name = "imgTransita";
             this.imgTransita.Size = new System.Drawing.Size(223, 184);
             this.imgTransita.TabIndex = 5;
-            this.imgTransita.Click += new System.EventHandler(this.imgTransita_Click);
             // 
             // button5
             // 
@@ -467,7 +443,6 @@
             this.button5.Text = "Mapas";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -487,7 +462,6 @@
             this.button4.Text = "Puntos";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -507,7 +481,6 @@
             this.button3.Text = "Zonas";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btn_Incidencias
             // 
@@ -528,7 +501,6 @@
             this.btn_Incidencias.Text = "Incidencias";
             this.btn_Incidencias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Incidencias.UseVisualStyleBackColor = false;
-            this.btn_Incidencias.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_cliente
             // 
@@ -548,7 +520,6 @@
             this.btn_cliente.Text = "Cliente";
             this.btn_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cliente.UseVisualStyleBackColor = false;
-            this.btn_cliente.Click += new System.EventHandler(this.btn_cliente_Click);
             // 
             // panel4
             // 
@@ -566,7 +537,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(557, 681);
             this.panel4.TabIndex = 31;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // ZonasPantalla
             // 

@@ -38,7 +38,7 @@ namespace Pantalla_Cliente
             foreach (Cliente usuario in listaUsuariosMunicipio)
             { Console.WriteLine(usuario.ToString()); }
 
-            int topPosition = 203; // Posición vertical inicial
+            int topPosition = 0; // Posición vertical inicial
             foreach (Cliente usuario in listaUsuariosMunicipio)
             {
                 UsuariosMunicipioBanner usuariosMunicipioBanner = new UsuariosMunicipioBanner(); // Crea una instancia del UserControl
@@ -57,12 +57,12 @@ namespace Pantalla_Cliente
                 };
 
                 // Configura la ubicación y otros detalles según sea necesario
-                usuariosMunicipioBanner.Location = new Point(51, topPosition); // Personaliza la ubicación
+                usuariosMunicipioBanner.Location = new Point(0, topPosition); // Personaliza la ubicación
                 topPosition += usuariosMunicipioBanner.Height + 30; // Ajusta el espaciado vertical según sea necesario
-                usuariosMunicipioBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
+                //usuariosMunicipioBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
                 usuariosMunicipioBanner.Show();
                 // Agrega el control al formulario principal
-                panel4.Controls.Add(usuariosMunicipioBanner);
+                panelUsuarios.Controls.Add(usuariosMunicipioBanner);
             }
         }
 
@@ -76,40 +76,7 @@ namespace Pantalla_Cliente
             return panel3;
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void botonVerDatosIncidencia_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rol_mostrar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonAddCliente_Click(object sender, EventArgs e)
         {
