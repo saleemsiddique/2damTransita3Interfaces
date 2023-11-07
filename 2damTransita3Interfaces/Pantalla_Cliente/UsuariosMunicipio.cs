@@ -110,5 +110,12 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        private void buttonAddCliente_Click(object sender, EventArgs e)
+        {
+            CrearUsuarioMunicipio crearUsuarioMunicipio = new CrearUsuarioMunicipio();
+            crearUsuarioMunicipio.Owner = this;
+            crearUsuarioMunicipio.Show();
+        }
     }
 }
