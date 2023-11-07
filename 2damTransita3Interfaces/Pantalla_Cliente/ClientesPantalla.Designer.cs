@@ -43,13 +43,6 @@ namespace Pantalla_Cliente
             this.label11 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
             this.correo = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_incidencias = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -64,6 +57,14 @@ namespace Pantalla_Cliente
             this.btn_zonas = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.panel_central = new System.Windows.Forms.Panel();
+            this.panelClientes = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -71,14 +72,15 @@ namespace Pantalla_Cliente
             this.panel_derecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel_central.SuspendLayout();
+            this.panelClientes.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label15
@@ -222,101 +224,6 @@ namespace Pantalla_Cliente
             this.correo.Size = new System.Drawing.Size(50, 13);
             this.correo.TabIndex = 25;
             this.correo.Text = "@Cliente";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.ForeColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Location = new System.Drawing.Point(364, 28);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.UseVisualStyleBackColor = false;
-            this.radioButton1.Visible = false;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(74, 30);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nom_Cliente";
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.Location = new System.Drawing.Point(320, 23);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "View";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.radioButton1);
-            this.panel2.Location = new System.Drawing.Point(51, 213);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(450, 67);
-            this.panel2.TabIndex = 10;
-            this.panel2.Visible = false;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // button8
-            // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(401, 4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 57);
-            this.button8.TabIndex = 18;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Image = global::Pantalla_Cliente.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
-            this.pictureBox5.InitialImage = global::Pantalla_Cliente.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
-            this.pictureBox5.Location = new System.Drawing.Point(278, 21);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 17;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox2.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox2.Location = new System.Drawing.Point(20, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
             // 
             // panel1
             // 
@@ -519,16 +426,117 @@ namespace Pantalla_Cliente
             // panel_central
             // 
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel_central.Controls.Add(this.panelClientes);
             this.panel_central.Controls.Add(this.buscarTextBox);
             this.panel_central.Controls.Add(this.button1);
-            this.panel_central.Controls.Add(this.panel2);
             this.panel_central.Controls.Add(this.label1);
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(276, 0);
             this.panel_central.Name = "panel_central";
             this.panel_central.Size = new System.Drawing.Size(557, 681);
             this.panel_central.TabIndex = 32;
-            this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // panelClientes
+            // 
+            this.panelClientes.AutoScroll = true;
+            this.panelClientes.Controls.Add(this.panel2);
+            this.panelClientes.Location = new System.Drawing.Point(32, 207);
+            this.panelClientes.Name = "panelClientes";
+            this.panelClientes.Size = new System.Drawing.Size(495, 413);
+            this.panelClientes.TabIndex = 33;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.radioButton1);
+            this.panel2.Location = new System.Drawing.Point(2, 27);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(450, 67);
+            this.panel2.TabIndex = 10;
+            this.panel2.Visible = false;
+            // 
+            // button8
+            // 
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.Location = new System.Drawing.Point(401, 4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(30, 57);
+            this.button8.TabIndex = 18;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Image = global::Pantalla_Cliente.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
+            this.pictureBox5.InitialImage = global::Pantalla_Cliente.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
+            this.pictureBox5.Location = new System.Drawing.Point(278, 21);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 17;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox2.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox2.Location = new System.Drawing.Point(20, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button7.Location = new System.Drawing.Point(320, 23);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "View";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(74, 30);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nom_Cliente";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton1.ForeColor = System.Drawing.Color.Transparent;
+            this.radioButton1.Location = new System.Drawing.Point(364, 28);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.UseVisualStyleBackColor = false;
+            this.radioButton1.Visible = false;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // buscarTextBox
             // 
@@ -556,7 +564,6 @@ namespace Pantalla_Cliente
             this.button1.Size = new System.Drawing.Size(36, 36);
             this.button1.TabIndex = 22;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -569,7 +576,6 @@ namespace Pantalla_Cliente
             this.label1.Size = new System.Drawing.Size(191, 25);
             this.label1.TabIndex = 19;
             this.label1.Text = "Clientes Transita";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // fondoGrisMid
             // 
@@ -579,7 +585,6 @@ namespace Pantalla_Cliente
             this.fondoGrisMid.Name = "fondoGrisMid";
             this.fondoGrisMid.Size = new System.Drawing.Size(1064, 681);
             this.fondoGrisMid.TabIndex = 9;
-            this.fondoGrisMid.Click += new System.EventHandler(this.fondoGrisMid_Click);
             // 
             // Cliente_Pantalla
             // 
@@ -597,16 +602,11 @@ namespace Pantalla_Cliente
             this.Name = "Cliente_Pantalla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transita";
-            this.Load += new System.EventHandler(this.PantallaCliente_Load);
             this.panel_derecha.ResumeLayout(false);
             this.panel_derecha.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -614,6 +614,11 @@ namespace Pantalla_Cliente
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel_central.ResumeLayout(false);
             this.panel_central.PerformLayout();
+            this.panelClientes.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -632,13 +637,6 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label nombre;
         private System.Windows.Forms.Label correo;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button6;
@@ -657,6 +655,14 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox buscarTextBox;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Panel panelClientes;
     }
 }
 

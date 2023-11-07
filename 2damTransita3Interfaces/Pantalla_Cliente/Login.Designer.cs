@@ -35,6 +35,7 @@ namespace Pantalla_Cliente
             this.checkBoxMostrarContrasenya = new System.Windows.Forms.CheckBox();
             this.buttonEntrar = new System.Windows.Forms.Button();
             this.imgTransita = new System.Windows.Forms.Label();
+            this.btn_ajustes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Correo
@@ -97,12 +98,29 @@ namespace Pantalla_Cliente
             this.imgTransita.Size = new System.Drawing.Size(223, 184);
             this.imgTransita.TabIndex = 6;
             // 
+            // btn_ajustes
+            // 
+            this.btn_ajustes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.btn_ajustes.CausesValidation = false;
+            this.btn_ajustes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ajustes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btn_ajustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ajustes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_ajustes.Image = global::Pantalla_Cliente.Properties.Resources.settingIcon;
+            this.btn_ajustes.Location = new System.Drawing.Point(372, 12);
+            this.btn_ajustes.Name = "btn_ajustes";
+            this.btn_ajustes.Size = new System.Drawing.Size(50, 47);
+            this.btn_ajustes.TabIndex = 7;
+            this.btn_ajustes.UseVisualStyleBackColor = false;
+            this.btn_ajustes.Click += new System.EventHandler(this.btn_ajustes_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(434, 432);
+            this.Controls.Add(this.btn_ajustes);
             this.Controls.Add(this.imgTransita);
             this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.checkBoxMostrarContrasenya);
@@ -125,5 +143,6 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.CheckBox checkBoxMostrarContrasenya;
         private System.Windows.Forms.Button buttonEntrar;
         private System.Windows.Forms.Label imgTransita;
+        private System.Windows.Forms.Button btn_ajustes;
     }
 }

@@ -68,7 +68,6 @@
             this.panel1_central.Name = "panel1_central";
             this.panel1_central.Size = new System.Drawing.Size(545, 673);
             this.panel1_central.TabIndex = 35;
-            this.panel1_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_central_Paint);
             // 
             // panelHome
             // 
@@ -211,10 +210,9 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(213, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(220, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -361,6 +359,7 @@
             this.Name = "Transita";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.panel1_central.ResumeLayout(false);
             this.panelHome.ResumeLayout(false);

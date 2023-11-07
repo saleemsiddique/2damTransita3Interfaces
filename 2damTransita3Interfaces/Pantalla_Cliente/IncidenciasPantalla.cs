@@ -69,7 +69,7 @@ namespace Pantalla_Cliente
             foreach (Incidencia incidencia in listaIncidencias)
             { Console.WriteLine(incidencia.ToString()); }
 
-            int topPosition = 203; // Posición vertical inicial
+            int topPosition = 0; // Posición vertical inicial
 
             foreach (Incidencia incidencia in listaIncidencias)
             {
@@ -88,13 +88,14 @@ namespace Pantalla_Cliente
                     estado_mostrar.Text = incidencia.estado.ToString();
                 };
 
+
                 // Configura la ubicación y otros detalles según sea necesario
-                incidenciaBanner.Location = new Point(51, topPosition); // Personaliza la ubicación
+                incidenciaBanner.Location = new Point(0, topPosition); // Personaliza la ubicación
                 topPosition += incidenciaBanner.Height + 30; // Ajusta el espaciado vertical según sea necesario
-                incidenciaBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
+                //incidenciaBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
                 incidenciaBanner.Show();
                 // Agrega el control al formulario principal
-                panel4.Controls.Add(incidenciaBanner);
+                panelInc.Controls.Add(incidenciaBanner);
             }
         }
 
@@ -154,10 +155,7 @@ namespace Pantalla_Cliente
                 lblCantidadIncidencias.Text = cantidadIncidencias.ToString();*/
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
+     
         private void miTextBox_Click(object sender, EventArgs e)
         {
             // Cuando se hace clic en el TextBox, borra el texto
@@ -183,131 +181,34 @@ namespace Pantalla_Cliente
             }
         }
 
-        private void lab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void btn_cliente_Click(object sender, EventArgs e)
         {
             Cliente_Pantalla f = new Cliente_Pantalla();
 
             this.Hide();
 
-            f.Show();
+            f.ShowDialog();
         }
 
-        private void imgTransita_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
+     
         private void botonVerDatosIncidencia_Click(object sender, EventArgs e)
         {
             datosIncidencia datosIncidencia = new datosIncidencia();
 
 
-            datosIncidencia.Show();
+            datosIncidencia.ShowDialog();
 
         }
 
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fondoGrisMid_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconsLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-
-        }
-
-        private void btnFullScreen_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button8_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
+ 
         private void buttonAddCliente_Click(object sender, EventArgs e)
         {
             CrearIncidencia incidencia = new CrearIncidencia();
             incidencia.Owner = this;
-            incidencia.Show();
+            incidencia.ShowDialog();
         }
     }
 }

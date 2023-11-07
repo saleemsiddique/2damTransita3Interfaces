@@ -160,6 +160,12 @@
     <Compile Include="EditarZonas.Designer.cs">
       <DependentUpon>EditarZonas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfigBanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigBanner.Designer.cs">
+      <DependentUpon>ConfigBanner.cs</DependentUpon>
+    </Compile>
     <Compile Include="HttpCliente.cs" />
     <Compile Include="Incidencia.cs" />
     <Compile Include="IncidenciasPantalla.cs">
@@ -318,6 +324,7 @@
     <None Include="Resources\suma.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\settingIcon.png" />
     <None Include="Resources\descarga.jpeg" />
     <None Include="Resources\descarga1.jpeg" />
     <None Include="Resources\IesMarcoZaragoza-fotor-bg-remover-2023110121283.png" />

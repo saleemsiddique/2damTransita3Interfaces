@@ -56,7 +56,7 @@ namespace Pantalla_Cliente
             foreach (Cliente cliente in listaClientes)
             { Console.WriteLine(cliente.ToString()); }
 
-            int topPosition = 203; // Posición vertical inicial
+            int topPosition = 0; // Posición vertical inicial
             foreach (Cliente cliente in listaClientes)
             {
                 ClienteBanner clienteBanner = new ClienteBanner(); // Crea una instancia del UserControl
@@ -74,12 +74,12 @@ namespace Pantalla_Cliente
                 };
 
                 // Configura la ubicación y otros detalles según sea necesario
-                clienteBanner.Location = new Point(51, topPosition); // Personaliza la ubicación
+                clienteBanner.Location = new Point(0, topPosition); // Personaliza la ubicación
                 topPosition += clienteBanner.Height + 30; // Ajusta el espaciado vertical según sea necesario
-                clienteBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
+                //clienteBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
                 clienteBanner.Show();
                 // Agrega el control al formulario principal
-                panel_central.Controls.Add(clienteBanner);
+                panelClientes.Controls.Add(clienteBanner);
             }
         }
 
@@ -105,21 +105,6 @@ namespace Pantalla_Cliente
         }
 
 
-        //Para hacer el boton circular de añadir nuevo cliente
-
-        private void buttonAddCliente_Paint(object sender, PaintEventArgs e)
-        {
-
-            System.Windows.Forms.Button btn1 = (System.Windows.Forms.Button)sender;
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            gp.AddEllipse(2, 2, btn1.Width-5, btn1.Height-5);
-            btn1.Region = new Region(gp);
-        }
-
-        private void buttonAddCliente_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         //PlaceHolder del botton de buscar cliente
         private void buscarTextBox_Enter(object sender, EventArgs e)
@@ -138,69 +123,7 @@ namespace Pantalla_Cliente
             }
         }
 
-        private async void PantallaCliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fondoGrisMid_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void button8_Click(object sender, EventArgs e)
-        {
-   
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btn_incidencias_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buscarTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void modify_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void delete_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void buscarTextBox_Leave_1(object sender, EventArgs e)
         {
@@ -215,6 +138,7 @@ namespace Pantalla_Cliente
         {
             buscarTextBox.Text = "";
         }
+
     }
 
     /*Codigo para refrescar la unica pantalla usa

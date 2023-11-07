@@ -37,6 +37,10 @@
             this.botonVerDatosIncidencia = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.buttonAddZona = new System.Windows.Forms.Button();
+            this.buscarTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,7 +57,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Incidencias = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -63,6 +67,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.imgTransita = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
+            this.panelZonas.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -79,11 +84,11 @@
             this.panel4.AutoSize = true;
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel4.Controls.Add(this.panelZonas);
             this.panel4.Controls.Add(this.label16);
-            this.panel4.Controls.Add(this.buttonAddCliente);
+            this.panel4.Controls.Add(this.buttonAddZona);
             this.panel4.Controls.Add(this.buscarTextBox);
             this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(276, 0);
@@ -92,7 +97,7 @@
             this.panel4.TabIndex = 31;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // label16
+            // panelZonas
             // 
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
@@ -144,10 +149,10 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.botonVerDatosIncidencia);
+            this.panel2.Controls.Add(this.btn_datosZona);
             this.panel2.Controls.Add(this.radioButton1);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(51, 213);
+            this.panel2.Location = new System.Drawing.Point(2, 18);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 67);
@@ -155,16 +160,16 @@
             this.panel2.Visible = false;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // botonVerDatosIncidencia
+            // btn_datosZona
             // 
-            this.botonVerDatosIncidencia.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.botonVerDatosIncidencia.Location = new System.Drawing.Point(334, 23);
-            this.botonVerDatosIncidencia.Name = "botonVerDatosIncidencia";
-            this.botonVerDatosIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.botonVerDatosIncidencia.TabIndex = 3;
-            this.botonVerDatosIncidencia.Text = "View";
-            this.botonVerDatosIncidencia.UseVisualStyleBackColor = true;
-            this.botonVerDatosIncidencia.Click += new System.EventHandler(this.botonVerDatosIncidencia_Click);
+            this.btn_datosZona.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_datosZona.Location = new System.Drawing.Point(334, 23);
+            this.btn_datosZona.Name = "btn_datosZona";
+            this.btn_datosZona.Size = new System.Drawing.Size(75, 23);
+            this.btn_datosZona.TabIndex = 3;
+            this.btn_datosZona.Text = "View";
+            this.btn_datosZona.UseVisualStyleBackColor = true;
+            this.btn_datosZona.Click += new System.EventHandler(this.btn_datosZona_Click);
             // 
             // radioButton1
             // 
@@ -190,6 +195,61 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Zona";
             this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(39, 152);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(86, 17);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "Añadir Zona";
+            // 
+            // buttonAddZona
+            // 
+            this.buttonAddZona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.buttonAddZona.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAddZona.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAddZona.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddZona.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAddZona.Location = new System.Drawing.Point(142, 148);
+            this.buttonAddZona.Name = "buttonAddZona";
+            this.buttonAddZona.Size = new System.Drawing.Size(30, 30);
+            this.buttonAddZona.TabIndex = 30;
+            this.buttonAddZona.Text = "+";
+            this.buttonAddZona.UseVisualStyleBackColor = false;
+            this.buttonAddZona.Click += new System.EventHandler(this.buttonAddZona_Click);
+            // 
+            // buscarTextBox
+            // 
+            this.buscarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.buscarTextBox.Location = new System.Drawing.Point(349, 92);
+            this.buscarTextBox.Name = "buscarTextBox";
+            this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
+            this.buscarTextBox.TabIndex = 29;
+            this.buscarTextBox.Text = "Buscar";
+            this.buscarTextBox.Enter += new System.EventHandler(this.buscarTextBox_Enter);
+            this.buscarTextBox.Leave += new System.EventHandler(this.buscarTextBox_Leave);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(291, 74);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(36, 36);
+            this.button1.TabIndex = 17;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -306,7 +366,7 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btn_Incidencias);
             this.panel1.Controls.Add(this.btn_cliente);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -427,7 +487,7 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btn_Incidencias
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button2.Enabled = false;
@@ -574,6 +634,7 @@
             this.Text = "ZonasPantalla";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panelZonas.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -596,15 +657,9 @@
 
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button buttonAddCliente;
+        private System.Windows.Forms.Button buttonAddZona;
         private System.Windows.Forms.TextBox buscarTextBox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button botonVerDatosIncidencia;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
@@ -618,7 +673,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Incidencias;
         private System.Windows.Forms.Button btn_cliente;
         private System.Windows.Forms.PictureBox pictureZona;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -627,5 +682,12 @@
         private System.Windows.Forms.Label nombre;
         private System.Windows.Forms.Label correo;
         private System.Windows.Forms.TextBox nombre_mostrar;
+        private System.Windows.Forms.Panel panelZonas;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btn_datosZona;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label7;
     }
 }

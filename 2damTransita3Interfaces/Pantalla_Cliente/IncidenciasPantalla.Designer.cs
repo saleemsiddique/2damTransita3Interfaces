@@ -66,8 +66,9 @@ namespace Pantalla_Cliente
             this.label7 = new System.Windows.Forms.Label();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panelInc = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.buttonAddCliente = new System.Windows.Forms.Button();
+            this.btn_addInc = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -81,6 +82,7 @@ namespace Pantalla_Cliente
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panelInc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +96,6 @@ namespace Pantalla_Cliente
             // 
             // backgroundWorker1
             // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // groupBox1
             // 
@@ -114,7 +115,6 @@ namespace Pantalla_Cliente
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ID:";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // fecha_mostrar
             // 
@@ -191,7 +191,6 @@ namespace Pantalla_Cliente
             this.correo.Size = new System.Drawing.Size(50, 13);
             this.correo.TabIndex = 25;
             this.correo.Text = "@Cliente";
-            this.correo.Click += new System.EventHandler(this.label11_Click);
             // 
             // nombre
             // 
@@ -206,7 +205,6 @@ namespace Pantalla_Cliente
             this.nombre.Size = new System.Drawing.Size(123, 20);
             this.nombre.TabIndex = 23;
             this.nombre.Text = "Nom_Incidencia";
-            this.nombre.Click += new System.EventHandler(this.label10_Click);
             // 
             // panel3
             // 
@@ -233,7 +231,6 @@ namespace Pantalla_Cliente
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 24;
             this.pictureBox12.TabStop = false;
-            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
             // btn_cliente
             // 
@@ -274,7 +271,6 @@ namespace Pantalla_Cliente
             this.button2.Text = "Incidencias";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -414,7 +410,7 @@ namespace Pantalla_Cliente
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+
             // 
             // pictureBox2
             // 
@@ -436,7 +432,7 @@ namespace Pantalla_Cliente
             this.imgTransita.Name = "imgTransita";
             this.imgTransita.Size = new System.Drawing.Size(223, 184);
             this.imgTransita.TabIndex = 5;
-            this.imgTransita.Click += new System.EventHandler(this.imgTransita_Click);
+
             // 
             // label2
             // 
@@ -454,7 +450,6 @@ namespace Pantalla_Cliente
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel2.Controls.Add(this.button8);
@@ -462,13 +457,12 @@ namespace Pantalla_Cliente
             this.panel2.Controls.Add(this.botonVerDatosIncidencia);
             this.panel2.Controls.Add(this.radioButton1);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(51, 213);
+            this.panel2.Location = new System.Drawing.Point(2, 20);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 67);
             this.panel2.TabIndex = 16;
             this.panel2.Visible = false;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button8
             // 
@@ -530,7 +524,6 @@ namespace Pantalla_Cliente
             this.label7.Size = new System.Drawing.Size(56, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "Incidencia";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // buscarTextBox
             // 
@@ -547,20 +540,30 @@ namespace Pantalla_Cliente
             // 
             // panel4
             // 
+            this.panel4.AutoScroll = true;
             this.panel4.AutoSize = true;
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel4.Controls.Add(this.panelInc);
             this.panel4.Controls.Add(this.label16);
-            this.panel4.Controls.Add(this.buttonAddCliente);
+            this.panel4.Controls.Add(this.btn_addInc);
             this.panel4.Controls.Add(this.buscarTextBox);
             this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(276, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(557, 681);
             this.panel4.TabIndex = 28;
+            // 
+            // panelInc
+            // 
+            this.panelInc.AutoScroll = true;
+            this.panelInc.Controls.Add(this.panel2);
+            this.panelInc.Location = new System.Drawing.Point(32, 207);
+            this.panelInc.Name = "panelInc";
+            this.panelInc.Size = new System.Drawing.Size(495, 413);
+            this.panelInc.TabIndex = 32;
             // 
             // label16
             // 
@@ -575,20 +578,20 @@ namespace Pantalla_Cliente
             this.label16.TabIndex = 31;
             this.label16.Text = "Añadir Incidencia";
             // 
-            // buttonAddCliente
+            // btn_addInc
             // 
-            this.buttonAddCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.buttonAddCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonAddCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAddCliente.Location = new System.Drawing.Point(160, 144);
-            this.buttonAddCliente.Name = "buttonAddCliente";
-            this.buttonAddCliente.Size = new System.Drawing.Size(30, 30);
-            this.buttonAddCliente.TabIndex = 30;
-            this.buttonAddCliente.Text = "+";
-            this.buttonAddCliente.UseVisualStyleBackColor = false;
-            this.buttonAddCliente.Click += new System.EventHandler(this.buttonAddCliente_Click);
+            this.btn_addInc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.btn_addInc.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_addInc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_addInc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addInc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_addInc.Location = new System.Drawing.Point(160, 144);
+            this.btn_addInc.Name = "btn_addInc";
+            this.btn_addInc.Size = new System.Drawing.Size(30, 30);
+            this.btn_addInc.TabIndex = 30;
+            this.btn_addInc.Text = "+";
+            this.btn_addInc.UseVisualStyleBackColor = false;
+            this.btn_addInc.Click += new System.EventHandler(this.buttonAddCliente_Click);
             // 
             // button1
             // 
@@ -625,7 +628,6 @@ namespace Pantalla_Cliente
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // Incidencias_Pantalla
             // 
@@ -662,6 +664,7 @@ namespace Pantalla_Cliente
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panelInc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -709,6 +712,7 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.TextBox buscarTextBox;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button buttonAddCliente;
+        private System.Windows.Forms.Button btn_addInc;
+        private System.Windows.Forms.Panel panelInc;
     }
 }

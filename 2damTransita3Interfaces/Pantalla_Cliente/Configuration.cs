@@ -9,7 +9,6 @@ namespace Pantalla_Cliente
     public class Configuration
     {
         public string rutaBase { get; set; }
-        public string token { get; set; }
 
         private string appSettingsPath;
 
@@ -24,9 +23,10 @@ namespace Pantalla_Cliente
                 .Build();
 
             rutaBase = configuration["AppSettings:RutaBase"];
-            token = configuration["AppSettings:token"];
 
         }
+
+
     }
 }
 

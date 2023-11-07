@@ -160,5 +160,11 @@ namespace Pantalla_Cliente
             Application.Exit();
         }
 
+        private void btn_ajustes_Click(object sender, EventArgs e)
+        {
+            ConfigBanner cb = new ConfigBanner();
+            cb.StartPosition = FormStartPosition.CenterScreen;
+            cb.ShowDialog();
+        }
     }
 }
