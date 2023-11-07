@@ -4,21 +4,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pantalla_Cliente
 {
-    public partial class ClienteBanner : UserControl
+    public partial class UsuariosMunicipioBanner : UserControl
     {
         private ContextMenuStrip contextMenuStrip;
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem eliminarToolStripMenuItem;
-         bool deleted = false;
-
-        public ClienteBanner()
+        bool deleted = false;
+        public UsuariosMunicipioBanner()
         {
             InitializeComponent();
             contextMenuStrip = new ContextMenuStrip();
@@ -39,7 +37,7 @@ namespace Pantalla_Cliente
         {
             return idCliente;
         }
-    
+
         public Label getNombre()
         {
             return nombreCliente;
@@ -47,7 +45,7 @@ namespace Pantalla_Cliente
 
         public Button getViewBtn()
         {
-            return btnViewCliente;
+            return btnViewUsuarioMuni;
         }
 
 
@@ -71,6 +69,9 @@ namespace Pantalla_Cliente
 
         private void EditarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            EditarUsuarioMunicipio editarUsuarioMunicipio = new EditarUsuarioMunicipio(idCliente.Text);
+            editarUsuarioMunicipio.Owner = this.FindForm();
+            editarUsuarioMunicipio.ShowDialog();
 
         }
 
@@ -88,7 +89,7 @@ namespace Pantalla_Cliente
             if (formularioTransita != null)
             {
                 Console.WriteLine("No es null");
-                formularioTransita.MostrarPanelDeCliente();
+                formularioTransita.MostrarPanelDeUsuariosMunicipio();
             }
         }
 
@@ -98,12 +99,17 @@ namespace Pantalla_Cliente
             contextMenuStrip.Show(moreOption, new System.Drawing.Point(0, moreOption.Height));
         }
 
-        private void idCliente_Click(object sender, EventArgs e)
+        private void btnViewCliente_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        private void nombreCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsuariosMunicipioBanner_Load(object sender, EventArgs e)
         {
 
         }

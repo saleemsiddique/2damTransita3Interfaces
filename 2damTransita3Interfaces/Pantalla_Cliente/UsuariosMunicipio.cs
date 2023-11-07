@@ -41,11 +41,11 @@ namespace Pantalla_Cliente
             int topPosition = 203; // Posición vertical inicial
             foreach (Cliente usuario in listaUsuariosMunicipio)
             {
-                ClienteBanner clienteBanner = new ClienteBanner(); // Crea una instancia del UserControl
-                clienteBanner.getId().Text = usuario.id + "";
-                clienteBanner.getNombre().Text = $"{usuario.nombre} {usuario.apellidos}";
+                UsuariosMunicipioBanner usuariosMunicipioBanner = new UsuariosMunicipioBanner(); // Crea una instancia del UserControl
+                usuariosMunicipioBanner.getId().Text = usuario.id + "";
+                usuariosMunicipioBanner.getNombre().Text = $"{usuario.nombre} {usuario.apellidos}";
 
-                clienteBanner.getViewBtn().Click += (sender, e) =>
+                usuariosMunicipioBanner.getViewBtn().Click += (sender, e) =>
                 {
                     nombre.Text = usuario.nombre + " " + usuario.apellidos;
                     correo.Text = usuario.nombreUsuario;
@@ -56,12 +56,12 @@ namespace Pantalla_Cliente
                 };
 
                 // Configura la ubicación y otros detalles según sea necesario
-                clienteBanner.Location = new Point(51, topPosition); // Personaliza la ubicación
-                topPosition += clienteBanner.Height + 30; // Ajusta el espaciado vertical según sea necesario
-                clienteBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
-                clienteBanner.Show();
+                usuariosMunicipioBanner.Location = new Point(51, topPosition); // Personaliza la ubicación
+                topPosition += usuariosMunicipioBanner.Height + 30; // Ajusta el espaciado vertical según sea necesario
+                usuariosMunicipioBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
+                usuariosMunicipioBanner.Show();
                 // Agrega el control al formulario principal
-                panel4.Controls.Add(clienteBanner);
+                panel4.Controls.Add(usuariosMunicipioBanner);
             }
         }
 
@@ -96,6 +96,11 @@ namespace Pantalla_Cliente
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void botonVerDatosIncidencia_Click(object sender, EventArgs e)
         {
 
         }

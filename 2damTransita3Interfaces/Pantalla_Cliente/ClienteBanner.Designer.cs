@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteBanner));
             this.panel2 = new System.Windows.Forms.Panel();
             this.idCliente = new System.Windows.Forms.Label();
-            this.moreOption = new System.Windows.Forms.Button();
-            this.favCliente = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnViewCliente = new System.Windows.Forms.Button();
             this.nombreCliente = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.moreOption = new System.Windows.Forms.Button();
+            this.favCliente = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.favCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -60,6 +60,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 67);
             this.panel2.TabIndex = 11;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
             // idCliente
             // 
@@ -71,6 +72,40 @@
             this.idCliente.TabIndex = 19;
             this.idCliente.Text = "ID";
             this.idCliente.Click += new System.EventHandler(this.idCliente_Click);
+            // 
+            // btnViewCliente
+            // 
+            this.btnViewCliente.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnViewCliente.Location = new System.Drawing.Point(320, 23);
+            this.btnViewCliente.Name = "btnViewCliente";
+            this.btnViewCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnViewCliente.TabIndex = 3;
+            this.btnViewCliente.Text = "View";
+            this.btnViewCliente.UseVisualStyleBackColor = true;
+            // 
+            // nombreCliente
+            // 
+            this.nombreCliente.AutoSize = true;
+            this.nombreCliente.ForeColor = System.Drawing.Color.White;
+            this.nombreCliente.Location = new System.Drawing.Point(74, 33);
+            this.nombreCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nombreCliente.Name = "nombreCliente";
+            this.nombreCliente.Size = new System.Drawing.Size(67, 13);
+            this.nombreCliente.TabIndex = 1;
+            this.nombreCliente.Text = "Nom_Cliente";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton1.ForeColor = System.Drawing.Color.Transparent;
+            this.radioButton1.Location = new System.Drawing.Point(364, 28);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.UseVisualStyleBackColor = false;
+            this.radioButton1.Visible = false;
             // 
             // moreOption
             // 
@@ -111,40 +146,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
-            // 
-            // btnViewCliente
-            // 
-            this.btnViewCliente.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnViewCliente.Location = new System.Drawing.Point(320, 23);
-            this.btnViewCliente.Name = "btnViewCliente";
-            this.btnViewCliente.Size = new System.Drawing.Size(75, 23);
-            this.btnViewCliente.TabIndex = 3;
-            this.btnViewCliente.Text = "View";
-            this.btnViewCliente.UseVisualStyleBackColor = true;
-            // 
-            // nombreCliente
-            // 
-            this.nombreCliente.AutoSize = true;
-            this.nombreCliente.ForeColor = System.Drawing.Color.White;
-            this.nombreCliente.Location = new System.Drawing.Point(74, 33);
-            this.nombreCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.nombreCliente.Name = "nombreCliente";
-            this.nombreCliente.Size = new System.Drawing.Size(67, 13);
-            this.nombreCliente.TabIndex = 1;
-            this.nombreCliente.Text = "Nom_Cliente";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.ForeColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Location = new System.Drawing.Point(364, 28);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.UseVisualStyleBackColor = false;
-            this.radioButton1.Visible = false;
             // 
             // ClienteBanner
             // 

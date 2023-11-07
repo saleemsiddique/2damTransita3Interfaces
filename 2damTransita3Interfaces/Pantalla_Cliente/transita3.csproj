@@ -142,6 +142,12 @@
     <Compile Include="CrearIncidencia.Designer.cs">
       <DependentUpon>CrearIncidencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarUsuarioMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarUsuarioMunicipio.Designer.cs">
+      <DependentUpon>EditarUsuarioMunicipio.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarZonas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,12 @@
     <Compile Include="UsuariosMunicipio.Designer.cs">
       <DependentUpon>UsuariosMunicipio.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuariosMunicipioBanner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsuariosMunicipioBanner.Designer.cs">
+      <DependentUpon>UsuariosMunicipioBanner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zona.cs" />
     <Compile Include="ZonaBanner.cs">
       <SubType>UserControl</SubType>
@@ -220,6 +232,9 @@
     <EmbeddedResource Include="CrearIncidencia.resx">
       <DependentUpon>CrearIncidencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditarUsuarioMunicipio.resx">
+      <DependentUpon>EditarUsuarioMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditarZonas.resx">
       <DependentUpon>EditarZonas.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UsuariosMunicipio.resx">
       <DependentUpon>UsuariosMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosMunicipioBanner.resx">
+      <DependentUpon>UsuariosMunicipioBanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZonaBanner.resx">
       <DependentUpon>ZonaBanner.cs</DependentUpon>

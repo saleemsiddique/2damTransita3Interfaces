@@ -45,12 +45,19 @@ namespace Pantalla_Cliente
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureZona = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rol_mostrar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nombreUsuario_mostrar = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.apellido_mostrar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.nombre_mostrar = new System.Windows.Forms.TextBox();
             this.id_mostrar = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
             this.correo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -63,13 +70,6 @@ namespace Pantalla_Cliente
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.apellido_mostrar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nombreUsuario_mostrar = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.rol_mostrar = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -205,6 +205,7 @@ namespace Pantalla_Cliente
             this.botonVerDatosIncidencia.TabIndex = 3;
             this.botonVerDatosIncidencia.Text = "View";
             this.botonVerDatosIncidencia.UseVisualStyleBackColor = true;
+            this.botonVerDatosIncidencia.Click += new System.EventHandler(this.botonVerDatosIncidencia_Click);
             // 
             // radioButton1
             // 
@@ -291,6 +292,60 @@ namespace Pantalla_Cliente
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ID:";
             // 
+            // rol_mostrar
+            // 
+            this.rol_mostrar.Enabled = false;
+            this.rol_mostrar.Location = new System.Drawing.Point(9, 209);
+            this.rol_mostrar.Name = "rol_mostrar";
+            this.rol_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.rol_mostrar.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(6, 193);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Rol";
+            // 
+            // nombreUsuario_mostrar
+            // 
+            this.nombreUsuario_mostrar.Enabled = false;
+            this.nombreUsuario_mostrar.Location = new System.Drawing.Point(9, 163);
+            this.nombreUsuario_mostrar.Name = "nombreUsuario_mostrar";
+            this.nombreUsuario_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.nombreUsuario_mostrar.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(6, 147);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Nombre Usuario";
+            // 
+            // apellido_mostrar
+            // 
+            this.apellido_mostrar.Enabled = false;
+            this.apellido_mostrar.Location = new System.Drawing.Point(9, 116);
+            this.apellido_mostrar.Name = "apellido_mostrar";
+            this.apellido_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.apellido_mostrar.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(6, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Apellido";
+            // 
             // nombre_mostrar
             // 
             this.nombre_mostrar.Enabled = false;
@@ -366,6 +421,25 @@ namespace Pantalla_Cliente
             this.panel1.Size = new System.Drawing.Size(276, 681);
             this.panel1.TabIndex = 32;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button7.Location = new System.Drawing.Point(20, 277);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(142, 36);
+            this.button7.TabIndex = 15;
+            this.button7.Text = "Mapas";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -544,79 +618,6 @@ namespace Pantalla_Cliente
             this.btn_cliente.Text = "Cliente";
             this.btn_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cliente.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.Location = new System.Drawing.Point(20, 277);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(142, 36);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "Mapas";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // apellido_mostrar
-            // 
-            this.apellido_mostrar.Enabled = false;
-            this.apellido_mostrar.Location = new System.Drawing.Point(9, 116);
-            this.apellido_mostrar.Name = "apellido_mostrar";
-            this.apellido_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.apellido_mostrar.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(6, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Apellido";
-            // 
-            // nombreUsuario_mostrar
-            // 
-            this.nombreUsuario_mostrar.Enabled = false;
-            this.nombreUsuario_mostrar.Location = new System.Drawing.Point(9, 163);
-            this.nombreUsuario_mostrar.Name = "nombreUsuario_mostrar";
-            this.nombreUsuario_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.nombreUsuario_mostrar.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(6, 147);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Nombre Usuario";
-            // 
-            // rol_mostrar
-            // 
-            this.rol_mostrar.Enabled = false;
-            this.rol_mostrar.Location = new System.Drawing.Point(9, 209);
-            this.rol_mostrar.Name = "rol_mostrar";
-            this.rol_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.rol_mostrar.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 193);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Rol";
             // 
             // UsuariosMunicipio
             // 
