@@ -7,7 +7,12 @@ public enum EstadoCuenta
     ACTIVADO,
     DESACTIVADO
 }
-
+public enum Rol
+{
+    ROLE_ADMIN,
+    ROLE_MODERADOR,
+    ROLE_USUARIO
+}
 public class Cliente
 {
     public int id { get; set; }
@@ -15,6 +20,9 @@ public class Cliente
     public string apellidos { get; set; }
     public string nombreUsuario { get; set; }
     public string contrasenya { get; set; }
+
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public Rol rol { get; set; }
 
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public EstadoCuenta estadoCuenta { get; set; }

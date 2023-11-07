@@ -53,6 +53,7 @@ namespace Pantalla_Cliente
                     nombre_mostrar.Text = usuario.nombre;
                     apellido_mostrar.Text = usuario.apellidos;
                     nombreUsuario_mostrar.Text = usuario.nombreUsuario;
+                    rol_mostrar.Text = usuario.rol + "";
                 };
 
                 // Configura la ubicación y otros detalles según sea necesario
@@ -101,6 +102,11 @@ namespace Pantalla_Cliente
         }
 
         private void botonVerDatosIncidencia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rol_mostrar_TextChanged(object sender, EventArgs e)
         {
 
         }

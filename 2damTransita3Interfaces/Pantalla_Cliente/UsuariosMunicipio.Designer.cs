@@ -299,6 +299,7 @@ namespace Pantalla_Cliente
             this.rol_mostrar.Name = "rol_mostrar";
             this.rol_mostrar.Size = new System.Drawing.Size(100, 20);
             this.rol_mostrar.TabIndex = 10;
+            this.rol_mostrar.TextChanged += new System.EventHandler(this.rol_mostrar_TextChanged);
             // 
             // label4
             // 
