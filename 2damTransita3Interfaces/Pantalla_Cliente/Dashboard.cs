@@ -179,19 +179,13 @@ namespace Pantalla_Cliente
             MostrarPanelDeZona();
         }
 
-        private void panel1_central_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void imgTransita_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+
+
     }
 }

@@ -24,11 +24,11 @@ namespace Pantalla_Cliente
            
         }
 
-        private void buttonAddCliente_Click(object sender, EventArgs e)
+        private void buttonAddZona_Click(object sender, EventArgs e)
         {
             CrearZona crearZona = new CrearZona();
             crearZona.Owner = this;
-            crearZona.Show();
+            crearZona.ShowDialog();
         }
         public async void getZonas()
         {
@@ -47,7 +47,7 @@ namespace Pantalla_Cliente
             foreach (Zona zona in listazonas)
             { Console.WriteLine(zona.ToString()); }
 
-            int topPosition = 203; // Posición vertical inicial
+            int topPosition = 0; // Posición vertical inicial
 
             foreach (Zona zona in listazonas)
             {
@@ -66,12 +66,12 @@ namespace Pantalla_Cliente
                 };
 
 
-                zonaBanner.Location = new Point(51, topPosition); 
+                zonaBanner.Location = new Point(0, topPosition); 
                 topPosition += zonaBanner.Height + 30;
-                zonaBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+                //zonaBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right;
                 zonaBanner.Show();
                
-                panel4.Controls.Add(zonaBanner);
+                panelZonas.Controls.Add(zonaBanner);
             }
         }
         public Panel ObtenerPanelCentralZona()
@@ -84,7 +84,7 @@ namespace Pantalla_Cliente
             return panel3;
         }
 
-        private void botonVerDatosIncidencia_Click(object sender, EventArgs e)
+        private void btn_datosZona_Click(object sender, EventArgs e)
         {
 
         }
