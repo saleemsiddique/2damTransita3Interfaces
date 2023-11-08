@@ -29,45 +29,45 @@ namespace Pantalla_Cliente
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_reportarIncidencia = new System.Windows.Forms.Button();
-            this.btn_AceptarIncidencia = new System.Windows.Forms.Button();
+            this.btn_reportarUsuarioMuni = new System.Windows.Forms.Button();
+            this.btn_AceptarUsuarioMuni = new System.Windows.Forms.Button();
             this.incidenciaEditar = new System.Windows.Forms.Label();
             this.label_datosInciencia = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.rol_input = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pass2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.pass1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.apellido_input = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.nom_input = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textbox1 = new System.Windows.Forms.TextBox();
+            this.nombre_input = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btn_reportarIncidencia
+            // btn_reportarUsuarioMuni
             // 
-            this.btn_reportarIncidencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_reportarIncidencia.Location = new System.Drawing.Point(147, 641);
-            this.btn_reportarIncidencia.Name = "btn_reportarIncidencia";
-            this.btn_reportarIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.btn_reportarIncidencia.TabIndex = 26;
-            this.btn_reportarIncidencia.Text = "Cancelar";
-            this.btn_reportarIncidencia.UseVisualStyleBackColor = true;
-            this.btn_reportarIncidencia.Click += new System.EventHandler(this.btn_reportarIncidencia_Click);
+            this.btn_reportarUsuarioMuni.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_reportarUsuarioMuni.Location = new System.Drawing.Point(147, 641);
+            this.btn_reportarUsuarioMuni.Name = "btn_reportarUsuarioMuni";
+            this.btn_reportarUsuarioMuni.Size = new System.Drawing.Size(75, 23);
+            this.btn_reportarUsuarioMuni.TabIndex = 26;
+            this.btn_reportarUsuarioMuni.Text = "Cancelar";
+            this.btn_reportarUsuarioMuni.UseVisualStyleBackColor = true;
+            this.btn_reportarUsuarioMuni.Click += new System.EventHandler(this.btn_reportarUsuarioMuni_Click);
             // 
-            // btn_AceptarIncidencia
+            // btn_AceptarUsuarioMuni
             // 
-            this.btn_AceptarIncidencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AceptarIncidencia.Location = new System.Drawing.Point(291, 641);
-            this.btn_AceptarIncidencia.Name = "btn_AceptarIncidencia";
-            this.btn_AceptarIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.btn_AceptarIncidencia.TabIndex = 25;
-            this.btn_AceptarIncidencia.Text = "Aceptar";
-            this.btn_AceptarIncidencia.UseVisualStyleBackColor = true;
-            this.btn_AceptarIncidencia.Click += new System.EventHandler(this.btn_AceptarIncidencia_Click);
+            this.btn_AceptarUsuarioMuni.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AceptarUsuarioMuni.Location = new System.Drawing.Point(291, 641);
+            this.btn_AceptarUsuarioMuni.Name = "btn_AceptarUsuarioMuni";
+            this.btn_AceptarUsuarioMuni.Size = new System.Drawing.Size(75, 23);
+            this.btn_AceptarUsuarioMuni.TabIndex = 25;
+            this.btn_AceptarUsuarioMuni.Text = "Aceptar";
+            this.btn_AceptarUsuarioMuni.UseVisualStyleBackColor = true;
+            this.btn_AceptarUsuarioMuni.Click += new System.EventHandler(this.btn_AceptarUsuarioMuni_ClickAsync);
             // 
             // incidenciaEditar
             // 
@@ -117,13 +117,13 @@ namespace Pantalla_Cliente
             this.rol_input.TabIndex = 67;
             this.rol_input.SelectedIndexChanged += new System.EventHandler(this.punto_input_SelectedIndexChanged);
             // 
-            // textBox4
+            // pass2
             // 
-            this.textBox4.Location = new System.Drawing.Point(182, 432);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(158, 20);
-            this.textBox4.TabIndex = 66;
+            this.pass2.Location = new System.Drawing.Point(182, 432);
+            this.pass2.Margin = new System.Windows.Forms.Padding(2);
+            this.pass2.Name = "pass2";
+            this.pass2.Size = new System.Drawing.Size(158, 20);
+            this.pass2.TabIndex = 66;
             // 
             // label5
             // 
@@ -137,13 +137,13 @@ namespace Pantalla_Cliente
             this.label5.TabIndex = 65;
             this.label5.Text = "Repite Contraseña";
             // 
-            // textBox3
+            // pass1
             // 
-            this.textBox3.Location = new System.Drawing.Point(182, 373);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(158, 20);
-            this.textBox3.TabIndex = 64;
+            this.pass1.Location = new System.Drawing.Point(182, 373);
+            this.pass1.Margin = new System.Windows.Forms.Padding(2);
+            this.pass1.Name = "pass1";
+            this.pass1.Size = new System.Drawing.Size(158, 20);
+            this.pass1.TabIndex = 64;
             // 
             // label4
             // 
@@ -157,13 +157,13 @@ namespace Pantalla_Cliente
             this.label4.TabIndex = 63;
             this.label4.Text = "Contraseña";
             // 
-            // textBox2
+            // apellido_input
             // 
-            this.textBox2.Location = new System.Drawing.Point(182, 313);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
-            this.textBox2.TabIndex = 62;
+            this.apellido_input.Location = new System.Drawing.Point(182, 313);
+            this.apellido_input.Margin = new System.Windows.Forms.Padding(2);
+            this.apellido_input.Name = "apellido_input";
+            this.apellido_input.Size = new System.Drawing.Size(158, 20);
+            this.apellido_input.TabIndex = 62;
             // 
             // label3
             // 
@@ -177,13 +177,13 @@ namespace Pantalla_Cliente
             this.label3.TabIndex = 61;
             this.label3.Text = "Apellido";
             // 
-            // textBox5
+            // nom_input
             // 
-            this.textBox5.Location = new System.Drawing.Point(182, 250);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(158, 20);
-            this.textBox5.TabIndex = 60;
+            this.nom_input.Location = new System.Drawing.Point(182, 250);
+            this.nom_input.Margin = new System.Windows.Forms.Padding(2);
+            this.nom_input.Name = "nom_input";
+            this.nom_input.Size = new System.Drawing.Size(158, 20);
+            this.nom_input.TabIndex = 60;
             // 
             // label1
             // 
@@ -197,13 +197,13 @@ namespace Pantalla_Cliente
             this.label1.TabIndex = 59;
             this.label1.Text = "Nombre ";
             // 
-            // textbox1
+            // nombre_input
             // 
-            this.textbox1.Location = new System.Drawing.Point(182, 189);
-            this.textbox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textbox1.Name = "textbox1";
-            this.textbox1.Size = new System.Drawing.Size(158, 20);
-            this.textbox1.TabIndex = 58;
+            this.nombre_input.Location = new System.Drawing.Point(182, 189);
+            this.nombre_input.Margin = new System.Windows.Forms.Padding(2);
+            this.nombre_input.Name = "nombre_input";
+            this.nombre_input.Size = new System.Drawing.Size(158, 20);
+            this.nombre_input.TabIndex = 58;
             // 
             // label7
             // 
@@ -225,18 +225,18 @@ namespace Pantalla_Cliente
             this.ClientSize = new System.Drawing.Size(528, 693);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.rol_input);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.pass2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.pass1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.apellido_input);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.nom_input);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textbox1);
+            this.Controls.Add(this.nombre_input);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btn_reportarIncidencia);
-            this.Controls.Add(this.btn_AceptarIncidencia);
+            this.Controls.Add(this.btn_reportarUsuarioMuni);
+            this.Controls.Add(this.btn_AceptarUsuarioMuni);
             this.Controls.Add(this.label_datosInciencia);
             this.Controls.Add(this.incidenciaEditar);
             this.Name = "EditarUsuarioMunicipio";
@@ -248,21 +248,21 @@ namespace Pantalla_Cliente
 
         #endregion
 
-        private System.Windows.Forms.Button btn_reportarIncidencia;
-        private System.Windows.Forms.Button btn_AceptarIncidencia;
+        private System.Windows.Forms.Button btn_reportarUsuarioMuni;
+        private System.Windows.Forms.Button btn_AceptarUsuarioMuni;
         private System.Windows.Forms.Label incidenciaEditar;
         private System.Windows.Forms.Label label_datosInciencia;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox rol_input;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox pass2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox pass1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox apellido_input;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox nom_input;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textbox1;
+        private System.Windows.Forms.TextBox nombre_input;
         private System.Windows.Forms.Label label7;
     }
 }

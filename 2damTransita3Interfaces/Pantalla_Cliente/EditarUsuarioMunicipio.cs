@@ -14,17 +14,17 @@ namespace Pantalla_Cliente
     public partial class EditarUsuarioMunicipio : Form
     {
         Cliente user;
+        int idMod;
         public EditarUsuarioMunicipio(string idModificar)
         {
             InitializeComponent();
+            idMod = int.TryParse(idModificar, out int parsedId) ? parsedId : 0;
             getCliente(idModificar);
         }
         public async Task getCliente(string idModificar)
         {
             Console.WriteLine("El método ha sido activado");
 
-            if (int.TryParse(idModificar, out int idMod))
-            {
                 // La conversión fue exitosa, y el valor se almacena en idMod como un entero.
                 Console.WriteLine("El valor convertido a entero es: " + idMod);
 
@@ -34,29 +34,77 @@ namespace Pantalla_Cliente
                 Console.WriteLine(response);
 
                 user = JsonSerializer.Deserialize<Cliente>(response);
-                textbox1.Text = user.nombreUsuario;
-                textBox5.Text = user.nombre;
-                textBox2.Text = user.apellidos;
+                nombre_input.Text = user.nombreUsuario;
+                nom_input.Text = user.nombre;
+                apellido_input.Text = user.apellidos;
                 int selecEstado = rol_input.FindStringExact(user.rol.ToString());
                 rol_input.SelectedIndex = selecEstado;
-            }
-            else
-            {
-                // La conversión falló, el valor de idModificar no es un número entero válido.
-                Console.WriteLine("El valor no se pudo convertir a entero.");
-            }
         }
 
 
-        private void btn_reportarIncidencia_Click(object sender, EventArgs e)
+        private void btn_reportarUsuarioMuni_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btn_AceptarIncidencia_Click(object sender, EventArgs e)
+        private async Task modifyUser(int idMod)
         {
+            Rol rolObjt = Rol.ROLE_MODERADOR;
+         
+                if (rol_input.Equals("ROLE_ADMIN"))
+                {
+                    rolObjt = Rol.ROLE_ADMIN;
+                } else if (rol_input.Equals("ROLE_MODERADOR")) {
+                    rolObjt = Rol.ROLE_MODERADOR;
+                }
+                Console.WriteLine(rolObjt);
+                user = new Cliente(idMod, nom_input.Text, apellido_input.Text, nombre_input.Text, pass1.Text, EstadoCuenta.ACTIVADO,rolObjt);
+            string content = $"{{\"nombre\": \"{nom_input.Text}\", \"apellidos\": \"{apellido_input.Text}\", \"nombreUsuario\": \"{nombre_input.Text}\", \"contrasenya\": \"{pass1.Text}\", \"rol\": [\"{rolObjt}\"]}}";
 
+            Console.WriteLine("metodo ha sido activado");
+                String url = Program.rutaBase + "api/auth/cliente/modificar/" + idMod;
+                //string content = JsonSerializer.Serialize(user);
+                string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
+
+                Console.WriteLine(user);
+                Console.WriteLine(response);
         }
+        private bool verifyDatos()
+        {
+            if (nom_input.Text != "" && nombre_input.Text != "" && apellido_input.Text != "")
+            {
+                return true;
+            }
+            MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+        private void btn_AceptarUsuarioMuni_ClickAsync(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas modificar la incidencia?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                if (verifyDatos())
+                {
+                    modifyUser(idMod);
+
+                    Form formularioPadre = this.Owner;
+
+                    if (formularioPadre != null)
+                    {
+
+                        if (formularioPadre is Transita)
+                        {
+                            Transita formularioTransita = (Transita)formularioPadre;
+                            formularioTransita.MostrarPanelDeUsuariosMunicipio();
+                            this.Close();
+                        }
+                    }
+                }
+            }
+        }
+
+       
 
         private void label3_Click(object sender, EventArgs e)
         {
