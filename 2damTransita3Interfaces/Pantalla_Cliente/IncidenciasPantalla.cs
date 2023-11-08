@@ -1,27 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Windows.Forms;
-using System.Text.Json;
+
 
 namespace Pantalla_Cliente
 {
     public partial class Incidencias_Pantalla : Form
     {
-        private List<Incidencia> listaIncidencias = new List<Incidencia>();
+        private IncidenciaService incidenciaService = new IncidenciaService();
         public Incidencias_Pantalla()
         {
             InitializeComponent();
-            getIncidencias();
+            obtenerIncidencias();
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
@@ -52,26 +43,22 @@ namespace Pantalla_Cliente
             int buttonWidth = 30;
             int buttonMargin = 10;
         }
-        public async void getIncidencias()
-        {
-            Console.WriteLine("metodo ha sido activado");
-            String url = Program.rutaBase + "incidencias";
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
-            Console.WriteLine(response);
 
-            CrearPanelesIncidencias(response);
+        public async void obtenerIncidencias() {
+            List<Incidencia> listaIncidencia = await incidenciaService.GetIncidenciasAsync();
+            CrearPanelesIncidencias(listaIncidencia);
         }
 
-        private void CrearPanelesIncidencias(String jsonIncidencias)
+        private void CrearPanelesIncidencias(List<Incidencia> listaIncidencia)
         {
-            List<Incidencia> listaIncidencias = JsonSerializer.Deserialize<List<Incidencia>>(jsonIncidencias);
-            foreach (Incidencia incidencia in listaIncidencias)
+           
+            foreach (Incidencia incidencia in listaIncidencia)
             { Console.WriteLine(incidencia.ToString()); }
 
             int topPosition = 0; // Posición vertical inicial
 
-            foreach (Incidencia incidencia in listaIncidencias)
+            foreach (Incidencia incidencia in listaIncidencia)
             {
                 IncidenciaBanner incidenciaBanner = new IncidenciaBanner();
 

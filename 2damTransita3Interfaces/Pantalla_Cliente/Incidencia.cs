@@ -2,6 +2,7 @@
 using System;
 using System.Text.Json.Serialization;
 
+
 internal class Incidencia
 {
     public int id { get; set; }
@@ -30,6 +31,7 @@ internal class Incidencia
     {
         return $"ID: {id}, Descripción: {descripcion}, Estado: {estado.ToString()}, Cliente: {cliente}, Punto: {punto}";
     }
+
 
 }
 

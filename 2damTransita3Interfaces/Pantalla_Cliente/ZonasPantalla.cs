@@ -13,6 +13,7 @@ namespace Pantalla_Cliente
 {
     public partial class ZonasPantalla : Form
     {
+        private ZonaService zonaService = new ZonaService();
         public ZonasPantalla()
         {
             InitializeComponent();
@@ -32,24 +33,20 @@ namespace Pantalla_Cliente
         }
         public async void getZonas()
         {
-            Console.WriteLine("metodo ha sido activado");
-            String url = Program.rutaBase + "zonas";
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
-
-            Console.WriteLine(response);
-
-            CrearPanelesZonas(response);
+            List<Zona> listaZonas = await zonaService.GetZonasAsync();
+            listaZonas = listaZonas.OrderBy(x => x.id).ToList();
+            CrearPanelesZonas(listaZonas);
         }
 
-        private void CrearPanelesZonas(String jsonZonas)
+        private void CrearPanelesZonas(List<Zona> listaZonas)
         {
-            List<Zona> listazonas = JsonSerializer.Deserialize<List<Zona>>(jsonZonas);
-            foreach (Zona zona in listazonas)
+            
+            foreach (Zona zona in listaZonas)
             { Console.WriteLine(zona.ToString()); }
 
             int topPosition = 0; // Posición vertical inicial
 
-            foreach (Zona zona in listazonas)
+            foreach (Zona zona in listaZonas)
             {
                 ZonaBanner zonaBanner = new ZonaBanner();
 

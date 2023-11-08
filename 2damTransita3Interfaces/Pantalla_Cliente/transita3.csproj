@@ -168,6 +168,7 @@
     </Compile>
     <Compile Include="HttpCliente.cs" />
     <Compile Include="Incidencia.cs" />
+    <Compile Include="IncidenciaService.cs" />
     <Compile Include="IncidenciasPantalla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +201,7 @@
     <Compile Include="IncidenciaBanner.Designer.cs">
       <DependentUpon>IncidenciaBanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rutas.cs" />
     <Compile Include="UserLoged.cs" />
     <Compile Include="UsuariosMunicipio.cs">
       <SubType>Form</SubType>
@@ -220,6 +222,7 @@
     <Compile Include="ZonaBanner.Designer.cs">
       <DependentUpon>ZonaBanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZonaService.cs" />
     <Compile Include="ZonasPantalla.cs">
       <SubType>Form</SubType>
     </Compile>
