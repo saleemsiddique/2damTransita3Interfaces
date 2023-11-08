@@ -50,6 +50,16 @@ public class Cliente
         this.estadoCuenta = estadoCuenta;
         this.rol = rol;
     }
+    public Cliente(string nombre, string apellidos, string nombreUsuario, string contrasenya, EstadoCuenta estadoCuenta, Rol rol)
+    {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.nombreUsuario = nombreUsuario;
+        this.contrasenya = contrasenya;
+        this.estadoCuenta = estadoCuenta;
+        this.rol = rol;
+    }
     public override string ToString()
     {
         return $"ID: {id}, Nombre: {nombre}, Apellidos: {apellidos}, Nombre de Usuario: {nombreUsuario}, Estado de Cuenta: {estadoCuenta}";
