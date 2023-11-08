@@ -104,6 +104,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteService.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="CrearUsuarioMunicipio.cs">
@@ -203,6 +204,7 @@
     </Compile>
     <Compile Include="Rutas.cs" />
     <Compile Include="UserLoged.cs" />
+    <Compile Include="UsuarioMunicipioService.cs" />
     <Compile Include="UsuariosMunicipio.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -18,11 +18,12 @@ namespace Pantalla_Cliente
 {
     public partial class Cliente_Pantalla : Form
     {
+        private ClienteService clienteService = new ClienteService();
 
         public Cliente_Pantalla()
         {
             InitializeComponent();
-            getClientes();
+            ObtenerClientes();
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12); 
@@ -38,21 +39,16 @@ namespace Pantalla_Cliente
             return panel_derecha;
         }
 
-        public async Task getClientes()
-        {
-            Console.WriteLine("metodo ha sido activado");
-            String url = Program.rutaBase + "cliente/RolUsuario";
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
-            
-            Console.WriteLine(response);
 
-            CrearPanelesClientes(response);
+        private async void ObtenerClientes() {
+            List<Cliente> listCliente = await clienteService.GetClientesAsync();
+
+            CrearPanelesClientes(listCliente);
         }
 
-        private void CrearPanelesClientes(String jsonClientes)
+        private void CrearPanelesClientes(List<Cliente> listaClientes)
         {
 
-            List<Cliente> listaClientes = JsonSerializer.Deserialize<List<Cliente>>(jsonClientes);
             foreach (Cliente cliente in listaClientes)
             { Console.WriteLine(cliente.ToString()); }
 

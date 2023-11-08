@@ -13,28 +13,23 @@ namespace Pantalla_Cliente
 {
     public partial class UsuariosMunicipio : Form
     {
+        UsuarioMunicipioService usuarioMunicipioService = new UsuarioMunicipioService();
         public UsuariosMunicipio()
         {
             InitializeComponent();
-            getUsuarios();
+            ObtenerUsuariosMunicipio();
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
         }
-        public async void getUsuarios()
-        {
-            Console.WriteLine("metodo ha sido activado");
-            String url = Program.rutaBase + "cliente/RolMunicipio";
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
-            Console.WriteLine(response);
 
-            CrearPanelesUsuariosMunicipio(response);
+        private async void ObtenerUsuariosMunicipio() {
+            List<Cliente> usuariosMunicipios = await usuarioMunicipioService.GetUsuariosMunicipiosAsync();
+            CrearPanelesUsuariosMunicipio(usuariosMunicipios);
         }
-        private void CrearPanelesUsuariosMunicipio(String jsonClientes)
+        private void CrearPanelesUsuariosMunicipio(List<Cliente> listaUsuariosMunicipio)
         {
-
-            List<Cliente> listaUsuariosMunicipio = JsonSerializer.Deserialize<List<Cliente>>(jsonClientes);
             foreach (Cliente usuario in listaUsuariosMunicipio)
             { Console.WriteLine(usuario.ToString()); }
 
