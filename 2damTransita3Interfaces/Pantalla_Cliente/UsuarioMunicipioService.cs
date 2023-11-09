@@ -12,7 +12,7 @@ namespace Pantalla_Cliente
     {
         public async Task<List<Cliente>> GetUsuariosMunicipiosAsync() {
             string url = Program.rutaBase + Rutas.usuarioMunicipio;
-            string response = await ApiClient.GetRequestAsync(url);
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             List<Cliente> listUsuarios = JsonSerializer.Deserialize<List<Cliente>>(response);
 
             return listUsuarios;
