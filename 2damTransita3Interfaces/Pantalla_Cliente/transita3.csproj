@@ -176,6 +176,12 @@
     <Compile Include="IncidenciasPantalla.Designer.cs">
       <DependentUpon>IncidenciasPantalla.cs</DependentUpon>
     </Compile>
+    <Compile Include="loadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loadingForm.Designer.cs">
+      <DependentUpon>loadingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     <EmbeddedResource Include="ClienteBanner.resx">
       <DependentUpon>ClienteBanner.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="loadingForm.resx">
+      <DependentUpon>loadingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,6 +346,7 @@
     <None Include="Resources\HeaderIESMARCOS.jpeg" />
     <None Include="Resources\HeaderIESMARCOS1.jpeg" />
     <None Include="Resources\HeaderIESMARCOS.jpg" />
+    <None Include="Resources\loading.gif" />
     <Content Include="Resources\menu %281%29.png" />
     <None Include="Resources\paisaje.jpeg" />
     <None Include="Resources\Villajoyosa.jpeg" />

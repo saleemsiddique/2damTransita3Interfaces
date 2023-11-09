@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -41,8 +42,8 @@ namespace Pantalla_Cliente
 
 
         private async void ObtenerClientes() {
-            List<Cliente> listCliente = await clienteService.GetClientesAsync();
 
+            List<Cliente> listCliente = await clienteService.GetClientesAsync();
             CrearPanelesClientes(listCliente);
         }
 
@@ -135,6 +136,11 @@ namespace Pantalla_Cliente
             buscarTextBox.Text = "";
         }
 
+        private void Cliente_Pantalla_Load(object sender, EventArgs e)
+        {
+
+
+        }
     }
 
     /*Codigo para refrescar la unica pantalla usa
