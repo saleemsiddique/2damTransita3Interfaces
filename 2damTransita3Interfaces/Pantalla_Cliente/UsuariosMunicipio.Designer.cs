@@ -31,16 +31,17 @@ namespace Pantalla_Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosMunicipio));
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.buttonAddCliente = new System.Windows.Forms.Button();
-            this.buscarTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panelUsuarios = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.botonVerDatosIncidencia = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.buttonAddCliente = new System.Windows.Forms.Button();
+            this.buscarTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureZona = new System.Windows.Forms.PictureBox();
@@ -70,8 +71,8 @@ namespace Pantalla_Cliente
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
-            this.panelUsuarios = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
+            this.panelUsuarios.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
@@ -81,7 +82,6 @@ namespace Pantalla_Cliente
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelUsuarios.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -101,58 +101,14 @@ namespace Pantalla_Cliente
             this.panel4.Size = new System.Drawing.Size(557, 681);
             this.panel4.TabIndex = 34;
             // 
-            // label16
+            // panelUsuarios
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(35, 155);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(102, 17);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "Añadir Usuario";
-            // 
-            // buttonAddCliente
-            // 
-            this.buttonAddCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.buttonAddCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonAddCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAddCliente.Location = new System.Drawing.Point(142, 148);
-            this.buttonAddCliente.Name = "buttonAddCliente";
-            this.buttonAddCliente.Size = new System.Drawing.Size(30, 30);
-            this.buttonAddCliente.TabIndex = 30;
-            this.buttonAddCliente.Text = "+";
-            this.buttonAddCliente.UseVisualStyleBackColor = false;
-            this.buttonAddCliente.Click += new System.EventHandler(this.buttonAddCliente_Click);
-            // 
-            // buscarTextBox
-            // 
-            this.buscarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(349, 92);
-            this.buscarTextBox.Name = "buscarTextBox";
-            this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
-            this.buscarTextBox.TabIndex = 29;
-            this.buscarTextBox.Text = "Buscar";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(291, 74);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 36);
-            this.button1.TabIndex = 17;
-            this.button1.UseVisualStyleBackColor = false;
+            this.panelUsuarios.AutoScroll = true;
+            this.panelUsuarios.Controls.Add(this.panel2);
+            this.panelUsuarios.Location = new System.Drawing.Point(32, 207);
+            this.panelUsuarios.Name = "panelUsuarios";
+            this.panelUsuarios.Size = new System.Drawing.Size(495, 413);
+            this.panelUsuarios.TabIndex = 33;
             // 
             // panel2
             // 
@@ -206,7 +162,8 @@ namespace Pantalla_Cliente
             this.botonVerDatosIncidencia.Size = new System.Drawing.Size(75, 23);
             this.botonVerDatosIncidencia.TabIndex = 3;
             this.botonVerDatosIncidencia.Text = "View";
-            this.botonVerDatosIncidencia.UseVisualStyleBackColor = true;            // 
+            this.botonVerDatosIncidencia.UseVisualStyleBackColor = true;
+            // 
             // radioButton1
             // 
             this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -229,6 +186,59 @@ namespace Pantalla_Cliente
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "Usuario";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(35, 155);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(102, 17);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "Añadir Usuario";
+            // 
+            // buttonAddCliente
+            // 
+            this.buttonAddCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.buttonAddCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAddCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAddCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAddCliente.Location = new System.Drawing.Point(142, 148);
+            this.buttonAddCliente.Name = "buttonAddCliente";
+            this.buttonAddCliente.Size = new System.Drawing.Size(30, 30);
+            this.buttonAddCliente.TabIndex = 30;
+            this.buttonAddCliente.Text = "+";
+            this.buttonAddCliente.UseVisualStyleBackColor = false;
+            this.buttonAddCliente.Click += new System.EventHandler(this.buttonAddCliente_Click);
+            // 
+            // buscarTextBox
+            // 
+            this.buscarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.buscarTextBox.Location = new System.Drawing.Point(349, 92);
+            this.buscarTextBox.Name = "buscarTextBox";
+            this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
+            this.buscarTextBox.TabIndex = 29;
+            this.buscarTextBox.Text = "Buscar";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(291, 74);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(36, 36);
+            this.button1.TabIndex = 17;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -286,7 +296,7 @@ namespace Pantalla_Cliente
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(24, 358);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(177, 261);
+            this.groupBox1.Size = new System.Drawing.Size(195, 261);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ID:";
@@ -296,7 +306,7 @@ namespace Pantalla_Cliente
             this.rol_mostrar.Enabled = false;
             this.rol_mostrar.Location = new System.Drawing.Point(9, 209);
             this.rol_mostrar.Name = "rol_mostrar";
-            this.rol_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.rol_mostrar.Size = new System.Drawing.Size(151, 20);
             this.rol_mostrar.TabIndex = 10;
             // 
             // label4
@@ -617,15 +627,6 @@ namespace Pantalla_Cliente
             this.btn_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cliente.UseVisualStyleBackColor = false;
             // 
-            // panelUsuarios
-            // 
-            this.panelUsuarios.AutoScroll = true;
-            this.panelUsuarios.Controls.Add(this.panel2);
-            this.panelUsuarios.Location = new System.Drawing.Point(32, 207);
-            this.panelUsuarios.Name = "panelUsuarios";
-            this.panelUsuarios.Size = new System.Drawing.Size(495, 413);
-            this.panelUsuarios.TabIndex = 33;
-            // 
             // UsuariosMunicipio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -640,6 +641,7 @@ namespace Pantalla_Cliente
             this.Text = "UsuariosMunicipio";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panelUsuarios.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -653,7 +655,6 @@ namespace Pantalla_Cliente
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelUsuarios.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

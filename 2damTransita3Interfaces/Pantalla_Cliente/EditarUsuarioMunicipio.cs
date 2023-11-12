@@ -37,7 +37,7 @@ namespace Pantalla_Cliente
                 nombre_input.Text = user.nombreUsuario;
                 nom_input.Text = user.nombre;
                 apellido_input.Text = user.apellidos;
-                int selecEstado = rol_input.FindStringExact(user.rol.ToString());
+                int selecEstado = rol_input.FindStringExact(user.rols.ToString());
                 rol_input.SelectedIndex = selecEstado;
         }
 
@@ -49,16 +49,16 @@ namespace Pantalla_Cliente
 
         private async Task modifyUser(int idMod)
         {
-            Rol rolObjt = Rol.ROLE_MODERADOR;
-         
-                if (rol_input.Equals("ROLE_ADMIN"))
+            foreach (var rol in user.rols)
+            {
+                string rolObjt = rol.nombre;
+                if (rol_input.Text.Equals("ROLE_ADMIN"))
                 {
-                    rolObjt = Rol.ROLE_ADMIN;
-                } else if (rol_input.Equals("ROLE_MODERADOR")) {
-                    rolObjt = Rol.ROLE_MODERADOR;
+                    rolObjt = "ROLE_ADMIN";
+                } else if (rol_input.Text.Equals("ROLE_MODERADOR")) {
+                    rolObjt = "ROLE_MODERADOR";
                 }
                 Console.WriteLine(rolObjt);
-                user = new Cliente(idMod, nom_input.Text, apellido_input.Text, nombre_input.Text, pass1.Text, EstadoCuenta.ACTIVADO,rolObjt);
             string content = $"{{\"nombre\": \"{nom_input.Text}\", \"apellidos\": \"{apellido_input.Text}\", \"nombreUsuario\": \"{nombre_input.Text}\", \"contrasenya\": \"{pass1.Text}\", \"rol\": [\"{rolObjt}\"]}}";
 
             Console.WriteLine("metodo ha sido activado");
@@ -66,9 +66,10 @@ namespace Pantalla_Cliente
                 //string content = JsonSerializer.Serialize(user);
                 string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
 
-                Console.WriteLine(user);
                 Console.WriteLine(response);
+            }
         }
+
         private bool verifyDatos()
         {
             if (nom_input.Text != "" && nombre_input.Text != "" && apellido_input.Text != "")
@@ -80,31 +81,36 @@ namespace Pantalla_Cliente
         }
         private void btn_AceptarUsuarioMuni_ClickAsync(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas modificar la incidencia?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas modificar este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
                 if (verifyDatos())
                 {
-                    modifyUser(idMod);
+                    Task task = modifyUser(idMod);
 
-                    Form formularioPadre = this.Owner;
-
-                    if (formularioPadre != null)
+                    task.ContinueWith(t =>
                     {
+                        // This part will be executed when modifyUser completes, but won't block the UI
+                        Form formularioPadre = this.Owner;
 
-                        if (formularioPadre is Transita)
+                        if (formularioPadre != null)
                         {
-                            Transita formularioTransita = (Transita)formularioPadre;
-                            formularioTransita.MostrarPanelDeUsuariosMunicipio();
-                            this.Close();
+                            if (formularioPadre is Transita)
+                            {
+                                Transita formularioTransita = (Transita)formularioPadre;
+                                formularioTransita.MostrarPanelDeUsuariosMunicipio();
+                                this.Close();
+                            }
                         }
-                    }
+                    }, TaskScheduler.FromCurrentSynchronizationContext());
                 }
             }
         }
 
-       
+
+
+
 
         private void label3_Click(object sender, EventArgs e)
         {

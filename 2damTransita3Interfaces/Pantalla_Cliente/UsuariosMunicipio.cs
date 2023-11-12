@@ -48,7 +48,7 @@ namespace Pantalla_Cliente
                     nombre_mostrar.Text = usuario.nombre;
                     apellido_mostrar.Text = usuario.apellidos;
                     nombreUsuario_mostrar.Text = usuario.nombreUsuario;
-                    rol_mostrar.Text = usuario.rol + "";
+                    rol_mostrar.Text = usuario.rols[0].ToString() + "";
                 };
 
                 // Configura la ubicación y otros detalles según sea necesario

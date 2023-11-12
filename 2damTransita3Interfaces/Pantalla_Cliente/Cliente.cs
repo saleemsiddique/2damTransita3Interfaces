@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Collections.Generic;
+using System.Linq;
 
 public enum EstadoCuenta
 {
     ACTIVADO,
     DESACTIVADO
 }
-public enum Rol
-{
-    ROLE_ADMIN,
-    ROLE_MODERADOR,
-    ROLE_USUARIO
-}
+
 public class Cliente
 {
     public int id { get; set; }
@@ -20,17 +17,16 @@ public class Cliente
     public string apellidos { get; set; }
     public string nombreUsuario { get; set; }
     public string contrasenya { get; set; }
-
-    [JsonConverter(typeof(JsonStringEnumConverter))]
-    public Rol rol { get; set; }
+    public List<Pantalla_Cliente.Rol> rols { get; set; }  // Change to List<Pantalla_Cliente.Rol>
 
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public EstadoCuenta estadoCuenta { get; set; }
 
     public Cliente()
     {
-        
+
     }
+
     public Cliente(int id, string nombre, string apellidos, string nombreUsuario, string contrasenya, EstadoCuenta estadoCuenta)
     {
         this.id = id;
@@ -40,7 +36,8 @@ public class Cliente
         this.contrasenya = contrasenya;
         this.estadoCuenta = estadoCuenta;
     }
-    public Cliente(int id, string nombre, string apellidos, string nombreUsuario, string contrasenya, EstadoCuenta estadoCuenta,Rol rol)
+
+    public Cliente(int id, string nombre, string apellidos, string nombreUsuario, string contrasenya, EstadoCuenta estadoCuenta, List<Pantalla_Cliente.Rol> roles)
     {
         this.id = id;
         this.nombre = nombre;
@@ -48,9 +45,10 @@ public class Cliente
         this.nombreUsuario = nombreUsuario;
         this.contrasenya = contrasenya;
         this.estadoCuenta = estadoCuenta;
-        this.rol = rol;
+        this.rols = roles;
     }
-    public Cliente(string nombre, string apellidos, string nombreUsuario, string contrasenya, EstadoCuenta estadoCuenta, Rol rol)
+
+    public Cliente(string nombre, string apellidos, string nombreUsuario, string contrasenya, EstadoCuenta estadoCuenta, List<Pantalla_Cliente.Rol> roles)
     {
         this.id = id;
         this.nombre = nombre;
@@ -58,10 +56,14 @@ public class Cliente
         this.nombreUsuario = nombreUsuario;
         this.contrasenya = contrasenya;
         this.estadoCuenta = estadoCuenta;
-        this.rol = rol;
+        this.rols = roles;
     }
+
     public override string ToString()
     {
-        return $"ID: {id}, Nombre: {nombre}, Apellidos: {apellidos}, Nombre de Usuario: {nombreUsuario}, Estado de Cuenta: {estadoCuenta}";
+        string roleNames = string.Join(", ", rols.Select(r => r.nombre));
+
+        return $"ID: {id}, Nombre: {nombre}, Apellidos: {apellidos}, Nombre de Usuario: {nombreUsuario}, Estado de Cuenta: {estadoCuenta}, Roles: {roleNames}";
     }
+
 }

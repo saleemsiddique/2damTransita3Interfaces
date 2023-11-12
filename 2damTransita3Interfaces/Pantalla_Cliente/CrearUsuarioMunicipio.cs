@@ -34,63 +34,84 @@ namespace Pantalla_Cliente
 
             if (!(nombreUsuario_input.Text == "" || nombre_input.Text == "" || apellido_input.Text == ""))
             {
-                return true;
+                MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return false;
+            return true;
         }
-        public async Task crearUsuario()
+        public async Task crearUsuario(string nombreUsuario, string nombre, string apellido, string password, string rol_input_value)
         {
-
-            string userNombreUsuario = nombreUsuario_input.Text;
-            string userNombre = nombre_input.Text;
-            string userApellido = apellido_input.Text;
-            string userPassWord = password1_input.Text;
             EstadoCuenta estadoCuenta = EstadoCuenta.ACTIVADO;
-            Rol rolObjt = Rol.ROLE_MODERADOR;
+            Rol rol = new Rol();
+            List<Rol> rolObjt = new List<Rol>();
 
-            if (rol_input.Equals("ROLE_ADMIN"))
+            if (rol_input_value.Equals("ROLE_ADMIN"))
             {
-                rolObjt = Rol.ROLE_ADMIN;
+                Console.WriteLine("ROLE_ADMIN selected");
+                rol = new Rol(1, "ROLE_ADMIN");
+                rolObjt.Add(rol);
             }
-            else if (rol_input.Equals("ROLE_MODERADOR"))
+            else if (rol_input_value.Equals("ROLE_MODERADOR"))
             {
-                rolObjt = Rol.ROLE_MODERADOR;
+                Console.WriteLine("ROLE_MODERADOR selected");
+                rol = new Rol(2, "ROLE_MODERADOR");
+                rolObjt.Add(rol);
             }
 
-            string content = $"{{\"nombre\": \"{userNombre}\", \"apellidos\": \"{userApellido}\", \"nombreUsuario\": \"{userNombreUsuario}\", \"contrasenya\": \"{userPassWord}\", \"rol\": [\"{rolObjt}\"]}}";
+            // Create a Cliente object and set its properties
+            Cliente cliente = new Cliente
+            {
+                nombre = nombre,
+                apellidos = apellido,
+                nombreUsuario = nombreUsuario,
+                contrasenya = password,
+                estadoCuenta = estadoCuenta,
+                rols = rolObjt
+            };
 
-            //Cliente newUser = new Cliente(userNombre,userApellido,userNombreUsuario,userPassWord,estadoCuenta,rolObjt);
-            Console.WriteLine("metodo ha sido activado");
+            string content = $"{{\"nombre\": \"{cliente.nombre}\", \"apellidos\": \"{cliente.apellidos}\", \"nombreUsuario\": \"{cliente.nombreUsuario}\", \"contrasenya\": \"{cliente.contrasenya}\", \"rol\": [\"{string.Join("\", \"", cliente.rols.Select(r => r.nombre))}\"]}}";
+
+
+            Console.WriteLine("Método ha sido activado");
             String url = Program.rutaBase + "api/auth/signup/cliente";
-            //string content = JsonSerializer.Serialize(newUser);
             string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
 
             Console.WriteLine(response);
-
         }
+
+
+
+
         private void btn_AceptarUsuarioMuni_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de los datos de la Zona?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres dar de alta este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
-                if (verifyDatos())
-                {
-                    _ = crearUsuario();
+                // Capture UI element values
+                string nombreUsuario = nombreUsuario_input.Text;
+                string nombre = nombre_input.Text;
+                string apellido = apellido_input.Text;
+                string password = password1_input.Text;
+                string rol_input_value = rol_input.Text;
 
-                    foreach (Form form in Application.OpenForms)
+                Task.Run(() => crearUsuario(nombreUsuario, nombre, apellido, password, rol_input_value))
+                    .ContinueWith(task =>
                     {
-                        if (form is Transita)
+                        // This part will be executed when crearUsuario completes, but won't block the UI
+                        foreach (Form form in Application.OpenForms)
                         {
-                            Transita transita = (Transita)form;
-                            transita.MostrarPanelDeUsuariosMunicipio();
+                            if (form is Transita)
+                            {
+                                Transita transita = (Transita)form;
+                                transita.MostrarPanelDeUsuariosMunicipio();
+                            }
                         }
-                    }
-                    this.Close();
-                }
+                        this.Close();
+                    }, TaskScheduler.FromCurrentSynchronizationContext());
             }
         }
+
 
         private void btn_cancelarIncidencia_Click(object sender, EventArgs e)
         {

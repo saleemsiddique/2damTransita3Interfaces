@@ -104,6 +104,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Rol.cs" />
     <Compile Include="ClienteService.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Cliente.cs" />

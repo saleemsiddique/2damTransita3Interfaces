@@ -63,6 +63,7 @@
             this.btn_Incidencias = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
@@ -526,6 +527,7 @@
             this.panel4.AutoSize = true;
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.panelZonas);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.buttonAddZona);
@@ -537,6 +539,20 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(557, 681);
             this.panel4.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(20, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 25);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Zonas Transita";
             // 
             // ZonasPantalla
             // 
@@ -606,5 +622,6 @@
         private System.Windows.Forms.Button btn_datosZona;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label1;
     }
 }
