@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteBanner));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonChangedEstado = new System.Windows.Forms.Button();
             this.idCliente = new System.Windows.Forms.Label();
+            this.favCliente = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnViewCliente = new System.Windows.Forms.Button();
             this.nombreCliente = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.moreOption = new System.Windows.Forms.Button();
-            this.favCliente = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.favCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -48,8 +47,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.panel2.Controls.Add(this.buttonChangedEstado);
             this.panel2.Controls.Add(this.idCliente);
-            this.panel2.Controls.Add(this.moreOption);
             this.panel2.Controls.Add(this.favCliente);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.btnViewCliente);
@@ -62,6 +61,15 @@
             this.panel2.TabIndex = 11;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
+            // buttonChangedEstado
+            // 
+            this.buttonChangedEstado.Location = new System.Drawing.Point(408, 24);
+            this.buttonChangedEstado.Name = "buttonChangedEstado";
+            this.buttonChangedEstado.Size = new System.Drawing.Size(21, 21);
+            this.buttonChangedEstado.TabIndex = 21;
+            this.buttonChangedEstado.UseVisualStyleBackColor = true;
+            this.buttonChangedEstado.Click += new System.EventHandler(this.buttonChangedEstado_Click);
+            // 
             // idCliente
             // 
             this.idCliente.AutoSize = true;
@@ -72,6 +80,32 @@
             this.idCliente.TabIndex = 19;
             this.idCliente.Text = "ID";
             this.idCliente.Click += new System.EventHandler(this.idCliente_Click);
+            // 
+            // favCliente
+            // 
+            this.favCliente.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.favCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.favCliente.Image = global::Pantalla_Cliente.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
+            this.favCliente.InitialImage = global::Pantalla_Cliente.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
+            this.favCliente.Location = new System.Drawing.Point(278, 21);
+            this.favCliente.Name = "favCliente";
+            this.favCliente.Size = new System.Drawing.Size(25, 25);
+            this.favCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.favCliente.TabIndex = 17;
+            this.favCliente.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox2.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox2.Location = new System.Drawing.Point(20, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // btnViewCliente
             // 
@@ -107,46 +141,6 @@
             this.radioButton1.UseVisualStyleBackColor = false;
             this.radioButton1.Visible = false;
             // 
-            // moreOption
-            // 
-            this.moreOption.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.moreOption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.moreOption.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.moreOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.moreOption.Image = ((System.Drawing.Image)(resources.GetObject("moreOption.Image")));
-            this.moreOption.Location = new System.Drawing.Point(401, 4);
-            this.moreOption.Name = "moreOption";
-            this.moreOption.Size = new System.Drawing.Size(30, 57);
-            this.moreOption.TabIndex = 18;
-            this.moreOption.UseVisualStyleBackColor = false;
-            this.moreOption.Click += new System.EventHandler(this.moreOption_Click);
-            // 
-            // favCliente
-            // 
-            this.favCliente.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.favCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.favCliente.Image = global::Pantalla_Cliente.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
-            this.favCliente.InitialImage = global::Pantalla_Cliente.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
-            this.favCliente.Location = new System.Drawing.Point(278, 21);
-            this.favCliente.Name = "favCliente";
-            this.favCliente.Size = new System.Drawing.Size(25, 25);
-            this.favCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.favCliente.TabIndex = 17;
-            this.favCliente.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox2.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox2.Location = new System.Drawing.Point(20, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
             // ClienteBanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,12 +159,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button moreOption;
         private System.Windows.Forms.PictureBox favCliente;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnViewCliente;
         private System.Windows.Forms.Label nombreCliente;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label idCliente;
+        private System.Windows.Forms.Button buttonChangedEstado;
     }
 }
