@@ -143,6 +143,7 @@ namespace Pantalla_Cliente
             {
 
                 ModifyUserEstado();
+                this.Refresh();
             }
         }
     }
