@@ -128,8 +128,11 @@ namespace Pantalla_Cliente
              
                 string putResponse = await ApiClient.GetRequestAsync("PUT", urlMod, Program.token, content);
                 Console.WriteLine(putResponse);
-                
-        
+
+
+                Form formularioPadre = this.ParentForm;
+                Transita formularioTransita = (Transita)formularioPadre;
+                formularioTransita.MostrarPanelDeCliente();
         }
         
     
