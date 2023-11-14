@@ -104,6 +104,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PuntoBanner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PuntoBanner.Designer.cs">
+      <DependentUpon>PuntoBanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PuntoService.cs" />
+    <Compile Include="PuntosPantalla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PuntosPantalla.Designer.cs">
+      <DependentUpon>PuntosPantalla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rol.cs" />
     <Compile Include="ClienteService.cs" />
     <Compile Include="Configuration.cs" />
@@ -284,6 +297,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IncidenciaBanner.resx">
       <DependentUpon>IncidenciaBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PuntoBanner.resx">
+      <DependentUpon>PuntoBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PuntosPantalla.resx">
+      <DependentUpon>PuntosPantalla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuariosMunicipio.resx">
       <DependentUpon>UsuariosMunicipio.cs</DependentUpon>

@@ -100,6 +100,7 @@ namespace Pantalla_Cliente
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(557, 681);
             this.panel4.TabIndex = 34;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panelUsuarios
             // 

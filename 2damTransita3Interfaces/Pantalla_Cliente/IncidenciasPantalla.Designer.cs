@@ -94,9 +94,6 @@ namespace Pantalla_Cliente
             this.label4.Size = new System.Drawing.Size(234, 1);
             this.label4.TabIndex = 10;
             // 
-            // backgroundWorker1
-            // 
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -410,7 +407,6 @@ namespace Pantalla_Cliente
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-
             // 
             // pictureBox2
             // 
@@ -432,7 +428,6 @@ namespace Pantalla_Cliente
             this.imgTransita.Name = "imgTransita";
             this.imgTransita.Size = new System.Drawing.Size(223, 184);
             this.imgTransita.TabIndex = 5;
-
             // 
             // label2
             // 
@@ -555,6 +550,7 @@ namespace Pantalla_Cliente
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(557, 681);
             this.panel4.TabIndex = 28;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panelInc
             // 

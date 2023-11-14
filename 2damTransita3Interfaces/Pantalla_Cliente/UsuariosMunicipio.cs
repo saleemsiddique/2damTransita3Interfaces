@@ -79,5 +79,10 @@ namespace Pantalla_Cliente
             crearUsuarioMunicipio.Owner = this;
             crearUsuarioMunicipio.Show();
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

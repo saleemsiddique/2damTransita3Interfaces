@@ -197,5 +197,10 @@ namespace Pantalla_Cliente
             incidencia.Owner = this;
             incidencia.ShowDialog();
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

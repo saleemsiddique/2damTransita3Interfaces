@@ -30,7 +30,8 @@ namespace Pantalla_Cliente
             btn_incidencias.Click += btn_incidencias_Click;
             btn_cliente.Click += btn_cliente_Click;
             btn_zonas.Click += btn_zona_Click;
-           
+            btn_puntos.Click += btn_punto_Click;
+
 
             buttons = new Button[] { btn_cliente, btn_incidencias, btn_zonas, btn_puntos, btn_mapa };
 
@@ -84,6 +85,15 @@ namespace Pantalla_Cliente
         }
 
         public Panel ObtenerPanelDerechaUsuariosMunicipio()
+        {
+            return panel1_derecha;
+        }
+        public Panel ObtenerPanelCentralPunto()
+        {
+            return panel1_central;
+        }
+
+        public Panel ObtenerPanelDerechaPunto()
         {
             return panel1_derecha;
         }
@@ -153,6 +163,26 @@ namespace Pantalla_Cliente
             panelCentralZona.Dock = DockStyle.Fill;
             panelDerechaZona.Dock = DockStyle.Fill;
         }
+        public void MostrarPanelDePunto()
+        {
+            PuntosPantalla puntosPantalla = new PuntosPantalla();
+            Panel panelCentralPunto = puntosPantalla.ObtenerPanelCentralPunto();
+            Panel panelDerechaPunto = puntosPantalla.ObtenerPanelDerechaPunto();
+
+
+            VaciarPaneles();
+
+            // Agrega el panel al control contenedor en este formulario
+            panel1_central.Controls.Add(panelCentralPunto);
+            panel1_derecha.Controls.Add(panelDerechaPunto);
+
+
+            // Puedes personalizar el tamaño y la posición del panel según tus necesidades
+            panelCentralPunto.Dock = DockStyle.Fill;
+            panelDerechaPunto.Dock = DockStyle.Fill;
+
+            pictureBox2.Show();
+        }
         private void ToggleButton_Click(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
@@ -186,9 +216,10 @@ namespace Pantalla_Cliente
         {
             MostrarPanelDeZona();
         }
-
-
-
+        private void btn_punto_Click(object sender, EventArgs e)
+        {
+            MostrarPanelDePunto();
+        }
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
