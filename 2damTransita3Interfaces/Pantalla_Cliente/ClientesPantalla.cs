@@ -14,7 +14,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 using Button = System.Windows.Forms.Button;
-
+//TODO: Hacer pantalla de carga de clientes
 namespace Pantalla_Cliente
 {
     public partial class Cliente_Pantalla : Form
@@ -43,7 +43,10 @@ namespace Pantalla_Cliente
 
         private async void ObtenerClientes() {
 
+
+            // Objeto loadingForm 
             List<Cliente> listCliente = await clienteService.GetClientesAsync();
+            // acabar del loadingform a true cierras el form
             CrearPanelesClientes(listCliente);
         }
 

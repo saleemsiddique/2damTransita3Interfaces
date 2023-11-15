@@ -13,13 +13,14 @@ namespace Pantalla_Cliente
 {
     partial class LoadingForm : Form
     {
+        public bool acabar { get; set; }
         public LoadingForm()
         {
             InitializeComponent();
             this.TransparencyKey = Color.Crimson;
             this.BackColor = Color.Crimson;
             Activated += DoSomeStuff;
-            
+            acabar = false; 
         }
 
         public void dispose() {
@@ -28,11 +29,15 @@ namespace Pantalla_Cliente
 
         private async void DoSomeStuff(object sender, EventArgs e)
         {
-            //Do You Stuff here
-            await Task.Run(() => Thread.Sleep(2000));
+            await Task.Run(() =>
+            {
+                while (!acabar)
+                {
+                    Thread.Sleep(100);
+                }
+            });
             this.Close();
         }
-
 
     }
 }

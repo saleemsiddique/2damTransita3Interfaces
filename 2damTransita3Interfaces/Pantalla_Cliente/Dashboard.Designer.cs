@@ -35,6 +35,7 @@
             this.panelDegradado1 = new System.Windows.Forms.Panel();
             this.pictureBoxImagenHome = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_usuariosMunicipio = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_incidencias = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -48,7 +49,6 @@
             this.btn_zonas = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.panel1_derecha = new System.Windows.Forms.Panel();
-            this.btn_usuariosMunicipio = new System.Windows.Forms.Button();
             this.panel1_central.SuspendLayout();
             this.panelHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenHome)).BeginInit();
@@ -130,6 +130,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(276, 673);
             this.panel1.TabIndex = 34;
+            // 
+            // btn_usuariosMunicipio
+            // 
+            this.btn_usuariosMunicipio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btn_usuariosMunicipio.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_usuariosMunicipio.FlatAppearance.BorderSize = 0;
+            this.btn_usuariosMunicipio.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_usuariosMunicipio.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_usuariosMunicipio.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_usuariosMunicipio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_usuariosMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_usuariosMunicipio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_usuariosMunicipio.Location = new System.Drawing.Point(0, 336);
+            this.btn_usuariosMunicipio.Name = "btn_usuariosMunicipio";
+            this.btn_usuariosMunicipio.Size = new System.Drawing.Size(278, 57);
+            this.btn_usuariosMunicipio.TabIndex = 17;
+            this.btn_usuariosMunicipio.Text = "      Usuarios Municipio";
+            this.btn_usuariosMunicipio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_usuariosMunicipio.UseVisualStyleBackColor = false;
+            this.btn_usuariosMunicipio.Click += new System.EventHandler(this.ToggleButton_Click);
             // 
             // pictureBox2
             // 
@@ -325,26 +345,6 @@
             this.panel1_derecha.Name = "panel1_derecha";
             this.panel1_derecha.Size = new System.Drawing.Size(241, 673);
             this.panel1_derecha.TabIndex = 33;
-            // 
-            // btn_usuariosMunicipio
-            // 
-            this.btn_usuariosMunicipio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.btn_usuariosMunicipio.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_usuariosMunicipio.FlatAppearance.BorderSize = 0;
-            this.btn_usuariosMunicipio.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_usuariosMunicipio.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_usuariosMunicipio.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_usuariosMunicipio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_usuariosMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_usuariosMunicipio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_usuariosMunicipio.Location = new System.Drawing.Point(0, 336);
-            this.btn_usuariosMunicipio.Name = "btn_usuariosMunicipio";
-            this.btn_usuariosMunicipio.Size = new System.Drawing.Size(278, 57);
-            this.btn_usuariosMunicipio.TabIndex = 17;
-            this.btn_usuariosMunicipio.Text = "      Usuarios Municipio";
-            this.btn_usuariosMunicipio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_usuariosMunicipio.UseVisualStyleBackColor = false;
-            this.btn_usuariosMunicipio.Click += new System.EventHandler(this.btn_usuariosMunicipio_Click);
             // 
             // Transita
             // 

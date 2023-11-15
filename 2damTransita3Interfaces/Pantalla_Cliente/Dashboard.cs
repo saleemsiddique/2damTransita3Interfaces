@@ -31,9 +31,9 @@ namespace Pantalla_Cliente
             btn_cliente.Click += btn_cliente_Click;
             btn_zonas.Click += btn_zona_Click;
             btn_puntos.Click += btn_punto_Click;
+            btn_usuariosMunicipio.Click += btn_usuariosMunicipio_Click;
 
-
-            buttons = new Button[] { btn_cliente, btn_incidencias, btn_zonas, btn_puntos, btn_mapa };
+            buttons = new Button[] { btn_cliente, btn_incidencias, btn_zonas, btn_puntos, btn_mapa, btn_usuariosMunicipio};
 
             currentButton = null;
 

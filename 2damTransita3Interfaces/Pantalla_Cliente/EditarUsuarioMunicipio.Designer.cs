@@ -35,10 +35,6 @@ namespace Pantalla_Cliente
             this.label_datosInciencia = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.rol_input = new System.Windows.Forms.ComboBox();
-            this.pass2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pass1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.apellido_input = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.nom_input = new System.Windows.Forms.TextBox();
@@ -50,7 +46,7 @@ namespace Pantalla_Cliente
             // btn_reportarUsuarioMuni
             // 
             this.btn_reportarUsuarioMuni.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_reportarUsuarioMuni.Location = new System.Drawing.Point(147, 641);
+            this.btn_reportarUsuarioMuni.Location = new System.Drawing.Point(147, 431);
             this.btn_reportarUsuarioMuni.Name = "btn_reportarUsuarioMuni";
             this.btn_reportarUsuarioMuni.Size = new System.Drawing.Size(75, 23);
             this.btn_reportarUsuarioMuni.TabIndex = 26;
@@ -61,7 +57,7 @@ namespace Pantalla_Cliente
             // btn_AceptarUsuarioMuni
             // 
             this.btn_AceptarUsuarioMuni.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AceptarUsuarioMuni.Location = new System.Drawing.Point(291, 641);
+            this.btn_AceptarUsuarioMuni.Location = new System.Drawing.Point(291, 431);
             this.btn_AceptarUsuarioMuni.Name = "btn_AceptarUsuarioMuni";
             this.btn_AceptarUsuarioMuni.Size = new System.Drawing.Size(75, 23);
             this.btn_AceptarUsuarioMuni.TabIndex = 25;
@@ -90,7 +86,7 @@ namespace Pantalla_Cliente
             this.label_datosInciencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label_datosInciencia.Location = new System.Drawing.Point(93, 120);
             this.label_datosInciencia.Name = "label_datosInciencia";
-            this.label_datosInciencia.Size = new System.Drawing.Size(334, 485);
+            this.label_datosInciencia.Size = new System.Drawing.Size(334, 306);
             this.label_datosInciencia.TabIndex = 22;
             // 
             // label6
@@ -98,7 +94,7 @@ namespace Pantalla_Cliente
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(179, 467);
+            this.label6.Location = new System.Drawing.Point(179, 345);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 68;
@@ -111,51 +107,11 @@ namespace Pantalla_Cliente
             this.rol_input.Items.AddRange(new object[] {
             "ROLE_ADMIN",
             "ROLE_MODERADOR"});
-            this.rol_input.Location = new System.Drawing.Point(182, 492);
+            this.rol_input.Location = new System.Drawing.Point(182, 370);
             this.rol_input.Name = "rol_input";
-            this.rol_input.Size = new System.Drawing.Size(112, 21);
+            this.rol_input.Size = new System.Drawing.Size(158, 21);
             this.rol_input.TabIndex = 67;
             this.rol_input.SelectedIndexChanged += new System.EventHandler(this.punto_input_SelectedIndexChanged);
-            // 
-            // pass2
-            // 
-            this.pass2.Location = new System.Drawing.Point(182, 432);
-            this.pass2.Margin = new System.Windows.Forms.Padding(2);
-            this.pass2.Name = "pass2";
-            this.pass2.Size = new System.Drawing.Size(158, 20);
-            this.pass2.TabIndex = 66;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(179, 408);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 13);
-            this.label5.TabIndex = 65;
-            this.label5.Text = "Repite Contraseña";
-            // 
-            // pass1
-            // 
-            this.pass1.Location = new System.Drawing.Point(182, 373);
-            this.pass1.Margin = new System.Windows.Forms.Padding(2);
-            this.pass1.Name = "pass1";
-            this.pass1.Size = new System.Drawing.Size(158, 20);
-            this.pass1.TabIndex = 64;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(179, 349);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 63;
-            this.label4.Text = "Contraseña";
             // 
             // apellido_input
             // 
@@ -222,13 +178,9 @@ namespace Pantalla_Cliente
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.ClientSize = new System.Drawing.Size(528, 693);
+            this.ClientSize = new System.Drawing.Size(528, 483);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.rol_input);
-            this.Controls.Add(this.pass2);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pass1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.apellido_input);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.nom_input);
@@ -254,10 +206,6 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label label_datosInciencia;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox rol_input;
-        private System.Windows.Forms.TextBox pass2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox pass1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox apellido_input;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox nom_input;

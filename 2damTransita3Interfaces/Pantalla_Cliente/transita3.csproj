@@ -104,6 +104,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Decoder.cs" />
     <Compile Include="PuntoBanner.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -349,6 +350,9 @@
     <None Include="Resources\estrellaAmarilla-fotor-bg-remover-20231021185036.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next">
+      <Version>4.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>

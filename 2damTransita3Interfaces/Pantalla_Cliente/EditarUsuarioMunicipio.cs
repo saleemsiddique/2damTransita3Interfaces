@@ -37,7 +37,7 @@ namespace Pantalla_Cliente
                 nombre_input.Text = user.nombreUsuario;
                 nom_input.Text = user.nombre;
                 apellido_input.Text = user.apellidos;
-                int selecEstado = rol_input.FindStringExact(user.rols.ToString());
+                int selecEstado = rol_input.FindStringExact(user.rols[0].ToString());
                 rol_input.SelectedIndex = selecEstado;
         }
 
@@ -59,7 +59,8 @@ namespace Pantalla_Cliente
                     rolObjt = "ROLE_MODERADOR";
                 }
                 Console.WriteLine(rolObjt);
-            string content = $"{{\"nombre\": \"{nom_input.Text}\", \"apellidos\": \"{apellido_input.Text}\", \"nombreUsuario\": \"{nombre_input.Text}\", \"contrasenya\": \"{pass1.Text}\", \"rol\": [\"{rolObjt}\"]}}";
+            string content = $"{{\"nombre\": \"{nom_input.Text}\", \"apellidos\": \"{apellido_input.Text}\"," +
+                    $" \"nombreUsuario\": \"{nombre_input.Text}\", \"rol\": [\"{rolObjt}\"]}}";
 
             Console.WriteLine("metodo ha sido activado");
                 String url = Program.rutaBase + "api/auth/cliente/modificar/" + idMod;

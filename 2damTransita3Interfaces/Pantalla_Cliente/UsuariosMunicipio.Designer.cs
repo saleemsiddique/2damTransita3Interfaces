@@ -307,7 +307,7 @@ namespace Pantalla_Cliente
             this.rol_mostrar.Enabled = false;
             this.rol_mostrar.Location = new System.Drawing.Point(9, 209);
             this.rol_mostrar.Name = "rol_mostrar";
-            this.rol_mostrar.Size = new System.Drawing.Size(151, 20);
+            this.rol_mostrar.Size = new System.Drawing.Size(115, 20);
             this.rol_mostrar.TabIndex = 10;
             // 
             // label4
@@ -325,7 +325,7 @@ namespace Pantalla_Cliente
             this.nombreUsuario_mostrar.Enabled = false;
             this.nombreUsuario_mostrar.Location = new System.Drawing.Point(9, 163);
             this.nombreUsuario_mostrar.Name = "nombreUsuario_mostrar";
-            this.nombreUsuario_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.nombreUsuario_mostrar.Size = new System.Drawing.Size(115, 20);
             this.nombreUsuario_mostrar.TabIndex = 8;
             // 
             // label3
@@ -343,7 +343,7 @@ namespace Pantalla_Cliente
             this.apellido_mostrar.Enabled = false;
             this.apellido_mostrar.Location = new System.Drawing.Point(9, 116);
             this.apellido_mostrar.Name = "apellido_mostrar";
-            this.apellido_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.apellido_mostrar.Size = new System.Drawing.Size(115, 20);
             this.apellido_mostrar.TabIndex = 6;
             // 
             // label1
@@ -361,7 +361,7 @@ namespace Pantalla_Cliente
             this.nombre_mostrar.Enabled = false;
             this.nombre_mostrar.Location = new System.Drawing.Point(9, 68);
             this.nombre_mostrar.Name = "nombre_mostrar";
-            this.nombre_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.nombre_mostrar.Size = new System.Drawing.Size(115, 20);
             this.nombre_mostrar.TabIndex = 4;
             // 
             // id_mostrar
@@ -369,7 +369,7 @@ namespace Pantalla_Cliente
             this.id_mostrar.Enabled = false;
             this.id_mostrar.Location = new System.Drawing.Point(9, 19);
             this.id_mostrar.Name = "id_mostrar";
-            this.id_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.id_mostrar.Size = new System.Drawing.Size(115, 20);
             this.id_mostrar.TabIndex = 3;
             // 
             // label13
