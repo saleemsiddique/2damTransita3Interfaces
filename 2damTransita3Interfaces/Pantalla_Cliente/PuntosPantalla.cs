@@ -90,5 +90,13 @@ namespace Pantalla_Cliente
         {
 
         }
+
+      
+        private void btn_addPunto_Click_1(object sender, EventArgs e)
+        {
+            CrearPunto punto = new CrearPunto();
+            punto.Owner = this;
+            punto.ShowDialog();
+        }
     }
 }

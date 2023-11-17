@@ -104,6 +104,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrearPunto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearPunto.Designer.cs">
+      <DependentUpon>CrearPunto.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarContrasenyaUsuarioMunicipio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     <Compile Include="ZonasPantalla.Designer.cs">
       <DependentUpon>ZonasPantalla.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CrearPunto.resx">
+      <DependentUpon>CrearPunto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearUsuarioMunicipio.resx">
       <DependentUpon>CrearUsuarioMunicipio.cs</DependentUpon>
     </EmbeddedResource>

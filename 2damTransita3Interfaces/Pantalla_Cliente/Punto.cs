@@ -46,5 +46,19 @@ namespace Pantalla_Cliente
             return $"Id: {id}, Descripcion: {descripcion}, TipoPunto: {tipoPunto}, Foto: {foto}, " +
                    $"Latitud: {latitud}, Longitud: {longitud}, AccesibilidadPunto: {accesibilidadPunto}";
         }
+        public Punto(string descripcion, TipoPunto tipoPunto,string foto, double latitud, double longitud, AccesibilidadTipo accesibilidadPunto, EVisibilidad visibilidadPunto)
+        {
+            this.descripcion = descripcion;
+            this.tipoPunto = tipoPunto;
+            this.foto = foto;   
+            this.latitud = latitud;
+            this.longitud = longitud;
+            this.accesibilidadPunto = accesibilidadPunto;
+            this.visibilidadPunto = visibilidadPunto;
+        }
+        public Punto()
+        {
+           
+        }
     }
 }
