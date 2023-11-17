@@ -15,6 +15,7 @@ namespace Pantalla_Cliente
         private ContextMenuStrip contextMenuStrip;
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem eliminarToolStripMenuItem;
+        private ToolStripMenuItem cambiarContrasenyaToolStripMenuItem;
         bool deleted = false;
         public UsuariosMunicipioBanner()
         {
@@ -22,14 +23,18 @@ namespace Pantalla_Cliente
             contextMenuStrip = new ContextMenuStrip();
             editarToolStripMenuItem = new ToolStripMenuItem();
             eliminarToolStripMenuItem = new ToolStripMenuItem();
+            cambiarContrasenyaToolStripMenuItem = new ToolStripMenuItem();
 
             editarToolStripMenuItem.Text = "Editar";
             editarToolStripMenuItem.Click += EditarToolStripMenuItem_Click;
 
+            cambiarContrasenyaToolStripMenuItem.Text = "Cambiar contraseña";
+            cambiarContrasenyaToolStripMenuItem.Click += ModificarContrasenyaToolStripMenuItem_Click;
+
             eliminarToolStripMenuItem.Text = "Eliminar";
             eliminarToolStripMenuItem.Click += EliminarToolStripMenuItem_ClickAsync;
 
-            contextMenuStrip.Items.AddRange(new ToolStripItem[] { editarToolStripMenuItem, eliminarToolStripMenuItem });
+            contextMenuStrip.Items.AddRange(new ToolStripItem[] { editarToolStripMenuItem, cambiarContrasenyaToolStripMenuItem ,eliminarToolStripMenuItem });
 
             moreOption.MouseDown += Button8_MouseDown;
         }
@@ -73,6 +78,12 @@ namespace Pantalla_Cliente
             editarUsuarioMunicipio.Owner = this.FindForm();
             editarUsuarioMunicipio.ShowDialog();
 
+        }
+
+        private void ModificarContrasenyaToolStripMenuItem_Click(object sender, EventArgs e) {
+            ModificarContrasenyaUsuarioMunicipio modificarContrasenyaUsuarioMunicipio = new ModificarContrasenyaUsuarioMunicipio(idCliente.Text);
+            modificarContrasenyaUsuarioMunicipio.Owner = this.FindForm();
+            modificarContrasenyaUsuarioMunicipio.ShowDialog();
         }
 
 

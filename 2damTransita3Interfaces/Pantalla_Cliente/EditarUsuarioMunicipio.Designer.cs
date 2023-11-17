@@ -29,7 +29,7 @@ namespace Pantalla_Cliente
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_reportarUsuarioMuni = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_AceptarUsuarioMuni = new System.Windows.Forms.Button();
             this.incidenciaEditar = new System.Windows.Forms.Label();
             this.label_datosInciencia = new System.Windows.Forms.Label();
@@ -43,16 +43,16 @@ namespace Pantalla_Cliente
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btn_reportarUsuarioMuni
+            // btn_cancelar
             // 
-            this.btn_reportarUsuarioMuni.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_reportarUsuarioMuni.Location = new System.Drawing.Point(147, 431);
-            this.btn_reportarUsuarioMuni.Name = "btn_reportarUsuarioMuni";
-            this.btn_reportarUsuarioMuni.Size = new System.Drawing.Size(75, 23);
-            this.btn_reportarUsuarioMuni.TabIndex = 26;
-            this.btn_reportarUsuarioMuni.Text = "Cancelar";
-            this.btn_reportarUsuarioMuni.UseVisualStyleBackColor = true;
-            this.btn_reportarUsuarioMuni.Click += new System.EventHandler(this.btn_reportarUsuarioMuni_Click);
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.Location = new System.Drawing.Point(147, 431);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelar.TabIndex = 26;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_AceptarUsuarioMuni
             // 
@@ -187,7 +187,7 @@ namespace Pantalla_Cliente
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nombre_input);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btn_reportarUsuarioMuni);
+            this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_AceptarUsuarioMuni);
             this.Controls.Add(this.label_datosInciencia);
             this.Controls.Add(this.incidenciaEditar);
@@ -200,7 +200,7 @@ namespace Pantalla_Cliente
 
         #endregion
 
-        private System.Windows.Forms.Button btn_reportarUsuarioMuni;
+        private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_AceptarUsuarioMuni;
         private System.Windows.Forms.Label incidenciaEditar;
         private System.Windows.Forms.Label label_datosInciencia;

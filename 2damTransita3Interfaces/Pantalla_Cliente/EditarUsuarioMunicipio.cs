@@ -42,7 +42,7 @@ namespace Pantalla_Cliente
         }
 
 
-        private void btn_reportarUsuarioMuni_Click(object sender, EventArgs e)
+        private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
