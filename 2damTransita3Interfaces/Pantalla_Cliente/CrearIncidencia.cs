@@ -28,7 +28,7 @@ namespace Pantalla_Cliente
         private async void InicializarAsync()
         {
             await Task.WhenAll(getClientes(), getPuntos());
-            List<EstadoIncidencia> listaEstadosIncidencias = new List<EstadoIncidencia> { EstadoIncidencia.Abierta, EstadoIncidencia.Revision, EstadoIncidencia.Cerrada };
+            List<EstadoIncidencia> listaEstadosIncidencias = new List<EstadoIncidencia> { EstadoIncidencia.ENVIADO, EstadoIncidencia.ACEPTADO, EstadoIncidencia.ENPROCESO, EstadoIncidencia.FINALIZADO };
             foreach (EstadoIncidencia estado in listaEstadosIncidencias)
             {
                 estado_input.Items.Add(estado);
@@ -57,17 +57,21 @@ namespace Pantalla_Cliente
         public async Task crearIncidencia()
         {
             EstadoIncidencia estado;
-            if (estado_input.Text == "Abierta")
+            if (estado_input.Text == "ENVIADO")
             {
-                estado = EstadoIncidencia.Abierta;
+                estado = EstadoIncidencia.ENVIADO;
             }
-            else if (estado_input.Text == "Revision")
+            else if (estado_input.Text == "ACEPTADO")
             {
-                estado = EstadoIncidencia.Revision;
+                estado = EstadoIncidencia.ACEPTADO;
+            }
+            else if (estado_input.Text == "ENPROCESO")
+            {
+                estado = EstadoIncidencia.ENPROCESO;
             }
             else
             {
-                estado = EstadoIncidencia.Cerrada;
+                estado = EstadoIncidencia.FINALIZADO;
             }
             int clienteId;
             string clienteIdString = cliente_input.Text;
@@ -86,7 +90,7 @@ namespace Pantalla_Cliente
             int puntoId = int.Parse(punto_input.Text);
             string fechaFormateada = fecha_input.Value.ToString("yyyy-MM-dd");
             DateTime fechaDateTime = DateTime.ParseExact(fechaFormateada, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId));
+            Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId), "");
             Console.WriteLine("metodo ha sido activado");
             String url = Program.rutaBase + "incidencia";
             string content = JsonSerializer.Serialize(newIncidencia);

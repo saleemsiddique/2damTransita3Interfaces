@@ -58,7 +58,7 @@ namespace Pantalla_Cliente
                     longitud_mostrar.Text = punto.longitud.ToString();
                     accesibilidad_mostrar.Text = punto.accesibilidadPunto.ToString();
                     tipopunto_mostrar.Text = punto.tipoPunto.ToString();
-
+                    visibilidadpunto_mostar.Text = punto.visibilidadPunto.ToString();
                 };
 
 

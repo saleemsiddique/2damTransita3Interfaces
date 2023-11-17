@@ -57,6 +57,8 @@
             this.panel_derecha = new System.Windows.Forms.Panel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tipopunto_mostrar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.accesibilidad_mostrar = new System.Windows.Forms.TextBox();
             this.accesibilidad_label = new System.Windows.Forms.Label();
             this.longitud_mostrar = new System.Windows.Forms.TextBox();
@@ -67,8 +69,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.descripcionPunto_mostrar = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
-            this.tipopunto_mostrar = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.visibilidadpunto_mostar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel_central.SuspendLayout();
             this.panelPuntos.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -461,6 +463,8 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.visibilidadpunto_mostar);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.tipopunto_mostrar);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.accesibilidad_mostrar);
@@ -474,12 +478,30 @@
             this.groupBox2.Controls.Add(this.descripcionPunto_mostrar);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(28, 312);
+            this.groupBox2.Location = new System.Drawing.Point(28, 280);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(177, 308);
+            this.groupBox2.Size = new System.Drawing.Size(177, 340);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ID:";
+            // 
+            // tipopunto_mostrar
+            // 
+            this.tipopunto_mostrar.Enabled = false;
+            this.tipopunto_mostrar.Location = new System.Drawing.Point(9, 265);
+            this.tipopunto_mostrar.Name = "tipopunto_mostrar";
+            this.tipopunto_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.tipopunto_mostrar.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(6, 249);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Tipo Punto:";
             // 
             // accesibilidad_mostrar
             // 
@@ -575,23 +597,23 @@
             this.nombre.TabIndex = 23;
             this.nombre.Text = "Datos del Punto";
             // 
-            // tipopunto_mostrar
+            // visibilidadpunto_mostar
             // 
-            this.tipopunto_mostrar.Enabled = false;
-            this.tipopunto_mostrar.Location = new System.Drawing.Point(9, 265);
-            this.tipopunto_mostrar.Name = "tipopunto_mostrar";
-            this.tipopunto_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.tipopunto_mostrar.TabIndex = 10;
+            this.visibilidadpunto_mostar.Enabled = false;
+            this.visibilidadpunto_mostar.Location = new System.Drawing.Point(9, 314);
+            this.visibilidadpunto_mostar.Name = "visibilidadpunto_mostar";
+            this.visibilidadpunto_mostar.Size = new System.Drawing.Size(100, 20);
+            this.visibilidadpunto_mostar.TabIndex = 12;
             // 
-            // label4
+            // label7
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 249);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Tipo Punto:";
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(6, 298);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Visibilidad Punto:";
             // 
             // PuntosPantalla
             // 
@@ -668,5 +690,7 @@
         private System.Windows.Forms.Label accesibilidad_label;
         private System.Windows.Forms.TextBox tipopunto_mostrar;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox visibilidadpunto_mostar;
+        private System.Windows.Forms.Label label7;
     }
 }
