@@ -23,10 +23,10 @@ namespace Pantalla_Cliente
             eliminarToolStripMenuItem = new ToolStripMenuItem();
 
             editarToolStripMenuItem.Text = "Editar";
-            //editarToolStripMenuItem.Click += EditarToolStripMenuItem_Click;
+            editarToolStripMenuItem.Click += EditarToolStripMenuItem_Click;
 
             eliminarToolStripMenuItem.Text = "Eliminar";
-            //eliminarToolStripMenuItem.Click += EliminarToolStripMenuItem_ClickAsync;
+            eliminarToolStripMenuItem.Click += EliminarToolStripMenuItem_ClickAsync;
 
             contextMenuStrip.Items.AddRange(new ToolStripItem[] { editarToolStripMenuItem, eliminarToolStripMenuItem });
 
@@ -39,9 +39,9 @@ namespace Pantalla_Cliente
                 contextMenuStrip.Show(button8, new System.Drawing.Point(0, button8.Height));
             }
         }
-        /*private async void EliminarToolStripMenuItem_ClickAsync(object sender, EventArgs e)
+        private async void EliminarToolStripMenuItem_ClickAsync(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas borrar esta incidencia?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            /*DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas borrar esta incidencia?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
@@ -58,19 +58,16 @@ namespace Pantalla_Cliente
                     Console.WriteLine("No es null");
                     formularioTransita.MostrarPanelDeIncidencia();
                 }
-            }
-        }*/
+            }*/
+        }
 
-        /*private void EditarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void EditarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditarPunto form = new EditarPunto(idPunto.Text);
             form.Owner = this.FindForm();
             form.ShowDialog();
-        }*/
-        private void button8_Click(object sender, EventArgs e)
-        {
-            contextMenuStrip.Show(button8, new System.Drawing.Point(0, button8.Height));
         }
+      
         public Label getId()
         {
             return idPunto;
@@ -103,6 +100,11 @@ namespace Pantalla_Cliente
         private void idPunto_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            contextMenuStrip.Show(button8, new System.Drawing.Point(0, button8.Height));
         }
     }
 }
