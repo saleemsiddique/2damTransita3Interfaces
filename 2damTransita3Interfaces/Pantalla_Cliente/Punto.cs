@@ -16,6 +16,14 @@ namespace Pantalla_Cliente
         LUGAR
     }
 
+    public enum EVisibilidad
+    {
+        GLOBAL,
+        FAVORITO,
+        INCIDENCIA,
+        OCULTO
+    }
+
     public class Punto
     {
         public int id { get; set; }
@@ -30,10 +38,27 @@ namespace Pantalla_Cliente
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public AccesibilidadTipo accesibilidadPunto { get; set; }
 
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public EVisibilidad visibilidadPunto { get; set; }
+
         public override string ToString()
         {
             return $"Id: {id}, Descripcion: {descripcion}, TipoPunto: {tipoPunto}, Foto: {foto}, " +
                    $"Latitud: {latitud}, Longitud: {longitud}, AccesibilidadPunto: {accesibilidadPunto}";
+        }
+        public Punto(string descripcion, TipoPunto tipoPunto,string foto, double latitud, double longitud, AccesibilidadTipo accesibilidadPunto, EVisibilidad visibilidadPunto)
+        {
+            this.descripcion = descripcion;
+            this.tipoPunto = tipoPunto;
+            this.foto = foto;   
+            this.latitud = latitud;
+            this.longitud = longitud;
+            this.accesibilidadPunto = accesibilidadPunto;
+            this.visibilidadPunto = visibilidadPunto;
+        }
+        public Punto()
+        {
+           
         }
     }
 }

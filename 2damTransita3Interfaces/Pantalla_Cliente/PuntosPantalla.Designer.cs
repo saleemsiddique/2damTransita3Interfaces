@@ -57,6 +57,10 @@
             this.panel_derecha = new System.Windows.Forms.Panel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.visibilidadpunto_mostar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tipopunto_mostrar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.accesibilidad_mostrar = new System.Windows.Forms.TextBox();
             this.accesibilidad_label = new System.Windows.Forms.Label();
             this.longitud_mostrar = new System.Windows.Forms.TextBox();
@@ -67,8 +71,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.descripcionPunto_mostrar = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
-            this.tipopunto_mostrar = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btn_addPunto = new System.Windows.Forms.Button();
             this.panel_central.SuspendLayout();
             this.panelPuntos.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,6 +90,8 @@
             // panel_central
             // 
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel_central.Controls.Add(this.label16);
+            this.panel_central.Controls.Add(this.btn_addPunto);
             this.panel_central.Controls.Add(this.panelPuntos);
             this.panel_central.Controls.Add(this.buscarTextBox);
             this.panel_central.Controls.Add(this.btn_filtrar);
@@ -461,6 +467,8 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.visibilidadpunto_mostar);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.tipopunto_mostrar);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.accesibilidad_mostrar);
@@ -474,12 +482,48 @@
             this.groupBox2.Controls.Add(this.descripcionPunto_mostrar);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(28, 312);
+            this.groupBox2.Location = new System.Drawing.Point(28, 280);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(177, 308);
+            this.groupBox2.Size = new System.Drawing.Size(177, 340);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ID:";
+            // 
+            // visibilidadpunto_mostar
+            // 
+            this.visibilidadpunto_mostar.Enabled = false;
+            this.visibilidadpunto_mostar.Location = new System.Drawing.Point(9, 314);
+            this.visibilidadpunto_mostar.Name = "visibilidadpunto_mostar";
+            this.visibilidadpunto_mostar.Size = new System.Drawing.Size(100, 20);
+            this.visibilidadpunto_mostar.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(6, 298);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Visibilidad Punto:";
+            // 
+            // tipopunto_mostrar
+            // 
+            this.tipopunto_mostrar.Enabled = false;
+            this.tipopunto_mostrar.Location = new System.Drawing.Point(9, 265);
+            this.tipopunto_mostrar.Name = "tipopunto_mostrar";
+            this.tipopunto_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.tipopunto_mostrar.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(6, 249);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Tipo Punto:";
             // 
             // accesibilidad_mostrar
             // 
@@ -575,23 +619,33 @@
             this.nombre.TabIndex = 23;
             this.nombre.Text = "Datos del Punto";
             // 
-            // tipopunto_mostrar
+            // label16
             // 
-            this.tipopunto_mostrar.Enabled = false;
-            this.tipopunto_mostrar.Location = new System.Drawing.Point(9, 265);
-            this.tipopunto_mostrar.Name = "tipopunto_mostrar";
-            this.tipopunto_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.tipopunto_mostrar.TabIndex = 10;
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(41, 152);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(90, 17);
+            this.label16.TabIndex = 35;
+            this.label16.Text = "Añadir Punto";
             // 
-            // label4
+            // btn_addPunto
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 249);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Tipo Punto:";
+            this.btn_addPunto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.btn_addPunto.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_addPunto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_addPunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addPunto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_addPunto.Location = new System.Drawing.Point(141, 144);
+            this.btn_addPunto.Name = "btn_addPunto";
+            this.btn_addPunto.Size = new System.Drawing.Size(30, 30);
+            this.btn_addPunto.TabIndex = 34;
+            this.btn_addPunto.Text = "+";
+            this.btn_addPunto.UseVisualStyleBackColor = false;
+            this.btn_addPunto.Click += new System.EventHandler(this.btn_addPunto_Click_1);
             // 
             // PuntosPantalla
             // 
@@ -668,5 +722,9 @@
         private System.Windows.Forms.Label accesibilidad_label;
         private System.Windows.Forms.TextBox tipopunto_mostrar;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox visibilidadpunto_mostar;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btn_addPunto;
     }
 }

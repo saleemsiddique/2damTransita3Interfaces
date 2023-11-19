@@ -58,7 +58,7 @@ namespace Pantalla_Cliente
                     longitud_mostrar.Text = punto.longitud.ToString();
                     accesibilidad_mostrar.Text = punto.accesibilidadPunto.ToString();
                     tipopunto_mostrar.Text = punto.tipoPunto.ToString();
-
+                    visibilidadpunto_mostar.Text = punto.visibilidadPunto.ToString();
                 };
 
 
@@ -89,6 +89,14 @@ namespace Pantalla_Cliente
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+      
+        private void btn_addPunto_Click_1(object sender, EventArgs e)
+        {
+            CrearPunto punto = new CrearPunto();
+            punto.Owner = this;
+            punto.ShowDialog();
         }
     }
 }
