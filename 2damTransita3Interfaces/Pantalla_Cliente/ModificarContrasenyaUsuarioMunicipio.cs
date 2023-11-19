@@ -6,18 +6,26 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pantalla_Cliente
 {
+
     public partial class ModificarContrasenyaUsuarioMunicipio : Form
     {
         Cliente usuario;
         int idMod;
+        string regexContrasenya = @"^[a-zA-Z0-9]{8,40}$";
+        string noMatch = "La contraseña ha de tener de 8 a 40 \n carácteres alfanuméricos";
+        string noPass = "INTRODUCE CAMPO";
+        bool isValidPass = false;
+        bool isValidConf = false;
         public ModificarContrasenyaUsuarioMunicipio(String idModificar)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             idMod = int.TryParse(idModificar, out int parsedId) ? parsedId : 0;
             getCliente(idModificar);
         }
@@ -41,6 +49,10 @@ namespace Pantalla_Cliente
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
+
+            if (!isValidConf && !isValidPass) {
+                btn_Aceptar.Enabled = false;
+            }
             DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas modificar este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
@@ -92,26 +104,62 @@ namespace Pantalla_Cliente
 
         private void contrasenyaBox_TextChanged(object sender, EventArgs e)
         {
-            if (contrasenyaBox.Text.Equals(""))
+            string contrasenya = contrasenyaBox.Text;
+            if (contrasenya.Equals(""))
             {
                 noContrasenya.Visible = true;
+                noContrasenya.Text = noPass;
+                noContrasenya.Height = 15;
             }
-            else {
+            else
+            {
                 noContrasenya.Visible = false;
+                if (isValidPassword(contrasenya))
+                {
+                    isValidPass = true;
+                }
+                else
+                {
+                    isValidConf = false;
+                    noContrasenya.Text = noMatch;
+                    noContrasenya.Visible = true;
+                    noContrasenya.Height = 30;
+                }
             }
         }
 
         private void confirmarBox_TextChanged(object sender, EventArgs e)
         {
-            if (confirmarBox.Text.Equals(""))
+            string contrasenya = confirmarBox.Text;
+            if (contrasenya.Equals(""))
             {
                 noConfirmacion.Visible = true;
+                noConfirmacion.Text = noPass;
+                noConfirmacion.Height = 15;
             }
             else
             {
                 noConfirmacion.Visible = false;
+                if (isValidPassword(contrasenya))
+                {
+                    isValidConf = true;
+                }
+                else {
+                    isValidConf = false;
+                    noConfirmacion.Text = noMatch;
+                    noConfirmacion.Visible = true;
+                    noConfirmacion.Height = 30;
+                }
             }
         }
 
+        private bool isValidPassword(string contrasenya)
+        {
+            if (Regex.IsMatch(contrasenya, regexContrasenya)) {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

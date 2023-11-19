@@ -142,13 +142,13 @@
             // 
             // noContrasenya
             // 
+            this.noContrasenya.AutoEllipsis = true;
             this.noContrasenya.BackColor = System.Drawing.Color.Red;
             this.noContrasenya.ForeColor = System.Drawing.Color.White;
             this.noContrasenya.Location = new System.Drawing.Point(68, 200);
             this.noContrasenya.Name = "noContrasenya";
             this.noContrasenya.Size = new System.Drawing.Size(216, 15);
             this.noContrasenya.TabIndex = 65;
-            this.noContrasenya.Text = "INTRODUCE CAMPO";
             this.noContrasenya.Visible = false;
             // 
             // noConfirmacion
@@ -159,7 +159,6 @@
             this.noConfirmacion.Name = "noConfirmacion";
             this.noConfirmacion.Size = new System.Drawing.Size(216, 15);
             this.noConfirmacion.TabIndex = 66;
-            this.noConfirmacion.Text = "INTRODUCE CAMPO";
             this.noConfirmacion.Visible = false;
             // 
             // ModificarContrasenyaUsuarioMunicipio
@@ -179,6 +178,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.contrasenyaBox);
             this.Controls.Add(this.incidenciaEditar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ModificarContrasenyaUsuarioMunicipio";
             this.Text = "ModificarContrasenyaUsuarioMunicipio";
             this.ResumeLayout(false);
