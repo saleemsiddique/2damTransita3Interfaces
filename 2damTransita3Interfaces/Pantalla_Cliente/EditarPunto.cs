@@ -32,7 +32,7 @@ namespace Pantalla_Cliente
         {
 
         }
-      
+
         public async Task getPunto()
         {
             Console.WriteLine("metodo ha sido activado");
@@ -46,7 +46,10 @@ namespace Pantalla_Cliente
             comboBoxAccesibilidad.Text = punto.accesibilidadPunto.ToString();
             comboBoxTipoPunto.Text = punto.tipoPunto.ToString();
             comboBoxVisibilidadPunto.Text = punto.visibilidadPunto.ToString();
-        
+            //comboBoxZona.Text = punto.zonaId.ToString();
+
+
+
         }
         public async Task getZonas()
         {
@@ -69,23 +72,17 @@ namespace Pantalla_Cliente
         }
 
         private async Task modifyPunto(int idMod)
-        {
-                
-                
-            
-                string content = "";
+        { 
+            string content = $"{{\"descripcion\": \"{descripcionPunto_input.Text}\", \"tipoPunto\": \"{comboBoxTipoPunto.SelectedItem}\", \"foto\": \"{"foto.jpg"}\", \"latitud\": {latitudPunto_input.Text}, \"longitud\": {longitudPunto_input.Text}, \"accesibilidadPunto\": \"{comboBoxAccesibilidad.SelectedItem}\", \"visibilidadPunto\": \"{comboBoxVisibilidadPunto.SelectedItem}\", \"zona\": {{\"id\": {comboBoxZona.Text}}}}}";
 
-                Console.WriteLine("metodo ha sido activado");
-                String url = Program.rutaBase + "punto/modificar/" + idMod;
-                
-                string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
+            Console.WriteLine("metodo ha sido activado");
+            String url = Program.rutaBase + "punto/modificar/" + idMod;
 
-               
-            
+            string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
         }
 
 
-        //metodo cerrar pestaña
+        
         private void btn_cancelarPunto_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -93,7 +90,28 @@ namespace Pantalla_Cliente
 
         private void btn_AceptarPunto_Click(object sender, EventArgs e)
         {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas modificar este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (resultado == DialogResult.Yes)
+            {
+                Task task = modifyPunto(idMod);
+
+                task.ContinueWith(t =>
+                {
+                        // This part will be executed when modifyUser completes, but won't block the UI
+                        Form formularioPadre = this.Owner;
+
+                    if (formularioPadre != null)
+                    {
+                        if (formularioPadre is Transita)
+                        {
+                            Transita formularioTransita = (Transita)formularioPadre;
+                            formularioTransita.MostrarPanelDePunto();
+                            this.Close();
+                        }
+                    }
+                }, TaskScheduler.FromCurrentSynchronizationContext());
+            }
         }
     }
 }

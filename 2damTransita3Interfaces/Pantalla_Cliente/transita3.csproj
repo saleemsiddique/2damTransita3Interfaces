@@ -116,6 +116,12 @@
     <Compile Include="EditarPunto.Designer.cs">
       <DependentUpon>EditarPunto.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogOutPantalla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogOutPantalla.Designer.cs">
+      <DependentUpon>LogOutPantalla.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarContrasenyaUsuarioMunicipio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +320,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LogOutPantalla.resx">
+      <DependentUpon>LogOutPantalla.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarContrasenyaUsuarioMunicipio.resx">
       <DependentUpon>ModificarContrasenyaUsuarioMunicipio.cs</DependentUpon>
     </EmbeddedResource>
@@ -402,6 +411,12 @@
     <None Include="Resources\Villajoyosa.jpeg" />
     <None Include="Resources\menu %281%291.png" />
     <Content Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\transitaControllers\transitaControllers.csproj">
+      <Project>{a7fe12f6-cad0-43e2-ba86-a330501f2d02}</Project>
+      <Name>transitaControllers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
