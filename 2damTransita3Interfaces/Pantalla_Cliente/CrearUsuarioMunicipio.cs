@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,11 +15,16 @@ namespace Pantalla_Cliente
 {
     public partial class CrearUsuarioMunicipio : Form
     {
+        string regexContrasenya = @"^[a-zA-Z0-9]{8,40}$";
+        string noMatch = "La contraseña ha de tener de 8 a 40 \n carácteres alfanuméricos";
+        string noPass = "INTRODUCE CAMPO";
         public CrearUsuarioMunicipio()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             pass2_input.UseSystemPasswordChar = true;
             password1_input.UseSystemPasswordChar = true;
+            rol_input.SelectedIndex = 0;
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -32,7 +39,7 @@ namespace Pantalla_Cliente
                 return false;
             }
 
-            if (!(nombreUsuario_input.Text == "" || nombre_input.Text == "" || apellido_input.Text == ""))
+            if (nombreUsuario_input.Text != "" && nombre_input.Text != "" && apellido_input.Text != "")
             {
                 MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -88,27 +95,33 @@ namespace Pantalla_Cliente
 
             if (resultado == DialogResult.Yes)
             {
-                // Capture UI element values
-                string nombreUsuario = nombreUsuario_input.Text;
-                string nombre = nombre_input.Text;
-                string apellido = apellido_input.Text;
-                string password = password1_input.Text;
-                string rol_input_value = rol_input.Text;
+                if (verifyDatos())
+                {
+                    // Capture UI element values
+                    string nombreUsuario = nombreUsuario_input.Text;
+                    string nombre = nombre_input.Text;
+                    string apellido = apellido_input.Text;
+                    string password = password1_input.Text;
+                    string rol_input_value = rol_input.Text;
 
-                Task.Run(() => crearUsuario(nombreUsuario, nombre, apellido, password, rol_input_value))
-                    .ContinueWith(task =>
-                    {
-                        // This part will be executed when crearUsuario completes, but won't block the UI
-                        foreach (Form form in Application.OpenForms)
+                    Task.Run(() => crearUsuario(nombreUsuario, nombre, apellido, password, rol_input_value))
+                        .ContinueWith(task =>
                         {
-                            if (form is Transita)
+                            // This part will be executed when crearUsuario completes, but won't block the UI
+                            foreach (Form form in Application.OpenForms)
                             {
-                                Transita transita = (Transita)form;
-                                transita.MostrarPanelDeUsuariosMunicipio();
+                                if (form is Transita)
+                                {
+                                    Transita transita = (Transita)form;
+                                    transita.MostrarPanelDeUsuariosMunicipio();
+                                }
                             }
-                        }
-                        this.Close();
-                    }, TaskScheduler.FromCurrentSynchronizationContext());
+                            this.Close();
+                        }, TaskScheduler.FromCurrentSynchronizationContext());
+                }
+                else {
+                    MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -118,19 +131,106 @@ namespace Pantalla_Cliente
             this.Close();
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private bool isValidPassword(string contrasenya)
         {
-            
+            if (Regex.IsMatch(contrasenya, regexContrasenya))
+            {
+                return true;
+            }
+
+            return false;
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void comprobarCampo(string campo, Label label)
         {
-
+            if (campo != "")
+            {
+                label.Text = "EL CAMPO NO PUEDE ESTAR VACIO";
+                label.Visible = false;
+            }
+            else
+            {
+                label.Visible = true;
+            }
         }
 
-        private void incidenciaEditar_Click(object sender, EventArgs e)
-        {
+        private void comprobarContrasenya(string contrasenya, Label label) {
+            if (contrasenya.Equals(""))
+            {
+                label.Visible = true;
+                label.Text = noPass;
+                label.Height = 15;
+            }
+            else
+            {
+                label.Visible = false;
+                if (!isValidPassword(contrasenya))
+                {
+                    label.Text = noMatch;
+                    label.Visible = true;
+                    label.Height = 30;
+                }
+            }
+        }
 
+
+
+        private bool IsEmailValid(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
+        private void nombre_input_TextChanged(object sender, EventArgs e)
+        {
+            comprobarCampo(nombre_input.Text, confirmarNombre);
+        }
+
+        private void nombreUsuario_input_TextChanged(object sender, EventArgs e)
+        {
+            if (nombreUsuario_input.Text != "")
+            {
+                confirmarNombreUsuario.Visible = false;
+                if (IsEmailValid(nombreUsuario_input.Text))
+                {
+                    confirmarNombreUsuario.Visible = false;
+                }
+                else
+                {
+                    confirmarNombreUsuario.Text = "El formato no es válido, Ej: prueba@email.com";
+                    confirmarNombreUsuario.Height = 30;
+                    confirmarNombreUsuario.Visible = true;
+                }
+            }
+            else
+            {
+                confirmarNombreUsuario.Text = "El campo no puede estar vacio";
+                confirmarNombreUsuario.Height = 15;
+                confirmarNombreUsuario.Visible = true;
+            }
+        }
+
+        private void apellido_input_TextChanged(object sender, EventArgs e)
+        {
+            comprobarCampo(apellido_input.Text, confirmarApellido);
+        }
+
+        private void password1_input_TextChanged(object sender, EventArgs e)
+        {
+            comprobarContrasenya(password1_input.Text, confirmarContrasenya);
+        }
+
+        private void pass2_input_TextChanged(object sender, EventArgs e)
+        {
+            comprobarContrasenya(pass2_input.Text, confirmarRepetir);
         }
     }
 }

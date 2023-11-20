@@ -23,6 +23,8 @@ namespace Pantalla_Cliente
         {
             InitializeComponent();
             InicializarAsync();
+            duracion_input.Text = "Sin determinar";
+            
         }
 
         private async void InicializarAsync()
@@ -33,6 +35,7 @@ namespace Pantalla_Cliente
             {
                 estado_input.Items.Add(estado);
             }
+            estado_input.SelectedIndex = 0;
         }
 
         public async Task getClientes()
@@ -177,5 +180,6 @@ namespace Pantalla_Cliente
                 }
             }
         }
+
     }
 }
