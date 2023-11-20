@@ -20,8 +20,7 @@ namespace Pantalla_Cliente
         string regexContrasenya = @"^[a-zA-Z0-9]{8,40}$";
         string noMatch = "La contraseña ha de tener de 8 a 40 \n carácteres alfanuméricos";
         string noPass = "INTRODUCE CAMPO";
-        bool isValidPass = false;
-        bool isValidConf = false;
+
         public ModificarContrasenyaUsuarioMunicipio(String idModificar)
         {
             InitializeComponent();
@@ -49,10 +48,6 @@ namespace Pantalla_Cliente
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
-
-            if (!isValidConf && !isValidPass) {
-                btn_Aceptar.Enabled = false;
-            }
             DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas modificar este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
@@ -86,7 +81,7 @@ namespace Pantalla_Cliente
                     Console.WriteLine("son iguales");
                     return true;
                 }
-                MessageBox.Show("Las contraseñas introducidad no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Las contraseñas introducidas no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -114,13 +109,8 @@ namespace Pantalla_Cliente
             else
             {
                 noContrasenya.Visible = false;
-                if (isValidPassword(contrasenya))
+                if (!isValidPassword(contrasenya))
                 {
-                    isValidPass = true;
-                }
-                else
-                {
-                    isValidConf = false;
                     noContrasenya.Text = noMatch;
                     noContrasenya.Visible = true;
                     noContrasenya.Height = 30;
@@ -142,14 +132,11 @@ namespace Pantalla_Cliente
                 noConfirmacion.Visible = false;
                 if (isValidPassword(contrasenya))
                 {
-                    isValidConf = true;
-                }
-                else {
-                    isValidConf = false;
                     noConfirmacion.Text = noMatch;
                     noConfirmacion.Visible = true;
                     noConfirmacion.Height = 30;
                 }
+
             }
         }
 

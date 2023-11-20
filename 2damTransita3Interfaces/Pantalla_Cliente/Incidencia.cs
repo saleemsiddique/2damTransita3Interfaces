@@ -40,8 +40,7 @@ internal class Incidencia
 
 internal enum EstadoIncidencia
 {
-    ENVIADO,
-    ACEPTADO,
-    ENPROCESO,
-    FINALIZADO
+    Abierta,
+    Revision,
+    Cerrada
 }

@@ -70,21 +70,17 @@ namespace Pantalla_Cliente
         public async Task modifyIncidencia(int id)
         {
             EstadoIncidencia estado;
-            if (estado_input.Text == "ENVIADO")
+            if (estado_input.Text == "ABIERTA")
             {
-                estado = EstadoIncidencia.ENVIADO;
+                estado = EstadoIncidencia.Abierta;
             }
-            else if (estado_input.Text == "ACEPTADO")
+            else if (estado_input.Text == "CERRADA")
             {
-                estado = EstadoIncidencia.ACEPTADO;
-            }
-            else if (estado_input.Text == "ENPROCESO")
-            {
-                estado = EstadoIncidencia.ENPROCESO;
+                estado = EstadoIncidencia.Cerrada;
             }
             else
             {
-                estado = EstadoIncidencia.FINALIZADO;
+                estado = EstadoIncidencia.Revision;
             } 
             int clienteId;
             string clienteIdString = cliente_input.Text;
@@ -120,7 +116,8 @@ namespace Pantalla_Cliente
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
             incidencia = JsonSerializer.Deserialize<Incidencia>(response);
-            List<EstadoIncidencia> listaEstadosIncidencias = new List<EstadoIncidencia> { EstadoIncidencia.ENVIADO, EstadoIncidencia.ACEPTADO, EstadoIncidencia.ENPROCESO, EstadoIncidencia.FINALIZADO };
+            List<EstadoIncidencia> listaEstadosIncidencias = new List<EstadoIncidencia> { EstadoIncidencia.Abierta, EstadoIncidencia.Cerrada,
+                                                                                          EstadoIncidencia.Revision};
             foreach (EstadoIncidencia estado in listaEstadosIncidencias)
             {
                 estado_input.Items.Add(estado);

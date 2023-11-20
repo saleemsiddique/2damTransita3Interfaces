@@ -39,8 +39,11 @@ namespace Pantalla_Cliente
             this.label3 = new System.Windows.Forms.Label();
             this.nom_input = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.nombre_input = new System.Windows.Forms.TextBox();
+            this.nombreUsuario_input = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.confirmarNombre = new System.Windows.Forms.Label();
+            this.confirmarApellido = new System.Windows.Forms.Label();
+            this.confirmarNombreUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_cancelar
@@ -86,7 +89,7 @@ namespace Pantalla_Cliente
             this.label_datosInciencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label_datosInciencia.Location = new System.Drawing.Point(93, 120);
             this.label_datosInciencia.Name = "label_datosInciencia";
-            this.label_datosInciencia.Size = new System.Drawing.Size(334, 306);
+            this.label_datosInciencia.Size = new System.Drawing.Size(334, 295);
             this.label_datosInciencia.TabIndex = 22;
             // 
             // label6
@@ -94,7 +97,7 @@ namespace Pantalla_Cliente
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(179, 345);
+            this.label6.Location = new System.Drawing.Point(179, 340);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 68;
@@ -107,7 +110,7 @@ namespace Pantalla_Cliente
             this.rol_input.Items.AddRange(new object[] {
             "ROLE_ADMIN",
             "ROLE_MODERADOR"});
-            this.rol_input.Location = new System.Drawing.Point(182, 370);
+            this.rol_input.Location = new System.Drawing.Point(182, 356);
             this.rol_input.Name = "rol_input";
             this.rol_input.Size = new System.Drawing.Size(158, 21);
             this.rol_input.TabIndex = 67;
@@ -115,18 +118,19 @@ namespace Pantalla_Cliente
             // 
             // apellido_input
             // 
-            this.apellido_input.Location = new System.Drawing.Point(182, 313);
+            this.apellido_input.Location = new System.Drawing.Point(182, 286);
             this.apellido_input.Margin = new System.Windows.Forms.Padding(2);
             this.apellido_input.Name = "apellido_input";
             this.apellido_input.Size = new System.Drawing.Size(158, 20);
             this.apellido_input.TabIndex = 62;
+            this.apellido_input.TextChanged += new System.EventHandler(this.apellido_input_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(179, 289);
+            this.label3.Location = new System.Drawing.Point(179, 270);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
@@ -135,43 +139,83 @@ namespace Pantalla_Cliente
             // 
             // nom_input
             // 
-            this.nom_input.Location = new System.Drawing.Point(182, 250);
+            this.nom_input.Location = new System.Drawing.Point(182, 216);
             this.nom_input.Margin = new System.Windows.Forms.Padding(2);
             this.nom_input.Name = "nom_input";
             this.nom_input.Size = new System.Drawing.Size(158, 20);
             this.nom_input.TabIndex = 60;
+            this.nom_input.TextChanged += new System.EventHandler(this.nom_input_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(179, 226);
+            this.label1.Location = new System.Drawing.Point(179, 200);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 59;
             this.label1.Text = "Nombre ";
             // 
-            // nombre_input
+            // nombreUsuario_input
             // 
-            this.nombre_input.Location = new System.Drawing.Point(182, 189);
-            this.nombre_input.Margin = new System.Windows.Forms.Padding(2);
-            this.nombre_input.Name = "nombre_input";
-            this.nombre_input.Size = new System.Drawing.Size(158, 20);
-            this.nombre_input.TabIndex = 58;
+            this.nombreUsuario_input.Location = new System.Drawing.Point(182, 146);
+            this.nombreUsuario_input.Margin = new System.Windows.Forms.Padding(2);
+            this.nombreUsuario_input.Name = "nombreUsuario_input";
+            this.nombreUsuario_input.Size = new System.Drawing.Size(158, 20);
+            this.nombreUsuario_input.TabIndex = 58;
+            this.nombreUsuario_input.TextChanged += new System.EventHandler(this.nombreUsuario_input_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(179, 165);
+            this.label7.Location = new System.Drawing.Point(179, 130);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 13);
             this.label7.TabIndex = 57;
             this.label7.Text = "Nombre Usuario";
+            // 
+            // confirmarNombre
+            // 
+            this.confirmarNombre.AutoEllipsis = true;
+            this.confirmarNombre.BackColor = System.Drawing.Color.Red;
+            this.confirmarNombre.ForeColor = System.Drawing.Color.White;
+            this.confirmarNombre.Location = new System.Drawing.Point(182, 234);
+            this.confirmarNombre.Name = "confirmarNombre";
+            this.confirmarNombre.Size = new System.Drawing.Size(158, 26);
+            this.confirmarNombre.TabIndex = 70;
+            this.confirmarNombre.Text = "EL CAMPO NO PUEDE ESTAR VACIO";
+            this.confirmarNombre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.confirmarNombre.Visible = false;
+            // 
+            // confirmarApellido
+            // 
+            this.confirmarApellido.AutoEllipsis = true;
+            this.confirmarApellido.BackColor = System.Drawing.Color.Red;
+            this.confirmarApellido.ForeColor = System.Drawing.Color.White;
+            this.confirmarApellido.Location = new System.Drawing.Point(182, 304);
+            this.confirmarApellido.Name = "confirmarApellido";
+            this.confirmarApellido.Size = new System.Drawing.Size(158, 26);
+            this.confirmarApellido.TabIndex = 71;
+            this.confirmarApellido.Text = "EL CAMPO NO PUEDE ESTAR VACIO";
+            this.confirmarApellido.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.confirmarApellido.Visible = false;
+            // 
+            // confirmarNombreUsuario
+            // 
+            this.confirmarNombreUsuario.AutoEllipsis = true;
+            this.confirmarNombreUsuario.BackColor = System.Drawing.Color.Red;
+            this.confirmarNombreUsuario.ForeColor = System.Drawing.Color.White;
+            this.confirmarNombreUsuario.Location = new System.Drawing.Point(182, 166);
+            this.confirmarNombreUsuario.Name = "confirmarNombreUsuario";
+            this.confirmarNombreUsuario.Size = new System.Drawing.Size(158, 26);
+            this.confirmarNombreUsuario.TabIndex = 72;
+            this.confirmarNombreUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.confirmarNombreUsuario.Visible = false;
             // 
             // EditarUsuarioMunicipio
             // 
@@ -179,13 +223,16 @@ namespace Pantalla_Cliente
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(528, 483);
+            this.Controls.Add(this.confirmarNombreUsuario);
+            this.Controls.Add(this.confirmarApellido);
+            this.Controls.Add(this.confirmarNombre);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.rol_input);
             this.Controls.Add(this.apellido_input);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.nom_input);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.nombre_input);
+            this.Controls.Add(this.nombreUsuario_input);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_AceptarUsuarioMuni);
@@ -210,7 +257,10 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox nom_input;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox nombre_input;
+        private System.Windows.Forms.TextBox nombreUsuario_input;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label confirmarNombre;
+        private System.Windows.Forms.Label confirmarApellido;
+        private System.Windows.Forms.Label confirmarNombreUsuario;
     }
 }

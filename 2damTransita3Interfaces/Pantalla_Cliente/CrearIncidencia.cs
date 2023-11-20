@@ -28,7 +28,7 @@ namespace Pantalla_Cliente
         private async void InicializarAsync()
         {
             await Task.WhenAll(getClientes(), getPuntos());
-            List<EstadoIncidencia> listaEstadosIncidencias = new List<EstadoIncidencia> { EstadoIncidencia.ENVIADO, EstadoIncidencia.ACEPTADO, EstadoIncidencia.ENPROCESO, EstadoIncidencia.FINALIZADO };
+            List<EstadoIncidencia> listaEstadosIncidencias = new List<EstadoIncidencia> { EstadoIncidencia.Abierta, EstadoIncidencia.Cerrada, EstadoIncidencia.Revision };
             foreach (EstadoIncidencia estado in listaEstadosIncidencias)
             {
                 estado_input.Items.Add(estado);
@@ -57,21 +57,17 @@ namespace Pantalla_Cliente
         public async Task crearIncidencia()
         {
             EstadoIncidencia estado;
-            if (estado_input.Text == "ENVIADO")
+            if (estado_input.Text == "ABIERTA")
             {
-                estado = EstadoIncidencia.ENVIADO;
+                estado = EstadoIncidencia.Abierta;
             }
-            else if (estado_input.Text == "ACEPTADO")
+            else if (estado_input.Text == "CERRADA")
             {
-                estado = EstadoIncidencia.ACEPTADO;
-            }
-            else if (estado_input.Text == "ENPROCESO")
-            {
-                estado = EstadoIncidencia.ENPROCESO;
+                estado = EstadoIncidencia.Cerrada;
             }
             else
             {
-                estado = EstadoIncidencia.FINALIZADO;
+                estado = EstadoIncidencia.Revision;
             }
             int clienteId;
             string clienteIdString = cliente_input.Text;

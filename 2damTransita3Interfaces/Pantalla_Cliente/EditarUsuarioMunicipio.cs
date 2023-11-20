@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -15,9 +16,11 @@ namespace Pantalla_Cliente
     {
         Cliente user;
         int idMod;
+        
         public EditarUsuarioMunicipio(string idModificar)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             idMod = int.TryParse(idModificar, out int parsedId) ? parsedId : 0;
             getCliente(idModificar);
         }
@@ -34,7 +37,7 @@ namespace Pantalla_Cliente
                 Console.WriteLine(response);
 
                 user = JsonSerializer.Deserialize<Cliente>(response);
-                nombre_input.Text = user.nombreUsuario;
+                nombreUsuario_input.Text = user.nombreUsuario;
                 nom_input.Text = user.nombre;
                 apellido_input.Text = user.apellidos;
                 int selecEstado = rol_input.FindStringExact(user.rols[0].ToString());
@@ -60,7 +63,7 @@ namespace Pantalla_Cliente
                 }
                 Console.WriteLine(rolObjt);
             string content = $"{{\"nombre\": \"{nom_input.Text}\", \"apellidos\": \"{apellido_input.Text}\"," +
-                    $" \"nombreUsuario\": \"{nombre_input.Text}\", \"rol\": [\"{rolObjt}\"]}}";
+                    $" \"nombreUsuario\": \"{nombreUsuario_input.Text}\", \"rol\": [\"{rolObjt}\"]}}";
 
             Console.WriteLine("metodo ha sido activado");
                 String url = Program.rutaBase + "api/auth/cliente/modificar/" + idMod;
@@ -73,7 +76,7 @@ namespace Pantalla_Cliente
 
         private bool verifyDatos()
         {
-            if (nom_input.Text != "" && nombre_input.Text != "" && apellido_input.Text != "")
+            if (nom_input.Text != "" && nombreUsuario_input.Text != "" && apellido_input.Text != "")
             {
                 return true;
             }
@@ -121,6 +124,60 @@ namespace Pantalla_Cliente
         private void punto_input_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void nombreUsuario_input_TextChanged(object sender, EventArgs e)
+        {
+            if (nombreUsuario_input.Text != "")
+            {
+                confirmarNombreUsuario.Visible = false;
+                if (IsEmailValid(nombreUsuario_input.Text))
+                {
+                    confirmarNombreUsuario.Visible = false;
+                }
+                else {
+                    confirmarNombreUsuario.Text = "El formato no es válido, Ej: prueba@email.com";
+                    confirmarNombreUsuario.Visible = true;
+                }
+            }
+            else {
+                confirmarNombreUsuario.Text = "El campo no puede estar vacio";
+                confirmarNombreUsuario.Visible = true;
+            }
+        }
+
+        private bool IsEmailValid(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
+        private void comprobarCampo(string campo, Label label) {
+            if (campo != "")
+            {
+                label.Visible = false;
+            }
+            else {
+                label.Visible = true;
+            }
+        }
+
+        private void nom_input_TextChanged(object sender, EventArgs e)
+        {
+            comprobarCampo(nom_input.Text, confirmarNombre);
+        }
+
+        private void apellido_input_TextChanged(object sender, EventArgs e)
+        {
+            comprobarCampo(apellido_input.Text, confirmarApellido);
         }
     }
 }
