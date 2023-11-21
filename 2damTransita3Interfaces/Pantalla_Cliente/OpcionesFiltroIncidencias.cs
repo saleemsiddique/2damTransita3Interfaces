@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pantalla_Cliente
 {
-    public partial class OpcionesFiltro : UserControl
+    public partial class OpcionesFiltroIncidencias : UserControl
     {
-        public OpcionesFiltro()
+        public OpcionesFiltroIncidencias()
         {
             InitializeComponent();
         }
