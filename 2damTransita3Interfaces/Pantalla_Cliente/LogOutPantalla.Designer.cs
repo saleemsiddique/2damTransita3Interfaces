@@ -99,6 +99,7 @@ namespace transitaControllers
             this.MinimumSize = new System.Drawing.Size(550, 330);
             this.Name = "LogOutPantalla";
             this.Text = "LogOutPantalla";
+            this.Load += new System.EventHandler(this.LogOutPantalla_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

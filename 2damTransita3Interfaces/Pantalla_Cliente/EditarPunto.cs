@@ -32,7 +32,15 @@ namespace Pantalla_Cliente
         {
 
         }
-
+        private bool verifyDatos()
+        {
+            if (descripcionPunto_input.Text != "" && latitudPunto_input.Text != "" && longitudPunto_input.Text != "" && comboBoxAccesibilidad.Text != "" && comboBoxTipoPunto.Text != "" && comboBoxVisibilidadPunto.Text != "")
+            {
+                return true;
+            }
+            MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
         public async Task getPunto()
         {
             Console.WriteLine("metodo ha sido activado");
@@ -94,23 +102,25 @@ namespace Pantalla_Cliente
 
             if (resultado == DialogResult.Yes)
             {
-                Task task = modifyPunto(idMod);
+                if (verifyDatos()){
+                    Task task = modifyPunto(idMod);
 
-                task.ContinueWith(t =>
-                {
+                    task.ContinueWith(t =>
+                    {
                         // This part will be executed when modifyUser completes, but won't block the UI
                         Form formularioPadre = this.Owner;
 
-                    if (formularioPadre != null)
-                    {
-                        if (formularioPadre is Transita)
+                        if (formularioPadre != null)
                         {
-                            Transita formularioTransita = (Transita)formularioPadre;
-                            formularioTransita.MostrarPanelDePunto();
-                            this.Close();
+                            if (formularioPadre is Transita)
+                            {
+                                Transita formularioTransita = (Transita)formularioPadre;
+                                formularioTransita.MostrarPanelDePunto();
+                                this.Close();
+                            }
                         }
-                    }
-                }, TaskScheduler.FromCurrentSynchronizationContext());
+                    }, TaskScheduler.FromCurrentSynchronizationContext());
+                }
             }
         }
     }

@@ -14,7 +14,7 @@ namespace transitaControllers
             InitializeComponent();
             logOutTimerControl = new LogOutTImer();
             logOutTimerControl.TiempoAgotado += LogOutTimerControl_TiempoAgotado;
-           
+            
         }
 
         private void LogOutTimerControl_TiempoAgotado(object sender, EventArgs e)
@@ -41,7 +41,18 @@ namespace transitaControllers
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
+            
+
+            // Unsubscribe from the event to prevent the event handler from being called
+            logOutTimerControl.TiempoAgotado -= LogOutTimerControl_TiempoAgotado;
+
             this.Close();
+        }
+
+
+        private void LogOutPantalla_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
