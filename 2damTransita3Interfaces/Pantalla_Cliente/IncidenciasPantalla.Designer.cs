@@ -526,7 +526,7 @@ namespace Pantalla_Cliente
             this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(349, 92);
+            this.buscarTextBox.Location = new System.Drawing.Point(329, 92);
             this.buscarTextBox.Name = "buscarTextBox";
             this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
@@ -595,7 +595,7 @@ namespace Pantalla_Cliente
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(291, 74);
+            this.button1.Location = new System.Drawing.Point(271, 74);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(36, 36);
             this.button1.TabIndex = 17;

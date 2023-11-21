@@ -128,6 +128,12 @@
     <Compile Include="ModificarContrasenyaUsuarioMunicipio.Designer.cs">
       <DependentUpon>ModificarContrasenyaUsuarioMunicipio.cs</DependentUpon>
     </Compile>
+    <Compile Include="OpcionesFiltro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OpcionesFiltro.Designer.cs">
+      <DependentUpon>OpcionesFiltro.cs</DependentUpon>
+    </Compile>
     <Compile Include="PuntoBanner.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -325,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarContrasenyaUsuarioMunicipio.resx">
       <DependentUpon>ModificarContrasenyaUsuarioMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpcionesFiltro.resx">
+      <DependentUpon>OpcionesFiltro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
