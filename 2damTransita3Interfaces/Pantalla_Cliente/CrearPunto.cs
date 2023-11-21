@@ -136,17 +136,17 @@ namespace Pantalla_Cliente
             
         }
 
-        private bool verifyDatos()
-        {
-            
-
-            if (!(tipoPunto.Text == "" || visibilidadPunto.Text == "" || AccesibilidadPunto.Text == "" || latitudPunto_input.Text == "" || longitudPunto_input.Text == "" || puntoDescripcion_input.Text == ""))
+        
+            private bool verifyDatos()
             {
+                if (puntoDescripcion_input.Text != "" && latitudPunto_input.Text != "" && longitudPunto_input.Text != "" && comboBoxAccesibilidad.Text != "" && comboBoxTipoPunto.Text != "" && comboBoxVisibilidadPunto.Text != "")
+                {
+                    return true;
+                }
                 MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            return true;
-        }
+        
 
         private void CrearPunto_Load(object sender, EventArgs e)
         {
@@ -158,7 +158,8 @@ namespace Pantalla_Cliente
             DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres dar de alta este punto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-              
+                if (verifyDatos())
+                {
                     await crearPunto();
 
                     foreach (Form form in Application.OpenForms)
@@ -171,7 +172,8 @@ namespace Pantalla_Cliente
                     }
                     this.Close();
                 }
-            
+                    
+            }
         }
 
     }

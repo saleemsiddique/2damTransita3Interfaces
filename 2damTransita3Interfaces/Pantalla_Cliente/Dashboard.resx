@@ -2198,6 +2198,16 @@
         V/w/p/cuk/iUT08AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btn_logout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAANFJREFUWEftlMEJAkEMRbcJuxFswoZsxyasx5uePWgCBj7Dj8lkh/EyDx578Cc/
+        4LLbYkF4iO+d6o4ybGHFMmzZVTyIGWymDBajd/EsRli+DJYyI7I5FyxjRmRzLljGjGhzl+8zDZYxe9GZ
+        riPawtZebC59BJYxjcoHK3UEG0SNp8h+/+XQA7LY3PC/IIvOTH0J21xXuYJlzIhszgXLmBHZnAuWMSOy
+        ORcsY0Zkcy5YtscyL5Et7FE/UmWO4k1ki9VpnER2yHTaQ/6GHbJYDGTbPk/qC7nhBT01AAAAAElFTkSu
+        QmCC
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA0gAAANbCAYAAAB4pb/uAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s

@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Pantalla_Cliente
 {
+
     public enum AccesibilidadTipo
     {
         ACCESIBLE,

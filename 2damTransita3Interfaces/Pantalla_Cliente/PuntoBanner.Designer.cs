@@ -94,6 +94,7 @@
             this.button8.Size = new System.Drawing.Size(30, 49);
             this.button8.TabIndex = 13;
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // pictureBox4
             // 

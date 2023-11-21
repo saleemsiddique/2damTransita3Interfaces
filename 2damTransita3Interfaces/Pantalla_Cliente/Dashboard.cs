@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using transitaControllers;
 
 namespace Pantalla_Cliente
 {
@@ -246,5 +247,12 @@ namespace Pantalla_Cliente
         {
             MostrarPanelDeUsuariosMunicipio();
         }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            LogOutPantalla logOutPantalla = new LogOutPantalla();
+            logOutPantalla.ShowDialog();
+        }
+
     }
 }

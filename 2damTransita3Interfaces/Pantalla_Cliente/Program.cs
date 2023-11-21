@@ -9,9 +9,7 @@ namespace Pantalla_Cliente
 {
     static class Program
     {
-        /// <summary>
-        /// Punto de entrada principal para la aplicación.
-        /// </summary>
+        
         public static UserLoged userLogged;
         public static string rutaBase;
         public static string token;
