@@ -16,11 +16,42 @@ namespace Pantalla_Cliente
     {
         private int idZona;
         Zona zona;
+        List<Zona> zonasList;
+        List<string> zonasStringList;
+        string nombreZona = "";
         public EditarZonas(string idModificar)
         {
             InitializeComponent();
             idZona = int.Parse(idModificar);
             InicializarAsync(idModificar);
+        }
+
+        private async void cargarZonaList()
+        {
+            Console.WriteLine("cargamos zonas");
+            ZonaService zonaService = new ZonaService();
+            zonasList = await zonaService.GetZonasAsync();
+            cargarZonaStringList();
+            comprobarNombre();
+            Console.WriteLine("el nombre de la zona es " + nombreZona + " y la id es " + idZona);
+        }
+
+        private void cargarZonaStringList()
+        {
+            zonasStringList = new List<string>();
+            foreach (Zona zona in zonasList)
+            {
+                zonasStringList.Add(zona.nombre);
+            }
+        }
+
+        private void comprobarNombre() {
+            foreach (Zona zona in zonasList) {
+                if (nombre_input.Text.Equals(zona.nombre)) {
+                    nombreZona = zona.nombre;
+                    break;
+                }
+            }
         }
 
         private async void InicializarAsync(string idModificar)
@@ -30,7 +61,7 @@ namespace Pantalla_Cliente
 
         public async Task modifyZona(int id)
         {
-            string nombreZona = zona_input.Text;
+            string nombreZona = nombre_input.Text;
 
             Zona newZona = new Zona(nombreZona);
             Console.WriteLine("Método ha sido activado");
@@ -49,17 +80,23 @@ namespace Pantalla_Cliente
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
             zona = JsonSerializer.Deserialize<Zona>(response);
-            zona_input.Text = zona.nombre;
+            nombre_input.Text = zona.nombre;
         }
 
         private bool verifyDatos()
         {
-            if (zona_input.Text != "")
+            if (nombre_input.Text == "")
             {
-                return true;
+                MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacíos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return false;
+
+            if (zonasStringList.Contains(nombre_input.Text) && !nombre_input.Text.Equals(nombreZona))
+            {
+                MessageBox.Show("Verifica el nombre, Nombre ya existente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
 
      
@@ -92,6 +129,30 @@ namespace Pantalla_Cliente
         private void btn_reportarIncidencia_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void EditarZonas_Load(object sender, EventArgs e)
+        {
+            cargarZonaList();
+        }
+
+        private void nombre_input_TextChanged(object sender, EventArgs e)
+        {
+            comprobarCampo(nombre_input.Text, confirmarNombre);
+        }
+
+
+        private void comprobarCampo(string campo, Label label)
+        {
+            if (campo != "")
+            {
+                label.Text = "EL CAMPO NO PUEDE ESTAR VACIO";
+                label.Visible = false;
+            }
+            else
+            {
+                label.Visible = true;
+            }
         }
     }
 }

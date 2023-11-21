@@ -39,7 +39,7 @@ namespace Pantalla_Cliente
                 return false;
             }
 
-            if (nombreUsuario_input.Text != "" && nombre_input.Text != "" && apellido_input.Text != "")
+            if (nombreUsuario_input.Text == "" && nombre_input.Text == "" && apellido_input.Text == "")
             {
                 MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -118,9 +118,6 @@ namespace Pantalla_Cliente
                             }
                             this.Close();
                         }, TaskScheduler.FromCurrentSynchronizationContext());
-                }
-                else {
-                    MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

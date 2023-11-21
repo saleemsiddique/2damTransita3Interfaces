@@ -30,10 +30,11 @@
         {
             this.btn_reportarIncidencia = new System.Windows.Forms.Button();
             this.btn_AceptarIncidencia = new System.Windows.Forms.Button();
-            this.zona_input = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label_datosInciencia = new System.Windows.Forms.Label();
             this.incidenciaEditar = new System.Windows.Forms.Label();
+            this.nombre_input = new System.Windows.Forms.TextBox();
+            this.confirmarNombre = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_reportarIncidencia
@@ -57,14 +58,6 @@
             this.btn_AceptarIncidencia.Text = "Aceptar";
             this.btn_AceptarIncidencia.UseVisualStyleBackColor = true;
             this.btn_AceptarIncidencia.Click += new System.EventHandler(this.btn_AceptarIncidencia_Click);
-            // 
-            // zona_input
-            // 
-            this.zona_input.Location = new System.Drawing.Point(102, 139);
-            this.zona_input.Margin = new System.Windows.Forms.Padding(2);
-            this.zona_input.Name = "zona_input";
-            this.zona_input.Size = new System.Drawing.Size(158, 20);
-            this.zona_input.TabIndex = 18;
             // 
             // label1
             // 
@@ -102,21 +95,43 @@
             this.incidenciaEditar.Text = "Editar";
             this.incidenciaEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // nombre_input
+            // 
+            this.nombre_input.Location = new System.Drawing.Point(84, 139);
+            this.nombre_input.Margin = new System.Windows.Forms.Padding(2);
+            this.nombre_input.Name = "nombre_input";
+            this.nombre_input.Size = new System.Drawing.Size(197, 20);
+            this.nombre_input.TabIndex = 18;
+            this.nombre_input.TextChanged += new System.EventHandler(this.nombre_input_TextChanged);
+            // 
+            // confirmarNombre
+            // 
+            this.confirmarNombre.AutoEllipsis = true;
+            this.confirmarNombre.BackColor = System.Drawing.Color.Red;
+            this.confirmarNombre.ForeColor = System.Drawing.Color.White;
+            this.confirmarNombre.Location = new System.Drawing.Point(84, 156);
+            this.confirmarNombre.Name = "confirmarNombre";
+            this.confirmarNombre.Size = new System.Drawing.Size(197, 18);
+            this.confirmarNombre.TabIndex = 68;
+            this.confirmarNombre.Visible = false;
+            // 
             // EditarZonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(359, 274);
+            this.Controls.Add(this.confirmarNombre);
             this.Controls.Add(this.btn_reportarIncidencia);
             this.Controls.Add(this.btn_AceptarIncidencia);
-            this.Controls.Add(this.zona_input);
+            this.Controls.Add(this.nombre_input);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_datosInciencia);
             this.Controls.Add(this.incidenciaEditar);
             this.Name = "EditarZonas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarZonas";
+            this.Load += new System.EventHandler(this.EditarZonas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,9 +141,10 @@
 
         private System.Windows.Forms.Button btn_reportarIncidencia;
         private System.Windows.Forms.Button btn_AceptarIncidencia;
-        private System.Windows.Forms.TextBox zona_input;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_datosInciencia;
         private System.Windows.Forms.Label incidenciaEditar;
+        private System.Windows.Forms.TextBox nombre_input;
+        private System.Windows.Forms.Label confirmarNombre;
     }
 }

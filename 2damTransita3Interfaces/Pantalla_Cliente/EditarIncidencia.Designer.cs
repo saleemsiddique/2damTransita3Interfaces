@@ -44,6 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.estado_input = new System.Windows.Forms.ComboBox();
+            this.comprobarDescripcion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // incidenciaEditar
@@ -65,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(192, 172);
+            this.label1.Location = new System.Drawing.Point(192, 146);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
@@ -74,12 +75,13 @@
             // 
             // descripcion_input
             // 
-            this.descripcion_input.Location = new System.Drawing.Point(148, 196);
+            this.descripcion_input.Location = new System.Drawing.Point(117, 166);
             this.descripcion_input.Margin = new System.Windows.Forms.Padding(2);
             this.descripcion_input.Multiline = true;
             this.descripcion_input.Name = "descripcion_input";
-            this.descripcion_input.Size = new System.Drawing.Size(158, 40);
+            this.descripcion_input.Size = new System.Drawing.Size(219, 40);
             this.descripcion_input.TabIndex = 6;
+            this.descripcion_input.TextChanged += new System.EventHandler(this.descripcion_input_TextChanged);
             // 
             // label_datosInciencia
             // 
@@ -214,12 +216,25 @@
             this.estado_input.Size = new System.Drawing.Size(158, 21);
             this.estado_input.TabIndex = 24;
             // 
+            // comprobarDescripcion
+            // 
+            this.comprobarDescripcion.AutoEllipsis = true;
+            this.comprobarDescripcion.BackColor = System.Drawing.Color.Red;
+            this.comprobarDescripcion.ForeColor = System.Drawing.Color.White;
+            this.comprobarDescripcion.Location = new System.Drawing.Point(117, 205);
+            this.comprobarDescripcion.Name = "comprobarDescripcion";
+            this.comprobarDescripcion.Size = new System.Drawing.Size(219, 22);
+            this.comprobarDescripcion.TabIndex = 74;
+            this.comprobarDescripcion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.comprobarDescripcion.Visible = false;
+            // 
             // EditarIncidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(453, 572);
+            this.Controls.Add(this.comprobarDescripcion);
             this.Controls.Add(this.estado_input);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -266,5 +281,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox estado_input;
+        private System.Windows.Forms.Label comprobarDescripcion;
     }
 }

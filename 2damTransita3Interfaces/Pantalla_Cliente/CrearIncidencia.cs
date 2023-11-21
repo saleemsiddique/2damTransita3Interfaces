@@ -181,5 +181,22 @@ namespace Pantalla_Cliente
             }
         }
 
+        private void descripcion_input_TextChanged(object sender, EventArgs e)
+        {
+            comprobarCampo(descripcion_input.Text, comprobarDescripcion);
+        }
+
+        private void comprobarCampo(string campo, Label label)
+        {
+            if (campo != "")
+            {
+                label.Text = "EL CAMPO NO PUEDE ESTAR VACIO";
+                label.Visible = false;
+            }
+            else
+            {
+                label.Visible = true;
+            }
+        }
     }
 }

@@ -15,9 +15,25 @@ namespace Pantalla_Cliente
 {
     public partial class CrearZona : Form
     {
+        List<Zona> zonasList;
+        List<string> zonasStringList = new List<string>();
         public CrearZona()
         {
             InitializeComponent();
+            cargarZonaList();
+        }
+
+        private async void cargarZonaList() {
+            ZonaService zonaService = new ZonaService();
+            zonasList = await zonaService.GetZonasAsync();
+            cargarZonaStringList();
+        }
+
+        private void cargarZonaStringList() {
+            foreach (Zona zona in zonasList) {
+                zonasStringList.Add(zona.nombre);
+                Console.WriteLine(zona.nombre);
+            }
         }
 
         private void btn_cancelarZona_Click(object sender, EventArgs e)
@@ -26,13 +42,21 @@ namespace Pantalla_Cliente
         }
         private bool verifyDatos()
         {
-            if (nombre_input.Text != "")
+            if (nombre_input.Text == "")
             {
-                return true;
+                MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            MessageBox.Show("Verifica los datos introducidos, no pueden haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return false;
+
+            if (zonasStringList.Contains(nombre_input.Text))
+            {
+                MessageBox.Show("Verifica el nombre, Nombre ya existente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
+
         public async Task crearZona()
         {
 
@@ -70,10 +94,6 @@ namespace Pantalla_Cliente
             }
         }
 
-        private void descripcion_input_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_AceptarIncidencia_Click(object sender, EventArgs e)
         {
@@ -107,5 +127,25 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        private void nombre_input_TextChanged(object sender, EventArgs e)
+        {
+            comprobarCampo(nombre_input.Text, confirmarNombre);
+        }
+
+
+        private void comprobarCampo(string campo, Label label)
+        {
+            if (campo != "")
+            {
+                label.Text = "EL CAMPO NO PUEDE ESTAR VACIO";
+                label.Visible = false;
+            }
+            else
+            {
+                label.Visible = true;
+            }
+        }
+
     }
 }

@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label_datosInciencia = new System.Windows.Forms.Label();
             this.incidenciaEditar = new System.Windows.Forms.Label();
+            this.comprobarDescripcion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // estado_input
@@ -53,7 +54,7 @@
             this.estado_input.Location = new System.Drawing.Point(136, 243);
             this.estado_input.Name = "estado_input";
             this.estado_input.Size = new System.Drawing.Size(158, 21);
-            this.estado_input.TabIndex = 40;
+            this.estado_input.TabIndex = 1;
             // 
             // label6
             // 
@@ -95,7 +96,7 @@
             this.punto_input.Location = new System.Drawing.Point(240, 407);
             this.punto_input.Name = "punto_input";
             this.punto_input.Size = new System.Drawing.Size(121, 21);
-            this.punto_input.TabIndex = 36;
+            this.punto_input.TabIndex = 5;
             // 
             // cliente_input
             // 
@@ -104,14 +105,14 @@
             this.cliente_input.Location = new System.Drawing.Point(63, 407);
             this.cliente_input.Name = "cliente_input";
             this.cliente_input.Size = new System.Drawing.Size(121, 21);
-            this.cliente_input.TabIndex = 35;
+            this.cliente_input.TabIndex = 4;
             // 
             // fecha_input
             // 
             this.fecha_input.Location = new System.Drawing.Point(110, 342);
             this.fecha_input.Name = "fecha_input";
             this.fecha_input.Size = new System.Drawing.Size(204, 20);
-            this.fecha_input.TabIndex = 34;
+            this.fecha_input.TabIndex = 3;
             // 
             // duracion_input
             // 
@@ -119,7 +120,7 @@
             this.duracion_input.Margin = new System.Windows.Forms.Padding(2);
             this.duracion_input.Name = "duracion_input";
             this.duracion_input.Size = new System.Drawing.Size(158, 20);
-            this.duracion_input.TabIndex = 33;
+            this.duracion_input.TabIndex = 2;
             // 
             // btn_cancelarIncidencia
             // 
@@ -127,7 +128,7 @@
             this.btn_cancelarIncidencia.Location = new System.Drawing.Point(239, 505);
             this.btn_cancelarIncidencia.Name = "btn_cancelarIncidencia";
             this.btn_cancelarIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelarIncidencia.TabIndex = 32;
+            this.btn_cancelarIncidencia.TabIndex = 7;
             this.btn_cancelarIncidencia.Text = "Cancelar";
             this.btn_cancelarIncidencia.UseVisualStyleBackColor = true;
             this.btn_cancelarIncidencia.Click += new System.EventHandler(this.btn_cancelarIncidencia_Click);
@@ -138,7 +139,7 @@
             this.btn_AceptarIncidencia.Location = new System.Drawing.Point(331, 505);
             this.btn_AceptarIncidencia.Name = "btn_AceptarIncidencia";
             this.btn_AceptarIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.btn_AceptarIncidencia.TabIndex = 31;
+            this.btn_AceptarIncidencia.TabIndex = 6;
             this.btn_AceptarIncidencia.Text = "Aceptar";
             this.btn_AceptarIncidencia.UseVisualStyleBackColor = true;
             this.btn_AceptarIncidencia.Click += new System.EventHandler(this.btn_AceptarIncidencia_Click);
@@ -169,19 +170,20 @@
             // 
             // descripcion_input
             // 
-            this.descripcion_input.Location = new System.Drawing.Point(136, 173);
+            this.descripcion_input.Location = new System.Drawing.Point(105, 140);
             this.descripcion_input.Margin = new System.Windows.Forms.Padding(2);
             this.descripcion_input.Multiline = true;
             this.descripcion_input.Name = "descripcion_input";
-            this.descripcion_input.Size = new System.Drawing.Size(158, 40);
-            this.descripcion_input.TabIndex = 28;
+            this.descripcion_input.Size = new System.Drawing.Size(219, 40);
+            this.descripcion_input.TabIndex = 0;
+            this.descripcion_input.TextChanged += new System.EventHandler(this.descripcion_input_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(180, 149);
+            this.label1.Location = new System.Drawing.Point(180, 124);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
@@ -212,12 +214,25 @@
             this.incidenciaEditar.Text = "Crear Incidencia Nueva";
             this.incidenciaEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // comprobarDescripcion
+            // 
+            this.comprobarDescripcion.AutoEllipsis = true;
+            this.comprobarDescripcion.BackColor = System.Drawing.Color.Red;
+            this.comprobarDescripcion.ForeColor = System.Drawing.Color.White;
+            this.comprobarDescripcion.Location = new System.Drawing.Point(105, 179);
+            this.comprobarDescripcion.Name = "comprobarDescripcion";
+            this.comprobarDescripcion.Size = new System.Drawing.Size(219, 22);
+            this.comprobarDescripcion.TabIndex = 73;
+            this.comprobarDescripcion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.comprobarDescripcion.Visible = false;
+            // 
             // CrearIncidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(453, 572);
+            this.Controls.Add(this.comprobarDescripcion);
             this.Controls.Add(this.estado_input);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -262,5 +277,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_datosInciencia;
         private System.Windows.Forms.Label incidenciaEditar;
+        private System.Windows.Forms.Label comprobarDescripcion;
     }
 }

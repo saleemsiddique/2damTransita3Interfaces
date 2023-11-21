@@ -30,10 +30,11 @@
         {
             this.btn_cancelarIncidencia = new System.Windows.Forms.Button();
             this.btn_AceptarIncidencia = new System.Windows.Forms.Button();
-            this.nombre_input = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label_datosInciencia = new System.Windows.Forms.Label();
             this.incidenciaEditar = new System.Windows.Forms.Label();
+            this.confirmarNombre = new System.Windows.Forms.Label();
+            this.nombre_input = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_cancelarIncidencia
@@ -57,15 +58,6 @@
             this.btn_AceptarIncidencia.Text = "Aceptar";
             this.btn_AceptarIncidencia.UseVisualStyleBackColor = true;
             this.btn_AceptarIncidencia.Click += new System.EventHandler(this.btn_AceptarIncidencia_Click);
-            // 
-            // nombre_input
-            // 
-            this.nombre_input.Location = new System.Drawing.Point(103, 124);
-            this.nombre_input.Margin = new System.Windows.Forms.Padding(2);
-            this.nombre_input.Name = "nombre_input";
-            this.nombre_input.Size = new System.Drawing.Size(158, 20);
-            this.nombre_input.TabIndex = 36;
-            this.nombre_input.TextChanged += new System.EventHandler(this.descripcion_input_TextChanged);
             // 
             // label1
             // 
@@ -103,15 +95,36 @@
             this.incidenciaEditar.Text = "Crear Zona Nueva";
             this.incidenciaEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // confirmarNombre
+            // 
+            this.confirmarNombre.AutoEllipsis = true;
+            this.confirmarNombre.BackColor = System.Drawing.Color.Red;
+            this.confirmarNombre.ForeColor = System.Drawing.Color.White;
+            this.confirmarNombre.Location = new System.Drawing.Point(88, 142);
+            this.confirmarNombre.Name = "confirmarNombre";
+            this.confirmarNombre.Size = new System.Drawing.Size(197, 18);
+            this.confirmarNombre.TabIndex = 70;
+            this.confirmarNombre.Visible = false;
+            // 
+            // nombre_input
+            // 
+            this.nombre_input.Location = new System.Drawing.Point(88, 125);
+            this.nombre_input.Margin = new System.Windows.Forms.Padding(2);
+            this.nombre_input.Name = "nombre_input";
+            this.nombre_input.Size = new System.Drawing.Size(197, 20);
+            this.nombre_input.TabIndex = 69;
+            this.nombre_input.TextChanged += new System.EventHandler(this.nombre_input_TextChanged);
+            // 
             // CrearZona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(361, 313);
+            this.Controls.Add(this.confirmarNombre);
+            this.Controls.Add(this.nombre_input);
             this.Controls.Add(this.btn_cancelarIncidencia);
             this.Controls.Add(this.btn_AceptarIncidencia);
-            this.Controls.Add(this.nombre_input);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_datosInciencia);
             this.Controls.Add(this.incidenciaEditar);
@@ -130,9 +143,10 @@
 
         private System.Windows.Forms.Button btn_cancelarIncidencia;
         private System.Windows.Forms.Button btn_AceptarIncidencia;
-        private System.Windows.Forms.TextBox nombre_input;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_datosInciencia;
         private System.Windows.Forms.Label incidenciaEditar;
+        private System.Windows.Forms.Label confirmarNombre;
+        private System.Windows.Forms.TextBox nombre_input;
     }
 }
