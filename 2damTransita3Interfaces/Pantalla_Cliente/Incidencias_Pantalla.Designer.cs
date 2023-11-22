@@ -43,7 +43,7 @@ namespace Pantalla_Cliente
             this.correo = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.incidencia_img = new System.Windows.Forms.PictureBox();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@ namespace Pantalla_Cliente
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidencia_img)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -206,7 +206,7 @@ namespace Pantalla_Cliente
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.panel3.Controls.Add(this.pictureBox12);
+            this.panel3.Controls.Add(this.incidencia_img);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.nombre);
             this.panel3.Controls.Add(this.correo);
@@ -216,18 +216,18 @@ namespace Pantalla_Cliente
             this.panel3.Size = new System.Drawing.Size(231, 681);
             this.panel3.TabIndex = 27;
             // 
-            // pictureBox12
+            // incidencia_img
             // 
-            this.pictureBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.pictureBox12.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox12.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox12.Location = new System.Drawing.Point(51, 104);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(130, 112);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 24;
-            this.pictureBox12.TabStop = false;
+            this.incidencia_img.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.incidencia_img.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.incidencia_img.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.incidencia_img.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.incidencia_img.Location = new System.Drawing.Point(51, 104);
+            this.incidencia_img.Name = "incidencia_img";
+            this.incidencia_img.Size = new System.Drawing.Size(130, 112);
+            this.incidencia_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.incidencia_img.TabIndex = 24;
+            this.incidencia_img.TabStop = false;
             // 
             // btn_cliente
             // 
@@ -649,7 +649,7 @@ namespace Pantalla_Cliente
             this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidencia_img)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -677,7 +677,7 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label correo;
         private System.Windows.Forms.Label nombre;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox incidencia_img;
         private System.Windows.Forms.TextBox estado_mostrar;
         private System.Windows.Forms.TextBox descripcion_mostrar;
         private System.Windows.Forms.TextBox id_mostrar;

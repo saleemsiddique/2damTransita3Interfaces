@@ -34,11 +34,11 @@ namespace Pantalla_Cliente
             this.idIncidencia = new System.Windows.Forms.Label();
             this.nombreIncidencia = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.incidencia_img = new System.Windows.Forms.PictureBox();
             this.btnViewIncidencia = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidencia_img)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -50,7 +50,7 @@ namespace Pantalla_Cliente
             this.panel2.Controls.Add(this.idIncidencia);
             this.panel2.Controls.Add(this.nombreIncidencia);
             this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.incidencia_img);
             this.panel2.Controls.Add(this.btnViewIncidencia);
             this.panel2.Controls.Add(this.radioButton1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -95,19 +95,19 @@ namespace Pantalla_Cliente
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // pictureBox4
+            // incidencia_img
             // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox4.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox4.Location = new System.Drawing.Point(24, 15);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
+            this.incidencia_img.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.incidencia_img.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.incidencia_img.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.incidencia_img.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.incidencia_img.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.incidencia_img.Location = new System.Drawing.Point(24, 15);
+            this.incidencia_img.Name = "incidencia_img";
+            this.incidencia_img.Size = new System.Drawing.Size(40, 40);
+            this.incidencia_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.incidencia_img.TabIndex = 11;
+            this.incidencia_img.TabStop = false;
             // 
             // btnViewIncidencia
             // 
@@ -141,7 +141,7 @@ namespace Pantalla_Cliente
             this.Size = new System.Drawing.Size(450, 67);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidencia_img)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,7 +150,7 @@ namespace Pantalla_Cliente
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox incidencia_img;
         private System.Windows.Forms.Button btnViewIncidencia;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label idIncidencia;

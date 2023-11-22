@@ -214,11 +214,11 @@
     <Compile Include="HttpCliente.cs" />
     <Compile Include="Incidencia.cs" />
     <Compile Include="IncidenciaService.cs" />
-    <Compile Include="IncidenciasPantalla.cs">
+    <Compile Include="Incidencias_Pantalla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IncidenciasPantalla.Designer.cs">
-      <DependentUpon>IncidenciasPantalla.cs</DependentUpon>
+    <Compile Include="Incidencias_Pantalla.Designer.cs">
+      <DependentUpon>Incidencias_Pantalla.cs</DependentUpon>
     </Compile>
     <Compile Include="loadingForm.cs">
       <SubType>Form</SubType>
@@ -314,8 +314,8 @@
     <EmbeddedResource Include="EditarZonas.resx">
       <DependentUpon>EditarZonas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IncidenciasPantalla.resx">
-      <DependentUpon>IncidenciasPantalla.cs</DependentUpon>
+    <EmbeddedResource Include="Incidencias_Pantalla.resx">
+      <DependentUpon>Incidencias_Pantalla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClienteBanner.resx">
       <DependentUpon>ClienteBanner.cs</DependentUpon>

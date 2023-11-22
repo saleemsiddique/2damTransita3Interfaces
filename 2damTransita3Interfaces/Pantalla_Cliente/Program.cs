@@ -15,6 +15,7 @@ namespace Pantalla_Cliente
         public static string token;
         public static IConfiguration configurations;
 
+        [STAThread]
         static void Main()
         {
             string appSettingsPath = Path.Combine(Directory.GetCurrentDirectory(), "../../");

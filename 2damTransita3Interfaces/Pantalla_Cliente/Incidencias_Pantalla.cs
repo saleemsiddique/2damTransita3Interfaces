@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+using System.IO.Compression;
 using System.Windows.Forms;
 
 
@@ -20,7 +22,7 @@ namespace Pantalla_Cliente
             btn_filtrar.FlatStyle = FlatStyle.Flat;
             btn_filtrar.FlatAppearance.BorderSize = 0;
 
-            
+
 
             buscarTextBox.LostFocus += new EventHandler(buscarTextBox_LostFocus);
             this.Click += new EventHandler(incidencias_Click);
@@ -45,16 +47,15 @@ namespace Pantalla_Cliente
         }
 
 
-        public async void obtenerIncidencias() {
+        public async void obtenerIncidencias()
+        {
             List<Incidencia> listaIncidencia = await incidenciaService.GetIncidenciasAsync();
             CrearPanelesIncidencias(listaIncidencia);
+
         }
 
         private void CrearPanelesIncidencias(List<Incidencia> listaIncidencia)
         {
-           
-            foreach (Incidencia incidencia in listaIncidencia)
-            { Console.WriteLine(incidencia.ToString()); }
 
             int topPosition = 0; // Posición vertical inicial
 
@@ -64,9 +65,11 @@ namespace Pantalla_Cliente
 
                 incidenciaBanner.getId().Text = incidencia.id.ToString();
                 incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
+                incidenciaBanner.getFotos().Image = LoadBase64(incidencia.fotos.ToString());
 
                 incidenciaBanner.getViewBtn().Click += (sender, e) =>
                 {
+                    incidencia_img.Image = LoadBase64(incidencia.fotos.ToString());
                     correo.Text = $"ID: {incidencia.id}";
                     nombre.Text = incidencia.descripcion;
                     id_mostrar.Text = incidencia.id.ToString();
@@ -88,7 +91,7 @@ namespace Pantalla_Cliente
 
 
 
-        
+
 
         public Panel ObtenerPanelCentralIncidencia()
         {
@@ -142,7 +145,7 @@ namespace Pantalla_Cliente
                 lblCantidadIncidencias.Text = cantidadIncidencias.ToString();*/
         }
 
-     
+
         private void miTextBox_Click(object sender, EventArgs e)
         {
             // Cuando se hace clic en el TextBox, borra el texto
@@ -151,7 +154,7 @@ namespace Pantalla_Cliente
         private void buscarTextBox_LostFocus(object sender, EventArgs e)
         {
             buscarTextBox.ReadOnly = true; // Establece el TextBox en modo de solo lectura
-            
+
         }
 
         private void incidencias_Click(object sender, EventArgs e)
@@ -168,7 +171,7 @@ namespace Pantalla_Cliente
             }
         }
 
-      
+
         private void btn_cliente_Click(object sender, EventArgs e)
         {
             Cliente_Pantalla f = new Cliente_Pantalla();
@@ -178,7 +181,7 @@ namespace Pantalla_Cliente
             f.ShowDialog();
         }
 
-     
+
         private void botonVerDatosIncidencia_Click(object sender, EventArgs e)
         {
             datosIncidencia datosIncidencia = new datosIncidencia();
@@ -189,8 +192,8 @@ namespace Pantalla_Cliente
         }
 
 
-      
- 
+
+
         private void buttonAddCliente_Click(object sender, EventArgs e)
         {
             CrearIncidencia incidencia = new CrearIncidencia();
@@ -202,5 +205,17 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        public static Image LoadBase64(string base64)
+        {
+            byte[] bytes = Convert.FromBase64String(base64);
+            Image image;
+            using (MemoryStream ms = new MemoryStream(bytes))
+            {
+                image = Image.FromStream(ms);
+            }
+            return image;
+        }
+
     }
 }

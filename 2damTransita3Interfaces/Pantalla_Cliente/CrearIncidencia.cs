@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -18,6 +20,7 @@ namespace Pantalla_Cliente
         List<int> listaIdPuntos = new List<int>();
         List<Cliente> listaClientes;
         List<Punto> listaPuntos;
+        string imagen = null;
 
         public CrearIncidencia()
         {
@@ -96,7 +99,7 @@ namespace Pantalla_Cliente
             int puntoId = int.Parse(punto_input.Text);
             string fechaFormateada = fecha_input.Value.ToString("yyyy-MM-dd");
             DateTime fechaDateTime = DateTime.ParseExact(fechaFormateada, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId), "");
+            Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId), imagen);
             Console.WriteLine("metodo ha sido activado");
             String url = Program.rutaBase + "incidencia";
             string content = JsonSerializer.Serialize(newIncidencia);
@@ -157,7 +160,7 @@ namespace Pantalla_Cliente
 
         private bool verifyDatos()
         {
-            if (descripcion_input.Text != "" && estado_input.Text != "" && duracion_input.Text != "" && cliente_input.Text != "" && punto_input.Text != "")
+            if (descripcion_input.Text != "" && estado_input.Text != "" && duracion_input.Text != "" && cliente_input.Text != "" && punto_input.Text != "" && imagen != null)
             {
                 return true;
             }
@@ -203,6 +206,54 @@ namespace Pantalla_Cliente
             else
             {
                 label.Visible = true;
+            }
+        }
+
+        private void subir_img_btn_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(openFileDialog1.FileName);
+                
+                string base64ImageString = ImageToBase64(image);
+                string base64ImageComprimido = Comprimir(base64ImageString);
+                imagen = base64ImageString;
+                string[] rutaImagen = openFileDialog1.FileName.Split('\\');
+                nombreArchivoLabel.Text = rutaImagen[rutaImagen.Length-1];
+            }
+        }
+
+        private string ImageToBase64(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Convertir la imagen a bytes
+                image.Save(ms, image.RawFormat);
+
+                // Convertir los bytes a cadena Base64
+                byte[] imageBytes = ms.ToArray();
+                string base64String = Convert.ToBase64String(imageBytes);
+
+                return base64String;
+            }
+        }
+
+        private string Comprimir(string input)
+        {
+            byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(input);
+
+            using (MemoryStream outputStream = new MemoryStream())
+            {
+                using (GZipStream gzipStream = new GZipStream(outputStream, CompressionMode.Compress))
+                {
+                    gzipStream.Write(inputBytes, 0, inputBytes.Length);
+                }
+
+                // Convertir los bytes comprimidos a una cadena Base64
+                byte[] compressedBytes = outputStream.ToArray();
+                string compressedBase64String = Convert.ToBase64String(compressedBytes);
+
+                return compressedBase64String;
             }
         }
     }

@@ -50,6 +50,10 @@ namespace Pantalla_Cliente
             return btnViewIncidencia;
         }
 
+        public PictureBox getFotos() {
+            return incidencia_img;
+        }
+
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
