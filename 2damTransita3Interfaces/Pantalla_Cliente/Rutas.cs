@@ -14,5 +14,6 @@ namespace Pantalla_Cliente
         public static string zona = "zonas";
         public static string punto = "puntos";
         public static string modifyClienteEstado = "api/auth/cliente/modificarEstado/";
+        public static string servidorImagenes = "127.0.0.1/img/imagenes/punto/";
     }
 }

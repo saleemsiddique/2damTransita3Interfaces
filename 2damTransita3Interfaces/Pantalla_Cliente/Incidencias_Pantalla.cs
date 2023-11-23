@@ -63,20 +63,41 @@ namespace Pantalla_Cliente
             {
                 IncidenciaBanner incidenciaBanner = new IncidenciaBanner();
 
-                incidenciaBanner.getId().Text = incidencia.id.ToString();
-                incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
-                incidenciaBanner.getFotos().Image = LoadBase64(incidencia.fotos.ToString());
 
-                incidenciaBanner.getViewBtn().Click += (sender, e) =>
+                if (incidencia.estado == EstadoIncidencia.ACEPTADO)
                 {
-                    incidencia_img.Image = LoadBase64(incidencia.fotos.ToString());
-                    correo.Text = $"ID: {incidencia.id}";
-                    nombre.Text = incidencia.descripcion;
-                    id_mostrar.Text = incidencia.id.ToString();
-                    descripcion_mostrar.Text = incidencia.descripcion;
-                    fecha_mostrar.Text = incidencia.fechaHora.ToString("yyyy-MM-dd");
-                    estado_mostrar.Text = incidencia.estado.ToString();
-                };
+                    incidenciaBanner.getId().Text = incidencia.id.ToString();
+                    incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
+                    incidenciaBanner.getFotos().ImageLocation = "http://127.0.0.1/img/imagenes/punto/" + incidencia.punto.foto;
+                    Console.WriteLine("\n\n\n127.0.0.1/img/imagenes/punto/" + incidencia.punto.foto);
+                    incidenciaBanner.getViewBtn().Click += (sender, e) =>
+                    {
+                        incidencia_img.ImageLocation = "http://127.0.0.1/img/imagenes/punto/" + incidencia.punto.foto;
+                        correo.Text = $"ID: {incidencia.id}";
+                        nombre.Text = incidencia.descripcion;
+                        id_mostrar.Text = incidencia.id.ToString();
+                        descripcion_mostrar.Text = incidencia.descripcion;
+                        fecha_mostrar.Text = incidencia.fechaHora.ToString("yyyy-MM-dd");
+                        estado_mostrar.Text = incidencia.estado.ToString();
+                    };
+                }
+                else {
+                    incidenciaBanner.getId().Text = incidencia.id.ToString();
+                    incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
+                    incidenciaBanner.getFotos().Image = LoadBase64(incidencia.fotos.ToString());
+
+                    incidenciaBanner.getViewBtn().Click += (sender, e) =>
+                    {
+                        incidencia_img.Image = LoadBase64(incidencia.fotos.ToString());
+                        correo.Text = $"ID: {incidencia.id}";
+                        nombre.Text = incidencia.descripcion;
+                        id_mostrar.Text = incidencia.id.ToString();
+                        descripcion_mostrar.Text = incidencia.descripcion;
+                        fecha_mostrar.Text = incidencia.fechaHora.ToString("yyyy-MM-dd");
+                        estado_mostrar.Text = incidencia.estado.ToString();
+                    };
+                }
+
 
 
                 // Configura la ubicación y otros detalles según sea necesario
@@ -206,7 +227,7 @@ namespace Pantalla_Cliente
 
         }
 
-        public static Image LoadBase64(string base64)
+        public Image LoadBase64(string base64)
         {
             byte[] bytes = Convert.FromBase64String(base64);
             Image image;
@@ -216,6 +237,7 @@ namespace Pantalla_Cliente
             }
             return image;
         }
+
 
     }
 }
