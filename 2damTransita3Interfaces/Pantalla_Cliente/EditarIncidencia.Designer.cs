@@ -45,6 +45,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.estado_input = new System.Windows.Forms.ComboBox();
             this.comprobarDescripcion = new System.Windows.Forms.Label();
+            this.nombreArchivoLabel = new System.Windows.Forms.Label();
+            this.subir_img_btn = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // incidenciaEditar
@@ -160,9 +163,9 @@
             // 
             this.cliente_input.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cliente_input.FormattingEnabled = true;
-            this.cliente_input.Location = new System.Drawing.Point(75, 430);
+            this.cliente_input.Location = new System.Drawing.Point(79, 430);
             this.cliente_input.Name = "cliente_input";
-            this.cliente_input.Size = new System.Drawing.Size(121, 21);
+            this.cliente_input.Size = new System.Drawing.Size(122, 21);
             this.cliente_input.TabIndex = 19;
             // 
             // punto_input
@@ -228,12 +231,37 @@
             this.comprobarDescripcion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.comprobarDescripcion.Visible = false;
             // 
+            // nombreArchivoLabel
+            // 
+            this.nombreArchivoLabel.ForeColor = System.Drawing.Color.White;
+            this.nombreArchivoLabel.Location = new System.Drawing.Point(93, 473);
+            this.nombreArchivoLabel.Name = "nombreArchivoLabel";
+            this.nombreArchivoLabel.Size = new System.Drawing.Size(173, 23);
+            this.nombreArchivoLabel.TabIndex = 77;
+            this.nombreArchivoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // subir_img_btn
+            // 
+            this.subir_img_btn.Location = new System.Drawing.Point(265, 473);
+            this.subir_img_btn.Name = "subir_img_btn";
+            this.subir_img_btn.Size = new System.Drawing.Size(97, 23);
+            this.subir_img_btn.TabIndex = 76;
+            this.subir_img_btn.Text = "SUBIR IMAGEN";
+            this.subir_img_btn.UseVisualStyleBackColor = true;
+            this.subir_img_btn.Click += new System.EventHandler(this.subir_img_btn_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // EditarIncidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(453, 572);
+            this.Controls.Add(this.nombreArchivoLabel);
+            this.Controls.Add(this.subir_img_btn);
             this.Controls.Add(this.comprobarDescripcion);
             this.Controls.Add(this.estado_input);
             this.Controls.Add(this.label6);
@@ -282,5 +310,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox estado_input;
         private System.Windows.Forms.Label comprobarDescripcion;
+        private System.Windows.Forms.Label nombreArchivoLabel;
+        private System.Windows.Forms.Button subir_img_btn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

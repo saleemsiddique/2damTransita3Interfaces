@@ -69,7 +69,7 @@ namespace Pantalla_Cliente
                     incidenciaBanner.getId().Text = incidencia.id.ToString();
                     incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
                     incidenciaBanner.getFotos().ImageLocation = "http://127.0.0.1/img/imagenes/punto/" + incidencia.punto.foto;
-                    Console.WriteLine("\n\n\n127.0.0.1/img/imagenes/punto/" + incidencia.punto.foto);
+                   
                     incidenciaBanner.getViewBtn().Click += (sender, e) =>
                     {
                         incidencia_img.ImageLocation = "http://127.0.0.1/img/imagenes/punto/" + incidencia.punto.foto;
@@ -84,7 +84,7 @@ namespace Pantalla_Cliente
                 else {
                     incidenciaBanner.getId().Text = incidencia.id.ToString();
                     incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
-                    incidenciaBanner.getFotos().Image = LoadBase64(incidencia.fotos.ToString());
+                    incidenciaBanner.getFotos().Image = LoadBase64(incidencia.fotos);
 
                     incidenciaBanner.getViewBtn().Click += (sender, e) =>
                     {

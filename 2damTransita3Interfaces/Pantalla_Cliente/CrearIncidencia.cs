@@ -214,9 +214,7 @@ namespace Pantalla_Cliente
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 Image image = Image.FromFile(openFileDialog1.FileName);
-                
                 string base64ImageString = ImageToBase64(image);
-                string base64ImageComprimido = Comprimir(base64ImageString);
                 imagen = base64ImageString;
                 string[] rutaImagen = openFileDialog1.FileName.Split('\\');
                 nombreArchivoLabel.Text = rutaImagen[rutaImagen.Length-1];
@@ -238,23 +236,5 @@ namespace Pantalla_Cliente
             }
         }
 
-        private string Comprimir(string input)
-        {
-            byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(input);
-
-            using (MemoryStream outputStream = new MemoryStream())
-            {
-                using (GZipStream gzipStream = new GZipStream(outputStream, CompressionMode.Compress))
-                {
-                    gzipStream.Write(inputBytes, 0, inputBytes.Length);
-                }
-
-                // Convertir los bytes comprimidos a una cadena Base64
-                byte[] compressedBytes = outputStream.ToArray();
-                string compressedBase64String = Convert.ToBase64String(compressedBytes);
-
-                return compressedBase64String;
-            }
-        }
     }
 }

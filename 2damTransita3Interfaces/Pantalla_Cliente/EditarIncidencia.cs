@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -20,6 +22,7 @@ namespace Pantalla_Cliente
         List<Cliente> listaClientes;
         List<Punto> listaPuntos;
         Incidencia incidencia;
+        string imagen = null;
 
         public EditarIncidencia(string idModificar)
         {
@@ -32,7 +35,6 @@ namespace Pantalla_Cliente
         {
             await Task.WhenAll(getClientes(), getPuntos(), getIncidencia(idModificar));
 
-            Console.WriteLine(incidencia.cliente.id + incidencia.cliente.nombreUsuario);
 
             if (incidencia != null)
             {
@@ -50,11 +52,9 @@ namespace Pantalla_Cliente
 
         public async Task getClientes()
         {
-            Console.WriteLine("metodo ha sido activado");
             String url = Program.rutaBase + "cliente";
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
-            Console.WriteLine(response);
             listaClientes = JsonSerializer.Deserialize<List<Cliente>>(response);
 
             foreach (Cliente cliente in listaClientes)
@@ -92,29 +92,25 @@ namespace Pantalla_Cliente
             if (parts.Length == 2)
             {
                 clienteId = int.Parse(parts[0].Trim());
-                Console.WriteLine("Cliente ID: " + clienteId);
             }
             else
             {
                 clienteId = -2; 
-                Console.WriteLine("Formato incorrecto en cliente_input");
             }
             int puntoId = int.Parse(punto_input.Text);
             string fechaFormateada = fecha_input.Value.ToString("yyyy-MM-dd");
             DateTime fechaDateTime = DateTime.ParseExact(fechaFormateada, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId), "");
-            Console.WriteLine("metodo ha sido activado");
             String url = Program.rutaBase + "incidencia/modificar/" + id;
             string content = JsonSerializer.Serialize(newIncidencia);
+            Console.WriteLine("\n\n\n content" + content );
             string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
 
-            Console.WriteLine(incidencia);
-            Console.WriteLine(response);
+            Console.WriteLine("\n\n\n\n response" + response);
         }
 
         public async Task getIncidencia(String id)
         {
-            Console.WriteLine("metodo ha sido activado");
             String url = Program.rutaBase + "incidencia/id/" + id;
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
@@ -127,7 +123,6 @@ namespace Pantalla_Cliente
             {
                 estado_input.Items.Add(estado);
             }
-            Console.WriteLine(incidencia);
         }
 
         public Cliente getCliente(int id)
@@ -156,17 +151,10 @@ namespace Pantalla_Cliente
 
         public async Task getPuntos()
         {
-            Console.WriteLine("metodo ha sido activado");
             String url = Program.rutaBase + "puntos";
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
-            Console.WriteLine(response);
             listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
-            foreach (Punto punto in listaPuntos)
-            {
-                Console.WriteLine(punto);
-            }
-
             foreach (Punto punto in listaPuntos)
             {
                 listaIdPuntos.Add(punto.id);
@@ -249,5 +237,36 @@ namespace Pantalla_Cliente
                 label.Visible = true;
             }
         }
+
+        private void subir_img_btn_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(openFileDialog1.FileName);
+
+                string base64ImageString = ImageToBase64(image);
+                imagen = base64ImageString;
+                string[] rutaImagen = openFileDialog1.FileName.Split('\\');
+                nombreArchivoLabel.Text = rutaImagen[rutaImagen.Length - 1];
+            }
+        }
+
+        private string ImageToBase64(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Convertir la imagen a bytes
+                image.Save(ms, image.RawFormat);
+
+                // Convertir los bytes a cadena Base64
+                byte[] imageBytes = ms.ToArray();
+                string base64String = Convert.ToBase64String(imageBytes);
+
+                return base64String;
+            }
+        }
+
+
+
     }
 }
