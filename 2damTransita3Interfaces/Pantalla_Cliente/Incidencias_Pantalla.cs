@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.IO.Compression;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -10,19 +11,25 @@ namespace Pantalla_Cliente
 {
     public partial class Incidencias_Pantalla : Form
     {
+        
         private IncidenciaService incidenciaService = new IncidenciaService();
+        int filtro = 0;
+        
+
         public Incidencias_Pantalla()
         {
+            Console.WriteLine(filtro);
             InitializeComponent();
-            obtenerIncidencias();
+            _ = obtenerIncidencias();
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
 
             btn_filtrar.FlatStyle = FlatStyle.Flat;
             btn_filtrar.FlatAppearance.BorderSize = 0;
-
-
+            groupBox2.Visible = false;
+            
+          
 
             buscarTextBox.LostFocus += new EventHandler(buscarTextBox_LostFocus);
             this.Click += new EventHandler(incidencias_Click);
@@ -45,11 +52,19 @@ namespace Pantalla_Cliente
             int buttonWidth = 30;
             int buttonMargin = 10;
         }
-
-
-        public async void obtenerIncidencias()
+       
+      
+       
+       
+        public async        
+      
+       
+       
+        Task
+obtenerIncidencias()
         {
-            List<Incidencia> listaIncidencia = await incidenciaService.GetIncidenciasAsync();
+          
+            List<Incidencia> listaIncidencia = await incidenciaService.GetIncidenciasAsync(filtro);
             CrearPanelesIncidencias(listaIncidencia);
 
         }
@@ -126,44 +141,7 @@ namespace Pantalla_Cliente
 
         private void Incidencias_Load(object sender, EventArgs e)
         {
-            /*{
-                string connectionString = "cadena_de_conexion"; // Reemplaza con tu cadena de conexión
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string query = "SELECT Id, Nombre, Descripcion, Imagen FROM TuTabla"; 
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                int id = (int)reader["Id"];
-                                string nombre = reader["Nombre"].ToString();
-                                string descripcion = reader["Descripcion"].ToString();
-                                byte[] imagenBytes = (byte[])reader["Imagen"];
-
-                                Image imagen = ByteArrayToImage(imagenBytes);
-
-                                Incidencia incidencia = new Incidencia
-                                {
-                                    Id = id,
-                                    Nombre = nombre,
-                                    Descripcion = descripcion,
-                                    Imagen = imagen
-                                };
-
-                                listaIncidencias.Add(incidencia);
-                            }
-                        }
-                    }
-                }
-
-                // Actualiza la cantidad de incidencias
-                // Puedes usar la propiedad "Count" de la lista
-                int cantidadIncidencias = listaIncidencias.Count;
-                lblCantidadIncidencias.Text = cantidadIncidencias.ToString();*/
+            
         }
 
 
@@ -239,5 +217,53 @@ namespace Pantalla_Cliente
         }
 
 
+
+        private void buttonFiltros_Click(object sender, EventArgs e)
+        {
+            groupBox2.Visible = true;
+           
+        }
+
+        private void  checkBox3_CheckedChangedAsync(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private async Task buttonAceptar_ClickAsync(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                Console.WriteLine("CHECKBOX1 CHECKED");
+                filtro = 1;
+            }
+            else if (checkBox2.Checked)
+            {
+                Console.WriteLine("CHECKBOX2 CHECKED");
+                filtro = 2;
+            }
+            else if (checkBox3.Checked)
+            {
+                Console.WriteLine("CHECKBOX3 CHECKED");
+                filtro = 3;
+            }
+            else if (checkBox4.Checked)
+            {
+                Console.WriteLine("CHECKBOX4 CHECKED");
+                filtro = 4;
+            }
+            else
+            {
+                Console.WriteLine("CHECKBOXS NOT CHECKED");
+                filtro = 0;
+            }
+
+            Console.WriteLine(filtro);
+            await obtenerIncidencias();
+
+         
+            
+            groupBox2.Visible = false;
+        }
     }
 }

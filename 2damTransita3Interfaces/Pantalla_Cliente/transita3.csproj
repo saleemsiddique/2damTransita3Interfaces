@@ -116,6 +116,12 @@
     <Compile Include="EditarPunto.Designer.cs">
       <DependentUpon>EditarPunto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FiltrosIncidencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltrosIncidencia.Designer.cs">
+      <DependentUpon>FiltrosIncidencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogOutPantalla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarZonas.resx">
       <DependentUpon>EditarZonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltrosIncidencia.resx">
+      <DependentUpon>FiltrosIncidencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Incidencias_Pantalla.resx">
       <DependentUpon>Incidencias_Pantalla.cs</DependentUpon>

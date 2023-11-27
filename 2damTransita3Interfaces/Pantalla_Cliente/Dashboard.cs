@@ -106,6 +106,7 @@ namespace Pantalla_Cliente
     
         public void MostrarPanelDeIncidencia()
         {
+        
             Incidencias_Pantalla incidenciaForm = new Incidencias_Pantalla();
             Panel panelCentralIncidencia = incidenciaForm.ObtenerPanelCentralIncidencia();
             Panel panelDerechaIncidencia = incidenciaForm.ObtenerPanelDerechaIncidencia();
