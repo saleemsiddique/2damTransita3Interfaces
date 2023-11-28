@@ -32,6 +32,7 @@ namespace Pantalla_Cliente
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente_Pantalla));
             this.label15 = new System.Windows.Forms.Label();
             this.panel_derecha = new System.Windows.Forms.Panel();
+            this.clienteImg = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.email_mostrar = new System.Windows.Forms.TextBox();
             this.apellidos_mostrar = new System.Windows.Forms.TextBox();
@@ -46,8 +47,11 @@ namespace Pantalla_Cliente
             this.btn_incidencias = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.imgTransita = new System.Windows.Forms.Label();
             this.btn_mapa = new System.Windows.Forms.Button();
             this.btn_puntos = new System.Windows.Forms.Button();
             this.btn_zonas = new System.Windows.Forms.Button();
@@ -55,32 +59,33 @@ namespace Pantalla_Cliente
             this.panel_central = new System.Windows.Forms.Panel();
             this.panelClientes = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.filtroClientes_btn = new System.Windows.Forms.Button();
+            this.clientesLabel = new System.Windows.Forms.Label();
             this.fondoGrisMid = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.imgTransita = new System.Windows.Forms.Label();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonAceptar = new System.Windows.Forms.Button();
+            this.estadoActivo = new System.Windows.Forms.RadioButton();
+            this.estadoDesactivado = new System.Windows.Forms.RadioButton();
             this.panel_derecha.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteImg)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel_central.SuspendLayout();
             this.panelClientes.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label15
@@ -94,7 +99,7 @@ namespace Pantalla_Cliente
             // panel_derecha
             // 
             this.panel_derecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.panel_derecha.Controls.Add(this.pictureBox12);
+            this.panel_derecha.Controls.Add(this.clienteImg);
             this.panel_derecha.Controls.Add(this.groupBox2);
             this.panel_derecha.Controls.Add(this.nombre);
             this.panel_derecha.Controls.Add(this.correo);
@@ -103,6 +108,19 @@ namespace Pantalla_Cliente
             this.panel_derecha.Name = "panel_derecha";
             this.panel_derecha.Size = new System.Drawing.Size(231, 681);
             this.panel_derecha.TabIndex = 28;
+            // 
+            // clienteImg
+            // 
+            this.clienteImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.clienteImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.clienteImg.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.clienteImg.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.clienteImg.Location = new System.Drawing.Point(51, 104);
+            this.clienteImg.Name = "clienteImg";
+            this.clienteImg.Size = new System.Drawing.Size(130, 112);
+            this.clienteImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.clienteImg.TabIndex = 24;
+            this.clienteImg.TabStop = false;
             // 
             // groupBox2
             // 
@@ -205,7 +223,7 @@ namespace Pantalla_Cliente
             this.correo.AutoSize = true;
             this.correo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.correo.ForeColor = System.Drawing.Color.DarkGray;
-            this.correo.Location = new System.Drawing.Point(80, 267);
+            this.correo.Location = new System.Drawing.Point(67, 267);
             this.correo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.correo.Name = "correo";
             this.correo.Size = new System.Drawing.Size(50, 13);
@@ -281,6 +299,32 @@ namespace Pantalla_Cliente
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(27, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(213, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -298,6 +342,14 @@ namespace Pantalla_Cliente
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(276, 1);
             this.label5.TabIndex = 11;
+            // 
+            // imgTransita
+            // 
+            this.imgTransita.Image = ((System.Drawing.Image)(resources.GetObject("imgTransita.Image")));
+            this.imgTransita.Location = new System.Drawing.Point(30, 358);
+            this.imgTransita.Name = "imgTransita";
+            this.imgTransita.Size = new System.Drawing.Size(223, 184);
+            this.imgTransita.TabIndex = 5;
             // 
             // btn_mapa
             // 
@@ -379,15 +431,17 @@ namespace Pantalla_Cliente
             // panel_central
             // 
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel_central.Controls.Add(this.groupBox1);
             this.panel_central.Controls.Add(this.panelClientes);
             this.panel_central.Controls.Add(this.buscarTextBox);
-            this.panel_central.Controls.Add(this.button1);
-            this.panel_central.Controls.Add(this.label1);
+            this.panel_central.Controls.Add(this.filtroClientes_btn);
+            this.panel_central.Controls.Add(this.clientesLabel);
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(276, 0);
             this.panel_central.Name = "panel_central";
             this.panel_central.Size = new System.Drawing.Size(557, 681);
             this.panel_central.TabIndex = 32;
+            this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_central_Paint);
             // 
             // panelClientes
             // 
@@ -414,77 +468,6 @@ namespace Pantalla_Cliente
             this.panel2.Size = new System.Drawing.Size(450, 67);
             this.panel2.TabIndex = 10;
             this.panel2.Visible = false;
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.Location = new System.Drawing.Point(320, 23);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "View";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(74, 30);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nom_Cliente";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.ForeColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Location = new System.Drawing.Point(364, 28);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.UseVisualStyleBackColor = false;
-            this.radioButton1.Visible = false;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // buscarTextBox
-            // 
-            this.buscarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(349, 92);
-            this.buscarTextBox.Name = "buscarTextBox";
-            this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
-            this.buscarTextBox.TabIndex = 28;
-            this.buscarTextBox.Text = "Buscar";
-            this.buscarTextBox.Enter += new System.EventHandler(this.buscarTextBox_Click);
-            this.buscarTextBox.Leave += new System.EventHandler(this.buscarTextBox_Leave_1);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(20, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 25);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Clientes Transita";
-            // 
-            // fondoGrisMid
-            // 
-            this.fondoGrisMid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fondoGrisMid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fondoGrisMid.Location = new System.Drawing.Point(0, 0);
-            this.fondoGrisMid.Name = "fondoGrisMid";
-            this.fondoGrisMid.Size = new System.Drawing.Size(1064, 681);
-            this.fondoGrisMid.TabIndex = 9;
             // 
             // button8
             // 
@@ -527,64 +510,136 @@ namespace Pantalla_Cliente
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
-            // button1
+            // button7
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(291, 74);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 36);
-            this.button1.TabIndex = 22;
-            this.button1.UseVisualStyleBackColor = false;
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button7.Location = new System.Drawing.Point(320, 23);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "View";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // label2
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(74, 30);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nom_Cliente";
             // 
-            // pictureBox3
+            // radioButton1
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(213, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton1.ForeColor = System.Drawing.Color.Transparent;
+            this.radioButton1.Location = new System.Drawing.Point(364, 28);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.UseVisualStyleBackColor = false;
+            this.radioButton1.Visible = false;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // imgTransita
+            // buscarTextBox
             // 
-            this.imgTransita.Image = ((System.Drawing.Image)(resources.GetObject("imgTransita.Image")));
-            this.imgTransita.Location = new System.Drawing.Point(30, 358);
-            this.imgTransita.Name = "imgTransita";
-            this.imgTransita.Size = new System.Drawing.Size(223, 184);
-            this.imgTransita.TabIndex = 5;
+            this.buscarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.buscarTextBox.Location = new System.Drawing.Point(340, 76);
+            this.buscarTextBox.Name = "buscarTextBox";
+            this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
+            this.buscarTextBox.TabIndex = 28;
+            this.buscarTextBox.Text = "Buscar";
+            this.buscarTextBox.Enter += new System.EventHandler(this.buscarTextBox_Click);
+            this.buscarTextBox.Leave += new System.EventHandler(this.buscarTextBox_Leave_1);
             // 
-            // pictureBox12
+            // filtroClientes_btn
             // 
-            this.pictureBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.pictureBox12.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox12.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox12.Location = new System.Drawing.Point(51, 104);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(130, 112);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 24;
-            this.pictureBox12.TabStop = false;
+            this.filtroClientes_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.filtroClientes_btn.AutoSize = true;
+            this.filtroClientes_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.filtroClientes_btn.Image = ((System.Drawing.Image)(resources.GetObject("filtroClientes_btn.Image")));
+            this.filtroClientes_btn.Location = new System.Drawing.Point(271, 74);
+            this.filtroClientes_btn.Name = "filtroClientes_btn";
+            this.filtroClientes_btn.Size = new System.Drawing.Size(36, 36);
+            this.filtroClientes_btn.TabIndex = 22;
+            this.filtroClientes_btn.UseVisualStyleBackColor = false;
+            this.filtroClientes_btn.Click += new System.EventHandler(this.filtroClientes_btn_Click);
+            // 
+            // clientesLabel
+            // 
+            this.clientesLabel.AutoSize = true;
+            this.clientesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.clientesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientesLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.clientesLabel.Location = new System.Drawing.Point(16, 85);
+            this.clientesLabel.Name = "clientesLabel";
+            this.clientesLabel.Size = new System.Drawing.Size(191, 25);
+            this.clientesLabel.TabIndex = 19;
+            this.clientesLabel.Text = "Clientes Transita";
+            // 
+            // fondoGrisMid
+            // 
+            this.fondoGrisMid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fondoGrisMid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fondoGrisMid.Location = new System.Drawing.Point(0, 0);
+            this.fondoGrisMid.Name = "fondoGrisMid";
+            this.fondoGrisMid.Size = new System.Drawing.Size(1064, 681);
+            this.fondoGrisMid.TabIndex = 9;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.estadoDesactivado);
+            this.groupBox1.Controls.Add(this.estadoActivo);
+            this.groupBox1.Controls.Add(this.buttonAceptar);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Location = new System.Drawing.Point(302, 104);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(141, 128);
+            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
+            this.groupBox1.Visible = false;
+            // 
+            // buttonAceptar
+            // 
+            this.buttonAceptar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAceptar.Location = new System.Drawing.Point(29, 87);
+            this.buttonAceptar.Name = "buttonAceptar";
+            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAceptar.TabIndex = 4;
+            this.buttonAceptar.Text = "Aceptar";
+            this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
+            // 
+            // estadoActivo
+            // 
+            this.estadoActivo.AutoSize = true;
+            this.estadoActivo.Location = new System.Drawing.Point(25, 31);
+            this.estadoActivo.Name = "estadoActivo";
+            this.estadoActivo.Size = new System.Drawing.Size(67, 17);
+            this.estadoActivo.TabIndex = 5;
+            this.estadoActivo.TabStop = true;
+            this.estadoActivo.Text = "Activado";
+            this.estadoActivo.UseVisualStyleBackColor = true;
+            // 
+            // estadoDesactivado
+            // 
+            this.estadoDesactivado.AutoSize = true;
+            this.estadoDesactivado.Location = new System.Drawing.Point(25, 54);
+            this.estadoDesactivado.Name = "estadoDesactivado";
+            this.estadoDesactivado.Size = new System.Drawing.Size(85, 17);
+            this.estadoDesactivado.TabIndex = 6;
+            this.estadoDesactivado.TabStop = true;
+            this.estadoDesactivado.Text = "Desactivado";
+            this.estadoDesactivado.UseVisualStyleBackColor = true;
             // 
             // Cliente_Pantalla
             // 
@@ -605,11 +660,14 @@ namespace Pantalla_Cliente
             this.Load += new System.EventHandler(this.Cliente_Pantalla_Load);
             this.panel_derecha.ResumeLayout(false);
             this.panel_derecha.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteImg)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel_central.ResumeLayout(false);
             this.panel_central.PerformLayout();
             this.panelClientes.ResumeLayout(false);
@@ -617,9 +675,8 @@ namespace Pantalla_Cliente
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -627,7 +684,7 @@ namespace Pantalla_Cliente
         #endregion
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel_derecha;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox clienteImg;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox email_mostrar;
         private System.Windows.Forms.TextBox apellidos_mostrar;
@@ -653,8 +710,8 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label fondoGrisMid;
         private System.Windows.Forms.Button btn_incidencias;
         private System.Windows.Forms.Button btn_zonas;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button filtroClientes_btn;
+        private System.Windows.Forms.Label clientesLabel;
         private System.Windows.Forms.TextBox buscarTextBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button8;
@@ -664,6 +721,10 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel panelClientes;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button buttonAceptar;
+        private System.Windows.Forms.RadioButton estadoDesactivado;
+        private System.Windows.Forms.RadioButton estadoActivo;
     }
 }
 

@@ -8,13 +8,14 @@ namespace Pantalla_Cliente
     public enum AccesibilidadTipo
     {
         ACCESIBLE,
-        NO_ACCESIBLE
+        NO_ACCESIBLE,
+        PARCIALMENTE_ACCESIBLE
     }
 
     public enum TipoPunto
     {
         ACCESO,
-        LUGAR
+        LUGAR,
     }
 
     public enum EVisibilidad

@@ -66,12 +66,19 @@ namespace Pantalla_Cliente
             this.label7 = new System.Windows.Forms.Label();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonAceptar = new System.Windows.Forms.Button();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panelInc = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.btn_addInc = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonFiltros = new System.Windows.Forms.Button();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label_tipoIncidencia = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidencia_img)).BeginInit();
@@ -82,6 +89,7 @@ namespace Pantalla_Cliente
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panelInc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -182,7 +190,7 @@ namespace Pantalla_Cliente
             this.correo.AutoSize = true;
             this.correo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.correo.ForeColor = System.Drawing.Color.DarkGray;
-            this.correo.Location = new System.Drawing.Point(92, 267);
+            this.correo.Location = new System.Drawing.Point(65, 267);
             this.correo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.correo.Name = "correo";
             this.correo.Size = new System.Drawing.Size(50, 13);
@@ -437,7 +445,7 @@ namespace Pantalla_Cliente
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(20, 85);
+            this.label2.Location = new System.Drawing.Point(172, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(224, 25);
             this.label2.TabIndex = 5;
@@ -526,7 +534,7 @@ namespace Pantalla_Cliente
             this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(329, 92);
+            this.buscarTextBox.Location = new System.Drawing.Point(340, 76);
             this.buscarTextBox.Name = "buscarTextBox";
             this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
@@ -539,11 +547,13 @@ namespace Pantalla_Cliente
             this.panel4.AutoSize = true;
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel4.Controls.Add(this.label_tipoIncidencia);
+            this.panel4.Controls.Add(this.groupBox2);
             this.panel4.Controls.Add(this.panelInc);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.btn_addInc);
             this.panel4.Controls.Add(this.buscarTextBox);
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.buttonFiltros);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(276, 0);
@@ -551,6 +561,73 @@ namespace Pantalla_Cliente
             this.panel4.Size = new System.Drawing.Size(557, 681);
             this.panel4.TabIndex = 28;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.buttonAceptar);
+            this.groupBox2.Controls.Add(this.checkBox4);
+            this.groupBox2.Controls.Add(this.checkBox3);
+            this.groupBox2.Controls.Add(this.checkBox2);
+            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.Location = new System.Drawing.Point(302, 104);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(141, 182);
+            this.groupBox2.TabIndex = 33;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filtros";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // buttonAceptar
+            // 
+            this.buttonAceptar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAceptar.Location = new System.Drawing.Point(29, 149);
+            this.buttonAceptar.Name = "buttonAceptar";
+            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAceptar.TabIndex = 4;
+            this.buttonAceptar.Text = "Aceptar";
+            this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(20, 126);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(89, 17);
+            this.checkBox4.TabIndex = 3;
+            this.checkBox4.Text = "FINALIZADO";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(20, 92);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(96, 17);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "EN PROCESO";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(20, 57);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(84, 17);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "ACEPTADO";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(20, 21);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(74, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "ENVIADO";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // panelInc
             // 
@@ -589,17 +666,18 @@ namespace Pantalla_Cliente
             this.btn_addInc.UseVisualStyleBackColor = false;
             this.btn_addInc.Click += new System.EventHandler(this.buttonAddCliente_Click);
             // 
-            // button1
+            // buttonFiltros
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(271, 74);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 36);
-            this.button1.TabIndex = 17;
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFiltros.AutoSize = true;
+            this.buttonFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonFiltros.Image = ((System.Drawing.Image)(resources.GetObject("buttonFiltros.Image")));
+            this.buttonFiltros.Location = new System.Drawing.Point(271, 74);
+            this.buttonFiltros.Name = "buttonFiltros";
+            this.buttonFiltros.Size = new System.Drawing.Size(36, 36);
+            this.buttonFiltros.TabIndex = 17;
+            this.buttonFiltros.UseVisualStyleBackColor = false;
+            this.buttonFiltros.Click += new System.EventHandler(this.buttonFiltros_Click);
             // 
             // btn_filtrar
             // 
@@ -624,6 +702,17 @@ namespace Pantalla_Cliente
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
+            // 
+            // label_tipoIncidencia
+            // 
+            this.label_tipoIncidencia.AutoSize = true;
+            this.label_tipoIncidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tipoIncidencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_tipoIncidencia.Location = new System.Drawing.Point(16, 85);
+            this.label_tipoIncidencia.Name = "label_tipoIncidencia";
+            this.label_tipoIncidencia.Size = new System.Drawing.Size(235, 25);
+            this.label_tipoIncidencia.TabIndex = 34;
+            this.label_tipoIncidencia.Text = "Incidencias Enviadas";
             // 
             // Incidencias_Pantalla
             // 
@@ -660,6 +749,8 @@ namespace Pantalla_Cliente
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.panelInc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
@@ -704,11 +795,18 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Button botonVerDatosIncidencia;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonFiltros;
         private System.Windows.Forms.TextBox buscarTextBox;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btn_addInc;
         private System.Windows.Forms.Panel panelInc;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button buttonAceptar;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label_tipoIncidencia;
     }
 }
