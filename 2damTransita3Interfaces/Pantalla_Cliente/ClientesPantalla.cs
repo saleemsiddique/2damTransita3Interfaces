@@ -20,14 +20,17 @@ namespace Pantalla_Cliente
     public partial class Cliente_Pantalla : Form
     {
         private ClienteService clienteService = new ClienteService();
+        private List<Cliente> listCliente;
+        private bool esVisible = false;
+        private int filtro = 0;
 
         public Cliente_Pantalla()
         {
             InitializeComponent();
-            ObtenerClientes();
+            ObtenerClientes(filtro);
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
-            this.Font = new Font("Arial", 12); 
+            this.Font = new Font("Arial", 12);
         }
 
         public Panel ObtenerPanelCentralCliente()
@@ -41,11 +44,11 @@ namespace Pantalla_Cliente
         }
 
 
-        private async void ObtenerClientes() {
+        private async Task ObtenerClientes(int filtro) {
 
 
             // Objeto loadingForm 
-            List<Cliente> listCliente = await clienteService.GetClientesAsync();
+            listCliente = await clienteService.GetClientesAsync(filtro);
             // acabar del loadingform a true cierras el form
             CrearPanelesClientes(listCliente);
         }
@@ -148,6 +151,71 @@ namespace Pantalla_Cliente
         private void panel_central_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void filtroClientes_btn_Click(object sender, EventArgs e)
+        {
+            if (esVisible)
+            {
+                groupBox1.Visible = false;
+                esVisible = false;
+            }
+            else {
+                groupBox1.Visible = true;
+                esVisible = true;
+            }
+        }
+
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+            if (estadoActivo.Checked)
+            {
+                filtro = 0;
+            }
+            else if (estadoDesactivado.Checked)
+            {
+                filtro = 1;
+            }
+            else {
+                filtro = 0;
+            }
+            limpiarVisualizacion();
+            groupBox1.Visible = false;
+            esVisible = false;
+            clienteImg = null;
+            nombre.Text = "";
+            correo.Text = "";
+            id_mostrar.Text = "";
+            nombre_mostrar.Text = "";
+            apellidos_mostrar.Text = "";
+            email_mostrar.Text = "";
+            Task task = ObtenerClientes(filtro);
+
+            task.ContinueWith(t =>
+            {
+                // This part will be executed when modifyUser completes, but won't block the UI
+                Form formularioPadre = this.Owner;
+
+                if (formularioPadre != null)
+                {
+                    if (formularioPadre is Transita)
+                    {
+                        Transita formularioTransita = (Transita)formularioPadre;
+                        formularioTransita.MostrarPanelDeIncidencia();
+                        this.Close();
+                    }
+                }
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+        }
+
+        private void limpiarVisualizacion()
+        {
+            listCliente.Clear();
+            foreach (Control control in panelClientes.Controls.OfType<ClienteBanner>().ToList())
+            {
+                panelClientes.Controls.Remove(control);
+                control.Dispose();
+            }
         }
     }
 

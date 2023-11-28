@@ -15,6 +15,7 @@ namespace Pantalla_Cliente
         List<Incidencia> listaIncidencias;
         private IncidenciaService incidenciaService = new IncidenciaService();
         int filtro = 1;
+        private bool esVisible = false;
 
 
         public Incidencias_Pantalla()
@@ -108,11 +109,11 @@ namespace Pantalla_Cliente
                 {
                     incidenciaBanner.getId().Text = incidencia.id.ToString();
                     incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
-                    incidenciaBanner.getFotos().ImageLocation = "http://127.0.0.1/img/imagenes/punto/" + incidencia.punto.foto;
-                    Console.WriteLine("\n\n\n127.0.0.1/img/imagenes/punto/" + incidencia.punto.foto);
+                    incidenciaBanner.getFotos().ImageLocation = Rutas.imagenesPunto + incidencia.punto.foto;
+ 
                     incidenciaBanner.getViewBtn().Click += (sender, e) =>
                     {
-                        incidencia_img.ImageLocation = "http://127.0.0.1/img/imagenes/punto/" + incidencia.punto.foto;
+                        incidencia_img.ImageLocation = Rutas.imagenesPunto + incidencia.punto.foto;
                         correo.Text = $"ID: {incidencia.id}";
                         nombre.Text = incidencia.descripcion;
                         id_mostrar.Text = incidencia.id.ToString();
@@ -246,7 +247,16 @@ namespace Pantalla_Cliente
 
         private void buttonFiltros_Click(object sender, EventArgs e)
         {
-            groupBox2.Visible = true;
+            if (esVisible)
+            {
+                groupBox2.Visible = false;
+                esVisible = false;
+            }
+            else
+            {
+                groupBox2.Visible = true;
+                esVisible = true;
+            }
 
         }
 

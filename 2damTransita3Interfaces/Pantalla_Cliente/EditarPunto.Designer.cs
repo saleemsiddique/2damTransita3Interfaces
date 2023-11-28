@@ -86,7 +86,8 @@
             this.comboBoxAccesibilidad.FormattingEnabled = true;
             this.comboBoxAccesibilidad.Items.AddRange(new object[] {
             "ACCESIBLE",
-            "NO_ACCESIBLE"});
+            "NO_ACCESIBLE",
+            "PARCIALMENTE_ACCESIBLE"});
             this.comboBoxAccesibilidad.Location = new System.Drawing.Point(166, 291);
             this.comboBoxAccesibilidad.Name = "comboBoxAccesibilidad";
             this.comboBoxAccesibilidad.Size = new System.Drawing.Size(112, 21);

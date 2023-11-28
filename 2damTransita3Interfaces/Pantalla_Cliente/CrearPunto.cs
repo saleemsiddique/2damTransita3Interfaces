@@ -94,6 +94,9 @@ namespace Pantalla_Cliente
             {
                 accesibilidadTipo = AccesibilidadTipo.ACCESIBLE;
             }
+            else if (comboBoxAccesibilidad.Equals("PARCIALMENTE_ACCESIBLE")) {
+                accesibilidadTipo = AccesibilidadTipo.PARCIALMENTE_ACCESIBLE;
+            }
             Punto punto;
             double latitud, longitud;
             if (Double.TryParse(latitudPunto_input.Text, out latitud) && Double.TryParse(longitudPunto_input.Text, out longitud))

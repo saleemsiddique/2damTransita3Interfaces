@@ -15,9 +15,9 @@ namespace Pantalla_Cliente
             { 
                 
                 String url = Program.rutaBase + Rutas.incidencia;
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
-            List<Incidencia> listaIncidencias = JsonSerializer.Deserialize<List<Incidencia>>(response);
-            return listaIncidencias;
+                string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+                List<Incidencia> listaIncidencias = JsonSerializer.Deserialize<List<Incidencia>>(response);
+                return listaIncidencias;
                 
             }
             else if(tipo == 1)
