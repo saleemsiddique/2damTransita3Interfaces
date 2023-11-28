@@ -84,6 +84,7 @@ namespace Pantalla_Cliente
                 else {
                     incidenciaBanner.getId().Text = incidencia.id.ToString();
                     incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
+                    Console.WriteLine("else");
                     incidenciaBanner.getFotos().Image = LoadBase64(incidencia.fotos);
 
                     incidenciaBanner.getViewBtn().Click += (sender, e) =>

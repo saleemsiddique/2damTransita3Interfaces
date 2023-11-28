@@ -69,6 +69,7 @@ namespace Pantalla_Cliente
 
         public async Task modifyIncidencia(int id)
         {
+            
             EstadoIncidencia estado;
             if (estado_input.Text == "ENVIADO")
             {
@@ -100,7 +101,7 @@ namespace Pantalla_Cliente
             int puntoId = int.Parse(punto_input.Text);
             string fechaFormateada = fecha_input.Value.ToString("yyyy-MM-dd");
             DateTime fechaDateTime = DateTime.ParseExact(fechaFormateada, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId), "");
+            Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId), imagen);
             String url = Program.rutaBase + "incidencia/modificar/" + id;
             string content = JsonSerializer.Serialize(newIncidencia);
             Console.WriteLine("\n\n\n content" + content );
