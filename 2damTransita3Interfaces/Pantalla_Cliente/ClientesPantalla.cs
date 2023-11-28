@@ -144,6 +144,11 @@ namespace Pantalla_Cliente
 
 
         }
+
+        private void panel_central_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
     /*Codigo para refrescar la unica pantalla usa

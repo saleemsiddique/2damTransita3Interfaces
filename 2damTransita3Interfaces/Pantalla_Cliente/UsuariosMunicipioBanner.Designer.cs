@@ -31,12 +31,10 @@ namespace Pantalla_Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosMunicipioBanner));
             this.moreOption = new System.Windows.Forms.Button();
-            this.favCliente = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.idCliente = new System.Windows.Forms.Label();
             this.nombreCliente = new System.Windows.Forms.Label();
             this.btnViewUsuarioMuni = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.favCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,19 +51,6 @@ namespace Pantalla_Cliente
             this.moreOption.TabIndex = 21;
             this.moreOption.UseVisualStyleBackColor = false;
             this.moreOption.Click += new System.EventHandler(this.moreOption_Click);
-            // 
-            // favCliente
-            // 
-            this.favCliente.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.favCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.favCliente.Image = global::Pantalla_Cliente.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
-            this.favCliente.InitialImage = global::Pantalla_Cliente.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
-            this.favCliente.Location = new System.Drawing.Point(278, 22);
-            this.favCliente.Name = "favCliente";
-            this.favCliente.Size = new System.Drawing.Size(25, 25);
-            this.favCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.favCliente.TabIndex = 20;
-            this.favCliente.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -122,12 +107,10 @@ namespace Pantalla_Cliente
             this.Controls.Add(this.idCliente);
             this.Controls.Add(this.nombreCliente);
             this.Controls.Add(this.moreOption);
-            this.Controls.Add(this.favCliente);
             this.Controls.Add(this.pictureBox2);
             this.Name = "UsuariosMunicipioBanner";
             this.Size = new System.Drawing.Size(450, 67);
             this.Load += new System.EventHandler(this.UsuariosMunicipioBanner_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.favCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,7 +120,6 @@ namespace Pantalla_Cliente
         #endregion
 
         private System.Windows.Forms.Button moreOption;
-        private System.Windows.Forms.PictureBox favCliente;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label idCliente;
         private System.Windows.Forms.Label nombreCliente;
