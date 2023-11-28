@@ -241,6 +241,7 @@ namespace Pantalla_Cliente
 
         private void subir_img_btn_Click(object sender, EventArgs e)
         {
+            openFileDialog1.Filter = Program.fileFilter;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 Image image = Image.FromFile(openFileDialog1.FileName);

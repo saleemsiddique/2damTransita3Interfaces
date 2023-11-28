@@ -14,6 +14,7 @@ namespace Pantalla_Cliente
         public static string rutaBase;
         public static string token;
         public static IConfiguration configurations;
+        public static string fileFilter = "PNG files|*.png|JPEG files|*.jpg|GIF files|*.gif|Image files|*.bmp;*.jpg;*.gif;*.png;*.tif";
 
         [STAThread]
         static void Main()
