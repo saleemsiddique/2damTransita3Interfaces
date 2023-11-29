@@ -32,8 +32,17 @@
             this.panel_central = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupVisibilidad = new System.Windows.Forms.GroupBox();
+            this.filtro_oculto = new System.Windows.Forms.CheckBox();
+            this.filtro_incidencia = new System.Windows.Forms.CheckBox();
+            this.filtro_favorito = new System.Windows.Forms.CheckBox();
+            this.filtro_global = new System.Windows.Forms.CheckBox();
             this.groupAccesibilidad = new System.Windows.Forms.GroupBox();
+            this.filtro_parcialmenteAccesible = new System.Windows.Forms.CheckBox();
+            this.filtro_noAccesible = new System.Windows.Forms.CheckBox();
+            this.filtro_accesible = new System.Windows.Forms.CheckBox();
             this.groupTipo = new System.Windows.Forms.GroupBox();
+            this.filtro_lugar = new System.Windows.Forms.CheckBox();
+            this.filtro_acceso = new System.Windows.Forms.CheckBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.btn_addPunto = new System.Windows.Forms.Button();
@@ -78,15 +87,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.descripcionPunto_mostrar = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
-            this.filtro_acceso = new System.Windows.Forms.CheckBox();
-            this.filtro_lugar = new System.Windows.Forms.CheckBox();
-            this.filtro_accesible = new System.Windows.Forms.CheckBox();
-            this.filtro_noAccesible = new System.Windows.Forms.CheckBox();
-            this.filtro_parcialmenteAccesible = new System.Windows.Forms.CheckBox();
-            this.filtro_global = new System.Windows.Forms.CheckBox();
-            this.filtro_favorito = new System.Windows.Forms.CheckBox();
-            this.filtro_oculto = new System.Windows.Forms.CheckBox();
-            this.filtro_incidencia = new System.Windows.Forms.CheckBox();
             this.panel_central.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupVisibilidad.SuspendLayout();
@@ -128,7 +128,7 @@
             this.groupBox1.Controls.Add(this.groupTipo);
             this.groupBox1.Controls.Add(this.buttonAceptar);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(302, 104);
+            this.groupBox1.Location = new System.Drawing.Point(282, 102);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(255, 414);
             this.groupBox1.TabIndex = 36;
@@ -148,6 +148,50 @@
             this.groupVisibilidad.TabIndex = 7;
             this.groupVisibilidad.TabStop = false;
             // 
+            // filtro_oculto
+            // 
+            this.filtro_oculto.AutoSize = true;
+            this.filtro_oculto.Location = new System.Drawing.Point(109, 61);
+            this.filtro_oculto.Name = "filtro_oculto";
+            this.filtro_oculto.Size = new System.Drawing.Size(70, 17);
+            this.filtro_oculto.TabIndex = 4;
+            this.filtro_oculto.Text = "OCULTO";
+            this.filtro_oculto.UseVisualStyleBackColor = true;
+            this.filtro_oculto.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_incidencia
+            // 
+            this.filtro_incidencia.AutoSize = true;
+            this.filtro_incidencia.Location = new System.Drawing.Point(109, 28);
+            this.filtro_incidencia.Name = "filtro_incidencia";
+            this.filtro_incidencia.Size = new System.Drawing.Size(87, 17);
+            this.filtro_incidencia.TabIndex = 3;
+            this.filtro_incidencia.Text = "INCIDENCIA";
+            this.filtro_incidencia.UseVisualStyleBackColor = true;
+            this.filtro_incidencia.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_favorito
+            // 
+            this.filtro_favorito.AutoSize = true;
+            this.filtro_favorito.Location = new System.Drawing.Point(18, 61);
+            this.filtro_favorito.Name = "filtro_favorito";
+            this.filtro_favorito.Size = new System.Drawing.Size(80, 17);
+            this.filtro_favorito.TabIndex = 2;
+            this.filtro_favorito.Text = "FAVORITO";
+            this.filtro_favorito.UseVisualStyleBackColor = true;
+            this.filtro_favorito.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_global
+            // 
+            this.filtro_global.AutoSize = true;
+            this.filtro_global.Location = new System.Drawing.Point(18, 28);
+            this.filtro_global.Name = "filtro_global";
+            this.filtro_global.Size = new System.Drawing.Size(68, 17);
+            this.filtro_global.TabIndex = 1;
+            this.filtro_global.Text = "GLOBAL";
+            this.filtro_global.UseVisualStyleBackColor = true;
+            this.filtro_global.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
             // groupAccesibilidad
             // 
             this.groupAccesibilidad.Controls.Add(this.filtro_parcialmenteAccesible);
@@ -159,6 +203,39 @@
             this.groupAccesibilidad.TabIndex = 6;
             this.groupAccesibilidad.TabStop = false;
             // 
+            // filtro_parcialmenteAccesible
+            // 
+            this.filtro_parcialmenteAccesible.AutoSize = true;
+            this.filtro_parcialmenteAccesible.Location = new System.Drawing.Point(18, 67);
+            this.filtro_parcialmenteAccesible.Name = "filtro_parcialmenteAccesible";
+            this.filtro_parcialmenteAccesible.Size = new System.Drawing.Size(170, 17);
+            this.filtro_parcialmenteAccesible.TabIndex = 3;
+            this.filtro_parcialmenteAccesible.Text = "PARCIALMENTE ACCESIBLE";
+            this.filtro_parcialmenteAccesible.UseVisualStyleBackColor = true;
+            this.filtro_parcialmenteAccesible.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_noAccesible
+            // 
+            this.filtro_noAccesible.AutoSize = true;
+            this.filtro_noAccesible.Location = new System.Drawing.Point(18, 45);
+            this.filtro_noAccesible.Name = "filtro_noAccesible";
+            this.filtro_noAccesible.Size = new System.Drawing.Size(103, 17);
+            this.filtro_noAccesible.TabIndex = 2;
+            this.filtro_noAccesible.Text = "NO ACCESIBLE";
+            this.filtro_noAccesible.UseVisualStyleBackColor = true;
+            this.filtro_noAccesible.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_accesible
+            // 
+            this.filtro_accesible.AutoSize = true;
+            this.filtro_accesible.Location = new System.Drawing.Point(18, 22);
+            this.filtro_accesible.Name = "filtro_accesible";
+            this.filtro_accesible.Size = new System.Drawing.Size(84, 17);
+            this.filtro_accesible.TabIndex = 1;
+            this.filtro_accesible.Text = "ACCESIBLE";
+            this.filtro_accesible.UseVisualStyleBackColor = true;
+            this.filtro_accesible.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
             // groupTipo
             // 
             this.groupTipo.Controls.Add(this.filtro_lugar);
@@ -168,6 +245,28 @@
             this.groupTipo.Size = new System.Drawing.Size(200, 100);
             this.groupTipo.TabIndex = 5;
             this.groupTipo.TabStop = false;
+            // 
+            // filtro_lugar
+            // 
+            this.filtro_lugar.AutoSize = true;
+            this.filtro_lugar.Location = new System.Drawing.Point(18, 61);
+            this.filtro_lugar.Name = "filtro_lugar";
+            this.filtro_lugar.Size = new System.Drawing.Size(63, 17);
+            this.filtro_lugar.TabIndex = 1;
+            this.filtro_lugar.Text = "LUGAR";
+            this.filtro_lugar.UseVisualStyleBackColor = true;
+            this.filtro_lugar.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_acceso
+            // 
+            this.filtro_acceso.AutoSize = true;
+            this.filtro_acceso.Location = new System.Drawing.Point(18, 29);
+            this.filtro_acceso.Name = "filtro_acceso";
+            this.filtro_acceso.Size = new System.Drawing.Size(69, 17);
+            this.filtro_acceso.TabIndex = 0;
+            this.filtro_acceso.Text = "ACCESO";
+            this.filtro_acceso.UseVisualStyleBackColor = true;
+            this.filtro_acceso.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // buttonAceptar
             // 
@@ -723,105 +822,6 @@
             this.nombre.Size = new System.Drawing.Size(123, 20);
             this.nombre.TabIndex = 23;
             this.nombre.Text = "Datos del Punto";
-            // 
-            // filtro_acceso
-            // 
-            this.filtro_acceso.AutoSize = true;
-            this.filtro_acceso.Location = new System.Drawing.Point(18, 29);
-            this.filtro_acceso.Name = "filtro_acceso";
-            this.filtro_acceso.Size = new System.Drawing.Size(69, 17);
-            this.filtro_acceso.TabIndex = 0;
-            this.filtro_acceso.Text = "ACCESO";
-            this.filtro_acceso.UseVisualStyleBackColor = true;
-            this.filtro_acceso.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_lugar
-            // 
-            this.filtro_lugar.AutoSize = true;
-            this.filtro_lugar.Location = new System.Drawing.Point(18, 61);
-            this.filtro_lugar.Name = "filtro_lugar";
-            this.filtro_lugar.Size = new System.Drawing.Size(63, 17);
-            this.filtro_lugar.TabIndex = 1;
-            this.filtro_lugar.Text = "LUGAR";
-            this.filtro_lugar.UseVisualStyleBackColor = true;
-            this.filtro_lugar.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_accesible
-            // 
-            this.filtro_accesible.AutoSize = true;
-            this.filtro_accesible.Location = new System.Drawing.Point(18, 22);
-            this.filtro_accesible.Name = "filtro_accesible";
-            this.filtro_accesible.Size = new System.Drawing.Size(84, 17);
-            this.filtro_accesible.TabIndex = 1;
-            this.filtro_accesible.Text = "ACCESIBLE";
-            this.filtro_accesible.UseVisualStyleBackColor = true;
-            this.filtro_accesible.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_noAccesible
-            // 
-            this.filtro_noAccesible.AutoSize = true;
-            this.filtro_noAccesible.Location = new System.Drawing.Point(18, 45);
-            this.filtro_noAccesible.Name = "filtro_noAccesible";
-            this.filtro_noAccesible.Size = new System.Drawing.Size(103, 17);
-            this.filtro_noAccesible.TabIndex = 2;
-            this.filtro_noAccesible.Text = "NO ACCESIBLE";
-            this.filtro_noAccesible.UseVisualStyleBackColor = true;
-            this.filtro_noAccesible.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_parcialmenteAccesible
-            // 
-            this.filtro_parcialmenteAccesible.AutoSize = true;
-            this.filtro_parcialmenteAccesible.Location = new System.Drawing.Point(18, 67);
-            this.filtro_parcialmenteAccesible.Name = "filtro_parcialmenteAccesible";
-            this.filtro_parcialmenteAccesible.Size = new System.Drawing.Size(170, 17);
-            this.filtro_parcialmenteAccesible.TabIndex = 3;
-            this.filtro_parcialmenteAccesible.Text = "PARCIALMENTE ACCESIBLE";
-            this.filtro_parcialmenteAccesible.UseVisualStyleBackColor = true;
-            this.filtro_parcialmenteAccesible.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_global
-            // 
-            this.filtro_global.AutoSize = true;
-            this.filtro_global.Location = new System.Drawing.Point(18, 28);
-            this.filtro_global.Name = "filtro_global";
-            this.filtro_global.Size = new System.Drawing.Size(68, 17);
-            this.filtro_global.TabIndex = 1;
-            this.filtro_global.Text = "GLOBAL";
-            this.filtro_global.UseVisualStyleBackColor = true;
-            this.filtro_global.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_favorito
-            // 
-            this.filtro_favorito.AutoSize = true;
-            this.filtro_favorito.Location = new System.Drawing.Point(18, 61);
-            this.filtro_favorito.Name = "filtro_favorito";
-            this.filtro_favorito.Size = new System.Drawing.Size(80, 17);
-            this.filtro_favorito.TabIndex = 2;
-            this.filtro_favorito.Text = "FAVORITO";
-            this.filtro_favorito.UseVisualStyleBackColor = true;
-            this.filtro_favorito.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_oculto
-            // 
-            this.filtro_oculto.AutoSize = true;
-            this.filtro_oculto.Location = new System.Drawing.Point(109, 61);
-            this.filtro_oculto.Name = "filtro_oculto";
-            this.filtro_oculto.Size = new System.Drawing.Size(70, 17);
-            this.filtro_oculto.TabIndex = 4;
-            this.filtro_oculto.Text = "OCULTO";
-            this.filtro_oculto.UseVisualStyleBackColor = true;
-            this.filtro_oculto.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_incidencia
-            // 
-            this.filtro_incidencia.AutoSize = true;
-            this.filtro_incidencia.Location = new System.Drawing.Point(109, 28);
-            this.filtro_incidencia.Name = "filtro_incidencia";
-            this.filtro_incidencia.Size = new System.Drawing.Size(87, 17);
-            this.filtro_incidencia.TabIndex = 3;
-            this.filtro_incidencia.Text = "INCIDENCIA";
-            this.filtro_incidencia.UseVisualStyleBackColor = true;
-            this.filtro_incidencia.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // PuntosPantalla
             // 

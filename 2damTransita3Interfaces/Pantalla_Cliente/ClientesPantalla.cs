@@ -22,7 +22,7 @@ namespace Pantalla_Cliente
         private ClienteService clienteService = new ClienteService();
         private List<Cliente> listCliente;
         private bool esVisible = false;
-        private int filtro = 0;
+        private int filtro = 2;
 
         public Cliente_Pantalla()
         {
@@ -31,6 +31,11 @@ namespace Pantalla_Cliente
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
+            foreach (CheckBox checkBox in groupBox1.Controls.OfType<CheckBox>())
+            {
+                checkBox.CheckedChanged += CheckBox_CheckedChanged;
+            }
+
         }
 
         public Panel ObtenerPanelCentralCliente()
@@ -52,7 +57,18 @@ namespace Pantalla_Cliente
             // acabar del loadingform a true cierras el form
             CrearPanelesClientes(listCliente);
         }
-
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (CheckBox checkBox in groupBox1.Controls)
+            {
+                // Si el CheckBox actual no es el que generó el evento
+                if (checkBox != sender as CheckBox)
+                {
+                    // Deshabilitar todos los CheckBox si el CheckBox actual está marcado
+                    checkBox.Enabled = !(sender as CheckBox).Checked;
+                }
+            }
+        }
         private void CrearPanelesClientes(List<Cliente> listaClientes)
         {
 
@@ -171,15 +187,20 @@ namespace Pantalla_Cliente
             if (estadoActivo.Checked)
             {
                 filtro = 0;
+                label_tipoclientes.Text = "Clientes Activados";
             }
             else if (estadoDesactivado.Checked)
             {
                 filtro = 1;
+                label_tipoclientes.Text = "Clientes Desactivados";
             }
             else {
-                filtro = 0;
+                filtro = 2;
+                label_tipoclientes.Text = "Todos los Clientes";
             }
+            
             limpiarVisualizacion();
+            listCliente.Clear();
             groupBox1.Visible = false;
             esVisible = false;
             clienteImg = null;
@@ -190,7 +211,7 @@ namespace Pantalla_Cliente
             apellidos_mostrar.Text = "";
             email_mostrar.Text = "";
             Task task = ObtenerClientes(filtro);
-
+            
             task.ContinueWith(t =>
             {
                 // This part will be executed when modifyUser completes, but won't block the UI
@@ -201,7 +222,7 @@ namespace Pantalla_Cliente
                     if (formularioPadre is Transita)
                     {
                         Transita formularioTransita = (Transita)formularioPadre;
-                        formularioTransita.MostrarPanelDeIncidencia();
+                        formularioTransita.MostrarPanelDeCliente();
                         this.Close();
                     }
                 }
@@ -216,6 +237,11 @@ namespace Pantalla_Cliente
                 panelClientes.Controls.Remove(control);
                 control.Dispose();
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 

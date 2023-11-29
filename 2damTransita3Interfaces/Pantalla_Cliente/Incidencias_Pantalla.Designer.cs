@@ -43,6 +43,8 @@ namespace Pantalla_Cliente
             this.correo = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_aceptarIncidencia = new System.Windows.Forms.Button();
+            this.btn_eliminarIncidencia = new System.Windows.Forms.Button();
             this.incidencia_img = new System.Windows.Forms.PictureBox();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -66,6 +68,7 @@ namespace Pantalla_Cliente
             this.label7 = new System.Windows.Forms.Label();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label_tipoIncidencia = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -78,7 +81,6 @@ namespace Pantalla_Cliente
             this.buttonFiltros = new System.Windows.Forms.Button();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label_tipoIncidencia = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidencia_img)).BeginInit();
@@ -214,6 +216,8 @@ namespace Pantalla_Cliente
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.panel3.Controls.Add(this.btn_aceptarIncidencia);
+            this.panel3.Controls.Add(this.btn_eliminarIncidencia);
             this.panel3.Controls.Add(this.incidencia_img);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.nombre);
@@ -223,6 +227,28 @@ namespace Pantalla_Cliente
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(231, 681);
             this.panel3.TabIndex = 27;
+            // 
+            // btn_aceptarIncidencia
+            // 
+            this.btn_aceptarIncidencia.Enabled = false;
+            this.btn_aceptarIncidencia.Image = ((System.Drawing.Image)(resources.GetObject("btn_aceptarIncidencia.Image")));
+            this.btn_aceptarIncidencia.Location = new System.Drawing.Point(142, 584);
+            this.btn_aceptarIncidencia.Name = "btn_aceptarIncidencia";
+            this.btn_aceptarIncidencia.Size = new System.Drawing.Size(39, 36);
+            this.btn_aceptarIncidencia.TabIndex = 28;
+            this.btn_aceptarIncidencia.UseVisualStyleBackColor = true;
+            this.btn_aceptarIncidencia.Click += new System.EventHandler(this.btn_aceptarIncidencia_Click);
+            // 
+            // btn_eliminarIncidencia
+            // 
+            this.btn_eliminarIncidencia.Enabled = false;
+            this.btn_eliminarIncidencia.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminarIncidencia.Image")));
+            this.btn_eliminarIncidencia.Location = new System.Drawing.Point(59, 584);
+            this.btn_eliminarIncidencia.Name = "btn_eliminarIncidencia";
+            this.btn_eliminarIncidencia.Size = new System.Drawing.Size(39, 36);
+            this.btn_eliminarIncidencia.TabIndex = 27;
+            this.btn_eliminarIncidencia.UseVisualStyleBackColor = true;
+            this.btn_eliminarIncidencia.Click += new System.EventHandler(this.btn_aceptarIncidencia_Click);
             // 
             // incidencia_img
             // 
@@ -562,6 +588,17 @@ namespace Pantalla_Cliente
             this.panel4.TabIndex = 28;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
+            // label_tipoIncidencia
+            // 
+            this.label_tipoIncidencia.AutoSize = true;
+            this.label_tipoIncidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tipoIncidencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_tipoIncidencia.Location = new System.Drawing.Point(16, 85);
+            this.label_tipoIncidencia.Name = "label_tipoIncidencia";
+            this.label_tipoIncidencia.Size = new System.Drawing.Size(235, 25);
+            this.label_tipoIncidencia.TabIndex = 34;
+            this.label_tipoIncidencia.Text = "Incidencias Enviadas";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.buttonAceptar);
@@ -703,17 +740,6 @@ namespace Pantalla_Cliente
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
             // 
-            // label_tipoIncidencia
-            // 
-            this.label_tipoIncidencia.AutoSize = true;
-            this.label_tipoIncidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tipoIncidencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_tipoIncidencia.Location = new System.Drawing.Point(16, 85);
-            this.label_tipoIncidencia.Name = "label_tipoIncidencia";
-            this.label_tipoIncidencia.Size = new System.Drawing.Size(235, 25);
-            this.label_tipoIncidencia.TabIndex = 34;
-            this.label_tipoIncidencia.Text = "Incidencias Enviadas";
-            // 
             // Incidencias_Pantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -808,5 +834,7 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label_tipoIncidencia;
+        private System.Windows.Forms.Button btn_aceptarIncidencia;
+        private System.Windows.Forms.Button btn_eliminarIncidencia;
     }
 }

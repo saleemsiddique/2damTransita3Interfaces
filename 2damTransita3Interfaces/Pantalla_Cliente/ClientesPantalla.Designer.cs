@@ -57,6 +57,10 @@ namespace Pantalla_Cliente
             this.btn_zonas = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.panel_central = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.estadoDesactivado = new System.Windows.Forms.RadioButton();
+            this.estadoActivo = new System.Windows.Forms.RadioButton();
+            this.buttonAceptar = new System.Windows.Forms.Button();
             this.panelClientes = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -69,10 +73,7 @@ namespace Pantalla_Cliente
             this.filtroClientes_btn = new System.Windows.Forms.Button();
             this.clientesLabel = new System.Windows.Forms.Label();
             this.fondoGrisMid = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonAceptar = new System.Windows.Forms.Button();
-            this.estadoActivo = new System.Windows.Forms.RadioButton();
-            this.estadoDesactivado = new System.Windows.Forms.RadioButton();
+            this.label_tipoclientes = new System.Windows.Forms.Label();
             this.panel_derecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteImg)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -81,11 +82,11 @@ namespace Pantalla_Cliente
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel_central.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panelClientes.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label15
@@ -431,6 +432,7 @@ namespace Pantalla_Cliente
             // panel_central
             // 
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel_central.Controls.Add(this.label_tipoclientes);
             this.panel_central.Controls.Add(this.groupBox1);
             this.panel_central.Controls.Add(this.panelClientes);
             this.panel_central.Controls.Add(this.buscarTextBox);
@@ -442,6 +444,54 @@ namespace Pantalla_Cliente
             this.panel_central.Size = new System.Drawing.Size(557, 681);
             this.panel_central.TabIndex = 32;
             this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_central_Paint);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.estadoDesactivado);
+            this.groupBox1.Controls.Add(this.estadoActivo);
+            this.groupBox1.Controls.Add(this.buttonAceptar);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Location = new System.Drawing.Point(302, 104);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(141, 128);
+            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
+            this.groupBox1.Visible = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // estadoDesactivado
+            // 
+            this.estadoDesactivado.AutoSize = true;
+            this.estadoDesactivado.Location = new System.Drawing.Point(25, 54);
+            this.estadoDesactivado.Name = "estadoDesactivado";
+            this.estadoDesactivado.Size = new System.Drawing.Size(85, 17);
+            this.estadoDesactivado.TabIndex = 6;
+            this.estadoDesactivado.TabStop = true;
+            this.estadoDesactivado.Text = "Desactivado";
+            this.estadoDesactivado.UseVisualStyleBackColor = true;
+            // 
+            // estadoActivo
+            // 
+            this.estadoActivo.AutoSize = true;
+            this.estadoActivo.Location = new System.Drawing.Point(25, 31);
+            this.estadoActivo.Name = "estadoActivo";
+            this.estadoActivo.Size = new System.Drawing.Size(67, 17);
+            this.estadoActivo.TabIndex = 5;
+            this.estadoActivo.TabStop = true;
+            this.estadoActivo.Text = "Activado";
+            this.estadoActivo.UseVisualStyleBackColor = true;
+            // 
+            // buttonAceptar
+            // 
+            this.buttonAceptar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAceptar.Location = new System.Drawing.Point(29, 87);
+            this.buttonAceptar.Name = "buttonAceptar";
+            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAceptar.TabIndex = 4;
+            this.buttonAceptar.Text = "Aceptar";
+            this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
             // panelClientes
             // 
@@ -579,7 +629,7 @@ namespace Pantalla_Cliente
             this.clientesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.clientesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientesLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.clientesLabel.Location = new System.Drawing.Point(16, 85);
+            this.clientesLabel.Location = new System.Drawing.Point(188, 18);
             this.clientesLabel.Name = "clientesLabel";
             this.clientesLabel.Size = new System.Drawing.Size(191, 25);
             this.clientesLabel.TabIndex = 19;
@@ -594,52 +644,16 @@ namespace Pantalla_Cliente
             this.fondoGrisMid.Size = new System.Drawing.Size(1064, 681);
             this.fondoGrisMid.TabIndex = 9;
             // 
-            // groupBox1
+            // label_tipoclientes
             // 
-            this.groupBox1.Controls.Add(this.estadoDesactivado);
-            this.groupBox1.Controls.Add(this.estadoActivo);
-            this.groupBox1.Controls.Add(this.buttonAceptar);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(302, 104);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(141, 128);
-            this.groupBox1.TabIndex = 34;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
-            this.groupBox1.Visible = false;
-            // 
-            // buttonAceptar
-            // 
-            this.buttonAceptar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonAceptar.Location = new System.Drawing.Point(29, 87);
-            this.buttonAceptar.Name = "buttonAceptar";
-            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAceptar.TabIndex = 4;
-            this.buttonAceptar.Text = "Aceptar";
-            this.buttonAceptar.UseVisualStyleBackColor = true;
-            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
-            // 
-            // estadoActivo
-            // 
-            this.estadoActivo.AutoSize = true;
-            this.estadoActivo.Location = new System.Drawing.Point(25, 31);
-            this.estadoActivo.Name = "estadoActivo";
-            this.estadoActivo.Size = new System.Drawing.Size(67, 17);
-            this.estadoActivo.TabIndex = 5;
-            this.estadoActivo.TabStop = true;
-            this.estadoActivo.Text = "Activado";
-            this.estadoActivo.UseVisualStyleBackColor = true;
-            // 
-            // estadoDesactivado
-            // 
-            this.estadoDesactivado.AutoSize = true;
-            this.estadoDesactivado.Location = new System.Drawing.Point(25, 54);
-            this.estadoDesactivado.Name = "estadoDesactivado";
-            this.estadoDesactivado.Size = new System.Drawing.Size(85, 17);
-            this.estadoDesactivado.TabIndex = 6;
-            this.estadoDesactivado.TabStop = true;
-            this.estadoDesactivado.Text = "Desactivado";
-            this.estadoDesactivado.UseVisualStyleBackColor = true;
+            this.label_tipoclientes.AutoSize = true;
+            this.label_tipoclientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tipoclientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_tipoclientes.Location = new System.Drawing.Point(29, 128);
+            this.label_tipoclientes.Name = "label_tipoclientes";
+            this.label_tipoclientes.Size = new System.Drawing.Size(208, 25);
+            this.label_tipoclientes.TabIndex = 35;
+            this.label_tipoclientes.Text = "Todos los Clientes";
             // 
             // Cliente_Pantalla
             // 
@@ -670,13 +684,13 @@ namespace Pantalla_Cliente
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel_central.ResumeLayout(false);
             this.panel_central.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panelClientes.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -725,6 +739,7 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Button buttonAceptar;
         private System.Windows.Forms.RadioButton estadoDesactivado;
         private System.Windows.Forms.RadioButton estadoActivo;
+        private System.Windows.Forms.Label label_tipoclientes;
     }
 }
 

@@ -26,7 +26,7 @@ namespace Pantalla_Cliente
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
-
+            this.Load += Incidencias_Load;
             btn_filtrar.FlatStyle = FlatStyle.Flat;
             btn_filtrar.FlatAppearance.BorderSize = 0;
             groupBox2.Visible = false;
@@ -169,7 +169,14 @@ namespace Pantalla_Cliente
 
         private void Incidencias_Load(object sender, EventArgs e)
         {
+           
+                // Configura los botones aquí
+                btn_aceptarIncidencia.FlatStyle = FlatStyle.Flat;
+                btn_aceptarIncidencia.FlatAppearance.BorderSize = 0;
 
+                btn_eliminarIncidencia.FlatStyle = FlatStyle.Flat;
+            btn_eliminarIncidencia.FlatAppearance.BorderSize = 0;
+            
         }
 
 
@@ -290,6 +297,8 @@ namespace Pantalla_Cliente
                 label_tipoIncidencia.Text = "INCIDENCIA ENVIADA";
                 Console.WriteLine("CHECKBOX1 CHECKED");
                 filtro = 1;
+                btn_eliminarIncidencia.Enabled = true;
+                btn_aceptarIncidencia.Enabled = true;
             }
             else if (checkBox2.Checked)
             {
@@ -314,6 +323,8 @@ namespace Pantalla_Cliente
                 label_tipoIncidencia.Text = "TODAS LAS INCIDENCIAS";
                 Console.WriteLine("CHECKBOXS NOT CHECKED");
                 filtro = 0;
+                btn_eliminarIncidencia.Enabled = false;
+                btn_aceptarIncidencia.Enabled = false;
             }
             incidencia_img.Image = null;
             correo.Text = $"";
@@ -346,6 +357,37 @@ namespace Pantalla_Cliente
             }, TaskScheduler.FromCurrentSynchronizationContext());
             
         }
+
+        private async Task btn_aceptarIncidencia_Click(object sender, EventArgs e)
+        {
+
+           
+            
+        }
+
+        private async Task btn_eliminarIncidencia_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas borrar esta incidencia?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Console.WriteLine("metodo eliminar ha sido activado");
+                String id = this.id_mostrar.Text;
+                String url = Program.rutaBase + "incidencia/eliminar/" + id;
+                string response = await ApiClient.GetRequestAsync("DELETE", url, Program.token);
+
+                Console.WriteLine(response);
+                Form formularioPadre = this.FindForm();
+                Transita formularioTransita = (Transita)formularioPadre.FindForm();
+                if (formularioTransita != null)
+                {
+                    Console.WriteLine("No es null");
+                    formularioTransita.MostrarPanelDeIncidencia();
+                }
+            }
+        }
+
+     
     }
 }
   

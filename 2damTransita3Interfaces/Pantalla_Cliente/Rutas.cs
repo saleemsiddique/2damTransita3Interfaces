@@ -19,8 +19,8 @@ namespace Pantalla_Cliente
         public static string incidenciaAceptada = "incidencia/estado/1";
         public static string incidenciaProceso = "incidencia/estado/2";
         public static string incidenciaFinalizada = "incidencia/estado/3";
-        public static string clienteActivado = "cliente/estado/0";
-        public static string clienteDesactivado = "cliente/estado/1";
+        public static string clienteActivado = "cliente/RolUsuario/estado/0";
+        public static string clienteDesactivado = "cliente/RolUsuario/estado/1";
         public static string imagenesPunto = "http://127.0.0.1/img/imagenes/punto/";
 
 
