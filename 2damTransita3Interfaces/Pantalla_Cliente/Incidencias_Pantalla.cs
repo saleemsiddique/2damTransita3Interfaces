@@ -14,7 +14,7 @@ namespace Pantalla_Cliente
     {
         List<Incidencia> listaIncidencias;
         private IncidenciaService incidenciaService = new IncidenciaService();
-        int filtro = 2;
+        int filtro = 1;
         private bool esVisible = false;
 
 
