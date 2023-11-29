@@ -23,7 +23,7 @@ namespace Pantalla_Cliente
         {
             InitializeComponent();
             idMod = int.TryParse(idPunto, out int parsedId) ? parsedId : 0;
-            getZonas();
+            //getZonas();
             getPunto();
 
         }
@@ -54,7 +54,7 @@ namespace Pantalla_Cliente
             comboBoxAccesibilidad.Text = punto.accesibilidadPunto.ToString();
             comboBoxTipoPunto.Text = punto.tipoPunto.ToString();
             comboBoxVisibilidadPunto.Text = punto.visibilidadPunto.ToString();
-            //comboBoxZona.Text = punto.zonaId.ToString();
+
 
 
 
@@ -81,7 +81,7 @@ namespace Pantalla_Cliente
 
         private async Task modifyPunto(int idMod)
         { 
-            string content = $"{{\"descripcion\": \"{descripcionPunto_input.Text}\", \"tipoPunto\": \"{comboBoxTipoPunto.SelectedItem}\", \"foto\": \"{"foto.jpg"}\", \"latitud\": {latitudPunto_input.Text}, \"longitud\": {longitudPunto_input.Text}, \"accesibilidadPunto\": \"{comboBoxAccesibilidad.SelectedItem}\", \"visibilidadPunto\": \"{comboBoxVisibilidadPunto.SelectedItem}\", \"zona\": {{\"id\": {comboBoxZona.Text}}}}}";
+            string content = $"{{\"descripcion\": \"{descripcionPunto_input.Text}\", \"tipoPunto\": \"{comboBoxTipoPunto.SelectedItem}\", \"foto\": \"{"foto.jpg"}\", \"latitud\": {latitudPunto_input.Text}, \"longitud\": {longitudPunto_input.Text}, \"accesibilidadPunto\": \"{comboBoxAccesibilidad.SelectedItem}\", \"visibilidadPunto\": \"{comboBoxVisibilidadPunto.SelectedItem}\"}}";
 
             Console.WriteLine("metodo ha sido activado");
             String url = Program.rutaBase + "punto/modificar/" + idMod;
