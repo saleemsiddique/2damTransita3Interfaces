@@ -14,7 +14,7 @@ namespace Pantalla_Cliente
     {
         List<Incidencia> listaIncidencias;
         private IncidenciaService incidenciaService = new IncidenciaService();
-        int filtro = 1;
+        int filtro = 2;
         private bool esVisible = false;
 
 
@@ -358,12 +358,7 @@ namespace Pantalla_Cliente
             
         }
 
-        private async Task btn_aceptarIncidencia_Click(object sender, EventArgs e)
-        {
 
-           
-            
-        }
 
         private async Task btn_eliminarIncidencia_Click(object sender, EventArgs e)
         {

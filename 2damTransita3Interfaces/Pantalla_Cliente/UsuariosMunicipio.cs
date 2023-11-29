@@ -14,6 +14,9 @@ namespace Pantalla_Cliente
     public partial class UsuariosMunicipio : Form
     {
         UsuarioMunicipioService usuarioMunicipioService = new UsuarioMunicipioService();
+        private int filtro = 0;
+        List<Cliente> usuariosMunicipios;
+        private bool esVisible = false;
         public UsuariosMunicipio()
         {
             InitializeComponent();
@@ -24,8 +27,8 @@ namespace Pantalla_Cliente
         }
 
 
-        private async void ObtenerUsuariosMunicipio() {
-            List<Cliente> usuariosMunicipios = await usuarioMunicipioService.GetUsuariosMunicipiosAsync();
+        private async Task ObtenerUsuariosMunicipio() {
+            usuariosMunicipios = await usuarioMunicipioService.GetUsuariosMunicipiosAsync(filtro);
             CrearPanelesUsuariosMunicipio(usuariosMunicipios);
         }
         private void CrearPanelesUsuariosMunicipio(List<Cliente> listaUsuariosMunicipio)
@@ -80,11 +83,72 @@ namespace Pantalla_Cliente
             crearUsuarioMunicipio.Show();
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void buttonAceptar_Click(object sender, EventArgs e)
         {
+            if (filtro_admin.Checked) filtro = 1;
+            else if (filtro_mod.Checked) filtro = 2;
+            else filtro = 0;
+
+            limpiarVisualizacion();
+            groupBox2.Visible = false;
+            esVisible = false;
+            usuarioImg = null;
+            nombre.Text = "";
+            correo.Text = "";
+            id_mostrar.Text = "";
+            nombre_mostrar.Text = "";
+            apellido_mostrar.Text = "";
+            nombreUsuario_mostrar.Text = "";
+            Task task = ObtenerUsuariosMunicipio();
+
+            task.ContinueWith(t =>
+            {
+                // This part will be executed when modifyUser completes, but won't block the UI
+                Form formularioPadre = this.Owner;
+
+                if (formularioPadre != null)
+                {
+                    if (formularioPadre is Transita)
+                    {
+                        Transita formularioTransita = (Transita)formularioPadre;
+                        formularioTransita.MostrarPanelDeUsuariosMunicipio();
+                        this.Close();
+                    }
+                }
+            }, TaskScheduler.FromCurrentSynchronizationContext());
 
         }
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is CheckBox checkBox)
+            {
+                if (checkBox.Checked)
+                {
+                    foreach (Control control in checkBox.Parent.Controls)
+                    {
+                        if (control is CheckBox otherCheckBox && !otherCheckBox.Equals(checkBox))
+                        {
+                            otherCheckBox.Checked = false;
+                        }
+                    }
+                }
+            }
+        }
 
+        private void limpiarVisualizacion()
+        {
+            usuariosMunicipios.Clear();
+            foreach (Control control in panelUsuarios.Controls.OfType<UsuariosMunicipioBanner>().ToList())
+            {
+                panelUsuarios.Controls.Remove(control);
+                control.Dispose();
+            }
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            esVisible = !esVisible;
+            groupBox2.Visible = esVisible;
+        }
     }
 }

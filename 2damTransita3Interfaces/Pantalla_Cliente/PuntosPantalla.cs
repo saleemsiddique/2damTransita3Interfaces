@@ -120,12 +120,10 @@ namespace Pantalla_Cliente
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            // Asegúrate de que solo un CheckBox está seleccionado en cada GroupBox
             if (sender is CheckBox checkBox)
             {
                 if (checkBox.Checked)
                 {
-                    // Desmarca todos los demás CheckBoxes en el mismo GroupBox
                     foreach (Control control in checkBox.Parent.Controls)
                     {
                         if (control is CheckBox otherCheckBox && !otherCheckBox.Equals(checkBox))
@@ -223,7 +221,7 @@ namespace Pantalla_Cliente
                     if (formularioPadre is Transita)
                     {
                         Transita formularioTransita = (Transita)formularioPadre;
-                        formularioTransita.MostrarPanelDeIncidencia();
+                        formularioTransita.MostrarPanelDePunto();
                         this.Close();
                     }
                 }

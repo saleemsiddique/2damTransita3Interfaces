@@ -31,6 +31,10 @@ namespace Pantalla_Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosMunicipio));
             this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonAceptar = new System.Windows.Forms.Button();
+            this.filtro_mod = new System.Windows.Forms.CheckBox();
+            this.filtro_admin = new System.Windows.Forms.CheckBox();
             this.panelUsuarios = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -44,7 +48,7 @@ namespace Pantalla_Cliente
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureZona = new System.Windows.Forms.PictureBox();
+            this.usuarioImg = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rol_mostrar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -72,11 +76,12 @@ namespace Pantalla_Cliente
             this.button2 = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureZona)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioImg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -89,6 +94,7 @@ namespace Pantalla_Cliente
             this.panel4.AutoSize = true;
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel4.Controls.Add(this.groupBox2);
             this.panel4.Controls.Add(this.panelUsuarios);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.buttonAddCliente);
@@ -100,7 +106,53 @@ namespace Pantalla_Cliente
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(557, 681);
             this.panel4.TabIndex = 34;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.buttonAceptar);
+            this.groupBox2.Controls.Add(this.filtro_mod);
+            this.groupBox2.Controls.Add(this.filtro_admin);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.Location = new System.Drawing.Point(302, 104);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(141, 125);
+            this.groupBox2.TabIndex = 34;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filtros";
+            this.groupBox2.Visible = false;
+            // 
+            // buttonAceptar
+            // 
+            this.buttonAceptar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAceptar.Location = new System.Drawing.Point(29, 89);
+            this.buttonAceptar.Name = "buttonAceptar";
+            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAceptar.TabIndex = 4;
+            this.buttonAceptar.Text = "Aceptar";
+            this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
+            // 
+            // filtro_mod
+            // 
+            this.filtro_mod.AutoSize = true;
+            this.filtro_mod.Location = new System.Drawing.Point(20, 57);
+            this.filtro_mod.Name = "filtro_mod";
+            this.filtro_mod.Size = new System.Drawing.Size(97, 17);
+            this.filtro_mod.TabIndex = 1;
+            this.filtro_mod.Text = "MODERADOR";
+            this.filtro_mod.UseVisualStyleBackColor = true;
+            this.filtro_mod.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_admin
+            // 
+            this.filtro_admin.AutoSize = true;
+            this.filtro_admin.Location = new System.Drawing.Point(20, 21);
+            this.filtro_admin.Name = "filtro_admin";
+            this.filtro_admin.Size = new System.Drawing.Size(61, 17);
+            this.filtro_admin.TabIndex = 0;
+            this.filtro_admin.Text = "ADMIN";
+            this.filtro_admin.UseVisualStyleBackColor = true;
+            this.filtro_admin.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // panelUsuarios
             // 
@@ -235,11 +287,12 @@ namespace Pantalla_Cliente
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(291, 74);
+            this.button1.Location = new System.Drawing.Point(271, 74);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(36, 36);
             this.button1.TabIndex = 17;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -258,7 +311,7 @@ namespace Pantalla_Cliente
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.panel3.Controls.Add(this.pictureZona);
+            this.panel3.Controls.Add(this.usuarioImg);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.nombre);
             this.panel3.Controls.Add(this.correo);
@@ -268,18 +321,18 @@ namespace Pantalla_Cliente
             this.panel3.Size = new System.Drawing.Size(231, 681);
             this.panel3.TabIndex = 33;
             // 
-            // pictureZona
+            // usuarioImg
             // 
-            this.pictureZona.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureZona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.pictureZona.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureZona.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureZona.Location = new System.Drawing.Point(49, 128);
-            this.pictureZona.Name = "pictureZona";
-            this.pictureZona.Size = new System.Drawing.Size(130, 112);
-            this.pictureZona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureZona.TabIndex = 28;
-            this.pictureZona.TabStop = false;
+            this.usuarioImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.usuarioImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.usuarioImg.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.usuarioImg.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.usuarioImg.Location = new System.Drawing.Point(49, 128);
+            this.usuarioImg.Name = "usuarioImg";
+            this.usuarioImg.Size = new System.Drawing.Size(130, 112);
+            this.usuarioImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.usuarioImg.TabIndex = 28;
+            this.usuarioImg.TabStop = false;
             // 
             // groupBox1
             // 
@@ -642,13 +695,15 @@ namespace Pantalla_Cliente
             this.Text = "UsuariosMunicipio";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.panelUsuarios.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureZona)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioImg)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -676,7 +731,7 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureZona;
+        private System.Windows.Forms.PictureBox usuarioImg;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox nombre_mostrar;
         private System.Windows.Forms.TextBox id_mostrar;
@@ -704,5 +759,9 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panelUsuarios;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button buttonAceptar;
+        private System.Windows.Forms.CheckBox filtro_mod;
+        private System.Windows.Forms.CheckBox filtro_admin;
     }
 }

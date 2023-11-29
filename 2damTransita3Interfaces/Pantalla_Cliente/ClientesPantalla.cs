@@ -59,13 +59,17 @@ namespace Pantalla_Cliente
         }
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            foreach (CheckBox checkBox in groupBox1.Controls)
+            if (sender is CheckBox checkBox)
             {
-                // Si el CheckBox actual no es el que generó el evento
-                if (checkBox != sender as CheckBox)
+                if (checkBox.Checked)
                 {
-                    // Deshabilitar todos los CheckBox si el CheckBox actual está marcado
-                    checkBox.Enabled = !(sender as CheckBox).Checked;
+                    foreach (Control control in checkBox.Parent.Controls)
+                    {
+                        if (control is CheckBox otherCheckBox && !otherCheckBox.Equals(checkBox))
+                        {
+                            otherCheckBox.Checked = false;
+                        }
+                    }
                 }
             }
         }
@@ -186,12 +190,12 @@ namespace Pantalla_Cliente
         {
             if (estadoActivo.Checked)
             {
-                filtro = 0;
+                filtro = 1;
                 label_tipoclientes.Text = "Clientes Activados";
             }
             else if (estadoDesactivado.Checked)
             {
-                filtro = 1;
+                filtro = 0;
                 label_tipoclientes.Text = "Clientes Desactivados";
             }
             else {
@@ -214,7 +218,6 @@ namespace Pantalla_Cliente
             
             task.ContinueWith(t =>
             {
-                // This part will be executed when modifyUser completes, but won't block the UI
                 Form formularioPadre = this.Owner;
 
                 if (formularioPadre != null)

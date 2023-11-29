@@ -57,9 +57,8 @@ namespace Pantalla_Cliente
             this.btn_zonas = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.panel_central = new System.Windows.Forms.Panel();
+            this.label_tipoclientes = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.estadoDesactivado = new System.Windows.Forms.RadioButton();
-            this.estadoActivo = new System.Windows.Forms.RadioButton();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.panelClientes = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -73,7 +72,8 @@ namespace Pantalla_Cliente
             this.filtroClientes_btn = new System.Windows.Forms.Button();
             this.clientesLabel = new System.Windows.Forms.Label();
             this.fondoGrisMid = new System.Windows.Forms.Label();
-            this.label_tipoclientes = new System.Windows.Forms.Label();
+            this.estadoActivo = new System.Windows.Forms.CheckBox();
+            this.estadoDesactivado = new System.Windows.Forms.CheckBox();
             this.panel_derecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteImg)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -445,6 +445,17 @@ namespace Pantalla_Cliente
             this.panel_central.TabIndex = 32;
             this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_central_Paint);
             // 
+            // label_tipoclientes
+            // 
+            this.label_tipoclientes.AutoSize = true;
+            this.label_tipoclientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tipoclientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_tipoclientes.Location = new System.Drawing.Point(29, 128);
+            this.label_tipoclientes.Name = "label_tipoclientes";
+            this.label_tipoclientes.Size = new System.Drawing.Size(208, 25);
+            this.label_tipoclientes.TabIndex = 35;
+            this.label_tipoclientes.Text = "Todos los Clientes";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.estadoDesactivado);
@@ -459,28 +470,6 @@ namespace Pantalla_Cliente
             this.groupBox1.Text = "Filtros";
             this.groupBox1.Visible = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // estadoDesactivado
-            // 
-            this.estadoDesactivado.AutoSize = true;
-            this.estadoDesactivado.Location = new System.Drawing.Point(25, 54);
-            this.estadoDesactivado.Name = "estadoDesactivado";
-            this.estadoDesactivado.Size = new System.Drawing.Size(85, 17);
-            this.estadoDesactivado.TabIndex = 6;
-            this.estadoDesactivado.TabStop = true;
-            this.estadoDesactivado.Text = "Desactivado";
-            this.estadoDesactivado.UseVisualStyleBackColor = true;
-            // 
-            // estadoActivo
-            // 
-            this.estadoActivo.AutoSize = true;
-            this.estadoActivo.Location = new System.Drawing.Point(25, 31);
-            this.estadoActivo.Name = "estadoActivo";
-            this.estadoActivo.Size = new System.Drawing.Size(67, 17);
-            this.estadoActivo.TabIndex = 5;
-            this.estadoActivo.TabStop = true;
-            this.estadoActivo.Text = "Activado";
-            this.estadoActivo.UseVisualStyleBackColor = true;
             // 
             // buttonAceptar
             // 
@@ -644,16 +633,27 @@ namespace Pantalla_Cliente
             this.fondoGrisMid.Size = new System.Drawing.Size(1064, 681);
             this.fondoGrisMid.TabIndex = 9;
             // 
-            // label_tipoclientes
+            // estadoActivo
             // 
-            this.label_tipoclientes.AutoSize = true;
-            this.label_tipoclientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tipoclientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_tipoclientes.Location = new System.Drawing.Point(29, 128);
-            this.label_tipoclientes.Name = "label_tipoclientes";
-            this.label_tipoclientes.Size = new System.Drawing.Size(208, 25);
-            this.label_tipoclientes.TabIndex = 35;
-            this.label_tipoclientes.Text = "Todos los Clientes";
+            this.estadoActivo.AutoSize = true;
+            this.estadoActivo.Location = new System.Drawing.Point(25, 24);
+            this.estadoActivo.Name = "estadoActivo";
+            this.estadoActivo.Size = new System.Drawing.Size(68, 17);
+            this.estadoActivo.TabIndex = 7;
+            this.estadoActivo.Text = "Activado";
+            this.estadoActivo.UseVisualStyleBackColor = true;
+            this.estadoActivo.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // estadoDesactivado
+            // 
+            this.estadoDesactivado.AutoSize = true;
+            this.estadoDesactivado.Location = new System.Drawing.Point(25, 56);
+            this.estadoDesactivado.Name = "estadoDesactivado";
+            this.estadoDesactivado.Size = new System.Drawing.Size(86, 17);
+            this.estadoDesactivado.TabIndex = 8;
+            this.estadoDesactivado.Text = "Desactivado";
+            this.estadoDesactivado.UseVisualStyleBackColor = true;
+            this.estadoDesactivado.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // Cliente_Pantalla
             // 
@@ -737,9 +737,9 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Panel panelClientes;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonAceptar;
-        private System.Windows.Forms.RadioButton estadoDesactivado;
-        private System.Windows.Forms.RadioButton estadoActivo;
         private System.Windows.Forms.Label label_tipoclientes;
+        private System.Windows.Forms.CheckBox estadoDesactivado;
+        private System.Windows.Forms.CheckBox estadoActivo;
     }
 }
 
