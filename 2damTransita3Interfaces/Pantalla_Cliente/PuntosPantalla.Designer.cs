@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PuntosPantalla));
             this.panel_central = new System.Windows.Forms.Panel();
+            this.adelanteBtn = new System.Windows.Forms.Label();
+            this.atrasBtn = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupVisibilidad = new System.Windows.Forms.GroupBox();
             this.filtro_oculto = new System.Windows.Forms.CheckBox();
@@ -87,6 +89,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.descripcionPunto_mostrar = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
+            this.paginas = new System.Windows.Forms.Label();
             this.panel_central.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupVisibilidad.SuspendLayout();
@@ -108,6 +111,9 @@
             // panel_central
             // 
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel_central.Controls.Add(this.paginas);
+            this.panel_central.Controls.Add(this.adelanteBtn);
+            this.panel_central.Controls.Add(this.atrasBtn);
             this.panel_central.Controls.Add(this.groupBox1);
             this.panel_central.Controls.Add(this.label16);
             this.panel_central.Controls.Add(this.btn_addPunto);
@@ -120,6 +126,26 @@
             this.panel_central.Name = "panel_central";
             this.panel_central.Size = new System.Drawing.Size(557, 681);
             this.panel_central.TabIndex = 35;
+            // 
+            // adelanteBtn
+            // 
+            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
+            this.adelanteBtn.Location = new System.Drawing.Point(450, 611);
+            this.adelanteBtn.Name = "adelanteBtn";
+            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
+            this.adelanteBtn.TabIndex = 38;
+            this.adelanteBtn.Click += new System.EventHandler(this.adelanteBtn_Click);
+            // 
+            // atrasBtn
+            // 
+            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
+            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Location = new System.Drawing.Point(57, 611);
+            this.atrasBtn.Name = "atrasBtn";
+            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
+            this.atrasBtn.TabIndex = 37;
+            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
             // 
             // groupBox1
             // 
@@ -823,6 +849,14 @@
             this.nombre.TabIndex = 23;
             this.nombre.Text = "Datos del Punto";
             // 
+            // paginas
+            // 
+            this.paginas.ForeColor = System.Drawing.Color.White;
+            this.paginas.Location = new System.Drawing.Point(254, 635);
+            this.paginas.Name = "paginas";
+            this.paginas.Size = new System.Drawing.Size(100, 23);
+            this.paginas.TabIndex = 39;
+            // 
             // PuntosPantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -923,5 +957,8 @@
         private System.Windows.Forms.CheckBox filtro_accesible;
         private System.Windows.Forms.CheckBox filtro_lugar;
         private System.Windows.Forms.CheckBox filtro_acceso;
+        private System.Windows.Forms.Label atrasBtn;
+        private System.Windows.Forms.Label adelanteBtn;
+        private System.Windows.Forms.Label paginas;
     }
 }

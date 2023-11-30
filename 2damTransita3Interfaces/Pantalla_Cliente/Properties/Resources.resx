@@ -118,11 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="estrellaAmarilla-fotor-bg-remover-20231021185036" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estrellaAmarilla-fotor-bg-remover-20231021185036.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Villajoyosa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Villajoyosa.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settingIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settingIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeaderIESMARCOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeaderIESMARCOS.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-menú-2-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-menú-2-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,8 +142,8 @@
   <data name="IesMarcoZaragoza-fotor-bg-remover-2023110121283" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IesMarcoZaragoza-fotor-bg-remover-2023110121283.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menu (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="descarga1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descarga1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,17 +154,14 @@
   <data name="suma" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\suma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HeaderIESMARCOS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HeaderIESMARCOS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="descarga" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descarga.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Jugador" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Jugador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HeaderIESMARCOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HeaderIESMARCOS.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HeaderIESMARCOS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeaderIESMARCOS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CasasColores" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CasasColores.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,10 +169,13 @@
   <data name="HeaderIESMARCOS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HeaderIESMARCOS1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="estrellaAmarilla-fotor-bg-remover-20231021185036" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\estrellaAmarilla-fotor-bg-remover-20231021185036.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="atras" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\atras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delante" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delante.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

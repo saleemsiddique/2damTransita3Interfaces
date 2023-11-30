@@ -13,6 +13,8 @@ namespace Pantalla_Cliente
         public static string incidencia = "incidencias";
         public static string zona = "zonas";
         public static string punto = "puntos";
+        public static string puntoIncial = "puntos/inicial";
+        public static string numeroPuntos = "puntos/count";
         public static string modifyClienteEstado = "api/auth/cliente/modificarEstado/";
         public static string servidorImagenes = "127.0.0.1/img/imagenes/punto/";
         public static string incidenciaEnviada = "incidencia/estado/0";

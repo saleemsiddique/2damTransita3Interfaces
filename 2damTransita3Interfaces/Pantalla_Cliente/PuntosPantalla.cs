@@ -18,6 +18,11 @@ namespace Pantalla_Cliente
         private string filtroAccesibilidad = "%20";
         private string filtroVisibilidad = "%20";
         private List<Punto> listaPuntos;
+        private int idInicial;
+        private int idFinal;
+        private int idPrincipio;
+        private int paginasTotales;
+        private int paginaActual = 1;
 
         public PuntosPantalla()
         {
@@ -31,12 +36,28 @@ namespace Pantalla_Cliente
             btn_filtrar.FlatAppearance.BorderSize = 0;
         }
 
+        private async Task obtenerIdInicialyFinal() {
+            idInicial = await puntoService.GetIdInicial();
+            idFinal = idInicial + 3;
+            paginasTotales = await puntoService.GetNumeroPuntos();
+            paginasTotales = paginasTotales / 4;
+            paginas.Text = paginaActual + "/" + paginasTotales;
+        }
+
         private async Task obtenerPuntos(string filtroTipo, string filtroAccesibilidad, string filtroVisibilidad)
         {
-
-            listaPuntos = await puntoService.GetPuntosAsync(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
+            await obtenerIdInicialyFinal();
+ 
+            idPrincipio = idInicial;
+            listaPuntos = await puntoService.GetPuntos(idInicial, idFinal);
             CrearPanelesPuntos(listaPuntos);
+        }
 
+        private async Task obtenerPuntosRefresh() {
+            paginas.Text = paginaActual + "/" + paginasTotales;
+            idPrincipio = idInicial;
+            listaPuntos = await puntoService.GetPuntos(idInicial, idFinal);
+            CrearPanelesPuntos(listaPuntos);
         }
         private void CrearPanelesPuntos(List<Punto> listaPuntos)
         {
@@ -211,7 +232,7 @@ namespace Pantalla_Cliente
             tipopunto_mostrar.Text = "";
             visibilidadpunto_mostar.Text = "";
 
-            Task task = obtenerPuntos(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
+            Task task = puntoService.GetPuntosAsync(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
             task.ContinueWith(t =>
             {
                 Form formularioPadre = this.Owner;
@@ -235,6 +256,32 @@ namespace Pantalla_Cliente
             {
                 panelPuntos.Controls.Remove(control);
                 control.Dispose();
+            }
+        }
+
+        private async void adelanteBtn_Click(object sender, EventArgs e)
+        {
+            if (paginaActual < paginasTotales) {
+                limpiarVisualizacion();
+                idInicial += 4;
+                idFinal = idInicial + 3;
+                paginaActual++;
+                await obtenerPuntosRefresh();
+            }
+        }
+
+        private async void atrasBtn_Click(object sender, EventArgs e)
+        {
+
+            if (paginaActual > 1) {
+                if (idInicial >= idPrincipio)
+                {
+                    limpiarVisualizacion();
+                    idInicial -= 4;
+                    idFinal = idInicial + 3;
+                    paginaActual--;
+                    await obtenerPuntosRefresh();
+                }
             }
         }
     }

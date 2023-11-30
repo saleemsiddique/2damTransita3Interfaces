@@ -424,6 +424,8 @@
     <None Include="Resources\HeaderIESMARCOS1.jpeg" />
     <None Include="Resources\HeaderIESMARCOS.jpg" />
     <None Include="Resources\loading.gif" />
+    <None Include="Resources\atras.png" />
+    <None Include="Resources\delante.png" />
     <Content Include="Resources\menu %281%29.png" />
     <None Include="Resources\paisaje.jpeg" />
     <None Include="Resources\Villajoyosa.jpeg" />
