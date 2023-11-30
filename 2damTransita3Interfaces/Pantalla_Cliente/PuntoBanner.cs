@@ -41,24 +41,24 @@ namespace Pantalla_Cliente
         }
         private async void EliminarToolStripMenuItem_ClickAsync(object sender, EventArgs e)
         {
-            /*DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas borrar esta incidencia?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas borrar esta incidencia?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
                 Console.WriteLine("metodo eliminar ha sido activado");
-                String id = this.idIncidencia.Text;
-                String url = Program.rutaBase + "incidencia/eliminar/" + id;
+                String id = this.idPunto.Text;
+                String url = Program.rutaBase + "punto/eliminar/" + id;
                 string response = await ApiClient.GetRequestAsync("DELETE", url, Program.token);
 
-                Console.WriteLine(response);
+                
                 Form formularioPadre = this.FindForm();
                 Transita formularioTransita = (Transita)formularioPadre.FindForm();
                 if (formularioTransita != null)
                 {
                     Console.WriteLine("No es null");
-                    formularioTransita.MostrarPanelDeIncidencia();
+                    formularioTransita.MostrarPanelDePunto();
                 }
-            }*/
+            }
         }
 
         private void EditarToolStripMenuItem_Click(object sender, EventArgs e)
