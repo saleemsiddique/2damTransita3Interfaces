@@ -37,7 +37,7 @@ namespace Pantalla_Cliente
         }
 
         private async Task obtenerIdInicialyFinal() {
-            idInicial = await puntoService.GetIdInicial();
+            idInicial = 1;//await puntoService.GetIdInicial();
             idFinal = idInicial + 3;
             paginasTotales = await puntoService.GetNumeroPuntos();
             if (paginasTotales % 4 != 0) { 
