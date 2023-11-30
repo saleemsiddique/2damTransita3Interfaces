@@ -40,7 +40,14 @@ namespace Pantalla_Cliente
             idInicial = await puntoService.GetIdInicial();
             idFinal = idInicial + 3;
             paginasTotales = await puntoService.GetNumeroPuntos();
-            paginasTotales = paginasTotales / 4;
+            if (paginasTotales % 4 != 0) { 
+                paginasTotales = paginasTotales / 4; 
+                paginasTotales++; } 
+            else {
+                paginasTotales = paginasTotales / 4;
+            }
+
+
             paginas.Text = paginaActual + "/" + paginasTotales;
         }
 
