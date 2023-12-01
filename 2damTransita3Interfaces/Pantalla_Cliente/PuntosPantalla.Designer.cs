@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PuntosPantalla));
             this.panel_central = new System.Windows.Forms.Panel();
-            this.adelanteBtn = new System.Windows.Forms.Label();
-            this.atrasBtn = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupVisibilidad = new System.Windows.Forms.GroupBox();
             this.filtro_oculto = new System.Windows.Forms.CheckBox();
@@ -47,8 +45,11 @@
             this.filtro_acceso = new System.Windows.Forms.CheckBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.atrasBtn = new System.Windows.Forms.Label();
+            this.adelanteBtn = new System.Windows.Forms.Label();
             this.btn_addPunto = new System.Windows.Forms.Button();
             this.panelPuntos = new System.Windows.Forms.Panel();
+            this.paginas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -89,7 +90,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.descripcionPunto_mostrar = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
-            this.paginas = new System.Windows.Forms.Label();
             this.panel_central.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupVisibilidad.SuspendLayout();
@@ -111,12 +111,11 @@
             // panel_central
             // 
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.panel_central.Controls.Add(this.paginas);
-            this.panel_central.Controls.Add(this.adelanteBtn);
-            this.panel_central.Controls.Add(this.atrasBtn);
             this.panel_central.Controls.Add(this.groupBox1);
             this.panel_central.Controls.Add(this.label16);
+            this.panel_central.Controls.Add(this.adelanteBtn);
             this.panel_central.Controls.Add(this.btn_addPunto);
+            this.panel_central.Controls.Add(this.atrasBtn);
             this.panel_central.Controls.Add(this.panelPuntos);
             this.panel_central.Controls.Add(this.buscarTextBox);
             this.panel_central.Controls.Add(this.btn_filtrar);
@@ -126,26 +125,6 @@
             this.panel_central.Name = "panel_central";
             this.panel_central.Size = new System.Drawing.Size(557, 681);
             this.panel_central.TabIndex = 35;
-            // 
-            // adelanteBtn
-            // 
-            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
-            this.adelanteBtn.Location = new System.Drawing.Point(450, 611);
-            this.adelanteBtn.Name = "adelanteBtn";
-            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
-            this.adelanteBtn.TabIndex = 38;
-            this.adelanteBtn.Click += new System.EventHandler(this.adelanteBtn_Click);
-            // 
-            // atrasBtn
-            // 
-            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
-            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
-            this.atrasBtn.Location = new System.Drawing.Point(57, 611);
-            this.atrasBtn.Name = "atrasBtn";
-            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
-            this.atrasBtn.TabIndex = 37;
-            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
             // 
             // groupBox1
             // 
@@ -311,12 +290,32 @@
             this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(41, 152);
+            this.label16.Location = new System.Drawing.Point(45, 145);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(90, 17);
             this.label16.TabIndex = 35;
             this.label16.Text = "Añadir Punto";
+            // 
+            // atrasBtn
+            // 
+            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
+            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
+            this.atrasBtn.Name = "atrasBtn";
+            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
+            this.atrasBtn.TabIndex = 37;
+            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
+            // 
+            // adelanteBtn
+            // 
+            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
+            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
+            this.adelanteBtn.Name = "adelanteBtn";
+            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
+            this.adelanteBtn.TabIndex = 38;
+            this.adelanteBtn.Click += new System.EventHandler(this.adelanteBtn_Click);
             // 
             // btn_addPunto
             // 
@@ -325,7 +324,7 @@
             this.btn_addPunto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_addPunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addPunto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_addPunto.Location = new System.Drawing.Point(141, 144);
+            this.btn_addPunto.Location = new System.Drawing.Point(145, 137);
             this.btn_addPunto.Name = "btn_addPunto";
             this.btn_addPunto.Size = new System.Drawing.Size(30, 30);
             this.btn_addPunto.TabIndex = 34;
@@ -336,11 +335,20 @@
             // panelPuntos
             // 
             this.panelPuntos.AutoScroll = true;
+            this.panelPuntos.Controls.Add(this.paginas);
             this.panelPuntos.Controls.Add(this.panel2);
-            this.panelPuntos.Location = new System.Drawing.Point(32, 207);
+            this.panelPuntos.Location = new System.Drawing.Point(36, 182);
             this.panelPuntos.Name = "panelPuntos";
             this.panelPuntos.Size = new System.Drawing.Size(495, 413);
             this.panelPuntos.TabIndex = 33;
+            // 
+            // paginas
+            // 
+            this.paginas.ForeColor = System.Drawing.Color.White;
+            this.paginas.Location = new System.Drawing.Point(219, 386);
+            this.paginas.Name = "paginas";
+            this.paginas.Size = new System.Drawing.Size(100, 23);
+            this.paginas.TabIndex = 39;
             // 
             // panel2
             // 
@@ -465,7 +473,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(20, 85);
+            this.label1.Location = new System.Drawing.Point(21, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 25);
             this.label1.TabIndex = 19;
@@ -687,7 +695,7 @@
             this.puntoImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.puntoImg.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.puntoImg.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.puntoImg.Location = new System.Drawing.Point(51, 103);
+            this.puntoImg.Location = new System.Drawing.Point(51, 78);
             this.puntoImg.Name = "puntoImg";
             this.puntoImg.Size = new System.Drawing.Size(130, 112);
             this.puntoImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -712,7 +720,7 @@
             this.groupBox2.Controls.Add(this.descripcionPunto_mostrar);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(28, 280);
+            this.groupBox2.Location = new System.Drawing.Point(28, 255);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(177, 340);
             this.groupBox2.TabIndex = 26;
@@ -842,25 +850,19 @@
             this.nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre.ForeColor = System.Drawing.Color.White;
-            this.nombre.Location = new System.Drawing.Point(52, 234);
+            this.nombre.Location = new System.Drawing.Point(52, 209);
             this.nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nombre.Name = "nombre";
             this.nombre.Size = new System.Drawing.Size(123, 20);
             this.nombre.TabIndex = 23;
             this.nombre.Text = "Datos del Punto";
             // 
-            // paginas
-            // 
-            this.paginas.ForeColor = System.Drawing.Color.White;
-            this.paginas.Location = new System.Drawing.Point(254, 635);
-            this.paginas.Name = "paginas";
-            this.paginas.Size = new System.Drawing.Size(100, 23);
-            this.paginas.TabIndex = 39;
-            // 
             // PuntosPantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1064, 681);
             this.Controls.Add(this.panel_central);
             this.Controls.Add(this.panel1);

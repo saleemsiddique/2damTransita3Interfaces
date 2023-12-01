@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,50 +24,75 @@ namespace Pantalla_Cliente
         public PuntosPantalla()
         {
             InitializeComponent();
-            obtenerPuntos(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
             this.BackColor = Color.Red;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
 
             btn_filtrar.FlatStyle = FlatStyle.Flat;
             btn_filtrar.FlatAppearance.BorderSize = 0;
+
+            // Asigna el evento al botón Aceptar
+            buttonAceptar.Click += buttonAceptar_Click;
+
+            // Asigna el evento al botón Filtrar
+            btn_filtrar.Click += btn_filtrar_Click;
+
+            // Inicializa la obtención de puntos
+            ObtenerPuntos(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
         }
 
-        private async Task obtenerIdInicialyFinal() {
-            idInicial = 1;//await puntoService.GetIdInicial();
+        public Panel ObtenerPanelCentralPunto()
+        {
+            return panel_central;
+        }
+
+        public Panel ObtenerPanelDerechaPunto()
+        {
+            return panel_derecha;
+        }
+
+        private async void ObtenerPuntos(string filtroTipo, string filtroAccesibilidad, string filtroVisibilidad)
+        {
+            await ObtenerIdInicialYFinal();
+
+            idPrincipio = idInicial;
+            listaPuntos = await puntoService.GetPuntosAsync(filtroTipo, filtroAccesibilidad, filtroVisibilidad, idInicial, idFinal);
+            CrearPanelesPuntos(listaPuntos);
+        }
+
+        private async Task ObtenerIdInicialYFinal()
+        {
+            idInicial = 1;
             idFinal = idInicial + 3;
             paginasTotales = await puntoService.GetNumeroPuntos();
-            if (paginasTotales % 4 != 0) { 
-                paginasTotales = paginasTotales / 4; 
-                paginasTotales++; } 
-            else {
+
+            if (paginasTotales % 4 != 0)
+            {
+                paginasTotales = paginasTotales / 4;
+                paginasTotales++;
+            }
+            else
+            {
                 paginasTotales = paginasTotales / 4;
             }
 
-
             paginas.Text = paginaActual + "/" + paginasTotales;
         }
 
-        private async Task obtenerPuntos(string filtroTipo, string filtroAccesibilidad, string filtroVisibilidad)
+        private async Task ObtenerPuntosRefresh()
         {
-            await obtenerIdInicialyFinal();
- 
+            paginas.Text = paginaActual + "/" + paginasTotales;
             idPrincipio = idInicial;
-            listaPuntos = await puntoService.GetPuntos(idInicial, idFinal);
+            listaPuntos = await puntoService.GetPuntosAsync(filtroTipo, filtroAccesibilidad, filtroVisibilidad, idInicial, idFinal);
             CrearPanelesPuntos(listaPuntos);
         }
 
-        private async Task obtenerPuntosRefresh() {
-            paginas.Text = paginaActual + "/" + paginasTotales;
-            idPrincipio = idInicial;
-            listaPuntos = await puntoService.GetPuntos(idInicial, idFinal);
-            CrearPanelesPuntos(listaPuntos);
-        }
         private void CrearPanelesPuntos(List<Punto> listaPuntos)
         {
-
             foreach (Punto punto in listaPuntos)
-            { Console.WriteLine(punto.ToString()); }
+            {
+                Console.WriteLine(punto.ToString());
+            }
 
             int topPosition = 0;
 
@@ -83,8 +105,6 @@ namespace Pantalla_Cliente
 
                 puntoBanner.getViewBtn().Click += (sender, e) =>
                 {
-                    //idPunto.Text = $"ID: {punto.id}";
-                    //nombre.Text = incidencia.descripcion;
                     id_mostrar.Text = punto.id.ToString();
                     puntoDescripcion_mostrar.Text = punto.descripcion;
                     latitud_mostrar.Text = punto.latitud.ToString();
@@ -94,42 +114,48 @@ namespace Pantalla_Cliente
                     visibilidadpunto_mostar.Text = punto.visibilidadPunto.ToString();
                 };
 
-
-                // Configura la ubicación y otros detalles según sea necesario
-                puntoBanner.Location = new Point(0, topPosition); // Personaliza la ubicación
-                topPosition += puntoBanner.Height + 30; // Ajusta el espaciado vertical según sea necesario
-                //incidenciaBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
+                puntoBanner.Location = new Point(0, topPosition);
+                topPosition += puntoBanner.Height + 30;
                 puntoBanner.Show();
-                // Agrega el control al formulario principal
                 panelPuntos.Controls.Add(puntoBanner);
             }
         }
-        public Panel ObtenerPanelCentralPunto()
+
+        private async void adelanteBtn_Click(object sender, EventArgs e)
         {
-            return panel_central;
+            if (paginaActual < paginasTotales)
+            {
+                LimpiarVisualizacion();
+                idInicial += 4;
+                idFinal = idInicial + 3;
+                paginaActual++;
+                await ObtenerPuntosRefresh();
+            }
         }
 
-        public Panel ObtenerPanelDerechaPunto()
+        private async void atrasBtn_Click(object sender, EventArgs e)
         {
-            return panel_derecha;
+            if (paginaActual > 1)
+            {
+                if (idInicial >= idPrincipio)
+                {
+                    LimpiarVisualizacion();
+                    idInicial -= 4;
+                    idFinal = idInicial + 3;
+                    paginaActual--;
+                    await ObtenerPuntosRefresh();
+                }
+            }
         }
 
-        private void panel_central_Paint(object sender, PaintEventArgs e)
+        private void LimpiarVisualizacion()
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void btn_addPunto_Click_1(object sender, EventArgs e)
-        {
-            CrearPunto punto = new CrearPunto();
-            punto.Owner = this;
-            punto.ShowDialog();
+            listaPuntos.Clear();
+            foreach (Control control in panelPuntos.Controls.OfType<PuntoBanner>().ToList())
+            {
+                panelPuntos.Controls.Remove(control);
+                control.Dispose();
+            }
         }
 
         private void btn_filtrar_Click(object sender, EventArgs e)
@@ -144,6 +170,13 @@ namespace Pantalla_Cliente
                 groupBox1.Visible = true;
                 esVisible = true;
             }
+        }
+
+        private void btn_addPunto_Click_1(object sender, EventArgs e)
+        {
+            CrearPunto punto = new CrearPunto();
+            punto.Owner = this;
+            punto.ShowDialog();
         }
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
@@ -163,7 +196,7 @@ namespace Pantalla_Cliente
             }
         }
 
-        private void buttonAceptar_Click(object sender, EventArgs e)
+        private async void buttonAceptar_Click(object sender, EventArgs e)
         {
             if (filtro_acceso.Checked)
             {
@@ -193,7 +226,7 @@ namespace Pantalla_Cliente
             else if (filtro_parcialmenteAccesible.Checked)
             {
                 filtroAccesibilidad = "PARCIALMENTE_ACCESIBLE";
-                Console.WriteLine("PARICAL");
+                Console.WriteLine("PARCIAL");
             }
             else
             {
@@ -225,12 +258,10 @@ namespace Pantalla_Cliente
                 filtroVisibilidad = "%20";
             }
 
-
-            limpiarVisualizacion();
+            LimpiarVisualizacion();
             groupBox1.Visible = false;
             esVisible = false;
-            puntoImg = null;
-            nombre.Text = "";
+
             id_mostrar.Text = "";
             descripcionPunto_mostrar.Text = "";
             latitud_mostrar.Text = "";
@@ -239,57 +270,7 @@ namespace Pantalla_Cliente
             tipopunto_mostrar.Text = "";
             visibilidadpunto_mostar.Text = "";
 
-            Task task = puntoService.GetPuntosAsync(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
-            task.ContinueWith(t =>
-            {
-                Form formularioPadre = this.Owner;
-
-                if (formularioPadre != null)
-                {
-                    if (formularioPadre is Transita)
-                    {
-                        Transita formularioTransita = (Transita)formularioPadre;
-                        formularioTransita.MostrarPanelDePunto();
-                        this.Close();
-                    }
-                }
-            }, TaskScheduler.FromCurrentSynchronizationContext());
-        }
-
-        private void limpiarVisualizacion()
-        {
-            listaPuntos.Clear();
-            foreach (Control control in panelPuntos.Controls.OfType<PuntoBanner>().ToList())
-            {
-                panelPuntos.Controls.Remove(control);
-                control.Dispose();
-            }
-        }
-
-        private async void adelanteBtn_Click(object sender, EventArgs e)
-        {
-            if (paginaActual < paginasTotales) {
-                limpiarVisualizacion();
-                idInicial += 4;
-                idFinal = idInicial + 3;
-                paginaActual++;
-                await obtenerPuntosRefresh();
-            }
-        }
-
-        private async void atrasBtn_Click(object sender, EventArgs e)
-        {
-
-            if (paginaActual > 1) {
-                if (idInicial >= idPrincipio)
-                {
-                    limpiarVisualizacion();
-                    idInicial -= 4;
-                    idFinal = idInicial + 3;
-                    paginaActual--;
-                    await obtenerPuntosRefresh();
-                }
-            }
+            await ObtenerPuntosRefresh();
         }
     }
 }

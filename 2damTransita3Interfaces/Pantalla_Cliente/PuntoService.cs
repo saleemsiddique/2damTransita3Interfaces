@@ -10,14 +10,11 @@ namespace Pantalla_Cliente
 {
     internal class PuntoService
     {
-        public async Task<List<Punto>> GetPuntosAsync(string tipo, string accesibilidad, string visibilidad)
+        public async Task<List<Punto>> GetPuntosAsync(string tipoPunto, string accesibilidadPunto, string visibilidadPunto, int idInicial, int idFinal)
         {
-            
-            String url = Program.rutaBase + Rutas.punto + "/tipo/" + tipo + "/accesibilidad/" + accesibilidad + "/visibilidad/" + visibilidad ;
-            Console.WriteLine("\n\n\n url");
+            string url = $"{Program.rutaBase}{Rutas.punto}/filtrados?tipoPunto={tipoPunto}&accesibilidadPunto={accesibilidadPunto}&visibilidadPunto={visibilidadPunto}&idInicial={idInicial}&idFinal={idFinal}";
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             List<Punto> listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
-
             return listaPuntos;
         }
 
