@@ -58,7 +58,7 @@ namespace Pantalla_Cliente
             this.btn_cancelarIncidencia.Location = new System.Drawing.Point(116, 552);
             this.btn_cancelarIncidencia.Name = "btn_cancelarIncidencia";
             this.btn_cancelarIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelarIncidencia.TabIndex = 44;
+            this.btn_cancelarIncidencia.TabIndex = 6;
             this.btn_cancelarIncidencia.Text = "Cancelar";
             this.btn_cancelarIncidencia.UseVisualStyleBackColor = true;
             this.btn_cancelarIncidencia.Click += new System.EventHandler(this.btn_cancelarIncidencia_Click);
@@ -69,7 +69,7 @@ namespace Pantalla_Cliente
             this.btn_AceptarUsuarioMuni.Location = new System.Drawing.Point(283, 552);
             this.btn_AceptarUsuarioMuni.Name = "btn_AceptarUsuarioMuni";
             this.btn_AceptarUsuarioMuni.Size = new System.Drawing.Size(75, 23);
-            this.btn_AceptarUsuarioMuni.TabIndex = 43;
+            this.btn_AceptarUsuarioMuni.TabIndex = 7;
             this.btn_AceptarUsuarioMuni.Text = "Aceptar";
             this.btn_AceptarUsuarioMuni.UseVisualStyleBackColor = true;
             this.btn_AceptarUsuarioMuni.Click += new System.EventHandler(this.btn_AceptarUsuarioMuni_Click);
@@ -225,7 +225,7 @@ namespace Pantalla_Cliente
             this.rol_input.Location = new System.Drawing.Point(144, 471);
             this.rol_input.Name = "rol_input";
             this.rol_input.Size = new System.Drawing.Size(198, 21);
-            this.rol_input.TabIndex = 53;
+            this.rol_input.TabIndex = 5;
             // 
             // confirmarNombreUsuario
             // 

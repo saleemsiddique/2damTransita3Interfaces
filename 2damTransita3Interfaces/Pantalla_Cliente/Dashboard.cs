@@ -16,6 +16,7 @@ namespace Pantalla_Cliente
 
         private Button[] buttons;
         private Button currentButton;
+        static PuntosPantalla puntosPantalla;
 
         public Transita()
         {
@@ -167,7 +168,7 @@ namespace Pantalla_Cliente
         }
         public void MostrarPanelDePunto()
         {
-            PuntosPantalla puntosPantalla = new PuntosPantalla();
+            puntosPantalla = new PuntosPantalla();
             Panel panelCentralPunto = puntosPantalla.ObtenerPanelCentralPunto();
             Panel panelDerechaPunto = puntosPantalla.ObtenerPanelDerechaPunto();
 
@@ -185,6 +186,7 @@ namespace Pantalla_Cliente
 
             pictureBox2.Show();
         }
+
         private void ToggleButton_Click(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;

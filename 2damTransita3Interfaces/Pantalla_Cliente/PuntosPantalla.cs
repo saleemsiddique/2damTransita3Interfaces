@@ -11,9 +11,13 @@ namespace Pantalla_Cliente
     {
         private PuntoService puntoService = new PuntoService();
         private bool esVisible = false;
-        private string filtroTipo = "%20";
-        private string filtroAccesibilidad = "%20";
-        private string filtroVisibilidad = "%20";
+        private string filtroTipo = "";
+        private string filtroAccesibilidad = "";
+        private string filtroVisibilidad = "";
+        public string filtroTipoActual = "";
+        public string filtroAccesibilidadActual = "";
+        public string filtroVisibilidadActual = "";
+        private int paginasTotalesActual;
         private List<Punto> listaPuntos;
         private int idInicial;
         private int idFinal;
@@ -51,8 +55,13 @@ namespace Pantalla_Cliente
             return panel_derecha;
         }
 
-        private async void ObtenerPuntos(string filtroTipo, string filtroAccesibilidad, string filtroVisibilidad)
+        public async void ObtenerPuntos(string filtroTipo, string filtroAccesibilidad, string filtroVisibilidad)
         {
+
+            filtroTipoActual = filtroTipo;
+            filtroAccesibilidadActual = filtroAccesibilidad;
+            filtroVisibilidadActual = filtroVisibilidad;
+
             await ObtenerIdInicialYFinal();
 
             idPrincipio = idInicial;
@@ -64,24 +73,39 @@ namespace Pantalla_Cliente
         {
             idInicial = 1;
             idFinal = idInicial + 3;
-            paginasTotales = await puntoService.GetNumeroPuntos();
+            paginasTotalesActual = await puntoService.GetNumeroPuntosConFiltros(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
 
-            if (paginasTotales % 4 != 0)
+            if (paginasTotalesActual % 4 != 0)
             {
-                paginasTotales = paginasTotales / 4;
-                paginasTotales++;
+                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual++;
             }
             else
             {
-                paginasTotales = paginasTotales / 4;
+                paginasTotalesActual = paginasTotalesActual / 4;
             }
 
-            paginas.Text = paginaActual + "/" + paginasTotales;
+            if (paginasTotalesActual != 0)
+            {
+                paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            }
+            else
+            {
+                paginas.Text = 0 + "/" + paginasTotalesActual;
+            }
         }
 
-        private async Task ObtenerPuntosRefresh()
+        public async Task ObtenerPuntosRefresh()
         {
-            paginas.Text = paginaActual + "/" + paginasTotales;
+            await ObtenerIdInicialYFinal();
+            idPrincipio = idInicial;
+            listaPuntos = await puntoService.GetPuntosAsync(filtroTipo, filtroAccesibilidad, filtroVisibilidad, idInicial, idFinal);
+            CrearPanelesPuntos(listaPuntos);
+        }
+
+        private async Task ObtenerPuntosNextBack()
+        {
+            paginas.Text = paginaActual + "/" + paginasTotalesActual;
             idPrincipio = idInicial;
             listaPuntos = await puntoService.GetPuntosAsync(filtroTipo, filtroAccesibilidad, filtroVisibilidad, idInicial, idFinal);
             CrearPanelesPuntos(listaPuntos);
@@ -123,13 +147,13 @@ namespace Pantalla_Cliente
 
         private async void adelanteBtn_Click(object sender, EventArgs e)
         {
-            if (paginaActual < paginasTotales)
+            if (paginaActual < paginasTotalesActual)
             {
                 LimpiarVisualizacion();
                 idInicial += 4;
                 idFinal = idInicial + 3;
                 paginaActual++;
-                await ObtenerPuntosRefresh();
+                await ObtenerPuntosNextBack();
             }
         }
 
@@ -143,7 +167,7 @@ namespace Pantalla_Cliente
                     idInicial -= 4;
                     idFinal = idInicial + 3;
                     paginaActual--;
-                    await ObtenerPuntosRefresh();
+                    await ObtenerPuntosNextBack();
                 }
             }
         }
@@ -210,7 +234,7 @@ namespace Pantalla_Cliente
             }
             else
             {
-                filtroTipo = "%20";
+                filtroTipo = "";
             }
 
             if (filtro_accesible.Checked)
@@ -230,7 +254,7 @@ namespace Pantalla_Cliente
             }
             else
             {
-                filtroAccesibilidad = "%20";
+                filtroAccesibilidad = "";
             }
 
             if (filtro_global.Checked)
@@ -255,7 +279,7 @@ namespace Pantalla_Cliente
             }
             else
             {
-                filtroVisibilidad = "%20";
+                filtroVisibilidad = "";
             }
 
             LimpiarVisualizacion();
@@ -271,6 +295,11 @@ namespace Pantalla_Cliente
             visibilidadpunto_mostar.Text = "";
 
             await ObtenerPuntosRefresh();
+        }
+
+        private void btn_filtrar_Click(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

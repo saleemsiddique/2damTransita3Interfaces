@@ -45,9 +45,9 @@
             this.filtro_acceso = new System.Windows.Forms.CheckBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.atrasBtn = new System.Windows.Forms.Label();
             this.adelanteBtn = new System.Windows.Forms.Label();
             this.btn_addPunto = new System.Windows.Forms.Button();
+            this.atrasBtn = new System.Windows.Forms.Label();
             this.panelPuntos = new System.Windows.Forms.Panel();
             this.paginas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -297,16 +297,6 @@
             this.label16.TabIndex = 35;
             this.label16.Text = "Añadir Punto";
             // 
-            // atrasBtn
-            // 
-            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
-            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
-            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
-            this.atrasBtn.Name = "atrasBtn";
-            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
-            this.atrasBtn.TabIndex = 37;
-            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
-            // 
             // adelanteBtn
             // 
             this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
@@ -331,6 +321,16 @@
             this.btn_addPunto.Text = "+";
             this.btn_addPunto.UseVisualStyleBackColor = false;
             this.btn_addPunto.Click += new System.EventHandler(this.btn_addPunto_Click_1);
+            // 
+            // atrasBtn
+            // 
+            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
+            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
+            this.atrasBtn.Name = "atrasBtn";
+            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
+            this.atrasBtn.TabIndex = 37;
+            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
             // 
             // panelPuntos
             // 
@@ -465,7 +465,7 @@
             this.btn_filtrar.Size = new System.Drawing.Size(36, 36);
             this.btn_filtrar.TabIndex = 22;
             this.btn_filtrar.UseVisualStyleBackColor = false;
-            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
+            this.btn_filtrar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_filtrar_Click);
             // 
             // label1
             // 

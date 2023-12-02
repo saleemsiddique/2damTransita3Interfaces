@@ -54,7 +54,7 @@
             this.btn_cancelarPunto.Location = new System.Drawing.Point(120, 476);
             this.btn_cancelarPunto.Name = "btn_cancelarPunto";
             this.btn_cancelarPunto.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelarPunto.TabIndex = 48;
+            this.btn_cancelarPunto.TabIndex = 6;
             this.btn_cancelarPunto.Text = "Cancelar";
             this.btn_cancelarPunto.UseVisualStyleBackColor = true;
             this.btn_cancelarPunto.Click += new System.EventHandler(this.btn_cancelarPunto_Click);
@@ -65,7 +65,7 @@
             this.btn_AceptarPunto.Location = new System.Drawing.Point(296, 476);
             this.btn_AceptarPunto.Name = "btn_AceptarPunto";
             this.btn_AceptarPunto.Size = new System.Drawing.Size(75, 23);
-            this.btn_AceptarPunto.TabIndex = 47;
+            this.btn_AceptarPunto.TabIndex = 7;
             this.btn_AceptarPunto.Text = "Aceptar";
             this.btn_AceptarPunto.UseVisualStyleBackColor = true;
             this.btn_AceptarPunto.Click += new System.EventHandler(this.btn_AceptarPunto_Click);
@@ -119,7 +119,7 @@
             this.comboBoxVisibilidadPunto.Location = new System.Drawing.Point(165, 408);
             this.comboBoxVisibilidadPunto.Name = "comboBoxVisibilidadPunto";
             this.comboBoxVisibilidadPunto.Size = new System.Drawing.Size(112, 21);
-            this.comboBoxVisibilidadPunto.TabIndex = 65;
+            this.comboBoxVisibilidadPunto.TabIndex = 5;
             // 
             // tipoPunto
             // 
@@ -151,7 +151,7 @@
             this.longitudPunto_input.Margin = new System.Windows.Forms.Padding(2);
             this.longitudPunto_input.Name = "longitudPunto_input";
             this.longitudPunto_input.Size = new System.Drawing.Size(158, 20);
-            this.longitudPunto_input.TabIndex = 60;
+            this.longitudPunto_input.TabIndex = 2;
             // 
             // longitudPunto
             // 
@@ -171,7 +171,7 @@
             this.latitudPunto_input.Margin = new System.Windows.Forms.Padding(2);
             this.latitudPunto_input.Name = "latitudPunto_input";
             this.latitudPunto_input.Size = new System.Drawing.Size(158, 20);
-            this.latitudPunto_input.TabIndex = 58;
+            this.latitudPunto_input.TabIndex = 1;
             // 
             // latitudPunto
             // 
@@ -191,7 +191,7 @@
             this.puntoDescripcion_input.Margin = new System.Windows.Forms.Padding(2);
             this.puntoDescripcion_input.Name = "puntoDescripcion_input";
             this.puntoDescripcion_input.Size = new System.Drawing.Size(158, 20);
-            this.puntoDescripcion_input.TabIndex = 56;
+            this.puntoDescripcion_input.TabIndex = 0;
             // 
             // label1
             // 
@@ -216,7 +216,7 @@
             this.comboBoxAccesibilidad.Location = new System.Drawing.Point(164, 288);
             this.comboBoxAccesibilidad.Name = "comboBoxAccesibilidad";
             this.comboBoxAccesibilidad.Size = new System.Drawing.Size(112, 21);
-            this.comboBoxAccesibilidad.TabIndex = 67;
+            this.comboBoxAccesibilidad.TabIndex = 3;
             // 
             // comboBoxTipoPunto
             // 
@@ -228,7 +228,7 @@
             this.comboBoxTipoPunto.Location = new System.Drawing.Point(163, 346);
             this.comboBoxTipoPunto.Name = "comboBoxTipoPunto";
             this.comboBoxTipoPunto.Size = new System.Drawing.Size(112, 21);
-            this.comboBoxTipoPunto.TabIndex = 68;
+            this.comboBoxTipoPunto.TabIndex = 4;
             // 
             // label2
             // 

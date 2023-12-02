@@ -131,7 +131,7 @@
             this.btn_cancelarIncidencia.Location = new System.Drawing.Point(239, 505);
             this.btn_cancelarIncidencia.Name = "btn_cancelarIncidencia";
             this.btn_cancelarIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelarIncidencia.TabIndex = 7;
+            this.btn_cancelarIncidencia.TabIndex = 8;
             this.btn_cancelarIncidencia.Text = "Cancelar";
             this.btn_cancelarIncidencia.UseVisualStyleBackColor = true;
             this.btn_cancelarIncidencia.Click += new System.EventHandler(this.btn_cancelarIncidencia_Click);
@@ -142,7 +142,7 @@
             this.btn_AceptarIncidencia.Location = new System.Drawing.Point(331, 505);
             this.btn_AceptarIncidencia.Name = "btn_AceptarIncidencia";
             this.btn_AceptarIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.btn_AceptarIncidencia.TabIndex = 6;
+            this.btn_AceptarIncidencia.TabIndex = 9;
             this.btn_AceptarIncidencia.Text = "Aceptar";
             this.btn_AceptarIncidencia.UseVisualStyleBackColor = true;
             this.btn_AceptarIncidencia.Click += new System.EventHandler(this.btn_AceptarIncidencia_Click);
@@ -238,7 +238,7 @@
             this.subir_img_btn.Location = new System.Drawing.Point(247, 426);
             this.subir_img_btn.Name = "subir_img_btn";
             this.subir_img_btn.Size = new System.Drawing.Size(97, 23);
-            this.subir_img_btn.TabIndex = 74;
+            this.subir_img_btn.TabIndex = 7;
             this.subir_img_btn.Text = "SUBIR IMAGEN";
             this.subir_img_btn.UseVisualStyleBackColor = true;
             this.subir_img_btn.Click += new System.EventHandler(this.subir_img_btn_Click);
@@ -249,7 +249,7 @@
             this.nombreArchivoLabel.Location = new System.Drawing.Point(75, 426);
             this.nombreArchivoLabel.Name = "nombreArchivoLabel";
             this.nombreArchivoLabel.Size = new System.Drawing.Size(173, 23);
-            this.nombreArchivoLabel.TabIndex = 75;
+            this.nombreArchivoLabel.TabIndex = 6;
             this.nombreArchivoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CrearIncidencia

@@ -77,24 +77,24 @@ namespace Pantalla_Cliente
 
             TipoPunto tipoPunto = new TipoPunto();
             AccesibilidadTipo accesibilidadTipo = new AccesibilidadTipo();
-            if (comboBoxTipoPunto.Equals("ACCESO"))
+            if (comboBoxTipoPunto.Text.Equals("ACCESO"))
             {
                 tipoPunto = TipoPunto.ACCESO;
             }
-            else if (comboBoxTipoPunto.Equals("LUGAR"))
+            else if (comboBoxTipoPunto.Text.Equals("LUGAR"))
             {
                 tipoPunto = TipoPunto.LUGAR;
             }
 
-            if (comboBoxAccesibilidad.Equals("ACCESIBLE"))
+            if (comboBoxAccesibilidad.Text.Equals("ACCESIBLE"))
             {
                 accesibilidadTipo = AccesibilidadTipo.ACCESIBLE;
             }
-            else if (comboBoxAccesibilidad.Equals("NO_ACCESIBLE"))
+            else if (comboBoxAccesibilidad.Text.Equals("NO_ACCESIBLE"))
             {
                 accesibilidadTipo = AccesibilidadTipo.ACCESIBLE;
             }
-            else if (comboBoxAccesibilidad.Equals("PARCIALMENTE_ACCESIBLE")) {
+            else if (comboBoxAccesibilidad.Text.Equals("PARCIALMENTE_ACCESIBLE")) {
                 accesibilidadTipo = AccesibilidadTipo.PARCIALMENTE_ACCESIBLE;
             }
             Punto punto;

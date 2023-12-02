@@ -12,11 +12,22 @@ namespace Pantalla_Cliente
     {
         public async Task<List<Punto>> GetPuntosAsync(string tipoPunto, string accesibilidadPunto, string visibilidadPunto, int idInicial, int idFinal)
         {
-            string url = $"{Program.rutaBase}{Rutas.punto}/filtrados?tipoPunto={tipoPunto}&accesibilidadPunto={accesibilidadPunto}&visibilidadPunto={visibilidadPunto}&idInicial={idInicial}&idFinal={idFinal}";
+            string url = $"{Program.rutaBase}{Rutas.punto}/filtrados?idInicial={idInicial}&idFinal={idFinal}";
+
+            if (!string.IsNullOrEmpty(tipoPunto))
+                url += $"&tipoPunto={tipoPunto}";
+
+            if (!string.IsNullOrEmpty(accesibilidadPunto))
+                url += $"&accesibilidadPunto={accesibilidadPunto}";
+
+            if (!string.IsNullOrEmpty(visibilidadPunto))
+                url += $"&visibilidadPunto={visibilidadPunto}";
+
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             List<Punto> listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
             return listaPuntos;
         }
+
 
         public async Task<int> GetIdInicial() {
             String url = Program.rutaBase + Rutas.puntoIncial;
@@ -36,6 +47,25 @@ namespace Pantalla_Cliente
 
         public async Task<int> GetNumeroPuntos() {
             string url = Program.rutaBase + Rutas.numeroPuntos;
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            int numeroPuntos = JsonSerializer.Deserialize<int>(response);
+
+            return numeroPuntos;
+        }
+
+        public async Task<int> GetNumeroPuntosConFiltros(string tipoPunto, string accesibilidadPunto, string visibilidadPunto)
+        {
+            string url = Program.rutaBase + Rutas.numeroPuntosConFiltros;
+
+            if (!string.IsNullOrEmpty(tipoPunto))
+                url += $"&tipoPunto={tipoPunto}";
+
+            if (!string.IsNullOrEmpty(accesibilidadPunto))
+                url += $"&accesibilidadPunto={accesibilidadPunto}";
+
+            if (!string.IsNullOrEmpty(visibilidadPunto))
+                url += $"&visibilidadPunto={visibilidadPunto}";
+
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             int numeroPuntos = JsonSerializer.Deserialize<int>(response);
 

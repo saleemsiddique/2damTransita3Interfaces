@@ -43,7 +43,7 @@
             this.btn_cancelarIncidencia.Location = new System.Drawing.Point(71, 253);
             this.btn_cancelarIncidencia.Name = "btn_cancelarIncidencia";
             this.btn_cancelarIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelarIncidencia.TabIndex = 38;
+            this.btn_cancelarIncidencia.TabIndex = 1;
             this.btn_cancelarIncidencia.Text = "Cancelar";
             this.btn_cancelarIncidencia.UseVisualStyleBackColor = true;
             this.btn_cancelarIncidencia.Click += new System.EventHandler(this.btn_cancelarIncidencia_Click);
@@ -54,7 +54,7 @@
             this.btn_AceptarIncidencia.Location = new System.Drawing.Point(211, 253);
             this.btn_AceptarIncidencia.Name = "btn_AceptarIncidencia";
             this.btn_AceptarIncidencia.Size = new System.Drawing.Size(75, 23);
-            this.btn_AceptarIncidencia.TabIndex = 37;
+            this.btn_AceptarIncidencia.TabIndex = 2;
             this.btn_AceptarIncidencia.Text = "Aceptar";
             this.btn_AceptarIncidencia.UseVisualStyleBackColor = true;
             this.btn_AceptarIncidencia.Click += new System.EventHandler(this.btn_AceptarIncidencia_Click);
@@ -112,7 +112,7 @@
             this.nombre_input.Margin = new System.Windows.Forms.Padding(2);
             this.nombre_input.Name = "nombre_input";
             this.nombre_input.Size = new System.Drawing.Size(197, 20);
-            this.nombre_input.TabIndex = 69;
+            this.nombre_input.TabIndex = 0;
             this.nombre_input.TextChanged += new System.EventHandler(this.nombre_input_TextChanged);
             // 
             // CrearZona

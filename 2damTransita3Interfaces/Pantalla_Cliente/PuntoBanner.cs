@@ -48,18 +48,29 @@ namespace Pantalla_Cliente
                 Console.WriteLine("metodo eliminar ha sido activado");
                 String id = this.idPunto.Text;
                 String url = Program.rutaBase + "punto/eliminar/" + id;
-                string response = await ApiClient.GetRequestAsync("DELETE", url, Program.token);
 
-                
-                Form formularioPadre = this.FindForm();
-                Transita formularioTransita = (Transita)formularioPadre.FindForm();
-                if (formularioTransita != null)
+                try
                 {
-                    Console.WriteLine("No es null");
-                    formularioTransita.MostrarPanelDePunto();
+                    // Realiza la solicitud de eliminación
+                    string response = await ApiClient.GetRequestAsync("DELETE", url, Program.token);
+
+                    // Si la eliminación fue exitosa, actualiza la lista
+                    Form formularioPadre = this.FindForm();
+                    Transita formularioTransita = (Transita)formularioPadre.FindForm();
+                    if (formularioTransita != null)
+                    {
+                        Console.WriteLine("No es null");
+                       formularioTransita.MostrarPanelDePunto();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Maneja cualquier excepción que pueda ocurrir durante la eliminación
+                    Console.WriteLine($"Error al eliminar el punto: {ex.Message}");
                 }
             }
         }
+
 
         private void EditarToolStripMenuItem_Click(object sender, EventArgs e)
         {
