@@ -152,6 +152,7 @@
             this.longitudPunto_input.Name = "longitudPunto_input";
             this.longitudPunto_input.Size = new System.Drawing.Size(158, 20);
             this.longitudPunto_input.TabIndex = 2;
+            this.longitudPunto_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.limitarSoloNumeros);
             // 
             // longitudPunto
             // 
@@ -172,6 +173,7 @@
             this.latitudPunto_input.Name = "latitudPunto_input";
             this.latitudPunto_input.Size = new System.Drawing.Size(158, 20);
             this.latitudPunto_input.TabIndex = 1;
+            this.latitudPunto_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.limitarSoloNumeros);
             // 
             // latitudPunto
             // 
