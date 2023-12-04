@@ -16,10 +16,11 @@ namespace Pantalla_Cliente
         private IncidenciaService incidenciaService = new IncidenciaService();
         int filtro = 1;
         private bool esVisible = false;
-
+     
 
         public Incidencias_Pantalla()
         {
+            
             Console.WriteLine(filtro);
             InitializeComponent();
             obtenerIncidencias(filtro);
@@ -110,7 +111,7 @@ namespace Pantalla_Cliente
                     incidenciaBanner.getId().Text = incidencia.id.ToString();
                     incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
                     incidenciaBanner.getFotos().ImageLocation = Rutas.imagenesPunto + incidencia.punto.foto;
- 
+
                     incidenciaBanner.getViewBtn().Click += (sender, e) =>
                     {
                         incidencia_img.ImageLocation = Rutas.imagenesPunto + incidencia.punto.foto;
@@ -169,14 +170,14 @@ namespace Pantalla_Cliente
 
         private void Incidencias_Load(object sender, EventArgs e)
         {
-           
-                // Configura los botones aquí
-                btn_aceptarIncidencia.FlatStyle = FlatStyle.Flat;
-                btn_aceptarIncidencia.FlatAppearance.BorderSize = 0;
 
-                btn_eliminarIncidencia.FlatStyle = FlatStyle.Flat;
+            // Configura los botones aquí
+            btn_aceptarIncidencia.FlatStyle = FlatStyle.Flat;
+            btn_aceptarIncidencia.FlatAppearance.BorderSize = 0;
+
+            btn_eliminarIncidencia.FlatStyle = FlatStyle.Flat;
             btn_eliminarIncidencia.FlatAppearance.BorderSize = 0;
-            
+
         }
 
 
@@ -218,13 +219,18 @@ namespace Pantalla_Cliente
 
         private void botonVerDatosIncidencia_Click(object sender, EventArgs e)
         {
+            if (filtro == 1)
+            {
+                btn_eliminarIncidencia.Enabled = true;
+                btn_aceptarIncidencia.Enabled = true;
+            }
             datosIncidencia datosIncidencia = new datosIncidencia();
-
+            
+            
 
             datosIncidencia.ShowDialog();
 
         }
-
 
 
 
@@ -288,7 +294,7 @@ namespace Pantalla_Cliente
         }
 
 
-
+      
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
 
@@ -299,6 +305,7 @@ namespace Pantalla_Cliente
                 filtro = 1;
                 btn_eliminarIncidencia.Enabled = true;
                 btn_aceptarIncidencia.Enabled = true;
+
             }
             else if (checkBox2.Checked)
             {
@@ -355,34 +362,115 @@ namespace Pantalla_Cliente
                     }
                 }
             }, TaskScheduler.FromCurrentSynchronizationContext());
-            
+
         }
 
-
-
-        private async Task btn_eliminarIncidencia_Click(object sender, EventArgs e)
+        private void btn_aceptarIncidencia_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas borrar esta incidencia?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (resultado == DialogResult.Yes)
+            aceptarInAsync();
+        }
+        private async Task eliminarInAsync() {
+            if (id_mostrar.Text.Equals(""))
             {
-                Console.WriteLine("metodo eliminar ha sido activado");
-                String id = this.id_mostrar.Text;
-                String url = Program.rutaBase + "incidencia/eliminar/" + id;
-                string response = await ApiClient.GetRequestAsync("DELETE", url, Program.token);
+                // Mostrar mensaje de error
+                MessageBox.Show("Error: El campo no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
 
-                Console.WriteLine(response);
-                Form formularioPadre = this.FindForm();
-                Transita formularioTransita = (Transita)formularioPadre.FindForm();
-                if (formularioTransita != null)
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas borrar esta incidencia?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
                 {
-                    Console.WriteLine("No es null");
-                    formularioTransita.MostrarPanelDeIncidencia();
+                    Console.WriteLine("metodo eliminar ha sido activado");
+                    String id = this.id_mostrar.Text;
+                    String url = Program.rutaBase + "incidencia/eliminar/" + id;
+                    string response = await ApiClient.GetRequestAsync("DELETE", url, Program.token);
+
+                    incidencia_img.Image = null;
+                    correo.Text = $"";
+                    nombre.Text = $"";
+                    id_mostrar.Text = $"";
+                    descripcion_mostrar.Text = $"";
+                    fecha_mostrar.Text = $"";
+                    estado_mostrar.Text = $"";
+                    LimpiarVisualizacion();
+                    listaIncidencias.Clear();
+
+                    Task task = obtenerIncidencias(2);
+
+                    _ = task.ContinueWith(t =>
+                    {
+                        // This part will be executed when modifyUser completes, but won't block the UI
+                        Form formularioPadre = this.Owner;
+
+                        if (formularioPadre != null)
+                        {
+                            if (formularioPadre is Transita)
+                            {
+                                Transita formularioTransita = (Transita)formularioPadre;
+                                formularioTransita.MostrarPanelDeIncidencia();
+                                this.Close();
+                            }
+                        }
+                    }, TaskScheduler.FromCurrentSynchronizationContext());
+                }
+
+            }
+
+         
+        }
+        private async Task aceptarInAsync()
+        {
+            if (id_mostrar.Text.Equals(""))
+            {
+                // Mostrar mensaje de error
+                MessageBox.Show("Error: El campo no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas aceptar esta incidencia?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    Console.WriteLine("metodo aceptar ha sido activado");
+                    String id = this.id_mostrar.Text;
+                    String url = Program.rutaBase + "incidencia/modificarEstado/" + id + "/aceptado";
+                    string response = await ApiClient.GetRequestAsync("PUT", url, Program.token);
+                    incidencia_img.Image = null;
+                    correo.Text = $"";
+                    nombre.Text = $"";
+                    id_mostrar.Text = $"";
+                    descripcion_mostrar.Text = $"";
+                    fecha_mostrar.Text = $"";
+                    estado_mostrar.Text = $"";
+                    LimpiarVisualizacion();
+                    listaIncidencias.Clear();
+
+                    Task task = obtenerIncidencias(2);
+
+                    _ = task.ContinueWith(t =>
+                    {
+                    // This part will be executed when modifyUser completes, but won't block the UI
+                    Form formularioPadre = this.Owner;
+
+                        if (formularioPadre != null)
+                        {
+                            if (formularioPadre is Transita)
+                            {
+                                Transita formularioTransita = (Transita)formularioPadre;
+                                formularioTransita.MostrarPanelDeIncidencia();
+                                this.Close();
+                            }
+                        }
+                    }, TaskScheduler.FromCurrentSynchronizationContext());
                 }
             }
         }
-
-     
+        private void btn_eliminarIncidencia_Click(object sender, EventArgs e)
+        {
+            eliminarInAsync();
+        }
     }
 }
-  
+
+

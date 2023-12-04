@@ -118,6 +118,7 @@ namespace Pantalla_Cliente
             this.btnViewIncidencia.TabIndex = 3;
             this.btnViewIncidencia.Text = "View";
             this.btnViewIncidencia.UseVisualStyleBackColor = true;
+            this.btnViewIncidencia.Click += new System.EventHandler(this.btnViewIncidencia_Click);
             // 
             // radioButton1
             // 

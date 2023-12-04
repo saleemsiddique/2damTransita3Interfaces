@@ -237,6 +237,7 @@ namespace Pantalla_Cliente
             this.btn_aceptarIncidencia.Size = new System.Drawing.Size(39, 36);
             this.btn_aceptarIncidencia.TabIndex = 28;
             this.btn_aceptarIncidencia.UseVisualStyleBackColor = true;
+            this.btn_aceptarIncidencia.Click += new System.EventHandler(this.btn_aceptarIncidencia_Click);
             // 
             // btn_eliminarIncidencia
             // 
@@ -248,6 +249,7 @@ namespace Pantalla_Cliente
             this.btn_eliminarIncidencia.TabIndex = 27;
             this.btn_eliminarIncidencia.TabStop = false;
             this.btn_eliminarIncidencia.UseVisualStyleBackColor = true;
+            this.btn_eliminarIncidencia.Click += new System.EventHandler(this.btn_eliminarIncidencia_Click);
             // 
             // incidencia_img
             // 

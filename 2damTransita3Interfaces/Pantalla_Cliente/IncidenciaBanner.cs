@@ -108,5 +108,10 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        private void btnViewIncidencia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
