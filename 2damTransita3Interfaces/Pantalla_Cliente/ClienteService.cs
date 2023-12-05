@@ -12,6 +12,28 @@ namespace Pantalla_Cliente
     class ClienteService
     {
         private LoadingForm load = new LoadingForm();
+        public async Task<List<Cliente>> GetClientesFiltrado(int tipo, int idInicial, int idFinal) {
+            string url = Program.rutaBase + "cliente/filtrados?" + "idInicial=" + idInicial + "&idFinal=" + idFinal;
+            if (tipo == 0)
+            {
+                url += "&estado=0";
+            }
+            else if (tipo == 1) {
+                url += "&estado=1";
+            }
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            List<Cliente> listClientes = JsonSerializer.Deserialize<List<Cliente>>(response);
+            return listClientes;
+        }
+
+        public async Task<int> GetNumeroClientes(int estado) {
+            string url = Program.rutaBase + "cliente/count/filtros";
+            if (estado == 0) url += "?estado=0";
+            else if (estado == 1) url += "?estado=1";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            int numeroClientes = JsonSerializer.Deserialize<int>(response);
+            return numeroClientes;
+        }
         public async Task<List<Cliente>> GetClientesAsync(int tipo) {
             if (tipo == 0)
             {

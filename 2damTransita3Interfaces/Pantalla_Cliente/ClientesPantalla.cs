@@ -23,11 +23,17 @@ namespace Pantalla_Cliente
         private List<Cliente> listCliente;
         private bool esVisible = false;
         private int filtro = 2;
+        private int idInicial;
+        private int idFinal;
+        private int idPrincipio;
+        private int paginasTotales;
+        private int paginaActual = 1;
+        private int paginasTotalesActual;
 
         public Cliente_Pantalla()
         {
             InitializeComponent();
-            ObtenerClientes(filtro);
+            ObtenerClientes();
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
@@ -48,15 +54,51 @@ namespace Pantalla_Cliente
             return panel_derecha;
         }
 
+        private async Task ObtenerIdInicialYFinal()
+        {
+            idInicial = 1;
+            idFinal = idInicial + 3;
+            paginasTotalesActual = await clienteService.GetNumeroClientes(filtro);
+            dividirEnPaginas();
 
-        private async Task ObtenerClientes(int filtro) {
+        }
+        private void dividirEnPaginas() {
 
+            if (paginasTotalesActual % 4 != 0)
+            {
+                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual++;
+            }
+            else
+            {
+                paginasTotalesActual = paginasTotalesActual / 4;
+            }
 
-            // Objeto loadingForm 
-            listCliente = await clienteService.GetClientesAsync(filtro);
-            // acabar del loadingform a true cierras el form
+            if (paginasTotalesActual != 0)
+            {
+                paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            }
+            else
+            {
+                paginas.Text = 0 + "/" + paginasTotalesActual;
+            }
+        }
+
+        private async Task ObtenerClientes() {
+            await ObtenerIdInicialYFinal();
+            idPrincipio = idInicial;
+            listCliente = await clienteService.GetClientesFiltrado(filtro, idInicial, idFinal);
             CrearPanelesClientes(listCliente);
         }
+
+        private async Task ObtenerClientesRefresh() {
+            paginasTotalesActual = await clienteService.GetNumeroClientes(filtro);
+            dividirEnPaginas();
+            idPrincipio = idInicial;
+            listCliente = await clienteService.GetClientesFiltrado(filtro, idInicial, idFinal);
+            CrearPanelesClientes(listCliente);
+        }
+
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (sender is CheckBox checkBox)
@@ -204,9 +246,9 @@ namespace Pantalla_Cliente
             }
             
             limpiarVisualizacion();
-            listCliente.Clear();
             groupBox1.Visible = false;
             esVisible = false;
+
             clienteImg = null;
             nombre.Text = "";
             correo.Text = "";
@@ -214,7 +256,7 @@ namespace Pantalla_Cliente
             nombre_mostrar.Text = "";
             apellidos_mostrar.Text = "";
             email_mostrar.Text = "";
-            Task task = ObtenerClientes(filtro);
+            Task task = ObtenerClientesRefresh();
             
             task.ContinueWith(t =>
             {
@@ -245,6 +287,33 @@ namespace Pantalla_Cliente
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private async void adelanteBtn_Click(object sender, EventArgs e)
+        {
+            if (paginaActual < paginasTotalesActual)
+            {
+                limpiarVisualizacion();
+                idInicial += 4;
+                idFinal = idInicial + 3;
+                paginaActual++;
+                await ObtenerClientesRefresh();
+            }
+        }
+
+        private async void atrasBtn_Click(object sender, EventArgs e)
+        {
+            if (paginaActual > 1)
+            {
+                if (idInicial >= idPrincipio)
+                {
+                    limpiarVisualizacion();
+                    idInicial -= 4;
+                    idFinal = idInicial + 3;
+                    paginaActual--;
+                    await ObtenerClientesRefresh();
+                }
+            }
         }
     }
 
