@@ -14,16 +14,20 @@ namespace Pantalla_Cliente
     {
         List<Incidencia> listaIncidencias;
         private IncidenciaService incidenciaService = new IncidenciaService();
-        int filtro = 1;
+        private int filtro = 0;
         private bool esVisible = false;
-     
+        private int paginasTotalesActual;
+        private int idInicial;
+        private int idFinal;
+        private int idPrincipio;
+        private int paginasTotales;
+        private int paginaActual = 1;
+
 
         public Incidencias_Pantalla()
         {
-            
-            Console.WriteLine(filtro);
             InitializeComponent();
-            obtenerIncidencias(filtro);
+
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
@@ -57,6 +61,7 @@ namespace Pantalla_Cliente
 
             int buttonWidth = 30;
             int buttonMargin = 10;
+             obtenerIncidencias(filtro);
         }
 
 
@@ -82,10 +87,61 @@ namespace Pantalla_Cliente
         }
         public async Task obtenerIncidencias(int filtro)
         {
-
-            listaIncidencias = await incidenciaService.GetIncidenciasAsync(filtro);
+            await ObtenerIdInicialYFinal();
+            idPrincipio = idInicial;
+            listaIncidencias = await incidenciaService.GetIncidenciasByPagsAsync(filtro, idInicial, idFinal);
             CrearPanelesIncidencias(listaIncidencias);
 
+        }
+
+        private async Task ObtenerIdInicialYFinal()
+        {
+            idInicial = 1;
+            idFinal = idInicial + 3;
+            paginasTotalesActual = await incidenciaService.GetNumeroIncidencias(filtro);
+
+            dividirEnPaginas();
+        }
+
+        public async Task obtenerIncidenciasRefresh() {
+            paginasTotalesActual = await incidenciaService.GetNumeroIncidencias(filtro);
+            dividirEnPaginas();
+            idPrincipio = idInicial;
+            listaIncidencias = await incidenciaService.GetIncidenciasByPagsAsync(filtro, idInicial, idFinal);
+            CrearPanelesIncidencias(listaIncidencias);
+        }
+
+
+        private async Task ObtenerPuntosNextBack()
+        {
+            paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            idPrincipio = idInicial;
+            listaIncidencias = await incidenciaService.GetIncidenciasByPagsAsync(filtro, idInicial, idFinal);
+            CrearPanelesIncidencias(listaIncidencias);
+        }
+
+
+        private void dividirEnPaginas()
+        {
+
+            if (paginasTotalesActual % 4 != 0)
+            {
+                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual++;
+            }
+            else
+            {
+                paginasTotalesActual = paginasTotalesActual / 4;
+            }
+
+            if (paginasTotalesActual != 0)
+            {
+                paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            }
+            else
+            {
+                paginas.Text = 0 + "/" + paginasTotalesActual;
+            }
         }
         private void LimpiarVisualizacion()
         {
@@ -241,10 +297,6 @@ namespace Pantalla_Cliente
             incidencia.ShowDialog();
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         public Image LoadBase64(string base64)
         {
@@ -274,26 +326,6 @@ namespace Pantalla_Cliente
 
         }
 
-        private void checkBox3_CheckedChangedAsync(object sender, EventArgs e)
-        {
-
-
-        }
-
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private async Task ButtonAceptar_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-
       
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
@@ -302,7 +334,7 @@ namespace Pantalla_Cliente
             {
                 label_tipoIncidencia.Text = "INCIDENCIA ENVIADA";
                 Console.WriteLine("CHECKBOX1 CHECKED");
-                filtro = 1;
+                filtro = 2;
                 btn_eliminarIncidencia.Enabled = true;
                 btn_aceptarIncidencia.Enabled = true;
 
@@ -311,7 +343,7 @@ namespace Pantalla_Cliente
             {
                 label_tipoIncidencia.Text = "INCIDENCIA ACEPTADA";
                 Console.WriteLine("CHECKBOX2 CHECKED");
-                filtro = 2;
+                filtro = 1;
             }
             else if (checkBox3.Checked)
             {
@@ -469,6 +501,32 @@ namespace Pantalla_Cliente
         private void btn_eliminarIncidencia_Click(object sender, EventArgs e)
         {
             eliminarInAsync();
+        }
+
+        private async void adelanteBtn_Click(object sender, EventArgs e)
+        {
+            if (paginaActual < paginasTotalesActual)
+            {
+                LimpiarVisualizacion();
+                idInicial += 4;
+                idFinal = idInicial + 3;
+                paginaActual++;
+                await obtenerIncidenciasRefresh();
+            }
+        }
+        private async void atrasBtn_Click(object sender, EventArgs e)
+        {
+            if (paginaActual > 1)
+            {
+                if (idInicial >= idPrincipio)
+                {
+                    LimpiarVisualizacion();
+                    idInicial -= 4;
+                    idFinal = idInicial + 3;
+                    paginaActual--;
+                    await obtenerIncidenciasRefresh();
+                }
+            }
         }
     }
 }

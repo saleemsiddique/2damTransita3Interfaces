@@ -54,10 +54,7 @@ namespace Pantalla_Cliente
             return incidencia_img;
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
       private void Button8_MouseDown(object sender, MouseEventArgs e)
         {

@@ -81,6 +81,9 @@ namespace Pantalla_Cliente
             this.buttonFiltros = new System.Windows.Forms.Button();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.adelanteBtn = new System.Windows.Forms.Label();
+            this.atrasBtn = new System.Windows.Forms.Label();
+            this.paginas = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidencia_img)).BeginInit();
@@ -574,6 +577,8 @@ namespace Pantalla_Cliente
             this.panel4.AutoSize = true;
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel4.Controls.Add(this.adelanteBtn);
+            this.panel4.Controls.Add(this.atrasBtn);
             this.panel4.Controls.Add(this.label_tipoIncidencia);
             this.panel4.Controls.Add(this.groupBox2);
             this.panel4.Controls.Add(this.panelInc);
@@ -587,7 +592,6 @@ namespace Pantalla_Cliente
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(557, 681);
             this.panel4.TabIndex = 28;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label_tipoIncidencia
             // 
@@ -614,7 +618,6 @@ namespace Pantalla_Cliente
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtros";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // buttonAceptar
             // 
@@ -670,8 +673,9 @@ namespace Pantalla_Cliente
             // panelInc
             // 
             this.panelInc.AutoScroll = true;
+            this.panelInc.Controls.Add(this.paginas);
             this.panelInc.Controls.Add(this.panel2);
-            this.panelInc.Location = new System.Drawing.Point(32, 207);
+            this.panelInc.Location = new System.Drawing.Point(36, 182);
             this.panelInc.Name = "panelInc";
             this.panelInc.Size = new System.Drawing.Size(495, 413);
             this.panelInc.TabIndex = 32;
@@ -740,6 +744,34 @@ namespace Pantalla_Cliente
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
+            // 
+            // adelanteBtn
+            // 
+            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
+            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
+            this.adelanteBtn.Name = "adelanteBtn";
+            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
+            this.adelanteBtn.TabIndex = 40;
+            this.adelanteBtn.Click += new System.EventHandler(this.adelanteBtn_Click);
+            // 
+            // atrasBtn
+            // 
+            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
+            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
+            this.atrasBtn.Name = "atrasBtn";
+            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
+            this.atrasBtn.TabIndex = 39;
+            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
+            // 
+            // paginas
+            // 
+            this.paginas.ForeColor = System.Drawing.Color.White;
+            this.paginas.Location = new System.Drawing.Point(219, 386);
+            this.paginas.Name = "paginas";
+            this.paginas.Size = new System.Drawing.Size(100, 23);
+            this.paginas.TabIndex = 42;
             // 
             // Incidencias_Pantalla
             // 
@@ -837,5 +869,8 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label label_tipoIncidencia;
         private System.Windows.Forms.Button btn_aceptarIncidencia;
         private System.Windows.Forms.Button btn_eliminarIncidencia;
+        private System.Windows.Forms.Label adelanteBtn;
+        private System.Windows.Forms.Label atrasBtn;
+        private System.Windows.Forms.Label paginas;
     }
 }

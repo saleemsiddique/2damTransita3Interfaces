@@ -41,7 +41,6 @@ namespace Pantalla_Cliente
             string url = Program.rutaBase + Rutas.punto + "/" + idInicial + "-" + idFinal;
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             List<Punto> listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
-            Console.WriteLine("\n\n\n response" + response + "\n\n\n idInicial - final" + idInicial + "-" + idFinal);
             return listaPuntos;
         }
 

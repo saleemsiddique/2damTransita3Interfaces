@@ -52,8 +52,55 @@ namespace Pantalla_Cliente
 
                 return null;
             }
-                }
-
-            }
         }
+
+        public async Task<List<Incidencia>> GetIncidenciasByPagsAsync(int tipo, int idInicial, int idFinal) {
+            String url = Program.rutaBase + Rutas.incidenciasFiltradas + "?idInicial=" + idInicial + "&idFinal=" + idFinal;
+            if (tipo == 1)
+            {
+                url += "&estado=ACEPTADO";
+            }
+            else if (tipo == 2)
+            {
+                url += "&estado=ENVIADO";
+            }
+            else if (tipo == 3)
+            {
+                url += "&estado=ENPROCESO";
+            }
+            else if (tipo == 4) {
+                url += "&estado=FINALIZADO";
+            }
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            Console.WriteLine("\n\n\n\n" + url);
+            List<Incidencia> listaIncidencias = JsonSerializer.Deserialize<List<Incidencia>>(response);
+            return listaIncidencias;
+        }
+
+        public async Task<int> GetNumeroIncidencias(int estado)
+        {
+            string url = Program.rutaBase + "incidencia/count/filtros";
+            if (estado == 1)
+            {
+                url += "?estado=ACEPTADO";
+            }
+            else if (estado == 2)
+            {
+                url += "?estado=ENVIADO";
+            }
+            else if (estado == 3)
+            {
+                url += "?estado=ENPROCESO";
+            }
+            else if (estado == 4)
+            {
+                url += "?estado=FINALIZADO";
+            }
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            int numeroClientes = JsonSerializer.Deserialize<int>(response);
+            return numeroClientes;
+        }
+
+    }
+}
   

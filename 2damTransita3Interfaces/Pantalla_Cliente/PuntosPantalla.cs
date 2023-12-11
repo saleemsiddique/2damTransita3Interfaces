@@ -104,7 +104,7 @@ namespace Pantalla_Cliente
         }
 
         private async Task ObtenerPuntosNextBack()
-        {
+        {            
             paginas.Text = paginaActual + "/" + paginasTotalesActual;
             idPrincipio = idInicial;
             listaPuntos = await puntoService.GetPuntosAsync(filtroTipo, filtroAccesibilidad, filtroVisibilidad, idInicial, idFinal);
@@ -295,6 +295,9 @@ namespace Pantalla_Cliente
             visibilidadpunto_mostar.Text = "";
 
             await ObtenerPuntosRefresh();
+            paginaActual = 1;
+            paginas.Text = paginaActual + "/" + paginasTotalesActual;
+
         }
 
         private void btn_filtrar_Click(object sender, MouseEventArgs e)

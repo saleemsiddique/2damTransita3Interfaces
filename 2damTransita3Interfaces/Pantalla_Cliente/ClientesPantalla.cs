@@ -257,7 +257,9 @@ namespace Pantalla_Cliente
             apellidos_mostrar.Text = "";
             email_mostrar.Text = "";
             Task task = ObtenerClientesRefresh();
-            
+            paginaActual = 1;
+            paginas.Text = paginaActual + "/" + paginasTotalesActual;
+
             task.ContinueWith(t =>
             {
                 Form formularioPadre = this.Owner;
