@@ -75,6 +75,9 @@ namespace Pantalla_Cliente
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
+            this.adelanteBtn = new System.Windows.Forms.Label();
+            this.atrasBtn = new System.Windows.Forms.Label();
+            this.paginas = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
@@ -94,6 +97,8 @@ namespace Pantalla_Cliente
             this.panel4.AutoSize = true;
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel4.Controls.Add(this.atrasBtn);
+            this.panel4.Controls.Add(this.adelanteBtn);
             this.panel4.Controls.Add(this.groupBox2);
             this.panel4.Controls.Add(this.panelUsuarios);
             this.panel4.Controls.Add(this.label16);
@@ -157,8 +162,9 @@ namespace Pantalla_Cliente
             // panelUsuarios
             // 
             this.panelUsuarios.AutoScroll = true;
+            this.panelUsuarios.Controls.Add(this.paginas);
             this.panelUsuarios.Controls.Add(this.panel2);
-            this.panelUsuarios.Location = new System.Drawing.Point(32, 207);
+            this.panelUsuarios.Location = new System.Drawing.Point(36, 182);
             this.panelUsuarios.Name = "panelUsuarios";
             this.panelUsuarios.Size = new System.Drawing.Size(495, 413);
             this.panelUsuarios.TabIndex = 33;
@@ -681,6 +687,32 @@ namespace Pantalla_Cliente
             this.btn_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cliente.UseVisualStyleBackColor = false;
             // 
+            // adelanteBtn
+            // 
+            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
+            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
+            this.adelanteBtn.Name = "adelanteBtn";
+            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
+            this.adelanteBtn.TabIndex = 39;
+            // 
+            // atrasBtn
+            // 
+            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
+            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
+            this.atrasBtn.Name = "atrasBtn";
+            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
+            this.atrasBtn.TabIndex = 40;
+            // 
+            // paginas
+            // 
+            this.paginas.ForeColor = System.Drawing.Color.White;
+            this.paginas.Location = new System.Drawing.Point(197, 385);
+            this.paginas.Name = "paginas";
+            this.paginas.Size = new System.Drawing.Size(100, 23);
+            this.paginas.TabIndex = 41;
+            // 
             // UsuariosMunicipio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -763,5 +795,8 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Button buttonAceptar;
         private System.Windows.Forms.CheckBox filtro_mod;
         private System.Windows.Forms.CheckBox filtro_admin;
+        private System.Windows.Forms.Label adelanteBtn;
+        private System.Windows.Forms.Label atrasBtn;
+        private System.Windows.Forms.Label paginas;
     }
 }

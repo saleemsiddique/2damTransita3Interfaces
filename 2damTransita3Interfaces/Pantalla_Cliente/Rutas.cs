@@ -10,6 +10,8 @@ namespace Pantalla_Cliente
     {
         public static string cliente = "cliente/RolUsuario";
         public static string usuarioMunicipio = "cliente/RolMunicipio/";
+        public static string usuarioMunicipioFiltred = "cliente/admin/filtrados?";
+        public static string usuarioMunicipioCount = "cliente/count/admin/filtros";
         public static string incidencia = "incidencias";
         public static string zona = "zonas";
         public static string punto = "puntos";
