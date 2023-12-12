@@ -388,6 +388,8 @@ namespace Pantalla_Cliente
             Console.WriteLine(filtro);
             groupBox2.Visible = false;
             esVisible = false;
+            paginaActual = 1;
+            paginas.Text = paginaActual + "/" + paginasTotalesActual;
 
             Task task = obtenerIncidencias(filtro);
 

@@ -14,9 +14,15 @@ namespace Pantalla_Cliente
     public partial class UsuariosMunicipio : Form
     {
         UsuarioMunicipioService usuarioMunicipioService = new UsuarioMunicipioService();
-        private int filtro = 0;
+        private int filtro = 2;
         List<Cliente> usuariosMunicipios;
         private bool esVisible = false;
+        private int paginasTotalesActual;
+        private int idInicial;
+        private int idFinal;
+        private int idPrincipio;
+        private int paginasTotales;
+        private int paginaActual = 1;
         public UsuariosMunicipio()
         {
             InitializeComponent();
@@ -28,8 +34,51 @@ namespace Pantalla_Cliente
 
 
         private async Task ObtenerUsuariosMunicipio() {
-            usuariosMunicipios = await usuarioMunicipioService.GetUsuariosMunicipiosAsync(filtro);
+            await ObtenerIdInicialYFinal();
+            idPrincipio = idInicial;
+            usuariosMunicipios = await usuarioMunicipioService.GetUsuarioMunicipiosFiltred(filtro, idInicial, idFinal);
             CrearPanelesUsuariosMunicipio(usuariosMunicipios);
+        }
+
+        private async Task ObtenerIdInicialYFinal()
+        {
+            idInicial = 1;
+            idFinal = idInicial + 3;
+            paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
+
+            dividirEnPaginas();
+        }
+
+        public async Task obtenerUsuariosRefresh()
+        {
+            paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
+            dividirEnPaginas();
+            idPrincipio = idInicial;
+            usuariosMunicipios = await usuarioMunicipioService.GetUsuarioMunicipiosFiltred(filtro, idInicial, idFinal);
+            CrearPanelesUsuariosMunicipio(usuariosMunicipios);
+        }
+
+        private void dividirEnPaginas()
+        {
+
+            if (paginasTotalesActual % 4 != 0)
+            {
+                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual++;
+            }
+            else
+            {
+                paginasTotalesActual = paginasTotalesActual / 4;
+            }
+
+            if (paginasTotalesActual != 0)
+            {
+                paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            }
+            else
+            {
+                paginas.Text = 0 + "/" + paginasTotalesActual;
+            }
         }
         private void CrearPanelesUsuariosMunicipio(List<Cliente> listaUsuariosMunicipio)
         {
@@ -85,6 +134,7 @@ namespace Pantalla_Cliente
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("\n\n\n aceptar");
             if (filtro_admin.Checked) filtro = 1;
             else if (filtro_mod.Checked) filtro = 2;
             else filtro = 0;
@@ -99,19 +149,24 @@ namespace Pantalla_Cliente
             nombre_mostrar.Text = "";
             apellido_mostrar.Text = "";
             nombreUsuario_mostrar.Text = "";
-            Task task = ObtenerUsuariosMunicipio();
+            Task task = obtenerUsuariosRefresh();
+            paginaActual = 1;
+            paginas.Text = paginaActual + "/" + paginasTotalesActual;
+
 
             task.ContinueWith(t =>
             {
-                // This part will be executed when modifyUser completes, but won't block the UI
+                Console.WriteLine("\n\n\n continue");
                 Form formularioPadre = this.Owner;
 
                 if (formularioPadre != null)
                 {
+                    Console.WriteLine("\n\n\n null");
                     if (formularioPadre is Transita)
                     {
                         Transita formularioTransita = (Transita)formularioPadre;
                         formularioTransita.MostrarPanelDeUsuariosMunicipio();
+                        Console.WriteLine("\n\n\n close");
                         this.Close();
                     }
                 }
@@ -149,6 +204,33 @@ namespace Pantalla_Cliente
         {
             esVisible = !esVisible;
             groupBox2.Visible = esVisible;
+        }
+
+        private async void adelanteBtn_Click(object sender, EventArgs e)
+        {
+            if (paginaActual < paginasTotalesActual)
+            {
+                limpiarVisualizacion();
+                idInicial += 4;
+                idFinal = idInicial + 3;
+                paginaActual++;
+                await obtenerUsuariosRefresh();
+            }
+        }
+
+        private async void atrasBtn_Click(object sender, EventArgs e)
+        {
+            if (paginaActual > 1)
+            {
+                if (idInicial >= idPrincipio)
+                {
+                    limpiarVisualizacion();
+                    idInicial -= 4;
+                    idFinal = idInicial + 3;
+                    paginaActual--;
+                    await obtenerUsuariosRefresh();
+                }
+            }
         }
     }
 }

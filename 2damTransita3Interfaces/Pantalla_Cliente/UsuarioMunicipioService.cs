@@ -19,14 +19,27 @@ namespace Pantalla_Cliente
         }
 
         public async Task<List<Cliente>> GetUsuarioMunicipiosFiltred(int filtro, int idInicial, int idFinal) {
-            string url = Program.rutaBase + Rutas.usuarioMunicipioFiltred + "idInicial=" + idInicial + "&idFinal=" + idFinal;
-            if (filtro != 0) {
-                url += "&rol=" + filtro;
-            }
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
-            List<Cliente> listClientes = JsonSerializer.Deserialize<List<Cliente>>(response);
+            Console.WriteLine("\n\n filtro" + filtro);
+            var uriBuilder = new UriBuilder(Program.rutaBase + "cliente/admin/filtrados");
+            var query = new StringBuilder();
 
-            return listClientes;
+            query.Append($"idInicial={idInicial}&idFinal={idFinal}");
+
+            if (filtro == 1)
+            {
+                query.Append("&rol=1");
+            }
+            else if (filtro == 2)
+            {
+                query.Append("&rol=2");
+            }
+
+            uriBuilder.Query = query.ToString();
+            string url = uriBuilder.ToString();
+
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            List<Cliente> listMunicipio = JsonSerializer.Deserialize<List<Cliente>>(response);
+            return listMunicipio;
         }
 
         public async Task<int> GetNumeroUsuarioMunicipiosFiltrado(int filtro) {

@@ -31,11 +31,14 @@ namespace Pantalla_Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosMunicipio));
             this.panel4 = new System.Windows.Forms.Panel();
+            this.atrasBtn = new System.Windows.Forms.Label();
+            this.adelanteBtn = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.filtro_mod = new System.Windows.Forms.CheckBox();
             this.filtro_admin = new System.Windows.Forms.CheckBox();
             this.panelUsuarios = new System.Windows.Forms.Panel();
+            this.paginas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -75,9 +78,6 @@ namespace Pantalla_Cliente
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
-            this.adelanteBtn = new System.Windows.Forms.Label();
-            this.atrasBtn = new System.Windows.Forms.Label();
-            this.paginas = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
@@ -111,6 +111,26 @@ namespace Pantalla_Cliente
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(557, 681);
             this.panel4.TabIndex = 34;
+            // 
+            // atrasBtn
+            // 
+            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
+            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
+            this.atrasBtn.Name = "atrasBtn";
+            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
+            this.atrasBtn.TabIndex = 40;
+            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
+            // 
+            // adelanteBtn
+            // 
+            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
+            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
+            this.adelanteBtn.Name = "adelanteBtn";
+            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
+            this.adelanteBtn.TabIndex = 39;
+            this.adelanteBtn.Click += new System.EventHandler(this.adelanteBtn_Click);
             // 
             // groupBox2
             // 
@@ -168,6 +188,14 @@ namespace Pantalla_Cliente
             this.panelUsuarios.Name = "panelUsuarios";
             this.panelUsuarios.Size = new System.Drawing.Size(495, 413);
             this.panelUsuarios.TabIndex = 33;
+            // 
+            // paginas
+            // 
+            this.paginas.ForeColor = System.Drawing.Color.White;
+            this.paginas.Location = new System.Drawing.Point(197, 385);
+            this.paginas.Name = "paginas";
+            this.paginas.Size = new System.Drawing.Size(100, 23);
+            this.paginas.TabIndex = 41;
             // 
             // panel2
             // 
@@ -686,32 +714,6 @@ namespace Pantalla_Cliente
             this.btn_cliente.Text = "Cliente";
             this.btn_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cliente.UseVisualStyleBackColor = false;
-            // 
-            // adelanteBtn
-            // 
-            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
-            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
-            this.adelanteBtn.Name = "adelanteBtn";
-            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
-            this.adelanteBtn.TabIndex = 39;
-            // 
-            // atrasBtn
-            // 
-            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
-            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
-            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
-            this.atrasBtn.Name = "atrasBtn";
-            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
-            this.atrasBtn.TabIndex = 40;
-            // 
-            // paginas
-            // 
-            this.paginas.ForeColor = System.Drawing.Color.White;
-            this.paginas.Location = new System.Drawing.Point(197, 385);
-            this.paginas.Name = "paginas";
-            this.paginas.Size = new System.Drawing.Size(100, 23);
-            this.paginas.TabIndex = 41;
             // 
             // UsuariosMunicipio
             // 
