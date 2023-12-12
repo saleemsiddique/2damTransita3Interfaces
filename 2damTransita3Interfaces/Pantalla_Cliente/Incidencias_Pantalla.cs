@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -166,7 +167,7 @@ namespace Pantalla_Cliente
                 {
                     incidenciaBanner.getId().Text = incidencia.id.ToString();
                     incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
-                    incidenciaBanner.getFotos().ImageLocation = Rutas.imagenesPunto + incidencia.punto.foto;
+                    incidenciaBanner.setFotosLocation(Rutas.imagenesPunto + incidencia.punto.foto);
 
                     incidenciaBanner.getViewBtn().Click += (sender, e) =>
                     {
@@ -309,6 +310,16 @@ namespace Pantalla_Cliente
             return image;
         }
 
+        public Image stringToImage(string inputString)
+        {
+            byte[] imageBytes = Encoding.Unicode.GetBytes(inputString);
+            MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
+
+            ms.Write(imageBytes, 0, imageBytes.Length);
+            Image image = Image.FromStream(ms, true, true);
+
+            return image;
+        }
 
 
         private void buttonFiltros_Click(object sender, EventArgs e)
@@ -376,6 +387,7 @@ namespace Pantalla_Cliente
             listaIncidencias.Clear();
             Console.WriteLine(filtro);
             groupBox2.Visible = false;
+            esVisible = false;
 
             Task task = obtenerIncidencias(filtro);
 

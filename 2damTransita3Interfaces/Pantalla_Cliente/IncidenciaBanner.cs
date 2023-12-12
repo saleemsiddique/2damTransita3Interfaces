@@ -54,6 +54,10 @@ namespace Pantalla_Cliente
             return incidencia_img;
         }
 
+        public void setFotosLocation(String image) {
+            incidencia_img.ImageLocation = image;
+        }
+
 
 
       private void Button8_MouseDown(object sender, MouseEventArgs e)
