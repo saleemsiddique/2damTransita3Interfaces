@@ -31,11 +31,10 @@ namespace Pantalla_Cliente
             //MostrarPanelDeCliente();
             btn_incidencias.Click += btn_incidencias_Click;
             btn_cliente.Click += btn_cliente_Click;
-            btn_zonas.Click += btn_zona_Click;
             btn_puntos.Click += btn_punto_Click;
             btn_usuariosMunicipio.Click += btn_usuariosMunicipio_Click;
 
-            buttons = new Button[] { btn_cliente, btn_incidencias, btn_zonas, btn_puntos, btn_mapa, btn_usuariosMunicipio};
+            buttons = new Button[] { btn_cliente, btn_incidencias, btn_puntos, btn_mapa, btn_usuariosMunicipio};
 
             currentButton = null;
 
@@ -148,24 +147,7 @@ namespace Pantalla_Cliente
             pictureBox2.Show();
 
         }
-        public void MostrarPanelDeZona()
-        {
-            ZonasPantalla zonaPantalla = new ZonasPantalla();
-            Panel panelCentralZona = zonaPantalla.ObtenerPanelCentralZona();
-            Panel panelDerechaZona = zonaPantalla.ObtenerPanelDerechaZona();
 
-
-            VaciarPaneles();
-
-            // Agrega el panel al control contenedor en este formulario
-            panel1_central.Controls.Add(panelCentralZona);
-            panel1_derecha.Controls.Add(panelDerechaZona);
-
-
-            // Puedes personalizar el tamaño y la posición del panel según tus necesidades
-            panelCentralZona.Dock = DockStyle.Fill;
-            panelDerechaZona.Dock = DockStyle.Fill;
-        }
         public void MostrarPanelDePunto()
         {
             puntosPantalla = new PuntosPantalla();
@@ -216,10 +198,7 @@ namespace Pantalla_Cliente
         {
             MostrarPanelDeCliente();
         }
-        private void btn_zona_Click(object sender, EventArgs e)
-        {
-            MostrarPanelDeZona();
-        }
+
         private void btn_punto_Click(object sender, EventArgs e)
         {
             MostrarPanelDePunto();

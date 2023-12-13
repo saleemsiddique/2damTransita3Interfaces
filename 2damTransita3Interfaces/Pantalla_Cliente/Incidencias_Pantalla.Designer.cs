@@ -68,6 +68,8 @@ namespace Pantalla_Cliente
             this.label7 = new System.Windows.Forms.Label();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.adelanteBtn = new System.Windows.Forms.Label();
+            this.atrasBtn = new System.Windows.Forms.Label();
             this.label_tipoIncidencia = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
@@ -76,14 +78,12 @@ namespace Pantalla_Cliente
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panelInc = new System.Windows.Forms.Panel();
+            this.paginas = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.btn_addInc = new System.Windows.Forms.Button();
             this.buttonFiltros = new System.Windows.Forms.Button();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.adelanteBtn = new System.Windows.Forms.Label();
-            this.atrasBtn = new System.Windows.Forms.Label();
-            this.paginas = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidencia_img)).BeginInit();
@@ -593,6 +593,26 @@ namespace Pantalla_Cliente
             this.panel4.Size = new System.Drawing.Size(557, 681);
             this.panel4.TabIndex = 28;
             // 
+            // adelanteBtn
+            // 
+            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
+            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
+            this.adelanteBtn.Name = "adelanteBtn";
+            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
+            this.adelanteBtn.TabIndex = 40;
+            this.adelanteBtn.Click += new System.EventHandler(this.adelanteBtn_Click);
+            // 
+            // atrasBtn
+            // 
+            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
+            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
+            this.atrasBtn.Name = "atrasBtn";
+            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
+            this.atrasBtn.TabIndex = 39;
+            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
+            // 
             // label_tipoIncidencia
             // 
             this.label_tipoIncidencia.AutoSize = true;
@@ -600,9 +620,9 @@ namespace Pantalla_Cliente
             this.label_tipoIncidencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label_tipoIncidencia.Location = new System.Drawing.Point(16, 85);
             this.label_tipoIncidencia.Name = "label_tipoIncidencia";
-            this.label_tipoIncidencia.Size = new System.Drawing.Size(235, 25);
+            this.label_tipoIncidencia.Size = new System.Drawing.Size(289, 25);
             this.label_tipoIncidencia.TabIndex = 34;
-            this.label_tipoIncidencia.Text = "Incidencias Enviadas";
+            this.label_tipoIncidencia.Text = "TODAS LAS INCIDENCIAS";
             // 
             // groupBox2
             // 
@@ -680,6 +700,14 @@ namespace Pantalla_Cliente
             this.panelInc.Size = new System.Drawing.Size(495, 413);
             this.panelInc.TabIndex = 32;
             // 
+            // paginas
+            // 
+            this.paginas.ForeColor = System.Drawing.Color.White;
+            this.paginas.Location = new System.Drawing.Point(219, 386);
+            this.paginas.Name = "paginas";
+            this.paginas.Size = new System.Drawing.Size(100, 23);
+            this.paginas.TabIndex = 42;
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -744,34 +772,6 @@ namespace Pantalla_Cliente
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
-            // 
-            // adelanteBtn
-            // 
-            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
-            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
-            this.adelanteBtn.Name = "adelanteBtn";
-            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
-            this.adelanteBtn.TabIndex = 40;
-            this.adelanteBtn.Click += new System.EventHandler(this.adelanteBtn_Click);
-            // 
-            // atrasBtn
-            // 
-            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
-            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
-            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
-            this.atrasBtn.Name = "atrasBtn";
-            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
-            this.atrasBtn.TabIndex = 39;
-            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
-            // 
-            // paginas
-            // 
-            this.paginas.ForeColor = System.Drawing.Color.White;
-            this.paginas.Location = new System.Drawing.Point(219, 386);
-            this.paginas.Name = "paginas";
-            this.paginas.Size = new System.Drawing.Size(100, 23);
-            this.paginas.TabIndex = 42;
             // 
             // Incidencias_Pantalla
             // 

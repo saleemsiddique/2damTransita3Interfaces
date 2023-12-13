@@ -47,7 +47,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btn_mapa = new System.Windows.Forms.Button();
             this.btn_puntos = new System.Windows.Forms.Button();
-            this.btn_zonas = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.panel1_derecha = new System.Windows.Forms.Panel();
             this.panel1_central.SuspendLayout();
@@ -123,7 +122,6 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btn_mapa);
             this.panel1.Controls.Add(this.btn_puntos);
-            this.panel1.Controls.Add(this.btn_zonas);
             this.panel1.Controls.Add(this.btn_cliente);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -143,7 +141,7 @@
             this.btn_usuariosMunicipio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_usuariosMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_usuariosMunicipio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_usuariosMunicipio.Location = new System.Drawing.Point(0, 336);
+            this.btn_usuariosMunicipio.Location = new System.Drawing.Point(0, 273);
             this.btn_usuariosMunicipio.Name = "btn_usuariosMunicipio";
             this.btn_usuariosMunicipio.Size = new System.Drawing.Size(278, 57);
             this.btn_usuariosMunicipio.TabIndex = 17;
@@ -280,7 +278,7 @@
             this.btn_mapa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mapa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mapa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_mapa.Location = new System.Drawing.Point(0, 273);
+            this.btn_mapa.Location = new System.Drawing.Point(0, 218);
             this.btn_mapa.Name = "btn_mapa";
             this.btn_mapa.Size = new System.Drawing.Size(278, 57);
             this.btn_mapa.TabIndex = 4;
@@ -300,7 +298,7 @@
             this.btn_puntos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_puntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_puntos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_puntos.Location = new System.Drawing.Point(0, 218);
+            this.btn_puntos.Location = new System.Drawing.Point(0, 163);
             this.btn_puntos.Name = "btn_puntos";
             this.btn_puntos.Size = new System.Drawing.Size(278, 57);
             this.btn_puntos.TabIndex = 3;
@@ -308,26 +306,6 @@
             this.btn_puntos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_puntos.UseVisualStyleBackColor = false;
             this.btn_puntos.Click += new System.EventHandler(this.ToggleButton_Click);
-            // 
-            // btn_zonas
-            // 
-            this.btn_zonas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.btn_zonas.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_zonas.FlatAppearance.BorderSize = 0;
-            this.btn_zonas.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_zonas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_zonas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_zonas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_zonas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_zonas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_zonas.Location = new System.Drawing.Point(0, 163);
-            this.btn_zonas.Name = "btn_zonas";
-            this.btn_zonas.Size = new System.Drawing.Size(278, 57);
-            this.btn_zonas.TabIndex = 2;
-            this.btn_zonas.Text = "      Zonas";
-            this.btn_zonas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_zonas.UseVisualStyleBackColor = false;
-            this.btn_zonas.Click += new System.EventHandler(this.ToggleButton_Click);
             // 
             // btn_cliente
             // 
@@ -399,7 +377,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_mapa;
         private System.Windows.Forms.Button btn_puntos;
-        private System.Windows.Forms.Button btn_zonas;
         private System.Windows.Forms.Button btn_cliente;
         private System.Windows.Forms.Panel panel1_derecha;
         private System.Windows.Forms.PictureBox pictureBox2;

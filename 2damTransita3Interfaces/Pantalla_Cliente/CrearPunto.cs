@@ -13,8 +13,6 @@ namespace Pantalla_Cliente
 {
     public partial class CrearPunto : Form
     {
-        List<int> listaIdZonas = new List<int>();
-        List<Zona> listaZonas;
         
         public CrearPunto()
         {
@@ -23,7 +21,6 @@ namespace Pantalla_Cliente
         }
         private async void InicializarAsync()
         {
-            await Task.WhenAll(getZonas());
            
         }
         private void label_datosInciencia_Click(object sender, EventArgs e)
@@ -42,25 +39,7 @@ namespace Pantalla_Cliente
         {
             this.Close();
         }
-        public async Task getZonas()
-        {
-            Console.WriteLine("metodo ha sido activado");
-            String url = Program.rutaBase + "zonas";
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
-            Console.WriteLine(response);
-            listaZonas = JsonSerializer.Deserialize<List<Zona>>(response);
-            foreach (Zona zona in listaZonas)
-            {
-                Console.WriteLine(zona);
-            }
-
-            foreach (Zona zona in listaZonas)
-            {
-                listaIdZonas.Add(zona.id);
-            }
-            comboBoxZona.Items.AddRange(listaIdZonas.Select(p => p.ToString()).ToArray());
-        }
         public async Task crearPunto()
         {
             
@@ -114,16 +93,13 @@ namespace Pantalla_Cliente
                     accesibilidadPunto = accesibilidadTipo,
                     visibilidadPunto = eVisibilidad,
                 };
-                int zonaid;
-                zonaid = comboBoxZona.SelectedIndex;
                 string content = $"{{\"descripcion\": \"{punto.descripcion}\", " +
                                          $"\"tipoPunto\": \"{punto.tipoPunto}\", " +
                                          $"\"foto\": \"{punto.foto}\", " +
                                          $"\"latitud\": {punto.latitud}, " +
                                          $"\"longitud\": {punto.longitud}, " +
                                          $"\"accesibilidadPunto\": \"{punto.accesibilidadPunto}\", " +
-                                         $"\"visibilidadPunto\": \"{punto.visibilidadPunto}\", " +
-                                         $"\"id\": {zonaid}}}";
+                                         $"\"visibilidadPunto\": \"{punto.visibilidadPunto}\"}}";
 
                 Console.WriteLine("Método ha sido activado");
                 String url = Program.rutaBase + "puntos";

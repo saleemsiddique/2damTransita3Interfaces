@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxZona = new System.Windows.Forms.ComboBox();
             this.comboBoxTipoPunto = new System.Windows.Forms.ComboBox();
             this.comboBoxAccesibilidad = new System.Windows.Forms.ComboBox();
             this.visibilidadPunto = new System.Windows.Forms.Label();
@@ -48,26 +46,6 @@
             this.puntoEditar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(282, 386);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 88;
-            this.label2.Text = "Zona";
-            // 
-            // comboBoxZona
-            // 
-            this.comboBoxZona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxZona.FormattingEnabled = true;
-            this.comboBoxZona.Location = new System.Drawing.Point(285, 411);
-            this.comboBoxZona.Name = "comboBoxZona";
-            this.comboBoxZona.Size = new System.Drawing.Size(112, 21);
-            this.comboBoxZona.TabIndex = 87;
-            // 
             // comboBoxTipoPunto
             // 
             this.comboBoxTipoPunto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -77,7 +55,7 @@
             "LUGAR"});
             this.comboBoxTipoPunto.Location = new System.Drawing.Point(165, 349);
             this.comboBoxTipoPunto.Name = "comboBoxTipoPunto";
-            this.comboBoxTipoPunto.Size = new System.Drawing.Size(112, 21);
+            this.comboBoxTipoPunto.Size = new System.Drawing.Size(160, 21);
             this.comboBoxTipoPunto.TabIndex = 86;
             // 
             // comboBoxAccesibilidad
@@ -90,7 +68,7 @@
             "PARCIALMENTE_ACCESIBLE"});
             this.comboBoxAccesibilidad.Location = new System.Drawing.Point(166, 291);
             this.comboBoxAccesibilidad.Name = "comboBoxAccesibilidad";
-            this.comboBoxAccesibilidad.Size = new System.Drawing.Size(112, 21);
+            this.comboBoxAccesibilidad.Size = new System.Drawing.Size(159, 21);
             this.comboBoxAccesibilidad.TabIndex = 85;
             // 
             // visibilidadPunto
@@ -115,7 +93,7 @@
             "OCULTO"});
             this.comboBoxVisibilidadPunto.Location = new System.Drawing.Point(167, 411);
             this.comboBoxVisibilidadPunto.Name = "comboBoxVisibilidadPunto";
-            this.comboBoxVisibilidadPunto.Size = new System.Drawing.Size(112, 21);
+            this.comboBoxVisibilidadPunto.Size = new System.Drawing.Size(158, 21);
             this.comboBoxVisibilidadPunto.TabIndex = 83;
             // 
             // tipoPunto
@@ -256,8 +234,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(484, 511);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxZona);
             this.Controls.Add(this.comboBoxTipoPunto);
             this.Controls.Add(this.comboBoxAccesibilidad);
             this.Controls.Add(this.visibilidadPunto);
@@ -285,9 +261,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxZona;
         private System.Windows.Forms.ComboBox comboBoxTipoPunto;
         private System.Windows.Forms.ComboBox comboBoxAccesibilidad;
         private System.Windows.Forms.Label visibilidadPunto;

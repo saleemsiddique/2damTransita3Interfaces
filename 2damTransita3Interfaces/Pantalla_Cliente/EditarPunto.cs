@@ -15,8 +15,6 @@ namespace Pantalla_Cliente
     {
         Punto punto;
         int idMod;
-        List<int> listaIdZonas = new List<int>();
-        List<Zona> listaZonas;
         List<Punto> listaPuntos;
 
         public EditarPunto(String idPunto)
@@ -59,26 +57,6 @@ namespace Pantalla_Cliente
 
 
         }
-        public async Task getZonas()
-        {
-            Console.WriteLine("metodo ha sido activado");
-            String url = Program.rutaBase + "zonas";
-            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
-
-            Console.WriteLine(response);
-            listaZonas = JsonSerializer.Deserialize<List<Zona>>(response);
-            foreach (Zona zona in listaZonas)
-            {
-                Console.WriteLine(zona);
-            }
-
-            foreach (Zona zona in listaZonas)
-            {
-                listaIdZonas.Add(zona.id);
-            }
-            comboBoxZona.Items.AddRange(listaIdZonas.Select(p => p.ToString()).ToArray());
-        }
-
         private async Task modifyPunto(int idMod)
         { 
             string content = $"{{\"descripcion\": \"{descripcionPunto_input.Text}\", \"tipoPunto\": \"{comboBoxTipoPunto.SelectedItem}\", \"foto\": \"{"foto.jpg"}\", \"latitud\": {latitudPunto_input.Text}, \"longitud\": {longitudPunto_input.Text}, \"accesibilidadPunto\": \"{comboBoxAccesibilidad.SelectedItem}\", \"visibilidadPunto\": \"{comboBoxVisibilidadPunto.SelectedItem}\"}}";
