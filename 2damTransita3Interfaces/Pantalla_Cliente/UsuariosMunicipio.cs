@@ -14,7 +14,7 @@ namespace Pantalla_Cliente
     public partial class UsuariosMunicipio : Form
     {
         UsuarioMunicipioService usuarioMunicipioService = new UsuarioMunicipioService();
-        private int filtro = 2;
+        private int filtro = 0;
         List<Cliente> usuariosMunicipios;
         private bool esVisible = false;
         private int paginasTotalesActual;
@@ -51,10 +51,14 @@ namespace Pantalla_Cliente
 
         public async Task obtenerUsuariosRefresh()
         {
+            Console.WriteLine("ASHKDJAHSDKJHSADA");
             paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
+            Console.WriteLine("PAGINAS TOTALES ACTUAL" + paginasTotalesActual);
             dividirEnPaginas();
             idPrincipio = idInicial;
+            Console.WriteLine("PAGINAS IDINICIAL ACTUAL" + idInicial);
             usuariosMunicipios = await usuarioMunicipioService.GetUsuarioMunicipiosFiltred(filtro, idInicial, idFinal);
+            Console.WriteLine("USUARIOS MUNICIPIOS DONE");
             CrearPanelesUsuariosMunicipio(usuariosMunicipios);
         }
 
@@ -132,9 +136,8 @@ namespace Pantalla_Cliente
             crearUsuarioMunicipio.Show();
         }
 
-        private void buttonAceptar_Click(object sender, EventArgs e)
+        private async void buttonAceptar_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("\n\n\n aceptar");
             if (filtro_admin.Checked) filtro = 1;
             else if (filtro_mod.Checked) filtro = 2;
             else filtro = 0;
@@ -150,8 +153,12 @@ namespace Pantalla_Cliente
             apellido_mostrar.Text = "";
             nombreUsuario_mostrar.Text = "";
             Task task = obtenerUsuariosRefresh();
+            idInicial = 1;
+            idFinal = idInicial + 3;
+            paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
             paginaActual = 1;
             paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            dividirEnPaginas();
 
 
             task.ContinueWith(t =>

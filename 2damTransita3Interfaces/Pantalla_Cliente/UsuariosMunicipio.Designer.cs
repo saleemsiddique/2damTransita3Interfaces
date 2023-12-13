@@ -116,7 +116,7 @@ namespace Pantalla_Cliente
             // 
             this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
             this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
-            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
+            this.atrasBtn.Location = new System.Drawing.Point(45, 607);
             this.atrasBtn.Name = "atrasBtn";
             this.atrasBtn.Size = new System.Drawing.Size(50, 50);
             this.atrasBtn.TabIndex = 40;
@@ -126,7 +126,7 @@ namespace Pantalla_Cliente
             // 
             this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
             this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
-            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
+            this.adelanteBtn.Location = new System.Drawing.Point(438, 607);
             this.adelanteBtn.Name = "adelanteBtn";
             this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
             this.adelanteBtn.TabIndex = 39;
@@ -184,7 +184,7 @@ namespace Pantalla_Cliente
             this.panelUsuarios.AutoScroll = true;
             this.panelUsuarios.Controls.Add(this.paginas);
             this.panelUsuarios.Controls.Add(this.panel2);
-            this.panelUsuarios.Location = new System.Drawing.Point(36, 182);
+            this.panelUsuarios.Location = new System.Drawing.Point(36, 191);
             this.panelUsuarios.Name = "panelUsuarios";
             this.panelUsuarios.Size = new System.Drawing.Size(495, 413);
             this.panelUsuarios.TabIndex = 33;
