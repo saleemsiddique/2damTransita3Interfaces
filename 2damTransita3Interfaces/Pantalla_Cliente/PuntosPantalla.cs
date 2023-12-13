@@ -296,7 +296,6 @@ namespace Pantalla_Cliente
 
             await ObtenerPuntosRefresh();
             paginaActual = 1;
-            paginas.Text = paginaActual + "/" + paginasTotalesActual;
 
         }
 
