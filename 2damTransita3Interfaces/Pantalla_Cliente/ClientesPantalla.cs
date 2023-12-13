@@ -218,7 +218,7 @@ namespace Pantalla_Cliente
             }
         }
 
-        private void buttonAceptar_Click(object sender, EventArgs e)
+        private async void buttonAceptar_Click(object sender, EventArgs e)
         {
             if (estadoActivo.Checked)
             {
@@ -247,8 +247,12 @@ namespace Pantalla_Cliente
             apellidos_mostrar.Text = "";
             email_mostrar.Text = "";
             Task task = ObtenerClientesRefresh();
+            idInicial = 1;
+            idFinal = idInicial + 3;
+            paginasTotalesActual = await clienteService.GetNumeroClientes(filtro);
             paginaActual = 1;
             paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            dividirEnPaginas();
 
             task.ContinueWith(t =>
             {
