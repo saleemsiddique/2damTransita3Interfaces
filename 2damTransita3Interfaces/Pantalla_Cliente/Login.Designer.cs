@@ -47,7 +47,7 @@ namespace Pantalla_Cliente
             this.Correo.Name = "Correo";
             this.Correo.Size = new System.Drawing.Size(234, 22);
             this.Correo.TabIndex = 1;
-            this.Correo.Text = "admin@admin.com";
+            this.Correo.Text = "prueba1@gmail.com";
             this.Correo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Correo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.Correo.Enter += new System.EventHandler(this.user_enter);
@@ -62,7 +62,7 @@ namespace Pantalla_Cliente
             this.contrasenya.Name = "contrasenya";
             this.contrasenya.Size = new System.Drawing.Size(234, 22);
             this.contrasenya.TabIndex = 2;
-            this.contrasenya.Text = "1234568";
+            this.contrasenya.Text = "contrasenya1";
             this.contrasenya.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.contrasenya.TextChanged += new System.EventHandler(this.contrasenya_TextChanged);
             this.contrasenya.Enter += new System.EventHandler(this.contrasenya_enter);
