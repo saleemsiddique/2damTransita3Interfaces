@@ -18,6 +18,7 @@ namespace Pantalla_Cliente
         {
             InitializeComponent();
             InicializarAsync();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private async void InicializarAsync()
         {

@@ -26,6 +26,7 @@ namespace Pantalla_Cliente
         {
             InitializeComponent();
             InicializarAsync();
+            this.StartPosition = FormStartPosition.CenterScreen;
             duracion_input.Text = "Sin determinar";
             
         }

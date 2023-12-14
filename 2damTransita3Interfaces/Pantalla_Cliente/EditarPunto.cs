@@ -23,6 +23,7 @@ namespace Pantalla_Cliente
             idMod = int.TryParse(idPunto, out int parsedId) ? parsedId : 0;
             //getZonas();
             getPunto();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
         }
 

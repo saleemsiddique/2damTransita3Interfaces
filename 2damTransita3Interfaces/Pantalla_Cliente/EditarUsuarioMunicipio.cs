@@ -23,6 +23,7 @@ namespace Pantalla_Cliente
             this.StartPosition = FormStartPosition.CenterScreen;
             idMod = int.TryParse(idModificar, out int parsedId) ? parsedId : 0;
             getCliente(idModificar);
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         public async Task getCliente(string idModificar)
         {

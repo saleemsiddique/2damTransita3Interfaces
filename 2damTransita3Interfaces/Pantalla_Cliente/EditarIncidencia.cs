@@ -29,6 +29,7 @@ namespace Pantalla_Cliente
             InitializeComponent();
             incidenciaEditar.Text = "Incidencia: " + idModificar;
             InicializarAsync(idModificar);
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private async void InicializarAsync(string idModificar)
