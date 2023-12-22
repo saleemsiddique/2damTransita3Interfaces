@@ -48,21 +48,17 @@ namespace Pantalla_Cliente
 
             punto = JsonSerializer.Deserialize<Punto>(response);
             descripcionPunto_input.Text = punto.descripcion;
-            latitudPunto_input.Text = punto.latitud.ToString();
-            longitudPunto_input.Text = punto.longitud.ToString();
+            latitudPunto_input.Text = punto.latitud.ToString().Replace(",", ".");
+            longitudPunto_input.Text = punto.longitud.ToString().Replace(",", ".");
             comboBoxAccesibilidad.Text = punto.accesibilidadPunto.ToString();
             comboBoxTipoPunto.Text = punto.tipoPunto.ToString();
             comboBoxVisibilidadPunto.Text = punto.visibilidadPunto.ToString();
-
-
-
-
         }
         private async Task modifyPunto(int idMod)
         { 
-            string content = $"{{\"descripcion\": \"{descripcionPunto_input.Text}\", \"tipoPunto\": \"{comboBoxTipoPunto.SelectedItem}\", \"foto\": \"{"foto.jpg"}\", \"latitud\": {latitudPunto_input.Text}, \"longitud\": {longitudPunto_input.Text}, \"accesibilidadPunto\": \"{comboBoxAccesibilidad.SelectedItem}\", \"visibilidadPunto\": \"{comboBoxVisibilidadPunto.SelectedItem}\"}}";
+            string content = $"{{\"descripcion\": \"{descripcionPunto_input.Text}\", \"tipoPunto\": \"{comboBoxTipoPunto.SelectedItem}\", \"foto\": \"{null}\", \"latitud\": {latitudPunto_input.Text}, \"longitud\": {longitudPunto_input.Text}, \"accesibilidadPunto\": \"{comboBoxAccesibilidad.SelectedItem}\", \"visibilidadPunto\": \"{comboBoxVisibilidadPunto.SelectedItem}\"}}";
 
-            Console.WriteLine("metodo ha sido activado");
+            Console.WriteLine(content);
             String url = Program.rutaBase + "punto/modificar/" + idMod;
 
             string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
@@ -105,7 +101,14 @@ namespace Pantalla_Cliente
 
         private void limitarSoloNumeros(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // Asegúrate de que solo haya un punto decimal
+            TextBox textBox = sender as TextBox;
+            if (textBox != null && e.KeyChar == '.' && textBox.Text.Contains("."))
             {
                 e.Handled = true;
             }
