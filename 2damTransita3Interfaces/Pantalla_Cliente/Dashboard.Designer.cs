@@ -378,7 +378,6 @@
         private System.Windows.Forms.Button btn_mapa;
         private System.Windows.Forms.Button btn_puntos;
         private System.Windows.Forms.Button btn_cliente;
-        private System.Windows.Forms.Panel panel1_derecha;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelHome;
         private System.Windows.Forms.PictureBox pictureBoxImagenHome;
@@ -386,5 +385,6 @@
         private System.Windows.Forms.Panel panelDegradado1;
         private System.Windows.Forms.Button btn_usuariosMunicipio;
         private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.Panel panel1_derecha;
     }
 }

@@ -226,9 +226,9 @@ namespace Pantalla_Cliente
             this.panel3.Controls.Add(this.nombre);
             this.panel3.Controls.Add(this.correo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(833, 0);
+            this.panel3.Location = new System.Drawing.Point(868, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(231, 681);
+            this.panel3.Size = new System.Drawing.Size(231, 663);
             this.panel3.TabIndex = 27;
             // 
             // btn_aceptarIncidencia
@@ -258,8 +258,6 @@ namespace Pantalla_Cliente
             // 
             this.incidencia_img.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.incidencia_img.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.incidencia_img.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.incidencia_img.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.incidencia_img.Location = new System.Drawing.Point(51, 104);
             this.incidencia_img.Name = "incidencia_img";
             this.incidencia_img.Size = new System.Drawing.Size(130, 112);
@@ -419,7 +417,7 @@ namespace Pantalla_Cliente
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 681);
+            this.panel1.Size = new System.Drawing.Size(276, 663);
             this.panel1.TabIndex = 1;
             // 
             // panel5
@@ -428,7 +426,7 @@ namespace Pantalla_Cliente
             this.panel5.Controls.Add(this.button6);
             this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 594);
+            this.panel5.Location = new System.Drawing.Point(0, 576);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(274, 85);
             this.panel5.TabIndex = 14;
@@ -515,8 +513,6 @@ namespace Pantalla_Cliente
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox4.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.pictureBox4.Location = new System.Drawing.Point(24, 15);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 40);
@@ -564,7 +560,7 @@ namespace Pantalla_Cliente
             this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(340, 76);
+            this.buscarTextBox.Location = new System.Drawing.Point(375, 76);
             this.buscarTextBox.Name = "buscarTextBox";
             this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
@@ -590,7 +586,7 @@ namespace Pantalla_Cliente
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(276, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(557, 681);
+            this.panel4.Size = new System.Drawing.Size(592, 663);
             this.panel4.TabIndex = 28;
             // 
             // adelanteBtn
@@ -742,7 +738,7 @@ namespace Pantalla_Cliente
             this.buttonFiltros.AutoSize = true;
             this.buttonFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonFiltros.Image = ((System.Drawing.Image)(resources.GetObject("buttonFiltros.Image")));
-            this.buttonFiltros.Location = new System.Drawing.Point(271, 74);
+            this.buttonFiltros.Location = new System.Drawing.Point(306, 74);
             this.buttonFiltros.Name = "buttonFiltros";
             this.buttonFiltros.Size = new System.Drawing.Size(36, 36);
             this.buttonFiltros.TabIndex = 17;
@@ -778,7 +774,7 @@ namespace Pantalla_Cliente
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.ClientSize = new System.Drawing.Size(1099, 663);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btn_filtrar);

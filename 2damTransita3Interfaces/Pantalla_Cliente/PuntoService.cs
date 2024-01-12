@@ -28,7 +28,13 @@ namespace Pantalla_Cliente
             return listaPuntos;
         }
 
-
+        public async Task<List<Punto>> GetPuntosConIncidenciasAsync()
+        {
+            string url = $"{Program.rutaBase}{Rutas.puntoIncidencia}";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            List<Punto> listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
+            return listaPuntos;
+        }
         public async Task<int> GetIdInicial() {
             String url = Program.rutaBase + Rutas.puntoIncial;
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);

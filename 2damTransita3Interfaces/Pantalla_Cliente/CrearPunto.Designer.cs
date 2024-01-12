@@ -36,14 +36,14 @@
             this.comboBoxVisibilidadPunto = new System.Windows.Forms.ComboBox();
             this.tipoPunto = new System.Windows.Forms.Label();
             this.AccesibilidadPunto = new System.Windows.Forms.Label();
-            this.longitudPunto_input = new System.Windows.Forms.TextBox();
             this.longitudPunto = new System.Windows.Forms.Label();
-            this.latitudPunto_input = new System.Windows.Forms.TextBox();
             this.latitudPunto = new System.Windows.Forms.Label();
             this.puntoDescripcion_input = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxAccesibilidad = new System.Windows.Forms.ComboBox();
             this.comboBoxTipoPunto = new System.Windows.Forms.ComboBox();
+            this.latitudPunto_input = new System.Windows.Forms.TextBox();
+            this.longitudPunto_input = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_cancelarPunto
@@ -143,15 +143,6 @@
             this.AccesibilidadPunto.TabIndex = 61;
             this.AccesibilidadPunto.Text = "Accesibilidad";
             // 
-            // longitudPunto_input
-            // 
-            this.longitudPunto_input.Location = new System.Drawing.Point(165, 229);
-            this.longitudPunto_input.Margin = new System.Windows.Forms.Padding(2);
-            this.longitudPunto_input.Name = "longitudPunto_input";
-            this.longitudPunto_input.Size = new System.Drawing.Size(158, 20);
-            this.longitudPunto_input.TabIndex = 2;
-            this.longitudPunto_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.limitarSoloNumeros);
-            // 
             // longitudPunto
             // 
             this.longitudPunto.AutoSize = true;
@@ -163,15 +154,6 @@
             this.longitudPunto.Size = new System.Drawing.Size(48, 13);
             this.longitudPunto.TabIndex = 59;
             this.longitudPunto.Text = "Longitud";
-            // 
-            // latitudPunto_input
-            // 
-            this.latitudPunto_input.Location = new System.Drawing.Point(165, 166);
-            this.latitudPunto_input.Margin = new System.Windows.Forms.Padding(2);
-            this.latitudPunto_input.Name = "latitudPunto_input";
-            this.latitudPunto_input.Size = new System.Drawing.Size(158, 20);
-            this.latitudPunto_input.TabIndex = 1;
-            this.latitudPunto_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.limitarSoloNumeros);
             // 
             // latitudPunto
             // 
@@ -230,21 +212,37 @@
             this.comboBoxTipoPunto.Size = new System.Drawing.Size(160, 21);
             this.comboBoxTipoPunto.TabIndex = 4;
             // 
+            // latitudPunto_input
+            // 
+            this.latitudPunto_input.Location = new System.Drawing.Point(165, 171);
+            this.latitudPunto_input.Name = "latitudPunto_input";
+            this.latitudPunto_input.Size = new System.Drawing.Size(158, 20);
+            this.latitudPunto_input.TabIndex = 67;
+            this.latitudPunto_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.limitarSoloNumeros);
+            // 
+            // longitudPunto_input
+            // 
+            this.longitudPunto_input.Location = new System.Drawing.Point(165, 231);
+            this.longitudPunto_input.Name = "longitudPunto_input";
+            this.longitudPunto_input.Size = new System.Drawing.Size(158, 20);
+            this.longitudPunto_input.TabIndex = 68;
+            this.longitudPunto_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.limitarSoloNumeros);
+            // 
             // CrearPunto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(484, 511);
+            this.Controls.Add(this.longitudPunto_input);
+            this.Controls.Add(this.latitudPunto_input);
             this.Controls.Add(this.comboBoxTipoPunto);
             this.Controls.Add(this.comboBoxAccesibilidad);
             this.Controls.Add(this.visibilidadPunto);
             this.Controls.Add(this.comboBoxVisibilidadPunto);
             this.Controls.Add(this.tipoPunto);
             this.Controls.Add(this.AccesibilidadPunto);
-            this.Controls.Add(this.longitudPunto_input);
             this.Controls.Add(this.longitudPunto);
-            this.Controls.Add(this.latitudPunto_input);
             this.Controls.Add(this.latitudPunto);
             this.Controls.Add(this.puntoDescripcion_input);
             this.Controls.Add(this.label1);
@@ -272,13 +270,13 @@
         private System.Windows.Forms.ComboBox comboBoxVisibilidadPunto;
         private System.Windows.Forms.Label tipoPunto;
         private System.Windows.Forms.Label AccesibilidadPunto;
-        private System.Windows.Forms.TextBox longitudPunto_input;
         private System.Windows.Forms.Label longitudPunto;
-        private System.Windows.Forms.TextBox latitudPunto_input;
         private System.Windows.Forms.Label latitudPunto;
         private System.Windows.Forms.TextBox puntoDescripcion_input;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxAccesibilidad;
         private System.Windows.Forms.ComboBox comboBoxTipoPunto;
+        private System.Windows.Forms.TextBox latitudPunto_input;
+        private System.Windows.Forms.TextBox longitudPunto_input;
     }
 }

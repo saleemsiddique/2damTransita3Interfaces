@@ -101,14 +101,14 @@ namespace Pantalla_Cliente
 
         private void limitarSoloNumeros(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != '-')
             {
                 e.Handled = true;
             }
 
             // Asegúrate de que solo haya un punto decimal
             TextBox textBox = sender as TextBox;
-            if (textBox != null && e.KeyChar == '.' && textBox.Text.Contains("."))
+            if (textBox != null && e.KeyChar == '.' && textBox.Text.Contains(".") && e.KeyChar == '-' && textBox.Text.Contains('-'))
             {
                 e.Handled = true;
             }

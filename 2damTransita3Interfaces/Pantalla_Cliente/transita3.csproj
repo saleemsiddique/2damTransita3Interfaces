@@ -122,6 +122,12 @@
     <Compile Include="LogOutPantalla.Designer.cs">
       <DependentUpon>LogOutPantalla.cs</DependentUpon>
     </Compile>
+    <Compile Include="MapaPantalla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapaPantalla.Designer.cs">
+      <DependentUpon>MapaPantalla.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarContrasenyaUsuarioMunicipio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     <EmbeddedResource Include="LogOutPantalla.resx">
       <DependentUpon>LogOutPantalla.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MapaPantalla.resx">
+      <DependentUpon>MapaPantalla.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarContrasenyaUsuarioMunicipio.resx">
       <DependentUpon>ModificarContrasenyaUsuarioMunicipio.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,6 +367,9 @@
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next">
       <Version>4.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="GMap.NET.WindowsForms">
+      <Version>1.7.5</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="Newtonsoft.Json">

@@ -126,7 +126,7 @@ namespace Pantalla_Cliente
             // 
             this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
             this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
-            this.adelanteBtn.Location = new System.Drawing.Point(438, 607);
+            this.adelanteBtn.Location = new System.Drawing.Point(457, 607);
             this.adelanteBtn.Name = "adelanteBtn";
             this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
             this.adelanteBtn.TabIndex = 39;

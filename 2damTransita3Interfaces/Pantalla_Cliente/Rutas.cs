@@ -15,6 +15,7 @@ namespace Pantalla_Cliente
         public static string incidencia = "incidencias";
         public static string zona = "zonas";
         public static string punto = "puntos";
+        public static string puntoIncidencia = "global-con-incidencias";
         public static string puntoIncial = "puntos/inicial";
         public static string numeroPuntos = "puntos/count";
         public static string numeroPuntosConFiltros = "puntos/count/filtros?";

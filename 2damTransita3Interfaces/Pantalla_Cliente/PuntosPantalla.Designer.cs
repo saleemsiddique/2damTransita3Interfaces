@@ -125,6 +125,7 @@
             this.panel_central.Name = "panel_central";
             this.panel_central.Size = new System.Drawing.Size(557, 681);
             this.panel_central.TabIndex = 35;
+            this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_central_Paint);
             // 
             // groupBox1
             // 
@@ -300,7 +301,6 @@
             // adelanteBtn
             // 
             this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
             this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
             this.adelanteBtn.Name = "adelanteBtn";
             this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
@@ -325,7 +325,6 @@
             // atrasBtn
             // 
             this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
-            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
             this.atrasBtn.Location = new System.Drawing.Point(45, 598);
             this.atrasBtn.Name = "atrasBtn";
             this.atrasBtn.Size = new System.Drawing.Size(50, 50);
@@ -385,8 +384,6 @@
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Image = global::Pantalla_Cliente.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
-            this.pictureBox5.InitialImage = global::Pantalla_Cliente.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
             this.pictureBox5.Location = new System.Drawing.Point(278, 21);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(25, 25);
@@ -398,8 +395,6 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox2.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.pictureBox2.Location = new System.Drawing.Point(20, 15);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
@@ -693,8 +688,6 @@
             // 
             this.puntoImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.puntoImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.puntoImg.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.puntoImg.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.puntoImg.Location = new System.Drawing.Point(51, 78);
             this.puntoImg.Name = "puntoImg";
             this.puntoImg.Size = new System.Drawing.Size(130, 112);

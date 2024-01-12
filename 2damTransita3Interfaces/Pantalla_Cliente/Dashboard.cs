@@ -33,6 +33,7 @@ namespace Pantalla_Cliente
             btn_cliente.Click += btn_cliente_Click;
             btn_puntos.Click += btn_punto_Click;
             btn_usuariosMunicipio.Click += btn_usuariosMunicipio_Click;
+            btn_mapa.Click += btn_mapa_Click;
 
             buttons = new Button[] { btn_cliente, btn_incidencias, btn_puntos, btn_mapa, btn_usuariosMunicipio};
 
@@ -60,6 +61,10 @@ namespace Pantalla_Cliente
             e.Graphics.FillRectangle(gradientBrush, panel1.ClientRectangle);
         }
 
+        public Panel ObtenerPanelCentralMapa()
+        {
+            return panel1_central;
+        }
 
         public Panel ObtenerPanelCentralCliente()
         {
@@ -103,10 +108,19 @@ namespace Pantalla_Cliente
             panel1_central.Controls.Clear();
             panel1_derecha.Controls.Clear();
         }
-    
+        public void VaciarPanelCentral()
+        {
+            panel1_central.Controls.Clear();
+           
+        }
+          public void VaciarPanelDerecha()
+        {
+            panel1_derecha.Controls.Clear();
+           
+        }
         public void MostrarPanelDeIncidencia()
         {
-        
+            panel1_derecha.Visible = true;
             Incidencias_Pantalla incidenciaForm = new Incidencias_Pantalla();
             Panel panelCentralIncidencia = incidenciaForm.ObtenerPanelCentralIncidencia();
             Panel panelDerechaIncidencia = incidenciaForm.ObtenerPanelDerechaIncidencia();
@@ -125,9 +139,25 @@ namespace Pantalla_Cliente
 
             pictureBox2.Show();
         }
+        public void MostrarPanelDeMapa()
+        {
 
+            MapaPantalla mapaPantalla = new MapaPantalla();
+            Panel panelCentralMapa = mapaPantalla.ObtenerPanelCentralMapa();
+            VaciarPanelCentral();
+            panel1_derecha.Visible = false;
+            // Agrega el panel al control contenedor en este formulario
+            panel1_central.Controls.Add(panelCentralMapa);
+          
+            // Puedes personalizar el tamaño y la posición del panel según tus necesidades
+            panelCentralMapa.Dock = DockStyle.Fill;
+            
+
+            pictureBox2.Show();
+        }
         public void MostrarPanelDeCliente()
         {
+            panel1_derecha.Visible = true;
             Cliente_Pantalla clientePantalla = new Cliente_Pantalla();
             Panel panelCentralIncidencia = clientePantalla.ObtenerPanelCentralCliente();
             Panel panelDerechaIncidencia = clientePantalla.ObtenerPanelDerechaCliente();
@@ -150,6 +180,7 @@ namespace Pantalla_Cliente
 
         public void MostrarPanelDePunto()
         {
+            panel1_derecha.Visible = true;
             puntosPantalla = new PuntosPantalla();
             Panel panelCentralPunto = puntosPantalla.ObtenerPanelCentralPunto();
             Panel panelDerechaPunto = puntosPantalla.ObtenerPanelDerechaPunto();
@@ -198,7 +229,10 @@ namespace Pantalla_Cliente
         {
             MostrarPanelDeCliente();
         }
-
+        private void btn_mapa_Click(object sender, EventArgs e)
+        {
+            MostrarPanelDeMapa();
+        }
         private void btn_punto_Click(object sender, EventArgs e)
         {
             MostrarPanelDePunto();
@@ -209,6 +243,7 @@ namespace Pantalla_Cliente
         }
         public void MostrarPanelDeUsuariosMunicipio()
         {
+            panel1_derecha.Visible = true;
             UsuariosMunicipio usuariosMunicipio = new UsuariosMunicipio();
             Panel panelCentralZona = usuariosMunicipio.ObtenerPanelCentralZona();
             Panel panelDerechaZona = usuariosMunicipio.ObtenerPanelDerechaZona();

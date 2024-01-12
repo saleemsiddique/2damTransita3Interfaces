@@ -65,6 +65,7 @@ namespace Pantalla_Cliente
             this.estadoActivo = new System.Windows.Forms.CheckBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.panelClientes = new System.Windows.Forms.Panel();
+            this.paginas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -76,7 +77,6 @@ namespace Pantalla_Cliente
             this.filtroClientes_btn = new System.Windows.Forms.Button();
             this.clientesLabel = new System.Windows.Forms.Label();
             this.fondoGrisMid = new System.Windows.Forms.Label();
-            this.paginas = new System.Windows.Forms.Label();
             this.panel_derecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteImg)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -117,8 +117,6 @@ namespace Pantalla_Cliente
             // 
             this.clienteImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.clienteImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.clienteImg.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.clienteImg.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.clienteImg.Location = new System.Drawing.Point(51, 104);
             this.clienteImg.Name = "clienteImg";
             this.clienteImg.Size = new System.Drawing.Size(130, 112);
@@ -538,6 +536,15 @@ namespace Pantalla_Cliente
             this.panelClientes.Name = "panelClientes";
             this.panelClientes.Size = new System.Drawing.Size(495, 413);
             this.panelClientes.TabIndex = 33;
+            this.panelClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.panelClientes_Paint);
+            // 
+            // paginas
+            // 
+            this.paginas.ForeColor = System.Drawing.Color.White;
+            this.paginas.Location = new System.Drawing.Point(219, 386);
+            this.paginas.Name = "paginas";
+            this.paginas.Size = new System.Drawing.Size(100, 23);
+            this.paginas.TabIndex = 41;
             // 
             // panel2
             // 
@@ -574,8 +581,6 @@ namespace Pantalla_Cliente
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Image = global::Pantalla_Cliente.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
-            this.pictureBox5.InitialImage = global::Pantalla_Cliente.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
             this.pictureBox5.Location = new System.Drawing.Point(278, 21);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(25, 25);
@@ -588,8 +593,6 @@ namespace Pantalla_Cliente
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox2.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.pictureBox2.Location = new System.Drawing.Point(20, 15);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
@@ -680,14 +683,6 @@ namespace Pantalla_Cliente
             this.fondoGrisMid.Name = "fondoGrisMid";
             this.fondoGrisMid.Size = new System.Drawing.Size(1064, 681);
             this.fondoGrisMid.TabIndex = 9;
-            // 
-            // paginas
-            // 
-            this.paginas.ForeColor = System.Drawing.Color.White;
-            this.paginas.Location = new System.Drawing.Point(219, 386);
-            this.paginas.Name = "paginas";
-            this.paginas.Size = new System.Drawing.Size(100, 23);
-            this.paginas.TabIndex = 41;
             // 
             // Cliente_Pantalla
             // 
