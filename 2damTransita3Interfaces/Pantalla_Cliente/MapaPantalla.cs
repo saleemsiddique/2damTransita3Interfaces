@@ -18,16 +18,18 @@ namespace Pantalla_Cliente
     
     public partial class MapaPantalla : Form
     {
+        private IncidenciaService incidenciaService = new IncidenciaService();
         private List<Punto> listaPuntos;
+        private List<Incidencia> listaIncidencias;
         private PuntoService puntoService = new PuntoService();
         GMapControl gmapControl;
         private GMapOverlay apiMarkersOverlay;
-        double minLat = 36.0; // Latitud mínima
-        double maxLat = 43.8; // Latitud máxima
-        double minLng = -10.0; // Longitud mínima
-        double maxLng = 4.0; // Longitud máxima
+        double minLat = 36.0; 
+        double maxLat = 43.8; 
+        double minLng = -10.0; 
+        double maxLng = 4.0; 
 
-        // Coordenadas de La Vila Joiosa
+       
         double defaultLat = 38.5034;
         double defaultLng = -0.2271;
         GMarkerGoogle marker;
@@ -36,27 +38,23 @@ namespace Pantalla_Cliente
             InitializeComponent();
             
 
-            // Crear la instancia de GMapControl
             gmapControl = new GMapControl();
             gmapControl.Dock = DockStyle.Fill;
             apiMarkersOverlay = new GMapOverlay("apiMarkers");
             gmapControl.Overlays.Add(apiMarkersOverlay);
-            // Configurar el proveedor de mapas (en este caso, GoogleMapProvider)
+          
             gmapControl.MapProvider = GMapProviders.GoogleMap;
             
-            // Configurar la posición y el nivel de zoom inicial dentro de España
+            
             gmapControl.Position = new PointLatLng(defaultLat, defaultLng);
             gmapControl.MinZoom = 7;
             gmapControl.MaxZoom = 25;
             gmapControl.Zoom = 15;
 
-            
-
-            // Añadir el control GMapControl al panel1
+          
             panel1.Controls.Add(gmapControl);
 
-            // Suscribirse al evento OnPositionChanged para controlar la posición del mapa
-           //gmapControl.OnPositionChanged += GmapControl_OnPositionChanged;
+            
            gmapControl.MouseClick += GmapControl_OnMapClick;
 
             this.BackColor = Color.Red;
@@ -64,10 +62,18 @@ namespace Pantalla_Cliente
             this.Font = new Font("Arial", 12);
 
             _ = ObtenerPuntosConIncidenciaAsync();
-           
+            gmapControl.OnMarkerClick += GmapControl_OnMarkerClick;
+
         }
-     
-        
+
+        private void GmapControl_OnMarkerClick(GMapMarker item, MouseEventArgs e)
+        {
+            if (item.Tag is Punto punto)
+            {
+                // El mouse ha hecho clic en el marcador o ha pasado sobre él
+                MessageBox.Show($"Información del Punto:\nLatitud: {punto.latitud}\nLongitud: {punto.longitud}\nOtra Información: {punto.id}");
+            }
+        }
         private void GmapControl_OnMapClick(object sender, MouseEventArgs e)
         {
             // Verifica si se hizo clic con el botón izquierdo del ratón
@@ -105,15 +111,15 @@ namespace Pantalla_Cliente
             // Itera sobre la lista de puntos y coloca un marcador en el mapa por cada punto
             foreach (var punto in listaPuntos)
             {
+                gmapControl.Overlays.Add(markersOverlay);
                 var marker = new GMarkerGoogle(new PointLatLng(punto.latitud, punto.longitud), GMarkerGoogleType.red);
+                marker.Tag = punto;
                 markersOverlay.Markers.Add(marker);
+               
 
-                // Cambiado a MarkerClick en lugar de MouseClick
-   
             }
 
-            // Agrega la capa de superposición con todos los marcadores al mapa
-            gmapControl.Overlays.Add(markersOverlay);
+          
         }
         public void QuitarMarcadores()
         {
@@ -124,9 +130,15 @@ namespace Pantalla_Cliente
         public async Task ObtenerPuntosConIncidenciaAsync()
         {
             listaPuntos = await puntoService.GetPuntosConIncidenciasAsync();
-            ColocarMarcadoresEnMapa(); // Agregar los nuevos marcadores
+            ColocarMarcadoresEnMapa(); 
         }
+        /*public async Task obtenerIncidencias(4)
+        {
+           
+            listaIncidencias = await incidenciaService.GetIncidenciasAsync();
+            
 
+        }*/
 
         private void UpdateTimer_Tick(object sender, EventArgs e)
         {
@@ -134,15 +146,7 @@ namespace Pantalla_Cliente
             gmapControl.Refresh();
         }
 
-        /*private void GmapControl_OnPositionChanged(PointLatLng point)
-        {
-            // Verificar y ajustar la posición del mapa para mantenerla dentro de España
-            if (point.Lat < minLat || point.Lat > maxLat || point.Lng < minLng || point.Lng > maxLng)
-            {
-                // Si está fuera de las coordenadas permitidas, ajustar la posición a La Vila Joiosa
-                gmapControl.Position = new PointLatLng(defaultLat, defaultLng);
-            }
-        }*/
+  
         private void Marker_MarkerClick(GMapMarker item, MouseEventArgs e)
         {
             var punto = (Punto)item.Tag;
@@ -151,8 +155,7 @@ namespace Pantalla_Cliente
 
         private void MostrarInformacionDelPunto(Punto punto)
         {
-            // Implementa aquí la lógica para mostrar la información del punto
-            // Puedes utilizar MessageBox, mostrar en una etiqueta, etc.
+            
             MessageBox.Show($"Información del punto - Latitud: {punto.latitud}, Longitud: {punto.longitud}");
         }
         public Panel ObtenerPanelCentralMapa()
