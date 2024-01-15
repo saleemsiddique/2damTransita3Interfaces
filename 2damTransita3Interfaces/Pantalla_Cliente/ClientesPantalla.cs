@@ -47,7 +47,7 @@ namespace Pantalla_Cliente
         private async Task ObtenerIdInicialYFinal()
         {
             idInicial = 1;
-            idFinal = idInicial + 3;
+            idFinal = idInicial + 6;
             paginasTotalesActual = await clienteService.GetNumeroClientes(filtro);
             dividirEnPaginas();
 
@@ -118,7 +118,7 @@ namespace Pantalla_Cliente
                 clienteBanner.getId().Text = cliente.id + "";
                 clienteBanner.getNombre().Text = $"{cliente.nombre} {cliente.apellidos}";
 
-                clienteBanner.getViewBtn().Click += (sender, e) =>
+                clienteBanner.getPanel().Click += (sender, e) =>
                 {
                     nombre.Text = cliente.nombre + " " + cliente.apellidos;
                     correo.Text = cliente.nombreUsuario;
@@ -129,8 +129,8 @@ namespace Pantalla_Cliente
                 };
 
                 // Configura la ubicación y otros detalles según sea necesario
-                clienteBanner.Location = new Point(0, topPosition); // Personaliza la ubicación
-                topPosition += clienteBanner.Height + 30; // Ajusta el espaciado vertical según sea necesario
+                clienteBanner.Location = new Point(60, topPosition); // Personaliza la ubicación
+                topPosition += clienteBanner.Height + 10; // Ajusta el espaciado vertical según sea necesario
                 //clienteBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
                 clienteBanner.Show();
                 // Agrega el control al formulario principal
@@ -312,10 +312,6 @@ namespace Pantalla_Cliente
             }
         }
 
-        private void panelClientes_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 
     /*Codigo para refrescar la unica pantalla usa

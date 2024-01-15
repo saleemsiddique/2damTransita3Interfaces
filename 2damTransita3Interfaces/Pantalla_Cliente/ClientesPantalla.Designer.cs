@@ -536,7 +536,6 @@ namespace Pantalla_Cliente
             this.panelClientes.Name = "panelClientes";
             this.panelClientes.Size = new System.Drawing.Size(495, 413);
             this.panelClientes.TabIndex = 33;
-            this.panelClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.panelClientes_Paint);
             // 
             // paginas
             // 
