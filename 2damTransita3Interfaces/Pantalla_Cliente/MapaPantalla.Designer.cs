@@ -32,14 +32,11 @@ namespace Pantalla_Cliente
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapaPantalla));
             this.panel_central = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.longitudData = new System.Windows.Forms.Label();
-            this.latitudData = new System.Windows.Forms.Label();
-            this.longitudLabel = new System.Windows.Forms.Label();
-            this.latitudLabel = new System.Windows.Forms.Label();
             this.btn_resetPointer = new System.Windows.Forms.Button();
             this.adelanteBtn = new System.Windows.Forms.Label();
             this.atrasBtn = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.listBoxIncidencias = new System.Windows.Forms.ListBox();
             this.panel_central.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +47,7 @@ namespace Pantalla_Cliente
             this.panel_central.AutoSize = true;
             this.panel_central.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel_central.Controls.Add(this.listBoxIncidencias);
             this.panel_central.Controls.Add(this.panel1);
             this.panel_central.Controls.Add(this.adelanteBtn);
             this.panel_central.Controls.Add(this.atrasBtn);
@@ -63,72 +61,17 @@ namespace Pantalla_Cliente
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.longitudData);
-            this.panel1.Controls.Add(this.latitudData);
-            this.panel1.Controls.Add(this.longitudLabel);
-            this.panel1.Controls.Add(this.latitudLabel);
             this.panel1.Controls.Add(this.btn_resetPointer);
             this.panel1.Location = new System.Drawing.Point(19, 88);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(751, 570);
+            this.panel1.Size = new System.Drawing.Size(533, 570);
             this.panel1.TabIndex = 41;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // longitudData
-            // 
-            this.longitudData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.longitudData.BackColor = System.Drawing.Color.White;
-            this.longitudData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.longitudData.Location = new System.Drawing.Point(380, 534);
-            this.longitudData.Name = "longitudData";
-            this.longitudData.Size = new System.Drawing.Size(66, 26);
-            this.longitudData.TabIndex = 46;
-            this.longitudData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // latitudData
-            // 
-            this.latitudData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.latitudData.BackColor = System.Drawing.Color.White;
-            this.latitudData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.latitudData.Location = new System.Drawing.Point(380, 493);
-            this.latitudData.Name = "latitudData";
-            this.latitudData.Size = new System.Drawing.Size(66, 24);
-            this.latitudData.TabIndex = 45;
-            this.latitudData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // longitudLabel
-            // 
-            this.longitudLabel.BackColor = System.Drawing.Color.White;
-            this.longitudLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.longitudLabel.Location = new System.Drawing.Point(308, 534);
-            this.longitudLabel.Name = "longitudLabel";
-            this.longitudLabel.Size = new System.Drawing.Size(66, 26);
-            this.longitudLabel.TabIndex = 44;
-            this.longitudLabel.Text = "Longitud:";
-            this.longitudLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // latitudLabel
-            // 
-            this.latitudLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.latitudLabel.BackColor = System.Drawing.Color.White;
-            this.latitudLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.latitudLabel.Location = new System.Drawing.Point(308, 493);
-            this.latitudLabel.Name = "latitudLabel";
-            this.latitudLabel.Size = new System.Drawing.Size(66, 24);
-            this.latitudLabel.TabIndex = 43;
-            this.latitudLabel.Text = "Latitud: ";
-            this.latitudLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_resetPointer
             // 
             this.btn_resetPointer.Image = ((System.Drawing.Image)(resources.GetObject("btn_resetPointer.Image")));
-            this.btn_resetPointer.Location = new System.Drawing.Point(716, 483);
+            this.btn_resetPointer.Location = new System.Drawing.Point(485, 510);
             this.btn_resetPointer.Name = "btn_resetPointer";
             this.btn_resetPointer.Size = new System.Drawing.Size(32, 34);
             this.btn_resetPointer.TabIndex = 42;
@@ -166,6 +109,14 @@ namespace Pantalla_Cliente
             this.label2.Text = "Mapa Transita";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // listBoxIncidencias
+            // 
+            this.listBoxIncidencias.FormattingEnabled = true;
+            this.listBoxIncidencias.Location = new System.Drawing.Point(558, 93);
+            this.listBoxIncidencias.Name = "listBoxIncidencias";
+            this.listBoxIncidencias.Size = new System.Drawing.Size(223, 563);
+            this.listBoxIncidencias.TabIndex = 42;
+            // 
             // MapaPantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,9 +143,6 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_resetPointer;
-        private System.Windows.Forms.Label longitudLabel;
-        private System.Windows.Forms.Label latitudLabel;
-        private System.Windows.Forms.Label longitudData;
-        private System.Windows.Forms.Label latitudData;
+        private System.Windows.Forms.ListBox listBoxIncidencias;
     }
 }
