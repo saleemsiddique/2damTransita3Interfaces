@@ -53,13 +53,13 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 45);
+            this.panel2.Size = new System.Drawing.Size(400, 45);
             this.panel2.TabIndex = 11;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
             // buttonChangedEstado
             // 
-            this.buttonChangedEstado.Location = new System.Drawing.Point(321, 14);
+            this.buttonChangedEstado.Location = new System.Drawing.Point(364, 12);
             this.buttonChangedEstado.Name = "buttonChangedEstado";
             this.buttonChangedEstado.Size = new System.Drawing.Size(21, 21);
             this.buttonChangedEstado.TabIndex = 21;
@@ -83,7 +83,7 @@
             this.favCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.favCliente.Image = global::Pantalla_Cliente.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
             this.favCliente.InitialImage = global::Pantalla_Cliente.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
-            this.favCliente.Location = new System.Drawing.Point(272, 12);
+            this.favCliente.Location = new System.Drawing.Point(324, 11);
             this.favCliente.Name = "favCliente";
             this.favCliente.Size = new System.Drawing.Size(25, 25);
             this.favCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -96,7 +96,7 @@
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
             this.pictureBox2.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox2.Location = new System.Drawing.Point(20, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,7 +120,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Name = "ClienteBanner";
-            this.Size = new System.Drawing.Size(350, 45);
+            this.Size = new System.Drawing.Size(400, 45);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.favCliente)).EndInit();

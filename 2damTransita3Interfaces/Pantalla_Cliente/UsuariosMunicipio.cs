@@ -43,7 +43,7 @@ namespace Pantalla_Cliente
         private async Task ObtenerIdInicialYFinal()
         {
             idInicial = 1;
-            idFinal = idInicial + 3;
+            idFinal = idInicial + 6;
             paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
 
             dividirEnPaginas();
@@ -65,14 +65,14 @@ namespace Pantalla_Cliente
         private void dividirEnPaginas()
         {
 
-            if (paginasTotalesActual % 4 != 0)
+            if (paginasTotalesActual % 7 != 0)
             {
-                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual = paginasTotalesActual / 7;
                 paginasTotalesActual++;
             }
             else
             {
-                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual = paginasTotalesActual / 7;
             }
 
             if (paginasTotalesActual != 0)
@@ -96,8 +96,9 @@ namespace Pantalla_Cliente
                 usuariosMunicipioBanner.getId().Text = usuario.id + "";
                 usuariosMunicipioBanner.getNombre().Text = $"{usuario.nombre} {usuario.apellidos}";
 
-                usuariosMunicipioBanner.getViewBtn().Click += (sender, e) =>
+                usuariosMunicipioBanner.getPanel().Click += (sender, e) =>
                 {
+                    usuariosMunicipioBanner.getPanel().Focus();
                     nombre.Text = usuario.nombre + " " + usuario.apellidos;
                     correo.Text = usuario.nombreUsuario;
                     id_mostrar.Text = usuario.id + "";
@@ -105,11 +106,20 @@ namespace Pantalla_Cliente
                     apellido_mostrar.Text = usuario.apellidos;
                     nombreUsuario_mostrar.Text = usuario.nombreUsuario;
                     rol_mostrar.Text = usuario.rols[0].ToString() + "";
+                    usuariosMunicipioBanner.getPanel().BorderStyle = BorderStyle.Fixed3D;
+                    usuariosMunicipioBanner.getPanel().Invalidate();
                 };
 
+                usuariosMunicipioBanner.getPanel().LostFocus += (sender, e) =>
+                {
+                    usuariosMunicipioBanner.getPanel().BorderStyle = BorderStyle.None;
+                    usuariosMunicipioBanner.getPanel().Invalidate();
+                };
+
+
                 // Configura la ubicación y otros detalles según sea necesario
-                usuariosMunicipioBanner.Location = new Point(0, topPosition); // Personaliza la ubicación
-                topPosition += usuariosMunicipioBanner.Height + 30; // Ajusta el espaciado vertical según sea necesario
+                usuariosMunicipioBanner.Location = new Point(33, topPosition); // Personaliza la ubicación
+                topPosition += usuariosMunicipioBanner.Height + 10; // Ajusta el espaciado vertical según sea necesario
                 //usuariosMunicipioBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
                 usuariosMunicipioBanner.Show();
                 // Agrega el control al formulario principal
@@ -154,7 +164,7 @@ namespace Pantalla_Cliente
             nombreUsuario_mostrar.Text = "";
             Task task = obtenerUsuariosRefresh();
             idInicial = 1;
-            idFinal = idInicial + 3;
+            idFinal = idInicial + 6;
             paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
             paginaActual = 1;
             paginas.Text = paginaActual + "/" + paginasTotalesActual;
@@ -218,8 +228,8 @@ namespace Pantalla_Cliente
             if (paginaActual < paginasTotalesActual)
             {
                 limpiarVisualizacion();
-                idInicial += 4;
-                idFinal = idInicial + 3;
+                idInicial += 7;
+                idFinal = idInicial + 6;
                 paginaActual++;
                 await obtenerUsuariosRefresh();
             }
@@ -232,8 +242,8 @@ namespace Pantalla_Cliente
                 if (idInicial >= idPrincipio)
                 {
                     limpiarVisualizacion();
-                    idInicial -= 4;
-                    idFinal = idInicial + 3;
+                    idInicial -= 7;
+                    idFinal = idInicial + 6;
                     paginaActual--;
                     await obtenerUsuariosRefresh();
                 }

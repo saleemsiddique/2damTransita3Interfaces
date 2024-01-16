@@ -77,6 +77,7 @@ namespace Pantalla_Cliente
             this.filtroClientes_btn = new System.Windows.Forms.Button();
             this.clientesLabel = new System.Windows.Forms.Label();
             this.fondoGrisMid = new System.Windows.Forms.Label();
+            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.panel_derecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteImg)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -530,6 +531,7 @@ namespace Pantalla_Cliente
             // panelClientes
             // 
             this.panelClientes.AutoScroll = true;
+            this.panelClientes.Controls.Add(this.paginaDropDown);
             this.panelClientes.Controls.Add(this.paginas);
             this.panelClientes.Controls.Add(this.panel2);
             this.panelClientes.Location = new System.Drawing.Point(36, 182);
@@ -542,7 +544,7 @@ namespace Pantalla_Cliente
             this.paginas.ForeColor = System.Drawing.Color.White;
             this.paginas.Location = new System.Drawing.Point(219, 386);
             this.paginas.Name = "paginas";
-            this.paginas.Size = new System.Drawing.Size(100, 23);
+            this.paginas.Size = new System.Drawing.Size(100, 20);
             this.paginas.TabIndex = 41;
             // 
             // panel2
@@ -683,6 +685,16 @@ namespace Pantalla_Cliente
             this.fondoGrisMid.Size = new System.Drawing.Size(1064, 681);
             this.fondoGrisMid.TabIndex = 9;
             // 
+            // paginaDropDown
+            // 
+            this.paginaDropDown.FormattingEnabled = true;
+            this.paginaDropDown.Location = new System.Drawing.Point(168, 384);
+            this.paginaDropDown.Name = "paginaDropDown";
+            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
+            this.paginaDropDown.TabIndex = 41;
+            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
+            this.paginaDropDown.SelectedValueChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
+            // 
             // Cliente_Pantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -771,6 +783,7 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label adelanteBtn;
         private System.Windows.Forms.Label atrasBtn;
         private System.Windows.Forms.Label paginas;
+        private System.Windows.Forms.ComboBox paginaDropDown;
     }
 }
 

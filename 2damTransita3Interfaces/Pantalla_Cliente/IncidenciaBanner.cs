@@ -45,9 +45,9 @@ namespace Pantalla_Cliente
             return nombreIncidencia;
         }
 
-        public Button getViewBtn()
+        public Panel getPanel()
         {
-            return btnViewIncidencia;
+            return panel2;
         }
 
         public PictureBox getFotos() {

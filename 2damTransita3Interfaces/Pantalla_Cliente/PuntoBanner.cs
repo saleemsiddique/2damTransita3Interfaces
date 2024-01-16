@@ -89,9 +89,9 @@ namespace Pantalla_Cliente
             return nombrePunto;
         }
 
-        public Button getViewBtn()
+        public Panel getPanel()
         {
-            return btnViewPunto;
+            return panel2;
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {

@@ -62,7 +62,7 @@ namespace Pantalla_Cliente
 
             int buttonWidth = 30;
             int buttonMargin = 10;
-             obtenerIncidencias(filtro);
+            obtenerIncidencias(filtro);
         }
 
 
@@ -91,16 +91,15 @@ namespace Pantalla_Cliente
             await ObtenerIdInicialYFinal();
             idPrincipio = idInicial;
             listaIncidencias = await incidenciaService.GetIncidenciasByPagsAsync(filtro, idInicial, idFinal);
-            CrearPanelesIncidencias(listaIncidencias);
+            paginaDropDown.SelectedItem = paginaActual;
 
         }
 
         private async Task ObtenerIdInicialYFinal()
         {
             idInicial = 1;
-            idFinal = idInicial + 3;
+            idFinal = idInicial + 6;
             paginasTotalesActual = await incidenciaService.GetNumeroIncidencias(filtro);
-
             dividirEnPaginas();
         }
 
@@ -113,35 +112,32 @@ namespace Pantalla_Cliente
         }
 
 
-        private async Task ObtenerPuntosNextBack()
-        {
-            paginas.Text = paginaActual + "/" + paginasTotalesActual;
-            idPrincipio = idInicial;
-            listaIncidencias = await incidenciaService.GetIncidenciasByPagsAsync(filtro, idInicial, idFinal);
-            CrearPanelesIncidencias(listaIncidencias);
-        }
-
-
         private void dividirEnPaginas()
         {
-
-            if (paginasTotalesActual % 4 != 0)
+            paginaDropDown.Items.Clear();
+            if (paginasTotalesActual % 7 != 0)
             {
-                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual = paginasTotalesActual / 7;
                 paginasTotalesActual++;
+
             }
             else
             {
-                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual = paginasTotalesActual / 7;
             }
 
             if (paginasTotalesActual != 0)
             {
-                paginas.Text = paginaActual + "/" + paginasTotalesActual;
+                paginas.Text = "/   " + paginasTotalesActual;
             }
             else
             {
-                paginas.Text = 0 + "/" + paginasTotalesActual;
+                paginaDropDown.SelectedItem = 0;
+                paginas.Text = "/   " + paginasTotalesActual;
+            }
+            for (int i = 1; i <= paginasTotalesActual; i++)
+            {
+                paginaDropDown.Items.Add(i);
             }
         }
         private void LimpiarVisualizacion()
@@ -169,7 +165,7 @@ namespace Pantalla_Cliente
                     incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
                     incidenciaBanner.setFotosLocation(Rutas.imagenesPunto + incidencia.punto.foto);
 
-                    incidenciaBanner.getViewBtn().Click += (sender, e) =>
+                    incidenciaBanner.getPanel().Click += (sender, e) =>
                     {
                         incidencia_img.ImageLocation = Rutas.imagenesPunto + incidencia.punto.foto;
                         correo.Text = $"ID: {incidencia.id}";
@@ -187,7 +183,7 @@ namespace Pantalla_Cliente
                     Console.WriteLine("else");
                     incidenciaBanner.getFotos().Image = LoadBase64(incidencia.fotos);
 
-                    incidenciaBanner.getViewBtn().Click += (sender, e) =>
+                    incidenciaBanner.getPanel().Click += (sender, e) =>
                     {
                         incidencia_img.Image = LoadBase64(incidencia.fotos.ToString());
                         correo.Text = $"ID: {incidencia.id}";
@@ -202,8 +198,8 @@ namespace Pantalla_Cliente
 
 
                 // Configura la ubicación y otros detalles según sea necesario
-                incidenciaBanner.Location = new Point(0, topPosition); // Personaliza la ubicación
-                topPosition += incidenciaBanner.Height + 30; // Ajusta el espaciado vertical según sea necesario
+                incidenciaBanner.Location = new Point(33, topPosition); // Personaliza la ubicación
+                topPosition += incidenciaBanner.Height + 10; // Ajusta el espaciado vertical según sea necesario
                 //incidenciaBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
                 incidenciaBanner.Show();
                 // Agrega el control al formulario principal
@@ -390,6 +386,7 @@ namespace Pantalla_Cliente
             esVisible = false;
             paginaActual = 1;
             paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            paginaDropDown.SelectedItem = paginaActual;
 
             Task task = obtenerIncidencias(filtro);
 
@@ -522,10 +519,10 @@ namespace Pantalla_Cliente
             if (paginaActual < paginasTotalesActual)
             {
                 LimpiarVisualizacion();
-                idInicial += 4;
-                idFinal = idInicial + 3;
+                idInicial += 7;
+                idFinal = idInicial + 6;
                 paginaActual++;
-                await obtenerIncidenciasRefresh();
+                paginaDropDown.SelectedItem = paginaActual;
             }
         }
         private async void atrasBtn_Click(object sender, EventArgs e)
@@ -535,12 +532,35 @@ namespace Pantalla_Cliente
                 if (idInicial >= idPrincipio)
                 {
                     LimpiarVisualizacion();
-                    idInicial -= 4;
-                    idFinal = idInicial + 3;
+                    idInicial -= 7;
+                    idFinal = idInicial + 6;
                     paginaActual--;
-                    await obtenerIncidenciasRefresh();
+                    paginaDropDown.SelectedItem = paginaActual;
                 }
             }
+        }
+
+        private async void paginaDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listaIncidencias != null)
+            {
+                LimpiarVisualizacion();
+            }
+            paginaActual = (int)paginaDropDown.SelectedItem;
+
+            if (paginaActual == 1)
+            {
+                idInicial = 1;
+            }
+            else
+            {
+                idInicial = 7 * (paginaActual - 1);
+            }
+            idFinal = idInicial + 6;
+
+            Console.WriteLine("AJSDHHAKD: ObtenerIncidenciasRefresh");
+            await obtenerIncidenciasRefresh();
+
         }
     }
 }

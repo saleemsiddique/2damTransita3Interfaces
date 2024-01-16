@@ -116,7 +116,7 @@ namespace Pantalla_Cliente
             // 
             this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
             this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
-            this.atrasBtn.Location = new System.Drawing.Point(45, 607);
+            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
             this.atrasBtn.Name = "atrasBtn";
             this.atrasBtn.Size = new System.Drawing.Size(50, 50);
             this.atrasBtn.TabIndex = 40;
@@ -126,7 +126,7 @@ namespace Pantalla_Cliente
             // 
             this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
             this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
-            this.adelanteBtn.Location = new System.Drawing.Point(457, 607);
+            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
             this.adelanteBtn.Name = "adelanteBtn";
             this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
             this.adelanteBtn.TabIndex = 39;
@@ -192,7 +192,7 @@ namespace Pantalla_Cliente
             // paginas
             // 
             this.paginas.ForeColor = System.Drawing.Color.White;
-            this.paginas.Location = new System.Drawing.Point(197, 385);
+            this.paginas.Location = new System.Drawing.Point(219, 386);
             this.paginas.Name = "paginas";
             this.paginas.Size = new System.Drawing.Size(100, 23);
             this.paginas.TabIndex = 41;

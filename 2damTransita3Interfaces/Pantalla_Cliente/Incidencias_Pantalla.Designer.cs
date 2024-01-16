@@ -84,6 +84,7 @@ namespace Pantalla_Cliente
             this.buttonFiltros = new System.Windows.Forms.Button();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidencia_img)).BeginInit();
@@ -689,6 +690,7 @@ namespace Pantalla_Cliente
             // panelInc
             // 
             this.panelInc.AutoScroll = true;
+            this.panelInc.Controls.Add(this.paginaDropDown);
             this.panelInc.Controls.Add(this.paginas);
             this.panelInc.Controls.Add(this.panel2);
             this.panelInc.Location = new System.Drawing.Point(36, 182);
@@ -768,6 +770,15 @@ namespace Pantalla_Cliente
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
+            // 
+            // paginaDropDown
+            // 
+            this.paginaDropDown.FormattingEnabled = true;
+            this.paginaDropDown.Location = new System.Drawing.Point(168, 384);
+            this.paginaDropDown.Name = "paginaDropDown";
+            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
+            this.paginaDropDown.TabIndex = 43;
+            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
             // 
             // Incidencias_Pantalla
             // 
@@ -868,5 +879,6 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label adelanteBtn;
         private System.Windows.Forms.Label atrasBtn;
         private System.Windows.Forms.Label paginas;
+        private System.Windows.Forms.ComboBox paginaDropDown;
     }
 }
