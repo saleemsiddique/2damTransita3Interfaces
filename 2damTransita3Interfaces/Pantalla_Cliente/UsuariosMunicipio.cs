@@ -169,7 +169,7 @@ namespace Pantalla_Cliente
             idFinal = idInicial + 6;
             paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
             paginaActual = 1;
-            paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            paginas.Text = "/   " + paginasTotalesActual;
             dividirEnPaginas();
 
 
