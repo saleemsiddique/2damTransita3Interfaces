@@ -23,7 +23,9 @@ namespace Pantalla_Cliente
         public Cliente_Pantalla()
         {
             InitializeComponent();
+            paginaDropDown.ContextMenuStrip = Utils.emptyMenu;
             ObtenerClientes();
+            paginaDropDown.ContextMenuStrip = Utils.emptyMenu;
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);

@@ -65,6 +65,7 @@ namespace Pantalla_Cliente
             this.estadoActivo = new System.Windows.Forms.CheckBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.panelClientes = new System.Windows.Forms.Panel();
+            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.paginas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -77,7 +78,6 @@ namespace Pantalla_Cliente
             this.filtroClientes_btn = new System.Windows.Forms.Button();
             this.clientesLabel = new System.Windows.Forms.Label();
             this.fondoGrisMid = new System.Windows.Forms.Label();
-            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.panel_derecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteImg)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -539,6 +539,16 @@ namespace Pantalla_Cliente
             this.panelClientes.Size = new System.Drawing.Size(495, 413);
             this.panelClientes.TabIndex = 33;
             // 
+            // paginaDropDown
+            // 
+            this.paginaDropDown.FormattingEnabled = true;
+            this.paginaDropDown.Location = new System.Drawing.Point(168, 384);
+            this.paginaDropDown.Name = "paginaDropDown";
+            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
+            this.paginaDropDown.TabIndex = 41;
+            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
+            this.paginaDropDown.KeyDown += new System.Windows.Forms.KeyEventHandler(Utils.paginaDropDown_KeyDown);
+            // 
             // paginas
             // 
             this.paginas.ForeColor = System.Drawing.Color.White;
@@ -684,16 +694,6 @@ namespace Pantalla_Cliente
             this.fondoGrisMid.Name = "fondoGrisMid";
             this.fondoGrisMid.Size = new System.Drawing.Size(1064, 681);
             this.fondoGrisMid.TabIndex = 9;
-            // 
-            // paginaDropDown
-            // 
-            this.paginaDropDown.FormattingEnabled = true;
-            this.paginaDropDown.Location = new System.Drawing.Point(168, 384);
-            this.paginaDropDown.Name = "paginaDropDown";
-            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
-            this.paginaDropDown.TabIndex = 41;
-            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
-            this.paginaDropDown.SelectedValueChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
             // 
             // Cliente_Pantalla
             // 

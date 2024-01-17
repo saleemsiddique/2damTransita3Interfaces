@@ -28,7 +28,7 @@ namespace Pantalla_Cliente
         public Incidencias_Pantalla()
         {
             InitializeComponent();
-
+            paginaDropDown.ContextMenuStrip = Utils.emptyMenu;
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
@@ -92,7 +92,6 @@ namespace Pantalla_Cliente
             idPrincipio = idInicial;
             listaIncidencias = await incidenciaService.GetIncidenciasByPagsAsync(filtro, idInicial, idFinal);
             paginaDropDown.SelectedItem = paginaActual;
-
         }
 
         private async Task ObtenerIdInicialYFinal()
@@ -119,7 +118,6 @@ namespace Pantalla_Cliente
             {
                 paginasTotalesActual = paginasTotalesActual / 7;
                 paginasTotalesActual++;
-
             }
             else
             {
@@ -554,7 +552,7 @@ namespace Pantalla_Cliente
             }
             else
             {
-                idInicial = 7 * (paginaActual - 1);
+                idInicial = 8 * (paginaActual - 1);
             }
             idFinal = idInicial + 6;
 
@@ -562,6 +560,7 @@ namespace Pantalla_Cliente
             await obtenerIncidenciasRefresh();
 
         }
+
     }
 }
 

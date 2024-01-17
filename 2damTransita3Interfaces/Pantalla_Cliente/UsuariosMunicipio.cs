@@ -33,7 +33,8 @@ namespace Pantalla_Cliente
         }
 
 
-        private async Task ObtenerUsuariosMunicipio() {
+        private async Task ObtenerUsuariosMunicipio()
+        {
             await ObtenerIdInicialYFinal();
             idPrincipio = idInicial;
             usuariosMunicipios = await usuarioMunicipioService.GetUsuarioMunicipiosFiltred(filtro, idInicial, idFinal);
@@ -45,30 +46,26 @@ namespace Pantalla_Cliente
             idInicial = 1;
             idFinal = idInicial + 6;
             paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
-
             dividirEnPaginas();
+            paginaDropDown.SelectedItem = paginaActual;
         }
 
         public async Task obtenerUsuariosRefresh()
         {
-            Console.WriteLine("ASHKDJAHSDKJHSADA");
             paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
-            Console.WriteLine("PAGINAS TOTALES ACTUAL" + paginasTotalesActual);
             dividirEnPaginas();
             idPrincipio = idInicial;
-            Console.WriteLine("PAGINAS IDINICIAL ACTUAL" + idInicial);
             usuariosMunicipios = await usuarioMunicipioService.GetUsuarioMunicipiosFiltred(filtro, idInicial, idFinal);
-            Console.WriteLine("USUARIOS MUNICIPIOS DONE");
             CrearPanelesUsuariosMunicipio(usuariosMunicipios);
         }
-
         private void dividirEnPaginas()
         {
-
+            paginaDropDown.Items.Clear();
             if (paginasTotalesActual % 7 != 0)
             {
                 paginasTotalesActual = paginasTotalesActual / 7;
                 paginasTotalesActual++;
+
             }
             else
             {
@@ -77,11 +74,15 @@ namespace Pantalla_Cliente
 
             if (paginasTotalesActual != 0)
             {
-                paginas.Text = paginaActual + "/" + paginasTotalesActual;
+                paginas.Text = "/   " + paginasTotalesActual;
             }
             else
             {
-                paginas.Text = 0 + "/" + paginasTotalesActual;
+                paginas.Text = 0 + "/   " + paginasTotalesActual;
+            }
+            for (int i = 1; i <= paginasTotalesActual; i++)
+            {
+                paginaDropDown.Items.Add(i);
             }
         }
         private void CrearPanelesUsuariosMunicipio(List<Cliente> listaUsuariosMunicipio)
@@ -162,6 +163,7 @@ namespace Pantalla_Cliente
             nombre_mostrar.Text = "";
             apellido_mostrar.Text = "";
             nombreUsuario_mostrar.Text = "";
+            paginaDropDown.SelectedItem = paginaActual;
             Task task = obtenerUsuariosRefresh();
             idInicial = 1;
             idFinal = idInicial + 6;
@@ -231,6 +233,7 @@ namespace Pantalla_Cliente
                 idInicial += 7;
                 idFinal = idInicial + 6;
                 paginaActual++;
+                paginaDropDown.SelectedItem = paginaActual;
                 await obtenerUsuariosRefresh();
             }
         }
@@ -245,9 +248,32 @@ namespace Pantalla_Cliente
                     idInicial -= 7;
                     idFinal = idInicial + 6;
                     paginaActual--;
+                    paginaDropDown.SelectedItem = paginaActual;
                     await obtenerUsuariosRefresh();
                 }
             }
         }
+
+        private async void paginaDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (usuariosMunicipios != null)
+            {
+                limpiarVisualizacion();
+            }
+            paginaActual = (int)paginaDropDown.SelectedItem;
+
+            if (paginaActual == 1)
+            {
+                idInicial = 1;
+            }
+            else
+            {
+                idInicial = 8 * (paginaActual - 1);
+            }
+            idFinal = idInicial + 6;
+
+            await obtenerUsuariosRefresh();
+        }
+
     }
 }

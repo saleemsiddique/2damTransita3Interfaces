@@ -78,13 +78,13 @@ namespace Pantalla_Cliente
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panelInc = new System.Windows.Forms.Panel();
+            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.paginas = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.btn_addInc = new System.Windows.Forms.Button();
             this.buttonFiltros = new System.Windows.Forms.Button();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidencia_img)).BeginInit();
@@ -698,6 +698,16 @@ namespace Pantalla_Cliente
             this.panelInc.Size = new System.Drawing.Size(495, 413);
             this.panelInc.TabIndex = 32;
             // 
+            // paginaDropDown
+            // 
+            this.paginaDropDown.FormattingEnabled = true;
+            this.paginaDropDown.Location = new System.Drawing.Point(168, 384);
+            this.paginaDropDown.Name = "paginaDropDown";
+            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
+            this.paginaDropDown.TabIndex = 43;
+            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
+            this.paginaDropDown.KeyDown += new System.Windows.Forms.KeyEventHandler(Utils.paginaDropDown_KeyDown);
+            // 
             // paginas
             // 
             this.paginas.ForeColor = System.Drawing.Color.White;
@@ -770,15 +780,6 @@ namespace Pantalla_Cliente
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
-            // 
-            // paginaDropDown
-            // 
-            this.paginaDropDown.FormattingEnabled = true;
-            this.paginaDropDown.Location = new System.Drawing.Point(168, 384);
-            this.paginaDropDown.Name = "paginaDropDown";
-            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
-            this.paginaDropDown.TabIndex = 43;
-            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
             // 
             // Incidencias_Pantalla
             // 

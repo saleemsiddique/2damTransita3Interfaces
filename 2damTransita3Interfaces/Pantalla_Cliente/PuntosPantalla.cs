@@ -28,6 +28,7 @@ namespace Pantalla_Cliente
         public PuntosPantalla()
         {
             InitializeComponent();
+            paginaDropDown.ContextMenuStrip = Utils.emptyMenu;
             this.BackColor = Color.Red;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
@@ -113,7 +114,7 @@ namespace Pantalla_Cliente
 
         private async Task ObtenerPuntosNextBack()
         {            
-            paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            paginas.Text = "/   " + paginasTotalesActual;
             idPrincipio = idInicial;
             listaPuntos = await puntoService.GetPuntosAsync(filtroTipo, filtroAccesibilidad, filtroVisibilidad, idInicial, idFinal);
             CrearPanelesPuntos(listaPuntos);
@@ -348,5 +349,6 @@ namespace Pantalla_Cliente
             await ObtenerPuntosNextBack();
 
         }
+
     }
 }

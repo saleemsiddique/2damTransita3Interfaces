@@ -49,6 +49,7 @@
             this.btn_addPunto = new System.Windows.Forms.Button();
             this.atrasBtn = new System.Windows.Forms.Label();
             this.panelPuntos = new System.Windows.Forms.Panel();
+            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.paginas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -90,7 +91,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.descripcionPunto_mostrar = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
-            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.panel_central.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupVisibilidad.SuspendLayout();
@@ -344,6 +344,15 @@
             this.panelPuntos.Name = "panelPuntos";
             this.panelPuntos.Size = new System.Drawing.Size(495, 413);
             this.panelPuntos.TabIndex = 33;
+            // 
+            // paginaDropDown
+            // 
+            this.paginaDropDown.FormattingEnabled = true;
+            this.paginaDropDown.Location = new System.Drawing.Point(172, 383);
+            this.paginaDropDown.Name = "paginaDropDown";
+            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
+            this.paginaDropDown.TabIndex = 44;
+            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
             // 
             // paginas
             // 
@@ -853,15 +862,6 @@
             this.nombre.Size = new System.Drawing.Size(123, 20);
             this.nombre.TabIndex = 23;
             this.nombre.Text = "Datos del Punto";
-            // 
-            // paginaDropDown
-            // 
-            this.paginaDropDown.FormattingEnabled = true;
-            this.paginaDropDown.Location = new System.Drawing.Point(172, 383);
-            this.paginaDropDown.Name = "paginaDropDown";
-            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
-            this.paginaDropDown.TabIndex = 44;
-            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
             // 
             // PuntosPantalla
             // 
