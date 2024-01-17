@@ -28,6 +28,7 @@ namespace Pantalla_Cliente
         public PuntosPantalla()
         {
             InitializeComponent();
+            paginaDropDown.ContextMenuStrip = Utils.emptyMenu;
             this.BackColor = Color.Red;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
@@ -66,34 +67,42 @@ namespace Pantalla_Cliente
 
             idPrincipio = idInicial;
             listaPuntos = await puntoService.GetPuntosAsync(filtroTipo, filtroAccesibilidad, filtroVisibilidad, idInicial, idFinal);
-            CrearPanelesPuntos(listaPuntos);
+            paginaDropDown.SelectedItem = paginaActual;
         }
 
         private async Task ObtenerIdInicialYFinal()
         {
             idInicial = 1;
-            idFinal = idInicial + 3;
+            idFinal = idInicial + 6;
             paginasTotalesActual = await puntoService.GetNumeroPuntosConFiltros(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
 
-            if (paginasTotalesActual % 4 != 0)
+            paginaDropDown.Items.Clear();
+            if (paginasTotalesActual % 7 != 0)
             {
-                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual = paginasTotalesActual / 7;
                 paginasTotalesActual++;
+
             }
             else
             {
-                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual = paginasTotalesActual / 7;
             }
 
             if (paginasTotalesActual != 0)
             {
-                paginas.Text = paginaActual + "/" + paginasTotalesActual;
+                paginas.Text = "/   " + paginasTotalesActual;
             }
             else
             {
-                paginas.Text = 0 + "/" + paginasTotalesActual;
+                paginaDropDown.SelectedItem = 0;
+                paginas.Text = "/   " + paginasTotalesActual;
+            }
+            for (int i = 1; i <= paginasTotalesActual; i++)
+            {
+                paginaDropDown.Items.Add(i);
             }
         }
+
 
         public async Task ObtenerPuntosRefresh()
         {
@@ -105,7 +114,7 @@ namespace Pantalla_Cliente
 
         private async Task ObtenerPuntosNextBack()
         {            
-            paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            paginas.Text = "/   " + paginasTotalesActual;
             idPrincipio = idInicial;
             listaPuntos = await puntoService.GetPuntosAsync(filtroTipo, filtroAccesibilidad, filtroVisibilidad, idInicial, idFinal);
             CrearPanelesPuntos(listaPuntos);
@@ -127,8 +136,9 @@ namespace Pantalla_Cliente
                 puntoBanner.getId().Text = punto.id.ToString();
                 puntoBanner.getNombre().Text = $"{punto.accesibilidadPunto}";
 
-                puntoBanner.getViewBtn().Click += (sender, e) =>
+                puntoBanner.getPanel().Click += (sender, e) =>
                 {
+                    puntoBanner.getPanel().Focus();
                     id_mostrar.Text = punto.id.ToString();
                     puntoDescripcion_mostrar.Text = punto.descripcion;
                     latitud_mostrar.Text = punto.latitud.ToString();
@@ -136,10 +146,19 @@ namespace Pantalla_Cliente
                     accesibilidad_mostrar.Text = punto.accesibilidadPunto.ToString();
                     tipopunto_mostrar.Text = punto.tipoPunto.ToString();
                     visibilidadpunto_mostar.Text = punto.visibilidadPunto.ToString();
+                    puntoBanner.getPanel().BorderStyle = BorderStyle.Fixed3D;
+                    puntoBanner.getPanel().Invalidate();
                 };
 
-                puntoBanner.Location = new Point(0, topPosition);
-                topPosition += puntoBanner.Height + 30;
+
+                puntoBanner.getPanel().LostFocus += (sender, e) =>
+                {
+                    puntoBanner.getPanel().BorderStyle = BorderStyle.None;
+                    puntoBanner.getPanel().Invalidate();
+                };
+
+                puntoBanner.Location = new Point(33, topPosition);
+                topPosition += puntoBanner.Height + 10;
                 puntoBanner.Show();
                 panelPuntos.Controls.Add(puntoBanner);
             }
@@ -150,8 +169,8 @@ namespace Pantalla_Cliente
             if (paginaActual < paginasTotalesActual)
             {
                 LimpiarVisualizacion();
-                idInicial += 4;
-                idFinal = idInicial + 3;
+                idInicial += 7;
+                idFinal = idInicial + 6;
                 paginaActual++;
                 await ObtenerPuntosNextBack();
             }
@@ -164,8 +183,8 @@ namespace Pantalla_Cliente
                 if (idInicial >= idPrincipio)
                 {
                     LimpiarVisualizacion();
-                    idInicial -= 4;
-                    idFinal = idInicial + 3;
+                    idInicial -= 7;
+                    idFinal = idInicial + 6;
                     paginaActual--;
                     await ObtenerPuntosNextBack();
                 }
@@ -308,5 +327,28 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        private async void paginaDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listaPuntos != null)
+            {
+                LimpiarVisualizacion();
+            }
+            paginaActual = (int)paginaDropDown.SelectedItem;
+
+            if (paginaActual == 1)
+            {
+                idInicial = 1;
+            }
+            else
+            {
+                idInicial = 7 * (paginaActual - 1);
+            }
+            idFinal = idInicial + 6;
+
+            await ObtenerPuntosNextBack();
+
+        }
+
     }
 }

@@ -23,7 +23,9 @@ namespace Pantalla_Cliente
         public Cliente_Pantalla()
         {
             InitializeComponent();
+            paginaDropDown.ContextMenuStrip = Utils.emptyMenu;
             ObtenerClientes();
+            paginaDropDown.ContextMenuStrip = Utils.emptyMenu;
             this.BackColor = Color.Gray;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
@@ -47,30 +49,36 @@ namespace Pantalla_Cliente
         private async Task ObtenerIdInicialYFinal()
         {
             idInicial = 1;
-            idFinal = idInicial + 3;
+            idFinal = idInicial + 6;
             paginasTotalesActual = await clienteService.GetNumeroClientes(filtro);
             dividirEnPaginas();
+            paginaDropDown.SelectedItem = paginaActual;
 
         }
         private void dividirEnPaginas() {
-
-            if (paginasTotalesActual % 4 != 0)
+            paginaDropDown.Items.Clear();
+            if (paginasTotalesActual % 7 != 0)
             {
-                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual = paginasTotalesActual / 7;
                 paginasTotalesActual++;
+
             }
             else
             {
-                paginasTotalesActual = paginasTotalesActual / 4;
+                paginasTotalesActual = paginasTotalesActual / 7;
             }
 
             if (paginasTotalesActual != 0)
             {
-                paginas.Text = paginaActual + "/" + paginasTotalesActual;
+                paginas.Text = "/   " + paginasTotalesActual;
             }
             else
             {
-                paginas.Text = 0 + "/" + paginasTotalesActual;
+                paginas.Text = 0 + "/   " + paginasTotalesActual;
+            }
+            for (int i = 1; i <= paginasTotalesActual; i++)
+            {
+                paginaDropDown.Items.Add(i);
             }
         }
 
@@ -78,7 +86,6 @@ namespace Pantalla_Cliente
             await ObtenerIdInicialYFinal();
             idPrincipio = idInicial;
             listCliente = await clienteService.GetClientesFiltrado(filtro, idInicial, idFinal);
-            CrearPanelesClientes(listCliente);
         }
 
         private async Task ObtenerClientesRefresh() {
@@ -118,7 +125,7 @@ namespace Pantalla_Cliente
                 clienteBanner.getId().Text = cliente.id + "";
                 clienteBanner.getNombre().Text = $"{cliente.nombre} {cliente.apellidos}";
 
-                clienteBanner.getViewBtn().Click += (sender, e) =>
+                clienteBanner.getPanel().Click += (sender, e) =>
                 {
                     nombre.Text = cliente.nombre + " " + cliente.apellidos;
                     correo.Text = cliente.nombreUsuario;
@@ -129,8 +136,8 @@ namespace Pantalla_Cliente
                 };
 
                 // Configura la ubicación y otros detalles según sea necesario
-                clienteBanner.Location = new Point(0, topPosition); // Personaliza la ubicación
-                topPosition += clienteBanner.Height + 30; // Ajusta el espaciado vertical según sea necesario
+                clienteBanner.Location = new Point(33, topPosition); // Personaliza la ubicación
+                topPosition += clienteBanner.Height + 10; // Ajusta el espaciado vertical según sea necesario
                 //clienteBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
                 clienteBanner.Show();
                 // Agrega el control al formulario principal
@@ -246,13 +253,14 @@ namespace Pantalla_Cliente
             nombre_mostrar.Text = "";
             apellidos_mostrar.Text = "";
             email_mostrar.Text = "";
-            Task task = ObtenerClientesRefresh();
             idInicial = 1;
-            idFinal = idInicial + 3;
+            idFinal = idInicial + 6;
             paginasTotalesActual = await clienteService.GetNumeroClientes(filtro);
             paginaActual = 1;
-            paginas.Text = paginaActual + "/" + paginasTotalesActual;
+            paginas.Text = "/   " + paginasTotalesActual;
             dividirEnPaginas();
+            paginaDropDown.SelectedItem = paginaActual;
+            Task task = ObtenerClientesRefresh();
 
             task.ContinueWith(t =>
             {
@@ -290,10 +298,10 @@ namespace Pantalla_Cliente
             if (paginaActual < paginasTotalesActual)
             {
                 limpiarVisualizacion();
-                idInicial += 4;
-                idFinal = idInicial + 3;
+                idInicial += 7;
+                idFinal = idInicial + 6;
                 paginaActual++;
-                await ObtenerClientesRefresh();
+                paginaDropDown.SelectedItem = paginaActual;
             }
         }
 
@@ -304,16 +312,32 @@ namespace Pantalla_Cliente
                 if (idInicial >= idPrincipio)
                 {
                     limpiarVisualizacion();
-                    idInicial -= 4;
-                    idFinal = idInicial + 3;
+                    idInicial -= 7;
+                    idFinal = idInicial + 6;
                     paginaActual--;
-                    await ObtenerClientesRefresh();
+                    paginaDropDown.SelectedItem = paginaActual;
                 }
             }
         }
 
-        private void panelClientes_Paint(object sender, PaintEventArgs e)
+        private async void paginaDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            if (listCliente != null) { 
+                        limpiarVisualizacion();
+            }
+            paginaActual = (int)paginaDropDown.SelectedItem;
+
+            if (paginaActual == 1)
+            {
+                idInicial = 1;
+            }
+            else {
+                idInicial = 8 * (paginaActual - 1);
+            }
+            idFinal = idInicial + 6;
+
+            await ObtenerClientesRefresh();
 
         }
     }

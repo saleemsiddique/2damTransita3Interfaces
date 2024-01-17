@@ -261,6 +261,7 @@
     <Compile Include="UsuariosMunicipioBanner.Designer.cs">
       <DependentUpon>UsuariosMunicipioBanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="CrearPunto.resx">
       <DependentUpon>CrearPunto.cs</DependentUpon>
     </EmbeddedResource>

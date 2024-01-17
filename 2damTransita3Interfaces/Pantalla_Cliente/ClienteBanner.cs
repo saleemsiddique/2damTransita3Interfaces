@@ -58,10 +58,8 @@ namespace Pantalla_Cliente
         {
             return nombreCliente;
         }
-
-        public Button getViewBtn()
-        {
-            return btnViewCliente;
+        public Panel getPanel() {
+            return panel2;
         }
 
 

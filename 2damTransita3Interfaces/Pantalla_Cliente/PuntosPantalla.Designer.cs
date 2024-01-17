@@ -49,6 +49,7 @@
             this.btn_addPunto = new System.Windows.Forms.Button();
             this.atrasBtn = new System.Windows.Forms.Label();
             this.panelPuntos = new System.Windows.Forms.Panel();
+            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.paginas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -301,6 +302,7 @@
             // adelanteBtn
             // 
             this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
             this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
             this.adelanteBtn.Name = "adelanteBtn";
             this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
@@ -325,6 +327,7 @@
             // atrasBtn
             // 
             this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
+            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
             this.atrasBtn.Location = new System.Drawing.Point(45, 598);
             this.atrasBtn.Name = "atrasBtn";
             this.atrasBtn.Size = new System.Drawing.Size(50, 50);
@@ -334,12 +337,22 @@
             // panelPuntos
             // 
             this.panelPuntos.AutoScroll = true;
+            this.panelPuntos.Controls.Add(this.paginaDropDown);
             this.panelPuntos.Controls.Add(this.paginas);
             this.panelPuntos.Controls.Add(this.panel2);
             this.panelPuntos.Location = new System.Drawing.Point(36, 182);
             this.panelPuntos.Name = "panelPuntos";
             this.panelPuntos.Size = new System.Drawing.Size(495, 413);
             this.panelPuntos.TabIndex = 33;
+            // 
+            // paginaDropDown
+            // 
+            this.paginaDropDown.FormattingEnabled = true;
+            this.paginaDropDown.Location = new System.Drawing.Point(172, 383);
+            this.paginaDropDown.Name = "paginaDropDown";
+            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
+            this.paginaDropDown.TabIndex = 44;
+            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
             // 
             // paginas
             // 
@@ -955,5 +968,6 @@
         private System.Windows.Forms.Label atrasBtn;
         private System.Windows.Forms.Label adelanteBtn;
         private System.Windows.Forms.Label paginas;
+        private System.Windows.Forms.ComboBox paginaDropDown;
     }
 }

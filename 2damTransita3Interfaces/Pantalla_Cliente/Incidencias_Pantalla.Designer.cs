@@ -78,6 +78,7 @@ namespace Pantalla_Cliente
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panelInc = new System.Windows.Forms.Panel();
+            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.paginas = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.btn_addInc = new System.Windows.Forms.Button();
@@ -689,12 +690,23 @@ namespace Pantalla_Cliente
             // panelInc
             // 
             this.panelInc.AutoScroll = true;
+            this.panelInc.Controls.Add(this.paginaDropDown);
             this.panelInc.Controls.Add(this.paginas);
             this.panelInc.Controls.Add(this.panel2);
             this.panelInc.Location = new System.Drawing.Point(36, 182);
             this.panelInc.Name = "panelInc";
             this.panelInc.Size = new System.Drawing.Size(495, 413);
             this.panelInc.TabIndex = 32;
+            // 
+            // paginaDropDown
+            // 
+            this.paginaDropDown.FormattingEnabled = true;
+            this.paginaDropDown.Location = new System.Drawing.Point(168, 384);
+            this.paginaDropDown.Name = "paginaDropDown";
+            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
+            this.paginaDropDown.TabIndex = 43;
+            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
+            this.paginaDropDown.KeyDown += new System.Windows.Forms.KeyEventHandler(Utils.paginaDropDown_KeyDown);
             // 
             // paginas
             // 
@@ -868,5 +880,6 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label adelanteBtn;
         private System.Windows.Forms.Label atrasBtn;
         private System.Windows.Forms.Label paginas;
+        private System.Windows.Forms.ComboBox paginaDropDown;
     }
 }

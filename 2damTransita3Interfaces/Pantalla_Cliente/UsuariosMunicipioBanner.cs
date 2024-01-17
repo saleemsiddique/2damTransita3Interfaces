@@ -48,11 +48,10 @@ namespace Pantalla_Cliente
             return nombreCliente;
         }
 
-        public Button getViewBtn()
+        public Panel getPanel()
         {
-            return btnViewUsuarioMuni;
+            return panel1;
         }
-
 
 
         private void panel2_Paint(object sender, PaintEventArgs e)
