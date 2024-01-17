@@ -76,7 +76,7 @@ namespace Pantalla_Cliente
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(533, 570);
             this.panel1.TabIndex = 41;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            
             // 
             // btn_crearPunto
             // 

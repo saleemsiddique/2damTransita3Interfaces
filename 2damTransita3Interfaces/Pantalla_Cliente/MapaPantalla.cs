@@ -112,7 +112,7 @@ namespace Pantalla_Cliente
                 {
                     // Si no hay incidencias, oculta el ListBox
                     listBoxIncidencias.Visible = false;
-                    MessageBox.Show($"El punto {punto.descripcion} no tiene incidencias asociadas.");
+                    MessageBox.Show($"El punto nº {punto.id}, con descripción: {punto.descripcion}: no tiene incidencias asociadas.");
                 }
 
                 // Marcar que el mensaje ha sido mostrado
@@ -195,18 +195,6 @@ namespace Pantalla_Cliente
             
         }
 
-  
-        private void Marker_MarkerClick(GMapMarker item, MouseEventArgs e)
-        {
-            var punto = (Punto)item.Tag;
-            MostrarInformacionDelPunto(punto);
-        }
-
-        private void MostrarInformacionDelPunto(Punto punto)
-        {
-            
-            MessageBox.Show($"Información del punto - Latitud: {punto.latitud}, Longitud: {punto.longitud}, Descripcion: {punto.descripcion}");
-        }
         public Panel ObtenerPanelCentralMapa()
         {
             return panel_central;
@@ -242,24 +230,17 @@ namespace Pantalla_Cliente
             gmapControl.Position = new PointLatLng(defaultLat, defaultLng);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void btn_crearPunto_Click(object sender, EventArgs e)
         {
-            // Crea una instancia del formulario CrearPunto
+           
             CrearPunto crearPuntoForm = new CrearPunto();
 
-            // Pasa las coordenadas al nuevo formulario
             crearPuntoForm.LatitudPuntoMapa = LatitudNuevoPunto;
             crearPuntoForm.LongitudPuntoMapa = LongitudNuevoPunto;
 
-            // Muestra el formulario de manera modal
             crearPuntoForm.ShowDialog();
         }
-
-
     }
 }

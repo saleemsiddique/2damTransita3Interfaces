@@ -70,43 +70,25 @@ namespace Pantalla_Cliente
             else if (comboBoxAccesibilidad.Text.Equals("PARCIALMENTE_ACCESIBLE")) {
                 accesibilidadTipo = AccesibilidadTipo.PARCIALMENTE_ACCESIBLE;
             }
-            Punto punto;
-            double latitud, longitud;
-            
-                // La conversión fue exitosa, puedes usar latitud y longitud aquí
-               
-                // Create a Punto object and set its properties
-                punto = new Punto
-                {
-                    descripcion = puntoDescripcion_input.Text,
-                    tipoPunto = tipoPunto,
-                    foto = "foto.jpg",
-                    latitud = latitudPunto_input.Text, // Usar la variable latitud convertida a double
-                    longitud = longitudPunto_input.Text, // Usar la variable longitud convertida a double
-                    accesibilidadPunto = accesibilidadTipo,
-                    visibilidadPunto = eVisibilidad,
-                };
-
-                string content = $"{{\"descripcion\": \"{punto.descripcion}\", " +
-                                         $"\"tipoPunto\": \"{punto.tipoPunto}\", " +
-                                         $"\"foto\": \"{punto.foto}\", " +
-                                         $"\"latitud\": {punto.latitud}, " +
-                                         $"\"longitud\": {punto.longitud}, " +
-                                         $"\"accesibilidadPunto\": \"{punto.accesibilidadPunto}\", " +
-                                         $"\"visibilidadPunto\": \"{punto.visibilidadPunto}\"}}";
-
-                Console.WriteLine("Método ha sido activado");
+                //latitudPunto_input.Text.Replace(",", ".");
+            //longitudPunto_input.Text.Replace(",", ".");
+            string content = $"{{\"descripcion\": \"{puntoDescripcion_input.Text}\", " +
+                                         $"\"tipoPunto\": \"{tipoPunto}\", " +
+                                         $"\"foto\": \"{"foto.jpg"}\", " +
+                                         $"\"latitud\": {latitudPunto_input.Text.Replace(",", ".")}, " +
+                                         $"\"longitud\": {longitudPunto_input.Text.Replace(",", ".")}, " +
+                                         $"\"accesibilidadPunto\": \"{accesibilidadTipo}\", " +
+                                         $"\"visibilidadPunto\": \"{eVisibilidad}\"}}";
+          
+            Console.WriteLine("Método ha sido activado");
                 String url = Program.rutaBase + "puntos";
                 string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
 
                 Console.WriteLine(response);
-            
-           
 
-            
         }
 
-        
+      
             private bool verifyDatos()
             {
                 if (puntoDescripcion_input.Text != "" && latitudPunto_input.Text != "" && longitudPunto_input.Text != "" && comboBoxAccesibilidad.Text != "" && comboBoxTipoPunto.Text != "" && comboBoxVisibilidadPunto.Text != "")
@@ -122,7 +104,7 @@ namespace Pantalla_Cliente
         {
             if (LatitudPuntoMapa > -1 && LatitudPuntoMapa > -1)
             {
-                // Si hay datos, establecer los textos de los labels
+              
                 latitudPunto_input.Text = LatitudPuntoMapa.ToString();
                 longitudPunto_input.Text = LongitudPuntoMapa.ToString();
             }
@@ -158,7 +140,7 @@ namespace Pantalla_Cliente
                 e.Handled = true;
             }
 
-            // Asegúrate de que solo haya un punto decimal
+        
             TextBox textBox = sender as TextBox;
             if (textBox != null && e.KeyChar == '.' && textBox.Text.Contains(".") && e.KeyChar == '-' && textBox.Text.Contains('-'))
             {
@@ -170,21 +152,3 @@ namespace Pantalla_Cliente
     }
 }
 
-
-
-
-/* json de get punto
- * {
-  "descripcion": "punto 1",
-  "tipoPunto": "ACCESO",
-  "foto": "foto.jpg",
-  "latitud": 3993.0,
-  "longitud": -3.2183138E7,
-  "accesibilidadPunto": "ACCESIBLE",
-  "visibilidadPunto": "GLOBAL",
-  "zona": {
-      "nombre": "zona 1",
-      "id": 1
-  },
-  "id": 1
-}*/
