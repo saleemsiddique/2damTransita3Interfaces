@@ -35,6 +35,14 @@ namespace Pantalla_Cliente
             List<Punto> listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
             return listaPuntos;
         }
+
+        public async Task<List<Punto>> GetPuntosTodos()
+        {
+            string url = $"{Program.rutaBase}{Rutas.punto}";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            List<Punto> listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
+            return listaPuntos;
+        }
         public async Task<int> GetIdInicial() {
             String url = Program.rutaBase + Rutas.puntoIncial;
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);

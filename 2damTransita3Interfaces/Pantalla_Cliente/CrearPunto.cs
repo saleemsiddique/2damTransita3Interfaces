@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -13,12 +14,14 @@ namespace Pantalla_Cliente
 {
     public partial class CrearPunto : Form
     {
-        
+        public double LatitudPuntoMapa { get; set; }
+        public double LongitudPuntoMapa { get; set; }
         public CrearPunto()
         {
             InitializeComponent();
             InicializarAsync();
             this.StartPosition = FormStartPosition.CenterScreen;
+         
         }
         private async void InicializarAsync()
         {
@@ -45,16 +48,6 @@ namespace Pantalla_Cliente
         {
             
             EVisibilidad eVisibilidad = EVisibilidad.GLOBAL;
-
-            /*if (comboBoxVisibilidadPunto.Equals("GLOBAL"))
-            {
-                eVisibilidad = EVisibilidad.GLOBAL;
-            }
-            else if (comboBoxVisibilidadPunto.Equals("INCIDENCIA"))
-            {
-                eVisibilidad = EVisibilidad.INCIDENCIA;
-            }*/
-
             TipoPunto tipoPunto = new TipoPunto();
             AccesibilidadTipo accesibilidadTipo = new AccesibilidadTipo();
             if (comboBoxTipoPunto.Text.Equals("ACCESO"))
@@ -79,18 +72,17 @@ namespace Pantalla_Cliente
             }
             Punto punto;
             double latitud, longitud;
-            if (Double.TryParse(latitudPunto_input.Text, out latitud) && Double.TryParse(longitudPunto_input.Text, out longitud))
-            {
+            
                 // La conversión fue exitosa, puedes usar latitud y longitud aquí
-
+               
                 // Create a Punto object and set its properties
-                 punto = new Punto
+                punto = new Punto
                 {
                     descripcion = puntoDescripcion_input.Text,
                     tipoPunto = tipoPunto,
                     foto = "foto.jpg",
-                    latitud = latitud, // Usar la variable latitud convertida a double
-                    longitud = longitud, // Usar la variable longitud convertida a double
+                    latitud = latitudPunto_input.Text, // Usar la variable latitud convertida a double
+                    longitud = longitudPunto_input.Text, // Usar la variable longitud convertida a double
                     accesibilidadPunto = accesibilidadTipo,
                     visibilidadPunto = eVisibilidad,
                 };
@@ -108,11 +100,8 @@ namespace Pantalla_Cliente
                 string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
 
                 Console.WriteLine(response);
-            }
-            else
-            {
-                Console.WriteLine("Error al convertir los valores a double. Asegúrate de que los valores sean numéricos.");
-            }
+            
+           
 
             
         }
@@ -131,7 +120,12 @@ namespace Pantalla_Cliente
 
         private void CrearPunto_Load(object sender, EventArgs e)
         {
-
+            if (LatitudPuntoMapa > -1 && LatitudPuntoMapa > -1)
+            {
+                // Si hay datos, establecer los textos de los labels
+                latitudPunto_input.Text = LatitudPuntoMapa.ToString();
+                longitudPunto_input.Text = LongitudPuntoMapa.ToString();
+            }
         }
 
         private async void btn_AceptarPunto_Click(object sender, EventArgs e)

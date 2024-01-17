@@ -20,14 +20,14 @@ namespace Pantalla_Cliente
     {
         private IncidenciaService incidenciaService = new IncidenciaService();
         private List<Punto> listaPuntos;
+        private List<Punto> listaPuntosSinIncidencia;
         private List<Incidencia> listaIncidencias;
+
         private PuntoService puntoService = new PuntoService();
         GMapControl gmapControl;
         private GMapOverlay apiMarkersOverlay;
-        double minLat = 36.0;
-        double maxLat = 43.8;
-        double minLng = -10.0;
-        double maxLng = 4.0;
+        public double LatitudNuevoPunto { get; private set; }
+        public double LongitudNuevoPunto { get; private set; }
 
         private bool mensajeMostrado = false;
         double defaultLat = 38.5034;
@@ -46,7 +46,7 @@ namespace Pantalla_Cliente
             gmapControl.MapProvider = GMapProviders.GoogleMap;
 
 
-            gmapControl.Position = new PointLatLng(defaultLat, defaultLng);
+
             gmapControl.MinZoom = 7;
             gmapControl.MaxZoom = 25;
             gmapControl.Zoom = 15;
@@ -56,12 +56,13 @@ namespace Pantalla_Cliente
 
 
             gmapControl.MouseClick += GmapControl_OnMapClick;
-
+            gmapControl.Position = new PointLatLng(defaultLat, defaultLng);
             this.BackColor = Color.Red;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
 
             _ = ObtenerPuntosConIncidenciaAsync();
+            _ = ObtenerPuntos();
             gmapControl.OnMarkerClick += GmapControl_OnMarkerClick;
 
         }
@@ -120,32 +121,31 @@ namespace Pantalla_Cliente
         }
         private void GmapControl_OnMapClick(object sender, MouseEventArgs e)
         {
-            // Verifica si se hizo clic con el botón izquierdo del ratón
             if (e.Button == MouseButtons.Left)
             {
-                // Obtén las coordenadas del clic en el mapa
                 PointLatLng point = gmapControl.FromLocalToLatLng(e.X, e.Y);
 
-                // Muestra las coordenadas en los Label
-                //latitudData.Text = $"{point.Lat}";
-                //longitudData.Text = $"{point.Lng}";
+                LatitudNuevoPunto = point.Lat;
+                LongitudNuevoPunto = point.Lng;
 
-                // Mueve el marcador actual si ya existe
                 if (marker != null)
                 {
                     marker.Position = point;
                 }
                 else
                 {
+                    // Habilita el botón
+                    btn_crearPunto.Enabled = true;
+
                     // Añade un nuevo marcador en el lugar del clic si no existe
                     marker = new GMarkerGoogle(point, GMarkerGoogleType.blue);
                     GMapOverlay markersOverlay = new GMapOverlay("markers");
                     markersOverlay.Markers.Add(marker);
                     gmapControl.Overlays.Add(markersOverlay);
-                    
                 }
             }
         }
+
         public void ColocarMarcadoresEnMapa()
         {
             // Crea una única capa de superposición para todos los marcadores
@@ -154,30 +154,45 @@ namespace Pantalla_Cliente
             // Itera sobre la lista de puntos y coloca un marcador en el mapa por cada punto
             foreach (var punto in listaPuntos)
             {
-                
                 var marker = new GMarkerGoogle(new PointLatLng(punto.latitud, punto.longitud), GMarkerGoogleType.red);
                 marker.Tag = punto;
                 markersOverlay.Markers.Add(marker);
             }
-            
-        }
 
-        public async Task ObtenerPuntosConIncidenciaAsync()
+
+        }
+        public void ColocarMarcadoresEnMapaPuntosSinIncidencia()
+        {
+            // Crea una única capa de superposición para todos los marcadores
+            GMapOverlay markersOverlay = new GMapOverlay("markers");
+            gmapControl.Overlays.Add(markersOverlay);
+            // Itera sobre la lista de puntos y coloca un marcador en el mapa por cada punto
+            foreach (var puntos in listaPuntosSinIncidencia)
+            {
+                var marker = new GMarkerGoogle(new PointLatLng(puntos.latitud, puntos.longitud), GMarkerGoogleType.green);
+                marker.Tag = puntos;
+                markersOverlay.Markers.Add(marker);
+            }
+
+
+        }
+    
+        
+    public async Task ObtenerPuntosConIncidenciaAsync()
         {
             listaPuntos = await puntoService.GetPuntosConIncidenciasAsync();
             ColocarMarcadoresEnMapa(); 
+        }
+        public async Task ObtenerPuntos()
+        {
+            listaPuntosSinIncidencia = await puntoService.GetPuntosTodos();
+            ColocarMarcadoresEnMapaPuntosSinIncidencia();
         }
         public async Task obtenerIncidencias()
         {
            
             listaIncidencias = await incidenciaService.GetIncidenciasAsync(0);
             
-        }
-
-        private void UpdateTimer_Tick(object sender, EventArgs e)
-        {
-            // Maneja la actualización aquí
-            gmapControl.Refresh();
         }
 
   
@@ -231,5 +246,20 @@ namespace Pantalla_Cliente
         {
 
         }
+
+        private void btn_crearPunto_Click(object sender, EventArgs e)
+        {
+            // Crea una instancia del formulario CrearPunto
+            CrearPunto crearPuntoForm = new CrearPunto();
+
+            // Pasa las coordenadas al nuevo formulario
+            crearPuntoForm.LatitudPuntoMapa = LatitudNuevoPunto;
+            crearPuntoForm.LongitudPuntoMapa = LongitudNuevoPunto;
+
+            // Muestra el formulario de manera modal
+            crearPuntoForm.ShowDialog();
+        }
+
+
     }
 }

@@ -31,12 +31,13 @@ namespace Pantalla_Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapaPantalla));
             this.panel_central = new System.Windows.Forms.Panel();
+            this.listBoxIncidencias = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_crearPunto = new System.Windows.Forms.Button();
             this.btn_resetPointer = new System.Windows.Forms.Button();
             this.adelanteBtn = new System.Windows.Forms.Label();
             this.atrasBtn = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBoxIncidencias = new System.Windows.Forms.ListBox();
             this.panel_central.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +48,7 @@ namespace Pantalla_Cliente
             this.panel_central.AutoSize = true;
             this.panel_central.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel_central.Controls.Add(this.btn_crearPunto);
             this.panel_central.Controls.Add(this.listBoxIncidencias);
             this.panel_central.Controls.Add(this.panel1);
             this.panel_central.Controls.Add(this.adelanteBtn);
@@ -59,6 +61,14 @@ namespace Pantalla_Cliente
             this.panel_central.TabIndex = 30;
             this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
+            // listBoxIncidencias
+            // 
+            this.listBoxIncidencias.FormattingEnabled = true;
+            this.listBoxIncidencias.Location = new System.Drawing.Point(558, 93);
+            this.listBoxIncidencias.Name = "listBoxIncidencias";
+            this.listBoxIncidencias.Size = new System.Drawing.Size(223, 563);
+            this.listBoxIncidencias.TabIndex = 42;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_resetPointer);
@@ -67,6 +77,17 @@ namespace Pantalla_Cliente
             this.panel1.Size = new System.Drawing.Size(533, 570);
             this.panel1.TabIndex = 41;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btn_crearPunto
+            // 
+            this.btn_crearPunto.Enabled = false;
+            this.btn_crearPunto.Location = new System.Drawing.Point(19, 59);
+            this.btn_crearPunto.Name = "btn_crearPunto";
+            this.btn_crearPunto.Size = new System.Drawing.Size(75, 23);
+            this.btn_crearPunto.TabIndex = 43;
+            this.btn_crearPunto.Text = "Crear Punto";
+            this.btn_crearPunto.UseVisualStyleBackColor = true;
+            this.btn_crearPunto.Click += new System.EventHandler(this.btn_crearPunto_Click);
             // 
             // btn_resetPointer
             // 
@@ -109,14 +130,6 @@ namespace Pantalla_Cliente
             this.label2.Text = "Mapa Transita";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // listBoxIncidencias
-            // 
-            this.listBoxIncidencias.FormattingEnabled = true;
-            this.listBoxIncidencias.Location = new System.Drawing.Point(558, 93);
-            this.listBoxIncidencias.Name = "listBoxIncidencias";
-            this.listBoxIncidencias.Size = new System.Drawing.Size(223, 563);
-            this.listBoxIncidencias.TabIndex = 42;
-            // 
             // MapaPantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,5 +157,6 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_resetPointer;
         private System.Windows.Forms.ListBox listBoxIncidencias;
+        private System.Windows.Forms.Button btn_crearPunto;
     }
 }
