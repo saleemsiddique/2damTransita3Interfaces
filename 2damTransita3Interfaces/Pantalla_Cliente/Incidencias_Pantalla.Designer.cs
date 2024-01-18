@@ -269,7 +269,7 @@ namespace Pantalla_Cliente
             // 
             // btnVentanaInci
             // 
-            this.btnVentanaInci.Location = new System.Drawing.Point(340, 144);
+            this.btnVentanaInci.Location = new System.Drawing.Point(322, 150);
             this.btnVentanaInci.Margin = new System.Windows.Forms.Padding(2);
             this.btnVentanaInci.Name = "btnVentanaInci";
             this.btnVentanaInci.Size = new System.Drawing.Size(148, 19);
@@ -719,7 +719,6 @@ namespace Pantalla_Cliente
             this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
             this.paginaDropDown.TabIndex = 43;
             this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
-            this.paginaDropDown.KeyDown += new System.Windows.Forms.KeyEventHandler(Utils.paginaDropDown_KeyDown);
             // 
             // paginas
             // 

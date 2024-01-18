@@ -45,6 +45,7 @@
             this.filtro_acceso = new System.Windows.Forms.CheckBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.btnIrPantallaPDF = new System.Windows.Forms.Button();
             this.adelanteBtn = new System.Windows.Forms.Label();
             this.btn_addPunto = new System.Windows.Forms.Button();
             this.atrasBtn = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnIrPantallaPDF = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_incidencias = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -137,7 +137,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(282, 102);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(246, 405);
+            this.groupBox1.Size = new System.Drawing.Size(134, 322);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -299,6 +299,17 @@
             this.label16.TabIndex = 35;
             this.label16.Text = "Añadir Punto";
             // 
+            // btnIrPantallaPDF
+            // 
+            this.btnIrPantallaPDF.Location = new System.Drawing.Point(349, 150);
+            this.btnIrPantallaPDF.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIrPantallaPDF.Name = "btnIrPantallaPDF";
+            this.btnIrPantallaPDF.Size = new System.Drawing.Size(120, 20);
+            this.btnIrPantallaPDF.TabIndex = 40;
+            this.btnIrPantallaPDF.Text = "Generar PDF punto";
+            this.btnIrPantallaPDF.UseVisualStyleBackColor = true;
+            this.btnIrPantallaPDF.Click += new System.EventHandler(this.btnIrPantallaPDF_Click);
+            // 
             // adelanteBtn
             // 
             this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
@@ -373,7 +384,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.radioButton1);
             this.panel2.Location = new System.Drawing.Point(2, 27);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 67);
             this.panel2.TabIndex = 10;
@@ -442,7 +453,7 @@
             this.radioButton1.BackColor = System.Drawing.Color.Transparent;
             this.radioButton1.ForeColor = System.Drawing.Color.Transparent;
             this.radioButton1.Location = new System.Drawing.Point(364, 28);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(14, 13);
             this.radioButton1.TabIndex = 2;
@@ -473,17 +484,6 @@
             this.label1.Size = new System.Drawing.Size(178, 25);
             this.label1.TabIndex = 19;
             this.label1.Text = "Puntos Transita";
-            // 
-            // btnIrPantallaPDF
-            // 
-            this.btnIrPantallaPDF.Location = new System.Drawing.Point(368, 142);
-            this.btnIrPantallaPDF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnIrPantallaPDF.Name = "btnIrPantallaPDF";
-            this.btnIrPantallaPDF.Size = new System.Drawing.Size(120, 20);
-            this.btnIrPantallaPDF.TabIndex = 40;
-            this.btnIrPantallaPDF.Text = "Generar PDF punto";
-            this.btnIrPantallaPDF.UseVisualStyleBackColor = true;
-            this.btnIrPantallaPDF.Click += new System.EventHandler(this.btnIrPantallaPDF_Click);
             // 
             // panel1
             // 
