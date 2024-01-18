@@ -47,7 +47,7 @@ namespace Pantalla_Cliente
             this.Correo.Name = "Correo";
             this.Correo.Size = new System.Drawing.Size(234, 22);
             this.Correo.TabIndex = 1;
-            this.Correo.Text = "admin@admin.com";
+            this.Correo.Text = "prueba1@gmail.com";
             this.Correo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Correo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.Correo.Enter += new System.EventHandler(this.user_enter);
@@ -119,14 +119,14 @@ namespace Pantalla_Cliente
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.ClientSize = new System.Drawing.Size(434, 432);
+            this.ClientSize = new System.Drawing.Size(432, 432);
             this.Controls.Add(this.btn_ajustes);
             this.Controls.Add(this.imgTransita);
             this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.checkBoxMostrarContrasenya);
             this.Controls.Add(this.contrasenya);
             this.Controls.Add(this.Correo);
-            this.MaximumSize = new System.Drawing.Size(450, 560);
+            this.MaximumSize = new System.Drawing.Size(450, 558);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

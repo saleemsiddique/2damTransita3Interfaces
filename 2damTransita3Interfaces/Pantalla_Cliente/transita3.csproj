@@ -48,6 +48,10 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.2.0\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -104,6 +108,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexion.cs" />
     <Compile Include="CrearPunto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +267,24 @@
       <DependentUpon>UsuariosMunicipioBanner.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
+    <Compile Include="VentanaPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaPDF.Designer.cs">
+      <DependentUpon>VentanaPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPDFIncidencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaPDFIncidencia.Designer.cs">
+      <DependentUpon>VentanaPDFIncidencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPDFPunto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaPDFPunto.Designer.cs">
+      <DependentUpon>VentanaPDFPunto.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CrearPunto.resx">
       <DependentUpon>CrearPunto.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +356,15 @@
     <EmbeddedResource Include="UsuariosMunicipioBanner.resx">
       <DependentUpon>UsuariosMunicipioBanner.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentanaPDF.resx">
+      <DependentUpon>VentanaPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaPDFIncidencia.resx">
+      <DependentUpon>VentanaPDFIncidencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaPDFPunto.resx">
+      <DependentUpon>VentanaPDFPunto.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -372,6 +404,12 @@
     <PackageReference Include="GMap.NET.WindowsForms">
       <Version>1.7.5</Version>
     </PackageReference>
+    <PackageReference Include="itext.bouncy-castle-adapter">
+      <Version>8.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="itext7">
+      <Version>8.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
@@ -403,6 +441,25 @@
       <Project>{a7fe12f6-cad0-43e2-ba86-a330501f2d02}</Project>
       <Name>transitaControllers</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

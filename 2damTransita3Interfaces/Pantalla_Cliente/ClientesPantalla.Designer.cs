@@ -43,6 +43,7 @@ namespace Pantalla_Cliente
             this.label11 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
             this.correo = new System.Windows.Forms.Label();
+            this.btnGenerarpdf = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_incidencias = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -111,7 +112,7 @@ namespace Pantalla_Cliente
             this.panel_derecha.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel_derecha.Location = new System.Drawing.Point(833, 0);
             this.panel_derecha.Name = "panel_derecha";
-            this.panel_derecha.Size = new System.Drawing.Size(231, 681);
+            this.panel_derecha.Size = new System.Drawing.Size(231, 673);
             this.panel_derecha.TabIndex = 28;
             // 
             // clienteImg
@@ -233,6 +234,17 @@ namespace Pantalla_Cliente
             this.correo.TabIndex = 25;
             this.correo.Text = "@Cliente";
             // 
+            // btnGenerarpdf
+            // 
+            this.btnGenerarpdf.Location = new System.Drawing.Point(362, 150);
+            this.btnGenerarpdf.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGenerarpdf.Name = "btnGenerarpdf";
+            this.btnGenerarpdf.Size = new System.Drawing.Size(126, 19);
+            this.btnGenerarpdf.TabIndex = 42;
+            this.btnGenerarpdf.Text = "Generar pdf cliente";
+            this.btnGenerarpdf.UseVisualStyleBackColor = true;
+            this.btnGenerarpdf.Click += new System.EventHandler(this.btnGenerarpdf_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
@@ -250,7 +262,7 @@ namespace Pantalla_Cliente
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 681);
+            this.panel1.Size = new System.Drawing.Size(276, 673);
             this.panel1.TabIndex = 30;
             // 
             // btn_incidencias
@@ -278,7 +290,7 @@ namespace Pantalla_Cliente
             this.panel7.Controls.Add(this.button6);
             this.panel7.Controls.Add(this.pictureBox1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 596);
+            this.panel7.Location = new System.Drawing.Point(0, 588);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(276, 85);
             this.panel7.TabIndex = 14;
@@ -434,6 +446,7 @@ namespace Pantalla_Cliente
             // panel_central
             // 
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel_central.Controls.Add(this.btnGenerarpdf);
             this.panel_central.Controls.Add(this.adelanteBtn);
             this.panel_central.Controls.Add(this.atrasBtn);
             this.panel_central.Controls.Add(this.label_tipoclientes);
@@ -445,7 +458,7 @@ namespace Pantalla_Cliente
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(276, 0);
             this.panel_central.Name = "panel_central";
-            this.panel_central.Size = new System.Drawing.Size(557, 681);
+            this.panel_central.Size = new System.Drawing.Size(557, 673);
             this.panel_central.TabIndex = 32;
             this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_central_Paint);
             // 
@@ -692,7 +705,7 @@ namespace Pantalla_Cliente
             this.fondoGrisMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fondoGrisMid.Location = new System.Drawing.Point(0, 0);
             this.fondoGrisMid.Name = "fondoGrisMid";
-            this.fondoGrisMid.Size = new System.Drawing.Size(1064, 681);
+            this.fondoGrisMid.Size = new System.Drawing.Size(1064, 673);
             this.fondoGrisMid.TabIndex = 9;
             // 
             // Cliente_Pantalla
@@ -700,14 +713,14 @@ namespace Pantalla_Cliente
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.ClientSize = new System.Drawing.Size(1064, 673);
             this.Controls.Add(this.panel_central);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_derecha);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.fondoGrisMid);
-            this.MaximumSize = new System.Drawing.Size(1280, 720);
-            this.MinimumSize = new System.Drawing.Size(960, 450);
+            this.MaximumSize = new System.Drawing.Size(1280, 718);
+            this.MinimumSize = new System.Drawing.Size(960, 449);
             this.Name = "Cliente_Pantalla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transita";
@@ -784,6 +797,7 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label atrasBtn;
         private System.Windows.Forms.Label paginas;
         private System.Windows.Forms.ComboBox paginaDropDown;
+        private System.Windows.Forms.Button btnGenerarpdf;
     }
 }
 

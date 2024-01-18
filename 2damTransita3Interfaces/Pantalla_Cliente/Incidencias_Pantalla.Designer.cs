@@ -46,6 +46,7 @@ namespace Pantalla_Cliente
             this.btn_aceptarIncidencia = new System.Windows.Forms.Button();
             this.btn_eliminarIncidencia = new System.Windows.Forms.Button();
             this.incidencia_img = new System.Windows.Forms.PictureBox();
+            this.btnVentanaInci = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -265,6 +266,17 @@ namespace Pantalla_Cliente
             this.incidencia_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.incidencia_img.TabIndex = 24;
             this.incidencia_img.TabStop = false;
+            // 
+            // btnVentanaInci
+            // 
+            this.btnVentanaInci.Location = new System.Drawing.Point(340, 144);
+            this.btnVentanaInci.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVentanaInci.Name = "btnVentanaInci";
+            this.btnVentanaInci.Size = new System.Drawing.Size(148, 19);
+            this.btnVentanaInci.TabIndex = 43;
+            this.btnVentanaInci.Text = "Generar pdf incidencia";
+            this.btnVentanaInci.UseVisualStyleBackColor = true;
+            this.btnVentanaInci.Click += new System.EventHandler(this.btnVentanaInci_Click);
             // 
             // btn_cliente
             // 
@@ -561,7 +573,7 @@ namespace Pantalla_Cliente
             this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(375, 76);
+            this.buscarTextBox.Location = new System.Drawing.Point(376, 76);
             this.buscarTextBox.Name = "buscarTextBox";
             this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
@@ -574,6 +586,7 @@ namespace Pantalla_Cliente
             this.panel4.AutoSize = true;
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel4.Controls.Add(this.btnVentanaInci);
             this.panel4.Controls.Add(this.adelanteBtn);
             this.panel4.Controls.Add(this.atrasBtn);
             this.panel4.Controls.Add(this.label_tipoIncidencia);
@@ -750,7 +763,7 @@ namespace Pantalla_Cliente
             this.buttonFiltros.AutoSize = true;
             this.buttonFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonFiltros.Image = ((System.Drawing.Image)(resources.GetObject("buttonFiltros.Image")));
-            this.buttonFiltros.Location = new System.Drawing.Point(306, 74);
+            this.buttonFiltros.Location = new System.Drawing.Point(307, 74);
             this.buttonFiltros.Name = "buttonFiltros";
             this.buttonFiltros.Size = new System.Drawing.Size(36, 36);
             this.buttonFiltros.TabIndex = 17;
@@ -794,8 +807,8 @@ namespace Pantalla_Cliente
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1280, 720);
-            this.MinimumSize = new System.Drawing.Size(960, 450);
+            this.MaximumSize = new System.Drawing.Size(1280, 718);
+            this.MinimumSize = new System.Drawing.Size(960, 449);
             this.Name = "Incidencias_Pantalla";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -881,5 +894,6 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label atrasBtn;
         private System.Windows.Forms.Label paginas;
         private System.Windows.Forms.ComboBox paginaDropDown;
+        private System.Windows.Forms.Button btnVentanaInci;
     }
 }

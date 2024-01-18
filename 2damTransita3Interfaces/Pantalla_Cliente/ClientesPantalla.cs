@@ -5,6 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //TODO: Hacer pantalla de carga de clientes
+using iText.Layout;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using iText.Layout.Properties;
+using iText.Layout.Element;
+using iText.Kernel.Pdf;
+using iText.Kernel.Font;
+using iText.IO.Image;
+using iText.IO.Font.Constants;
+using iText.Kernel.Geom;
+using Point = System.Drawing.Point;
+
 namespace Pantalla_Cliente
 {
     public partial class Cliente_Pantalla : Form
@@ -340,6 +352,102 @@ namespace Pantalla_Cliente
             await ObtenerClientesRefresh();
 
         }
+
+        //Aqui empieza el pdf
+        public void btnGenerarpdf_Click(object sender, EventArgs e)
+        {
+
+            //string filtro = txtFiltro.Text;
+            //crearPDF();
+            //axAcroPDF.src = "C:/Users/hamon/Documents/GitHub/2damTransita3Interfaces/2damTransita3Interfaces/Pantalla_Cliente/bin/Debug/ReporteProducto.pdf";
+
+            VentanaPDF ventanaPDF = new VentanaPDF();
+
+            ventanaPDF.ShowDialog();
+        }
+        /*
+        private void crearPDF()
+        {
+            PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
+            PdfDocument pdf = new PdfDocument(pdfWriter);
+            PageSize tamanioH = new PageSize(792, 612);
+            Document documento = new Document(pdf, tamanioH);
+
+            documento.SetMargins(60, 20, 55, 20);
+
+            PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+            PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+            string[] columnas = { "id", "apellidos", "contrasenya", "estado", "nombre", "nombre_usuario" };
+
+            float[] tamanios = { 2, 2, 2, 2, 2, 2 };
+            Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
+            tabla.SetWidth(UnitValue.CreatePercentValue(100));
+
+            foreach (string columna in columnas)
+            {
+                tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
+
+            }
+
+            string sql = "SELECT id, apellidos, contrasenya, estado, nombre, nombre_usuario FROM cliente ";//WHERE nombre = '"+filtro+"'";
+
+
+            MySqlConnection connectionDB = Conexion.conexion();
+            connectionDB.Open();
+
+            MySqlCommand comando = new MySqlCommand(sql, connectionDB);
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                //for (int x = 1; x < 100; x++)
+                //{
+                    tabla.AddCell(new Cell().Add(new Paragraph(reader["id"].ToString()).SetFont(fontContenido)));
+                    tabla.AddCell(new Cell().Add(new Paragraph(reader["apellidos"].ToString()).SetFont(fontContenido)));
+                    tabla.AddCell(new Cell().Add(new Paragraph(reader["contrasenya"].ToString()).SetFont(fontContenido)));
+                    tabla.AddCell(new Cell().Add(new Paragraph(reader["estado"].ToString()).SetFont(fontContenido)));
+                    tabla.AddCell(new Cell().Add(new Paragraph(reader["nombre"].ToString()).SetFont(fontContenido)));
+                    tabla.AddCell(new Cell().Add(new Paragraph(reader["nombre_usuario"].ToString()).SetFont(fontContenido)));
+
+                //}
+
+            }
+            documento.Add(tabla);
+
+            documento.Close();
+
+            var logo = new iText.Layout.Element.Image(ImageDataFactory.Create("C:/Users/hamon/Pictures/12.png")).SetWidth(50);
+            var plogo = new Paragraph("").Add(logo);
+
+            var titulo = new Paragraph("Reporte de productos");
+            titulo.SetTextAlignment(TextAlignment.CENTER);
+            titulo.SetFontSize(12);
+
+            var dfecha = DateTime.Now.ToString("dd-MM-yyyy");
+            var dhora = DateTime.Now.ToString("hh:mm:ss");
+            var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
+            fecha.SetFontSize(12);
+
+            PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte.pdf"), new PdfWriter("ReporteProducto.pdf"));
+            Document doc = new Document(pdfDoc);
+            int numeros = pdfDoc.GetNumberOfPages();
+
+            for (int i = 1; i < numeros; i++)
+            {
+                PdfPage pagina = pdfDoc.GetPage(i);
+
+                float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
+                doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+                doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+                doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+
+                doc.ShowTextAligned(new Paragraph(String.Format("Página {0} de {1}", i, numeros)), pdfDoc.GetPage(i).GetPageSize().GetWidth() / 2, pdfDoc.GetPage(i).GetPageSize().GetBottom() + 30, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+
+            }
+            doc.Close();
+
+        }
+        */
+
     }
 
     /*Codigo para refrescar la unica pantalla usa

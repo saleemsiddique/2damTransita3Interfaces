@@ -183,16 +183,6 @@ namespace Pantalla_Cliente.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IesMarcoZaragoza_fotor_bg_remover_2023110121283 {
-            get {
-                object obj = ResourceManager.GetObject("IesMarcoZaragoza-fotor-bg-remover-2023110121283", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Jugador {
             get {
                 object obj = ResourceManager.GetObject("Jugador", resourceCulture);

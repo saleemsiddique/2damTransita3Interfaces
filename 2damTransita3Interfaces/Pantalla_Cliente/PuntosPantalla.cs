@@ -350,5 +350,10 @@ namespace Pantalla_Cliente
 
         }
 
+        private void btnIrPantallaPDF_Click(object sender, EventArgs e)
+        {
+            VentanaPDFPunto ventanaPDFPunto = new VentanaPDFPunto();
+            ventanaPDFPunto.ShowDialog();
+        }
     }
 }

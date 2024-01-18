@@ -58,9 +58,9 @@
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnIrPantallaPDF = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_incidencias = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -114,17 +114,17 @@
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.panel_central.Controls.Add(this.groupBox1);
             this.panel_central.Controls.Add(this.label16);
+            this.panel_central.Controls.Add(this.btnIrPantallaPDF);
             this.panel_central.Controls.Add(this.adelanteBtn);
             this.panel_central.Controls.Add(this.btn_addPunto);
             this.panel_central.Controls.Add(this.atrasBtn);
             this.panel_central.Controls.Add(this.panelPuntos);
-            this.panel_central.Controls.Add(this.buscarTextBox);
             this.panel_central.Controls.Add(this.btn_filtrar);
             this.panel_central.Controls.Add(this.label1);
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(276, 0);
             this.panel_central.Name = "panel_central";
-            this.panel_central.Size = new System.Drawing.Size(557, 681);
+            this.panel_central.Size = new System.Drawing.Size(557, 673);
             this.panel_central.TabIndex = 35;
             this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_central_Paint);
             // 
@@ -137,7 +137,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(282, 102);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(255, 414);
+            this.groupBox1.Size = new System.Drawing.Size(246, 405);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -373,7 +373,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.radioButton1);
             this.panel2.Location = new System.Drawing.Point(2, 27);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 67);
             this.panel2.TabIndex = 10;
@@ -442,25 +442,12 @@
             this.radioButton1.BackColor = System.Drawing.Color.Transparent;
             this.radioButton1.ForeColor = System.Drawing.Color.Transparent;
             this.radioButton1.Location = new System.Drawing.Point(364, 28);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(14, 13);
             this.radioButton1.TabIndex = 2;
             this.radioButton1.UseVisualStyleBackColor = false;
             this.radioButton1.Visible = false;
-            // 
-            // buscarTextBox
-            // 
-            this.buscarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(340, 76);
-            this.buscarTextBox.Name = "buscarTextBox";
-            this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
-            this.buscarTextBox.TabIndex = 28;
-            this.buscarTextBox.Text = "Buscar";
             // 
             // btn_filtrar
             // 
@@ -487,6 +474,17 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Puntos Transita";
             // 
+            // btnIrPantallaPDF
+            // 
+            this.btnIrPantallaPDF.Location = new System.Drawing.Point(368, 142);
+            this.btnIrPantallaPDF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIrPantallaPDF.Name = "btnIrPantallaPDF";
+            this.btnIrPantallaPDF.Size = new System.Drawing.Size(120, 20);
+            this.btnIrPantallaPDF.TabIndex = 40;
+            this.btnIrPantallaPDF.Text = "Generar PDF punto";
+            this.btnIrPantallaPDF.UseVisualStyleBackColor = true;
+            this.btnIrPantallaPDF.Click += new System.EventHandler(this.btnIrPantallaPDF_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
@@ -504,7 +502,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 681);
+            this.panel1.Size = new System.Drawing.Size(276, 673);
             this.panel1.TabIndex = 34;
             // 
             // btn_incidencias
@@ -532,7 +530,7 @@
             this.panel7.Controls.Add(this.button6);
             this.panel7.Controls.Add(this.pictureBox1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 596);
+            this.panel7.Location = new System.Drawing.Point(0, 588);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(276, 85);
             this.panel7.TabIndex = 14;
@@ -694,7 +692,7 @@
             this.panel_derecha.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel_derecha.Location = new System.Drawing.Point(833, 0);
             this.panel_derecha.Name = "panel_derecha";
-            this.panel_derecha.Size = new System.Drawing.Size(231, 681);
+            this.panel_derecha.Size = new System.Drawing.Size(231, 673);
             this.panel_derecha.TabIndex = 33;
             // 
             // puntoImg
@@ -869,12 +867,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.ClientSize = new System.Drawing.Size(1064, 673);
             this.Controls.Add(this.panel_central);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_derecha);
-            this.MaximumSize = new System.Drawing.Size(1280, 720);
-            this.MinimumSize = new System.Drawing.Size(960, 450);
+            this.MaximumSize = new System.Drawing.Size(1280, 718);
+            this.MinimumSize = new System.Drawing.Size(960, 449);
             this.Name = "PuntosPantalla";
             this.Text = "PuntosPantalla";
             this.panel_central.ResumeLayout(false);
@@ -916,7 +914,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox buscarTextBox;
         private System.Windows.Forms.Button btn_filtrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
@@ -969,5 +966,6 @@
         private System.Windows.Forms.Label adelanteBtn;
         private System.Windows.Forms.Label paginas;
         private System.Windows.Forms.ComboBox paginaDropDown;
+        private System.Windows.Forms.Button btnIrPantallaPDF;
     }
 }
