@@ -446,7 +446,6 @@ namespace Pantalla_Cliente
             // panel_central
             // 
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.panel_central.Controls.Add(this.btnGenerarpdf);
             this.panel_central.Controls.Add(this.adelanteBtn);
             this.panel_central.Controls.Add(this.atrasBtn);
             this.panel_central.Controls.Add(this.label_tipoclientes);
@@ -455,6 +454,7 @@ namespace Pantalla_Cliente
             this.panel_central.Controls.Add(this.buscarTextBox);
             this.panel_central.Controls.Add(this.filtroClientes_btn);
             this.panel_central.Controls.Add(this.clientesLabel);
+            this.panel_central.Controls.Add(this.btnGenerarpdf);
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(276, 0);
             this.panel_central.Name = "panel_central";

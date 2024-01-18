@@ -586,7 +586,6 @@ namespace Pantalla_Cliente
             this.panel4.AutoSize = true;
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.panel4.Controls.Add(this.btnVentanaInci);
             this.panel4.Controls.Add(this.adelanteBtn);
             this.panel4.Controls.Add(this.atrasBtn);
             this.panel4.Controls.Add(this.label_tipoIncidencia);
@@ -597,6 +596,7 @@ namespace Pantalla_Cliente
             this.panel4.Controls.Add(this.buscarTextBox);
             this.panel4.Controls.Add(this.buttonFiltros);
             this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.btnVentanaInci);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(276, 0);
             this.panel4.Name = "panel4";
