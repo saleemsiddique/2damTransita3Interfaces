@@ -31,15 +31,15 @@ namespace Pantalla_Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapaPantalla));
             this.panel_central = new System.Windows.Forms.Panel();
-            this.listBoxIncidencias = new System.Windows.Forms.ListBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btn_crearPunto = new System.Windows.Forms.Button();
+            this.listBoxIncidencias = new System.Windows.Forms.ListBox();
+            this.mapPanel = new System.Windows.Forms.Panel();
             this.btn_resetPointer = new System.Windows.Forms.Button();
             this.adelanteBtn = new System.Windows.Forms.Label();
             this.atrasBtn = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_central.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.mapPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_central
@@ -50,7 +50,7 @@ namespace Pantalla_Cliente
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.panel_central.Controls.Add(this.btn_crearPunto);
             this.panel_central.Controls.Add(this.listBoxIncidencias);
-            this.panel_central.Controls.Add(this.panel1);
+            this.panel_central.Controls.Add(this.mapPanel);
             this.panel_central.Controls.Add(this.adelanteBtn);
             this.panel_central.Controls.Add(this.atrasBtn);
             this.panel_central.Controls.Add(this.label2);
@@ -59,24 +59,6 @@ namespace Pantalla_Cliente
             this.panel_central.Name = "panel_central";
             this.panel_central.Size = new System.Drawing.Size(793, 681);
             this.panel_central.TabIndex = 30;
-            this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
-            // 
-            // listBoxIncidencias
-            // 
-            this.listBoxIncidencias.FormattingEnabled = true;
-            this.listBoxIncidencias.Location = new System.Drawing.Point(558, 93);
-            this.listBoxIncidencias.Name = "listBoxIncidencias";
-            this.listBoxIncidencias.Size = new System.Drawing.Size(223, 563);
-            this.listBoxIncidencias.TabIndex = 42;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btn_resetPointer);
-            this.panel1.Location = new System.Drawing.Point(19, 88);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(533, 570);
-            this.panel1.TabIndex = 41;
-            
             // 
             // btn_crearPunto
             // 
@@ -87,7 +69,22 @@ namespace Pantalla_Cliente
             this.btn_crearPunto.TabIndex = 43;
             this.btn_crearPunto.Text = "Crear Punto";
             this.btn_crearPunto.UseVisualStyleBackColor = true;
-            this.btn_crearPunto.Click += new System.EventHandler(this.btn_crearPunto_Click);
+            // 
+            // listBoxIncidencias
+            // 
+            this.listBoxIncidencias.FormattingEnabled = true;
+            this.listBoxIncidencias.Location = new System.Drawing.Point(558, 93);
+            this.listBoxIncidencias.Name = "listBoxIncidencias";
+            this.listBoxIncidencias.Size = new System.Drawing.Size(223, 563);
+            this.listBoxIncidencias.TabIndex = 42;
+            // 
+            // mapPanel
+            // 
+            this.mapPanel.Controls.Add(this.btn_resetPointer);
+            this.mapPanel.Location = new System.Drawing.Point(19, 88);
+            this.mapPanel.Name = "mapPanel";
+            this.mapPanel.Size = new System.Drawing.Size(533, 570);
+            this.mapPanel.TabIndex = 41;
             // 
             // btn_resetPointer
             // 
@@ -97,7 +94,6 @@ namespace Pantalla_Cliente
             this.btn_resetPointer.Size = new System.Drawing.Size(32, 34);
             this.btn_resetPointer.TabIndex = 42;
             this.btn_resetPointer.UseVisualStyleBackColor = true;
-            this.btn_resetPointer.Click += new System.EventHandler(this.btn_resetPointer_Click);
             // 
             // adelanteBtn
             // 
@@ -128,7 +124,6 @@ namespace Pantalla_Cliente
             this.label2.Size = new System.Drawing.Size(163, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Mapa Transita";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // MapaPantalla
             // 
@@ -142,7 +137,7 @@ namespace Pantalla_Cliente
             this.Text = "MapaPantalla";
             this.panel_central.ResumeLayout(false);
             this.panel_central.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.mapPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,7 +149,7 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label adelanteBtn;
         private System.Windows.Forms.Label atrasBtn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel mapPanel;
         private System.Windows.Forms.Button btn_resetPointer;
         private System.Windows.Forms.ListBox listBoxIncidencias;
         private System.Windows.Forms.Button btn_crearPunto;
