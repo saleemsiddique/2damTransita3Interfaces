@@ -542,6 +542,12 @@ namespace Pantalla_Cliente
                 }
             }
         }
+
+        private void btnVentanaInci_Click(object sender, EventArgs e)
+        {
+            VentanaPDFIncidencia ventanaPDFIncidencia=new VentanaPDFIncidencia();
+            ventanaPDFIncidencia.ShowDialog();
+        }
     }
 }
 
