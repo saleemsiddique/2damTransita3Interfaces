@@ -60,9 +60,9 @@ namespace Pantalla_Cliente
             this.BackColor = Color.Red;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
-
-            _ = ObtenerPuntosConIncidenciaAsync();
             _ = ObtenerPuntos();
+            _ = ObtenerPuntosConIncidenciaAsync();
+           
             gmapControl.OnMarkerClick += GmapControl_OnMarkerClick;
 
         }
@@ -110,9 +110,9 @@ namespace Pantalla_Cliente
                 }
                 else
                 {
-                    // Si no hay incidencias, oculta el ListBox
-                    listBoxIncidencias.Visible = false;
-                    MessageBox.Show($"El punto nº {punto.id}, con descripción: {punto.descripcion}: no tiene incidencias asociadas.");
+                    listBoxIncidencias.Items.Clear();
+                    listBoxIncidencias.Items.Add($"Punto con Id: {punto.id}");
+                    listBoxIncidencias.Items.Add($"Descripcion: {punto.descripcion}");
                 }
 
                 // Marcar que el mensaje ha sido mostrado

@@ -70,8 +70,6 @@ namespace Pantalla_Cliente
             else if (comboBoxAccesibilidad.Text.Equals("PARCIALMENTE_ACCESIBLE")) {
                 accesibilidadTipo = AccesibilidadTipo.PARCIALMENTE_ACCESIBLE;
             }
-                //latitudPunto_input.Text.Replace(",", ".");
-            //longitudPunto_input.Text.Replace(",", ".");
             string content = $"{{\"descripcion\": \"{puntoDescripcion_input.Text}\", " +
                                          $"\"tipoPunto\": \"{tipoPunto}\", " +
                                          $"\"foto\": \"{"foto.jpg"}\", " +
@@ -124,12 +122,19 @@ namespace Pantalla_Cliente
                         if (form is Transita)
                         {
                             Transita transita = (Transita)form;
-                            transita.MostrarPanelDePunto();
+                            if (latitudPunto_input.Text.Length > 0)
+                            {
+                                transita.MostrarPanelDeMapa();
+                            }
+                            else {
+                                transita.MostrarPanelDePunto();
+                            }
+                            
+                            
                         }
                     }
                     this.Close();
                 }
-                    
             }
         }
 
