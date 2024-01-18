@@ -165,6 +165,7 @@ namespace Pantalla_Cliente
 
                     incidenciaBanner.getPanel().Click += (sender, e) =>
                     {
+                        incidenciaBanner.getPanel().Focus();
                         incidencia_img.ImageLocation = Rutas.imagenesPunto + incidencia.punto.foto;
                         correo.Text = $"ID: {incidencia.id}";
                         nombre.Text = incidencia.descripcion;
@@ -172,6 +173,13 @@ namespace Pantalla_Cliente
                         descripcion_mostrar.Text = incidencia.descripcion;
                         fecha_mostrar.Text = incidencia.fechaHora.ToString("yyyy-MM-dd");
                         estado_mostrar.Text = incidencia.estado.ToString();
+                        incidenciaBanner.getPanel().BorderStyle = BorderStyle.Fixed3D;
+                        incidenciaBanner.getPanel().Invalidate();
+                    };
+                    incidenciaBanner.getPanel().LostFocus += (sender, e) =>
+                    {
+                        incidenciaBanner.getPanel().BorderStyle = BorderStyle.None;
+                        incidenciaBanner.getPanel().Invalidate();
                     };
                 }
                 else
@@ -183,6 +191,7 @@ namespace Pantalla_Cliente
 
                     incidenciaBanner.getPanel().Click += (sender, e) =>
                     {
+                        incidenciaBanner.getPanel().Focus();
                         incidencia_img.Image = LoadBase64(incidencia.fotos.ToString());
                         correo.Text = $"ID: {incidencia.id}";
                         nombre.Text = incidencia.descripcion;
@@ -190,6 +199,13 @@ namespace Pantalla_Cliente
                         descripcion_mostrar.Text = incidencia.descripcion;
                         fecha_mostrar.Text = incidencia.fechaHora.ToString("yyyy-MM-dd");
                         estado_mostrar.Text = incidencia.estado.ToString();
+                        incidenciaBanner.getPanel().BorderStyle = BorderStyle.Fixed3D;
+                        incidenciaBanner.getPanel().Invalidate();
+                    };
+                    incidenciaBanner.getPanel().LostFocus += (sender, e) =>
+                    {
+                        incidenciaBanner.getPanel().BorderStyle = BorderStyle.None;
+                        incidenciaBanner.getPanel().Invalidate();
                     };
                 }
 

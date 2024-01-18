@@ -139,12 +139,21 @@ namespace Pantalla_Cliente
 
                 clienteBanner.getPanel().Click += (sender, e) =>
                 {
+                    clienteBanner.getPanel().Focus();
                     nombre.Text = cliente.nombre + " " + cliente.apellidos;
                     correo.Text = cliente.nombreUsuario;
                     id_mostrar.Text = cliente.id + "";
                     nombre_mostrar.Text = cliente.nombre;
                     apellidos_mostrar.Text = cliente.apellidos;
                     email_mostrar.Text = cliente.nombreUsuario;
+                    clienteBanner.getPanel().BorderStyle = BorderStyle.Fixed3D;
+                    clienteBanner.getPanel().Invalidate();
+                };
+
+                clienteBanner.getPanel().LostFocus += (sender, e) =>
+                {
+                    clienteBanner.getPanel().BorderStyle = BorderStyle.None;
+                    clienteBanner.getPanel().Invalidate();
                 };
 
                 // Configura la ubicación y otros detalles según sea necesario
