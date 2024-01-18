@@ -27,7 +27,6 @@ namespace Pantalla_Cliente
         public VentanaPDF()
         {
             InitializeComponent();
-            this.Size = new Size(1250, 750);
             //cargarPDF();
             cmbFiltro.Items.Add("id");
             cmbFiltro.Items.Add("apellidos");
@@ -107,8 +106,7 @@ namespace Pantalla_Cliente
             documento.Close();
 
 
-            var logo = new iText.Layout.Element.Image(ImageDataFactory.Create("C:/Users/hamon/Pictures/12.png")).SetWidth(50);
-            var plogo = new Paragraph("").Add(logo);
+
 
             var titulo = new Paragraph("Reporte de productos");
             titulo.SetTextAlignment(TextAlignment.CENTER);
@@ -128,7 +126,6 @@ namespace Pantalla_Cliente
                 PdfPage pagina = pdfDoc.GetPage(i);
 
                 float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
-                doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                 doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                 doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
 
@@ -215,8 +212,6 @@ namespace Pantalla_Cliente
 
             documento.Close();
 
-            var logo = new iText.Layout.Element.Image(ImageDataFactory.Create("C:/Users/hamon/Pictures/12.png")).SetWidth(50);
-            var plogo = new Paragraph("").Add(logo);
 
             var titulo = new Paragraph("Reporte de productos");
             titulo.SetTextAlignment(TextAlignment.CENTER);
@@ -236,7 +231,6 @@ namespace Pantalla_Cliente
                 PdfPage pagina = pdfDoc.GetPage(i);
 
                 float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
-                doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                 doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                 doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
 

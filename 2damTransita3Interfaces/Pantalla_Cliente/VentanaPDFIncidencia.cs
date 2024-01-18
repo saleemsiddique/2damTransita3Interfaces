@@ -42,10 +42,10 @@ namespace Pantalla_Cliente
         public VentanaPDFIncidencia()
         {
             InitializeComponent();
-            this.Size = new Size(1250, 750);
+            
 
             cmbFiltroInciden.Items.Add("id");
-            cmbFiltroInciden.Items.Add("descripción");
+            cmbFiltroInciden.Items.Add("descripcion");
             cmbFiltroInciden.Items.Add("duracion");
             cmbFiltroInciden.Items.Add("estado");
             cmbFiltroInciden.Items.Add("fecha_hora");
@@ -74,7 +74,7 @@ namespace Pantalla_Cliente
 
             PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-            string[] columnas = { "id", "descripción", "duracion", "estado", "fecha_hora", "cliente_id","punto_id" };
+            string[] columnas = { "id", "descripcion", "duracion", "estado", "fecha_hora", "cliente_id","punto_id" };
 
             float[] tamanios = { 2, 2, 2, 2, 2, 2, 2, };
             Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
@@ -86,7 +86,7 @@ namespace Pantalla_Cliente
 
             }
 
-            string sql = "SELECT id,descripción,duracion,estado,fecha_hora,cliente_id,punto_id FROM incidencia ";//WHERE nombre = '"+filtro+"'";
+            string sql = "SELECT id,descripcion,duracion,estado,fecha_hora,cliente_id,punto_id FROM incidencia";//WHERE nombre = '"+filtro+"'";
 
 
             MySqlConnection connectionDB = Conexion.conexion();
@@ -98,23 +98,17 @@ namespace Pantalla_Cliente
             {
 
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["id"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["descripción"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(reader["descripcion"].ToString()).SetFont(fontContenido)));
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["duracion"].ToString()).SetFont(fontContenido)));
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["estado"].ToString()).SetFont(fontContenido)));
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["fecha_hora"].ToString()).SetFont(fontContenido)));
-                
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["cliente_id"].ToString()).SetFont(fontContenido)));
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["punto_id"].ToString()).SetFont(fontContenido)));
-
-
 
             }
             documento.Add(tabla);
 
             documento.Close();
-
-            var logo = new iText.Layout.Element.Image(ImageDataFactory.Create("C:/Users/hamon/Pictures/12.png")).SetWidth(50);
-            var plogo = new Paragraph("").Add(logo);
 
             var titulo = new Paragraph("Reporte de productos");
             titulo.SetTextAlignment(TextAlignment.CENTER);
@@ -134,7 +128,6 @@ namespace Pantalla_Cliente
                 PdfPage pagina = pdfDoc.GetPage(i);
 
                 float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
-                doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                 doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                 doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
 
@@ -159,7 +152,7 @@ namespace Pantalla_Cliente
                 MessageBox.Show("Por favor, seleccione un filtro y proporcione un valor.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            string sql = $"SELECT id, descripción, duracion, estado, fecha_hora, cliente_id, punto_id FROM incidencia WHERE {filtroSeleccionado} = '{filtroValor}'";
+            string sql = $"SELECT id, descripcion, duracion, estado, fecha_hora, cliente_id, punto_id FROM incidencia WHERE {filtroSeleccionado} = '{filtroValor}'";
 
             crearPDFFiltro(sql);
             string rutaRelativa = @"ReporteProducto.pdf";
@@ -179,7 +172,7 @@ namespace Pantalla_Cliente
 
             PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-            string[] columnas = { "id", "descripción", "duracion", "estado", "fecha_hora", "cliente_id", "punto_id" };
+            string[] columnas = { "id", "descripcion", "duracion", "estado", "fecha_hora", "cliente_id", "punto_id" };
 
             float[] tamanios = { 2, 2, 2, 2, 2, 2,2 };
             Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
@@ -203,7 +196,7 @@ namespace Pantalla_Cliente
             {
 
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["id"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["descripción"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(reader["descripcion"].ToString()).SetFont(fontContenido)));
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["duracion"].ToString()).SetFont(fontContenido)));
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["estado"].ToString()).SetFont(fontContenido)));
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["fecha_hora"].ToString()).SetFont(fontContenido)));
@@ -216,9 +209,6 @@ namespace Pantalla_Cliente
             documento.Add(tabla);
 
             documento.Close();
-
-            var logo = new iText.Layout.Element.Image(ImageDataFactory.Create("C:/Users/hamon/Pictures/12.png")).SetWidth(50);
-            var plogo = new Paragraph("").Add(logo);
 
             var titulo = new Paragraph("Reporte de productos");
             titulo.SetTextAlignment(TextAlignment.CENTER);
@@ -238,7 +228,6 @@ namespace Pantalla_Cliente
                 PdfPage pagina = pdfDoc.GetPage(i);
 
                 float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
-                doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                 doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                 doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
 
@@ -253,7 +242,7 @@ namespace Pantalla_Cliente
             string filtroSeleccionado = cmbFiltroInciden.SelectedItem as string;
 
             // Configurar el TextBox según tus necesidades para diferentes opciones
-            txtFiltroIncid.Visible = (filtroSeleccionado == "id" || filtroSeleccionado == "descripción" || filtroSeleccionado == "duracion" || filtroSeleccionado == "estado" || filtroSeleccionado == "fecha_hora" || filtroSeleccionado == "cliente_id" || filtroSeleccionado == "punto_id");
+            txtFiltroIncid.Visible = (filtroSeleccionado == "id" || filtroSeleccionado == "descripcion" || filtroSeleccionado == "duracion" || filtroSeleccionado == "estado" || filtroSeleccionado == "fecha_hora" || filtroSeleccionado == "cliente_id" || filtroSeleccionado == "punto_id");
 
             // Puedes establecer un valor predeterminado si es necesario
             if (txtFiltroIncid.Visible)

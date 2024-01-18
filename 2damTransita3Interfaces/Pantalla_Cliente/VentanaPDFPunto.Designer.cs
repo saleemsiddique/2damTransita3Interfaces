@@ -39,9 +39,10 @@
             // 
             // btnGenerarListaPunto
             // 
-            this.btnGenerarListaPunto.Location = new System.Drawing.Point(517, 25);
+            this.btnGenerarListaPunto.Location = new System.Drawing.Point(82, 27);
+            this.btnGenerarListaPunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGenerarListaPunto.Name = "btnGenerarListaPunto";
-            this.btnGenerarListaPunto.Size = new System.Drawing.Size(315, 23);
+            this.btnGenerarListaPunto.Size = new System.Drawing.Size(244, 19);
             this.btnGenerarListaPunto.TabIndex = 0;
             this.btnGenerarListaPunto.Text = "Generar Lista Puntos";
             this.btnGenerarListaPunto.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // 
             // btnFiltrarPunto
             // 
-            this.btnFiltrarPunto.Location = new System.Drawing.Point(318, 106);
+            this.btnFiltrarPunto.Location = new System.Drawing.Point(746, 27);
+            this.btnFiltrarPunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFiltrarPunto.Name = "btnFiltrarPunto";
-            this.btnFiltrarPunto.Size = new System.Drawing.Size(198, 23);
+            this.btnFiltrarPunto.Size = new System.Drawing.Size(110, 19);
             this.btnFiltrarPunto.TabIndex = 1;
             this.btnFiltrarPunto.Text = "Filtrar Punto";
             this.btnFiltrarPunto.UseVisualStyleBackColor = true;
@@ -60,40 +62,45 @@
             // axAcroPDFPunto
             // 
             this.axAcroPDFPunto.Enabled = true;
-            this.axAcroPDFPunto.Location = new System.Drawing.Point(318, 145);
+            this.axAcroPDFPunto.Location = new System.Drawing.Point(82, 53);
+            this.axAcroPDFPunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.axAcroPDFPunto.Name = "axAcroPDFPunto";
             this.axAcroPDFPunto.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDFPunto.OcxState")));
-            this.axAcroPDFPunto.Size = new System.Drawing.Size(919, 663);
+            this.axAcroPDFPunto.Size = new System.Drawing.Size(774, 527);
             this.axAcroPDFPunto.TabIndex = 2;
             // 
             // txtFiltroPunto
             // 
-            this.txtFiltroPunto.Location = new System.Drawing.Point(559, 107);
+            this.txtFiltroPunto.Location = new System.Drawing.Point(529, 27);
+            this.txtFiltroPunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltroPunto.Name = "txtFiltroPunto";
-            this.txtFiltroPunto.Size = new System.Drawing.Size(374, 22);
+            this.txtFiltroPunto.Size = new System.Drawing.Size(213, 20);
             this.txtFiltroPunto.TabIndex = 3;
             // 
             // cmbFiltroPunto
             // 
             this.cmbFiltroPunto.FormattingEnabled = true;
-            this.cmbFiltroPunto.Location = new System.Drawing.Point(170, 105);
+            this.cmbFiltroPunto.Location = new System.Drawing.Point(433, 27);
+            this.cmbFiltroPunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbFiltroPunto.Name = "cmbFiltroPunto";
-            this.cmbFiltroPunto.Size = new System.Drawing.Size(121, 24);
+            this.cmbFiltroPunto.Size = new System.Drawing.Size(92, 21);
             this.cmbFiltroPunto.TabIndex = 4;
             this.cmbFiltroPunto.SelectedIndexChanged += new System.EventHandler(this.cmbFiltroPunto_SelectedIndexChanged);
             // 
             // VentanaPDFPunto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1586, 1082);
+            this.ClientSize = new System.Drawing.Size(939, 592);
             this.Controls.Add(this.cmbFiltroPunto);
             this.Controls.Add(this.txtFiltroPunto);
             this.Controls.Add(this.axAcroPDFPunto);
             this.Controls.Add(this.btnFiltrarPunto);
             this.Controls.Add(this.btnGenerarListaPunto);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "VentanaPDFPunto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VentanaPDFPunto";
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDFPunto)).EndInit();
             this.ResumeLayout(false);

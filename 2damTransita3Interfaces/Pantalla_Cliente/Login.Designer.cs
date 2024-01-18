@@ -43,12 +43,11 @@ namespace Pantalla_Cliente
             this.Correo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.Correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Correo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Correo.Location = new System.Drawing.Point(131, 290);
-            this.Correo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Correo.Location = new System.Drawing.Point(98, 236);
             this.Correo.Name = "Correo";
-            this.Correo.Size = new System.Drawing.Size(311, 26);
+            this.Correo.Size = new System.Drawing.Size(234, 22);
             this.Correo.TabIndex = 1;
-            this.Correo.Text = "admin@gmail.com";
+            this.Correo.Text = "prueba1@gmail.com";
             this.Correo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Correo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.Correo.Enter += new System.EventHandler(this.user_enter);
@@ -59,10 +58,9 @@ namespace Pantalla_Cliente
             this.contrasenya.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.contrasenya.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contrasenya.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.contrasenya.Location = new System.Drawing.Point(131, 359);
-            this.contrasenya.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.contrasenya.Location = new System.Drawing.Point(98, 292);
             this.contrasenya.Name = "contrasenya";
-            this.contrasenya.Size = new System.Drawing.Size(311, 26);
+            this.contrasenya.Size = new System.Drawing.Size(234, 22);
             this.contrasenya.TabIndex = 2;
             this.contrasenya.Text = "contrasenya1";
             this.contrasenya.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -74,10 +72,9 @@ namespace Pantalla_Cliente
             // 
             this.checkBoxMostrarContrasenya.AutoSize = true;
             this.checkBoxMostrarContrasenya.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxMostrarContrasenya.Location = new System.Drawing.Point(455, 366);
-            this.checkBoxMostrarContrasenya.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxMostrarContrasenya.Location = new System.Drawing.Point(341, 297);
             this.checkBoxMostrarContrasenya.Name = "checkBoxMostrarContrasenya";
-            this.checkBoxMostrarContrasenya.Size = new System.Drawing.Size(74, 20);
+            this.checkBoxMostrarContrasenya.Size = new System.Drawing.Size(61, 17);
             this.checkBoxMostrarContrasenya.TabIndex = 3;
             this.checkBoxMostrarContrasenya.Text = "Mostrar";
             this.checkBoxMostrarContrasenya.UseVisualStyleBackColor = true;
@@ -85,10 +82,9 @@ namespace Pantalla_Cliente
             // 
             // buttonEntrar
             // 
-            this.buttonEntrar.Location = new System.Drawing.Point(217, 427);
-            this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEntrar.Location = new System.Drawing.Point(163, 347);
             this.buttonEntrar.Name = "buttonEntrar";
-            this.buttonEntrar.Size = new System.Drawing.Size(140, 52);
+            this.buttonEntrar.Size = new System.Drawing.Size(105, 42);
             this.buttonEntrar.TabIndex = 4;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = true;
@@ -97,10 +93,9 @@ namespace Pantalla_Cliente
             // imgTransita
             // 
             this.imgTransita.Image = ((System.Drawing.Image)(resources.GetObject("imgTransita.Image")));
-            this.imgTransita.Location = new System.Drawing.Point(145, 46);
-            this.imgTransita.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.imgTransita.Location = new System.Drawing.Point(109, 37);
             this.imgTransita.Name = "imgTransita";
-            this.imgTransita.Size = new System.Drawing.Size(297, 226);
+            this.imgTransita.Size = new System.Drawing.Size(223, 184);
             this.imgTransita.TabIndex = 6;
             // 
             // btn_ajustes
@@ -112,28 +107,26 @@ namespace Pantalla_Cliente
             this.btn_ajustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ajustes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_ajustes.Image = global::Pantalla_Cliente.Properties.Resources.settingIcon;
-            this.btn_ajustes.Location = new System.Drawing.Point(496, 15);
-            this.btn_ajustes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ajustes.Location = new System.Drawing.Point(372, 12);
             this.btn_ajustes.Name = "btn_ajustes";
-            this.btn_ajustes.Size = new System.Drawing.Size(67, 58);
+            this.btn_ajustes.Size = new System.Drawing.Size(50, 47);
             this.btn_ajustes.TabIndex = 7;
             this.btn_ajustes.UseVisualStyleBackColor = false;
             this.btn_ajustes.Click += new System.EventHandler(this.btn_ajustes_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.ClientSize = new System.Drawing.Size(576, 532);
+            this.ClientSize = new System.Drawing.Size(432, 432);
             this.Controls.Add(this.btn_ajustes);
             this.Controls.Add(this.imgTransita);
             this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.checkBoxMostrarContrasenya);
             this.Controls.Add(this.contrasenya);
             this.Controls.Add(this.Correo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximumSize = new System.Drawing.Size(594, 678);
+            this.MaximumSize = new System.Drawing.Size(450, 558);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
