@@ -37,6 +37,8 @@ namespace Pantalla_Cliente
         {
             InitializeComponent();
             obtenerIncidencias();
+            toolTipCrearPuntoButton.SetToolTip(btn_crearPunto,"Boton para crear un punto apartir de la marca en el mapa");
+            toolTipMapCenter.SetToolTip(btn_resetPointer, "Boton para volver al centro de la vilajoiosa");
             listaIncidencias = new List<Incidencia>();
             gmapControl = new GMapControl();
             gmapControl.Dock = DockStyle.Fill;
