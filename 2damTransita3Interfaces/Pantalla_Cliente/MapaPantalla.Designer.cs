@@ -41,6 +41,7 @@ namespace Pantalla_Cliente
             this.label2 = new System.Windows.Forms.Label();
             this.toolTipCrearPuntoButton = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipMapCenter = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCrearIncidencia = new System.Windows.Forms.Button();
             this.panel_central.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +52,7 @@ namespace Pantalla_Cliente
             this.panel_central.AutoSize = true;
             this.panel_central.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel_central.Controls.Add(this.btnCrearIncidencia);
             this.panel_central.Controls.Add(this.btn_crearPunto);
             this.panel_central.Controls.Add(this.listBoxIncidencias);
             this.panel_central.Controls.Add(this.panel1);
@@ -136,6 +138,16 @@ namespace Pantalla_Cliente
             // 
             this.toolTipCrearPuntoButton.ForeColor = System.Drawing.Color.Lavender;
             // 
+            // btnCrearIncidencia
+            // 
+            this.btnCrearIncidencia.Location = new System.Drawing.Point(100, 59);
+            this.btnCrearIncidencia.Name = "btnCrearIncidencia";
+            this.btnCrearIncidencia.Size = new System.Drawing.Size(107, 23);
+            this.btnCrearIncidencia.TabIndex = 44;
+            this.btnCrearIncidencia.Text = "Crear Incidencia";
+            this.btnCrearIncidencia.UseVisualStyleBackColor = true;
+            this.btnCrearIncidencia.Click += new System.EventHandler(this.btnCrearIncidencia_Click);
+            // 
             // MapaPantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +178,6 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Button btn_crearPunto;
         private System.Windows.Forms.ToolTip toolTipCrearPuntoButton;
         private System.Windows.Forms.ToolTip toolTipMapCenter;
+        private System.Windows.Forms.Button btnCrearIncidencia;
     }
 }

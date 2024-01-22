@@ -22,7 +22,7 @@ namespace Pantalla_Cliente
         private List<Punto> listaPuntos;
         private List<Punto> listaPuntosSinIncidencia;
         private List<Incidencia> listaIncidencias;
-
+        private int puntoMarcado;
         private PuntoService puntoService = new PuntoService();
         GMapControl gmapControl;
         private GMapOverlay apiMarkersOverlay;
@@ -39,6 +39,7 @@ namespace Pantalla_Cliente
             obtenerIncidencias();
             toolTipCrearPuntoButton.SetToolTip(btn_crearPunto,"Boton para crear un punto apartir de la marca en el mapa");
             toolTipMapCenter.SetToolTip(btn_resetPointer, "Boton para volver al centro de la vilajoiosa");
+            //toolTipCrearPuntoButton.SetToolTip(btn_crearPunto, "Boton para crear una incidencia apartir del punto seleccionado");
             listaIncidencias = new List<Incidencia>();
             gmapControl = new GMapControl();
             gmapControl.Dock = DockStyle.Fill;
@@ -46,8 +47,6 @@ namespace Pantalla_Cliente
             gmapControl.Overlays.Add(apiMarkersOverlay);
 
             gmapControl.MapProvider = GMapProviders.GoogleMap;
-
-
 
             gmapControl.MinZoom = 7;
             gmapControl.MaxZoom = 25;
@@ -75,7 +74,9 @@ namespace Pantalla_Cliente
             {
                 // Busca todas las incidencias asociadas al punto clicado
                 var incidenciasDelPunto = new List<Incidencia>();
-
+                puntoMarcado = punto.id;
+           
+                  
                 foreach (var incidencia in listaIncidencias)
                 {
                     // Compara los identificadores (id) de los puntos
@@ -89,12 +90,13 @@ namespace Pantalla_Cliente
                 // Verifica si hay incidencias asociadas al punto
                 if (incidenciasDelPunto.Count > 0)
                 {
+
                     // Limpia el contenido del ListBox antes de agregar nuevos elementos
                     listBoxIncidencias.Items.Clear();
 
                     // Agrega el id y descripción del punto al ListBox
                     listBoxIncidencias.Items.Add($"ID del Punto: {punto.id}, Descripción: {punto.descripcion}");
-
+                    
                     foreach (var incidencia in incidenciasDelPunto)
                     {
                         listBoxIncidencias.Items.Add(" ");
@@ -243,6 +245,16 @@ namespace Pantalla_Cliente
             crearPuntoForm.LongitudPuntoMapa = LongitudNuevoPunto;
 
             crearPuntoForm.ShowDialog();
+        }
+
+        private void btnCrearIncidencia_Click(object sender, EventArgs e)
+        {
+            CrearIncidencia crearIncidencia = new CrearIncidencia();
+
+            crearIncidencia.idPuntoDeMapa = puntoMarcado;
+            
+            Console.WriteLine(puntoMarcado.ToString());
+            crearIncidencia.ShowDialog();
         }
     }
 }
