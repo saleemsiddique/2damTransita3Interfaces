@@ -145,7 +145,7 @@
             this.btn_usuariosMunicipio.Name = "btn_usuariosMunicipio";
             this.btn_usuariosMunicipio.Size = new System.Drawing.Size(278, 57);
             this.btn_usuariosMunicipio.TabIndex = 17;
-            this.btn_usuariosMunicipio.Text = "      Usuarios Municipio";
+            this.btn_usuariosMunicipio.Text = "      &Usuarios Municipio";
             this.btn_usuariosMunicipio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_usuariosMunicipio.UseVisualStyleBackColor = false;
             this.btn_usuariosMunicipio.Click += new System.EventHandler(this.ToggleButton_Click);
@@ -178,7 +178,7 @@
             this.btn_incidencias.Name = "btn_incidencias";
             this.btn_incidencias.Size = new System.Drawing.Size(278, 57);
             this.btn_incidencias.TabIndex = 15;
-            this.btn_incidencias.Text = "      Incidencias";
+            this.btn_incidencias.Text = "      &Incidencias";
             this.btn_incidencias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_incidencias.UseVisualStyleBackColor = false;
             this.btn_incidencias.Click += new System.EventHandler(this.ToggleButton_Click);
@@ -282,7 +282,7 @@
             this.btn_mapa.Name = "btn_mapa";
             this.btn_mapa.Size = new System.Drawing.Size(278, 57);
             this.btn_mapa.TabIndex = 4;
-            this.btn_mapa.Text = "      Mapas";
+            this.btn_mapa.Text = "      &Mapas";
             this.btn_mapa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_mapa.UseVisualStyleBackColor = false;
             this.btn_mapa.Click += new System.EventHandler(this.ToggleButton_Click);
@@ -302,7 +302,7 @@
             this.btn_puntos.Name = "btn_puntos";
             this.btn_puntos.Size = new System.Drawing.Size(278, 57);
             this.btn_puntos.TabIndex = 3;
-            this.btn_puntos.Text = "      Puntos";
+            this.btn_puntos.Text = "      &Puntos";
             this.btn_puntos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_puntos.UseVisualStyleBackColor = false;
             this.btn_puntos.Click += new System.EventHandler(this.ToggleButton_Click);
@@ -322,7 +322,7 @@
             this.btn_cliente.Name = "btn_cliente";
             this.btn_cliente.Size = new System.Drawing.Size(278, 57);
             this.btn_cliente.TabIndex = 0;
-            this.btn_cliente.Text = "      Cliente";
+            this.btn_cliente.Text = "      &Cliente";
             this.btn_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cliente.UseVisualStyleBackColor = false;
             this.btn_cliente.Click += new System.EventHandler(this.ToggleButton_Click);

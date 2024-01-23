@@ -725,7 +725,7 @@ namespace Pantalla_Cliente
             this.btn_cliente.Name = "btn_cliente";
             this.btn_cliente.Size = new System.Drawing.Size(142, 23);
             this.btn_cliente.TabIndex = 0;
-            this.btn_cliente.Text = "Cliente";
+            this.btn_cliente.Text = "&Cliente";
             this.btn_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cliente.UseVisualStyleBackColor = false;
             // 
