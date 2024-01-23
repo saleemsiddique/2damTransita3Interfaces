@@ -12,8 +12,11 @@ namespace Pantalla_Cliente
     class ClienteService
     {
         private LoadingForm load = new LoadingForm();
-        public async Task<List<Cliente>> GetClientesFiltrado(int tipo, int idInicial, int idFinal) {
-            string url = Program.rutaBase + "cliente/filtrados?" + "idInicial=" + idInicial + "&idFinal=" + idFinal;
+        public async Task<List<Cliente>> GetClientesFiltrado(int tipo, int idInicial, int idFinal, string query) {
+            if (query.Equals("Buscar")) {
+                query = "";
+            }
+            string url = Program.rutaBase + "cliente/filtrados?" + "idInicial=" + idInicial + "&idFinal=" + idFinal + "&query=" + query;
             if (tipo == 0)
             {
                 url += "&estado=0";
@@ -26,10 +29,13 @@ namespace Pantalla_Cliente
             return listClientes;
         }
 
-        public async Task<int> GetNumeroClientes(int estado) {
-            string url = Program.rutaBase + "cliente/count/filtros";
-            if (estado == 0) url += "?estado=0";
-            else if (estado == 1) url += "?estado=1";
+        public async Task<int> GetNumeroClientes(int estado, string query) {
+            if (query.Equals("Buscar")) {
+                query = "";
+            }
+            string url = Program.rutaBase + "cliente/count/filtros?query=" + query;
+            if (estado == 0) url += "&estado=0";
+            else if (estado == 1) url += "&estado=1";
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             int numeroClientes = JsonSerializer.Deserialize<int>(response);
             return numeroClientes;
@@ -62,6 +68,23 @@ namespace Pantalla_Cliente
                     
             }
 
+        }
+
+        public async Task<List<Cliente>> BuscarClientesAsync(int estado, int idInicial, int idFinal, string query) {
+            string url = Program.rutaBase + Rutas.clientesBuscar;
+            Console.WriteLine("patata  " + url);
+            url += "idInicial=" + idInicial + "&idFinal=" + idFinal + "&query=" + query;
+            if (estado == 0)
+            {
+                url += "&estado=" + 0;
+            }
+            else if (estado == 1) {
+                url += "&estado=" + 1;
+            }
+            Console.WriteLine(url);
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            List<Cliente> listClientes = JsonSerializer.Deserialize<List<Cliente>>(response);
+            return listClientes;
         }
     }
 }

@@ -18,9 +18,12 @@ namespace Pantalla_Cliente
             return listUsuarios;
         }
 
-        public async Task<List<Cliente>> GetUsuarioMunicipiosFiltred(int filtro, int idInicial, int idFinal) {
+        public async Task<List<Cliente>> GetUsuarioMunicipiosFiltred(int filtro, int idInicial, int idFinal, String query) {
+            if (query.Equals("Buscar")) {
+                query = "";
+            }
             Console.WriteLine("\n\n\n" + filtro + " " + idInicial + " " + idFinal);
-            string url = Program.rutaBase + Rutas.usuarioMunicipioFiltred + "idInicial=" + idInicial + "&idFinal=" + idFinal;
+            string url = Program.rutaBase + Rutas.usuarioMunicipioFiltred + "idInicial=" + idInicial + "&idFinal=" + idFinal + "&query=" + query;
             Console.WriteLine("\n\n\n" + url);
             if (filtro != 0)
             {
@@ -31,11 +34,15 @@ namespace Pantalla_Cliente
             return listMunicipio;
         }
 
-        public async Task<int> GetNumeroUsuarioMunicipiosFiltrado(int filtro) {
-            string url = Program.rutaBase + Rutas.usuarioMunicipioCount;
+        public async Task<int> GetNumeroUsuarioMunicipiosFiltrado(int filtro, String query) {
+            if (query.Equals("Buscar"))
+            {
+                query = "";
+            }
+            string url = Program.rutaBase + Rutas.usuarioMunicipioCount + "?query=" + query;
             if (filtro != 0)
             {
-                url += "?rol=" + filtro;
+                url += "&rol=" + filtro;
             }
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             int cantidadUsuarioMunicipio = JsonSerializer.Deserialize<int>(response);

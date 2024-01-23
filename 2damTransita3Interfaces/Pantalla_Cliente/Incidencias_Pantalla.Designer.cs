@@ -67,7 +67,6 @@ namespace Pantalla_Cliente
             this.botonVerDatosIncidencia = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.adelanteBtn = new System.Windows.Forms.Label();
             this.atrasBtn = new System.Windows.Forms.Label();
@@ -567,19 +566,6 @@ namespace Pantalla_Cliente
             this.label7.TabIndex = 1;
             this.label7.Text = "Incidencia";
             // 
-            // buscarTextBox
-            // 
-            this.buscarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buscarTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.buscarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.buscarTextBox.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.buscarTextBox.Location = new System.Drawing.Point(376, 76);
-            this.buscarTextBox.Name = "buscarTextBox";
-            this.buscarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
-            this.buscarTextBox.TabIndex = 29;
-            this.buscarTextBox.Text = "Buscar";
-            // 
             // panel4
             // 
             this.panel4.AutoScroll = true;
@@ -593,7 +579,6 @@ namespace Pantalla_Cliente
             this.panel4.Controls.Add(this.panelInc);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.btn_addInc);
-            this.panel4.Controls.Add(this.buscarTextBox);
             this.panel4.Controls.Add(this.buttonFiltros);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.btnVentanaInci);
@@ -875,7 +860,6 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonFiltros;
-        private System.Windows.Forms.TextBox buscarTextBox;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btn_addInc;

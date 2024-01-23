@@ -38,6 +38,7 @@ namespace Pantalla_Cliente
             this.filtro_mod = new System.Windows.Forms.CheckBox();
             this.filtro_admin = new System.Windows.Forms.CheckBox();
             this.panelUsuarios = new System.Windows.Forms.Panel();
+            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.paginas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -78,7 +79,6 @@ namespace Pantalla_Cliente
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
-            this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
@@ -190,6 +190,15 @@ namespace Pantalla_Cliente
             this.panelUsuarios.Name = "panelUsuarios";
             this.panelUsuarios.Size = new System.Drawing.Size(495, 413);
             this.panelUsuarios.TabIndex = 33;
+            // 
+            // paginaDropDown
+            // 
+            this.paginaDropDown.FormattingEnabled = true;
+            this.paginaDropDown.Location = new System.Drawing.Point(165, 386);
+            this.paginaDropDown.Name = "paginaDropDown";
+            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
+            this.paginaDropDown.TabIndex = 42;
+            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
             // 
             // paginas
             // 
@@ -316,6 +325,9 @@ namespace Pantalla_Cliente
             this.buscarTextBox.Size = new System.Drawing.Size(178, 20);
             this.buscarTextBox.TabIndex = 29;
             this.buscarTextBox.Text = "Buscar";
+            this.buscarTextBox.Enter += new System.EventHandler(this.buscarTextBox_Enter);
+            this.buscarTextBox.Leave += new System.EventHandler(this.buscarTextBox_Leave);
+            this.buscarTextBox.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.buscarTextBox_PreviewKeyDown);
             // 
             // button1
             // 
@@ -716,16 +728,6 @@ namespace Pantalla_Cliente
             this.btn_cliente.Text = "Cliente";
             this.btn_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cliente.UseVisualStyleBackColor = false;
-            // 
-            // paginaDropDown
-            // 
-            this.paginaDropDown.FormattingEnabled = true;
-            this.paginaDropDown.Location = new System.Drawing.Point(165, 386);
-            this.paginaDropDown.Name = "paginaDropDown";
-            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
-            this.paginaDropDown.TabIndex = 42;
-            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
-            this.paginaDropDown.KeyDown += new System.Windows.Forms.KeyEventHandler(Utils.paginaDropDown_KeyDown);
             // 
             // UsuariosMunicipio
             // 

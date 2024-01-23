@@ -672,6 +672,7 @@ namespace Pantalla_Cliente
             this.buscarTextBox.Text = "Buscar";
             this.buscarTextBox.Enter += new System.EventHandler(this.buscarTextBox_Click);
             this.buscarTextBox.Leave += new System.EventHandler(this.buscarTextBox_Leave_1);
+            this.buscarTextBox.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.buscarTextBox_PreviewKeyDown);
             // 
             // filtroClientes_btn
             // 

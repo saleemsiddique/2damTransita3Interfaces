@@ -37,7 +37,7 @@ namespace Pantalla_Cliente
         {
             await ObtenerIdInicialYFinal();
             idPrincipio = idInicial;
-            usuariosMunicipios = await usuarioMunicipioService.GetUsuarioMunicipiosFiltred(filtro, idInicial, idFinal);
+            usuariosMunicipios = await usuarioMunicipioService.GetUsuarioMunicipiosFiltred(filtro, idInicial, idFinal, buscarTextBox.Text);
             CrearPanelesUsuariosMunicipio(usuariosMunicipios);
         }
 
@@ -45,17 +45,17 @@ namespace Pantalla_Cliente
         {
             idInicial = 1;
             idFinal = idInicial + 6;
-            paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
+            paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro, buscarTextBox.Text);
             dividirEnPaginas();
             paginaDropDown.SelectedItem = paginaActual;
         }
 
         public async Task obtenerUsuariosRefresh()
         {
-            paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
+            paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro, buscarTextBox.Text);
             dividirEnPaginas();
             idPrincipio = idInicial;
-            usuariosMunicipios = await usuarioMunicipioService.GetUsuarioMunicipiosFiltred(filtro, idInicial, idFinal);
+            usuariosMunicipios = await usuarioMunicipioService.GetUsuarioMunicipiosFiltred(filtro, idInicial, idFinal, buscarTextBox.Text);
             CrearPanelesUsuariosMunicipio(usuariosMunicipios);
         }
         private void dividirEnPaginas()
@@ -167,7 +167,7 @@ namespace Pantalla_Cliente
             Task task = obtenerUsuariosRefresh();
             idInicial = 1;
             idFinal = idInicial + 6;
-            paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro);
+            paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro, buscarTextBox.Text);
             paginaActual = 1;
             paginas.Text = "/   " + paginasTotalesActual;
             dividirEnPaginas();
@@ -273,6 +273,31 @@ namespace Pantalla_Cliente
             idFinal = idInicial + 6;
 
             await obtenerUsuariosRefresh();
+        }
+
+        private void buscarTextBox_Enter(object sender, EventArgs e)
+        {
+            if (buscarTextBox.Text == "Buscar")
+            {
+                buscarTextBox.Text = "";
+            }
+        }
+
+        private void buscarTextBox_Leave(object sender, EventArgs e)
+        {
+            if (buscarTextBox.Text == "")
+            {
+                buscarTextBox.Text = "Buscar";
+            }
+        }
+
+        private async void buscarTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                limpiarVisualizacion();
+                await obtenerUsuariosRefresh();
+            }
         }
 
     }

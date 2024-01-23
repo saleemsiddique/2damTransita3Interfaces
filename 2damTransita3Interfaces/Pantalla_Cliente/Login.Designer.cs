@@ -47,7 +47,7 @@ namespace Pantalla_Cliente
             this.Correo.Name = "Correo";
             this.Correo.Size = new System.Drawing.Size(234, 22);
             this.Correo.TabIndex = 1;
-            this.Correo.Text = "prueba1@gmail.com";
+            this.Correo.Text = "admin@admin.com";
             this.Correo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Correo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.Correo.Enter += new System.EventHandler(this.user_enter);

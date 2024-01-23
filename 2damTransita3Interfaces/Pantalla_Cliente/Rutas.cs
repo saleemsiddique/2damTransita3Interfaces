@@ -29,6 +29,7 @@ namespace Pantalla_Cliente
         public static string clienteActivado = "cliente/RolUsuario/estado/1";
         public static string clienteDesactivado = "cliente/RolUsuario/estado/0";
         public static string imagenesPunto = "http://127.0.0.1/img/imagenes/punto/";
+        public static string clientesBuscar = "cliente/buscar?";
 
     }
 }

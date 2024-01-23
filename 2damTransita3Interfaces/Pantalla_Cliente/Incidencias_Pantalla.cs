@@ -42,15 +42,7 @@ namespace Pantalla_Cliente
             }
 
 
-            buscarTextBox.LostFocus += new EventHandler(buscarTextBox_LostFocus);
-            this.Click += new EventHandler(incidencias_Click);
-            buscarTextBox.Click += new EventHandler(miTextBox_Click);
-            buscarTextBox.Leave += new EventHandler(miTextBox_Leave);
-            // Establece el alineamiento horizontal del texto en el centro
-            buscarTextBox.Multiline = true; // Asegura que el TextBox sea de varias líneas
-            buscarTextBox.TextAlign = HorizontalAlignment.Left; // Alinea el texto a la izquierda
-            // Ajusta el espaciado superior para centrar verticalmente el texto
-            buscarTextBox.Padding = new Padding(20, 20, 0, 0);
+           
 
             //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; // Opcional, quita el borde de la ventana
             //this.Icon = Properties.Resources.icono_de_aplicacion; // Cambia el icono de la ventana
@@ -246,33 +238,6 @@ namespace Pantalla_Cliente
             btn_eliminarIncidencia.FlatAppearance.BorderSize = 0;
 
         }
-
-
-        private void miTextBox_Click(object sender, EventArgs e)
-        {
-            // Cuando se hace clic en el TextBox, borra el texto
-            buscarTextBox.Text = "";
-        }
-        private void buscarTextBox_LostFocus(object sender, EventArgs e)
-        {
-            buscarTextBox.ReadOnly = true; // Establece el TextBox en modo de solo lectura
-
-        }
-
-        private void incidencias_Click(object sender, EventArgs e)
-        {
-            buscarTextBox.ReadOnly = true; // Establece el TextBox en modo de solo lectura
-        }
-
-        private void miTextBox_Leave(object sender, EventArgs e)
-        {
-            // Cuando el TextBox pierde el foco, restaura el texto
-            if (string.IsNullOrWhiteSpace(buscarTextBox.Text))
-            {
-                buscarTextBox.Text = "Buscar"; // Puedes cambiar este texto predeterminado
-            }
-        }
-
 
         private void btn_cliente_Click(object sender, EventArgs e)
         {
