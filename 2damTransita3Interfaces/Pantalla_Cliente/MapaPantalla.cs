@@ -249,11 +249,7 @@ namespace Pantalla_Cliente
 
         private void btnCrearIncidencia_Click(object sender, EventArgs e)
         {
-            CrearIncidencia crearIncidencia = new CrearIncidencia();
-
-            crearIncidencia.idPuntoDeMapa = puntoMarcado;
-            
-            Console.WriteLine(puntoMarcado.ToString());
+            CrearIncidencia crearIncidencia = new CrearIncidencia(puntoMarcado);
             crearIncidencia.ShowDialog();
         }
     }

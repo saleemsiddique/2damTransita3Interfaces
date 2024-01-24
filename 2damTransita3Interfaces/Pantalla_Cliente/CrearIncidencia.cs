@@ -22,6 +22,19 @@ namespace Pantalla_Cliente
         List<Punto> listaPuntos;
         string imagen = null;
         public int idPuntoDeMapa { get; set; }
+        private int puntoMarcado;
+
+        public CrearIncidencia(int index)
+        {
+            InitializeComponent();
+            InicializarAsync();
+
+            puntoMarcado = index;
+
+            Console.WriteLine(idPuntoDeMapa);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            duracion_input.Text = "Sin determinar";
+        }
 
         public CrearIncidencia()
         {
@@ -31,7 +44,6 @@ namespace Pantalla_Cliente
             Console.WriteLine(idPuntoDeMapa);
             this.StartPosition = FormStartPosition.CenterScreen;
             duracion_input.Text = "Sin determinar";
-            
         }
 
         private async void InicializarAsync()
@@ -47,6 +59,10 @@ namespace Pantalla_Cliente
                 estado_input.Items.Add(estado);
             }
             estado_input.SelectedIndex = 0;
+
+            if (puntoMarcado != null) { 
+                punto_input.SelectedItem = puntoMarcado.ToString();
+            }
         }
 
         public async Task getClientes()
