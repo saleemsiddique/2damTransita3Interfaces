@@ -46,7 +46,6 @@ namespace Pantalla_Cliente
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
                 return null;
             }
         }

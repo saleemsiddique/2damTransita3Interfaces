@@ -21,8 +21,9 @@ namespace Pantalla_Cliente
         private IncidenciaService incidenciaService = new IncidenciaService();
         private List<Punto> listaPuntos;
         private List<Punto> listaPuntosSinIncidencia;
+        private List<Punto> puntos;
         private List<Incidencia> listaIncidencias;
-        private int puntoMarcado;
+        private int puntoMarcado = 0;
         private PuntoService puntoService = new PuntoService();
         GMapControl gmapControl;
         private GMapOverlay apiMarkersOverlay;
@@ -36,7 +37,7 @@ namespace Pantalla_Cliente
         public MapaPantalla()
         {
             InitializeComponent();
-            obtenerIncidencias();
+            cargarTodo();
             toolTipCrearPuntoButton.SetToolTip(btn_crearPunto,"Boton para crear un punto apartir de la marca en el mapa");
             toolTipMapCenter.SetToolTip(btn_resetPointer, "Boton para volver al centro de la vilajoiosa");
             //toolTipCrearPuntoButton.SetToolTip(btn_crearPunto, "Boton para crear una incidencia apartir del punto seleccionado");
@@ -61,11 +62,16 @@ namespace Pantalla_Cliente
             this.BackColor = Color.Red;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
-            _ = ObtenerPuntos();
-            _ = ObtenerPuntosConIncidenciaAsync();
+            
            
             gmapControl.OnMarkerClick += GmapControl_OnMarkerClick;
 
+        }
+
+        private async void cargarTodo() {
+            await obtenerIncidencias();
+            await ObtenerPuntos();
+            await ObtenerPuntosConIncidenciaAsync();
         }
 
         private void GmapControl_OnMarkerClick(GMapMarker item, MouseEventArgs e)
@@ -75,15 +81,14 @@ namespace Pantalla_Cliente
                 // Busca todas las incidencias asociadas al punto clicado
                 var incidenciasDelPunto = new List<Incidencia>();
                 puntoMarcado = punto.id;
-           
-                  
+
+
                 foreach (var incidencia in listaIncidencias)
                 {
                     // Compara los identificadores (id) de los puntos
                     if (incidencia.punto.id == punto.id)
                     {
                         incidenciasDelPunto.Add(incidencia);
-                        Console.WriteLine($"Lista de inci: {incidencia}");
                     }
                 }
 
@@ -96,7 +101,7 @@ namespace Pantalla_Cliente
 
                     // Agrega el id y descripción del punto al ListBox
                     listBoxIncidencias.Items.Add($"ID del Punto: {punto.id}, Descripción: {punto.descripcion}");
-                    
+
                     foreach (var incidencia in incidenciasDelPunto)
                     {
                         listBoxIncidencias.Items.Add(" ");
@@ -122,6 +127,7 @@ namespace Pantalla_Cliente
                 // Marcar que el mensaje ha sido mostrado
                 mensajeMostrado = true;
             }
+
         }
         private void GmapControl_OnMapClick(object sender, MouseEventArgs e)
         {
@@ -131,6 +137,7 @@ namespace Pantalla_Cliente
 
                 LatitudNuevoPunto = point.Lat;
                 LongitudNuevoPunto = point.Lng;
+
 
                 if (marker != null)
                 {
@@ -158,6 +165,7 @@ namespace Pantalla_Cliente
             // Itera sobre la lista de puntos y coloca un marcador en el mapa por cada punto
             foreach (var punto in listaPuntos)
             {
+                MessageBox.Show("" + punto.id);
                 var marker = new GMarkerGoogle(new PointLatLng(punto.latitud, punto.longitud), GMarkerGoogleType.red);
                 marker.Tag = punto;
                 markersOverlay.Markers.Add(marker);
@@ -185,18 +193,20 @@ namespace Pantalla_Cliente
     public async Task ObtenerPuntosConIncidenciaAsync()
         {
             listaPuntos = await puntoService.GetPuntosConIncidenciasAsync();
-            ColocarMarcadoresEnMapa(); 
+            ColocarMarcadoresEnMapa();
         }
         public async Task ObtenerPuntos()
         {
             listaPuntosSinIncidencia = await puntoService.GetPuntosTodos();
             ColocarMarcadoresEnMapaPuntosSinIncidencia();
         }
+
+
         public async Task obtenerIncidencias()
         {
            
             listaIncidencias = await incidenciaService.GetIncidenciasAsync(0);
-            
+            puntos = await puntoService.GetAllPuntos();
         }
 
         public Panel ObtenerPanelCentralMapa()
@@ -249,7 +259,11 @@ namespace Pantalla_Cliente
 
         private void btnCrearIncidencia_Click(object sender, EventArgs e)
         {
-            CrearIncidencia crearIncidencia = new CrearIncidencia(puntoMarcado);
+            if (puntoMarcado == 0) {
+                puntoMarcado = puntos.Last().id + 1;
+                Console.WriteLine(puntoMarcado);
+            }
+            CrearIncidencia crearIncidencia = new CrearIncidencia(puntoMarcado, LatitudNuevoPunto, LongitudNuevoPunto);
             crearIncidencia.ShowDialog();
         }
     }

@@ -23,15 +23,17 @@ namespace Pantalla_Cliente
         string imagen = null;
         public int idPuntoDeMapa { get; set; }
         private int puntoMarcado;
+        private bool isNuevo = false;
+        private double latitud, longitud;
 
-        public CrearIncidencia(int index)
+        public CrearIncidencia(int index, double lat, double lng)
         {
             InitializeComponent();
-            InicializarAsync();
-
+            latitud = lat;
+            longitud = lng;
             puntoMarcado = index;
-
-            Console.WriteLine(idPuntoDeMapa);
+            InicializarAsync();
+            MessageBox.Show("" + index);
             this.StartPosition = FormStartPosition.CenterScreen;
             duracion_input.Text = "Sin determinar";
         }
@@ -40,8 +42,6 @@ namespace Pantalla_Cliente
         {
             InitializeComponent();
             InicializarAsync();
-
-            Console.WriteLine(idPuntoDeMapa);
             this.StartPosition = FormStartPosition.CenterScreen;
             duracion_input.Text = "Sin determinar";
         }
@@ -63,15 +63,18 @@ namespace Pantalla_Cliente
             if (puntoMarcado != null) { 
                 punto_input.SelectedItem = puntoMarcado.ToString();
             }
+
+            if (isNuevo)
+            {
+                punto_input.SelectedItem = puntoMarcado;
+            }
         }
 
         public async Task getClientes()
         {
-            Console.WriteLine("metodo ha sido activado");
             String url = Program.rutaBase + "cliente";
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
-            Console.WriteLine(response);
             listaClientes = JsonSerializer.Deserialize<List<Cliente>>(response);
 
             foreach (Cliente cliente in listaClientes)
@@ -110,28 +113,23 @@ namespace Pantalla_Cliente
             if (parts.Length == 2)
             {
                 clienteId = int.Parse(parts[0].Trim());
-                Console.WriteLine("Cliente ID: " + clienteId);
             }
             else
             {
                 clienteId = -2;
-                Console.WriteLine("Formato incorrecto en cliente_input");
             }
             int puntoId = int.Parse(punto_input.Text);
             string fechaFormateada = fecha_input.Value.ToString("yyyy-MM-dd");
             DateTime fechaDateTime = DateTime.ParseExact(fechaFormateada, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             if (idPuntoDeMapa > 0)
             {
-                Console.WriteLine(idPuntoDeMapa);
                 Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(idPuntoDeMapa), imagen);
-                Console.WriteLine("metodo ha sido activado");
                 String url = Program.rutaBase + "incidencia";
                 string content = JsonSerializer.Serialize(newIncidencia);
                 string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
             }
             else {
                 Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId), imagen);
-                Console.WriteLine("metodo ha sido activado");
                 String url = Program.rutaBase + "incidencia";
                 string content = JsonSerializer.Serialize(newIncidencia);
                 string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
@@ -139,8 +137,6 @@ namespace Pantalla_Cliente
         }
         private void CrearIncidencia_Load(object sender, EventArgs e)
         {
-            Console.WriteLine(idPuntoDeMapa.ToString());
-
             if (idPuntoDeMapa > -1) {
                 punto_input.Text = idPuntoDeMapa.ToString();
                 
@@ -178,22 +174,22 @@ namespace Pantalla_Cliente
         }
         public async Task getPuntos()
         {
-            Console.WriteLine("metodo ha sido activado");
             String url = Program.rutaBase + "puntos";
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
-            Console.WriteLine(response);
             listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
-            foreach (Punto punto in listaPuntos)
-            {
-                Console.WriteLine(punto);
-            }
 
             foreach (Punto punto in listaPuntos)
             {
                 listaIdPuntos.Add(punto.id);
             }
             punto_input.Items.AddRange(listaIdPuntos.Select(p => p.ToString()).ToArray());
+
+            if (puntoMarcado > listaPuntos.Last().id)
+            {
+                punto_input.Items.Add(puntoMarcado);
+                isNuevo = true;
+            }
         }
 
         private void btn_cancelarIncidencia_Click(object sender, EventArgs e)
@@ -219,6 +215,7 @@ namespace Pantalla_Cliente
             {
                 if (verifyDatos())
                 {
+                    await crearPunto();
                     await crearIncidencia();
 
                     foreach (Form form in Application.OpenForms)
@@ -278,6 +275,20 @@ namespace Pantalla_Cliente
 
                 return base64String;
             }
+        }
+
+        private async Task crearPunto() {
+            string content = $"{{\"descripcion\": \"\", " +
+                             $"\"tipoPunto\": \"LUGAR\", " +
+                             $"\"foto\": \"\", " +
+                             $"\"latitud\": {latitud}, " +
+                             $"\"longitud\": {longitud}, " +
+                             $"\"accesibilidadPunto\": \"{comboBoxAccesibilidad.SelectedItem}\", " +
+                             $"\"visibilidadPunto\": \"GLOBAL\"}}";
+            MessageBox.Show(content);
+            String url = Program.rutaBase + "puntos";
+            string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
+
         }
 
     }

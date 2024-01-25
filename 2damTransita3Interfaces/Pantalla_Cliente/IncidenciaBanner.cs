@@ -77,17 +77,14 @@ namespace Pantalla_Cliente
 
             if (resultado == DialogResult.Yes)
             {
-            Console.WriteLine("metodo eliminar ha sido activado");
             String id = this.idIncidencia.Text;
             String url = Program.rutaBase + "incidencia/eliminar/" + id;
             string response = await ApiClient.GetRequestAsync("DELETE", url, Program.token);
 
-            Console.WriteLine(response);
             Form formularioPadre = this.FindForm();
             Transita formularioTransita = (Transita)formularioPadre.FindForm();
             if (formularioTransita != null)
             {
-                Console.WriteLine("No es null");
                 formularioTransita.MostrarPanelDeIncidencia();
             }
             }

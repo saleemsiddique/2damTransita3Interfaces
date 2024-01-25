@@ -72,7 +72,6 @@ namespace Pantalla_Cliente
                 url += "&estado=FINALIZADO";
             }
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
-            Console.WriteLine("\n\n\n\n" + url);
             List<Incidencia> listaIncidencias = JsonSerializer.Deserialize<List<Incidencia>>(response);
             return listaIncidencias;
         }

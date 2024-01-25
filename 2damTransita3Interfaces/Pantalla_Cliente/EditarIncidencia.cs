@@ -105,10 +105,7 @@ namespace Pantalla_Cliente
             Incidencia newIncidencia = new Incidencia(descripcion_input.Text, estado, duracion_input.Text, fechaDateTime, getCliente(clienteId), getPunto(puntoId), imagen);
             String url = Program.rutaBase + "incidencia/modificar/" + id;
             string content = JsonSerializer.Serialize(newIncidencia);
-            Console.WriteLine("\n\n\n content" + content );
             string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
-
-            Console.WriteLine("\n\n\n\n response" + response);
         }
 
         public async Task getIncidencia(String id)

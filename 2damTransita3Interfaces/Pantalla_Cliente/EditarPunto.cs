@@ -42,7 +42,6 @@ namespace Pantalla_Cliente
         }
         public async Task getPunto()
         {
-            Console.WriteLine("metodo ha sido activado");
             String url = Program.rutaBase + "puntos/id/" + idMod;
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
@@ -57,8 +56,6 @@ namespace Pantalla_Cliente
         private async Task modifyPunto(int idMod)
         { 
             string content = $"{{\"descripcion\": \"{descripcionPunto_input.Text}\", \"tipoPunto\": \"{comboBoxTipoPunto.SelectedItem}\", \"foto\": \"{null}\", \"latitud\": {latitudPunto_input.Text}, \"longitud\": {longitudPunto_input.Text}, \"accesibilidadPunto\": \"{comboBoxAccesibilidad.SelectedItem}\", \"visibilidadPunto\": \"{comboBoxVisibilidadPunto.SelectedItem}\"}}";
-
-            Console.WriteLine(content);
             String url = Program.rutaBase + "punto/modificar/" + idMod;
 
             string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);

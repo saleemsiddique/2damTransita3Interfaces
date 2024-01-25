@@ -27,15 +27,11 @@ namespace Pantalla_Cliente
         }
         public async Task getCliente(string idModificar)
         {
-            Console.WriteLine("El método ha sido activado");
 
                 // La conversión fue exitosa, y el valor se almacena en idMod como un entero.
-                Console.WriteLine("El valor convertido a entero es: " + idMod);
 
                 String url = Program.rutaBase + "cliente/id/" + idMod.ToString();
                 string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
-
-                Console.WriteLine(response);
 
                 user = JsonSerializer.Deserialize<Cliente>(response);
                 nombreUsuario_input.Text = user.nombreUsuario;
@@ -62,16 +58,13 @@ namespace Pantalla_Cliente
                 } else if (rol_input.Text.Equals("ROLE_MODERADOR")) {
                     rolObjt = "ROLE_MODERADOR";
                 }
-                Console.WriteLine(rolObjt);
             string content = $"{{\"nombre\": \"{nom_input.Text}\", \"apellidos\": \"{apellido_input.Text}\"," +
                     $" \"nombreUsuario\": \"{nombreUsuario_input.Text}\", \"rol\": [\"{rolObjt}\"]}}";
 
-            Console.WriteLine("metodo ha sido activado");
                 String url = Program.rutaBase + "api/auth/cliente/modificar/" + idMod;
                 //string content = JsonSerializer.Serialize(user);
                 string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
 
-                Console.WriteLine(response);
             }
         }
 
