@@ -174,6 +174,9 @@ namespace Pantalla_Cliente
         }
         public async Task getPuntos()
         {
+            if (listaIdPuntos != null) {
+                listaIdPuntos.Clear();
+            }
             String url = Program.rutaBase + "puntos";
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
@@ -216,6 +219,7 @@ namespace Pantalla_Cliente
                 if (verifyDatos())
                 {
                     await crearPunto();
+                    await getPuntos();
                     await crearIncidencia();
 
                     foreach (Form form in Application.OpenForms)
@@ -278,14 +282,15 @@ namespace Pantalla_Cliente
         }
 
         private async Task crearPunto() {
+            string latString = latitud.ToString();
+            string lngString = longitud.ToString();
             string content = $"{{\"descripcion\": \"\", " +
-                             $"\"tipoPunto\": \"LUGAR\", " +
-                             $"\"foto\": \"\", " +
-                             $"\"latitud\": {latitud}, " +
-                             $"\"longitud\": {longitud}, " +
-                             $"\"accesibilidadPunto\": \"{comboBoxAccesibilidad.SelectedItem}\", " +
-                             $"\"visibilidadPunto\": \"GLOBAL\"}}";
-            MessageBox.Show(content);
+                                         $"\"tipoPunto\": \"LUGAR\", " +
+                                         $"\"foto\": \"\", " +
+                                         $"\"latitud\": {latString.Replace(",", ".")}, " +
+                                         $"\"longitud\": {lngString.Replace(",", ".")}, " +
+                                         $"\"accesibilidadPunto\": \"{comboBoxAccesibilidad.SelectedItem}\", " +
+                                         $"\"visibilidadPunto\": \"GLOBAL\"}}";
             String url = Program.rutaBase + "puntos";
             string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
 
