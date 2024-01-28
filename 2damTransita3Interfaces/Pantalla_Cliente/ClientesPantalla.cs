@@ -382,6 +382,20 @@ namespace Pantalla_Cliente
             if (e.KeyData == Keys.Enter)
             {
                 limpiarVisualizacion();
+                clienteImg = null;
+                nombre.Text = "";
+                correo.Text = "";
+                id_mostrar.Text = "";
+                nombre_mostrar.Text = "";
+                apellidos_mostrar.Text = "";
+                email_mostrar.Text = "";
+                idInicial = 1;
+                idFinal = idInicial + 6;
+                paginasTotalesActual = await clienteService.GetNumeroClientes(filtro, buscarTextBox.Text);
+                paginaActual = 1;
+                paginas.Text = "/   " + paginasTotalesActual;
+                dividirEnPaginas();
+                paginaDropDown.SelectedItem = paginaActual;
                 await ObtenerClientesRefresh();
             }
         }
