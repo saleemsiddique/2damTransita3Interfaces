@@ -62,5 +62,15 @@ namespace Pantalla_Cliente
         {
            
         }
+
+        public Punto(double latitud, double longitud, AccesibilidadTipo accesibilidad) {
+            this.descripcion = "";
+            this.tipoPunto = TipoPunto.LUGAR;
+            this.foto = "";
+            this.latitud = latitud;
+            this.longitud = longitud;
+            this.accesibilidadPunto = accesibilidad;
+            this.visibilidadPunto = EVisibilidad.GLOBAL;
+        }
     }
 }

@@ -48,6 +48,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.subir_img_btn = new System.Windows.Forms.Button();
             this.nombreArchivoLabel = new System.Windows.Forms.Label();
+            this.accessTxt = new System.Windows.Forms.Label();
+            this.comboBoxAccesibilidad = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // estado_input
@@ -75,7 +77,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(260, 350);
+            this.label5.Location = new System.Drawing.Point(260, 340);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 38;
@@ -86,7 +88,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(81, 350);
+            this.label3.Location = new System.Drawing.Point(81, 340);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 37;
@@ -96,7 +98,7 @@
             // 
             this.punto_input.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.punto_input.FormattingEnabled = true;
-            this.punto_input.Location = new System.Drawing.Point(240, 376);
+            this.punto_input.Location = new System.Drawing.Point(240, 357);
             this.punto_input.Name = "punto_input";
             this.punto_input.Size = new System.Drawing.Size(121, 21);
             this.punto_input.TabIndex = 5;
@@ -105,7 +107,7 @@
             // 
             this.cliente_input.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cliente_input.FormattingEnabled = true;
-            this.cliente_input.Location = new System.Drawing.Point(63, 376);
+            this.cliente_input.Location = new System.Drawing.Point(63, 357);
             this.cliente_input.Name = "cliente_input";
             this.cliente_input.Size = new System.Drawing.Size(121, 21);
             this.cliente_input.TabIndex = 4;
@@ -235,7 +237,7 @@
             // 
             // subir_img_btn
             // 
-            this.subir_img_btn.Location = new System.Drawing.Point(247, 426);
+            this.subir_img_btn.Location = new System.Drawing.Point(247, 449);
             this.subir_img_btn.Name = "subir_img_btn";
             this.subir_img_btn.Size = new System.Drawing.Size(97, 23);
             this.subir_img_btn.TabIndex = 7;
@@ -246,11 +248,36 @@
             // nombreArchivoLabel
             // 
             this.nombreArchivoLabel.ForeColor = System.Drawing.Color.White;
-            this.nombreArchivoLabel.Location = new System.Drawing.Point(75, 426);
+            this.nombreArchivoLabel.Location = new System.Drawing.Point(75, 449);
             this.nombreArchivoLabel.Name = "nombreArchivoLabel";
             this.nombreArchivoLabel.Size = new System.Drawing.Size(173, 23);
             this.nombreArchivoLabel.TabIndex = 6;
             this.nombreArchivoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // accessTxt
+            // 
+            this.accessTxt.AutoSize = true;
+            this.accessTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.accessTxt.ForeColor = System.Drawing.Color.White;
+            this.accessTxt.Location = new System.Drawing.Point(138, 387);
+            this.accessTxt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.accessTxt.Name = "accessTxt";
+            this.accessTxt.Size = new System.Drawing.Size(72, 13);
+            this.accessTxt.TabIndex = 75;
+            this.accessTxt.Text = "Accesibilidad:";
+            // 
+            // comboBoxAccesibilidad
+            // 
+            this.comboBoxAccesibilidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAccesibilidad.FormattingEnabled = true;
+            this.comboBoxAccesibilidad.Items.AddRange(new object[] {
+            "ACCESIBLE",
+            "NO_ACCESIBLE",
+            "PARCIALMENTE_ACCESIBLE"});
+            this.comboBoxAccesibilidad.Location = new System.Drawing.Point(138, 403);
+            this.comboBoxAccesibilidad.Name = "comboBoxAccesibilidad";
+            this.comboBoxAccesibilidad.Size = new System.Drawing.Size(159, 21);
+            this.comboBoxAccesibilidad.TabIndex = 76;
             // 
             // CrearIncidencia
             // 
@@ -258,6 +285,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(453, 572);
+            this.Controls.Add(this.comboBoxAccesibilidad);
+            this.Controls.Add(this.accessTxt);
             this.Controls.Add(this.nombreArchivoLabel);
             this.Controls.Add(this.subir_img_btn);
             this.Controls.Add(this.comprobarDescripcion);
@@ -309,5 +338,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button subir_img_btn;
         private System.Windows.Forms.Label nombreArchivoLabel;
+        private System.Windows.Forms.Label accessTxt;
+        private System.Windows.Forms.ComboBox comboBoxAccesibilidad;
     }
 }

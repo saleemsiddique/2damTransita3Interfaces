@@ -82,7 +82,6 @@ namespace Pantalla_Cliente
                 String url = Program.rutaBase + "puntos";
                 string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
 
-                Console.WriteLine(response);
 
         }
 

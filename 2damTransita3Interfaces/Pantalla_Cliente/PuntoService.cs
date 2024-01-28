@@ -84,5 +84,11 @@ namespace Pantalla_Cliente
 
             return numeroPuntos;
         }
+
+        public async Task<List<Punto>> GetAllPuntos() {
+            string url = Program.rutaBase + "puntos";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            return JsonSerializer.Deserialize<List<Punto>>(response);
+        }
     }
 }

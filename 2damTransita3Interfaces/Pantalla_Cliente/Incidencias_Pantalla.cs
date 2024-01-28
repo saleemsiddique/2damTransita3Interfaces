@@ -178,7 +178,6 @@ namespace Pantalla_Cliente
                 {
                     incidenciaBanner.getId().Text = incidencia.id.ToString();
                     incidenciaBanner.getNombre().Text = $"{incidencia.descripcion}";
-                    Console.WriteLine("else");
                     incidenciaBanner.getFotos().Image = LoadBase64(incidencia.fotos);
 
                     incidenciaBanner.getPanel().Click += (sender, e) =>
@@ -319,7 +318,6 @@ namespace Pantalla_Cliente
             if (checkBox1.Checked)
             {
                 label_tipoIncidencia.Text = "INCIDENCIA ENVIADA";
-                Console.WriteLine("CHECKBOX1 CHECKED");
                 filtro = 2;
                 btn_eliminarIncidencia.Enabled = true;
                 btn_aceptarIncidencia.Enabled = true;
@@ -328,25 +326,21 @@ namespace Pantalla_Cliente
             else if (checkBox2.Checked)
             {
                 label_tipoIncidencia.Text = "INCIDENCIA ACEPTADA";
-                Console.WriteLine("CHECKBOX2 CHECKED");
                 filtro = 1;
             }
             else if (checkBox3.Checked)
             {
                 label_tipoIncidencia.Text = "INCIDENCIA EN PROCESO";
-                Console.WriteLine("CHECKBOX3 CHECKED");
                 filtro = 3;
             }
             else if (checkBox4.Checked)
             {
                 label_tipoIncidencia.Text = "INCIDENCIA FINALIZADA";
-                Console.WriteLine("CHECKBOX4 CHECKED");
                 filtro = 4;
             }
             else
             {
                 label_tipoIncidencia.Text = "TODAS LAS INCIDENCIAS";
-                Console.WriteLine("CHECKBOXS NOT CHECKED");
                 filtro = 0;
                 btn_eliminarIncidencia.Enabled = false;
                 btn_aceptarIncidencia.Enabled = false;
@@ -360,7 +354,6 @@ namespace Pantalla_Cliente
             estado_mostrar.Text = $"";
             LimpiarVisualizacion();
             listaIncidencias.Clear();
-            Console.WriteLine(filtro);
             groupBox2.Visible = false;
             esVisible = false;
             paginaActual = 1;
@@ -403,7 +396,6 @@ namespace Pantalla_Cliente
 
                 if (resultado == DialogResult.Yes)
                 {
-                    Console.WriteLine("metodo eliminar ha sido activado");
                     String id = this.id_mostrar.Text;
                     String url = Program.rutaBase + "incidencia/eliminar/" + id;
                     string response = await ApiClient.GetRequestAsync("DELETE", url, Program.token);

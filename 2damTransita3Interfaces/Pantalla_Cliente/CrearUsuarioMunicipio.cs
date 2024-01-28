@@ -54,13 +54,11 @@ namespace Pantalla_Cliente
 
             if (rol_input_value.Equals("ROLE_ADMIN"))
             {
-                Console.WriteLine("ROLE_ADMIN selected");
                 rol = new Rol(1, "ROLE_ADMIN");
                 rolObjt.Add(rol);
             }
             else if (rol_input_value.Equals("ROLE_MODERADOR"))
             {
-                Console.WriteLine("ROLE_MODERADOR selected");
                 rol = new Rol(2, "ROLE_MODERADOR");
                 rolObjt.Add(rol);
             }
@@ -78,12 +76,9 @@ namespace Pantalla_Cliente
 
             string content = $"{{\"nombre\": \"{cliente.nombre}\", \"apellidos\": \"{cliente.apellidos}\", \"nombreUsuario\": \"{cliente.nombreUsuario}\", \"contrasenya\": \"{cliente.contrasenya}\", \"rol\": [\"{string.Join("\", \"", cliente.rols.Select(r => r.nombre))}\"]}}";
 
-
-            Console.WriteLine("Método ha sido activado");
             String url = Program.rutaBase + "api/auth/signup/cliente";
             string response = await ApiClient.GetRequestAsync("POST", url, Program.token, content);
 
-            Console.WriteLine(response);
         }
 
 

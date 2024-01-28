@@ -44,7 +44,6 @@ namespace Pantalla_Cliente
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al obtener el estado del cliente: {ex.Message}");
                 // Manejar el error según tus necesidades
             }
         }
@@ -103,7 +102,6 @@ namespace Pantalla_Cliente
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al obtener el cliente: {ex.Message}");
                 // Manejar el error según tus necesidades
                 return false;
             }
@@ -115,7 +113,6 @@ namespace Pantalla_Cliente
             bool estadoActualCliente = await GetUserEstado();
             // Obtener el estado opuesto
             string nuevoEstadoCuenta = estadoActualCliente ? "DESACTIVADO" : "ACTIVADO";
-                Console.WriteLine(nuevoEstadoCuenta);
                
 
                 string urlMod = Program.rutaBase + "api/auth/cliente/modificarEstado/" + idCliente.Text;
@@ -125,7 +122,6 @@ namespace Pantalla_Cliente
 
              
                 string putResponse = await ApiClient.GetRequestAsync("PUT", urlMod, Program.token, content);
-                Console.WriteLine(putResponse);
 
 
                 Form formularioPadre = this.ParentForm;
