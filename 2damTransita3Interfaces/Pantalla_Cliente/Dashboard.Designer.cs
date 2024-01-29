@@ -40,7 +40,7 @@
             this.btn_incidencias = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.userName = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -187,7 +187,7 @@
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel7.Controls.Add(this.btn_logout);
-            this.panel7.Controls.Add(this.button6);
+            this.panel7.Controls.Add(this.userName);
             this.panel7.Controls.Add(this.pictureBox1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel7.Location = new System.Drawing.Point(0, 588);
@@ -205,24 +205,24 @@
             this.btn_logout.UseVisualStyleBackColor = true;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
-            // button6
+            // userName
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(73, 22);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(119, 42);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "User";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
+            this.userName.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.userName.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.userName.FlatAppearance.BorderSize = 0;
+            this.userName.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.userName.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.userName.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.userName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.userName.Location = new System.Drawing.Point(73, 22);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(119, 42);
+            this.userName.TabIndex = 9;
+            this.userName.Text = "User";
+            this.userName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userName.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -370,7 +370,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_incidencias;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button userName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label6;

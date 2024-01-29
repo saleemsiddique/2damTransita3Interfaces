@@ -21,8 +21,13 @@ namespace Pantalla_Cliente
         public Transita()
         {
             InitializeComponent();
+            if (Program.userLogged.roles[0].Equals("ROLE_MODERADOR")) {
+                btn_cliente.Enabled = false;
+                btn_usuariosMunicipio.Enabled = false;
+            }
             panelHome.Show();
             pictureBox2.Hide();
+            userName.Text = Program.userLogged.nombre;
 
 
 
