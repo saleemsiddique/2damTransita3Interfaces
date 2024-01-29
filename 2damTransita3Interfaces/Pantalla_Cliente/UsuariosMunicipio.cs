@@ -303,7 +303,6 @@ namespace Pantalla_Cliente
                 nombre_mostrar.Text = "";
                 apellido_mostrar.Text = "";
                 nombreUsuario_mostrar.Text = "";
-                paginaDropDown.SelectedItem = paginaActual;
                 idInicial = 1;
                 idFinal = idInicial + 6;
                 paginasTotalesActual = await usuarioMunicipioService.GetNumeroUsuarioMunicipiosFiltrado(filtro, buscarTextBox.Text);

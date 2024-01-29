@@ -34,13 +34,14 @@ namespace Pantalla_Cliente
         double defaultLat = 38.5034;
         double defaultLng = -0.2271;
         GMarkerGoogle marker;
+        private PointLatLng mapaPosicionInicial;
         public MapaPantalla()
         {
             InitializeComponent();
             cargarTodo();
             toolTipCrearPuntoButton.SetToolTip(btn_crearPunto,"Boton para crear un punto apartir de la marca en el mapa");
             toolTipMapCenter.SetToolTip(btn_resetPointer, "Boton para volver al centro de la vilajoiosa");
-            //toolTipCrearPuntoButton.SetToolTip(btn_crearPunto, "Boton para crear una incidencia apartir del punto seleccionado");
+            toolTipCrearPuntoButton.SetToolTip(btnCrearIncidencia, "Boton para crear una incidencia apartir del punto seleccionado");
             listaIncidencias = new List<Incidencia>();
             gmapControl = new GMapControl();
             gmapControl.Dock = DockStyle.Fill;
@@ -57,8 +58,9 @@ namespace Pantalla_Cliente
             panel1.Controls.Add(gmapControl);
 
 
-            gmapControl.MouseClick += GmapControl_OnMapClick;
+
             gmapControl.Position = new PointLatLng(defaultLat, defaultLng);
+            gmapControl.MouseClick += GmapControl_OnMapClick;
             this.BackColor = Color.Red;
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
@@ -133,11 +135,18 @@ namespace Pantalla_Cliente
         {
             if (e.Button == MouseButtons.Left)
             {
+                if (puntoMarcado == 0)
+                {
+                    // Almacena la posición inicial del mapa antes del primer clic
+                    mapaPosicionInicial = gmapControl.Position;
+                }
+
+                puntoMarcado = 0;
+                listBoxIncidencias.Items.Clear();
                 PointLatLng point = gmapControl.FromLocalToLatLng(e.X, e.Y);
 
                 LatitudNuevoPunto = point.Lat;
                 LongitudNuevoPunto = point.Lng;
-
 
                 if (marker != null)
                 {
@@ -154,6 +163,9 @@ namespace Pantalla_Cliente
                     markersOverlay.Markers.Add(marker);
                     gmapControl.Overlays.Add(markersOverlay);
                 }
+
+                // Restaura la posición inicial del mapa después de agregar el marcador
+                gmapControl.Position = mapaPosicionInicial;
             }
         }
 
