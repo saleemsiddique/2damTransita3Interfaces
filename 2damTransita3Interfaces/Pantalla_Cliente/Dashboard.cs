@@ -22,8 +22,11 @@ namespace Pantalla_Cliente
         {
             InitializeComponent();
             if (Program.userLogged.roles[0].Equals("ROLE_MODERADOR")) {
-                btn_cliente.Enabled = false;
-                btn_usuariosMunicipio.Enabled = false;
+                btn_cliente.Visible = false;
+                btn_usuariosMunicipio.Visible = false;
+                btn_incidencias.Location = new Point(0, 53);
+                btn_puntos.Location = new Point(0, 108);
+                btn_mapa.Location = new Point(0, 163);
             }
             panelHome.Show();
             pictureBox2.Hide();

@@ -12,6 +12,7 @@ namespace transitaControllers
         public LogOutPantalla()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             logOutTimerControl = new LogOutTImer();
             logOutTimerControl.TiempoAgotado += LogOutTimerControl_TiempoAgotado;
             

@@ -31,35 +31,18 @@ namespace Pantalla_Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente_Pantalla));
             this.label15 = new System.Windows.Forms.Label();
-            this.panel_derecha = new System.Windows.Forms.Panel();
-            this.clienteImg = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.email_mostrar = new System.Windows.Forms.TextBox();
-            this.apellidos_mostrar = new System.Windows.Forms.TextBox();
-            this.nombre_mostrar = new System.Windows.Forms.TextBox();
-            this.id_mostrar = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.nombre = new System.Windows.Forms.Label();
-            this.correo = new System.Windows.Forms.Label();
             this.btnGenerarpdf = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_incidencias = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.imgTransita = new System.Windows.Forms.Label();
             this.btn_mapa = new System.Windows.Forms.Button();
             this.btn_puntos = new System.Windows.Forms.Button();
             this.btn_zonas = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.panel_central = new System.Windows.Forms.Panel();
-            this.adelanteBtn = new System.Windows.Forms.Label();
-            this.atrasBtn = new System.Windows.Forms.Label();
             this.label_tipoclientes = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.estadoDesactivado = new System.Windows.Forms.CheckBox();
@@ -69,29 +52,47 @@ namespace Pantalla_Cliente
             this.paginaDropDown = new System.Windows.Forms.ComboBox();
             this.paginas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
-            this.filtroClientes_btn = new System.Windows.Forms.Button();
             this.clientesLabel = new System.Windows.Forms.Label();
             this.fondoGrisMid = new System.Windows.Forms.Label();
-            this.panel_derecha.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteImg)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.adelanteBtn = new System.Windows.Forms.Label();
+            this.atrasBtn = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.filtroClientes_btn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.imgTransita = new System.Windows.Forms.Label();
+            this.btn_verFavoritos = new System.Windows.Forms.Button();
+            this.correo = new System.Windows.Forms.Label();
+            this.nombre = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.id_mostrar = new System.Windows.Forms.TextBox();
+            this.nombre_mostrar = new System.Windows.Forms.TextBox();
+            this.apellidos_mostrar = new System.Windows.Forms.TextBox();
+            this.email_mostrar = new System.Windows.Forms.TextBox();
+            this.clienteImg = new System.Windows.Forms.PictureBox();
+            this.panel_derecha = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel_central.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelClientes.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteImg)).BeginInit();
+            this.panel_derecha.SuspendLayout();
             this.SuspendLayout();
             // 
             // label15
@@ -101,138 +102,6 @@ namespace Pantalla_Cliente
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(276, 1);
             this.label15.TabIndex = 24;
-            // 
-            // panel_derecha
-            // 
-            this.panel_derecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.panel_derecha.Controls.Add(this.clienteImg);
-            this.panel_derecha.Controls.Add(this.groupBox2);
-            this.panel_derecha.Controls.Add(this.nombre);
-            this.panel_derecha.Controls.Add(this.correo);
-            this.panel_derecha.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_derecha.Location = new System.Drawing.Point(833, 0);
-            this.panel_derecha.Name = "panel_derecha";
-            this.panel_derecha.Size = new System.Drawing.Size(231, 673);
-            this.panel_derecha.TabIndex = 28;
-            // 
-            // clienteImg
-            // 
-            this.clienteImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.clienteImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.clienteImg.Location = new System.Drawing.Point(51, 104);
-            this.clienteImg.Name = "clienteImg";
-            this.clienteImg.Size = new System.Drawing.Size(130, 112);
-            this.clienteImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.clienteImg.TabIndex = 24;
-            this.clienteImg.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.email_mostrar);
-            this.groupBox2.Controls.Add(this.apellidos_mostrar);
-            this.groupBox2.Controls.Add(this.nombre_mostrar);
-            this.groupBox2.Controls.Add(this.id_mostrar);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(29, 342);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(177, 206);
-            this.groupBox2.TabIndex = 26;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ID:";
-            // 
-            // email_mostrar
-            // 
-            this.email_mostrar.Enabled = false;
-            this.email_mostrar.Location = new System.Drawing.Point(9, 180);
-            this.email_mostrar.Name = "email_mostrar";
-            this.email_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.email_mostrar.TabIndex = 6;
-            // 
-            // apellidos_mostrar
-            // 
-            this.apellidos_mostrar.Enabled = false;
-            this.apellidos_mostrar.Location = new System.Drawing.Point(9, 124);
-            this.apellidos_mostrar.Name = "apellidos_mostrar";
-            this.apellidos_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.apellidos_mostrar.TabIndex = 5;
-            // 
-            // nombre_mostrar
-            // 
-            this.nombre_mostrar.Enabled = false;
-            this.nombre_mostrar.Location = new System.Drawing.Point(9, 68);
-            this.nombre_mostrar.Name = "nombre_mostrar";
-            this.nombre_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.nombre_mostrar.TabIndex = 4;
-            // 
-            // id_mostrar
-            // 
-            this.id_mostrar.Enabled = false;
-            this.id_mostrar.Location = new System.Drawing.Point(9, 19);
-            this.id_mostrar.Name = "id_mostrar";
-            this.id_mostrar.Size = new System.Drawing.Size(100, 20);
-            this.id_mostrar.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(6, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Email:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(6, 108);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 13);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Apellidos:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(6, 52);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Primer nombre:";
-            // 
-            // nombre
-            // 
-            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nombre.AutoSize = true;
-            this.nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre.ForeColor = System.Drawing.Color.White;
-            this.nombre.Location = new System.Drawing.Point(66, 234);
-            this.nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.nombre.Name = "nombre";
-            this.nombre.Size = new System.Drawing.Size(100, 20);
-            this.nombre.TabIndex = 23;
-            this.nombre.Text = "Nom_Cliente";
-            // 
-            // correo
-            // 
-            this.correo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.correo.AutoSize = true;
-            this.correo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.correo.ForeColor = System.Drawing.Color.DarkGray;
-            this.correo.Location = new System.Drawing.Point(67, 267);
-            this.correo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.correo.Name = "correo";
-            this.correo.Size = new System.Drawing.Size(50, 13);
-            this.correo.TabIndex = 25;
-            this.correo.Text = "@Cliente";
             // 
             // btnGenerarpdf
             // 
@@ -314,32 +183,6 @@ namespace Pantalla_Cliente
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(213, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -357,14 +200,6 @@ namespace Pantalla_Cliente
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(276, 1);
             this.label5.TabIndex = 11;
-            // 
-            // imgTransita
-            // 
-            this.imgTransita.Image = ((System.Drawing.Image)(resources.GetObject("imgTransita.Image")));
-            this.imgTransita.Location = new System.Drawing.Point(30, 358);
-            this.imgTransita.Name = "imgTransita";
-            this.imgTransita.Size = new System.Drawing.Size(223, 184);
-            this.imgTransita.TabIndex = 5;
             // 
             // btn_mapa
             // 
@@ -461,26 +296,6 @@ namespace Pantalla_Cliente
             this.panel_central.Size = new System.Drawing.Size(557, 673);
             this.panel_central.TabIndex = 32;
             this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_central_Paint);
-            // 
-            // adelanteBtn
-            // 
-            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
-            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
-            this.adelanteBtn.Name = "adelanteBtn";
-            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
-            this.adelanteBtn.TabIndex = 40;
-            this.adelanteBtn.Click += new System.EventHandler(this.adelanteBtn_Click);
-            // 
-            // atrasBtn
-            // 
-            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
-            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
-            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
-            this.atrasBtn.Name = "atrasBtn";
-            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
-            this.atrasBtn.TabIndex = 39;
-            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
             // 
             // label_tipoclientes
             // 
@@ -586,43 +401,6 @@ namespace Pantalla_Cliente
             this.panel2.TabIndex = 10;
             this.panel2.Visible = false;
             // 
-            // button8
-            // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(401, 4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 57);
-            this.button8.TabIndex = 18;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(278, 21);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 17;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(20, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -674,19 +452,6 @@ namespace Pantalla_Cliente
             this.buscarTextBox.Leave += new System.EventHandler(this.buscarTextBox_Leave_1);
             this.buscarTextBox.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.buscarTextBox_PreviewKeyDown);
             // 
-            // filtroClientes_btn
-            // 
-            this.filtroClientes_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.filtroClientes_btn.AutoSize = true;
-            this.filtroClientes_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.filtroClientes_btn.Image = ((System.Drawing.Image)(resources.GetObject("filtroClientes_btn.Image")));
-            this.filtroClientes_btn.Location = new System.Drawing.Point(271, 74);
-            this.filtroClientes_btn.Name = "filtroClientes_btn";
-            this.filtroClientes_btn.Size = new System.Drawing.Size(36, 36);
-            this.filtroClientes_btn.TabIndex = 22;
-            this.filtroClientes_btn.UseVisualStyleBackColor = false;
-            this.filtroClientes_btn.Click += new System.EventHandler(this.filtroClientes_btn_Click);
-            // 
             // clientesLabel
             // 
             this.clientesLabel.AutoSize = true;
@@ -708,6 +473,253 @@ namespace Pantalla_Cliente
             this.fondoGrisMid.Size = new System.Drawing.Size(1064, 673);
             this.fondoGrisMid.TabIndex = 9;
             // 
+            // adelanteBtn
+            // 
+            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
+            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
+            this.adelanteBtn.Name = "adelanteBtn";
+            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
+            this.adelanteBtn.TabIndex = 40;
+            this.adelanteBtn.Click += new System.EventHandler(this.adelanteBtn_Click);
+            // 
+            // atrasBtn
+            // 
+            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
+            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
+            this.atrasBtn.Name = "atrasBtn";
+            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
+            this.atrasBtn.TabIndex = 39;
+            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
+            // 
+            // button8
+            // 
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.Location = new System.Drawing.Point(401, 4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(30, 57);
+            this.button8.TabIndex = 18;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Location = new System.Drawing.Point(278, 21);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 17;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(20, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // filtroClientes_btn
+            // 
+            this.filtroClientes_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.filtroClientes_btn.AutoSize = true;
+            this.filtroClientes_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.filtroClientes_btn.Image = ((System.Drawing.Image)(resources.GetObject("filtroClientes_btn.Image")));
+            this.filtroClientes_btn.Location = new System.Drawing.Point(271, 74);
+            this.filtroClientes_btn.Name = "filtroClientes_btn";
+            this.filtroClientes_btn.Size = new System.Drawing.Size(36, 36);
+            this.filtroClientes_btn.TabIndex = 22;
+            this.filtroClientes_btn.UseVisualStyleBackColor = false;
+            this.filtroClientes_btn.Click += new System.EventHandler(this.filtroClientes_btn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(27, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(213, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
+            // imgTransita
+            // 
+            this.imgTransita.Image = ((System.Drawing.Image)(resources.GetObject("imgTransita.Image")));
+            this.imgTransita.Location = new System.Drawing.Point(30, 358);
+            this.imgTransita.Name = "imgTransita";
+            this.imgTransita.Size = new System.Drawing.Size(223, 184);
+            this.imgTransita.TabIndex = 5;
+            // 
+            // btn_verFavoritos
+            // 
+            this.btn_verFavoritos.Image = global::Pantalla_Cliente.Properties.Resources.estrellaFav;
+            this.btn_verFavoritos.Location = new System.Drawing.Point(91, 588);
+            this.btn_verFavoritos.Name = "btn_verFavoritos";
+            this.btn_verFavoritos.Size = new System.Drawing.Size(39, 36);
+            this.btn_verFavoritos.TabIndex = 27;
+            this.btn_verFavoritos.UseVisualStyleBackColor = true;
+            this.btn_verFavoritos.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // correo
+            // 
+            this.correo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.correo.AutoSize = true;
+            this.correo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.correo.ForeColor = System.Drawing.Color.DarkGray;
+            this.correo.Location = new System.Drawing.Point(67, 267);
+            this.correo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.correo.Name = "correo";
+            this.correo.Size = new System.Drawing.Size(50, 13);
+            this.correo.TabIndex = 25;
+            this.correo.Text = "@Cliente";
+            // 
+            // nombre
+            // 
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre.AutoSize = true;
+            this.nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.ForeColor = System.Drawing.Color.White;
+            this.nombre.Location = new System.Drawing.Point(66, 234);
+            this.nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(100, 20);
+            this.nombre.TabIndex = 23;
+            this.nombre.Text = "Nom_Cliente";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.email_mostrar);
+            this.groupBox2.Controls.Add(this.apellidos_mostrar);
+            this.groupBox2.Controls.Add(this.nombre_mostrar);
+            this.groupBox2.Controls.Add(this.id_mostrar);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(29, 342);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(177, 206);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "ID:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(6, 52);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Primer nombre:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(6, 108);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Apellidos:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(6, 164);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Email:";
+            // 
+            // id_mostrar
+            // 
+            this.id_mostrar.Enabled = false;
+            this.id_mostrar.Location = new System.Drawing.Point(9, 19);
+            this.id_mostrar.Name = "id_mostrar";
+            this.id_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.id_mostrar.TabIndex = 3;
+            // 
+            // nombre_mostrar
+            // 
+            this.nombre_mostrar.Enabled = false;
+            this.nombre_mostrar.Location = new System.Drawing.Point(9, 68);
+            this.nombre_mostrar.Name = "nombre_mostrar";
+            this.nombre_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.nombre_mostrar.TabIndex = 4;
+            // 
+            // apellidos_mostrar
+            // 
+            this.apellidos_mostrar.Enabled = false;
+            this.apellidos_mostrar.Location = new System.Drawing.Point(9, 124);
+            this.apellidos_mostrar.Name = "apellidos_mostrar";
+            this.apellidos_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.apellidos_mostrar.TabIndex = 5;
+            // 
+            // email_mostrar
+            // 
+            this.email_mostrar.Enabled = false;
+            this.email_mostrar.Location = new System.Drawing.Point(9, 180);
+            this.email_mostrar.Name = "email_mostrar";
+            this.email_mostrar.Size = new System.Drawing.Size(100, 20);
+            this.email_mostrar.TabIndex = 6;
+            // 
+            // clienteImg
+            // 
+            this.clienteImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.clienteImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.clienteImg.Location = new System.Drawing.Point(51, 104);
+            this.clienteImg.Name = "clienteImg";
+            this.clienteImg.Size = new System.Drawing.Size(130, 112);
+            this.clienteImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.clienteImg.TabIndex = 24;
+            this.clienteImg.TabStop = false;
+            // 
+            // panel_derecha
+            // 
+            this.panel_derecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.panel_derecha.Controls.Add(this.btn_verFavoritos);
+            this.panel_derecha.Controls.Add(this.clienteImg);
+            this.panel_derecha.Controls.Add(this.groupBox2);
+            this.panel_derecha.Controls.Add(this.nombre);
+            this.panel_derecha.Controls.Add(this.correo);
+            this.panel_derecha.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_derecha.Location = new System.Drawing.Point(833, 0);
+            this.panel_derecha.Name = "panel_derecha";
+            this.panel_derecha.Size = new System.Drawing.Size(231, 673);
+            this.panel_derecha.TabIndex = 28;
+            // 
             // Cliente_Pantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -725,16 +737,9 @@ namespace Pantalla_Cliente
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transita";
             this.Load += new System.EventHandler(this.Cliente_Pantalla_Load);
-            this.panel_derecha.ResumeLayout(false);
-            this.panel_derecha.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteImg)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel_central.ResumeLayout(false);
             this.panel_central.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -744,24 +749,19 @@ namespace Pantalla_Cliente
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteImg)).EndInit();
+            this.panel_derecha.ResumeLayout(false);
+            this.panel_derecha.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Panel panel_derecha;
-        private System.Windows.Forms.PictureBox clienteImg;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox email_mostrar;
-        private System.Windows.Forms.TextBox apellidos_mostrar;
-        private System.Windows.Forms.TextBox nombre_mostrar;
-        private System.Windows.Forms.TextBox id_mostrar;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label nombre;
-        private System.Windows.Forms.Label correo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button6;
@@ -798,6 +798,19 @@ namespace Pantalla_Cliente
         private System.Windows.Forms.Label paginas;
         private System.Windows.Forms.ComboBox paginaDropDown;
         private System.Windows.Forms.Button btnGenerarpdf;
+        private System.Windows.Forms.Button btn_verFavoritos;
+        private System.Windows.Forms.Label correo;
+        private System.Windows.Forms.Label nombre;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox email_mostrar;
+        private System.Windows.Forms.TextBox apellidos_mostrar;
+        private System.Windows.Forms.TextBox nombre_mostrar;
+        private System.Windows.Forms.TextBox id_mostrar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox clienteImg;
+        private System.Windows.Forms.Panel panel_derecha;
     }
 }
 

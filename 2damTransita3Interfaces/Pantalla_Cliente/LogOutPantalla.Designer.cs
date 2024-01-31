@@ -64,7 +64,7 @@ namespace transitaControllers
             // logOutTImer1
             // 
             this.logOutTImer1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.logOutTImer1.Location = new System.Drawing.Point(152, 138);
+            this.logOutTImer1.Location = new System.Drawing.Point(201, 138);
             this.logOutTImer1.Name = "logOutTImer1";
             this.logOutTImer1.Size = new System.Drawing.Size(250, 83);
             this.logOutTImer1.TabIndex = 4;

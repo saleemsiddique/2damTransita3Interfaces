@@ -226,6 +226,7 @@ namespace Pantalla_Cliente
             return panel_central;
         }
 
+
         private void label2_Click(object sender, EventArgs e)
         {
 

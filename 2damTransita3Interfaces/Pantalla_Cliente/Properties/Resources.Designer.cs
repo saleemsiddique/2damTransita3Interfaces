@@ -133,6 +133,16 @@ namespace Pantalla_Cliente.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap estrellaFav {
+            get {
+                object obj = ResourceManager.GetObject("estrellaFav", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estrellaNegra_fotor_bg_remover_2023102118503 {
             get {
                 object obj = ResourceManager.GetObject("estrellaNegra-fotor-bg-remover-2023102118503", resourceCulture);

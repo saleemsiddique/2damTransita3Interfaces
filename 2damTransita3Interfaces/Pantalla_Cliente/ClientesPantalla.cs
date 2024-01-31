@@ -31,10 +31,12 @@ namespace Pantalla_Cliente
         private int paginasTotales;
         private int paginaActual = 1;
         private int paginasTotalesActual;
+        private MapaPantalla mapaPantalla;
 
         public Cliente_Pantalla()
         {
             InitializeComponent();
+
             paginaDropDown.ContextMenuStrip = Utils.emptyMenu;
             ObtenerClientes();
             paginaDropDown.ContextMenuStrip = Utils.emptyMenu;
@@ -398,6 +400,29 @@ namespace Pantalla_Cliente
                 paginaDropDown.SelectedItem = paginaActual;
                 await ObtenerClientesRefresh();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (mapaPantalla == null)
+            {
+                panel_derecha.Visible = false;
+                // Crea una instancia del mapa solo si no se ha creado previamente
+                mapaPantalla = new MapaPantalla();
+                VaciarPanelCentral();
+                Panel panelCentralMapa = mapaPantalla.ObtenerPanelCentralMapa();
+                panelCentralMapa.Dock = DockStyle.Fill;
+
+                // Agrega el panel al control contenedor en este formulario
+                panel_central.Controls.Add(panelCentralMapa);
+
+            }
+        }
+
+        public void VaciarPanelCentral()
+        {
+            panel_central.Controls.Clear();
+
         }
     }
 }
