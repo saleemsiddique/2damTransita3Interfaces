@@ -28,6 +28,7 @@ namespace Pantalla_Cliente
         private PuntoService puntoService = new PuntoService();
         GMapControl gmapControl;
         private GMapOverlay apiMarkersOverlay;
+        private bool esVisible = false;
         public double LatitudNuevoPunto { get; private set; }
         public double LongitudNuevoPunto { get; private set; }
 
@@ -36,6 +37,9 @@ namespace Pantalla_Cliente
         double defaultLng = -0.2271;
         GMarkerGoogle marker;
         private PointLatLng mapaPosicionInicial;
+        private string filtroTipo = "";
+        private string filtroAccesibilidad = "";
+        private string filtroVisibilidad = "";
         public MapaPantalla()
         {
             InitializeComponent();
@@ -242,7 +246,12 @@ namespace Pantalla_Cliente
 
         public async Task ObtenerPuntos()
         {
-            listaPuntosSinIncidencia = await puntoService.GetPuntosTodos();
+            if (listaPuntosSinIncidencia != null) {
+                listaPuntosSinIncidencia.Clear();
+                gmapControl.Overlays.Clear();
+                gmapControl.Refresh();
+            }
+            listaPuntosSinIncidencia = await puntoService.GetPuntoAsyncMapa(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
             ColocarMarcadoresEnMapaPuntosSinIncidencia();
         }
 
@@ -266,6 +275,7 @@ namespace Pantalla_Cliente
         public void verFavoritos() {
             btn_crearPunto.Visible = false;
             btnCrearIncidencia.Visible = false;
+            btn_filtrar.Visible = false;
         }
 
 
@@ -301,7 +311,7 @@ namespace Pantalla_Cliente
 
        
 
-        private void btn_crearPunto_Click(object sender, EventArgs e)
+        private async void btn_crearPunto_Click(object sender, EventArgs e)
         {
            
             CrearPunto crearPuntoForm = new CrearPunto();
@@ -310,9 +320,13 @@ namespace Pantalla_Cliente
             crearPuntoForm.LongitudPuntoMapa = LongitudNuevoPunto;
 
             crearPuntoForm.ShowDialog();
+            filtroTipo = "";
+            filtroAccesibilidad = "";
+            filtroVisibilidad = "";
+            await ObtenerPuntos();
         }
 
-        private void btnCrearIncidencia_Click(object sender, EventArgs e)
+        private async void btnCrearIncidencia_Click(object sender, EventArgs e)
         {
             CrearIncidencia crearIncidencia;
 
@@ -327,6 +341,98 @@ namespace Pantalla_Cliente
             }
             
             crearIncidencia.ShowDialog();
+            filtroTipo = "";
+            filtroAccesibilidad = "";
+            filtroVisibilidad = "";
+            await ObtenerPuntos();
+        }
+
+        private void btn_filtrar_Click(object sender, EventArgs e)
+        {
+            if (esVisible)
+            {
+                groupBox1.Visible = false;
+                esVisible = false;
+            }
+            else
+            {
+                groupBox1.Visible = true;
+                esVisible = true;
+            }
+        }
+
+        private async void buttonAceptar_Click(object sender, EventArgs e)
+        {
+            if (filtro_acceso.Checked)
+            {
+                filtroTipo = "ACCESO";
+            }
+            else if (filtro_lugar.Checked)
+            {
+                filtroTipo = "LUGAR";
+            }
+            else
+            {
+                filtroTipo = "";
+            }
+
+            if (filtro_accesible.Checked)
+            {
+                filtroAccesibilidad = "ACCESIBLE";
+            }
+            else if (filtro_noAccesible.Checked)
+            {
+                filtroAccesibilidad = "NO_ACCESIBLE";
+            }
+            else if (filtro_parcialmenteAccesible.Checked)
+            {
+                filtroAccesibilidad = "PARCIALMENTE_ACCESIBLE";
+            }
+            else
+            {
+                filtroAccesibilidad = "";
+            }
+
+            if (filtro_global.Checked)
+            {
+                filtroVisibilidad = "GLOBAL";
+            }
+            else if (filtro_incidencia.Checked)
+            {
+                filtroVisibilidad = "INCIDENCIA";
+            }
+            else if (filtro_favorito.Checked)
+            {
+                filtroVisibilidad = "FAVORITO";
+            }
+            else if (filtro_oculto.Checked)
+            {
+                filtroVisibilidad = "OCULTO";
+            }
+            else
+            {
+                filtroVisibilidad = "";
+            }
+            groupBox1.Visible = false;
+            esVisible = false;
+            await ObtenerPuntos();
+        }
+
+        private void filtro_acceso_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is CheckBox checkBox)
+            {
+                if (checkBox.Checked)
+                {
+                    foreach (Control control in checkBox.Parent.Controls)
+                    {
+                        if (control is CheckBox otherCheckBox && !otherCheckBox.Equals(checkBox))
+                        {
+                            otherCheckBox.Checked = false;
+                        }
+                    }
+                }
+            }
         }
     }
 }

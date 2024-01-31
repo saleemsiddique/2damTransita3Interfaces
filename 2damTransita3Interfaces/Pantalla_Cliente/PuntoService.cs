@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Pantalla_Cliente
 {
@@ -26,6 +27,25 @@ namespace Pantalla_Cliente
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             List<Punto> listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
             return listaPuntos;
+        }
+
+        public async Task<List<Punto>> GetPuntoAsyncMapa(string tipo, string accesibilidad, string visibilidadPunto) {
+            string url = Program.rutaBase + "puntos/filtrados/mapa?";
+
+            if (!string.IsNullOrEmpty(tipo))
+                url += $"&tipoPunto={tipo}";
+
+            if (!string.IsNullOrEmpty(accesibilidad))
+                url += $"&accesibilidadPunto={accesibilidad}";
+
+            if (!string.IsNullOrEmpty(visibilidadPunto))
+                url += $"&visibilidadPunto={visibilidadPunto}";
+
+
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            List<Punto> listaPuntos = JsonSerializer.Deserialize<List<Punto>>(response);
+            return listaPuntos;
+
         }
 
         public async Task<List<Punto>> GetPuntosConIncidenciasAsync()

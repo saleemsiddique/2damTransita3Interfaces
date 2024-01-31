@@ -355,5 +355,6 @@ namespace Pantalla_Cliente
             VentanaPDFPunto ventanaPDFPunto = new VentanaPDFPunto();
             ventanaPDFPunto.ShowDialog();
         }
+
     }
 }

@@ -29,38 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PuntosPantalla));
-            this.panel_central = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupVisibilidad = new System.Windows.Forms.GroupBox();
-            this.filtro_oculto = new System.Windows.Forms.CheckBox();
-            this.filtro_incidencia = new System.Windows.Forms.CheckBox();
-            this.filtro_favorito = new System.Windows.Forms.CheckBox();
-            this.filtro_global = new System.Windows.Forms.CheckBox();
-            this.groupAccesibilidad = new System.Windows.Forms.GroupBox();
-            this.filtro_parcialmenteAccesible = new System.Windows.Forms.CheckBox();
-            this.filtro_noAccesible = new System.Windows.Forms.CheckBox();
-            this.filtro_accesible = new System.Windows.Forms.CheckBox();
-            this.groupTipo = new System.Windows.Forms.GroupBox();
-            this.filtro_lugar = new System.Windows.Forms.CheckBox();
-            this.filtro_acceso = new System.Windows.Forms.CheckBox();
-            this.buttonAceptar = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btnIrPantallaPDF = new System.Windows.Forms.Button();
-            this.adelanteBtn = new System.Windows.Forms.Label();
-            this.btn_addPunto = new System.Windows.Forms.Button();
-            this.atrasBtn = new System.Windows.Forms.Label();
-            this.panelPuntos = new System.Windows.Forms.Panel();
-            this.paginaDropDown = new System.Windows.Forms.ComboBox();
-            this.paginas = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.btn_filtrar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_incidencias = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -91,15 +59,38 @@
             this.label10 = new System.Windows.Forms.Label();
             this.descripcionPunto_mostrar = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
-            this.panel_central.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupVisibilidad.SuspendLayout();
-            this.groupAccesibilidad.SuspendLayout();
-            this.groupTipo.SuspendLayout();
-            this.panelPuntos.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelPuntos = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.paginas = new System.Windows.Forms.Label();
+            this.paginaDropDown = new System.Windows.Forms.ComboBox();
+            this.atrasBtn = new System.Windows.Forms.Label();
+            this.btn_addPunto = new System.Windows.Forms.Button();
+            this.adelanteBtn = new System.Windows.Forms.Label();
+            this.btnIrPantallaPDF = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonAceptar = new System.Windows.Forms.Button();
+            this.groupTipo = new System.Windows.Forms.GroupBox();
+            this.filtro_acceso = new System.Windows.Forms.CheckBox();
+            this.filtro_lugar = new System.Windows.Forms.CheckBox();
+            this.groupAccesibilidad = new System.Windows.Forms.GroupBox();
+            this.filtro_accesible = new System.Windows.Forms.CheckBox();
+            this.filtro_noAccesible = new System.Windows.Forms.CheckBox();
+            this.filtro_parcialmenteAccesible = new System.Windows.Forms.CheckBox();
+            this.groupVisibilidad = new System.Windows.Forms.GroupBox();
+            this.filtro_global = new System.Windows.Forms.CheckBox();
+            this.filtro_favorito = new System.Windows.Forms.CheckBox();
+            this.filtro_incidencia = new System.Windows.Forms.CheckBox();
+            this.filtro_oculto = new System.Windows.Forms.CheckBox();
+            this.panel_central = new System.Windows.Forms.Panel();
+            this.btn_filtrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -107,383 +98,16 @@
             this.panel_derecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.puntoImg)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.panelPuntos.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupTipo.SuspendLayout();
+            this.groupAccesibilidad.SuspendLayout();
+            this.groupVisibilidad.SuspendLayout();
+            this.panel_central.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel_central
-            // 
-            this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.panel_central.Controls.Add(this.groupBox1);
-            this.panel_central.Controls.Add(this.label16);
-            this.panel_central.Controls.Add(this.btnIrPantallaPDF);
-            this.panel_central.Controls.Add(this.adelanteBtn);
-            this.panel_central.Controls.Add(this.btn_addPunto);
-            this.panel_central.Controls.Add(this.atrasBtn);
-            this.panel_central.Controls.Add(this.panelPuntos);
-            this.panel_central.Controls.Add(this.btn_filtrar);
-            this.panel_central.Controls.Add(this.label1);
-            this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_central.Location = new System.Drawing.Point(276, 0);
-            this.panel_central.Name = "panel_central";
-            this.panel_central.Size = new System.Drawing.Size(557, 673);
-            this.panel_central.TabIndex = 35;
-            this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_central_Paint);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.groupVisibilidad);
-            this.groupBox1.Controls.Add(this.groupAccesibilidad);
-            this.groupBox1.Controls.Add(this.groupTipo);
-            this.groupBox1.Controls.Add(this.buttonAceptar);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(282, 102);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(249, 403);
-            this.groupBox1.TabIndex = 36;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
-            this.groupBox1.Visible = false;
-            // 
-            // groupVisibilidad
-            // 
-            this.groupVisibilidad.Controls.Add(this.filtro_oculto);
-            this.groupVisibilidad.Controls.Add(this.filtro_incidencia);
-            this.groupVisibilidad.Controls.Add(this.filtro_favorito);
-            this.groupVisibilidad.Controls.Add(this.filtro_global);
-            this.groupVisibilidad.Location = new System.Drawing.Point(29, 239);
-            this.groupVisibilidad.Name = "groupVisibilidad";
-            this.groupVisibilidad.Size = new System.Drawing.Size(200, 100);
-            this.groupVisibilidad.TabIndex = 7;
-            this.groupVisibilidad.TabStop = false;
-            // 
-            // filtro_oculto
-            // 
-            this.filtro_oculto.AutoSize = true;
-            this.filtro_oculto.Location = new System.Drawing.Point(109, 61);
-            this.filtro_oculto.Name = "filtro_oculto";
-            this.filtro_oculto.Size = new System.Drawing.Size(70, 17);
-            this.filtro_oculto.TabIndex = 4;
-            this.filtro_oculto.Text = "OCULTO";
-            this.filtro_oculto.UseVisualStyleBackColor = true;
-            this.filtro_oculto.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_incidencia
-            // 
-            this.filtro_incidencia.AutoSize = true;
-            this.filtro_incidencia.Location = new System.Drawing.Point(109, 28);
-            this.filtro_incidencia.Name = "filtro_incidencia";
-            this.filtro_incidencia.Size = new System.Drawing.Size(87, 17);
-            this.filtro_incidencia.TabIndex = 3;
-            this.filtro_incidencia.Text = "INCIDENCIA";
-            this.filtro_incidencia.UseVisualStyleBackColor = true;
-            this.filtro_incidencia.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_favorito
-            // 
-            this.filtro_favorito.AutoSize = true;
-            this.filtro_favorito.Location = new System.Drawing.Point(18, 61);
-            this.filtro_favorito.Name = "filtro_favorito";
-            this.filtro_favorito.Size = new System.Drawing.Size(80, 17);
-            this.filtro_favorito.TabIndex = 2;
-            this.filtro_favorito.Text = "FAVORITO";
-            this.filtro_favorito.UseVisualStyleBackColor = true;
-            this.filtro_favorito.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_global
-            // 
-            this.filtro_global.AutoSize = true;
-            this.filtro_global.Location = new System.Drawing.Point(18, 28);
-            this.filtro_global.Name = "filtro_global";
-            this.filtro_global.Size = new System.Drawing.Size(68, 17);
-            this.filtro_global.TabIndex = 1;
-            this.filtro_global.Text = "GLOBAL";
-            this.filtro_global.UseVisualStyleBackColor = true;
-            this.filtro_global.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // groupAccesibilidad
-            // 
-            this.groupAccesibilidad.Controls.Add(this.filtro_parcialmenteAccesible);
-            this.groupAccesibilidad.Controls.Add(this.filtro_noAccesible);
-            this.groupAccesibilidad.Controls.Add(this.filtro_accesible);
-            this.groupAccesibilidad.Location = new System.Drawing.Point(29, 129);
-            this.groupAccesibilidad.Name = "groupAccesibilidad";
-            this.groupAccesibilidad.Size = new System.Drawing.Size(200, 100);
-            this.groupAccesibilidad.TabIndex = 6;
-            this.groupAccesibilidad.TabStop = false;
-            // 
-            // filtro_parcialmenteAccesible
-            // 
-            this.filtro_parcialmenteAccesible.AutoSize = true;
-            this.filtro_parcialmenteAccesible.Location = new System.Drawing.Point(18, 67);
-            this.filtro_parcialmenteAccesible.Name = "filtro_parcialmenteAccesible";
-            this.filtro_parcialmenteAccesible.Size = new System.Drawing.Size(170, 17);
-            this.filtro_parcialmenteAccesible.TabIndex = 3;
-            this.filtro_parcialmenteAccesible.Text = "PARCIALMENTE ACCESIBLE";
-            this.filtro_parcialmenteAccesible.UseVisualStyleBackColor = true;
-            this.filtro_parcialmenteAccesible.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_noAccesible
-            // 
-            this.filtro_noAccesible.AutoSize = true;
-            this.filtro_noAccesible.Location = new System.Drawing.Point(18, 45);
-            this.filtro_noAccesible.Name = "filtro_noAccesible";
-            this.filtro_noAccesible.Size = new System.Drawing.Size(103, 17);
-            this.filtro_noAccesible.TabIndex = 2;
-            this.filtro_noAccesible.Text = "NO ACCESIBLE";
-            this.filtro_noAccesible.UseVisualStyleBackColor = true;
-            this.filtro_noAccesible.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_accesible
-            // 
-            this.filtro_accesible.AutoSize = true;
-            this.filtro_accesible.Location = new System.Drawing.Point(18, 22);
-            this.filtro_accesible.Name = "filtro_accesible";
-            this.filtro_accesible.Size = new System.Drawing.Size(84, 17);
-            this.filtro_accesible.TabIndex = 1;
-            this.filtro_accesible.Text = "ACCESIBLE";
-            this.filtro_accesible.UseVisualStyleBackColor = true;
-            this.filtro_accesible.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // groupTipo
-            // 
-            this.groupTipo.Controls.Add(this.filtro_lugar);
-            this.groupTipo.Controls.Add(this.filtro_acceso);
-            this.groupTipo.Location = new System.Drawing.Point(29, 19);
-            this.groupTipo.Name = "groupTipo";
-            this.groupTipo.Size = new System.Drawing.Size(200, 100);
-            this.groupTipo.TabIndex = 5;
-            this.groupTipo.TabStop = false;
-            // 
-            // filtro_lugar
-            // 
-            this.filtro_lugar.AutoSize = true;
-            this.filtro_lugar.Location = new System.Drawing.Point(18, 61);
-            this.filtro_lugar.Name = "filtro_lugar";
-            this.filtro_lugar.Size = new System.Drawing.Size(63, 17);
-            this.filtro_lugar.TabIndex = 1;
-            this.filtro_lugar.Text = "LUGAR";
-            this.filtro_lugar.UseVisualStyleBackColor = true;
-            this.filtro_lugar.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // filtro_acceso
-            // 
-            this.filtro_acceso.AutoSize = true;
-            this.filtro_acceso.Location = new System.Drawing.Point(18, 29);
-            this.filtro_acceso.Name = "filtro_acceso";
-            this.filtro_acceso.Size = new System.Drawing.Size(69, 17);
-            this.filtro_acceso.TabIndex = 0;
-            this.filtro_acceso.Text = "ACCESO";
-            this.filtro_acceso.UseVisualStyleBackColor = true;
-            this.filtro_acceso.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // buttonAceptar
-            // 
-            this.buttonAceptar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonAceptar.Location = new System.Drawing.Point(96, 373);
-            this.buttonAceptar.Name = "buttonAceptar";
-            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAceptar.TabIndex = 4;
-            this.buttonAceptar.Text = "Aceptar";
-            this.buttonAceptar.UseVisualStyleBackColor = true;
-            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(45, 145);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(90, 17);
-            this.label16.TabIndex = 35;
-            this.label16.Text = "Añadir Punto";
-            // 
-            // btnIrPantallaPDF
-            // 
-            this.btnIrPantallaPDF.Location = new System.Drawing.Point(349, 150);
-            this.btnIrPantallaPDF.Margin = new System.Windows.Forms.Padding(2);
-            this.btnIrPantallaPDF.Name = "btnIrPantallaPDF";
-            this.btnIrPantallaPDF.Size = new System.Drawing.Size(120, 20);
-            this.btnIrPantallaPDF.TabIndex = 40;
-            this.btnIrPantallaPDF.Text = "Generar PDF punto";
-            this.btnIrPantallaPDF.UseVisualStyleBackColor = true;
-            this.btnIrPantallaPDF.Click += new System.EventHandler(this.btnIrPantallaPDF_Click);
-            // 
-            // adelanteBtn
-            // 
-            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
-            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
-            this.adelanteBtn.Name = "adelanteBtn";
-            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
-            this.adelanteBtn.TabIndex = 38;
-            this.adelanteBtn.Click += new System.EventHandler(this.adelanteBtn_Click);
-            // 
-            // btn_addPunto
-            // 
-            this.btn_addPunto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btn_addPunto.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_addPunto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_addPunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addPunto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_addPunto.Location = new System.Drawing.Point(145, 137);
-            this.btn_addPunto.Name = "btn_addPunto";
-            this.btn_addPunto.Size = new System.Drawing.Size(30, 30);
-            this.btn_addPunto.TabIndex = 34;
-            this.btn_addPunto.Text = "+";
-            this.btn_addPunto.UseVisualStyleBackColor = false;
-            this.btn_addPunto.Click += new System.EventHandler(this.btn_addPunto_Click_1);
-            // 
-            // atrasBtn
-            // 
-            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
-            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
-            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
-            this.atrasBtn.Name = "atrasBtn";
-            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
-            this.atrasBtn.TabIndex = 37;
-            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
-            // 
-            // panelPuntos
-            // 
-            this.panelPuntos.AutoScroll = true;
-            this.panelPuntos.Controls.Add(this.paginaDropDown);
-            this.panelPuntos.Controls.Add(this.paginas);
-            this.panelPuntos.Controls.Add(this.panel2);
-            this.panelPuntos.Location = new System.Drawing.Point(36, 182);
-            this.panelPuntos.Name = "panelPuntos";
-            this.panelPuntos.Size = new System.Drawing.Size(495, 413);
-            this.panelPuntos.TabIndex = 33;
-            // 
-            // paginaDropDown
-            // 
-            this.paginaDropDown.FormattingEnabled = true;
-            this.paginaDropDown.Location = new System.Drawing.Point(172, 383);
-            this.paginaDropDown.Name = "paginaDropDown";
-            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
-            this.paginaDropDown.TabIndex = 44;
-            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
-            // 
-            // paginas
-            // 
-            this.paginas.ForeColor = System.Drawing.Color.White;
-            this.paginas.Location = new System.Drawing.Point(219, 386);
-            this.paginas.Name = "paginas";
-            this.paginas.Size = new System.Drawing.Size(100, 23);
-            this.paginas.TabIndex = 39;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.radioButton1);
-            this.panel2.Location = new System.Drawing.Point(2, 27);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(450, 67);
-            this.panel2.TabIndex = 10;
-            this.panel2.Visible = false;
-            // 
-            // button8
-            // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(401, 4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 57);
-            this.button8.TabIndex = 18;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(278, 21);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 17;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(20, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.Location = new System.Drawing.Point(320, 23);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "View";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(74, 30);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nom_Punto";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.ForeColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Location = new System.Drawing.Point(364, 28);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.UseVisualStyleBackColor = false;
-            this.radioButton1.Visible = false;
-            // 
-            // btn_filtrar
-            // 
-            this.btn_filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_filtrar.AutoSize = true;
-            this.btn_filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_filtrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_filtrar.Image")));
-            this.btn_filtrar.Location = new System.Drawing.Point(271, 74);
-            this.btn_filtrar.Name = "btn_filtrar";
-            this.btn_filtrar.Size = new System.Drawing.Size(36, 36);
-            this.btn_filtrar.TabIndex = 22;
-            this.btn_filtrar.UseVisualStyleBackColor = false;
-            this.btn_filtrar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_filtrar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(21, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 25);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Puntos Transita";
             // 
             // panel1
             // 
@@ -861,6 +485,382 @@
             this.nombre.TabIndex = 23;
             this.nombre.Text = "Datos del Punto";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(21, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 25);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Puntos Transita";
+            // 
+            // panelPuntos
+            // 
+            this.panelPuntos.AutoScroll = true;
+            this.panelPuntos.Controls.Add(this.paginaDropDown);
+            this.panelPuntos.Controls.Add(this.paginas);
+            this.panelPuntos.Controls.Add(this.panel2);
+            this.panelPuntos.Location = new System.Drawing.Point(36, 182);
+            this.panelPuntos.Name = "panelPuntos";
+            this.panelPuntos.Size = new System.Drawing.Size(495, 413);
+            this.panelPuntos.TabIndex = 33;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.radioButton1);
+            this.panel2.Location = new System.Drawing.Point(2, 27);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(450, 67);
+            this.panel2.TabIndex = 10;
+            this.panel2.Visible = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton1.ForeColor = System.Drawing.Color.Transparent;
+            this.radioButton1.Location = new System.Drawing.Point(364, 28);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.UseVisualStyleBackColor = false;
+            this.radioButton1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(74, 30);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nom_Punto";
+            // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button7.Location = new System.Drawing.Point(320, 23);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "View";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(20, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Location = new System.Drawing.Point(278, 21);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 17;
+            this.pictureBox5.TabStop = false;
+            // 
+            // button8
+            // 
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.Location = new System.Drawing.Point(401, 4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(30, 57);
+            this.button8.TabIndex = 18;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // paginas
+            // 
+            this.paginas.ForeColor = System.Drawing.Color.White;
+            this.paginas.Location = new System.Drawing.Point(219, 386);
+            this.paginas.Name = "paginas";
+            this.paginas.Size = new System.Drawing.Size(100, 23);
+            this.paginas.TabIndex = 39;
+            // 
+            // paginaDropDown
+            // 
+            this.paginaDropDown.FormattingEnabled = true;
+            this.paginaDropDown.Location = new System.Drawing.Point(172, 383);
+            this.paginaDropDown.Name = "paginaDropDown";
+            this.paginaDropDown.Size = new System.Drawing.Size(49, 21);
+            this.paginaDropDown.TabIndex = 44;
+            this.paginaDropDown.SelectedIndexChanged += new System.EventHandler(this.paginaDropDown_SelectedIndexChanged);
+            // 
+            // atrasBtn
+            // 
+            this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
+            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Location = new System.Drawing.Point(45, 598);
+            this.atrasBtn.Name = "atrasBtn";
+            this.atrasBtn.Size = new System.Drawing.Size(50, 50);
+            this.atrasBtn.TabIndex = 37;
+            this.atrasBtn.Click += new System.EventHandler(this.atrasBtn_Click);
+            // 
+            // btn_addPunto
+            // 
+            this.btn_addPunto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.btn_addPunto.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_addPunto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_addPunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addPunto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_addPunto.Location = new System.Drawing.Point(145, 137);
+            this.btn_addPunto.Name = "btn_addPunto";
+            this.btn_addPunto.Size = new System.Drawing.Size(30, 30);
+            this.btn_addPunto.TabIndex = 34;
+            this.btn_addPunto.Text = "+";
+            this.btn_addPunto.UseVisualStyleBackColor = false;
+            this.btn_addPunto.Click += new System.EventHandler(this.btn_addPunto_Click_1);
+            // 
+            // adelanteBtn
+            // 
+            this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
+            this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
+            this.adelanteBtn.Name = "adelanteBtn";
+            this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
+            this.adelanteBtn.TabIndex = 38;
+            this.adelanteBtn.Click += new System.EventHandler(this.adelanteBtn_Click);
+            // 
+            // btnIrPantallaPDF
+            // 
+            this.btnIrPantallaPDF.Location = new System.Drawing.Point(349, 150);
+            this.btnIrPantallaPDF.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIrPantallaPDF.Name = "btnIrPantallaPDF";
+            this.btnIrPantallaPDF.Size = new System.Drawing.Size(120, 20);
+            this.btnIrPantallaPDF.TabIndex = 40;
+            this.btnIrPantallaPDF.Text = "Generar PDF punto";
+            this.btnIrPantallaPDF.UseVisualStyleBackColor = true;
+            this.btnIrPantallaPDF.Click += new System.EventHandler(this.btnIrPantallaPDF_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(45, 145);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(90, 17);
+            this.label16.TabIndex = 35;
+            this.label16.Text = "Añadir Punto";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.groupVisibilidad);
+            this.groupBox1.Controls.Add(this.groupAccesibilidad);
+            this.groupBox1.Controls.Add(this.groupTipo);
+            this.groupBox1.Controls.Add(this.buttonAceptar);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Location = new System.Drawing.Point(282, 102);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(249, 403);
+            this.groupBox1.TabIndex = 36;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
+            this.groupBox1.Visible = false;
+            // 
+            // buttonAceptar
+            // 
+            this.buttonAceptar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAceptar.Location = new System.Drawing.Point(96, 373);
+            this.buttonAceptar.Name = "buttonAceptar";
+            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAceptar.TabIndex = 4;
+            this.buttonAceptar.Text = "Aceptar";
+            this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
+            // 
+            // groupTipo
+            // 
+            this.groupTipo.Controls.Add(this.filtro_lugar);
+            this.groupTipo.Controls.Add(this.filtro_acceso);
+            this.groupTipo.Location = new System.Drawing.Point(29, 19);
+            this.groupTipo.Name = "groupTipo";
+            this.groupTipo.Size = new System.Drawing.Size(200, 100);
+            this.groupTipo.TabIndex = 5;
+            this.groupTipo.TabStop = false;
+            // 
+            // filtro_acceso
+            // 
+            this.filtro_acceso.AutoSize = true;
+            this.filtro_acceso.Location = new System.Drawing.Point(18, 29);
+            this.filtro_acceso.Name = "filtro_acceso";
+            this.filtro_acceso.Size = new System.Drawing.Size(69, 17);
+            this.filtro_acceso.TabIndex = 0;
+            this.filtro_acceso.Text = "ACCESO";
+            this.filtro_acceso.UseVisualStyleBackColor = true;
+            this.filtro_acceso.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_lugar
+            // 
+            this.filtro_lugar.AutoSize = true;
+            this.filtro_lugar.Location = new System.Drawing.Point(18, 61);
+            this.filtro_lugar.Name = "filtro_lugar";
+            this.filtro_lugar.Size = new System.Drawing.Size(63, 17);
+            this.filtro_lugar.TabIndex = 1;
+            this.filtro_lugar.Text = "LUGAR";
+            this.filtro_lugar.UseVisualStyleBackColor = true;
+            this.filtro_lugar.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // groupAccesibilidad
+            // 
+            this.groupAccesibilidad.Controls.Add(this.filtro_parcialmenteAccesible);
+            this.groupAccesibilidad.Controls.Add(this.filtro_noAccesible);
+            this.groupAccesibilidad.Controls.Add(this.filtro_accesible);
+            this.groupAccesibilidad.Location = new System.Drawing.Point(29, 129);
+            this.groupAccesibilidad.Name = "groupAccesibilidad";
+            this.groupAccesibilidad.Size = new System.Drawing.Size(200, 100);
+            this.groupAccesibilidad.TabIndex = 6;
+            this.groupAccesibilidad.TabStop = false;
+            // 
+            // filtro_accesible
+            // 
+            this.filtro_accesible.AutoSize = true;
+            this.filtro_accesible.Location = new System.Drawing.Point(18, 22);
+            this.filtro_accesible.Name = "filtro_accesible";
+            this.filtro_accesible.Size = new System.Drawing.Size(84, 17);
+            this.filtro_accesible.TabIndex = 1;
+            this.filtro_accesible.Text = "ACCESIBLE";
+            this.filtro_accesible.UseVisualStyleBackColor = true;
+            this.filtro_accesible.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_noAccesible
+            // 
+            this.filtro_noAccesible.AutoSize = true;
+            this.filtro_noAccesible.Location = new System.Drawing.Point(18, 45);
+            this.filtro_noAccesible.Name = "filtro_noAccesible";
+            this.filtro_noAccesible.Size = new System.Drawing.Size(103, 17);
+            this.filtro_noAccesible.TabIndex = 2;
+            this.filtro_noAccesible.Text = "NO ACCESIBLE";
+            this.filtro_noAccesible.UseVisualStyleBackColor = true;
+            this.filtro_noAccesible.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_parcialmenteAccesible
+            // 
+            this.filtro_parcialmenteAccesible.AutoSize = true;
+            this.filtro_parcialmenteAccesible.Location = new System.Drawing.Point(18, 67);
+            this.filtro_parcialmenteAccesible.Name = "filtro_parcialmenteAccesible";
+            this.filtro_parcialmenteAccesible.Size = new System.Drawing.Size(170, 17);
+            this.filtro_parcialmenteAccesible.TabIndex = 3;
+            this.filtro_parcialmenteAccesible.Text = "PARCIALMENTE ACCESIBLE";
+            this.filtro_parcialmenteAccesible.UseVisualStyleBackColor = true;
+            this.filtro_parcialmenteAccesible.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // groupVisibilidad
+            // 
+            this.groupVisibilidad.Controls.Add(this.filtro_oculto);
+            this.groupVisibilidad.Controls.Add(this.filtro_incidencia);
+            this.groupVisibilidad.Controls.Add(this.filtro_favorito);
+            this.groupVisibilidad.Controls.Add(this.filtro_global);
+            this.groupVisibilidad.Location = new System.Drawing.Point(29, 239);
+            this.groupVisibilidad.Name = "groupVisibilidad";
+            this.groupVisibilidad.Size = new System.Drawing.Size(200, 100);
+            this.groupVisibilidad.TabIndex = 7;
+            this.groupVisibilidad.TabStop = false;
+            // 
+            // filtro_global
+            // 
+            this.filtro_global.AutoSize = true;
+            this.filtro_global.Location = new System.Drawing.Point(18, 28);
+            this.filtro_global.Name = "filtro_global";
+            this.filtro_global.Size = new System.Drawing.Size(68, 17);
+            this.filtro_global.TabIndex = 1;
+            this.filtro_global.Text = "GLOBAL";
+            this.filtro_global.UseVisualStyleBackColor = true;
+            this.filtro_global.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_favorito
+            // 
+            this.filtro_favorito.AutoSize = true;
+            this.filtro_favorito.Location = new System.Drawing.Point(18, 61);
+            this.filtro_favorito.Name = "filtro_favorito";
+            this.filtro_favorito.Size = new System.Drawing.Size(80, 17);
+            this.filtro_favorito.TabIndex = 2;
+            this.filtro_favorito.Text = "FAVORITO";
+            this.filtro_favorito.UseVisualStyleBackColor = true;
+            this.filtro_favorito.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_incidencia
+            // 
+            this.filtro_incidencia.AutoSize = true;
+            this.filtro_incidencia.Location = new System.Drawing.Point(109, 28);
+            this.filtro_incidencia.Name = "filtro_incidencia";
+            this.filtro_incidencia.Size = new System.Drawing.Size(87, 17);
+            this.filtro_incidencia.TabIndex = 3;
+            this.filtro_incidencia.Text = "INCIDENCIA";
+            this.filtro_incidencia.UseVisualStyleBackColor = true;
+            this.filtro_incidencia.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // filtro_oculto
+            // 
+            this.filtro_oculto.AutoSize = true;
+            this.filtro_oculto.Location = new System.Drawing.Point(109, 61);
+            this.filtro_oculto.Name = "filtro_oculto";
+            this.filtro_oculto.Size = new System.Drawing.Size(70, 17);
+            this.filtro_oculto.TabIndex = 4;
+            this.filtro_oculto.Text = "OCULTO";
+            this.filtro_oculto.UseVisualStyleBackColor = true;
+            this.filtro_oculto.CheckStateChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // panel_central
+            // 
+            this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.panel_central.Controls.Add(this.groupBox1);
+            this.panel_central.Controls.Add(this.label16);
+            this.panel_central.Controls.Add(this.btnIrPantallaPDF);
+            this.panel_central.Controls.Add(this.adelanteBtn);
+            this.panel_central.Controls.Add(this.btn_addPunto);
+            this.panel_central.Controls.Add(this.atrasBtn);
+            this.panel_central.Controls.Add(this.panelPuntos);
+            this.panel_central.Controls.Add(this.btn_filtrar);
+            this.panel_central.Controls.Add(this.label1);
+            this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_central.Location = new System.Drawing.Point(276, 0);
+            this.panel_central.Name = "panel_central";
+            this.panel_central.Size = new System.Drawing.Size(557, 673);
+            this.panel_central.TabIndex = 35;
+            this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_central_Paint);
+            // 
+            // btn_filtrar
+            // 
+            this.btn_filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_filtrar.AutoSize = true;
+            this.btn_filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_filtrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_filtrar.Image")));
+            this.btn_filtrar.Location = new System.Drawing.Point(271, 74);
+            this.btn_filtrar.Name = "btn_filtrar";
+            this.btn_filtrar.Size = new System.Drawing.Size(36, 36);
+            this.btn_filtrar.TabIndex = 22;
+            this.btn_filtrar.UseVisualStyleBackColor = false;
+            this.btn_filtrar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_filtrar_Click);
+            // 
             // PuntosPantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -875,20 +875,6 @@
             this.MinimumSize = new System.Drawing.Size(960, 449);
             this.Name = "PuntosPantalla";
             this.Text = "PuntosPantalla";
-            this.panel_central.ResumeLayout(false);
-            this.panel_central.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupVisibilidad.ResumeLayout(false);
-            this.groupVisibilidad.PerformLayout();
-            this.groupAccesibilidad.ResumeLayout(false);
-            this.groupAccesibilidad.PerformLayout();
-            this.groupTipo.ResumeLayout(false);
-            this.groupTipo.PerformLayout();
-            this.panelPuntos.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -899,23 +885,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.puntoImg)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panelPuntos.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupTipo.ResumeLayout(false);
+            this.groupTipo.PerformLayout();
+            this.groupAccesibilidad.ResumeLayout(false);
+            this.groupAccesibilidad.PerformLayout();
+            this.groupVisibilidad.ResumeLayout(false);
+            this.groupVisibilidad.PerformLayout();
+            this.panel_central.ResumeLayout(false);
+            this.panel_central.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel_central;
-        private System.Windows.Forms.Panel panelPuntos;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button btn_filtrar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_incidencias;
         private System.Windows.Forms.Panel panel7;
@@ -946,26 +934,37 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox visibilidadpunto_mostar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelPuntos;
+        private System.Windows.Forms.ComboBox paginaDropDown;
+        private System.Windows.Forms.Label paginas;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label atrasBtn;
         private System.Windows.Forms.Button btn_addPunto;
+        private System.Windows.Forms.Label adelanteBtn;
+        private System.Windows.Forms.Button btnIrPantallaPDF;
+        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonAceptar;
         private System.Windows.Forms.GroupBox groupVisibilidad;
-        private System.Windows.Forms.GroupBox groupAccesibilidad;
-        private System.Windows.Forms.GroupBox groupTipo;
         private System.Windows.Forms.CheckBox filtro_oculto;
         private System.Windows.Forms.CheckBox filtro_incidencia;
         private System.Windows.Forms.CheckBox filtro_favorito;
         private System.Windows.Forms.CheckBox filtro_global;
+        private System.Windows.Forms.GroupBox groupAccesibilidad;
         private System.Windows.Forms.CheckBox filtro_parcialmenteAccesible;
         private System.Windows.Forms.CheckBox filtro_noAccesible;
         private System.Windows.Forms.CheckBox filtro_accesible;
+        private System.Windows.Forms.GroupBox groupTipo;
         private System.Windows.Forms.CheckBox filtro_lugar;
         private System.Windows.Forms.CheckBox filtro_acceso;
-        private System.Windows.Forms.Label atrasBtn;
-        private System.Windows.Forms.Label adelanteBtn;
-        private System.Windows.Forms.Label paginas;
-        private System.Windows.Forms.ComboBox paginaDropDown;
-        private System.Windows.Forms.Button btnIrPantallaPDF;
+        private System.Windows.Forms.Button buttonAceptar;
+        private System.Windows.Forms.Panel panel_central;
+        private System.Windows.Forms.Button btn_filtrar;
     }
 }
