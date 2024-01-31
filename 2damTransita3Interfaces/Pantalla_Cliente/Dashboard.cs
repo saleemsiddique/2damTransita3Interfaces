@@ -153,9 +153,9 @@ namespace Pantalla_Cliente
             MapaPantalla mapaPantalla = new MapaPantalla();
             Panel panelCentralMapa = mapaPantalla.ObtenerPanelCentralMapa();
             VaciarPanelCentral();
-            panel1_derecha.Visible = false;
             // Agrega el panel al control contenedor en este formulario
             panel1_central.Controls.Add(panelCentralMapa);
+            panel1_derecha.Controls.Add(mapaPantalla.ObtenerPanelDerechaMapa());
           
             // Puedes personalizar el tamaño y la posición del panel según tus necesidades
             panelCentralMapa.Dock = DockStyle.Fill;

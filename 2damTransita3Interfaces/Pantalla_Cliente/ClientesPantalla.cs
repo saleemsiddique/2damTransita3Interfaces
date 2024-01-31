@@ -32,11 +32,12 @@ namespace Pantalla_Cliente
         private int paginaActual = 1;
         private int paginasTotalesActual;
         private MapaPantalla mapaPantalla;
+        private int clienteSeleccionado;
 
         public Cliente_Pantalla()
         {
             InitializeComponent();
-
+            btn_verFavoritos.Visible = false;
             paginaDropDown.ContextMenuStrip = Utils.emptyMenu;
             ObtenerClientes();
             paginaDropDown.ContextMenuStrip = Utils.emptyMenu;
@@ -145,6 +146,7 @@ namespace Pantalla_Cliente
 
                 clienteBanner.getPanel().Click += (sender, e) =>
                 {
+                    btn_verFavoritos.Visible = true;
                     clienteBanner.getPanel().Focus();
                     nombre.Text = cliente.nombre + " " + cliente.apellidos;
                     correo.Text = cliente.nombreUsuario;
@@ -154,6 +156,7 @@ namespace Pantalla_Cliente
                     email_mostrar.Text = cliente.nombreUsuario;
                     clienteBanner.getPanel().BorderStyle = BorderStyle.Fixed3D;
                     clienteBanner.getPanel().Invalidate();
+                    clienteSeleccionado = cliente.id;
                 };
 
                 clienteBanner.getPanel().LostFocus += (sender, e) =>
@@ -406,15 +409,15 @@ namespace Pantalla_Cliente
         {
             if (mapaPantalla == null)
             {
-                panel_derecha.Visible = false;
-                // Crea una instancia del mapa solo si no se ha creado previamente
-                mapaPantalla = new MapaPantalla();
-                VaciarPanelCentral();
+                MapaPantalla mapaPantalla = new MapaPantalla(clienteSeleccionado);
                 Panel panelCentralMapa = mapaPantalla.ObtenerPanelCentralMapa();
-                panelCentralMapa.Dock = DockStyle.Fill;
-
+                VaciarPanelCentral();
                 // Agrega el panel al control contenedor en este formulario
                 panel_central.Controls.Add(panelCentralMapa);
+                panel_derecha.Controls.Add(mapaPantalla.ObtenerPanelDerechaMapa());
+
+                // Puedes personalizar el tamaño y la posición del panel según tus necesidades
+                panelCentralMapa.Dock = DockStyle.Fill;
 
             }
         }
@@ -422,6 +425,7 @@ namespace Pantalla_Cliente
         public void VaciarPanelCentral()
         {
             panel_central.Controls.Clear();
+            panel_derecha.Controls.Clear();
 
         }
     }

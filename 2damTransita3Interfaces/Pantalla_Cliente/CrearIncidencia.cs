@@ -29,8 +29,18 @@ namespace Pantalla_Cliente
         public CrearIncidencia(int index, double lat, double lng)
         {
             InitializeComponent();
+            isNuevo = true;
             latitud = lat;
             longitud = lng;
+            puntoMarcado = index;
+            InicializarAsync();
+            MessageBox.Show("" + index);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            duracion_input.Text = "Sin determinar";
+        }
+
+        public CrearIncidencia(int index) {
+            InitializeComponent();
             puntoMarcado = index;
             InicializarAsync();
             MessageBox.Show("" + index);
@@ -41,6 +51,8 @@ namespace Pantalla_Cliente
         public CrearIncidencia()
         {
             InitializeComponent();
+            comboBoxAccesibilidad.Visible = false;
+            accessTxt.Visible = false;
             InicializarAsync();
             this.StartPosition = FormStartPosition.CenterScreen;
             duracion_input.Text = "Sin determinar";
@@ -68,6 +80,11 @@ namespace Pantalla_Cliente
             {
                 punto_input.SelectedItem = puntoMarcado;
             }
+            else {
+                accessTxt.Visible = false;
+                comboBoxAccesibilidad.Visible = false;
+            }
+            
         }
 
         public async Task getClientes()
@@ -191,7 +208,6 @@ namespace Pantalla_Cliente
             if (puntoMarcado > listaPuntos.Last().id)
             {
                 punto_input.Items.Add(puntoMarcado);
-                isNuevo = true;
             }
         }
 
@@ -218,7 +234,9 @@ namespace Pantalla_Cliente
             {
                 if (verifyDatos())
                 {
-                    await crearPunto();
+                        if (isNuevo) {
+                            await crearPunto();
+                        }
                     await getPuntos();
                     await crearIncidencia();
 

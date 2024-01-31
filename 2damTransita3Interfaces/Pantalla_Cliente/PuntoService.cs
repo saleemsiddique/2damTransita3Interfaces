@@ -90,5 +90,11 @@ namespace Pantalla_Cliente
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             return JsonSerializer.Deserialize<List<Punto>>(response);
         }
+
+        public async Task<List<Punto>> GetPuntosFavoritos(int idCliente) {
+            string url = Program.rutaBase + "favoritos/" + idCliente;
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            return JsonSerializer.Deserialize<List<Punto>>(response);
+        }
     }
 }

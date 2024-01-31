@@ -20,6 +20,7 @@ namespace Pantalla_Cliente
     {
         private IncidenciaService incidenciaService = new IncidenciaService();
         private List<Punto> listaPuntos;
+        private List<Punto> puntosFavoritos;
         private List<Punto> listaPuntosSinIncidencia;
         private List<Punto> puntos;
         private List<Incidencia> listaIncidencias;
@@ -67,13 +68,57 @@ namespace Pantalla_Cliente
             
            
             gmapControl.OnMarkerClick += GmapControl_OnMarkerClick;
+        }
 
+        public MapaPantalla(int idCliente) {
+            InitializeComponent();
+            cargarFavoritos(idCliente);
+            toolTipCrearPuntoButton.SetToolTip(btn_crearPunto, "Boton para crear un punto apartir de la marca en el mapa");
+            toolTipMapCenter.SetToolTip(btn_resetPointer, "Boton para volver al centro de la vilajoiosa");
+            toolTipCrearPuntoButton.SetToolTip(btnCrearIncidencia, "Boton para crear una incidencia apartir del punto seleccionado");
+            listaIncidencias = new List<Incidencia>();
+            gmapControl = new GMapControl();
+            gmapControl.Dock = DockStyle.Fill;
+            apiMarkersOverlay = new GMapOverlay("apiMarkers");
+            gmapControl.Overlays.Add(apiMarkersOverlay);
+
+            gmapControl.MapProvider = GMapProviders.GoogleMap;
+
+            gmapControl.MinZoom = 7;
+            gmapControl.MaxZoom = 25;
+            gmapControl.Zoom = 15;
+
+
+            panel1.Controls.Add(gmapControl);
+
+
+
+            gmapControl.Position = new PointLatLng(defaultLat, defaultLng);
+            gmapControl.MouseClick += GmapControl_OnMapClick;
+            this.BackColor = Color.Red;
+            this.ForeColor = Color.Black;
+            this.Font = new Font("Arial", 12);
+
+
+            gmapControl.OnMarkerClick += GmapControl_OnMarkerClick;
         }
 
         private async void cargarTodo() {
             await obtenerIncidencias();
             await ObtenerPuntos();
-            await ObtenerPuntosConIncidenciaAsync();
+        }
+
+        private async void cargarFavoritos(int idCliente) {
+            puntosFavoritos = await puntoService.GetPuntosFavoritos(idCliente);
+            GMapOverlay markersOverlay = new GMapOverlay("markers");
+            gmapControl.Overlays.Add(markersOverlay);
+            // Itera sobre la lista de puntos y coloca un marcador en el mapa por cada punto
+            foreach (var punto in puntosFavoritos)
+            {
+                var marker = new GMarkerGoogle(new PointLatLng(punto.latitud, punto.longitud), GMarkerGoogleType.yellow);
+                marker.Tag = punto;
+                markersOverlay.Markers.Add(marker);
+            }
         }
 
         private void GmapControl_OnMarkerClick(GMapMarker item, MouseEventArgs e)
@@ -156,6 +201,7 @@ namespace Pantalla_Cliente
                 {
                     // Habilita el botón
                     btn_crearPunto.Enabled = true;
+                    btnCrearIncidencia.Enabled = true;
 
                     // Añade un nuevo marcador en el lugar del clic si no existe
                     marker = new GMarkerGoogle(point, GMarkerGoogleType.blue);
@@ -169,22 +215,7 @@ namespace Pantalla_Cliente
             }
         }
 
-        public void ColocarMarcadoresEnMapa()
-        {
-            // Crea una única capa de superposición para todos los marcadores
-            GMapOverlay markersOverlay = new GMapOverlay("markers");
-            gmapControl.Overlays.Add(markersOverlay);
-            // Itera sobre la lista de puntos y coloca un marcador en el mapa por cada punto
-            foreach (var punto in listaPuntos)
-            {
-                MessageBox.Show("" + punto.id);
-                var marker = new GMarkerGoogle(new PointLatLng(punto.latitud, punto.longitud), GMarkerGoogleType.red);
-                marker.Tag = punto;
-                markersOverlay.Markers.Add(marker);
-            }
-
-
-        }
+     
         public void ColocarMarcadoresEnMapaPuntosSinIncidencia()
         {
             // Crea una única capa de superposición para todos los marcadores
@@ -193,20 +224,22 @@ namespace Pantalla_Cliente
             // Itera sobre la lista de puntos y coloca un marcador en el mapa por cada punto
             foreach (var puntos in listaPuntosSinIncidencia)
             {
+
                 var marker = new GMarkerGoogle(new PointLatLng(puntos.latitud, puntos.longitud), GMarkerGoogleType.green);
+                if (puntos.accesibilidadPunto == AccesibilidadTipo.ACCESIBLE) {
+                    marker = new GMarkerGoogle(new PointLatLng(puntos.latitud, puntos.longitud), GMarkerGoogleType.green);
+                } else if (puntos.accesibilidadPunto == AccesibilidadTipo.PARCIALMENTE_ACCESIBLE) {
+                    marker = new GMarkerGoogle(new PointLatLng(puntos.latitud, puntos.longitud), GMarkerGoogleType.orange);
+                } else {
+                    marker = new GMarkerGoogle(new PointLatLng(puntos.latitud, puntos.longitud), GMarkerGoogleType.red);
+                }
                 marker.Tag = puntos;
                 markersOverlay.Markers.Add(marker);
             }
-
-
         }
     
         
-    public async Task ObtenerPuntosConIncidenciaAsync()
-        {
-            listaPuntos = await puntoService.GetPuntosConIncidenciasAsync();
-            ColocarMarcadoresEnMapa();
-        }
+
         public async Task ObtenerPuntos()
         {
             listaPuntosSinIncidencia = await puntoService.GetPuntosTodos();
@@ -224,6 +257,10 @@ namespace Pantalla_Cliente
         public Panel ObtenerPanelCentralMapa()
         {
             return panel_central;
+        }
+
+        public Panel ObtenerPanelDerechaMapa() {
+            return panel_derecha;
         }
 
 
@@ -272,11 +309,18 @@ namespace Pantalla_Cliente
 
         private void btnCrearIncidencia_Click(object sender, EventArgs e)
         {
-            if (puntoMarcado == 0) {
+            CrearIncidencia crearIncidencia;
+
+            if (puntoMarcado == 0)
+            {
                 puntoMarcado = puntos.Last().id + 1;
+                crearIncidencia = new CrearIncidencia(puntoMarcado, LatitudNuevoPunto, LongitudNuevoPunto);
                 Console.WriteLine(puntoMarcado);
             }
-            CrearIncidencia crearIncidencia = new CrearIncidencia(puntoMarcado, LatitudNuevoPunto, LongitudNuevoPunto);
+            else {
+                crearIncidencia = new CrearIncidencia(puntoMarcado);
+            }
+            
             crearIncidencia.ShowDialog();
         }
     }
