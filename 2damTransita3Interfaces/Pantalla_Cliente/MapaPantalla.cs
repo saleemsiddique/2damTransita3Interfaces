@@ -263,6 +263,11 @@ namespace Pantalla_Cliente
             return panel_derecha;
         }
 
+        public void verFavoritos() {
+            btn_crearPunto.Visible = false;
+            btnCrearIncidencia.Visible = false;
+        }
+
 
         private void label2_Click(object sender, EventArgs e)
         {
