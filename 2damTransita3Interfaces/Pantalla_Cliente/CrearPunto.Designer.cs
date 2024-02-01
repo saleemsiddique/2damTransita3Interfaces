@@ -174,6 +174,7 @@
             this.puntoDescripcion_input.Name = "puntoDescripcion_input";
             this.puntoDescripcion_input.Size = new System.Drawing.Size(158, 20);
             this.puntoDescripcion_input.TabIndex = 0;
+            this.puntoDescripcion_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.puntoDescripcion_input_KeyPress);
             // 
             // label1
             // 

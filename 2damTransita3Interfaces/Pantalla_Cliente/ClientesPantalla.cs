@@ -354,25 +354,18 @@ namespace Pantalla_Cliente
 
         private async void paginaDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (listCliente != null)
             {
                 limpiarVisualizacion();
             }
+
             paginaActual = (int)paginaDropDown.SelectedItem;
 
-            if (paginaActual == 1)
-            {
-                idInicial = 1;
-            }
-            else
-            {
-                idInicial = 8 * (paginaActual - 1);
-            }
+            // Calcula el nuevo idInicial y idFinal
+            idInicial = 1 + 7 * (paginaActual - 1);
             idFinal = idInicial + 6;
 
             await ObtenerClientesRefresh();
-
         }
 
         public void btnGenerarpdf_Click(object sender, EventArgs e)

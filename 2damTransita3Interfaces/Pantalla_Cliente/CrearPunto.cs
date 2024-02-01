@@ -152,7 +152,12 @@ namespace Pantalla_Cliente
             }
         }
 
-
+        private void puntoDescripcion_input_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (puntoDescripcion_input.Text.Length > 200) { 
+                e.Handled = true;
+            }
+        }
     }
 }
 

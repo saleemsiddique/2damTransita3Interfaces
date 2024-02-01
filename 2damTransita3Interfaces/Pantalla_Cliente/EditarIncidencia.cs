@@ -266,7 +266,12 @@ namespace Pantalla_Cliente
             }
         }
 
-
-
+        private void descripcion_input_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (descripcion_input.Text.Length >= 200)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

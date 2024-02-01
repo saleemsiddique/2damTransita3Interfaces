@@ -85,6 +85,7 @@
             this.descripcion_input.Size = new System.Drawing.Size(219, 40);
             this.descripcion_input.TabIndex = 6;
             this.descripcion_input.TextChanged += new System.EventHandler(this.descripcion_input_TextChanged);
+            this.descripcion_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.descripcion_input_KeyPress);
             // 
             // label_datosInciencia
             // 

@@ -522,18 +522,12 @@ namespace Pantalla_Cliente
 
             paginaActual = (int)paginaDropDown.SelectedItem;
 
-            if (paginaActual == 1)
-            {
-                idInicial = 1;
-            }
-            else
-            {
-                idInicial = 8 * (paginaActual - 1);
-            }
-            idFinal = idInicial + 7;
-            await obtenerIncidenciasRefresh();
+            idInicial = 1 + 7 * (paginaActual - 1);
+            idFinal = idInicial + 6;
 
+            await obtenerIncidenciasRefresh();
         }
+
 
         private void btnVentanaInci_Click(object sender, EventArgs e)
         {

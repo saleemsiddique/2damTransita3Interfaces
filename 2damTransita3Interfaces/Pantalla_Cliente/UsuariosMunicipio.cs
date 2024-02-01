@@ -260,16 +260,10 @@ namespace Pantalla_Cliente
             {
                 limpiarVisualizacion();
             }
+
             paginaActual = (int)paginaDropDown.SelectedItem;
 
-            if (paginaActual == 1)
-            {
-                idInicial = 1;
-            }
-            else
-            {
-                idInicial = 8 * (paginaActual - 1);
-            }
+            idInicial = 1 + 7 * (paginaActual - 1);
             idFinal = idInicial + 6;
 
             await obtenerUsuariosRefresh();
