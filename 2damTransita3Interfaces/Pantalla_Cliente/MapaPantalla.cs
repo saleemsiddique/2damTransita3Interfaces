@@ -250,6 +250,9 @@ namespace Pantalla_Cliente
                 listaPuntosSinIncidencia.Clear();
                 gmapControl.Overlays.Clear();
                 gmapControl.Refresh();
+
+                gmapControl.OnMarkerClick += GmapControl_OnMarkerClick;
+                gmapControl.MouseClick += GmapControl_OnMapClick;
             }
             listaPuntosSinIncidencia = await puntoService.GetPuntoAsyncMapa(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
             ColocarMarcadoresEnMapaPuntosSinIncidencia();
