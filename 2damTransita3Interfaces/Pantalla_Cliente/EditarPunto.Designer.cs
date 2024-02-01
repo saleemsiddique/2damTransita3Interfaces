@@ -169,6 +169,7 @@
             this.descripcionPunto_input.Name = "descripcionPunto_input";
             this.descripcionPunto_input.Size = new System.Drawing.Size(158, 20);
             this.descripcionPunto_input.TabIndex = 76;
+            this.descripcionPunto_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.descripcionPunto_input_KeyPress);
             // 
             // puntoDesc
             // 
