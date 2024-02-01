@@ -103,7 +103,6 @@ namespace Pantalla_Cliente
             this.label2.Size = new System.Drawing.Size(163, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Mapa Transita";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // atrasBtn
             // 
@@ -189,7 +188,6 @@ namespace Pantalla_Cliente
             this.panel_central.Name = "panel_central";
             this.panel_central.Size = new System.Drawing.Size(1064, 681);
             this.panel_central.TabIndex = 30;
-            this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
             // panel_derecha
             // 

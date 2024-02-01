@@ -56,7 +56,7 @@ namespace Pantalla_Cliente
             gmapControl.MapProvider = GMapProviders.GoogleMap;
 
             gmapControl.MinZoom = 7;
-            gmapControl.MaxZoom = 25;
+            gmapControl.MaxZoom = 20;
             gmapControl.Zoom = 15;
 
 
@@ -250,9 +250,9 @@ namespace Pantalla_Cliente
                 listaPuntosSinIncidencia.Clear();
                 gmapControl.Overlays.Clear();
                 gmapControl.Refresh();
-
-                gmapControl.OnMarkerClick += GmapControl_OnMarkerClick;
-                gmapControl.MouseClick += GmapControl_OnMapClick;
+                GMapOverlay markersOverlay = new GMapOverlay("markers");
+                markersOverlay.Markers.Add(marker);
+                gmapControl.Overlays.Add(markersOverlay);
             }
             listaPuntosSinIncidencia = await puntoService.GetPuntoAsyncMapa(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
             ColocarMarcadoresEnMapaPuntosSinIncidencia();
@@ -279,32 +279,6 @@ namespace Pantalla_Cliente
             btn_crearPunto.Visible = false;
             btnCrearIncidencia.Visible = false;
             btn_filtrar.Visible = false;
-        }
-
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelInc_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void incidencia_img_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_resetPointer_Click(object sender, EventArgs e)

@@ -163,7 +163,6 @@ namespace Pantalla_Cliente
             nombre_mostrar.Text = "";
             apellido_mostrar.Text = "";
             nombreUsuario_mostrar.Text = "";
-            paginaDropDown.SelectedItem = paginaActual;
             Task task = obtenerUsuariosRefresh();
             idInicial = 1;
             idFinal = idInicial + 6;
@@ -171,6 +170,7 @@ namespace Pantalla_Cliente
             paginaActual = 1;
             paginas.Text = "/   " + paginasTotalesActual;
             dividirEnPaginas();
+            paginaDropDown.SelectedItem = paginaActual;
 
 
             task.ContinueWith(t =>

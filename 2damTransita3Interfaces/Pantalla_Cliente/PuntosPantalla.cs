@@ -172,6 +172,7 @@ namespace Pantalla_Cliente
                 idInicial += 7;
                 idFinal = idInicial + 6;
                 paginaActual++;
+                paginaDropDown.SelectedItem = paginaActual;
                 await ObtenerPuntosNextBack();
             }
         }
@@ -186,6 +187,7 @@ namespace Pantalla_Cliente
                     idInicial -= 7;
                     idFinal = idInicial + 6;
                     paginaActual--;
+                    paginaDropDown.SelectedItem = paginaActual;
                     await ObtenerPuntosNextBack();
                 }
             }
@@ -342,7 +344,7 @@ namespace Pantalla_Cliente
             }
             else
             {
-                idInicial = 7 * (paginaActual - 1);
+                idInicial = 8 * (paginaActual - 1);
             }
             idFinal = idInicial + 6;
 

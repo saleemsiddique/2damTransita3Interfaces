@@ -95,6 +95,8 @@ namespace Pantalla_Cliente
         }
 
         public async Task obtenerIncidenciasRefresh() {
+            Console.WriteLine("" + idInicial);
+            Console.WriteLine("" + idFinal);
             paginasTotalesActual = await incidenciaService.GetNumeroIncidencias(filtro);
             dividirEnPaginas();
             idPrincipio = idInicial;
@@ -491,7 +493,7 @@ namespace Pantalla_Cliente
             {
                 LimpiarVisualizacion();
                 idInicial += 7;
-                idFinal = idInicial + 6;
+                //idFinal = idInicial + 6;
                 paginaActual++;
                 paginaDropDown.SelectedItem = paginaActual;
             }
@@ -517,6 +519,7 @@ namespace Pantalla_Cliente
             {
                 LimpiarVisualizacion();
             }
+
             paginaActual = (int)paginaDropDown.SelectedItem;
 
             if (paginaActual == 1)
@@ -527,9 +530,7 @@ namespace Pantalla_Cliente
             {
                 idInicial = 8 * (paginaActual - 1);
             }
-            idFinal = idInicial + 6;
-
-            Console.WriteLine("AJSDHHAKD: ObtenerIncidenciasRefresh");
+            idFinal = idInicial + 7;
             await obtenerIncidenciasRefresh();
 
         }
