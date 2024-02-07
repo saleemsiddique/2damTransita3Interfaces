@@ -35,16 +35,9 @@ namespace transitaControllers
         {
             AbrirFormularioLogin();
         }
-        private void logOutTImer1_Load(object sender, EventArgs e)
-        {
-            // Aquí puedes llamar a IniciarContador si es necesario
-        }
-
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            
 
-            // Unsubscribe from the event to prevent the event handler from being called
             logOutTimerControl.TiempoAgotado -= LogOutTimerControl_TiempoAgotado;
 
             this.Close();

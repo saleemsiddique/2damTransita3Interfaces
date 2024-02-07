@@ -27,7 +27,6 @@ namespace Pantalla_Cliente
         public VentanaPDF()
         {
             InitializeComponent();
-            //cargarPDF();
             cmbFiltro.Items.Add("id");
             cmbFiltro.Items.Add("apellidos");
             cmbFiltro.Items.Add("contrasenya");
@@ -37,23 +36,12 @@ namespace Pantalla_Cliente
 
 
         }
-        /*
-        private void VentanaPDF_Load(object sender, EventArgs e)
-        {
-            cargarPDF();
-        }
-        private void cargarPDF()
-        {
-            axAcroPDF.src = "C:/Users/hamon/Documents/GitHub/2damTransita3Interfaces/2damTransita3Interfaces/Pantalla_Cliente/bin/Debug/ReporteProducto.pdf";
-        }*/
 
         private void btnGenerarLista_Click_1(object sender, EventArgs e)
         {
             crearPDF();
             string rutaRelativa = @"ReporteProducto.pdf";
             string rutaCompleta = System.IO.Path.GetFullPath(rutaRelativa);
-
-            //Console.WriteLine(rutaCompleta);
             axAcroPDF.src = rutaCompleta;
         }
 
@@ -139,14 +127,11 @@ namespace Pantalla_Cliente
         }
 
 
-
-        //Filtros
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             string filtroSeleccionado = cmbFiltro.SelectedItem as string;
             string filtroValor = txtFiltro.Text;
 
-            // Validar que se haya seleccionado un filtro y que se haya proporcionado un valor
             if (string.IsNullOrEmpty(filtroSeleccionado) || (txtFiltro.Visible && string.IsNullOrEmpty(filtroValor)))
             {
                 MessageBox.Show("Por favor, seleccione un filtro y proporcione un valor.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -159,8 +144,6 @@ namespace Pantalla_Cliente
 
             string rutaRelativa = @"ReporteProducto.pdf";
             string rutaCompleta = System.IO.Path.GetFullPath(rutaRelativa);
-
-            //Console.WriteLine(rutaCompleta);
             axAcroPDF.src = rutaCompleta;
         }
 
@@ -284,10 +267,7 @@ namespace Pantalla_Cliente
         {
             string filtroSeleccionado = cmbFiltro.SelectedItem as string;
 
-            // Configurar el TextBox según tus necesidades para diferentes opciones
             txtFiltro.Visible = (filtroSeleccionado == "nombre" || filtroSeleccionado == "apellidos" || filtroSeleccionado == "contrasenya" || filtroSeleccionado == "estado" || filtroSeleccionado == "nombre_usuario" || filtroSeleccionado == "id");
-
-            // Puedes establecer un valor predeterminado si es necesario
             if (txtFiltro.Visible)
             {
                 txtFiltro.Text = "";

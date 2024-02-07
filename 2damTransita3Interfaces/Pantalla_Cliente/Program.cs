@@ -29,9 +29,6 @@ namespace Pantalla_Cliente
 
             rutaBase = configurations["AppSettings:RutaBase"];
 
-            Console.WriteLine(rutaBase);
-
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());

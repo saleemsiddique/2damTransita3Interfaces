@@ -44,7 +44,6 @@ namespace Pantalla_Cliente
 
         public async void getUser()
         {
-            Console.WriteLine("El método ha sido activado");
             string url = Program.rutaBase + "api/auth/signin/cliente";
             string nombreUsuario = Correo.Text;
             string contrasenyaCont = contrasenya.Text;
@@ -53,10 +52,8 @@ namespace Pantalla_Cliente
             try
             {
                 string response = await ApiClient.GetRequestAsync("POST", url, null, jsonString);
-                Console.WriteLine(response);
                 Program.userLogged = JsonConvert.DeserializeObject<UserLoged>(response);
                 Program.token = Program.userLogged.token;
-                Console.WriteLine(Program.userLogged);
                 if (response.Contains("Unauthorized") && response.Contains("Bad credentials"))
                 {
                     MessageBox.Show("Credenciales incorrectas. No se puede autenticar.", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);

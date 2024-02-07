@@ -27,9 +27,6 @@ namespace Pantalla_Cliente
         }
         public async Task getCliente(string idModificar)
         {
-
-                // La conversión fue exitosa, y el valor se almacena en idMod como un entero.
-
                 String url = Program.rutaBase + "cliente/id/" + idMod.ToString();
                 string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
 
@@ -62,7 +59,6 @@ namespace Pantalla_Cliente
                     $" \"nombreUsuario\": \"{nombreUsuario_input.Text}\", \"rol\": [\"{rolObjt}\"]}}";
 
                 String url = Program.rutaBase + "api/auth/cliente/modificar/" + idMod;
-                //string content = JsonSerializer.Serialize(user);
                 string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
 
             }
@@ -89,7 +85,6 @@ namespace Pantalla_Cliente
 
                     task.ContinueWith(t =>
                     {
-                        // This part will be executed when modifyUser completes, but won't block the UI
                         Form formularioPadre = this.Owner;
 
                         if (formularioPadre != null)
@@ -104,20 +99,6 @@ namespace Pantalla_Cliente
                     }, TaskScheduler.FromCurrentSynchronizationContext());
                 }
             }
-        }
-
-
-
-
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void punto_input_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void nombreUsuario_input_TextChanged(object sender, EventArgs e)

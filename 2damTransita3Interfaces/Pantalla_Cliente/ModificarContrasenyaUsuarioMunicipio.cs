@@ -33,9 +33,6 @@ namespace Pantalla_Cliente
         {
             String url = Program.rutaBase + "cliente/id/" + idMod.ToString();
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
-
-            Console.WriteLine(response);
-
             usuario = JsonSerializer.Deserialize<Cliente>(response);
             idLabel.Text += usuario.id;
             nombreUsuarioLabel.Text += usuario.nombreUsuario;           
@@ -76,9 +73,7 @@ namespace Pantalla_Cliente
 
         private bool verificarDatos() {
             if (contrasenyaBox.Text != "" && confirmarBox.Text != "") {
-                Console.WriteLine("no esta vacia");
                 if (confirmarBox.Text.Equals(contrasenyaBox.Text)) {
-                    Console.WriteLine("son iguales");
                     return true;
                 }
                 MessageBox.Show("Las contraseñas introducidas no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -89,12 +84,10 @@ namespace Pantalla_Cliente
         }
 
         private async Task modificarContrasenya(int idMod) {
-            Console.WriteLine("modificar contraseña");
             string content = $"{{\"contrasenya\": \"{contrasenyaBox.Text}\"}}";
 
             String url = Program.rutaBase + "api/auth/cliente/modificarContrasenya/" + idMod;
             string response = await ApiClient.GetRequestAsync("PUT", url, Program.token, content);
-            Console.WriteLine(response);
         }
 
         private void contrasenyaBox_TextChanged(object sender, EventArgs e)

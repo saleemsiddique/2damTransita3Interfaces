@@ -255,7 +255,6 @@
             this.MinimumSize = new System.Drawing.Size(500, 550);
             this.Name = "EditarPunto";
             this.Text = "EditarPunto";
-            this.Load += new System.EventHandler(this.EditarPunto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

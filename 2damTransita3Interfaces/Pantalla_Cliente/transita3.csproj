@@ -135,12 +135,6 @@
     <Compile Include="ModificarContrasenyaUsuarioMunicipio.Designer.cs">
       <DependentUpon>ModificarContrasenyaUsuarioMunicipio.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpcionesFiltroIncidencias.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="OpcionesFiltroIncidencias.Designer.cs">
-      <DependentUpon>OpcionesFiltroIncidencias.cs</DependentUpon>
-    </Compile>
     <Compile Include="PuntoBanner.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -163,12 +157,6 @@
     </Compile>
     <Compile Include="CrearUsuarioMunicipio.Designer.cs">
       <DependentUpon>CrearUsuarioMunicipio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="datosIncidencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="datosIncidencia.Designer.cs">
-      <DependentUpon>datosIncidencia.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientesPantalla.cs">
       <SubType>Form</SubType>
@@ -214,12 +202,6 @@
     </Compile>
     <Compile Include="Incidencias_Pantalla.Designer.cs">
       <DependentUpon>Incidencias_Pantalla.cs</DependentUpon>
-    </Compile>
-    <Compile Include="loadingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="loadingForm.Designer.cs">
-      <DependentUpon>loadingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -287,9 +269,6 @@
     <EmbeddedResource Include="CrearUsuarioMunicipio.resx">
       <DependentUpon>CrearUsuarioMunicipio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="datosIncidencia.resx">
-      <DependentUpon>datosIncidencia.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClientesPantalla.resx">
       <DependentUpon>ClientesPantalla.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,9 +293,6 @@
     <EmbeddedResource Include="ClienteBanner.resx">
       <DependentUpon>ClienteBanner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="loadingForm.resx">
-      <DependentUpon>loadingForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,9 +304,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarContrasenyaUsuarioMunicipio.resx">
       <DependentUpon>ModificarContrasenyaUsuarioMunicipio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OpcionesFiltroIncidencias.resx">
-      <DependentUpon>OpcionesFiltroIncidencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

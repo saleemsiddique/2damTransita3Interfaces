@@ -26,11 +26,6 @@ namespace Pantalla_Cliente
             password1_input.UseSystemPasswordChar = true;
             rol_input.SelectedIndex = 0;
         }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
         private bool verifyDatos()
         {
             if (!pass2_input.Text.Equals(password1_input.Text))
@@ -63,7 +58,6 @@ namespace Pantalla_Cliente
                 rolObjt.Add(rol);
             }
 
-            // Create a Cliente object and set its properties
             Cliente cliente = new Cliente
             {
                 nombre = nombre,
@@ -92,7 +86,6 @@ namespace Pantalla_Cliente
             {
                 if (verifyDatos())
                 {
-                    // Capture UI element values
                     string nombreUsuario = nombreUsuario_input.Text;
                     string nombre = nombre_input.Text;
                     string apellido = apellido_input.Text;
@@ -102,7 +95,6 @@ namespace Pantalla_Cliente
                     Task.Run(() => crearUsuario(nombreUsuario, nombre, apellido, password, rol_input_value))
                         .ContinueWith(task =>
                         {
-                            // This part will be executed when crearUsuario completes, but won't block the UI
                             foreach (Form form in Application.OpenForms)
                             {
                                 if (form is Transita)

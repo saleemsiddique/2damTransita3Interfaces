@@ -11,7 +11,6 @@ namespace Pantalla_Cliente
 {
     class ClienteService
     {
-        private LoadingForm load = new LoadingForm();
         public async Task<List<Cliente>> GetClientesFiltrado(int tipo, int idInicial, int idFinal, string query) {
             if (query.Equals("Buscar")) {
                 query = "";
@@ -72,7 +71,6 @@ namespace Pantalla_Cliente
 
         public async Task<List<Cliente>> BuscarClientesAsync(int estado, int idInicial, int idFinal, string query) {
             string url = Program.rutaBase + Rutas.clientesBuscar;
-            Console.WriteLine("patata  " + url);
             url += "idInicial=" + idInicial + "&idFinal=" + idFinal + "&query=" + query;
             if (estado == 0)
             {
@@ -81,7 +79,6 @@ namespace Pantalla_Cliente
             else if (estado == 1) {
                 url += "&estado=" + 1;
             }
-            Console.WriteLine(url);
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             List<Cliente> listClientes = JsonSerializer.Deserialize<List<Cliente>>(response);
             return listClientes;

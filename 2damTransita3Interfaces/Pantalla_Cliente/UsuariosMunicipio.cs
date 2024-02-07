@@ -8,7 +8,6 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//TODO Implementar funcion cambiar contraseña
 namespace Pantalla_Cliente
 {
     public partial class UsuariosMunicipio : Form
@@ -87,13 +86,10 @@ namespace Pantalla_Cliente
         }
         private void CrearPanelesUsuariosMunicipio(List<Cliente> listaUsuariosMunicipio)
         {
-            foreach (Cliente usuario in listaUsuariosMunicipio)
-            { Console.WriteLine(usuario.ToString()); }
-
-            int topPosition = 0; // Posición vertical inicial
+            int topPosition = 0;
             foreach (Cliente usuario in listaUsuariosMunicipio)
             {
-                UsuariosMunicipioBanner usuariosMunicipioBanner = new UsuariosMunicipioBanner(); // Crea una instancia del UserControl
+                UsuariosMunicipioBanner usuariosMunicipioBanner = new UsuariosMunicipioBanner();
                 usuariosMunicipioBanner.getId().Text = usuario.id + "";
                 usuariosMunicipioBanner.getNombre().Text = $"{usuario.nombre} {usuario.apellidos}";
 
@@ -118,12 +114,9 @@ namespace Pantalla_Cliente
                 };
 
 
-                // Configura la ubicación y otros detalles según sea necesario
-                usuariosMunicipioBanner.Location = new Point(33, topPosition); // Personaliza la ubicación
-                topPosition += usuariosMunicipioBanner.Height + 10; // Ajusta el espaciado vertical según sea necesario
-                //usuariosMunicipioBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
+                usuariosMunicipioBanner.Location = new Point(33, topPosition);
+                topPosition += usuariosMunicipioBanner.Height + 10;
                 usuariosMunicipioBanner.Show();
-                // Agrega el control al formulario principal
                 panelUsuarios.Controls.Add(usuariosMunicipioBanner);
             }
         }
@@ -175,17 +168,14 @@ namespace Pantalla_Cliente
 
             task.ContinueWith(t =>
             {
-                Console.WriteLine("\n\n\n continue");
                 Form formularioPadre = this.Owner;
 
                 if (formularioPadre != null)
                 {
-                    Console.WriteLine("\n\n\n null");
                     if (formularioPadre is Transita)
                     {
                         Transita formularioTransita = (Transita)formularioPadre;
                         formularioTransita.MostrarPanelDeUsuariosMunicipio();
-                        Console.WriteLine("\n\n\n close");
                         this.Close();
                     }
                 }

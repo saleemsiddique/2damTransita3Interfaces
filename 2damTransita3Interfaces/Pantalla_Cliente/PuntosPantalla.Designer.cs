@@ -846,7 +846,6 @@
             this.panel_central.Name = "panel_central";
             this.panel_central.Size = new System.Drawing.Size(557, 673);
             this.panel_central.TabIndex = 35;
-            this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_central_Paint);
             // 
             // btn_filtrar
             // 

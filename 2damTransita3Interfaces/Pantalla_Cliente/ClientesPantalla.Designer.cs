@@ -295,7 +295,6 @@ namespace Pantalla_Cliente
             this.panel_central.Name = "panel_central";
             this.panel_central.Size = new System.Drawing.Size(557, 673);
             this.panel_central.TabIndex = 32;
-            this.panel_central.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_central_Paint);
             // 
             // label_tipoclientes
             // 
@@ -321,7 +320,6 @@ namespace Pantalla_Cliente
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             this.groupBox1.Visible = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // estadoDesactivado
             // 
@@ -736,7 +734,6 @@ namespace Pantalla_Cliente
             this.Name = "Cliente_Pantalla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transita";
-            this.Load += new System.EventHandler(this.Cliente_Pantalla_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);

@@ -44,12 +44,8 @@ namespace Pantalla_Cliente
 
            
 
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; // Opcional, quita el borde de la ventana
-            //this.Icon = Properties.Resources.icono_de_aplicacion; // Cambia el icono de la ventana
-            //this.BackgroundImage = Properties.Resources.fondo_de_la_ventana; // Cambia el fondo de la ventana
             this.BackgroundImageLayout = ImageLayout.Stretch;
-            this.Text = "Título de la Ventana"; // Cambia el título de la ventana
-            //this.BackgroundImage = Properties.Resources.fondo_de_la_ventana; // Cambia el fondo de la ventana
+            this.Text = "Incidencias";
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
             int buttonWidth = 30;
@@ -61,13 +57,10 @@ namespace Pantalla_Cliente
 
         private void checkBox_CheckedChanged(object sender, EventArgs e)
         {
-            // Asegurarse de que el evento fue desencadenado por un CheckBox
             if (sender is CheckBox checkBox)
             {
-                // Verificar si el CheckBox actual está marcado
                 if (checkBox.Checked)
                 {
-                    // Desmarcar todos los CheckBox en el mismo GroupBox
                     foreach (Control control in groupBox2.Controls)
                     {
                         if (control is CheckBox otherCheckBox && otherCheckBox != checkBox)
@@ -95,8 +88,6 @@ namespace Pantalla_Cliente
         }
 
         public async Task obtenerIncidenciasRefresh() {
-            Console.WriteLine("" + idInicial);
-            Console.WriteLine("" + idFinal);
             paginasTotalesActual = await incidenciaService.GetNumeroIncidencias(filtro);
             dividirEnPaginas();
             idPrincipio = idInicial;
@@ -144,7 +135,7 @@ namespace Pantalla_Cliente
         private void CrearPanelesIncidencias(List<Incidencia> lista)
         {
 
-            int topPosition = 0; // Posición vertical inicial
+            int topPosition = 0;
 
             foreach (Incidencia incidencia in lista)
             {
@@ -204,12 +195,9 @@ namespace Pantalla_Cliente
 
 
 
-                // Configura la ubicación y otros detalles según sea necesario
-                incidenciaBanner.Location = new Point(33, topPosition); // Personaliza la ubicación
-                topPosition += incidenciaBanner.Height + 10; // Ajusta el espaciado vertical según sea necesario
-                //incidenciaBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
+                incidenciaBanner.Location = new Point(33, topPosition);
+                topPosition += incidenciaBanner.Height + 10;
                 incidenciaBanner.Show();
-                // Agrega el control al formulario principal
                 panelInc.Controls.Add(incidenciaBanner);
             }
         }
@@ -231,7 +219,6 @@ namespace Pantalla_Cliente
         private void Incidencias_Load(object sender, EventArgs e)
         {
 
-            // Configura los botones aquí
             btn_aceptarIncidencia.FlatStyle = FlatStyle.Flat;
             btn_aceptarIncidencia.FlatAppearance.BorderSize = 0;
 
@@ -257,12 +244,6 @@ namespace Pantalla_Cliente
                 btn_eliminarIncidencia.Enabled = true;
                 btn_aceptarIncidencia.Enabled = true;
             }
-            datosIncidencia datosIncidencia = new datosIncidencia();
-            
-            
-
-            datosIncidencia.ShowDialog();
-
         }
 
 
@@ -366,7 +347,6 @@ namespace Pantalla_Cliente
 
             task.ContinueWith(t =>
             {
-                // This part will be executed when modifyUser completes, but won't block the UI
                 Form formularioPadre = this.Owner;
 
                 if (formularioPadre != null)
@@ -389,7 +369,6 @@ namespace Pantalla_Cliente
         private async Task eliminarInAsync() {
             if (id_mostrar.Text.Equals(""))
             {
-                // Mostrar mensaje de error
                 MessageBox.Show("Error: El campo no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else {
@@ -416,7 +395,6 @@ namespace Pantalla_Cliente
 
                     _ = task.ContinueWith(t =>
                     {
-                        // This part will be executed when modifyUser completes, but won't block the UI
                         Form formularioPadre = this.Owner;
 
                         if (formularioPadre != null)
@@ -439,7 +417,6 @@ namespace Pantalla_Cliente
         {
             if (id_mostrar.Text.Equals(""))
             {
-                // Mostrar mensaje de error
                 MessageBox.Show("Error: El campo no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -448,7 +425,6 @@ namespace Pantalla_Cliente
 
                 if (resultado == DialogResult.Yes)
                 {
-                    Console.WriteLine("metodo aceptar ha sido activado");
                     String id = this.id_mostrar.Text;
                     String url = Program.rutaBase + "incidencia/modificarEstado/" + id + "/aceptado";
                     string response = await ApiClient.GetRequestAsync("PUT", url, Program.token);
@@ -466,7 +442,6 @@ namespace Pantalla_Cliente
 
                     _ = task.ContinueWith(t =>
                     {
-                    // This part will be executed when modifyUser completes, but won't block the UI
                     Form formularioPadre = this.Owner;
 
                         if (formularioPadre != null)
@@ -493,7 +468,6 @@ namespace Pantalla_Cliente
             {
                 LimpiarVisualizacion();
                 idInicial += 7;
-                //idFinal = idInicial + 6;
                 paginaActual++;
                 paginaDropDown.SelectedItem = paginaActual;
             }

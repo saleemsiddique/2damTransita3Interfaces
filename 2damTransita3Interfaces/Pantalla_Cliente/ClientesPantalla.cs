@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//TODO: Hacer pantalla de carga de clientes
 using iText.Layout;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -133,14 +132,10 @@ namespace Pantalla_Cliente
         }
         private void CrearPanelesClientes(List<Cliente> listaClientes)
         {
-
-            foreach (Cliente cliente in listaClientes)
-            { Console.WriteLine(cliente.ToString()); }
-
-            int topPosition = 0; // Posición vertical inicial
+            int topPosition = 0;
             foreach (Cliente cliente in listaClientes)
             {
-                ClienteBanner clienteBanner = new ClienteBanner(); // Crea una instancia del UserControl
+                ClienteBanner clienteBanner = new ClienteBanner();
                 clienteBanner.getId().Text = cliente.id + "";
                 clienteBanner.getNombre().Text = $"{cliente.nombre} {cliente.apellidos}";
 
@@ -165,29 +160,22 @@ namespace Pantalla_Cliente
                     clienteBanner.getPanel().Invalidate();
                 };
 
-                // Configura la ubicación y otros detalles según sea necesario
-                clienteBanner.Location = new Point(33, topPosition); // Personaliza la ubicación
-                topPosition += clienteBanner.Height + 10; // Ajusta el espaciado vertical según sea necesario
-                //clienteBanner.Anchor = AnchorStyles.Left | AnchorStyles.Right; // Anclaje para que se ajuste al tamaño del formulario
+                clienteBanner.Location = new Point(33, topPosition);
+                topPosition += clienteBanner.Height + 10;
                 clienteBanner.Show();
-                // Agrega el control al formulario principal
                 panelClientes.Controls.Add(clienteBanner);
             }
         }
 
-
-
-
-        //Codigo para el Boton Favorito
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
             {
-                pictureBox5.Image = Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036; // Cambia la imagen a la estrella seleccionada
+                pictureBox5.Image = Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
             }
             else
             {
-                pictureBox5.Image = Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503; // Cambia la imagen a la estrella no seleccionada
+                pictureBox5.Image = Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
             }
         }
 
@@ -196,9 +184,6 @@ namespace Pantalla_Cliente
             radioButton1.Checked = !radioButton1.Checked;
         }
 
-
-
-        //PlaceHolder del botton de buscar cliente
         private void buscarTextBox_Enter(object sender, EventArgs e)
         {
             if (buscarTextBox.Text == "Buscar")
@@ -219,27 +204,15 @@ namespace Pantalla_Cliente
 
         private void buscarTextBox_Leave_1(object sender, EventArgs e)
         {
-            // Cuando el TextBox pierde el foco, restaura el texto
             if (string.IsNullOrWhiteSpace(buscarTextBox.Text))
             {
-                buscarTextBox.Text = "Buscar"; // Puedes cambiar este texto predeterminado
+                buscarTextBox.Text = "Buscar";
             }
         }
 
         private void buscarTextBox_Click(object sender, EventArgs e)
         {
             buscarTextBox.Text = "";
-        }
-
-        private void Cliente_Pantalla_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void panel_central_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void filtroClientes_btn_Click(object sender, EventArgs e)
@@ -319,12 +292,6 @@ namespace Pantalla_Cliente
                 control.Dispose();
             }
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private async void adelanteBtn_Click(object sender, EventArgs e)
         {
             if (paginaActual < paginasTotalesActual)
@@ -361,7 +328,6 @@ namespace Pantalla_Cliente
 
             paginaActual = (int)paginaDropDown.SelectedItem;
 
-            // Calcula el nuevo idInicial y idFinal
             idInicial = 1 + 7 * (paginaActual - 1);
             idFinal = idInicial + 6;
 

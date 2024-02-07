@@ -36,7 +36,6 @@ namespace Pantalla_Cliente
 
             this.Font = new Font("Arial", 12);
 
-            //MostrarPanelDeCliente();
             btn_incidencias.Click += btn_incidencias_Click;
             btn_cliente.Click += btn_cliente_Click;
             btn_puntos.Click += btn_punto_Click;
@@ -46,12 +45,6 @@ namespace Pantalla_Cliente
             buttons = new Button[] { btn_cliente, btn_incidencias, btn_puntos, btn_mapa, btn_usuariosMunicipio};
 
             currentButton = null;
-
-            /*currentButton = buttons[0];
-
-            currentButton.Enabled = true;
-            currentButton.BackColor = Color.FromArgb(64, 64, 64);
-            */
         }
 
         private void panel1Degradado_Paint(object sender, PaintEventArgs e)
@@ -62,9 +55,9 @@ namespace Pantalla_Cliente
             System.Drawing.Drawing2D.LinearGradientBrush gradientBrush =
                 new System.Drawing.Drawing2D.LinearGradientBrush(
                     panel1.ClientRectangle,
-                    startColor, // Color inicial (31, 32, 37)
-                    endColor,  // Color final (Silver)
-                    System.Drawing.Drawing2D.LinearGradientMode.Vertical); // Dirección vertical
+                    startColor,
+                    endColor,
+                    System.Drawing.Drawing2D.LinearGradientMode.Vertical);
 
             e.Graphics.FillRectangle(gradientBrush, panel1.ClientRectangle);
         }
@@ -136,12 +129,9 @@ namespace Pantalla_Cliente
 
             VaciarPaneles();
 
-            // Agrega el panel al control contenedor en este formulario
             panel1_central.Controls.Add(panelCentralIncidencia);
             panel1_derecha.Controls.Add(panelDerechaIncidencia);
 
-
-            // Puedes personalizar el tamaño y la posición del panel según tus necesidades
             panelCentralIncidencia.Dock = DockStyle.Fill;
             panelDerechaIncidencia.Dock = DockStyle.Fill;
 
@@ -153,11 +143,8 @@ namespace Pantalla_Cliente
             MapaPantalla mapaPantalla = new MapaPantalla();
             Panel panelCentralMapa = mapaPantalla.ObtenerPanelCentralMapa();
             VaciarPanelCentral();
-            // Agrega el panel al control contenedor en este formulario
             panel1_central.Controls.Add(panelCentralMapa);
             panel1_derecha.Controls.Add(mapaPantalla.ObtenerPanelDerechaMapa());
-          
-            // Puedes personalizar el tamaño y la posición del panel según tus necesidades
             panelCentralMapa.Dock = DockStyle.Fill;
             
 
@@ -173,12 +160,11 @@ namespace Pantalla_Cliente
 
             VaciarPaneles();
 
-            // Agrega el panel al control contenedor en este formulario
+
             panel1_central.Controls.Add(panelCentralIncidencia);
             panel1_derecha.Controls.Add(panelDerechaIncidencia);
 
 
-            // Puedes personalizar el tamaño y la posición del panel según tus necesidades
             panelCentralIncidencia.Dock = DockStyle.Fill;
             panelDerechaIncidencia.Dock = DockStyle.Fill;
 
@@ -196,12 +182,10 @@ namespace Pantalla_Cliente
 
             VaciarPaneles();
 
-            // Agrega el panel al control contenedor en este formulario
             panel1_central.Controls.Add(panelCentralPunto);
             panel1_derecha.Controls.Add(panelDerechaPunto);
 
 
-            // Puedes personalizar el tamaño y la posición del panel según tus necesidades
             panelCentralPunto.Dock = DockStyle.Fill;
             panelDerechaPunto.Dock = DockStyle.Fill;
 
@@ -259,12 +243,10 @@ namespace Pantalla_Cliente
 
             VaciarPaneles();
 
-            // Agrega el panel al control contenedor en este formulario
             panel1_central.Controls.Add(panelCentralZona);
             panel1_derecha.Controls.Add(panelDerechaZona);
 
 
-            // Puedes personalizar el tamaño y la posición del panel según tus necesidades
             panelCentralZona.Dock = DockStyle.Fill;
             panelDerechaZona.Dock = DockStyle.Fill;
         }

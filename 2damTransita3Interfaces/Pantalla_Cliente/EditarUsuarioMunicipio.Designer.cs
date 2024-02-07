@@ -114,7 +114,6 @@ namespace Pantalla_Cliente
             this.rol_input.Name = "rol_input";
             this.rol_input.Size = new System.Drawing.Size(158, 21);
             this.rol_input.TabIndex = 67;
-            this.rol_input.SelectedIndexChanged += new System.EventHandler(this.punto_input_SelectedIndexChanged);
             // 
             // apellido_input
             // 

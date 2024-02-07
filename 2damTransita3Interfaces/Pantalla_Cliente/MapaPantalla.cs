@@ -116,7 +116,6 @@ namespace Pantalla_Cliente
             puntosFavoritos = await puntoService.GetPuntosFavoritos(idCliente);
             GMapOverlay markersOverlay = new GMapOverlay("markers");
             gmapControl.Overlays.Add(markersOverlay);
-            // Itera sobre la lista de puntos y coloca un marcador en el mapa por cada punto
             foreach (var punto in puntosFavoritos)
             {
                 var marker = new GMarkerGoogle(new PointLatLng(punto.latitud, punto.longitud), GMarkerGoogleType.yellow);
@@ -129,34 +128,26 @@ namespace Pantalla_Cliente
         {
             if (item.Tag is Punto punto)
             {
-                // Busca todas las incidencias asociadas al punto clicado
                 var incidenciasDelPunto = new List<Incidencia>();
                 puntoMarcado = punto.id;
 
 
                 foreach (var incidencia in listaIncidencias)
                 {
-                    // Compara los identificadores (id) de los puntos
                     if (incidencia.punto.id == punto.id)
                     {
                         incidenciasDelPunto.Add(incidencia);
                     }
                 }
 
-                // Verifica si hay incidencias asociadas al punto
                 if (incidenciasDelPunto.Count > 0)
                 {
-
-                    // Limpia el contenido del ListBox antes de agregar nuevos elementos
                     listBoxIncidencias.Items.Clear();
-
-                    // Agrega el id y descripción del punto al ListBox
                     listBoxIncidencias.Items.Add($"ID del Punto: {punto.id}, Descripción: {punto.descripcion}");
 
                     foreach (var incidencia in incidenciasDelPunto)
                     {
                         listBoxIncidencias.Items.Add(" ");
-                        // Agrega la información de la incidencia al ListBox con saltos de línea
                         listBoxIncidencias.Items.Add($"Id: {incidencia.id}");
                         listBoxIncidencias.Items.Add($"Descripcion: {incidencia.descripcion}");
                         listBoxIncidencias.Items.Add($"Duracion: {incidencia.duracion}");
@@ -165,7 +156,6 @@ namespace Pantalla_Cliente
 
                     }
 
-                    // Puedes ajustar la visibilidad del control ListBox según tus necesidades
                     listBoxIncidencias.Visible = true;
                 }
                 else
@@ -175,7 +165,6 @@ namespace Pantalla_Cliente
                     listBoxIncidencias.Items.Add($"Descripcion: {punto.descripcion}");
                 }
 
-                // Marcar que el mensaje ha sido mostrado
                 mensajeMostrado = true;
             }
 
@@ -186,7 +175,6 @@ namespace Pantalla_Cliente
             {
                 if (puntoMarcado == 0)
                 {
-                    // Almacena la posición inicial del mapa antes del primer clic
                     mapaPosicionInicial = gmapControl.Position;
                 }
 
@@ -203,18 +191,15 @@ namespace Pantalla_Cliente
                 }
                 else
                 {
-                    // Habilita el botón
                     btn_crearPunto.Enabled = true;
                     btnCrearIncidencia.Enabled = true;
 
-                    // Añade un nuevo marcador en el lugar del clic si no existe
                     marker = new GMarkerGoogle(point, GMarkerGoogleType.blue);
                     GMapOverlay markersOverlay = new GMapOverlay("markers");
                     markersOverlay.Markers.Add(marker);
                     gmapControl.Overlays.Add(markersOverlay);
                 }
 
-                // Restaura la posición inicial del mapa después de agregar el marcador
                 gmapControl.Position = mapaPosicionInicial;
             }
         }
@@ -222,10 +207,8 @@ namespace Pantalla_Cliente
      
         public void ColocarMarcadoresEnMapaPuntosSinIncidencia()
         {
-            // Crea una única capa de superposición para todos los marcadores
             GMapOverlay markersOverlay = new GMapOverlay("markers");
             gmapControl.Overlays.Add(markersOverlay);
-            // Itera sobre la lista de puntos y coloca un marcador en el mapa por cada punto
             foreach (var puntos in listaPuntosSinIncidencia)
             {
 
@@ -311,7 +294,6 @@ namespace Pantalla_Cliente
             {
                 puntoMarcado = puntos.Last().id + 1;
                 crearIncidencia = new CrearIncidencia(puntoMarcado, LatitudNuevoPunto, LongitudNuevoPunto);
-                Console.WriteLine(puntoMarcado);
             }
             else {
                 crearIncidencia = new CrearIncidencia(puntoMarcado);

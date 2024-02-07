@@ -53,7 +53,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(400, 45);
             this.panel2.TabIndex = 18;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // idPunto
             // 
@@ -64,7 +63,6 @@
             this.idPunto.Size = new System.Drawing.Size(18, 13);
             this.idPunto.TabIndex = 21;
             this.idPunto.Text = "ID";
-            this.idPunto.Click += new System.EventHandler(this.idPunto_Click);
             // 
             // nombrePunto
             // 
@@ -76,7 +74,6 @@
             this.nombrePunto.Size = new System.Drawing.Size(63, 13);
             this.nombrePunto.TabIndex = 20;
             this.nombrePunto.Text = "Nom_Punto";
-            this.nombrePunto.Click += new System.EventHandler(this.nombrePunto_Click);
             // 
             // button8
             // 

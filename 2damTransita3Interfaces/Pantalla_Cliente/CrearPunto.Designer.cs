@@ -78,7 +78,6 @@
             this.label_datosInciencia.Name = "label_datosInciencia";
             this.label_datosInciencia.Size = new System.Drawing.Size(334, 403);
             this.label_datosInciencia.TabIndex = 46;
-            this.label_datosInciencia.Click += new System.EventHandler(this.label_datosInciencia_Click);
             // 
             // incidenciaEditar
             // 
@@ -92,7 +91,6 @@
             this.incidenciaEditar.TabIndex = 45;
             this.incidenciaEditar.Text = "Crear Punto";
             this.incidenciaEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.incidenciaEditar.Click += new System.EventHandler(this.incidenciaEditar_Click);
             // 
             // visibilidadPunto
             // 

@@ -102,14 +102,5 @@ namespace Pantalla_Cliente
             contextMenuStrip.Show(button8, new System.Drawing.Point(0, button8.Height));
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnViewIncidencia_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

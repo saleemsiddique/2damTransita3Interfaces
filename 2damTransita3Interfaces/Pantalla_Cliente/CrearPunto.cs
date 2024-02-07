@@ -19,22 +19,7 @@ namespace Pantalla_Cliente
         public CrearPunto()
         {
             InitializeComponent();
-            InicializarAsync();
             this.StartPosition = FormStartPosition.CenterScreen;
-         
-        }
-        private async void InicializarAsync()
-        {
-           
-        }
-        private void label_datosInciencia_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void incidenciaEditar_Click(object sender, EventArgs e)
-        {
-
         }
 
        

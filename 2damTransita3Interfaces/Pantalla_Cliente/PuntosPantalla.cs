@@ -36,13 +36,10 @@ namespace Pantalla_Cliente
             btn_filtrar.FlatStyle = FlatStyle.Flat;
             btn_filtrar.FlatAppearance.BorderSize = 0;
 
-            // Asigna el evento al botón Aceptar
             buttonAceptar.Click += buttonAceptar_Click;
 
-            // Asigna el evento al botón Filtrar
             btn_filtrar.Click += btn_filtrar_Click;
 
-            // Inicializa la obtención de puntos
             ObtenerPuntos(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
         }
 
@@ -122,11 +119,6 @@ namespace Pantalla_Cliente
 
         private void CrearPanelesPuntos(List<Punto> listaPuntos)
         {
-            foreach (Punto punto in listaPuntos)
-            {
-                Console.WriteLine(punto.ToString());
-            }
-
             int topPosition = 0;
 
             foreach (Punto punto in listaPuntos)
@@ -246,12 +238,10 @@ namespace Pantalla_Cliente
             if (filtro_acceso.Checked)
             {
                 filtroTipo = "ACCESO";
-                Console.WriteLine("ACCESO");
             }
             else if (filtro_lugar.Checked)
             {
                 filtroTipo = "LUGAR";
-                Console.WriteLine("LUGAR");
             }
             else
             {
@@ -261,17 +251,14 @@ namespace Pantalla_Cliente
             if (filtro_accesible.Checked)
             {
                 filtroAccesibilidad = "ACCESIBLE";
-                Console.WriteLine("ACCESIBLE");
             }
             else if (filtro_noAccesible.Checked)
             {
                 filtroAccesibilidad = "NO_ACCESIBLE";
-                Console.WriteLine("NO ACCESIBLE");
             }
             else if (filtro_parcialmenteAccesible.Checked)
             {
                 filtroAccesibilidad = "PARCIALMENTE_ACCESIBLE";
-                Console.WriteLine("PARCIAL");
             }
             else
             {
@@ -281,22 +268,18 @@ namespace Pantalla_Cliente
             if (filtro_global.Checked)
             {
                 filtroVisibilidad = "GLOBAL";
-                Console.WriteLine("GLOBAL");
             }
             else if (filtro_incidencia.Checked)
             {
                 filtroVisibilidad = "INCIDENCIA";
-                Console.WriteLine("INCIDENCIA");
             }
             else if (filtro_favorito.Checked)
             {
                 filtroVisibilidad = "FAVORITO";
-                Console.WriteLine("FAV");
             }
             else if (filtro_oculto.Checked)
             {
                 filtroVisibilidad = "OCULTO";
-                Console.WriteLine("OCULTO");
             }
             else
             {
@@ -319,17 +302,6 @@ namespace Pantalla_Cliente
             paginaActual = 1;
 
         }
-
-        private void btn_filtrar_Click(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void panel_central_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private async void paginaDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             

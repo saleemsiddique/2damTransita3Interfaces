@@ -22,9 +22,7 @@ namespace Pantalla_Cliente
             if (query.Equals("Buscar")) {
                 query = "";
             }
-            Console.WriteLine("\n\n\n" + filtro + " " + idInicial + " " + idFinal);
             string url = Program.rutaBase + Rutas.usuarioMunicipioFiltred + "idInicial=" + idInicial + "&idFinal=" + idFinal + "&query=" + query;
-            Console.WriteLine("\n\n\n" + url);
             if (filtro != 0)
             {
                 url += "&rol=" + filtro;

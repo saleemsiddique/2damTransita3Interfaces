@@ -29,16 +29,16 @@ namespace Pantalla_Cliente
         {
             direccionBox.Text = direccion;
             System.Drawing.Drawing2D.GraphicsPath objDraw = new System.Drawing.Drawing2D.GraphicsPath();
-            int borderRadius = 10; // Puedes ajustar este valor para controlar el redondeo
+            int borderRadius = 10;
 
             int width = this.Width;
             int height = this.Height;
             int arcSize = borderRadius * 2;
 
-            objDraw.AddArc(0, 0, arcSize, arcSize, 180, 90); // Esquina superior izquierda
-            objDraw.AddArc(width - arcSize, 0, arcSize, arcSize, 270, 90); // Esquina superior derecha
-            objDraw.AddArc(width - arcSize, height - arcSize, arcSize, arcSize, 0, 90); // Esquina inferior derecha
-            objDraw.AddArc(0, height - arcSize, arcSize, arcSize, 90, 90); // Esquina inferior izquierda
+            objDraw.AddArc(0, 0, arcSize, arcSize, 180, 90);
+            objDraw.AddArc(width - arcSize, 0, arcSize, arcSize, 270, 90);
+            objDraw.AddArc(width - arcSize, height - arcSize, arcSize, arcSize, 0, 90);
+            objDraw.AddArc(0, height - arcSize, arcSize, arcSize, 90, 90);
 
             objDraw.CloseFigure();
 

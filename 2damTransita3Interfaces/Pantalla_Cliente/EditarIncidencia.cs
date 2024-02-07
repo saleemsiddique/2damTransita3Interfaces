@@ -161,27 +161,11 @@ namespace Pantalla_Cliente
             punto_input.Items.AddRange(listaIdPuntos.Select(p => p.ToString()).ToArray());
         }
 
-
-        //// Cierra el formulario actual (NuevoCliente)
         private void btn_reportarIncidencia_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void labelClienteIncidencia_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormNuevoCliente_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private bool verifyDatos()
         {
@@ -255,10 +239,8 @@ namespace Pantalla_Cliente
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                // Convertir la imagen a bytes
                 image.Save(ms, image.RawFormat);
 
-                // Convertir los bytes a cadena Base64
                 byte[] imageBytes = ms.ToArray();
                 string base64String = Convert.ToBase64String(imageBytes);
 

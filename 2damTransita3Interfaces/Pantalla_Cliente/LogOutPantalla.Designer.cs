@@ -68,7 +68,6 @@ namespace transitaControllers
             this.logOutTImer1.Name = "logOutTImer1";
             this.logOutTImer1.Size = new System.Drawing.Size(250, 83);
             this.logOutTImer1.TabIndex = 4;
-            this.logOutTImer1.Load += new System.EventHandler(this.logOutTImer1_Load);
             // 
             // btn_cancelar
             // 

@@ -62,7 +62,6 @@
             this.incidenciaEditar.TabIndex = 2;
             this.incidenciaEditar.Text = "Editar";
             this.incidenciaEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.incidenciaEditar.Click += new System.EventHandler(this.labelClienteIncidencia_Click);
             // 
             // label1
             // 
@@ -158,7 +157,6 @@
             this.fecha_input.Name = "fecha_input";
             this.fecha_input.Size = new System.Drawing.Size(204, 20);
             this.fecha_input.TabIndex = 18;
-            this.fecha_input.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // cliente_input
             // 
@@ -286,7 +284,6 @@
             this.Name = "EditarIncidencia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Incidencia";
-            this.Load += new System.EventHandler(this.FormNuevoCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

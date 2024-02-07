@@ -21,14 +21,8 @@ namespace Pantalla_Cliente
         {
             InitializeComponent();
             idMod = int.TryParse(idPunto, out int parsedId) ? parsedId : 0;
-            //getZonas();
             getPunto();
             this.StartPosition = FormStartPosition.CenterScreen;
-
-        }
-
-        private void EditarPunto_Load(object sender, EventArgs e)
-        {
 
         }
         private bool verifyDatos()
@@ -79,7 +73,6 @@ namespace Pantalla_Cliente
 
                     task.ContinueWith(t =>
                     {
-                        // This part will be executed when modifyUser completes, but won't block the UI
                         Form formularioPadre = this.Owner;
 
                         if (formularioPadre != null)
@@ -103,7 +96,6 @@ namespace Pantalla_Cliente
                 e.Handled = true;
             }
 
-            // Asegúrate de que solo haya un punto decimal
             TextBox textBox = sender as TextBox;
             if (textBox != null && e.KeyChar == '.' && textBox.Text.Contains(".") && e.KeyChar == '-' && textBox.Text.Contains('-'))
             {

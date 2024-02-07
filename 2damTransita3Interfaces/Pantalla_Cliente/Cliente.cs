@@ -17,7 +17,7 @@ public class Cliente
     public string apellidos { get; set; }
     public string nombreUsuario { get; set; }
     public string contrasenya { get; set; }
-    public List<Pantalla_Cliente.Rol> rols { get; set; }  // Change to List<Pantalla_Cliente.Rol>
+    public List<Pantalla_Cliente.Rol> rols { get; set; }
 
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public EstadoCuenta estadoCuenta { get; set; }

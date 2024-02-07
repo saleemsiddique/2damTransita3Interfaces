@@ -202,7 +202,6 @@ namespace Pantalla_Cliente
             this.label5.Size = new System.Drawing.Size(95, 13);
             this.label5.TabIndex = 51;
             this.label5.Text = "Repite Contraseña";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 

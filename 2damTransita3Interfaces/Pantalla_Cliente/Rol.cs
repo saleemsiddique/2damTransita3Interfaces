@@ -14,13 +14,10 @@ namespace Pantalla_Cliente
     {
         public int id { get; set; }
         public string nombre { get; set; }
-
-        // Add a parameterless constructor for deserialization
         public Rol()
         {
         }
 
-        // Adjust the constructor to bind to the properties
         public Rol(int id, string nombre)
         {
             this.id = id;

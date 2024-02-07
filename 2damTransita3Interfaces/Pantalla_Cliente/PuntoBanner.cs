@@ -51,10 +51,8 @@ namespace Pantalla_Cliente
 
                 try
                 {
-                    // Realiza la solicitud de eliminación
                     string response = await ApiClient.GetRequestAsync("DELETE", url, Program.token);
 
-                    // Si la eliminación fue exitosa, actualiza la lista
                     Form formularioPadre = this.FindForm();
                     Transita formularioTransita = (Transita)formularioPadre.FindForm();
                     if (formularioTransita != null)
@@ -65,7 +63,6 @@ namespace Pantalla_Cliente
                 }
                 catch (Exception ex)
                 {
-                    // Maneja cualquier excepción que pueda ocurrir durante la eliminación
                     Console.WriteLine($"Error al eliminar el punto: {ex.Message}");
                 }
             }
@@ -93,26 +90,6 @@ namespace Pantalla_Cliente
         {
             return panel2;
         }
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnViewPunto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nombrePunto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void idPunto_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button8_Click_1(object sender, EventArgs e)
         {
             contextMenuStrip.Show(button8, new System.Drawing.Point(0, button8.Height));
