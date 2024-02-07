@@ -330,6 +330,10 @@ namespace Pantalla_Cliente
             {
                 filtroTipo = "LUGAR";
             }
+            else if (parking_check.Checked)
+            {
+                filtroTipo = "PARKING";
+            }
             else
             {
                 filtroTipo = "";
