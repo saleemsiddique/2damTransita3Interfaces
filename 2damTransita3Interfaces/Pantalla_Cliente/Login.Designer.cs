@@ -47,7 +47,7 @@ namespace Pantalla_Cliente
             this.Correo.Name = "Correo";
             this.Correo.Size = new System.Drawing.Size(234, 22);
             this.Correo.TabIndex = 1;
-            this.Correo.Text = "Introduce el correo";
+            this.Correo.Text = "Ingrese el correo";
             this.Correo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Correo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.Correo.Enter += new System.EventHandler(this.user_enter);
@@ -60,9 +60,10 @@ namespace Pantalla_Cliente
             this.contrasenya.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.contrasenya.Location = new System.Drawing.Point(98, 292);
             this.contrasenya.Name = "contrasenya";
+            this.contrasenya.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.contrasenya.Size = new System.Drawing.Size(234, 22);
             this.contrasenya.TabIndex = 2;
-            this.contrasenya.Text = "Introduce la contraseña";
+            this.contrasenya.Text = "Ingrese la contraseña";
             this.contrasenya.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.contrasenya.TextChanged += new System.EventHandler(this.contrasenya_TextChanged);
             this.contrasenya.Enter += new System.EventHandler(this.contrasenya_enter);
@@ -131,7 +132,6 @@ namespace Pantalla_Cliente
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

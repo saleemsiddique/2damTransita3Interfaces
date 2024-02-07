@@ -59,8 +59,6 @@ namespace Pantalla_Cliente
             crearPDF();
             string rutaRelativa = @"ReporteProducto.pdf";
             string rutaCompleta = System.IO.Path.GetFullPath(rutaRelativa);
-
-            //Console.WriteLine(rutaCompleta);
             axAcroPDFIncidencia.src = rutaCompleta;
         }
         private void crearPDF()
@@ -86,8 +84,7 @@ namespace Pantalla_Cliente
 
             }
 
-            string sql = "SELECT id,descripcion,duracion,estado,fecha_hora,cliente_id,punto_id FROM incidencia";//WHERE nombre = '"+filtro+"'";
-
+            string sql = "SELECT id,descripcion,duracion,estado,fecha_hora,cliente_id,punto_id FROM incidencia";
 
             MySqlConnection connectionDB = Conexion.conexion();
             connectionDB.Open();
@@ -140,13 +137,12 @@ namespace Pantalla_Cliente
             pdfWriter.Close();
         }
 
-        //Filtrar
+
         private void btnFiltrarInci_Click(object sender, EventArgs e)
         {
             string filtroSeleccionado = cmbFiltroInciden.SelectedItem as string;
             string filtroValor = txtFiltroIncid.Text;
 
-            // Validar que se haya seleccionado un filtro y que se haya proporcionado un valor
             if (string.IsNullOrEmpty(filtroSeleccionado) || (txtFiltroIncid.Visible && string.IsNullOrEmpty(filtroValor)))
             {
                 MessageBox.Show("Por favor, seleccione un filtro y proporcione un valor.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -241,10 +237,8 @@ namespace Pantalla_Cliente
         {
             string filtroSeleccionado = cmbFiltroInciden.SelectedItem as string;
 
-            // Configurar el TextBox según tus necesidades para diferentes opciones
             txtFiltroIncid.Visible = (filtroSeleccionado == "id" || filtroSeleccionado == "descripcion" || filtroSeleccionado == "duracion" || filtroSeleccionado == "estado" || filtroSeleccionado == "fecha_hora" || filtroSeleccionado == "cliente_id" || filtroSeleccionado == "punto_id");
 
-            // Puedes establecer un valor predeterminado si es necesario
             if (txtFiltroIncid.Visible)
             {
                 txtFiltroIncid.Text = "";

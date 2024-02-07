@@ -43,6 +43,10 @@ namespace Pantalla_Cliente
             {
                 tipoPunto = TipoPunto.LUGAR;
             }
+            else if (comboBoxTipoPunto.Text.Equals("PARKING"))
+            {
+                tipoPunto = TipoPunto.PARKING;
+            }
 
             if (comboBoxAccesibilidad.Text.Equals("ACCESIBLE"))
             {

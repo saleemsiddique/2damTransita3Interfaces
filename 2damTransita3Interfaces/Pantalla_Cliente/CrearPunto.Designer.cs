@@ -205,7 +205,8 @@
             this.comboBoxTipoPunto.FormattingEnabled = true;
             this.comboBoxTipoPunto.Items.AddRange(new object[] {
             "ACCESO",
-            "LUGAR"});
+            "LUGAR",
+            "PARKING"});
             this.comboBoxTipoPunto.Location = new System.Drawing.Point(163, 346);
             this.comboBoxTipoPunto.Name = "comboBoxTipoPunto";
             this.comboBoxTipoPunto.Size = new System.Drawing.Size(160, 21);

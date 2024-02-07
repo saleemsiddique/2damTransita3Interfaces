@@ -59,7 +59,6 @@ namespace Pantalla_Cliente
             string rutaRelativa = @"ReporteProducto.pdf";
             string rutaCompleta = System.IO.Path.GetFullPath(rutaRelativa);
 
-            //Console.WriteLine(rutaCompleta);
             axAcroPDFPunto.src = rutaCompleta;
 
         }
@@ -86,7 +85,7 @@ namespace Pantalla_Cliente
 
             }
 
-            string sql = "SELECT id, accesibilidad, descripcion, latitud, longitud, tipo, visibilidad FROM punto ";//WHERE nombre = '"+filtro+"'";
+            string sql = "SELECT id, accesibilidad, descripcion, latitud, longitud, tipo, visibilidad FROM punto ";
 
 
             MySqlConnection connectionDB = Conexion.conexion();
@@ -143,13 +142,11 @@ namespace Pantalla_Cliente
             pdfWriter.Close();
         }
 
-        //Filtro
         private void btnFiltrarPunto_Click(object sender, EventArgs e)
         {
             string filtroSeleccionado = cmbFiltroPunto.SelectedItem as string;
             string filtroValor = txtFiltroPunto.Text;
 
-            // Validar que se haya seleccionado un filtro y que se haya proporcionado un valor
             if (string.IsNullOrEmpty(filtroSeleccionado) || (txtFiltroPunto.Visible && string.IsNullOrEmpty(filtroValor)))
             {
                 MessageBox.Show("Por favor, seleccione un filtro y proporcione un valor.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -162,7 +159,6 @@ namespace Pantalla_Cliente
             string rutaRelativa = @"ReporteProducto.pdf";
             string rutaCompleta = System.IO.Path.GetFullPath(rutaRelativa);
 
-            //Console.WriteLine(rutaCompleta);
             axAcroPDFPunto.src = rutaCompleta;
         }
 
@@ -245,10 +241,8 @@ namespace Pantalla_Cliente
         {
             string filtroSeleccionado = cmbFiltroPunto.SelectedItem as string;
 
-            // Configurar el TextBox según tus necesidades para diferentes opciones
             txtFiltroPunto.Visible = (filtroSeleccionado == "id" || filtroSeleccionado == "accesibilidad" || filtroSeleccionado == "descripcion" || filtroSeleccionado == "latitud" || filtroSeleccionado == "longitud" || filtroSeleccionado == "visibilidad" || filtroSeleccionado == "tipo");
 
-            // Puedes establecer un valor predeterminado si es necesario
             if (txtFiltroPunto.Visible)
             {
                 txtFiltroPunto.Text = "";

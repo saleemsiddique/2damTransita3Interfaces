@@ -34,7 +34,6 @@ namespace Pantalla_Cliente
             longitud = lng;
             puntoMarcado = index;
             InicializarAsync();
-            MessageBox.Show("" + index);
             this.StartPosition = FormStartPosition.CenterScreen;
             duracion_input.Text = "Sin determinar";
         }
@@ -43,7 +42,6 @@ namespace Pantalla_Cliente
             InitializeComponent();
             puntoMarcado = index;
             InicializarAsync();
-            MessageBox.Show("" + index);
             this.StartPosition = FormStartPosition.CenterScreen;
             duracion_input.Text = "Sin determinar";
         }

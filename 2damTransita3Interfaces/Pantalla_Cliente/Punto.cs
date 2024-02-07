@@ -16,6 +16,7 @@ namespace Pantalla_Cliente
     {
         ACCESO,
         LUGAR,
+        PARKING
     }
 
     public enum EVisibilidad

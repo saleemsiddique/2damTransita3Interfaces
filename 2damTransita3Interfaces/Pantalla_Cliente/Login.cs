@@ -76,12 +76,6 @@ namespace Pantalla_Cliente
 
 
 
-
-        private void obtenerToken(string response)
-        {
-          
-        }
-
         private void user_leave(object sender, EventArgs e)
         {
 
@@ -131,16 +125,6 @@ namespace Pantalla_Cliente
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
             getUser();
-
-        }
-
-        private void imgUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
 
         }
 
