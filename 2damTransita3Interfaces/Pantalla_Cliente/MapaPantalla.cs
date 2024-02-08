@@ -224,19 +224,33 @@ namespace Pantalla_Cliente
                 markersOverlay.Markers.Add(marker);
             }
         }
-    
-        
+
+
+
 
         public async Task ObtenerPuntos()
         {
-            if (listaPuntosSinIncidencia != null) {
-                listaPuntosSinIncidencia.Clear();
-                gmapControl.Overlays.Clear();
-                gmapControl.Refresh();
-                GMapOverlay markersOverlay = new GMapOverlay("markers");
-                markersOverlay.Markers.Add(marker);
-                gmapControl.Overlays.Add(markersOverlay);
+            if (listaPuntosSinIncidencia == null)
+            {
+                listaPuntosSinIncidencia = new List<Punto>();
             }
+            else
+            {
+                listaPuntosSinIncidencia.Clear();
+            }
+
+            gmapControl.Overlays.Clear();
+            gmapControl.Refresh();
+
+            GMapOverlay markersOverlay = new GMapOverlay("markers");
+
+
+            if (marker != null)
+            {
+                markersOverlay.Markers.Add(marker);
+            }
+
+            gmapControl.Overlays.Add(markersOverlay);
             listaPuntosSinIncidencia = await puntoService.GetPuntoAsyncMapa(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
             ColocarMarcadoresEnMapaPuntosSinIncidencia();
         }
