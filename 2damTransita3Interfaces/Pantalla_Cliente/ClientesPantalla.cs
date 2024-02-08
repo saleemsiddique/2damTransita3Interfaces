@@ -171,11 +171,11 @@ namespace Pantalla_Cliente
         {
             if (radioButton1.Checked)
             {
-                pictureBox5.Image = Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
+                pictureBox5.Image = Transita3.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
             }
             else
             {
-                pictureBox5.Image = Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
+                pictureBox5.Image = Transita3.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
             }
         }
 

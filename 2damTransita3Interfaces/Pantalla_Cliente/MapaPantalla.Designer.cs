@@ -48,6 +48,7 @@ namespace Pantalla_Cliente
             this.filtro_noAccesible = new System.Windows.Forms.CheckBox();
             this.filtro_accesible = new System.Windows.Forms.CheckBox();
             this.groupTipo = new System.Windows.Forms.GroupBox();
+            this.parking_check = new System.Windows.Forms.CheckBox();
             this.filtro_lugar = new System.Windows.Forms.CheckBox();
             this.filtro_acceso = new System.Windows.Forms.CheckBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
@@ -72,7 +73,6 @@ namespace Pantalla_Cliente
             this.btn_mapa = new System.Windows.Forms.Button();
             this.btn_puntos = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
-            this.parking_check = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupVisibilidad.SuspendLayout();
@@ -256,6 +256,17 @@ namespace Pantalla_Cliente
             this.groupTipo.Size = new System.Drawing.Size(200, 100);
             this.groupTipo.TabIndex = 5;
             this.groupTipo.TabStop = false;
+            // 
+            // parking_check
+            // 
+            this.parking_check.AutoSize = true;
+            this.parking_check.Location = new System.Drawing.Point(105, 29);
+            this.parking_check.Name = "parking_check";
+            this.parking_check.Size = new System.Drawing.Size(74, 17);
+            this.parking_check.TabIndex = 45;
+            this.parking_check.Text = "PARKING";
+            this.parking_check.UseVisualStyleBackColor = true;
+            this.parking_check.CheckedChanged += new System.EventHandler(this.filtro_acceso_CheckedChanged);
             // 
             // filtro_lugar
             // 
@@ -583,16 +594,6 @@ namespace Pantalla_Cliente
             this.btn_cliente.Text = "      &Cliente";
             this.btn_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cliente.UseVisualStyleBackColor = false;
-            // 
-            // parking_check
-            // 
-            this.parking_check.AutoSize = true;
-            this.parking_check.Location = new System.Drawing.Point(105, 29);
-            this.parking_check.Name = "parking_check";
-            this.parking_check.Size = new System.Drawing.Size(74, 17);
-            this.parking_check.TabIndex = 45;
-            this.parking_check.Text = "PARKING";
-            this.parking_check.UseVisualStyleBackColor = true;
             // 
             // MapaPantalla
             // 

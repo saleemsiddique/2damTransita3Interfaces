@@ -38,8 +38,6 @@ namespace Pantalla_Cliente
 
             buttonAceptar.Click += buttonAceptar_Click;
 
-            btn_filtrar.Click += btn_filtrar_Click;
-
             ObtenerPuntos(filtroTipo, filtroAccesibilidad, filtroVisibilidad);
         }
 
@@ -195,19 +193,6 @@ namespace Pantalla_Cliente
             }
         }
 
-        private void btn_filtrar_Click(object sender, EventArgs e)
-        {
-            if (esVisible)
-            {
-                groupBox1.Visible = false;
-                esVisible = false;
-            }
-            else
-            {
-                groupBox1.Visible = true;
-                esVisible = true;
-            }
-        }
 
         private void btn_addPunto_Click_1(object sender, EventArgs e)
         {
@@ -331,5 +316,18 @@ namespace Pantalla_Cliente
             ventanaPDFPunto.ShowDialog();
         }
 
+        private void btn_filtrar_Click(object sender, EventArgs e)
+        {
+            if (esVisible)
+            {
+                groupBox1.Visible = false;
+                esVisible = false;
+            }
+            else
+            {
+                groupBox1.Visible = true;
+                esVisible = true;
+            }
+        }
     }
 }

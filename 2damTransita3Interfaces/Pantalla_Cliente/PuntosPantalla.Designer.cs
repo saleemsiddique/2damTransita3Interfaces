@@ -86,12 +86,12 @@
             this.filtro_noAccesible = new System.Windows.Forms.CheckBox();
             this.filtro_accesible = new System.Windows.Forms.CheckBox();
             this.groupTipo = new System.Windows.Forms.GroupBox();
+            this.parking_check = new System.Windows.Forms.CheckBox();
             this.filtro_lugar = new System.Windows.Forms.CheckBox();
             this.filtro_acceso = new System.Windows.Forms.CheckBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.panel_central = new System.Windows.Forms.Panel();
             this.btn_filtrar = new System.Windows.Forms.Button();
-            this.parking_check = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -798,6 +798,17 @@
             this.groupTipo.TabIndex = 5;
             this.groupTipo.TabStop = false;
             // 
+            // parking_check
+            // 
+            this.parking_check.AutoSize = true;
+            this.parking_check.Location = new System.Drawing.Point(109, 29);
+            this.parking_check.Name = "parking_check";
+            this.parking_check.Size = new System.Drawing.Size(74, 17);
+            this.parking_check.TabIndex = 2;
+            this.parking_check.Text = "PARKING";
+            this.parking_check.UseVisualStyleBackColor = true;
+            this.parking_check.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
             // filtro_lugar
             // 
             this.filtro_lugar.AutoSize = true;
@@ -835,13 +846,13 @@
             // 
             this.panel_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
             this.panel_central.Controls.Add(this.groupBox1);
+            this.panel_central.Controls.Add(this.btn_filtrar);
             this.panel_central.Controls.Add(this.label16);
             this.panel_central.Controls.Add(this.btnIrPantallaPDF);
             this.panel_central.Controls.Add(this.adelanteBtn);
             this.panel_central.Controls.Add(this.btn_addPunto);
             this.panel_central.Controls.Add(this.atrasBtn);
             this.panel_central.Controls.Add(this.panelPuntos);
-            this.panel_central.Controls.Add(this.btn_filtrar);
             this.panel_central.Controls.Add(this.label1);
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(276, 0);
@@ -858,19 +869,9 @@
             this.btn_filtrar.Location = new System.Drawing.Point(271, 74);
             this.btn_filtrar.Name = "btn_filtrar";
             this.btn_filtrar.Size = new System.Drawing.Size(36, 36);
-            this.btn_filtrar.TabIndex = 22;
+            this.btn_filtrar.TabIndex = 23;
             this.btn_filtrar.UseVisualStyleBackColor = false;
-            this.btn_filtrar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_filtrar_Click);
-            // 
-            // parking_check
-            // 
-            this.parking_check.AutoSize = true;
-            this.parking_check.Location = new System.Drawing.Point(109, 29);
-            this.parking_check.Name = "parking_check";
-            this.parking_check.Size = new System.Drawing.Size(74, 17);
-            this.parking_check.TabIndex = 2;
-            this.parking_check.Text = "PARKING";
-            this.parking_check.UseVisualStyleBackColor = true;
+            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
             // PuntosPantalla
             // 
@@ -976,7 +977,7 @@
         private System.Windows.Forms.CheckBox filtro_acceso;
         private System.Windows.Forms.Button buttonAceptar;
         private System.Windows.Forms.Panel panel_central;
-        private System.Windows.Forms.Button btn_filtrar;
         private System.Windows.Forms.CheckBox parking_check;
+        private System.Windows.Forms.Button btn_filtrar;
     }
 }
