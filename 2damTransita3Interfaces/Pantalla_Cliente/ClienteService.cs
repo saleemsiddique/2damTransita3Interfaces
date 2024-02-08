@@ -69,6 +69,20 @@ namespace Pantalla_Cliente
 
         }
 
+        public async Task<List<Cliente>> GetAllCliente() {
+            string url = Program.rutaBase + "cliente/";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            List<Cliente> listClientes = JsonSerializer.Deserialize<List<Cliente>>(response);
+            return listClientes;
+        }
+
+        public async Task<List<Cliente>> GetClientesFiltrado(string filtro, string valor) {
+            string url = Program.rutaBase + "cliente/filtro?filtro=" + filtro + "&valor=" + valor;
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            List<Cliente> listClientes = JsonSerializer.Deserialize<List<Cliente>>(response);
+            return listClientes;
+        }
+
         public async Task<List<Cliente>> BuscarClientesAsync(int estado, int idInicial, int idFinal, string query) {
             string url = Program.rutaBase + Rutas.clientesBuscar;
             url += "idInicial=" + idInicial + "&idFinal=" + idFinal + "&query=" + query;

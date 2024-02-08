@@ -100,6 +100,20 @@ namespace Pantalla_Cliente
             return numeroClientes;
         }
 
+        public async Task<List<Incidencia>> GetAllIncidencia() {
+            string url = Program.rutaBase + "incidencias/";
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            List<Incidencia> incidencias = JsonSerializer.Deserialize<List<Incidencia>>(response);
+            return incidencias;
+        }
+
+        public async Task<List<Incidencia>> GetIncidenciasFiltradas(string filtro, string valor) {
+            string url = Program.rutaBase + "incidencia/filtro?filtro=" + filtro + "&valor=" + valor;
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            List<Incidencia> incidencias = JsonSerializer.Deserialize<List<Incidencia>>(response);
+            return incidencias;
+        }
+
     }
 }
   

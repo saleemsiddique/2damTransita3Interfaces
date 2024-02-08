@@ -40,17 +40,26 @@ namespace Pantalla_Cliente
 {
     public partial class VentanaPDFPunto : Form
     {
+        private List<Punto> puntos;
+        private PuntoService puntoService = new PuntoService();
         public VentanaPDFPunto()
         {
             InitializeComponent();
 
             cmbFiltroPunto.Items.Add("id");
             cmbFiltroPunto.Items.Add("accesibilidad");
-            cmbFiltroPunto.Items.Add("descripcion");
-            cmbFiltroPunto.Items.Add("latitud");
-            cmbFiltroPunto.Items.Add("longitud");
             cmbFiltroPunto.Items.Add("tipo");
             cmbFiltroPunto.Items.Add("visibilidad");
+        }
+
+        public async Task ObtenerPuntos()
+        {
+            puntos = await puntoService.GetAllPuntos();
+        }
+
+        public async Task ObtenerPuntosFiltrados()
+        {
+            puntos = await puntoService.GetAllPuntosFiltro(cmbFiltroPunto.Text, txtFiltroPunto.Text);
         }
 
         private void btnGenerarListaPunto_Click(object sender, EventArgs e)
@@ -62,8 +71,9 @@ namespace Pantalla_Cliente
             axAcroPDFPunto.src = rutaCompleta;
 
         }
-        private void crearPDF()
+        private async void crearPDF()
         {
+            await ObtenerPuntos();
             PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
             PdfDocument pdf = new PdfDocument(pdfWriter);
             PageSize tamanioH = new PageSize(792, 612);
@@ -73,9 +83,9 @@ namespace Pantalla_Cliente
 
             PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-            string[] columnas = { "id", "accesibilidad", "descripcion", "latitud", "longitud", "tipo","visibilidad" };
+            string[] columnas = { "id", "accesibilidad", "latitud", "longitud", "tipo", "visibilidad" };
 
-            float[] tamanios = { 2, 2, 2, 2, 2, 2,2 };
+            float[] tamanios = { 2, 2, 2, 2, 2, 2 };
             Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
             tabla.SetWidth(UnitValue.CreatePercentValue(100));
 
@@ -85,29 +95,16 @@ namespace Pantalla_Cliente
 
             }
 
-            string sql = "SELECT id, accesibilidad, descripcion, latitud, longitud, tipo, visibilidad FROM punto ";
-
-
-            MySqlConnection connectionDB = Conexion.conexion();
-            connectionDB.Open();
-
-            MySqlCommand comando = new MySqlCommand(sql, connectionDB);
-            MySqlDataReader reader = comando.ExecuteReader();
-            while (reader.Read())
+            foreach (Punto p in puntos)
             {
-
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["id"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["accesibilidad"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["descripcion"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["latitud"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["longitud"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["tipo"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["visibilidad"].ToString()).SetFont(fontContenido)));
-
-
-
-
+                tabla.AddCell(new Cell().Add(new Paragraph(p.id.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(p.accesibilidadPunto.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(p.latitud.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(p.longitud.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(p.tipoPunto.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(p.visibilidadPunto.ToString()).SetFont(fontContenido)));
             }
+
             documento.Add(tabla);
 
             documento.Close();
@@ -152,19 +149,17 @@ namespace Pantalla_Cliente
                 MessageBox.Show("Por favor, seleccione un filtro y proporcione un valor.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            string sql = $"SELECT id, accesibilidad, descripcion, latitud, longitud, tipo, visibilidad FROM punto WHERE {filtroSeleccionado} = '{filtroValor}'";
-
-
-            crearPDFFiltro(sql);
-            string rutaRelativa = @"ReporteProducto.pdf";
+            crearPDFFiltro();
+            string rutaRelativa = @"ReporteProductoFiltrado.pdf";
             string rutaCompleta = System.IO.Path.GetFullPath(rutaRelativa);
 
             axAcroPDFPunto.src = rutaCompleta;
         }
 
-        private void crearPDFFiltro(string filtro)
+        private async void crearPDFFiltro()
         {
-            PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
+            await ObtenerPuntosFiltrados();
+            PdfWriter pdfWriter = new PdfWriter("ReporteFiltrado.pdf");
             PdfDocument pdf = new PdfDocument(pdfWriter);
             PageSize tamanioH = new PageSize(792, 612);
             Document documento = new Document(pdf, tamanioH);
@@ -173,9 +168,9 @@ namespace Pantalla_Cliente
 
             PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-            string[] columnas = { "id", "accesibilidad", "descripcion", "latitud", "longitud", "tipo", "visibilidad" };
+            string[] columnas = { "id", "accesibilidad", "latitud", "longitud", "tipo", "visibilidad" };
 
-            float[] tamanios = { 2, 2, 2, 2, 2, 2,2 };
+            float[] tamanios = { 2, 2, 2, 2, 2, 2 };
             Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
             tabla.SetWidth(UnitValue.CreatePercentValue(100));
 
@@ -184,28 +179,17 @@ namespace Pantalla_Cliente
                 tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
 
             }
-            string sql = filtro;
 
-
-            MySqlConnection connectionDB = Conexion.conexion();
-            connectionDB.Open();
-
-            MySqlCommand comando = new MySqlCommand(sql, connectionDB);
-            MySqlDataReader reader = comando.ExecuteReader();
-            while (reader.Read())
+            foreach (Punto p in puntos)
             {
-
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["id"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["accesibilidad"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["descripcion"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["latitud"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["longitud"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["tipo"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["visibilidad"].ToString()).SetFont(fontContenido)));
-
-
-
+                tabla.AddCell(new Cell().Add(new Paragraph(p.id.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(p.accesibilidadPunto.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(p.latitud.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(p.longitud.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(p.tipoPunto.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(p.visibilidadPunto.ToString()).SetFont(fontContenido)));
             }
+
             documento.Add(tabla);
 
             documento.Close();
@@ -219,7 +203,7 @@ namespace Pantalla_Cliente
             var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
             fecha.SetFontSize(12);
 
-            PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte.pdf"), new PdfWriter("ReporteProducto.pdf"));
+            PdfDocument pdfDoc = new PdfDocument(new PdfReader("ReporteFiltrado.pdf"), new PdfWriter("ReporteProductoFiltrado.pdf"));
             Document doc = new Document(pdfDoc);
             int numeros = pdfDoc.GetNumberOfPages();
 

@@ -4,23 +4,6 @@ using iText.IO.Image;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
-using iText.Layout.Element;
-using iText.Layout.Properties;
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using iText.IO.Font.Constants;
-using iText.IO.Image;
-using iText.Kernel.Font;
-using iText.Kernel.Geom;
-using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
@@ -39,31 +22,40 @@ namespace Pantalla_Cliente
 {
     public partial class VentanaPDFIncidencia : Form
     {
+        private List<Incidencia> incidenciasList;
+        private IncidenciaService incidenciaService = new IncidenciaService();
+
         public VentanaPDFIncidencia()
         {
             InitializeComponent();
-            
-
             cmbFiltroInciden.Items.Add("id");
-            cmbFiltroInciden.Items.Add("descripcion");
-            cmbFiltroInciden.Items.Add("duracion");
             cmbFiltroInciden.Items.Add("estado");
             cmbFiltroInciden.Items.Add("fecha_hora");
-            cmbFiltroInciden.Items.Add("cliente_id");
-            cmbFiltroInciden.Items.Add("punto_id");
         }
 
-        private void btnGenerarListaInci_Click(object sender, EventArgs e)
+        private async void btnGenerarListaInci_Click(object sender, EventArgs e)
         {
-
-            crearPDF();
+            await crearPDF();
             string rutaRelativa = @"ReporteProducto.pdf";
             string rutaCompleta = System.IO.Path.GetFullPath(rutaRelativa);
             axAcroPDFIncidencia.src = rutaCompleta;
         }
-        private void crearPDF()
+
+        private async Task ObtenerIncidencias()
         {
-            PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
+            incidenciasList = await incidenciaService.GetAllIncidencia();
+        }
+
+        private async Task ObtenerIncidenciasFiltradas()
+        {
+            incidenciasList = await incidenciaService.GetIncidenciasFiltradas(cmbFiltroInciden.Text, txtFiltroIncid.Text);
+        }
+
+        private async Task crearPDF()
+        {
+            await ObtenerIncidencias();
+            string nombreArchivo = $"Reporte_{DateTime.Now:yyyyMMddHHmmss}.pdf"; // Generar nombre de archivo único
+            PdfWriter pdfWriter = new PdfWriter(nombreArchivo);
             PdfDocument pdf = new PdfDocument(pdfWriter);
             PageSize tamanioH = new PageSize(792, 612);
             Document documento = new Document(pdf, tamanioH);
@@ -72,9 +64,9 @@ namespace Pantalla_Cliente
 
             PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-            string[] columnas = { "id", "descripcion", "duracion", "estado", "fecha_hora", "cliente_id","punto_id" };
+            string[] columnas = { "id", "duracion", "estado", "fecha_hora", "cliente_id", "punto_id" };
 
-            float[] tamanios = { 2, 2, 2, 2, 2, 2, 2, };
+            float[] tamanios = { 2, 2, 2, 2, 2, 2 };
             Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
             tabla.SetWidth(UnitValue.CreatePercentValue(100));
 
@@ -84,24 +76,14 @@ namespace Pantalla_Cliente
 
             }
 
-            string sql = "SELECT id,descripcion,duracion,estado,fecha_hora,cliente_id,punto_id FROM incidencia";
-
-            MySqlConnection connectionDB = Conexion.conexion();
-            connectionDB.Open();
-
-            MySqlCommand comando = new MySqlCommand(sql, connectionDB);
-            MySqlDataReader reader = comando.ExecuteReader();
-            while (reader.Read())
+            foreach (Incidencia i in incidenciasList)
             {
-
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["id"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["descripcion"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["duracion"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["estado"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["fecha_hora"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["cliente_id"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["punto_id"].ToString()).SetFont(fontContenido)));
-
+                tabla.AddCell(new Cell().Add(new Paragraph(i.id.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(i.duracion.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(i.estado.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(i.fechaHora.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(i.cliente.id.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(i.punto.id.ToString()).SetFont(fontContenido)));
             }
             documento.Add(tabla);
 
@@ -116,11 +98,11 @@ namespace Pantalla_Cliente
             var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
             fecha.SetFontSize(12);
 
-            PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte.pdf"), new PdfWriter("ReporteProducto.pdf"));
+            PdfDocument pdfDoc = new PdfDocument(new PdfReader(nombreArchivo), new PdfWriter("ReporteProducto.pdf"));
             Document doc = new Document(pdfDoc);
             int numeros = pdfDoc.GetNumberOfPages();
 
-            for (int i = 1; i <= numeros; i++)
+            for (int i = 1; i < numeros; i++)
             {
                 PdfPage pagina = pdfDoc.GetPage(i);
 
@@ -132,13 +114,9 @@ namespace Pantalla_Cliente
 
             }
             doc.Close();
-
-            documento.Close();
-            pdfWriter.Close();
         }
 
-
-        private void btnFiltrarInci_Click(object sender, EventArgs e)
+        private async void btnFiltrarInci_Click(object sender, EventArgs e)
         {
             string filtroSeleccionado = cmbFiltroInciden.SelectedItem as string;
             string filtroValor = txtFiltroIncid.Text;
@@ -148,18 +126,18 @@ namespace Pantalla_Cliente
                 MessageBox.Show("Por favor, seleccione un filtro y proporcione un valor.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            string sql = $"SELECT id, descripcion, duracion, estado, fecha_hora, cliente_id, punto_id FROM incidencia WHERE {filtroSeleccionado} = '{filtroValor}'";
 
-            crearPDFFiltro(sql);
+            await crearPDFFiltro();
             string rutaRelativa = @"ReporteProducto.pdf";
             string rutaCompleta = System.IO.Path.GetFullPath(rutaRelativa);
-
             axAcroPDFIncidencia.src = rutaCompleta;
         }
 
-        private void crearPDFFiltro(string filtro)
+        private async Task crearPDFFiltro()
         {
-            PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
+            await ObtenerIncidenciasFiltradas();
+            string nombreArchivo = $"Reporte_{DateTime.Now:yyyyMMddHHmmss}.pdf"; // Generar nombre de archivo único
+            PdfWriter pdfWriter = new PdfWriter(nombreArchivo);
             PdfDocument pdf = new PdfDocument(pdfWriter);
             PageSize tamanioH = new PageSize(792, 612);
             Document documento = new Document(pdf, tamanioH);
@@ -168,9 +146,9 @@ namespace Pantalla_Cliente
 
             PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-            string[] columnas = { "id", "descripcion", "duracion", "estado", "fecha_hora", "cliente_id", "punto_id" };
+            string[] columnas = { "id", "duracion", "estado", "fecha_hora", "cliente_id", "punto_id" };
 
-            float[] tamanios = { 2, 2, 2, 2, 2, 2,2 };
+            float[] tamanios = { 2, 2, 2, 2, 2, 2 };
             Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
             tabla.SetWidth(UnitValue.CreatePercentValue(100));
 
@@ -180,27 +158,14 @@ namespace Pantalla_Cliente
 
             }
 
-            string sql = filtro;
-
-
-            MySqlConnection connectionDB = Conexion.conexion();
-            connectionDB.Open();
-
-            MySqlCommand comando = new MySqlCommand(sql, connectionDB);
-            MySqlDataReader reader = comando.ExecuteReader();
-            while (reader.Read())
+            foreach (Incidencia i in incidenciasList)
             {
-
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["id"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["descripcion"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["duracion"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["estado"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["fecha_hora"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["cliente_id"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["punto_id"].ToString()).SetFont(fontContenido)));
-
-
-
+                tabla.AddCell(new Cell().Add(new Paragraph(i.id.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(i.duracion.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(i.estado.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(i.fechaHora.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(i.cliente.id.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(i.punto.id.ToString()).SetFont(fontContenido)));
             }
             documento.Add(tabla);
 
@@ -215,7 +180,7 @@ namespace Pantalla_Cliente
             var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
             fecha.SetFontSize(12);
 
-            PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte.pdf"), new PdfWriter("ReporteProducto.pdf"));
+            PdfDocument pdfDoc = new PdfDocument(new PdfReader(nombreArchivo), new PdfWriter("ReporteProducto.pdf"));
             Document doc = new Document(pdfDoc);
             int numeros = pdfDoc.GetNumberOfPages();
 

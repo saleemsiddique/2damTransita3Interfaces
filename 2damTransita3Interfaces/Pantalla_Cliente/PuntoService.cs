@@ -116,5 +116,12 @@ namespace Pantalla_Cliente
             string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
             return JsonSerializer.Deserialize<List<Punto>>(response);
         }
+
+        public async Task<List<Punto>> GetAllPuntosFiltro(string filtro, string valor)
+        {
+            string url = Program.rutaBase + "punto/filtro?filtro=" + filtro + "&valor=" + valor;
+            string response = await ApiClient.GetRequestAsync("GET", url, Program.token);
+            return JsonSerializer.Deserialize<List<Punto>>(response);
+        }
     }
 }
