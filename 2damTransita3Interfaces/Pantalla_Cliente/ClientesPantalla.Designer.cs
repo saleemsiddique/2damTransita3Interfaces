@@ -474,7 +474,7 @@ namespace Pantalla_Cliente
             // adelanteBtn
             // 
             this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
+            this.adelanteBtn.Image = global::Transita3.Properties.Resources.delante;
             this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
             this.adelanteBtn.Name = "adelanteBtn";
             this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
@@ -484,7 +484,7 @@ namespace Pantalla_Cliente
             // atrasBtn
             // 
             this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
-            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Image = global::Transita3.Properties.Resources.atras;
             this.atrasBtn.Location = new System.Drawing.Point(45, 598);
             this.atrasBtn.Name = "atrasBtn";
             this.atrasBtn.Size = new System.Drawing.Size(50, 50);
@@ -577,7 +577,7 @@ namespace Pantalla_Cliente
             // 
             // btn_verFavoritos
             // 
-            this.btn_verFavoritos.Image = global::Pantalla_Cliente.Properties.Resources.estrellaFav;
+            this.btn_verFavoritos.Image = global::Transita3.Properties.Resources.estrellaFav;
             this.btn_verFavoritos.Location = new System.Drawing.Point(91, 588);
             this.btn_verFavoritos.Name = "btn_verFavoritos";
             this.btn_verFavoritos.Size = new System.Drawing.Size(39, 36);

@@ -81,8 +81,8 @@
             // 
             this.favCliente.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.favCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.favCliente.Image = global::Pantalla_Cliente.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
-            this.favCliente.InitialImage = global::Pantalla_Cliente.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
+            this.favCliente.Image = global::Transita3.Properties.Resources.estrellaNegra_fotor_bg_remover_2023102118503;
+            this.favCliente.InitialImage = global::Transita3.Properties.Resources.estrellaAmarilla_fotor_bg_remover_20231021185036;
             this.favCliente.Location = new System.Drawing.Point(324, 11);
             this.favCliente.Name = "favCliente";
             this.favCliente.Size = new System.Drawing.Size(25, 25);
@@ -94,8 +94,8 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox2.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox2.Image = global::Transita3.Properties.Resources.Jugador;
+            this.pictureBox2.InitialImage = global::Transita3.Properties.Resources.Jugador;
             this.pictureBox2.Location = new System.Drawing.Point(15, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);

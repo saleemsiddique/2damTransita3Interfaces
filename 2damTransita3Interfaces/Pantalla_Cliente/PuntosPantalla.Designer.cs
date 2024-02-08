@@ -616,7 +616,7 @@
             // atrasBtn
             // 
             this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
-            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Image = global::Transita3.Properties.Resources.atras;
             this.atrasBtn.Location = new System.Drawing.Point(45, 598);
             this.atrasBtn.Name = "atrasBtn";
             this.atrasBtn.Size = new System.Drawing.Size(50, 50);
@@ -641,7 +641,7 @@
             // adelanteBtn
             // 
             this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
+            this.adelanteBtn.Image = global::Transita3.Properties.Resources.delante;
             this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
             this.adelanteBtn.Name = "adelanteBtn";
             this.adelanteBtn.Size = new System.Drawing.Size(50, 50);

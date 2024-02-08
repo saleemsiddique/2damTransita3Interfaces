@@ -95,8 +95,8 @@ namespace Pantalla_Cliente
             this.incidencia_img.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.incidencia_img.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.incidencia_img.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.incidencia_img.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.incidencia_img.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.incidencia_img.Image = global::Transita3.Properties.Resources.Jugador;
+            this.incidencia_img.InitialImage = global::Transita3.Properties.Resources.Jugador;
             this.incidencia_img.Location = new System.Drawing.Point(17, 2);
             this.incidencia_img.Name = "incidencia_img";
             this.incidencia_img.Size = new System.Drawing.Size(40, 40);

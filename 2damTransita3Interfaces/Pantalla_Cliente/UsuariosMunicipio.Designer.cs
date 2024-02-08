@@ -116,7 +116,7 @@ namespace Pantalla_Cliente
             // atrasBtn
             // 
             this.atrasBtn.BackColor = System.Drawing.Color.Transparent;
-            this.atrasBtn.Image = global::Pantalla_Cliente.Properties.Resources.atras;
+            this.atrasBtn.Image = global::Transita3.Properties.Resources.atras;
             this.atrasBtn.Location = new System.Drawing.Point(45, 598);
             this.atrasBtn.Name = "atrasBtn";
             this.atrasBtn.Size = new System.Drawing.Size(50, 50);
@@ -126,7 +126,7 @@ namespace Pantalla_Cliente
             // adelanteBtn
             // 
             this.adelanteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.adelanteBtn.Image = global::Pantalla_Cliente.Properties.Resources.delante;
+            this.adelanteBtn.Image = global::Transita3.Properties.Resources.delante;
             this.adelanteBtn.Location = new System.Drawing.Point(438, 598);
             this.adelanteBtn.Name = "adelanteBtn";
             this.adelanteBtn.Size = new System.Drawing.Size(50, 50);
@@ -243,8 +243,8 @@ namespace Pantalla_Cliente
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox4.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox4.Image = global::Transita3.Properties.Resources.Jugador;
+            this.pictureBox4.InitialImage = global::Transita3.Properties.Resources.Jugador;
             this.pictureBox4.Location = new System.Drawing.Point(24, 15);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 40);
@@ -373,8 +373,8 @@ namespace Pantalla_Cliente
             // 
             this.usuarioImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.usuarioImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.usuarioImg.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.usuarioImg.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.usuarioImg.Image = global::Transita3.Properties.Resources.Jugador;
+            this.usuarioImg.InitialImage = global::Transita3.Properties.Resources.Jugador;
             this.usuarioImg.Location = new System.Drawing.Point(49, 128);
             this.usuarioImg.Name = "usuarioImg";
             this.usuarioImg.Size = new System.Drawing.Size(130, 112);

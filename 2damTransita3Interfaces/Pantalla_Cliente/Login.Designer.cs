@@ -107,7 +107,7 @@ namespace Pantalla_Cliente
             this.btn_ajustes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.btn_ajustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ajustes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_ajustes.Image = global::Pantalla_Cliente.Properties.Resources.settingIcon;
+            this.btn_ajustes.Image = global::Transita3.Properties.Resources.settingIcon;
             this.btn_ajustes.Location = new System.Drawing.Point(372, 12);
             this.btn_ajustes.Name = "btn_ajustes";
             this.btn_ajustes.Size = new System.Drawing.Size(50, 47);
@@ -128,6 +128,7 @@ namespace Pantalla_Cliente
             this.Controls.Add(this.contrasenya);
             this.Controls.Add(this.Correo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(450, 558);
             this.Name = "Login";

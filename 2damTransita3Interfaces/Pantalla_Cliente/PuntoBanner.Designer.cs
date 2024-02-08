@@ -94,8 +94,8 @@
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::Pantalla_Cliente.Properties.Resources.Jugador;
-            this.pictureBox4.InitialImage = global::Pantalla_Cliente.Properties.Resources.Jugador;
+            this.pictureBox4.Image = global::Transita3.Properties.Resources.Jugador;
+            this.pictureBox4.InitialImage = global::Transita3.Properties.Resources.Jugador;
             this.pictureBox4.Location = new System.Drawing.Point(17, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 40);
