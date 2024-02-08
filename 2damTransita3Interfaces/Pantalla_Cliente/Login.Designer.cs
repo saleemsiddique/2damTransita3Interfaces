@@ -127,6 +127,8 @@ namespace Pantalla_Cliente
             this.Controls.Add(this.checkBoxMostrarContrasenya);
             this.Controls.Add(this.contrasenya);
             this.Controls.Add(this.Correo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(450, 558);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

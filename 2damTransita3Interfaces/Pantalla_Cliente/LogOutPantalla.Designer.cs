@@ -94,6 +94,8 @@ namespace transitaControllers
             this.Controls.Add(this.logOutTImer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_si);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(550, 330);
             this.MinimumSize = new System.Drawing.Size(550, 330);
             this.Name = "LogOutPantalla";

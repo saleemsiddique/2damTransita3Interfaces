@@ -344,6 +344,8 @@
             this.Controls.Add(this.panel1_central);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel1_derecha);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1080, 718);
             this.MinimumSize = new System.Drawing.Size(960, 449);
             this.Name = "Transita";
