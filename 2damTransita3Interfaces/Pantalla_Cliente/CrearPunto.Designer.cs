@@ -253,6 +253,7 @@
             this.MaximumSize = new System.Drawing.Size(500, 550);
             this.MinimumSize = new System.Drawing.Size(500, 550);
             this.Name = "CrearPunto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CrearPunto";
             this.Load += new System.EventHandler(this.CrearPunto_Load);
             this.ResumeLayout(false);

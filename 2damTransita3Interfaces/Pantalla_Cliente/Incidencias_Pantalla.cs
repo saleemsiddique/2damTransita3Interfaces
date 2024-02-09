@@ -310,16 +310,22 @@ namespace Pantalla_Cliente
             {
                 label_tipoIncidencia.Text = "INCIDENCIA ACEPTADA";
                 filtro = 1;
+                btn_eliminarIncidencia.Enabled = false;
+                btn_aceptarIncidencia.Enabled = false;
             }
             else if (checkBox3.Checked)
             {
                 label_tipoIncidencia.Text = "INCIDENCIA EN PROCESO";
                 filtro = 3;
+                btn_eliminarIncidencia.Enabled = false;
+                btn_aceptarIncidencia.Enabled = false;
             }
             else if (checkBox4.Checked)
             {
                 label_tipoIncidencia.Text = "INCIDENCIA FINALIZADA";
                 filtro = 4;
+                btn_eliminarIncidencia.Enabled = false;
+                btn_aceptarIncidencia.Enabled = false;
             }
             else
             {

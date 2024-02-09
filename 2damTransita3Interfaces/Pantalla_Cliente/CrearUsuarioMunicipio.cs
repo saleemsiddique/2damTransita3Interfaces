@@ -21,7 +21,6 @@ namespace Pantalla_Cliente
         public CrearUsuarioMunicipio()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
             pass2_input.UseSystemPasswordChar = true;
             password1_input.UseSystemPasswordChar = true;
             rol_input.SelectedIndex = 0;

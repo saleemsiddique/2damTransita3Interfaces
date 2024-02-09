@@ -66,7 +66,7 @@ namespace Pantalla_Cliente
             PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
             string[] columnas = { "id", "nombre", "apellidos", "nombre_usuario", "estado" };
 
-            float[] tamanios = { 2, 2, 2, 2, 2, 2 };
+            float[] tamanios = { 2, 2, 2, 2, 2};
             Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
             tabla.SetWidth(UnitValue.CreatePercentValue(100));
 
@@ -118,9 +118,9 @@ namespace Pantalla_Cliente
 
             PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-            string[] columnas = { "id", "nombre", "apellidos", "nombre_usuario", "contrasenya", "estado" };
+            string[] columnas = { "id", "nombre", "apellidos", "nombre_usuario", "estado" };
 
-            float[] tamanios = { 2, 2, 2, 2, 2, 2 };
+            float[] tamanios = { 2, 2, 2, 2, 2};
             Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
             tabla.SetWidth(UnitValue.CreatePercentValue(100));
 

@@ -33,9 +33,6 @@ namespace Pantalla_Cliente
             this.ForeColor = Color.Black;
             this.Font = new Font("Arial", 12);
 
-            btn_filtrar.FlatStyle = FlatStyle.Flat;
-            btn_filtrar.FlatAppearance.BorderSize = 0;
-
             buttonAceptar.Click += buttonAceptar_Click;
 
             ObtenerPuntos(filtroTipo, filtroAccesibilidad, filtroVisibilidad);

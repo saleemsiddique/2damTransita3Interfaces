@@ -311,6 +311,7 @@ namespace Pantalla_Cliente
             this.MaximumSize = new System.Drawing.Size(496, 695);
             this.MinimumSize = new System.Drawing.Size(496, 695);
             this.Name = "CrearUsuarioMunicipio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearUsuarioMunicipio";
             this.ResumeLayout(false);
             this.PerformLayout();

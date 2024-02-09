@@ -19,7 +19,6 @@ namespace Pantalla_Cliente
         public CrearPunto()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
        
